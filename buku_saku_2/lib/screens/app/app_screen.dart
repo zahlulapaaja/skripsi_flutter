@@ -1,36 +1,41 @@
-import 'package:buku_saku_2/screens/home//models/tabIcon_data.dart';
-import 'package:buku_saku_2/screens/home/training/training_screen.dart';
+import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
+import 'package:buku_saku_2/screens/app/training/training_screen.dart';
 import 'package:flutter/material.dart';
 import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'fitness_app_theme.dart';
 import 'my_diary/my_diary_screen.dart';
+import 'home/home_screen.dart';
 
-class FitnessAppHomeScreen extends StatefulWidget {
-  static const id = 'fitness';
+class AppScreen extends StatefulWidget {
+  static const id = 'app_screen';
+
+  const AppScreen({Key? key}) : super(key: key);
   @override
-  _FitnessAppHomeScreenState createState() => _FitnessAppHomeScreenState();
+  _AppScreenState createState() => _AppScreenState();
 }
 
-class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
-    with TickerProviderStateMixin {
+class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
   AnimationController? animationController;
-
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
 
   Widget tabBody = Container(
-    color: FitnessAppTheme.background,
+    // warna bakground default, cuma kontainer kosong, klo udh bikin halaman, container ini ga guna
+    color: AppColors.offWhite,
   );
 
   @override
   void initState() {
-    tabIconsList.forEach((TabIconData tab) {
-      tab.isSelected = false;
-    });
+    for (var tabIcon in tabIconsList) {
+      tabIcon.isSelected = false;
+    }
     tabIconsList[0].isSelected = true;
 
     animationController = AnimationController(
-        duration: const Duration(milliseconds: 600), vsync: this);
-    tabBody = MyDiaryScreen(animationController: animationController);
+      duration: const Duration(milliseconds: 600),
+      vsync: this,
+    );
+    tabBody = HomeScreen(animationController: animationController);
     super.initState();
   }
 
@@ -43,7 +48,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: FitnessAppTheme.background,
+      color: AppColors.offWhite,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: FutureBuilder<bool>(
@@ -66,6 +71,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
   }
 
   Future<bool> getData() async {
+    // TODO: ini cuma delayed buatan, jangan lupa dihapus nanti
     await Future<dynamic>.delayed(const Duration(milliseconds: 200));
     return true;
   }
@@ -78,7 +84,9 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
         ),
         BottomBarView(
           tabIconsList: tabIconsList,
-          addClick: () {},
+          addClick: () {
+            print('tambah catatan');
+          },
           changeIndex: (int index) {
             if (index == 0 || index == 2) {
               animationController?.reverse().then<dynamic>((data) {
@@ -87,7 +95,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
                 }
                 setState(() {
                   tabBody =
-                      MyDiaryScreen(animationController: animationController);
+                      HomeScreen(animationController: animationController);
                 });
               });
             } else if (index == 1 || index == 3) {

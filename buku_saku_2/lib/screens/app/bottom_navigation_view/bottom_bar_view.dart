@@ -1,12 +1,7 @@
 import 'dart:math' as math;
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/home/fitness_app_theme.dart';
-import 'package:buku_saku_2/screens/home/models/tabIcon_data.dart';
-import 'package:buku_saku_2/main.dart';
+import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
 import 'package:flutter/material.dart';
-
-// import '../../main.dart';
-import '../models/tabIcon_data.dart';
 
 class BottomBarView extends StatefulWidget {
   const BottomBarView(
@@ -16,6 +11,7 @@ class BottomBarView extends StatefulWidget {
   final Function(int index)? changeIndex;
   final Function()? addClick;
   final List<TabIconData>? tabIconsList;
+
   @override
   _BottomBarViewState createState() => _BottomBarViewState();
 }
@@ -28,6 +24,7 @@ class _BottomBarViewState extends State<BottomBarView>
   void initState() {
     animationController = AnimationController(
       vsync: this,
+      // TODO : fungsi 1 detik disini apa ???
       duration: const Duration(milliseconds: 1000),
     );
     animationController?.forward();
@@ -45,7 +42,7 @@ class _BottomBarViewState extends State<BottomBarView>
             return Transform(
               transform: Matrix4.translationValues(0.0, 0.0, 0.0),
               child: PhysicalShape(
-                color: FitnessAppTheme.white,
+                color: Colors.white,
                 elevation: 16.0,
                 clipper: TabClipper(
                     radius: Tween<double>(begin: 0.0, end: 1.0)
@@ -141,23 +138,24 @@ class _BottomBarViewState extends State<BottomBarView>
                             parent: animationController!,
                             curve: Curves.fastOutSlowIn)),
                     child: Container(
-                      // alignment: Alignment.center,s
+                      alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: FitnessAppTheme.nearlyDarkBlue,
+                        color: AppColors.primary,
                         gradient: LinearGradient(
-                            colors: [
-                              FitnessAppTheme.nearlyDarkBlue,
-                              AppColors.primary,
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight),
+                          colors: [
+                            AppColors.primary,
+                            AppColors.primaryLight,
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
                         shape: BoxShape.circle,
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                              color: FitnessAppTheme.nearlyDarkBlue
-                                  .withOpacity(0.4),
-                              offset: const Offset(8.0, 16.0),
-                              blurRadius: 16.0),
+                            color: AppColors.primary.withOpacity(0.4),
+                            offset: const Offset(8.0, 16.0),
+                            blurRadius: 16.0,
+                          ),
                         ],
                       ),
                       child: Material(
@@ -168,8 +166,8 @@ class _BottomBarViewState extends State<BottomBarView>
                           focusColor: Colors.transparent,
                           onTap: widget.addClick,
                           child: Icon(
-                            Icons.phone,
-                            color: FitnessAppTheme.white,
+                            Icons.add,
+                            color: Colors.white,
                             size: 32,
                           ),
                         ),
@@ -264,16 +262,16 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                   right: 0,
                   child: ScaleTransition(
                     alignment: Alignment.center,
-                    scale: Tween<double>(begin: 0.0, end: 1.0).animate(
-                        CurvedAnimation(
-                            parent: widget.tabIconData!.animationController!,
-                            curve: Interval(0.2, 1.0,
-                                curve: Curves.fastOutSlowIn))),
+                    scale: Tween<double>(begin: 0.0, end: 1.0)
+                        .animate(CurvedAnimation(
+                      parent: widget.tabIconData!.animationController!,
+                      curve: Interval(0.2, 1.0, curve: Curves.fastOutSlowIn),
+                    )),
                     child: Container(
                       width: 8,
                       height: 8,
                       decoration: BoxDecoration(
-                        color: FitnessAppTheme.nearlyDarkBlue,
+                        color: AppColors.primary,
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -294,7 +292,7 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                       width: 4,
                       height: 4,
                       decoration: BoxDecoration(
-                        color: FitnessAppTheme.nearlyDarkBlue,
+                        color: AppColors.primary,
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -315,7 +313,7 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                       width: 6,
                       height: 6,
                       decoration: BoxDecoration(
-                        color: FitnessAppTheme.nearlyDarkBlue,
+                        color: AppColors.primary,
                         shape: BoxShape.circle,
                       ),
                     ),

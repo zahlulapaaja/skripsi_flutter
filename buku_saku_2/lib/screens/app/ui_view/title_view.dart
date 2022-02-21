@@ -1,4 +1,4 @@
-import 'package:buku_saku_2/screens/home/fitness_app_theme.dart';
+import 'package:buku_saku_2/screens/app/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
 
 class TitleView extends StatelessWidget {

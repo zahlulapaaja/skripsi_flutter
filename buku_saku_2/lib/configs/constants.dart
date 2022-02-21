@@ -7,6 +7,7 @@ class AppConstants {
   static const double kMediumFontSize = 16;
   static const double kLargeFontSize = 20;
   static const double kHugeFontSize = 36;
+  static const String fontName = 'Open Sans';
 
   static const headerTextStyle = TextStyle(
       color: AppColors.black,

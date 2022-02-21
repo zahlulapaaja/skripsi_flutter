@@ -1,6 +1,6 @@
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/home/fitness_app_theme.dart';
-import 'package:buku_saku_2/screens/home/models/meals_list_data.dart';
+import 'package:buku_saku_2/screens/app/fitness_app_theme.dart';
+import 'package:buku_saku_2/screens/app/models/meals_list_data.dart';
 import 'package:buku_saku_2/main.dart';
 import 'package:flutter/material.dart';
 

@@ -1,6 +1,6 @@
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/home/fitness_app_home_screen.dart';
-// import 'package:buku_saku_2/screens/home/home.dart';
+import 'package:buku_saku_2/screens/app/app_screen.dart';
+// import 'package:buku_saku_2/screens/app/home.dart';
 import 'package:buku_saku_2/screens/sign_in/create_new_password_screen.dart';
 import 'package:buku_saku_2/screens/sign_in/reset_password_screen.dart';
 import 'package:buku_saku_2/screens/sign_in/verification_screen.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             Theme.of(context).textTheme.apply(bodyColor: AppColors.black),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: FitnessAppHomeScreen.id,
+      initialRoute: AppScreen.id,
       routes: {
         SignInScreen.id: (context) => const SignInScreen(),
         SignUpScreen.id: (context) => const SignUpScreen(),
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         CreateNewPasswordScreen.id: (context) => CreateNewPasswordScreen(),
 
         // Mulai Aplikasinya
-        FitnessAppHomeScreen.id: (context) => FitnessAppHomeScreen(),
+        AppScreen.id: (context) => AppScreen(),
       },
     );
   }
