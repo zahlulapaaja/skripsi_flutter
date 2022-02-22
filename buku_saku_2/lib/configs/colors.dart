@@ -12,7 +12,8 @@ class AppColors {
   static const Color warning = Color(0xFFEDC02C);
   static const Color success = Color(0xFF27B46E);
   static const Color info = Color(0xFFAFDDF7);
-  static const Color beige = Color(0xFFF3E2B3);
+  static const Color beige = Color(0xFFFEE4A7);
+  static const Color beigeDark = Color(0xFFBF931E);
 
   static const Color black = Color(0xFF1E1E1E);
   static const Color lightBlack = Color(0xFF616161);

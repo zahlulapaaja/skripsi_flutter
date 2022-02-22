@@ -2,7 +2,7 @@ import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
 import 'package:buku_saku_2/screens/app/training/training_screen.dart';
 import 'package:flutter/material.dart';
-import 'bottom_navigation_view/bottom_bar_view.dart';
+import 'components/bottom_bar_view.dart';
 import 'fitness_app_theme.dart';
 import 'my_diary/my_diary_screen.dart';
 import 'home/home_screen.dart';

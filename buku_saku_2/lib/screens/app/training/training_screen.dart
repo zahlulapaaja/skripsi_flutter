@@ -1,6 +1,6 @@
 import 'package:buku_saku_2/screens/app/ui_view/area_list_view.dart';
 import 'package:buku_saku_2/screens/app/ui_view/running_view.dart';
-import 'package:buku_saku_2/screens/app/ui_view/title_view.dart';
+import 'package:buku_saku_2/screens/app/components/title_view.dart';
 import 'package:buku_saku_2/screens/app/ui_view/workout_view.dart';
 import 'package:flutter/material.dart';
 

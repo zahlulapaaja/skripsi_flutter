@@ -60,7 +60,7 @@ class HeaderWithSearchbox extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 16),
                         child: Center(
-                          child: SvgPicture.asset("assets/icons/logo.svg"),
+                          child: Image.asset("assets/icons/logo.png"),
                         ),
                       )
                     ],

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/app/ui_view/body_measurement.dart';
+import 'package:buku_saku_2/screens/app/components/card_grid_view.dart';
 import 'package:buku_saku_2/screens/app/ui_view/glass_view.dart';
-import 'package:buku_saku_2/screens/app/home/mediterranean_diet_view.dart';
-import 'package:buku_saku_2/screens/app/ui_view/title_view.dart';
-import 'package:buku_saku_2/screens/app/my_diary/meals_list_view.dart';
+import 'package:buku_saku_2/screens/app/home/components/header_with_searchbox.dart';
+import 'package:buku_saku_2/screens/app/components/title_view.dart';
+import 'package:buku_saku_2/screens/app/home/components/detail_angka_kredit.dart';
 import 'package:buku_saku_2/screens/app/my_diary/water_view.dart';
 
 class MyDiaryScreen extends StatefulWidget {
@@ -62,17 +62,6 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     const int count = 9;
 
     listViews.add(
-      TitleView(
-        titleTxt: 'Mediterranean diet',
-        subTxt: 'Details',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-                Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-    listViews.add(
       HeaderWithSearchbox(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
@@ -81,10 +70,11 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         animationController: widget.animationController!,
       ),
     );
+
     listViews.add(
       TitleView(
-        titleTxt: 'Meals today',
-        subTxt: 'Customize',
+        titleTxt: 'Angka Kredits',
+        subTxt: 'Details',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve:
@@ -94,30 +84,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     );
 
     listViews.add(
-      MealsListView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-            CurvedAnimation(
-                parent: widget.animationController!,
-                curve: Interval((1 / count) * 3, 1.0,
-                    curve: Curves.fastOutSlowIn))),
-        mainScreenAnimationController: widget.animationController,
-      ),
-    );
-
-    listViews.add(
-      TitleView(
-        titleTxt: 'Body measurement',
-        subTxt: 'Today',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      BodyMeasurementView(
+      DetailAngkaKredit(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve:

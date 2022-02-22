@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/app/ui_view/body_measurement.dart';
-import 'package:buku_saku_2/screens/app/ui_view/glass_view.dart';
-import 'package:buku_saku_2/screens/app/home/mediterranean_diet_view.dart';
-import 'package:buku_saku_2/screens/app/ui_view/title_view.dart';
-import 'package:buku_saku_2/screens/app/my_diary/meals_list_view.dart';
-import 'package:buku_saku_2/screens/app/my_diary/water_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:buku_saku_2/screens/app/components/title_view.dart';
+import 'package:buku_saku_2/screens/app/home/components/header_with_searchbox.dart';
+import 'package:buku_saku_2/screens/app/home/components/detail_angka_kredit.dart';
+import 'package:buku_saku_2/screens/app/components/card_grid_view.dart';
+import 'package:buku_saku_2/screens/app/ui_view/glass_view.dart';
+import 'package:buku_saku_2/screens/app/my_diary/water_view.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'home_screen';
@@ -74,8 +74,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     listViews.add(
       TitleView(
-        titleTxt: 'Meals today',
-        subTxt: 'Customize',
+        titleTxt: 'Angka Kredit',
+        subTxt: 'Details',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve:
@@ -85,20 +85,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     listViews.add(
-      MealsListView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-            CurvedAnimation(
-                parent: widget.animationController!,
-                curve: Interval((1 / count) * 3, 1.0,
-                    curve: Curves.fastOutSlowIn))),
-        mainScreenAnimationController: widget.animationController,
+      DetailAngkaKredit(
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController!,
+            curve:
+                Interval((1 / count) * 1, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController!,
       ),
     );
 
     listViews.add(
       TitleView(
-        titleTxt: 'Body measurement',
-        subTxt: 'Today',
+        titleTxt: 'Catatan Terbaru',
+        subTxt: 'Details',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve:
@@ -108,45 +107,39 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     listViews.add(
-      BodyMeasurementView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
+      CardGridView(),
     );
-    listViews.add(
-      TitleView(
-        titleTxt: 'Water',
-        subTxt: 'Aqua SmartBottle',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-                Interval((1 / count) * 6, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      WaterView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-            CurvedAnimation(
-                parent: widget.animationController!,
-                curve: Interval((1 / count) * 7, 1.0,
-                    curve: Curves.fastOutSlowIn))),
-        mainScreenAnimationController: widget.animationController!,
-      ),
-    );
-    listViews.add(
-      GlassView(
-          animation: Tween<double>(begin: 0.0, end: 1.0).animate(
-              CurvedAnimation(
-                  parent: widget.animationController!,
-                  curve: Interval((1 / count) * 8, 1.0,
-                      curve: Curves.fastOutSlowIn))),
-          animationController: widget.animationController!),
-    );
+    // listViews.add(
+    //   TitleView(
+    //     titleTxt: 'Water',
+    //     subTxt: 'Aqua SmartBottle',
+    //     animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+    //         parent: widget.animationController!,
+    //         curve:
+    //             Interval((1 / count) * 6, 1.0, curve: Curves.fastOutSlowIn))),
+    //     animationController: widget.animationController!,
+    //   ),
+    // );
+    //
+    // listViews.add(
+    //   WaterView(
+    //     mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+    //         CurvedAnimation(
+    //             parent: widget.animationController!,
+    //             curve: Interval((1 / count) * 7, 1.0,
+    //                 curve: Curves.fastOutSlowIn))),
+    //     mainScreenAnimationController: widget.animationController!,
+    //   ),
+    // );
+    // listViews.add(
+    //   GlassView(
+    //       animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+    //           CurvedAnimation(
+    //               parent: widget.animationController!,
+    //               curve: Interval((1 / count) * 8, 1.0,
+    //                   curve: Curves.fastOutSlowIn))),
+    //       animationController: widget.animationController!),
+    // );
   }
 
   Future<bool> getData() async {
