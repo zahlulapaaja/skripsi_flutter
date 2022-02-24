@@ -77,7 +77,7 @@ class FormFieldTemplate extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 10),
           child: Text(
             headingText,
-            style: AppConstants.textFieldHeading,
+            style: AppConstants.textFieldHeader,
           ),
         ),
         Container(

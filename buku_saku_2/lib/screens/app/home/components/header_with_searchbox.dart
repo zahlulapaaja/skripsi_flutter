@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -42,18 +43,13 @@ class HeaderWithSearchbox extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Expanded(
+                      const Expanded(
                         child: Padding(
-                          padding:
-                              const EdgeInsets.only(left: 8, right: 8, top: 4),
+                          padding: EdgeInsets.only(left: 8, right: 8),
                           child: Text(
                             'Buku Saku Prakom',
                             textAlign: TextAlign.left,
-                            style:
-                                Theme.of(context).textTheme.headline5?.copyWith(
-                                      color: AppColors.offWhite,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                            style: AppConstants.kHeaderTextStyle,
                           ),
                         ),
                       ),
@@ -94,15 +90,10 @@ class HeaderWithSearchbox extends StatelessWidget {
                   Expanded(
                     child: TextField(
                       onChanged: (value) {},
-                      decoration: InputDecoration(
-                        hintText: "Masukkan kata kunci...",
-                        hintStyle: TextStyle(
-                          color: AppColors.black.withOpacity(0.5),
-                        ),
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        // suffixIcon: SvgPicture.asset("assets/icons/search.svg"),
-                      ),
+                      autocorrect: false,
+                      enableSuggestions: false,
+                      decoration: AppConstants.kTextFieldDecoration,
+                      style: AppConstants.kTextFieldTextStyle,
                     ),
                   ),
                   SvgPicture.asset("assets/icons/search.svg"),

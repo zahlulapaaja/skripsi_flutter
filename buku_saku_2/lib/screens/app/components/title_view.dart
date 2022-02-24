@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 class TitleView extends StatelessWidget {
   final String titleTxt;
-  final String subTxt;
+  final bool detailBtn;
   final AnimationController? animationController;
   final Animation<double>? animation;
 
   const TitleView(
       {Key? key,
       this.titleTxt = "",
-      this.subTxt = "",
+      this.detailBtn = false,
       this.animationController,
       this.animation})
       : super(key: key);
@@ -34,35 +34,27 @@ class TitleView extends StatelessWidget {
                     child: Text(
                       titleTxt,
                       textAlign: TextAlign.left,
-                      style: const TextStyle(
-                        fontFamily: AppConstants.fontName,
-                        fontWeight: FontWeight.w700,
-                        fontSize: AppConstants.kMediumFontSize + 2,
-                        letterSpacing: 0.5,
-                        color: AppColors.lightBlack,
-                      ),
+                      style: AppConstants.kTitleViewTextStyle,
                     ),
                   ),
-                  InkWell(
-                    highlightColor: Colors.transparent,
-                    borderRadius: const BorderRadius.all(Radius.circular(4.0)),
-                    onTap: () {},
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 2),
-                      decoration: const BoxDecoration(
-                        color: AppColors.primaryLight,
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      ),
-                      child: Text(
-                        subTxt,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontFamily: AppConstants.fontName,
-                          fontWeight: FontWeight.normal,
-                          fontSize: AppConstants.kSmallFontSize,
-                          letterSpacing: 0.5,
-                          color: AppColors.offWhite,
+                  Opacity(
+                    opacity: detailBtn ? 1 : 0,
+                    child: InkWell(
+                      highlightColor: Colors.transparent,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(4.0)),
+                      onTap: () {},
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 2),
+                        decoration: const BoxDecoration(
+                          color: AppColors.primaryLight,
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                        ),
+                        child: const Text(
+                          'Details',
+                          textAlign: TextAlign.center,
+                          style: AppConstants.kDetailBtnTextStyle,
                         ),
                       ),
                     ),

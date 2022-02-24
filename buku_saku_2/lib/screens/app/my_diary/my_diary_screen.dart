@@ -74,7 +74,6 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     listViews.add(
       TitleView(
         titleTxt: 'Angka Kredits',
-        subTxt: 'Details',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve:
@@ -95,7 +94,6 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     listViews.add(
       TitleView(
         titleTxt: 'Water',
-        subTxt: 'Aqua SmartBottle',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve:
@@ -268,7 +266,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                     style: TextStyle(
                                       fontFamily: AppConstants.fontName,
                                       fontWeight: FontWeight.normal,
-                                      fontSize: AppConstants.kMediumFontSize,
+                                      fontSize: AppConstants.kNormalFontSize,
                                       letterSpacing: -0.2,
                                       color: AppColors.black,
                                     ),

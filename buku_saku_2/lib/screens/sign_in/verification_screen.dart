@@ -218,7 +218,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                           style: TextStyle(
                             color: AppColors.black,
                             fontWeight: FontWeight.bold,
-                            fontSize: AppConstants.kMediumFontSize,
+                            fontSize: AppConstants.kNormalFontSize,
                           ),
                         ),
                       ),

@@ -86,7 +86,7 @@ class DetailAngkaKredit extends StatelessWidget {
                                                       AppConstants.fontName,
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: AppConstants
-                                                      .kMediumFontSize,
+                                                      .kNormalFontSize,
                                                   letterSpacing: -0.1,
                                                   color: AppColors.lightBlack
                                                       .withOpacity(0.5),
@@ -114,7 +114,8 @@ class DetailAngkaKredit extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(23.541 * animation!.value)}',
+                                                    (23.541 * animation!.value)
+                                                        .toStringAsFixed(3),
                                                     textAlign: TextAlign.center,
                                                     style: const TextStyle(
                                                       fontFamily:
@@ -122,7 +123,7 @@ class DetailAngkaKredit extends StatelessWidget {
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       fontSize: AppConstants
-                                                          .kMediumFontSize,
+                                                          .kNormalFontSize,
                                                       color: AppColors.black,
                                                     ),
                                                   ),
@@ -166,7 +167,7 @@ class DetailAngkaKredit extends StatelessWidget {
                                                       AppConstants.fontName,
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: AppConstants
-                                                      .kMediumFontSize,
+                                                      .kNormalFontSize,
                                                   letterSpacing: -0.1,
                                                   color: AppColors.lightBlack
                                                       .withOpacity(0.5),
@@ -194,7 +195,8 @@ class DetailAngkaKredit extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(23.541 * animation!.value)}',
+                                                    (23.541 * animation!.value)
+                                                        .toStringAsFixed(3),
                                                     textAlign: TextAlign.center,
                                                     style: const TextStyle(
                                                       fontFamily:
@@ -202,7 +204,7 @@ class DetailAngkaKredit extends StatelessWidget {
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       fontSize: AppConstants
-                                                          .kMediumFontSize,
+                                                          .kNormalFontSize,
                                                       color: AppColors.black,
                                                     ),
                                                   ),
@@ -246,7 +248,8 @@ class DetailAngkaKredit extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            '${(75.999 * animation!.value)}',
+                                            (75.999 * animation!.value)
+                                                .toStringAsFixed(3),
                                             textAlign: TextAlign.center,
                                             style: const TextStyle(
                                               fontFamily: AppConstants.fontName,

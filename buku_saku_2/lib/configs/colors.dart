@@ -16,9 +16,9 @@ class AppColors {
   static const Color beigeDark = Color(0xFFBF931E);
 
   static const Color black = Color(0xFF1E1E1E);
-  static const Color lightBlack = Color(0xFF616161);
-  static const Color grey = Color(0xFFAFB1B2);
-  static const Color lightGrey = Color(0xFFCCCCCC);
+  static const Color lightBlack = Color(0xFF2E2F2F);
+  static const Color grey = Color(0xFF616161);
+  static const Color lightGrey = Color(0xFFAFB1B2);
   static const Color midWhite = Color(0xFFF1F1F1);
   static const Color offWhite = Color(0xFFF8F8F8);
 

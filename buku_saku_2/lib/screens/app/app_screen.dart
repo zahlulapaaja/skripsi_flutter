@@ -1,5 +1,6 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
+import 'package:buku_saku_2/screens/app/note_list/note_list_screen.dart';
 import 'package:buku_saku_2/screens/app/training/training_screen.dart';
 import 'package:flutter/material.dart';
 import 'components/bottom_bar_view.dart';
@@ -105,7 +106,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                 }
                 setState(() {
                   tabBody =
-                      TrainingScreen(animationController: animationController);
+                      NoteListScreen(animationController: animationController);
                 });
               });
             }

@@ -181,7 +181,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                   'Continue with Google',
                                   style: TextStyle(
                                     color: AppColors.black,
-                                    fontSize: AppConstants.kMediumFontSize,
+                                    fontSize: AppConstants.kNormalFontSize,
                                   ),
                                 ),
                               ],

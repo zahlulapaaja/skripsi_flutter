@@ -108,7 +108,7 @@ class CenterNextButton extends StatelessWidget {
                                     'Sign Up',
                                     style: TextStyle(
                                       color: AppColors.offWhite,
-                                      fontSize: AppConstants.kMediumFontSize,
+                                      fontSize: AppConstants.kNormalFontSize,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
@@ -160,7 +160,7 @@ class CenterNextButton extends StatelessWidget {
                       'Login',
                       style: TextStyle(
                         color: AppColors.primaryDark,
-                        fontSize: AppConstants.kMediumFontSize,
+                        fontSize: AppConstants.kNormalFontSize,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
