@@ -75,6 +75,41 @@ class AppConstants {
     fontWeight: FontWeight.normal,
   );
 
+  /// Dictionary
+
+  static const kLargeTitleTextStyle = TextStyle(
+    fontFamily: AppConstants.fontName,
+    color: AppColors.black,
+    fontSize: AppConstants.kLargeFontSize,
+    fontWeight: FontWeight.w700,
+  );
+
+  static const kDictTitleTextStyle = TextStyle(
+    fontFamily: AppConstants.fontName,
+    color: AppColors.grey,
+    fontSize: AppConstants.kSmallFontSize,
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle kDictionaryTextStyle(
+      {FontWeight? fontWeight = FontWeight.w500}) {
+    return TextStyle(
+      fontFamily: AppConstants.fontName,
+      color: AppColors.black,
+      fontSize: AppConstants.kSmallFontSize,
+      fontWeight: fontWeight,
+    );
+  }
+
+  static ButtonStyle kDictBtnStyle = TextButton.styleFrom(
+    backgroundColor: AppColors.info,
+    padding: const EdgeInsets.all(10.0),
+    alignment: Alignment.center,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+  );
+
   /// Text Field
   static const kTextFieldDecoration = InputDecoration(
     hintText: "Masukkan kata kunci...",
@@ -98,12 +133,14 @@ class AppConstants {
   );
 
   static const textFieldHeader = TextStyle(
-      color: AppColors.black,
-      fontSize: AppConstants.kNormalFontSize,
-      fontWeight: FontWeight.w500);
+    color: AppColors.black,
+    fontSize: AppConstants.kNormalFontSize,
+    fontWeight: FontWeight.w500,
+  );
 
   static const textFieldHintStyle = TextStyle(
-      color: AppColors.lightBlack,
-      fontSize: AppConstants.kSmallFontSize,
-      fontWeight: FontWeight.w300);
+    color: AppColors.lightBlack,
+    fontSize: AppConstants.kSmallFontSize,
+    fontWeight: FontWeight.w300,
+  );
 }

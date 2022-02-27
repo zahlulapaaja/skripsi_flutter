@@ -1,25 +1,22 @@
-import 'package:buku_saku_2/screens/app/components/searchbox.dart';
-import 'package:buku_saku_2/screens/app/note_list/components/multi_title_view.dart';
-import 'package:buku_saku_2/screens/app/note_list/components/pinned_card_grid_view.dart';
+import 'package:buku_saku_2/screens/app/dictionary/components/menu_unsur.dart';
 import 'package:flutter/material.dart';
-import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:buku_saku_2/configs/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:buku_saku_2/screens/app/components/title_view.dart';
-import 'package:buku_saku_2/screens/app/home/components/header_with_searchbox.dart';
-import 'package:buku_saku_2/screens/app/home/components/detail_angka_kredit.dart';
-import 'package:buku_saku_2/screens/app/components/card_grid_view.dart';
+import 'package:buku_saku_2/screens/app/components/searchbox.dart';
+import 'package:buku_saku_2/screens/app/dictionary/components/menu_kamus.dart';
 
-class NoteListScreen extends StatefulWidget {
-  static const id = 'note_list_screen';
+class DictionaryScreen extends StatefulWidget {
+  static const id = 'dictionary_screen';
   final AnimationController? animationController;
-  const NoteListScreen({Key? key, this.animationController}) : super(key: key);
+  const DictionaryScreen({Key? key, this.animationController})
+      : super(key: key);
 
   @override
-  _NoteListScreenState createState() => _NoteListScreenState();
+  _DictionaryScreenState createState() => _DictionaryScreenState();
 }
 
-class _NoteListScreenState extends State<NoteListScreen>
+class _DictionaryScreenState extends State<DictionaryScreen>
     with TickerProviderStateMixin {
   Animation<double>? topBarAnimation;
 
@@ -69,37 +66,12 @@ class _NoteListScreenState extends State<NoteListScreen>
     );
 
     listViews.add(
-      TitleView(
-        titleTxt: 'Pinned',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      PinnedCardGridView(),
-    );
-
-    listViews.add(
       SizedBox(height: 20),
     );
 
     listViews.add(
-      MultiTitleView(
-        titleTxt: ['Catatan Terbaru', 'Kategori', 'Semua Catatan'],
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      CardGridView(),
+      // MenuKamus(),
+      MenuUnsur(),
     );
   }
 
@@ -199,7 +171,7 @@ class _NoteListScreenState extends State<NoteListScreen>
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
-                                'Daftar Catatan',
+                                'Kamus',
                                 textAlign: TextAlign.center,
                                 style: AppConstants.kNavHeaderTextStyle,
                               ),

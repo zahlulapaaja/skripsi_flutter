@@ -1,11 +1,9 @@
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
-import 'package:buku_saku_2/screens/app/note_list/note_list_screen.dart';
-import 'package:buku_saku_2/screens/app/training/training_screen.dart';
+import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
 import 'package:flutter/material.dart';
 import 'components/bottom_bar_view.dart';
-import 'fitness_app_theme.dart';
-import 'my_diary/my_diary_screen.dart';
 import 'home/home_screen.dart';
 
 class AppScreen extends StatefulWidget {
@@ -89,7 +87,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             print('tambah catatan');
           },
           changeIndex: (int index) {
-            if (index == 0 || index == 2) {
+            if (index == 0) {
               animationController?.reverse().then<dynamic>((data) {
                 if (!mounted) {
                   return;
@@ -99,14 +97,24 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                       HomeScreen(animationController: animationController);
                 });
               });
-            } else if (index == 1 || index == 3) {
+            } else if (index == 1) {
               animationController?.reverse().then<dynamic>((data) {
                 if (!mounted) {
                   return;
                 }
                 setState(() {
                   tabBody =
-                      NoteListScreen(animationController: animationController);
+                      NotesScreen(animationController: animationController);
+                });
+              });
+            } else if (index == 2) {
+              animationController?.reverse().then<dynamic>((data) {
+                if (!mounted) {
+                  return;
+                }
+                setState(() {
+                  tabBody = DictionaryScreen(
+                      animationController: animationController);
                 });
               });
             }
