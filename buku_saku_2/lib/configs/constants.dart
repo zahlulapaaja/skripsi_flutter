@@ -77,6 +77,13 @@ class AppConstants {
 
   /// Dictionary
 
+  static const kNormalTitleTextStyle = TextStyle(
+    fontFamily: AppConstants.fontName,
+    color: AppColors.black,
+    fontSize: AppConstants.kNormalFontSize,
+    fontWeight: FontWeight.w700,
+  );
+
   static const kLargeTitleTextStyle = TextStyle(
     fontFamily: AppConstants.fontName,
     color: AppColors.black,

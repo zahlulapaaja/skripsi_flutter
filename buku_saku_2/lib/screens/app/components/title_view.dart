@@ -7,14 +7,16 @@ class TitleView extends StatelessWidget {
   final bool detailBtn;
   final AnimationController? animationController;
   final Animation<double>? animation;
+  final Function? onTap;
 
-  const TitleView(
-      {Key? key,
-      this.titleTxt = "",
-      this.detailBtn = false,
-      this.animationController,
-      this.animation})
-      : super(key: key);
+  const TitleView({
+    Key? key,
+    this.titleTxt = "",
+    this.detailBtn = false,
+    this.animationController,
+    this.animation,
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,17 +46,21 @@ class TitleView extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.all(Radius.circular(4.0)),
                       onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 2),
-                        decoration: const BoxDecoration(
-                          color: AppColors.primaryLight,
-                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                        ),
-                        child: const Text(
-                          'Details',
-                          textAlign: TextAlign.center,
-                          style: AppConstants.kDetailBtnTextStyle,
+                      child: GestureDetector(
+                        onTap: onTap!(),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 2),
+                          decoration: const BoxDecoration(
+                            color: AppColors.primaryLight,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)),
+                          ),
+                          child: const Text(
+                            'Details',
+                            textAlign: TextAlign.center,
+                            style: AppConstants.kDetailBtnTextStyle,
+                          ),
                         ),
                       ),
                     ),

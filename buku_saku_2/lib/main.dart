@@ -11,15 +11,17 @@ import 'package:buku_saku_2/screens/introduction_animation/introduction_animatio
 import 'package:buku_saku_2/screens/sign_in/sign_in_screen.dart';
 import 'package:buku_saku_2/screens/sign_in/sign_up_screen.dart';
 
-void main() => runApp(const MyApp());
+final navigatorKey = GlobalKey<NavigatorState>();
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Buku Saku Prakom',
+      navigatorKey: navigatorKey,
       theme: Theme.of(context).copyWith(
         // Define the default colors
         primaryColor: AppColors.primary,

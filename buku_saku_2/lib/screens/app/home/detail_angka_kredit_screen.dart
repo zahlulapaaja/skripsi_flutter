@@ -1,24 +1,24 @@
-import 'package:buku_saku_2/main.dart';
-import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
+import 'package:buku_saku_2/configs/components.dart';
+import 'package:buku_saku_2/screens/app/home/components/chart_angka_kredit.dart';
+import 'package:buku_saku_2/screens/app/home/components/chart_angka_kredit_terkumpul.dart';
+import 'package:buku_saku_2/screens/app/home/components/informasi_jenjang.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:buku_saku_2/screens/app/components/title_view.dart';
-import 'package:buku_saku_2/screens/app/home/components/header_with_searchbox.dart';
-import 'package:buku_saku_2/screens/app/home/components/detail_angka_kredit.dart';
-import 'package:buku_saku_2/screens/app/components/card_grid_view.dart';
 
-class HomeScreen extends StatefulWidget {
-  static const id = 'home_screen';
+class DetailAngkaKreditScreen extends StatefulWidget {
+  static const id = 'detail_angka_kredit_screen';
   final AnimationController? animationController;
-  const HomeScreen({Key? key, this.animationController}) : super(key: key);
+  const DetailAngkaKreditScreen({Key? key, this.animationController})
+      : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _DetailAngkaKreditScreenState createState() =>
+      _DetailAngkaKreditScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+class _DetailAngkaKreditScreenState extends State<DetailAngkaKreditScreen>
+    with TickerProviderStateMixin {
   Animation<double>? topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
@@ -63,7 +63,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     const int count = 9;
 
     listViews.add(
-      HeaderWithSearchbox(
+      ChartAngkaKredit(
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController!,
+            curve: const Interval((1 / count) * 1, 1.0,
+                curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController!,
+      ),
+    );
+    listViews.add(
+      ChartAngkaKreditTerkumpul(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve: const Interval((1 / count) * 1, 1.0,
@@ -73,20 +82,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     listViews.add(
-      TitleView(
-        titleTxt: 'Angka Kredit',
-        detailBtn: true,
-        onTap: () {},
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 2, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      DetailAngkaKredit(
+      InformasiJenjang(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve: const Interval((1 / count) * 1, 1.0,
@@ -96,19 +92,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     listViews.add(
-      TitleView(
-        titleTxt: 'Catatan Terbaru',
-        detailBtn: true,
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 4, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
+      Row(
+        children: [
+          Expanded(child: SizedBox()),
+          Expanded(
+            child: BlueRoundedButton(
+              buttonTitle: 'update',
+              onPressed: () {},
+            ),
+          ),
+          SizedBox(width: 14),
+        ],
       ),
-    );
-
-    listViews.add(
-      const CardGridView(),
     );
   }
 
@@ -205,13 +200,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Opacity(
-                                  opacity: topBarOpacity,
-                                  child: const Text(
-                                    'Buku Saku Prakom',
-                                    textAlign: TextAlign.center,
-                                    style: AppConstants.kNavHeaderTextStyle,
-                                  ),
+                                child: const Text(
+                                  'Detail Angka Kredit',
+                                  textAlign: TextAlign.center,
+                                  style: AppConstants.kNavHeaderTextStyle,
                                 ),
                               ),
                             ),
