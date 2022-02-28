@@ -199,11 +199,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            SvgPicture.asset(
-                              "assets/icons/burger.svg",
-                              color: Colors.white,
-                              semanticsLabel: 'Hamburger icons',
-                            ),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),

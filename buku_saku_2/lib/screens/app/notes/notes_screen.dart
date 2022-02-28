@@ -225,11 +225,6 @@ class _NotesScreenState extends State<NotesScreen>
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          SvgPicture.asset(
-                            "assets/icons/burger.svg",
-                            color: Colors.white,
-                            semanticsLabel: 'Hamburger icons',
-                          ),
                           const Expanded(
                             child: Padding(
                               padding: EdgeInsets.all(8.0),

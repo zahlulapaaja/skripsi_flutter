@@ -161,13 +161,8 @@ class _DictionaryScreenState extends State<DictionaryScreen>
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          SvgPicture.asset(
-                            "assets/icons/burger.svg",
-                            color: Colors.white,
-                            semanticsLabel: 'Hamburger icons',
-                          ),
-                          const Expanded(
+                        children: const <Widget>[
+                          Expanded(
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(

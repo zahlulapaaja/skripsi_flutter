@@ -1,10 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
+import 'package:buku_saku_2/screens/app/drawer_user_controller.dart';
+import 'package:buku_saku_2/screens/app/home_drawer.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
 import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:buku_saku_2/screens/app/home/home_screen.dart';
 import 'components/bottom_bar_view.dart';
-import 'home/home_screen.dart';
 
 class AppScreen extends StatefulWidget {
   static const id = 'app_screen';
@@ -17,9 +19,9 @@ class AppScreen extends StatefulWidget {
 class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
   AnimationController? animationController;
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
+  DrawerIndex? drawerIndex;
 
   Widget tabBody = Container(
-    // warna bakground default, cuma kontainer kosong, klo udh bikin halaman, container ini ga guna
     color: AppColors.offWhite,
   );
 
@@ -34,6 +36,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 600),
       vsync: this,
     );
+
     tabBody = HomeScreen(animationController: animationController);
     super.initState();
   }
@@ -56,11 +59,19 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             if (!snapshot.hasData) {
               return const SizedBox();
             } else {
-              return Stack(
-                children: <Widget>[
-                  tabBody,
-                  bottomBar(),
-                ],
+              return DrawerUserController(
+                screenIndex: drawerIndex,
+                drawerWidth: MediaQuery.of(context).size.width * 0.75,
+                onDrawerCall: (DrawerIndex drawerIndexData) {
+                  changeIndex(drawerIndexData);
+                  //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
+                },
+                screenView: Stack(
+                  children: <Widget>[
+                    tabBody,
+                    bottomBar(),
+                  ],
+                ),
               );
             }
           },
@@ -71,7 +82,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
 
   Future<bool> getData() async {
     // TODO: ini cuma delayed buatan, jangan lupa dihapus nanti
-    await Future<dynamic>.delayed(const Duration(milliseconds: 200));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 50));
     return true;
   }
 
@@ -122,5 +133,31 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
         ),
       ],
     );
+  }
+
+  void changeIndex(DrawerIndex drawerIndexData) {
+    if (drawerIndex != drawerIndexData) {
+      drawerIndex = drawerIndexData;
+      if (drawerIndex == DrawerIndex.HOME) {
+        print('home');
+        setState(() {
+          // screenView = const MyHomePage();
+        });
+      } else if (drawerIndex == DrawerIndex.Help) {
+        setState(() {
+          // screenView = HelpScreen();
+        });
+      } else if (drawerIndex == DrawerIndex.FeedBack) {
+        setState(() {
+          // screenView = FeedbackScreen();
+        });
+      } else if (drawerIndex == DrawerIndex.Invite) {
+        setState(() {
+          // screenView = InviteFriend();
+        });
+      } else {
+        //do in your way......
+      }
+    }
   }
 }

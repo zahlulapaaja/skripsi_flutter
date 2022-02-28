@@ -33,6 +33,7 @@ flutter:
   assets:
     - assets/introduction/
     - assets/icons/
+    - assets/images/
   fonts:
     - family: Open Sans
       fonts:
