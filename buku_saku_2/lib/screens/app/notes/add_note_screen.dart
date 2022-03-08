@@ -1,7 +1,15 @@
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/batasan_penilaian.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/deskripsi_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/detail_butir.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/menu_unsur.dart';
+import 'package:buku_saku_2/screens/app/notes/components/checkbox_bukti.dart';
+import 'package:buku_saku_2/screens/app/notes/components/date_picker.dart';
+import 'package:buku_saku_2/screens/app/notes/components/dropdown_menu.dart';
+import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
+import 'package:buku_saku_2/screens/app/notes/components/jumlah_kegiatan.dart';
+import 'package:buku_saku_2/screens/app/notes/components/textarea.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -10,17 +18,18 @@ import 'package:buku_saku_2/screens/app/components/searchbox.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/menu_kamus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class DetailScreen extends StatefulWidget {
-  static const id = 'detail_screen';
-  const DetailScreen({Key? key}) : super(key: key);
+class AddNoteScreen extends StatefulWidget {
+  static const id = 'add_note_screen';
+  const AddNoteScreen({Key? key}) : super(key: key);
 
   @override
-  _DetailScreenState createState() => _DetailScreenState();
+  _AddNoteScreenState createState() => _AddNoteScreenState();
 }
 
-class _DetailScreenState extends State<DetailScreen> {
+class _AddNoteScreenState extends State<AddNoteScreen> {
   List<Widget> listViews = <Widget>[];
-// TODO : Kalo bisa bikin kayak introduction, jadi pake stack aja dibanding harus bikin banyak screen
+
+  // TODO : OTW bikin screen detail catatan (kalo bisa sih beda sama screen edit/tambah nya)
 
   @override
   void initState() {
@@ -30,17 +39,23 @@ class _DetailScreenState extends State<DetailScreen> {
 
   void addAllListData() {
     listViews.add(
-      SizedBox(height: 20),
+      DropdownMenu(),
     );
 
     listViews.add(
-      DetailButir(),
+      DatePicker(),
     );
+
     listViews.add(
-      DeskripsiKegiatan(),
+      TextArea(),
     );
+
     listViews.add(
-      BatasanPenilaian(),
+      JumlahKegiatan(),
+    );
+
+    listViews.add(
+      CheckboxBukti(),
     );
   }
 
@@ -55,14 +70,6 @@ class _DetailScreenState extends State<DetailScreen> {
       color: AppColors.offWhite,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        floatingActionButton: FloatingActionButton(
-          heroTag: 'button2tag',
-          onPressed: () {
-            print('tambah catatan');
-          },
-          backgroundColor: AppColors.primary,
-          child: Icon(FontAwesomeIcons.plus),
-        ),
         body: Stack(
           children: <Widget>[
             getMainListViewUI(),
@@ -139,9 +146,27 @@ class _DetailScreenState extends State<DetailScreen> {
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          'Detail Kamus',
+                          'Tambah Catatan',
                           textAlign: TextAlign.center,
                           style: AppConstants.kNavHeaderTextStyle,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        print('simpan catatan');
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 2),
+                        decoration: const BoxDecoration(
+                          color: AppColors.primaryLight,
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                        ),
+                        child: const Text(
+                          'Simpan',
+                          textAlign: TextAlign.center,
+                          style: AppConstants.kDetailBtnTextStyle,
                         ),
                       ),
                     ),

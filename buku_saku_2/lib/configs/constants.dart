@@ -139,15 +139,23 @@ class AppConstants {
     fontWeight: FontWeight.normal,
   );
 
-  static const textFieldHeader = TextStyle(
+  static const kTextFieldHeader = TextStyle(
     color: AppColors.black,
     fontSize: AppConstants.kNormalFontSize,
     fontWeight: FontWeight.w500,
   );
 
-  static const textFieldHintStyle = TextStyle(
+  static const kTextFieldHintStyle = TextStyle(
     color: AppColors.lightBlack,
     fontSize: AppConstants.kSmallFontSize,
     fontWeight: FontWeight.w300,
+  );
+
+  static const kFieldLabel = TextStyle(
+    fontFamily: AppConstants.fontName,
+    color: AppColors.grey,
+    fontSize: AppConstants.kSmallFontSize,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 0.5,
   );
 }

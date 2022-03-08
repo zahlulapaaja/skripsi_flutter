@@ -10,17 +10,18 @@ import 'package:buku_saku_2/screens/app/components/searchbox.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/menu_kamus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class DetailScreen extends StatefulWidget {
-  static const id = 'detail_screen';
-  const DetailScreen({Key? key}) : super(key: key);
+class NoteDetailScreen extends StatefulWidget {
+  static const id = 'note_detail_screen';
+  const NoteDetailScreen({Key? key}) : super(key: key);
 
   @override
-  _DetailScreenState createState() => _DetailScreenState();
+  _NoteDetailScreenState createState() => _NoteDetailScreenState();
 }
 
-class _DetailScreenState extends State<DetailScreen> {
+class _NoteDetailScreenState extends State<NoteDetailScreen> {
   List<Widget> listViews = <Widget>[];
-// TODO : Kalo bisa bikin kayak introduction, jadi pake stack aja dibanding harus bikin banyak screen
+
+  // TODO : OTW bikin screen detail catatan (kalo bisa sih beda sama screen edit/tambah nya)
 
   @override
   void initState() {
@@ -56,7 +57,7 @@ class _DetailScreenState extends State<DetailScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         floatingActionButton: FloatingActionButton(
-          heroTag: 'button2tag',
+          heroTag: 'button3tag',
           onPressed: () {
             print('tambah catatan');
           },
@@ -139,7 +140,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          'Detail Kamus',
+                          'Detail Catatan',
                           textAlign: TextAlign.center,
                           style: AppConstants.kNavHeaderTextStyle,
                         ),

@@ -76,7 +76,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       TitleView(
         titleTxt: 'Angka Kredit',
         detailBtn: true,
-        onTap: () {},
+        onTap: () {
+          print(
+              'tombol detail ditekan, harusnya pindah ke screen detail angka kredit, tapi masih belom tau gimana');
+        },
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve: const Interval((1 / count) * 2, 1.0,

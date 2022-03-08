@@ -57,6 +57,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  dropdown_search:
+    dependency: "direct main"
+    description:
+      name: dropdown_search
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -149,6 +156,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
+  number_inc_dec:
+    dependency: "direct main"
+    description:
+      name: number_inc_dec
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.0"
   path:
     dependency: transitive
     description:

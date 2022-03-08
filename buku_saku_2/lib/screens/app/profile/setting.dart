@@ -56,6 +56,7 @@ class _SettingScreenState extends State<SettingScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         floatingActionButton: FloatingActionButton(
+          heroTag: 'button4tag',
           onPressed: () {
             print('tambah catatan');
           },

@@ -1,4 +1,6 @@
 import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
+import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
+import 'package:buku_saku_2/screens/app/notes/note_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
@@ -97,6 +99,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
           tabIconsList: tabIconsList,
           addClick: () {
             print('tambah catatan');
+            Navigator.pushNamed(context, AddNoteScreen.id);
           },
           changeIndex: (int index) {
             if (index == 0) {

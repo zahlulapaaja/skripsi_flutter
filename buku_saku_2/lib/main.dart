@@ -2,6 +2,8 @@ import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/app_screen.dart';
 import 'package:buku_saku_2/screens/app/dictionary/detail_screen.dart';
+import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
+import 'package:buku_saku_2/screens/app/notes/note_detail_screen.dart';
 // import 'package:buku_saku_2/screens/app/home.dart';
 import 'package:buku_saku_2/screens/sign_in/create_new_password_screen.dart';
 import 'package:buku_saku_2/screens/sign_in/reset_password_screen.dart';
@@ -42,6 +44,8 @@ class MyApp extends StatelessWidget {
         // Mulai Aplikasinya
         AppScreen.id: (context) => AppScreen(),
         DetailScreen.id: (context) => DetailScreen(),
+        NoteDetailScreen.id: (context) => NoteDetailScreen(),
+        AddNoteScreen.id: (context) => AddNoteScreen(),
       },
     );
   }

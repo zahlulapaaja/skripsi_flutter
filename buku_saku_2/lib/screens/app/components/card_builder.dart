@@ -6,6 +6,7 @@ class CardBuilder extends StatelessWidget {
   final String title;
   final String description;
   final String date;
+  // final String tag;
 
   //sementara
   final int? index;
@@ -17,6 +18,7 @@ class CardBuilder extends StatelessWidget {
       required this.title,
       required this.description,
       required this.date,
+      // required this.tag,
       this.pinned = false})
       : super(key: key);
 
@@ -66,6 +68,7 @@ class CardBuilder extends StatelessWidget {
           top: -20,
           right: -25,
           child: FloatingActionButton(
+            heroTag: null,
             onPressed: () {
               // ignore: avoid_print
               print("tombol ditekan");

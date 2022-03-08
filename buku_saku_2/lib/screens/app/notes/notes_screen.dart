@@ -23,7 +23,6 @@ class _NotesScreenState extends State<NotesScreen>
     with TickerProviderStateMixin {
   Animation<double>? topBarAnimation;
   bool isListView = false;
-  int activeTextButton = 0;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -66,6 +65,7 @@ class _NotesScreenState extends State<NotesScreen>
   void addAllData(bool isListView) {
     const int count = 9;
     List<String> titleTxt = ['Catatan Terbaru', 'Kategori', 'Semua Catatan'];
+    List<bool> activeTextButton = [true, false, false];
 
     listViews.add(
       SearchBox(),
@@ -114,13 +114,14 @@ class _NotesScreenState extends State<NotesScreen>
                     onTap: () {
                       print('tombol $index ditekan');
                       setState(() {
-                        activeTextButton = index;
+                        activeTextButton = [false, false, false];
+                        activeTextButton[index] = true;
                       });
                     },
                     child: Text(
                       titleTxt[index],
                       textAlign: TextAlign.left,
-                      style: index == activeTextButton
+                      style: activeTextButton[index]
                           ? AppConstants.kTitleActiveTextStyle
                           : AppConstants.kTitleViewTextStyle,
                     ),

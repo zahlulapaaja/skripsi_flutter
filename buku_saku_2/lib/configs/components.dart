@@ -77,7 +77,7 @@ class FormFieldTemplate extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 10),
           child: Text(
             headingText,
-            style: AppConstants.textFieldHeader,
+            style: AppConstants.kTextFieldHeader,
           ),
         ),
         Container(
@@ -107,7 +107,7 @@ class FormFieldTemplate extends StatelessWidget {
               obscureText: obsecureText,
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle: AppConstants.textFieldHintStyle,
+                hintStyle: AppConstants.kTextFieldHintStyle,
                 border: InputBorder.none,
                 suffixIcon: suffixIcon,
               ),

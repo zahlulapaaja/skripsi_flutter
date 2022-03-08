@@ -7,7 +7,7 @@ class TitleView extends StatelessWidget {
   final bool detailBtn;
   final AnimationController? animationController;
   final Animation<double>? animation;
-  final Function? onTap;
+  final Function()? onTap;
 
   const TitleView({
     Key? key,
@@ -45,22 +45,22 @@ class TitleView extends StatelessWidget {
                       highlightColor: Colors.transparent,
                       borderRadius:
                           const BorderRadius.all(Radius.circular(4.0)),
-                      onTap: () {},
-                      child: GestureDetector(
-                        onTap: onTap!(),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 2),
-                          decoration: const BoxDecoration(
-                            color: AppColors.primaryLight,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20.0)),
-                          ),
-                          child: const Text(
-                            'Details',
-                            textAlign: TextAlign.center,
-                            style: AppConstants.kDetailBtnTextStyle,
-                          ),
+                      onTap: onTap == null
+                          ? () {
+                              print('hai');
+                            }
+                          : onTap!,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 2),
+                        decoration: const BoxDecoration(
+                          color: AppColors.primaryLight,
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                        ),
+                        child: const Text(
+                          'Details',
+                          textAlign: TextAlign.center,
+                          style: AppConstants.kDetailBtnTextStyle,
                         ),
                       ),
                     ),
