@@ -1,15 +1,15 @@
-import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
-import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
-import 'package:buku_saku_2/screens/app/notes/note_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
 import 'package:buku_saku_2/screens/app/drawer_user_controller.dart';
 import 'package:buku_saku_2/screens/app/home_drawer.dart';
+import 'package:buku_saku_2/screens/app/models/note.dart';
+import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
-import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
 import 'package:buku_saku_2/screens/app/home/home_screen.dart';
-import 'components/bottom_bar_view.dart';
+import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
+import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
+import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
+import 'package:buku_saku_2/screens/app/components/bottom_bar_view.dart';
 
 class AppScreen extends StatefulWidget {
   static const id = 'app_screen';
@@ -28,6 +28,9 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
     color: AppColors.offWhite,
   );
 
+  late Future<List<Note>> notes;
+  var dbHelper;
+
   @override
   void initState() {
     for (var tabIcon in tabIconsList) {
@@ -40,8 +43,20 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
       vsync: this,
     );
 
-    tabBody = HomeScreen(animationController: animationController);
     super.initState();
+    dbHelper = DbHelper();
+    loadNotes();
+
+    // tabBody = HomeScreen(
+    //   animationController: animationController,
+    //   notes: getNotes(),
+    // );
+  }
+
+  loadNotes() {
+    setState(() {
+      notes = dbHelper.getNotes();
+    });
   }
 
   @override
@@ -56,12 +71,18 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
       color: AppColors.offWhite,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: FutureBuilder<bool>(
+        body: FutureBuilder(
           future: getData(),
-          builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-            if (!snapshot.hasData) {
-              return const SizedBox();
-            } else {
+          builder: (context, AsyncSnapshot<bool> snapshot) {
+            if (snapshot.hasData) {
+              if (snapshot.data != true) {
+                tabBody = const Center(child: Text('still empty'));
+              } else {
+                tabBody = HomeScreen(
+                  animationController: animationController,
+                  // notes: snapshot.data,
+                );
+              }
               return DrawerUserController(
                 screenIndex: drawerIndex,
                 drawerWidth: MediaQuery.of(context).size.width * 0.75,
@@ -76,6 +97,10 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                   ],
                 ),
               );
+            } else if (snapshot.hasError) {
+              return const Center(child: Text('error fetching notes'));
+            } else {
+              return const CircularProgressIndicator();
             }
           },
         ),
@@ -84,7 +109,9 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
   }
 
   Future<bool> getData() async {
+    // Future<List<Note>>> notes;
     // TODO: ini cuma delayed buatan, jangan lupa dihapus nanti
+    // dan cukup diganti sama data future
     await Future<dynamic>.delayed(const Duration(milliseconds: 50));
     return true;
   }
@@ -98,7 +125,6 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
         BottomBarView(
           tabIconsList: tabIconsList,
           addClick: () {
-            print('tambah catatan');
             Navigator.pushNamed(context, AddNoteScreen.id);
           },
           changeIndex: (int index) {
@@ -143,7 +169,6 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
     if (drawerIndex != drawerIndexData) {
       drawerIndex = drawerIndexData;
       if (drawerIndex == DrawerIndex.HOME) {
-        print('home');
         setState(() {
           // screenView = const MyHomePage();
         });

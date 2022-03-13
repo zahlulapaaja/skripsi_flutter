@@ -35,13 +35,13 @@ class CardListView extends StatelessWidget {
               alignment: Alignment.topLeft,
               child: CardBuilder(
                 index: index,
-                title:
-                    'Menyusun Rancangan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)',
-                description:
-                    '''Menyusun rancangan uji coba sistem jaringan komputer lokal
-(Local Area Network) adalah kegiatan membuat rancangan uji coba
-untuk memastikan sistem jaringan komputer lokal dapat berfungsi
-dengan baik.''',
+//                 title:
+//                     'Menyusun Rancangan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)',
+//                 description:
+//                     '''Menyusun rancangan uji coba sistem jaringan komputer lokal
+// (Local Area Network) adalah kegiatan membuat rancangan uji coba
+// untuk memastikan sistem jaringan komputer lokal dapat berfungsi
+// dengan baik.''',
                 date: '22 Nov 2021',
               ),
             ),

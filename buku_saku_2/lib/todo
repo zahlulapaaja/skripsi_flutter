@@ -1,0 +1,16 @@
+TODO : Merapikan import yang ga digunakan
+Nanti termasuk juga merapikan warning yang ada di dart analysis
+Sampai nanti semua nya rapi
+
+
+TODO : Merapikan file constants
+Nanti diliat lagi biar ga ada yang duplikasi
+Trus liat juga biar komponen yang berulang di dalam constants aja
+
+TODO : Pake aboutDialog dan alertDialog
+aboutDialog untuk term and condition, alertDialog untuk hapus catatan, atau konfirmasi lainnya
+
+
+
+TODO : Coba bikin fitur select
+trus nanti bisa diapus catatan yg terpilih itu. karna kalo pake titik 3 itu susah utk diklik, itu masih aku, belom lagi klo orang tua yg pake nanti

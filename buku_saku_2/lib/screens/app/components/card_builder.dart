@@ -1,26 +1,31 @@
+import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/screens/app/models/note.dart';
+import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CardBuilder extends StatelessWidget {
-  final String title;
-  final String description;
-  final String date;
+  // nanti yg Note wajib sifatnya
+  final Note? notes;
+  final String? date;
+  final Function? onLongPressed;
   // final String tag;
 
   //sementara
   final int? index;
   final bool? pinned;
 
-  const CardBuilder(
-      {Key? key,
-      this.index,
-      required this.title,
-      required this.description,
-      required this.date,
-      // required this.tag,
-      this.pinned = false})
-      : super(key: key);
+  CardBuilder({
+    Key? key,
+    this.index,
+    this.notes,
+    this.date,
+    // required this.tag,
+    this.pinned = false,
+    this.onLongPressed,
+  }) : super(key: key);
 
   getNoteIcon() {
     if (pinned == true) {
@@ -44,39 +49,25 @@ class CardBuilder extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              title,
+              notes!.title,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: AppConstants.kCardTitleTextStyle,
             ),
             const SizedBox(height: 7),
             Text(
-              description,
+              notes!.body,
               maxLines: index == 1 ? 10 : 5,
               overflow: TextOverflow.ellipsis,
               style: AppConstants.kCardBodyTextStyle,
             ),
             const SizedBox(height: 7),
             Text(
-              date,
+              date!,
               textAlign: TextAlign.left,
               style: AppConstants.kCardDateTextStyle,
             ),
           ],
-        ),
-        Positioned(
-          top: -20,
-          right: -25,
-          child: FloatingActionButton(
-            heroTag: null,
-            onPressed: () {
-              // ignore: avoid_print
-              print("tombol ditekan");
-            },
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            child: SvgPicture.asset("assets/icons/three-dots.svg"),
-          ),
         ),
         Positioned(
           height: 20,

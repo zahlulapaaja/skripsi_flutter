@@ -1,13 +1,14 @@
-import 'package:buku_saku_2/main.dart';
-import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
+import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:buku_saku_2/screens/app/components/title_view.dart';
+import 'package:buku_saku_2/screens/app/models/note.dart';
+import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:buku_saku_2/screens/app/home/components/header_with_searchbox.dart';
 import 'package:buku_saku_2/screens/app/home/components/detail_angka_kredit.dart';
 import 'package:buku_saku_2/screens/app/components/card_grid_view.dart';
+import 'package:buku_saku_2/screens/app/components/title_view.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'home_screen';
@@ -62,56 +63,48 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void addAllListData() {
     const int count = 9;
 
-    listViews.add(
-      HeaderWithSearchbox(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 1, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
+    listViews.add(HeaderWithSearchbox(
+      animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+          parent: widget.animationController!,
+          curve: const Interval((1 / count) * 1, 1.0,
+              curve: Curves.fastOutSlowIn))),
+      animationController: widget.animationController!,
+    ));
+
+    listViews.add(TitleView(
+      titleTxt: 'Angka Kredit',
+      detailBtn: true,
+      onTap: () {
+        print('masih error');
+        // Navigator.pushNamed(context, DetailAngkaKreditScreen.id);
+      },
+      animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+          parent: widget.animationController!,
+          curve: const Interval((1 / count) * 2, 1.0,
+              curve: Curves.fastOutSlowIn))),
+      animationController: widget.animationController!,
+    ));
+
+    listViews.add(DetailAngkaKredit(
+      animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+          parent: widget.animationController!,
+          curve: const Interval((1 / count) * 1, 1.0,
+              curve: Curves.fastOutSlowIn))),
+      animationController: widget.animationController!,
+    ));
+
+    listViews.add(TitleView(
+      titleTxt: 'Catatan Terbaru',
+      detailBtn: true,
+      animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+          parent: widget.animationController!,
+          curve: const Interval((1 / count) * 4, 1.0,
+              curve: Curves.fastOutSlowIn))),
+      animationController: widget.animationController!,
+    ));
 
     listViews.add(
-      TitleView(
-        titleTxt: 'Angka Kredit',
-        detailBtn: true,
-        onTap: () {
-          print(
-              'tombol detail ditekan, harusnya pindah ke screen detail angka kredit, tapi masih belom tau gimana');
-        },
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 2, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      DetailAngkaKredit(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 1, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      TitleView(
-        titleTxt: 'Catatan Terbaru',
-        detailBtn: true,
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 4, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      const CardGridView(),
+      CardGridView(),
     );
   }
 
@@ -119,6 +112,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     await Future<dynamic>.delayed(const Duration(milliseconds: 50));
     return true;
   }
+
+  var dbHelper = DbHelper();
 
   @override
   Widget build(BuildContext context) {
@@ -140,9 +135,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   Widget getMainListViewUI() {
-    return FutureBuilder<bool>(
-      future: getData(),
-      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+    return FutureBuilder<List<Note>>(
+      future: context.watch<NotesProvider>().notes,
+      builder: (BuildContext context, AsyncSnapshot<List<Note>> snapshot) {
         if (!snapshot.hasData) {
           return const SizedBox();
         } else {

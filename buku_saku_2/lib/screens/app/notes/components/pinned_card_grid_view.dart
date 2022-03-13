@@ -43,13 +43,13 @@ class PinnedCardGridView extends StatelessWidget {
                       // ini supaya ga overflowed aja (sementara)
                       index: index == 1 ? 3 : index,
                       pinned: true,
-                      title:
-                          'Menyusun Rancangan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)',
-                      description:
-                          '''Menyusun rancangan uji coba sistem jaringan komputer lokal
-(Local Area Network) adalah kegiatan membuat rancangan uji coba
-untuk memastikan sistem jaringan komputer lokal dapat berfungsi
-dengan baik.''',
+//                       title:
+//                           'Menyusun Rancangan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)',
+//                       description:
+//                           '''Menyusun rancangan uji coba sistem jaringan komputer lokal
+// (Local Area Network) adalah kegiatan membuat rancangan uji coba
+// untuk memastikan sistem jaringan komputer lokal dapat berfungsi
+// dengan baik.''',
                       date: '22 Nov 2021',
                     ),
                   ),

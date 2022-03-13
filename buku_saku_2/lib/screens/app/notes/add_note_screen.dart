@@ -1,21 +1,11 @@
-import 'package:buku_saku_2/configs/components.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/batasan_penilaian.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/deskripsi_kegiatan.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/detail_butir.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/menu_unsur.dart';
-import 'package:buku_saku_2/screens/app/notes/components/checkbox_bukti.dart';
-import 'package:buku_saku_2/screens/app/notes/components/date_picker.dart';
-import 'package:buku_saku_2/screens/app/notes/components/dropdown_menu.dart';
-import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
-import 'package:buku_saku_2/screens/app/notes/components/jumlah_kegiatan.dart';
-import 'package:buku_saku_2/screens/app/notes/components/textarea.dart';
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:buku_saku_2/screens/app/components/searchbox.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/menu_kamus.dart';
+import 'package:buku_saku_2/screens/app/notes/components/checkbox_bukti.dart';
+import 'package:buku_saku_2/screens/app/notes/components/date_picker.dart';
+import 'package:buku_saku_2/screens/app/notes/components/new_note_form.dart';
+import 'package:buku_saku_2/screens/app/notes/components/jumlah_kegiatan.dart';
+import 'package:buku_saku_2/screens/app/notes/components/textarea.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddNoteScreen extends StatefulWidget {
@@ -38,25 +28,27 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   }
 
   void addAllListData() {
-    listViews.add(
-      DropdownMenu(),
-    );
+    // TODO : semua field digabung dalam satu kelas aja, dan kemudian bungkus pakai widget Form()
 
     listViews.add(
-      DatePicker(),
+      NewNoteForm(),
     );
+    //
+    // listViews.add(
+    //   DatePicker(),
+    // );
 
-    listViews.add(
-      TextArea(),
-    );
-
-    listViews.add(
-      JumlahKegiatan(),
-    );
-
-    listViews.add(
-      CheckboxBukti(),
-    );
+    // listViews.add(
+    //   TextArea(),
+    // );
+    //
+    // listViews.add(
+    //   JumlahKegiatan(),
+    // );
+    //
+    // listViews.add(
+    //   CheckboxBukti(),
+    // );
   }
 
   Future<bool> getData() async {

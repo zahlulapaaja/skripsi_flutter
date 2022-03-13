@@ -27,6 +27,10 @@ dependencies:
   dropdown_search: ^2.0.1
   number_inc_dec: ^0.8.0
 
+  #back end
+  sqflite: ^2.0.2
+  provider: ^6.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
