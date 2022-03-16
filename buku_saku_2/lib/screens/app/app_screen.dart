@@ -47,10 +47,10 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
     dbHelper = DbHelper();
     loadNotes();
 
-    // tabBody = HomeScreen(
-    //   animationController: animationController,
-    //   notes: getNotes(),
-    // );
+    tabBody = HomeScreen(
+      animationController: animationController,
+      // notes: getNotes(),
+    );
   }
 
   loadNotes() {
@@ -78,10 +78,10 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               if (snapshot.data != true) {
                 tabBody = const Center(child: Text('still empty'));
               } else {
-                tabBody = HomeScreen(
-                  animationController: animationController,
-                  // notes: snapshot.data,
-                );
+                // tabBody = HomeScreen(
+                //   animationController: animationController,
+                //   // notes: snapshot.data,
+                // );
               }
               return DrawerUserController(
                 screenIndex: drawerIndex,
@@ -144,6 +144,8 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                   return;
                 }
                 setState(() {
+                  print('halo');
+
                   tabBody =
                       NotesScreen(animationController: animationController);
                 });

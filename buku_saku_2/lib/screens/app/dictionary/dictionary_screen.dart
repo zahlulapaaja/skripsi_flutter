@@ -1,7 +1,11 @@
+import 'dart:convert';
+
 import 'package:buku_saku_2/screens/app/dictionary/components/menu_unsur.dart';
+import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:flutter/services.dart' as rootBundle;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:buku_saku_2/screens/app/components/searchbox.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/menu_kamus.dart';
@@ -23,6 +27,17 @@ class _DictionaryScreenState extends State<DictionaryScreen>
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
   double topBarOpacity = 0.0;
+
+  // Future<List<ButirKegiatan>> ReadJsonData() async {
+  //   final jsonData = await rootBundle.rootBundle
+  //       .loadString('assets/jsonfile/data_juknis_trial.json');
+  //   final list = json.decode(jsonData) as List<dynamic>;
+  //   if (true) {
+  //     return list.map((e) => ButirKegiatan.listUnsur(e)).toList();
+  //   } else {
+  //     return list.map((e) => ButirKegiatan.listSubUnsur(e, 0)).toList();
+  //   }
+  // }
 
   @override
   void initState() {
@@ -59,8 +74,6 @@ class _DictionaryScreenState extends State<DictionaryScreen>
   }
 
   void addAllListData() {
-    const int count = 9;
-
     listViews.add(
       SearchBox(),
     );
