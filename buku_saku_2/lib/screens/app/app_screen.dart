@@ -1,20 +1,23 @@
+// ignore_for_file: avoid_print
+
+import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/app/drawer_user_controller.dart';
+import 'package:buku_saku_2/screens/app/controllers/drawer_user_controller.dart';
 import 'package:buku_saku_2/screens/app/home_drawer.dart';
-import 'package:buku_saku_2/screens/app/models/note.dart';
-import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
 import 'package:buku_saku_2/screens/app/home/home_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
-import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
+import 'package:buku_saku_2/screens/app/dictionary/unsur_list_screen.dart';
 import 'package:buku_saku_2/screens/app/components/bottom_bar_view.dart';
+import 'package:provider/provider.dart';
 
 class AppScreen extends StatefulWidget {
   static const id = 'app_screen';
+  final int? defaultIndex;
 
-  const AppScreen({Key? key}) : super(key: key);
+  const AppScreen({Key? key, this.defaultIndex = 0}) : super(key: key);
   @override
   _AppScreenState createState() => _AppScreenState();
 }
@@ -24,39 +27,34 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
   DrawerIndex? drawerIndex;
 
-  Widget tabBody = Container(
-    color: AppColors.offWhite,
-  );
-
-  late Future<List<Note>> notes;
-  var dbHelper;
-
-  @override
-  void initState() {
+  void initialTabBody() {
     for (var tabIcon in tabIconsList) {
       tabIcon.isSelected = false;
     }
-    tabIconsList[0].isSelected = true;
+
+    Future.delayed(Duration.zero, () {
+      if (widget.defaultIndex == 0) {
+        tabIconsList[0].isSelected = true;
+        context.read<ScreenProvider>().setTabBody =
+            HomeScreen(animationController: animationController);
+      } else if (widget.defaultIndex == 1) {
+        tabIconsList[1].isSelected = true;
+        context.read<ScreenProvider>().setTabBody =
+            NotesScreen(animationController: animationController);
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
 
     animationController = AnimationController(
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 1000),
       vsync: this,
     );
 
-    super.initState();
-    dbHelper = DbHelper();
-    loadNotes();
-
-    tabBody = HomeScreen(
-      animationController: animationController,
-      // notes: getNotes(),
-    );
-  }
-
-  loadNotes() {
-    setState(() {
-      notes = dbHelper.getNotes();
-    });
+    initialTabBody();
   }
 
   @override
@@ -71,49 +69,22 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
       color: AppColors.offWhite,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: FutureBuilder(
-          future: getData(),
-          builder: (context, AsyncSnapshot<bool> snapshot) {
-            if (snapshot.hasData) {
-              if (snapshot.data != true) {
-                tabBody = const Center(child: Text('still empty'));
-              } else {
-                // tabBody = HomeScreen(
-                //   animationController: animationController,
-                //   // notes: snapshot.data,
-                // );
-              }
-              return DrawerUserController(
-                screenIndex: drawerIndex,
-                drawerWidth: MediaQuery.of(context).size.width * 0.75,
-                onDrawerCall: (DrawerIndex drawerIndexData) {
-                  changeIndex(drawerIndexData);
-                  //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
-                },
-                screenView: Stack(
-                  children: <Widget>[
-                    tabBody,
-                    bottomBar(),
-                  ],
-                ),
-              );
-            } else if (snapshot.hasError) {
-              return const Center(child: Text('error fetching notes'));
-            } else {
-              return const CircularProgressIndicator();
-            }
+        body: DrawerUserController(
+          screenIndex: drawerIndex,
+          drawerWidth: MediaQuery.of(context).size.width * 0.75,
+          onDrawerCall: (DrawerIndex drawerIndexData) {
+            changeIndex(drawerIndexData);
+            //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
           },
+          screenView: Stack(
+            children: <Widget>[
+              context.watch<ScreenProvider>().tabBody,
+              bottomBar(),
+            ],
+          ),
         ),
       ),
     );
-  }
-
-  Future<bool> getData() async {
-    // Future<List<Note>>> notes;
-    // TODO: ini cuma delayed buatan, jangan lupa dihapus nanti
-    // dan cukup diganti sama data future
-    await Future<dynamic>.delayed(const Duration(milliseconds: 50));
-    return true;
   }
 
   Widget bottomBar() {
@@ -128,38 +99,30 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             Navigator.pushNamed(context, AddNoteScreen.id);
           },
           changeIndex: (int index) {
-            if (index == 0) {
-              animationController?.reverse().then<dynamic>((data) {
-                if (!mounted) {
-                  return;
-                }
-                setState(() {
-                  tabBody =
+            switch (index) {
+              case 0:
+                animationController?.reverse().then<dynamic>((data) {
+                  if (!mounted) return;
+                  context.read<ScreenProvider>().setTabBody =
                       HomeScreen(animationController: animationController);
                 });
-              });
-            } else if (index == 1) {
-              animationController?.reverse().then<dynamic>((data) {
-                if (!mounted) {
-                  return;
-                }
-                setState(() {
-                  print('halo');
+                break;
 
-                  tabBody =
+              case 1:
+                animationController?.reverse().then<dynamic>((data) {
+                  if (!mounted) return;
+                  context.read<ScreenProvider>().setTabBody =
                       NotesScreen(animationController: animationController);
                 });
-              });
-            } else if (index == 2) {
-              animationController?.reverse().then<dynamic>((data) {
-                if (!mounted) {
-                  return;
-                }
-                setState(() {
-                  tabBody = DictionaryScreen(
-                      animationController: animationController);
+                break;
+
+              case 2:
+                animationController?.reverse().then<dynamic>((data) {
+                  if (!mounted) return;
+                  context.read<ScreenProvider>().setTabBody =
+                      UnsurListScreen(animationController: animationController);
                 });
-              });
+                break;
             }
           },
         ),
@@ -170,24 +133,35 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
   void changeIndex(DrawerIndex drawerIndexData) {
     if (drawerIndex != drawerIndexData) {
       drawerIndex = drawerIndexData;
-      if (drawerIndex == DrawerIndex.HOME) {
-        setState(() {
-          // screenView = const MyHomePage();
-        });
-      } else if (drawerIndex == DrawerIndex.Help) {
-        setState(() {
-          // screenView = HelpScreen();
-        });
-      } else if (drawerIndex == DrawerIndex.FeedBack) {
-        setState(() {
-          // screenView = FeedbackScreen();
-        });
-      } else if (drawerIndex == DrawerIndex.Invite) {
-        setState(() {
-          // screenView = InviteFriend();
-        });
-      } else {
-        //do in your way......
+
+      // TODO : Jangan lupa nanti diganti semua print yang ini
+      // Keknya ga perlu ya untuk ganti drawerIndex ini, tapi sementara aku tinggalin satu dulu disini, sebagai contoh
+      // ignore: missing_enum_constant_in_switch
+      switch (drawerIndex) {
+        case DrawerIndex.home:
+          setState(() {
+            drawerIndex = DrawerIndex.home;
+            print('DrawerIndex.Home');
+          });
+          break;
+        case DrawerIndex.export:
+          setState(() {
+            drawerIndex = DrawerIndex.export;
+            print('DrawerIndex.export');
+          });
+          break;
+        case DrawerIndex.rules:
+          print('DrawerIndex.rules');
+          break;
+        case DrawerIndex.feedBack:
+          print('DrawerIndex.feedBack');
+          break;
+        case DrawerIndex.share:
+          print('DrawerIndex.share');
+          break;
+        case DrawerIndex.about:
+          print('DrawerIndex.about');
+          break;
       }
     }
   }

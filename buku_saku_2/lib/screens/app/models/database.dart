@@ -5,6 +5,13 @@ import 'package:buku_saku_2/screens/app/models/note.dart';
 
 class DbHelper {
   Database? _database;
+  final String _dbName = 'bukusaku.db';
+  final String _dbSyntax = '''CREATE TABLE notes(
+  id INTEGER PRIMARY KEY AUTOINCREMENT, 
+  judul TEXT, uraian TEXT,
+  tanggalKegiatan TEXT, jumlahKegiatan INTEGER, 
+  angkaKredit INTEGER, status INTEGER, 
+  personId INTEGER)''';
 
   Future<Database> get dbInstance async {
     if (_database != null) return _database!;
@@ -15,12 +22,10 @@ class DbHelper {
 
   initDB() async {
     return await openDatabase(
-      join(await getDatabasesPath(), 'bukusaku.db'),
+      join(await getDatabasesPath(), _dbName),
       version: 1,
       onCreate: (db, version) {
-        return db.execute(
-          'CREATE TABLE notes(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, body TEXT, status INT)',
-        );
+        return db.execute(_dbSyntax);
       },
     );
   }
@@ -32,8 +37,9 @@ class DbHelper {
     return List.generate(maps.length, (i) {
       return Note(
         id: maps[i]['id'],
-        title: maps[i]['title'],
-        body: maps[i]['body'],
+        judul: maps[i]['judul'],
+        uraian: maps[i]['uraian'],
+        status: maps[i]['status'],
       );
     });
   }

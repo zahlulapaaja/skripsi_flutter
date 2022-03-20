@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 class SearchBox extends StatelessWidget {
   const SearchBox({Key? key}) : super(key: key);
 
+  // Pencarian sih bagusnya untuk semua teros, satu fungsi, nyari di semua butir
+
   @override
   Widget build(BuildContext context) {
     return Container(

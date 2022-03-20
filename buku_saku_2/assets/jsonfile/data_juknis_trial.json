@@ -4,16 +4,16 @@
     "judul_unsur" : "TATA KELOLA DAN TATA LAKSANA TEKNOLOGI INFORMASI",
     "subunsur" : [
       {
-      "kode" : "A",
+      "kode" : "I.A",
       "judul" : "Manajemen Layanan TI",
       "butir" : [
         {
-          "kode" : "1",
+          "kode" : "I.A.1",
           "judul" : "Melakukan Pemenuhan Permintaan dan Layanan Teknologi Informasi",
           "uraian" : "Pemenuhan Permintaan Layanan Teknologi Informasi (TI) merupakan proses penyelesaian permintaan peralatan teknologi informasi dan atau layanan teknologi informasi dari user atau pengguna yang merupakan bagian dari operasi normal institusi. Tujuan dari proses ini adalah memenuhi permintaan pengguna terhadap permintaan peralatan/peranti TI dan atau layanan TI. Pengguna merupakan pegawai, klien, unit organisasi, dan tim TI, yang memanfaatkan layanan TI sebagai pengguna akhir.",
           "satuan_hasil" : "Laporan pemenuhan permintaan dan layanan TI",
           "angka_kredit" : 0.15,
-          "batasan_penelitian" : "1 (satu) laporan per bulan",
+          "batasan_penilaian" : "1 (satu) laporan per bulan",
           "pelaksana" : "Pranata Komputer Mahir",
           "bukti_fisik" : "Laporan pemenuhan permintaan dan layanan TI mencakup namun tidak terbatas pada: 1. banyaknya permintaan layanan yang dipenuhi; 2. jenis layanan yang diminta dan penjelasan rincinya; 3. sarana yang digunakan; dan 4. informasi ketersediaan dan cara mendapatkan layanan.",
           "contoh" : "Andi, A.Md., Pranata Komputer Mahir, telah menyelesaikan beberapa permintaaan layanan TI selama satu tahun (12 bulan) bekerja dan menyusun laporan setiap minggunya yang berisi detail layanan yang sudah ditangani. Maka Andi akan mendapatkan angka kredit sebesar 12 x 0,15 = 1,8."
@@ -21,27 +21,27 @@
       ]
     },
     {
-      "kode" : "B",
+      "kode" : "I.B",
       "judul" : "Pengelolaan Data (Data Management)",
       "butir" : [
         {
-          "kode" : "1",
+          "kode" : "I.B.1",
           "judul" : "Melakukan pengumpulan informasi mengenai data instansi",
           "uraian" : "Melakukan pengumpulan informasi mengenai data instansi adalah melakukan identifikasi dan pendokumentasian informasi yang dihasilkan suatu instansi, maupun kebutuhan data yang diperlukan oleh instansi. Tahapan kegiatan ini mencakup namun tidak terbatas pada: mengumpulkan informasi yang dihasilkan suatu instansi atau mengumpulkan informasi yang dibutuhkan dari instansi terkait. Sumber data bisa merupakan data primer ataupun pengolahan data sekunder.",
           "satuan_hasil" : "Dokumen informasi data instansi",
           "angka_kredit" : 0.55,
-          "batasan_penelitian" : "4 (empat) kali per tahun",
+          "batasan_penilaian" : "4 (empat) kali per tahun",
           "pelaksana" : "Pranata Komputer Mahir",
           "bukti_fisik" : "Dokumen informasi data instansi mengenai rincian data-data yang dihasilkan suatu instansi mencakup namun tidak terbatas pada: 1. jenis data; 2. deskripsi data; 3. unit penghasil data; dan 4. periode pengumpulan data.",
           "contoh" : "Bagus Ananta, A.Md., seorang Pranata Komputer Mahir, melakukan pengumpulan informasi dari intansi lain terkait kegiatan penyusunan daerah dalam angka. Untuk memenuhi kebutuhan penyusunan Statistik Daerah Dalam Angka tersebut dilakukan kegiatan kunjungan ke beberapa instansi. Dari kegiatan tersebut Bagus Ananta akan mendapatkan angka kredit 1 x 0,550 = 0,550."
         },
         {
-          "kode" : "2",
+          "kode" : "I.B.2",
           "judul" : "Melakukan Pengadministrasian Kegiatan Tata Kelola Data",
           "uraian" : "Melakukan pengadministrasian kegiatan tata kelola data adalah memastikan ketersediaan, aksesibilitas, kualitas, konsistensi, auditabilitas, dan keamanan data dalam organisasi sehingga dapat meningkatkan peran data sebagai aset organisasi yang dapat digunakan untuk pengambilan keputusan sesuai dengan tingkat kepatuhan terhadap standar data yang telah ditetapkan dan memiliki kemampuan untuk secara proaktif mengidentifikasi perubahan data dalam institusi dan mengomunikasikan perubahan-perubahan tersebut sesuai peruntukkannya. Tahapan kegiatan ini mencakup namun tidak terbatas pada: membuat dokumentasi atau laporan mengenai informasi pengumpulan, identifikasi atau deskripsi suatu set data, penyimpanan serta besaran set data dan aturan/kebijakan/prosedur penggunaan set data tersebut.",
           "satuan_hasil" : "Dokumen administrasi kegiatan tata kelola data",
           "angka_kredit" : 0.110,
-          "batasan_penelitian" : "1 (satu) kali per bulan. Kegiatan ini dapat dilakukan untuk setiap set data yang dihasilkan oleh suatu institusi.",
+          "batasan_penilaian" : "1 (satu) kali per bulan. Kegiatan ini dapat dilakukan untuk setiap set data yang dihasilkan oleh suatu institusi.",
           "pelaksana" : "Pranata Komputer Mahir",
           "bukti_fisik" : "Dokumen pengadministrasian kegiatan tata kelola data yang mencakup namun tidak terbatas pada: 1. maksud dan tujuan kegiatan; 2. waktu pelaksanaan; 3. deskripsi set data/metadata; 4. lokasi penyimpanan; 5. besar set data; 6. aturan/kebijakan/prosedur penggunaan data tersebut; dan 7. penanggung jawab kegiatan.",
           "contoh" : "Rudi Cahyadi, A.Md., Seorang Pranata Komputer Mahir melakukan pengadministrasian kegiatan tata kelola data hasil Survei Angkutan Umum, maka Rudi Cahyadi mendapat Angka Kredit sebesar 0,110."
@@ -49,27 +49,27 @@
       ]
     },
     {
-      "kode" : "C",
+      "kode" : "I.C",
       "judul" : "Audit TI",
       "butir" : [
         {
-          "kode" : "1",
+          "kode" : "I.C.1",
           "judul" : "Melakukan Pengumpulan Informasi Dasar untuk Kebutuhan Audit TI",
           "uraian" : "Melakukan pengumpulan informasi dasar untuk kebutuhan audit TI adalah melakukan pengumpulan, pemeliharaan dan verifikasi kelengkapan informasi dasar dari area dan obyek TI yang diaudit. Informasi dasar mencakup informasi yang melekat pada area dan obyek TI yang diaudit, misalnya informasi tentang kontrol apa saja yang sudah ada di instansi, seberapa efektif implementasi kontrol tersebut, dan sebagainya. Informasi dasar terdapat pada seluruh rangkaian proses audit dari awal perencanaan hingga akhir penyusunan laporan audit. (bersambung...)",
           "satuan_hasil" : "Dokumen informasi dasar audit TI",
           "angka_kredit" : 0.38,
-          "batasan_penelitian" : "Kegiatan ini dapat dilakukan untuk setiap area TI yang dilakukan audit. Jumlah maksimum kegiatan yang dapat dinilai adalah 2 (dua) kali per tahun. Nilai angka kredit maksimal akan diberikan jika minimal ada 3 obyek yang dicakup dalam 1 area TI. Jika hanya ada 1 obyek, maka akan diberikan nilai angka kredit sepertiganya.",
+          "batasan_penilaian" : "Kegiatan ini dapat dilakukan untuk setiap area TI yang dilakukan audit. Jumlah maksimum kegiatan yang dapat dinilai adalah 2 (dua) kali per tahun. Nilai angka kredit maksimal akan diberikan jika minimal ada 3 obyek yang dicakup dalam 1 area TI. Jika hanya ada 1 obyek, maka akan diberikan nilai angka kredit sepertiganya.",
           "pelaksana" : "Pranata Komputer Mahir",
           "bukti_fisik" : "Dokumentasi informasi dasar audit TI yang memuat namun tidak terbatas pada: 1. area dan obyek TI yang akan diaudit; 2. waktu pengumpulan informasi dasar; 3. daftar informasi yang dikumpulkan untuk tiap-tiap obyek audit; dan 4. metode pengumpulan dari setiap butir informasi dasar.",
           "contoh" : "Nia Paramita, A.Md., seorang Pranata Komputer Mahir melakukan pengumpulan informasi untuk audit TI terhadap area keamanan informasi yang terdiri dari 3 obyek keamanan informasi, yaitu keamanan informasi pada aplikasi kepegawaian, keamanan informasi aplikasi keuangan, dan keamanan informasi aplikasi perencanaan dengan lengkap, maka angka kredit yang diperoleh adalah 1 x 0,380 = 0,380. Satuan kegiatan ini adalah keamanan informasi yang merupakan 1 area TI. Angka kredit tersebut diperoleh jika Pranata Komputer menyerahkan bukti fisik yang lengkap. Namun, jika Pranata Komputer tersebut tidak menyertakan bukti fisik metode pengumpulan informasi, maka angka kredit yang diperoleh adalah 3/4 x 0,380 = 0,285."
         },
         {
-          "kode" : "2",
+          "kode" : "I.C.2",
           "judul" : "Melakukan Pengumpulan Dokumen untuk Kebutuhan Audit TI",
           "uraian" : "Melakukan pengumpulan dokumen untuk kebutuhan audit TI adalah melakukan pengumpulan, pemeliharaan dan verifikasi kelengkapan dokumen dari area dan obyek TI yang diaudit. Pengumpulan dokumen dilakukan secara sistematis berdasarkan konteks dan cakupan audit dengan menggunakan metode atau pendekatan yang sesuai, serta memperhatikan referensi waktu audit. Dokumen untuk kebutuhan audit TI dapat berupa hardcopy maupun softcopy yang diperoleh dari auditee atau stakeholder terkait.",
           "satuan_hasil" : "Dokumen untuk kebutuhan audit TI",
           "angka_kredit" : 0.73,
-          "batasan_penelitian" : "Jumlah maksimum kegiatan yang dapat dinilai adalah 2 (dua) kali per tahun. Nilai angka kredit maksimal akan diberikan jika minimal ada 3obyek yang dicakup dalam 1 area TI. Jika hanya ada 1 obyek, maka akan diberikan nilai angka kredit sepertiganya",
+          "batasan_penilaian" : "Jumlah maksimum kegiatan yang dapat dinilai adalah 2 (dua) kali per tahun. Nilai angka kredit maksimal akan diberikan jika minimal ada 3obyek yang dicakup dalam 1 area TI. Jika hanya ada 1 obyek, maka akan diberikan nilai angka kredit sepertiganya",
           "pelaksana" : "Pranata Komputer Penyelia",
           "bukti_fisik" : "Dokumen untuk kebutuhan audit TI yang dikumpulkan memuat namun tidak terbatas pada: 1. area dan obyek TI yang akan diaudit; 2. waktu pengumpulan dokumen; 3. daftar informasi yang dikumpulkan untuk tiap-tiap obyek audit 4. metode pengumpulan dokumen; dan 5. dokumentasi area dan obyek TI yang diaudit.",
           "contoh" : "Dewa Mahendra, A.Md., seorang Pranata Komputer Penyelia melakukan pengumpulan dokumen untuk kebutuhan audit TI terhadap area keamanan informasi pada perangkat lunak (aplikasi) yang terdiri dari 3 obyek dokumentasi, yaitu dokumentasi pembangunan aplikasi, dokumentasi bugs aplikasi, dokumentasi rancangan arsitektur aplikasi, maka angka kredit yang diperoleh Dewa Mahendra adalah 1 x 0,730 = 0,730. Satuan kegiatan ini adalah keamanan informasi yang merupakan 1 area TI. Angka kredit tersebut diperoleh jika Pranata Komputer menyerahkan bukti fisik yang lengkap. Namun, jika Pranata Komputer tersebut tidak menyertakan bukti fisik metode pengumpulan informasi, maka angka kredit yang diperoleh adalah 4/5 x 0,730 = 0,584."
@@ -84,16 +84,16 @@
     "judul_unsur" : "INFRASTRUKTUR TEKNOLOGI INFORMASI",
     "subunsur" : [
       {
-      "kode": "A",
+      "kode": "II.A",
       "judul" : "Sistem Jaringan Komputer",
       "butir" : [
         {
-          "kode" : "1",
+          "kode" : "II.A.1",
           "judul" : "Melakukan Analisis Kebutuhan Pengguna Sistem Jaringan Komputer Lokal (Local Area Network)",
           "uraian" : "Melakukan analisis kebutuhan pengguna sistem jaringan komputer lokal (Local Area Network) adalah kegiatan untuk melakukan identifikasi kebutuhan pengguna terhadap jaringan komputer lokal (LAN) sekaligus melakukan analisis terhadap hasil identifikasi tersebut. Tahapan kegiatan ini mencakup namun tidak terbatas pada: 1. Melakukan identifikasi kebutuhan (data dan informasi yang dikumpulkan); dan 2. Melakukan analisis kebutuhan.",
           "satuan_hasil" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer lokal",
           "angka_kredit" : 0.600,
-          "batasan_penelitian" : "Hanya dapat dilakukan jika terdapat kebutuhan/kondisi tertentu yang menyebabkan perlunya perubahan/implementasi baru terhadap sistem jaringan komputer. Sistem jaringan komputer lokal minimal terdiri dari 5 komputer/perangkat lainnya menggunakan perangkat jaringan seperti seperti switch, hub, wireless atau perangkat jaringan lainnya.",
+          "batasan_penilaian" : "Hanya dapat dilakukan jika terdapat kebutuhan/kondisi tertentu yang menyebabkan perlunya perubahan/implementasi baru terhadap sistem jaringan komputer. Sistem jaringan komputer lokal minimal terdiri dari 5 komputer/perangkat lainnya menggunakan perangkat jaringan seperti seperti switch, hub, wireless atau perangkat jaringan lainnya.",
           "pelaksana" : "Pranata Komputer Penyelia",
           "bukti_fisik" : "Laporan dokumen analisis kebutuhan pengguna sistem jaringan lokal yang mencakup namun tidak terbatas pada: 1. latar belakang, bahwa dibutuhkan perubahan/implementasi baru terhadap sistem jaringan komputer; 2. tujuan; 3. identifikasi kebutuhan (data dan informasi yang dikumpulkan); 4. analisis kondisi berjalan; 5. analisis perencanaan; 6. rancangan topologi jaringan; 7. rencana biaya yang diperlukan; 8. rencana jadwal implementasi; dan 9. lembar persetujuan dokumen.",
           "contoh" : "Abelina Akbar A.Md., seorang Pranata Komputer Penyelia melakukan analisis kebutuhan pengguna sistem jaringan komputer di kantornya dengan memberikan bukti pekerjaan yang lengkap, maka Abelina Akbar mendapat nilai 1 X 0,600 = 0,600."
@@ -101,16 +101,16 @@
       ]
     },
     {
-      "kode" : "B",
+      "kode" : "II.B",
       "judul" : "Manajemen Infrastruktur TI",
       "butir" : [
         {
-          "kode" : "1",
+          "kode" : "II.B.1",
           "judul" : "Melakukan Pemeriksaan Kesesuaian Antara Perangkat TI End User dengan Spesifikasi Teknis",
           "uraian" : "Melakukan pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis adalah kegiatan memeriksa kesesuaian spesifikasi perangkat TI End user terhadap spesifikasi teknis yang terdapat pada dokumen kontrak pengadaan, dokumen pengalihan BMN atau dokumen sejenisnya. Tahapan kegiatan ini meliputi namun tidak terbatas pada: 1. Identifikasi perangkat TI yang akan diperiksa; 2. Menyiapkan form pemeriksaan; dan 3. Pemeriksaan keseluruhan spesifikasi teknis perangkat TI End user yang terdapat dalam kontrak pengadaan, dokumen pengalihan BMN atau dokumen sejenisnya.",
           "satuan_hasil" : "Dokumen hasil pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis",
           "angka_kredit" : 0.225,
-          "batasan_penelitian" : "1. Penghitungan angka kredit berdasarkan satuan kegiatan; dan 2. Maksimal kegiatan yang dapat diniai adalah 3 (tiga) kali per tahun.",
+          "batasan_penilaian" : "1. Penghitungan angka kredit berdasarkan satuan kegiatan; dan 2. Maksimal kegiatan yang dapat diniai adalah 3 (tiga) kali per tahun.",
           "pelaksana" : "Pranata Komputer Mahir",
           "bukti_fisik" : "Dokumen hasil pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis yang meliputi namun tidak terbatas pada: 1. Tanggal dan Lokasi; 2. Daftar perangkat TI End user dan spesifikasi teknis sebagai acuan pemeriksaan (berdasarkan kontrak/dokumen sejenis); 3. Perangkat TI End User yang diperiksa, spesifikasi teknis perangkat TI, hasil pemeriksaan (User Acceptance Test dan Acceptance Test Procedure); 4. Lembar pemeriksaan kesesuaian perangkat TI End user dilengkapi dengan foto/screenshoot hasil pemeriksaan; dan 5. Lembar Persetujuan.",
           "contoh" : "Amran Rinaldi, A.Md., seorang Pranata Komputer Mahir melakukan pemeriksaan kesesuaian antara 10 buah perangkat komputer dan 10 buah UPS dengan spesifikasi teknis pada dokumen kontrak disertai dengan bukti fisik yang lengkap, maka untuk kegiatan tersebut Amran Rinaldi memperoleh angka kredit sebesar 0,225."
@@ -124,16 +124,16 @@
     "judul_unsur" : "ITU ITU",
     "subunsur" : [
       {
-        "kode": "A",
+        "kode": "III.A",
         "judul" : "Sistem Jaringan Komputer",
         "butir" : [
           {
-            "kode" : "1",
+            "kode" : "III.A.1",
             "judul" : "Melakukan Analisis Kebutuhan Pengguna Sistem Jaringan Komputer Lokal (Local Area Network)",
             "uraian" : "Melakukan analisis kebutuhan pengguna sistem jaringan komputer lokal (Local Area Network) adalah kegiatan untuk melakukan identifikasi kebutuhan pengguna terhadap jaringan komputer lokal (LAN) sekaligus melakukan analisis terhadap hasil identifikasi tersebut. Tahapan kegiatan ini mencakup namun tidak terbatas pada: 1. Melakukan identifikasi kebutuhan (data dan informasi yang dikumpulkan); dan 2. Melakukan analisis kebutuhan.",
             "satuan_hasil" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer lokal",
             "angka_kredit" : 0.600,
-            "batasan_penelitian" : "Hanya dapat dilakukan jika terdapat kebutuhan/kondisi tertentu yang menyebabkan perlunya perubahan/implementasi baru terhadap sistem jaringan komputer. Sistem jaringan komputer lokal minimal terdiri dari 5 komputer/perangkat lainnya menggunakan perangkat jaringan seperti seperti switch, hub, wireless atau perangkat jaringan lainnya.",
+            "batasan_penilaian" : "Hanya dapat dilakukan jika terdapat kebutuhan/kondisi tertentu yang menyebabkan perlunya perubahan/implementasi baru terhadap sistem jaringan komputer. Sistem jaringan komputer lokal minimal terdiri dari 5 komputer/perangkat lainnya menggunakan perangkat jaringan seperti seperti switch, hub, wireless atau perangkat jaringan lainnya.",
             "pelaksana" : "Pranata Komputer Penyelia",
             "bukti_fisik" : "Laporan dokumen analisis kebutuhan pengguna sistem jaringan lokal yang mencakup namun tidak terbatas pada: 1. latar belakang, bahwa dibutuhkan perubahan/implementasi baru terhadap sistem jaringan komputer; 2. tujuan; 3. identifikasi kebutuhan (data dan informasi yang dikumpulkan); 4. analisis kondisi berjalan; 5. analisis perencanaan; 6. rancangan topologi jaringan; 7. rencana biaya yang diperlukan; 8. rencana jadwal implementasi; dan 9. lembar persetujuan dokumen.",
             "contoh" : "Abelina Akbar A.Md., seorang Pranata Komputer Penyelia melakukan analisis kebutuhan pengguna sistem jaringan komputer di kantornya dengan memberikan bukti pekerjaan yang lengkap, maka Abelina Akbar mendapat nilai 1 X 0,600 = 0,600."
@@ -147,16 +147,16 @@
     "judul_unsur" : "INI INI",
     "subunsur" : [
       {
-        "kode": "A",
+        "kode": "IV.A",
         "judul" : "Sistem Jaringan Komputer",
         "butir" : [
           {
-            "kode" : "1",
+            "kode" : "IV.A.1",
             "judul" : "Melakukan Analisis Kebutuhan Pengguna Sistem Jaringan Komputer Lokal (Local Area Network)",
             "uraian" : "Melakukan analisis kebutuhan pengguna sistem jaringan komputer lokal (Local Area Network) adalah kegiatan untuk melakukan identifikasi kebutuhan pengguna terhadap jaringan komputer lokal (LAN) sekaligus melakukan analisis terhadap hasil identifikasi tersebut. Tahapan kegiatan ini mencakup namun tidak terbatas pada: 1. Melakukan identifikasi kebutuhan (data dan informasi yang dikumpulkan); dan 2. Melakukan analisis kebutuhan.",
             "satuan_hasil" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer lokal",
             "angka_kredit" : 0.600,
-            "batasan_penelitian" : "Hanya dapat dilakukan jika terdapat kebutuhan/kondisi tertentu yang menyebabkan perlunya perubahan/implementasi baru terhadap sistem jaringan komputer. Sistem jaringan komputer lokal minimal terdiri dari 5 komputer/perangkat lainnya menggunakan perangkat jaringan seperti seperti switch, hub, wireless atau perangkat jaringan lainnya.",
+            "batasan_penilaian" : "Hanya dapat dilakukan jika terdapat kebutuhan/kondisi tertentu yang menyebabkan perlunya perubahan/implementasi baru terhadap sistem jaringan komputer. Sistem jaringan komputer lokal minimal terdiri dari 5 komputer/perangkat lainnya menggunakan perangkat jaringan seperti seperti switch, hub, wireless atau perangkat jaringan lainnya.",
             "pelaksana" : "Pranata Komputer Penyelia",
             "bukti_fisik" : "Laporan dokumen analisis kebutuhan pengguna sistem jaringan lokal yang mencakup namun tidak terbatas pada: 1. latar belakang, bahwa dibutuhkan perubahan/implementasi baru terhadap sistem jaringan komputer; 2. tujuan; 3. identifikasi kebutuhan (data dan informasi yang dikumpulkan); 4. analisis kondisi berjalan; 5. analisis perencanaan; 6. rancangan topologi jaringan; 7. rencana biaya yang diperlukan; 8. rencana jadwal implementasi; dan 9. lembar persetujuan dokumen.",
             "contoh" : "Abelina Akbar A.Md., seorang Pranata Komputer Penyelia melakukan analisis kebutuhan pengguna sistem jaringan komputer di kantornya dengan memberikan bukti pekerjaan yang lengkap, maka Abelina Akbar mendapat nilai 1 X 0,600 = 0,600."
@@ -164,16 +164,16 @@
         ]
       },
       {
-        "kode" : "B",
+        "kode" : "IV.B",
         "judul" : "Manajemen Infrastruktur TI",
         "butir" : [
           {
-            "kode" : "1",
+            "kode" : "IV.B.1",
             "judul" : "Melakukan Pemeriksaan Kesesuaian Antara Perangkat TI End User dengan Spesifikasi Teknis",
             "uraian" : "Melakukan pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis adalah kegiatan memeriksa kesesuaian spesifikasi perangkat TI End user terhadap spesifikasi teknis yang terdapat pada dokumen kontrak pengadaan, dokumen pengalihan BMN atau dokumen sejenisnya. Tahapan kegiatan ini meliputi namun tidak terbatas pada: 1. Identifikasi perangkat TI yang akan diperiksa; 2. Menyiapkan form pemeriksaan; dan 3. Pemeriksaan keseluruhan spesifikasi teknis perangkat TI End user yang terdapat dalam kontrak pengadaan, dokumen pengalihan BMN atau dokumen sejenisnya.",
             "satuan_hasil" : "Dokumen hasil pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis",
             "angka_kredit" : 0.225,
-            "batasan_penelitian" : "1. Penghitungan angka kredit berdasarkan satuan kegiatan; dan 2. Maksimal kegiatan yang dapat diniai adalah 3 (tiga) kali per tahun.",
+            "batasan_penilaian" : "1. Penghitungan angka kredit berdasarkan satuan kegiatan; dan 2. Maksimal kegiatan yang dapat diniai adalah 3 (tiga) kali per tahun.",
             "pelaksana" : "Pranata Komputer Mahir",
             "bukti_fisik" : "Dokumen hasil pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis yang meliputi namun tidak terbatas pada: 1. Tanggal dan Lokasi; 2. Daftar perangkat TI End user dan spesifikasi teknis sebagai acuan pemeriksaan (berdasarkan kontrak/dokumen sejenis); 3. Perangkat TI End User yang diperiksa, spesifikasi teknis perangkat TI, hasil pemeriksaan (User Acceptance Test dan Acceptance Test Procedure); 4. Lembar pemeriksaan kesesuaian perangkat TI End user dilengkapi dengan foto/screenshoot hasil pemeriksaan; dan 5. Lembar Persetujuan.",
             "contoh" : "Amran Rinaldi, A.Md., seorang Pranata Komputer Mahir melakukan pemeriksaan kesesuaian antara 10 buah perangkat komputer dan 10 buah UPS dengan spesifikasi teknis pada dokumen kontrak disertai dengan bukti fisik yang lengkap, maka untuk kegiatan tersebut Amran Rinaldi memperoleh angka kredit sebesar 0,225."

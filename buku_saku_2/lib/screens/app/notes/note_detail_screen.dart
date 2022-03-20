@@ -1,7 +1,7 @@
-import 'package:buku_saku_2/screens/app/dictionary/components/batasan_penilaian.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/deskripsi_kegiatan.dart';
+import 'package:buku_saku_2/screens/app/dictionary/components/blue_grid_container.dart';
+import 'package:buku_saku_2/screens/app/dictionary/components/blue_container.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/detail_butir.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/menu_unsur.dart';
+import 'package:buku_saku_2/screens/app/dictionary/components/blue_card_button.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -34,20 +34,17 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
       SizedBox(height: 20),
     );
 
-    listViews.add(
-      DetailButir(),
-    );
-    listViews.add(
-      DeskripsiKegiatan(),
-    );
-    listViews.add(
-      BatasanPenilaian(),
-    );
-  }
-
-  Future<bool> getData() async {
-    await Future<dynamic>.delayed(const Duration(milliseconds: 50));
-    return true;
+    // listViews.add(
+    //   DetailButir(),
+    // );
+    // listViews.add(
+    //   BlueContainer(
+    //     body: 'adf',
+    //   ),
+    // );
+    // listViews.add(
+    //   BlueGridContainer(),
+    // );
   }
 
   @override
@@ -78,25 +75,15 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
   }
 
   Widget getMainListViewUI() {
-    return FutureBuilder<bool>(
-      future: getData(),
-      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-        if (!snapshot.hasData) {
-          return const SizedBox();
-        } else {
-          return ListView.builder(
-            padding: EdgeInsets.only(
-              top: AppBar().preferredSize.height +
-                  MediaQuery.of(context).padding.top,
-              bottom: 62 + MediaQuery.of(context).padding.bottom,
-            ),
-            itemCount: listViews.length,
-            scrollDirection: Axis.vertical,
-            itemBuilder: (BuildContext context, int index) {
-              return listViews[index];
-            },
-          );
-        }
+    return ListView.builder(
+      padding: EdgeInsets.only(
+        top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top,
+        bottom: 62 + MediaQuery.of(context).padding.bottom,
+      ),
+      itemCount: listViews.length,
+      scrollDirection: Axis.vertical,
+      itemBuilder: (BuildContext context, int index) {
+        return listViews[index];
       },
     );
   }

@@ -20,6 +20,9 @@ class _CardGridViewState extends State<CardGridView> {
       future: context.watch<NotesProvider>().notes,
       builder: (BuildContext context, AsyncSnapshot<List<Note>> snapshot) {
         if (snapshot.hasData) {
+          if (snapshot.data!.isEmpty) {
+            return const Center(child: Text('Notes Still Empty'));
+          }
           return MasonryGridView.count(
             padding: const EdgeInsets.only(top: 10),
             crossAxisCount: 2,
@@ -72,7 +75,7 @@ class _CardGridViewState extends State<CardGridView> {
                           setState(() {
                             context
                                 .read<NotesProvider>()
-                                .deleteNote(snapshot.data![index].id!);
+                                .deleteNote(snapshot.data![index].id);
                           });
                         }
                       },

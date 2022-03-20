@@ -32,7 +32,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
   AnimationController? iconAnimationController;
   AnimationController? animationController;
 
-  double scrolloffset = 0.0;
+  double scrollOffset = 0.0;
 
   @override
   void initState() {
@@ -40,46 +40,43 @@ class _DrawerUserControllerState extends State<DrawerUserController>
         duration: const Duration(milliseconds: 2000), vsync: this);
     iconAnimationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 0));
-    iconAnimationController
-      ?..animateTo(1.0,
-          duration: const Duration(milliseconds: 0),
-          curve: Curves.fastOutSlowIn);
+    iconAnimationController?.animateTo(1.0,
+        duration: const Duration(milliseconds: 0), curve: Curves.fastOutSlowIn);
     scrollController =
         ScrollController(initialScrollOffset: widget.drawerWidth);
-    scrollController!
-      ..addListener(() {
-        if (scrollController!.offset <= 0) {
-          if (scrolloffset != 1.0) {
-            setState(() {
-              scrolloffset = 1.0;
-              try {
-                widget.drawerIsOpen!(true);
-              } catch (_) {}
-            });
-          }
-          iconAnimationController?.animateTo(0.0,
-              duration: const Duration(milliseconds: 0),
-              curve: Curves.fastOutSlowIn);
-        } else if (scrollController!.offset > 0 &&
-            scrollController!.offset < widget.drawerWidth.floor()) {
-          iconAnimationController?.animateTo(
-              (scrollController!.offset * 100 / (widget.drawerWidth)) / 100,
-              duration: const Duration(milliseconds: 0),
-              curve: Curves.fastOutSlowIn);
-        } else {
-          if (scrolloffset != 0.0) {
-            setState(() {
-              scrolloffset = 0.0;
-              try {
-                widget.drawerIsOpen!(false);
-              } catch (_) {}
-            });
-          }
-          iconAnimationController?.animateTo(1.0,
-              duration: const Duration(milliseconds: 0),
-              curve: Curves.fastOutSlowIn);
+    scrollController!.addListener(() {
+      if (scrollController!.offset <= 0) {
+        if (scrollOffset != 1.0) {
+          setState(() {
+            scrollOffset = 1.0;
+            try {
+              widget.drawerIsOpen!(true);
+            } catch (_) {}
+          });
         }
-      });
+        iconAnimationController?.animateTo(0.0,
+            duration: const Duration(milliseconds: 0),
+            curve: Curves.fastOutSlowIn);
+      } else if (scrollController!.offset > 0 &&
+          scrollController!.offset < widget.drawerWidth.floor()) {
+        iconAnimationController?.animateTo(
+            (scrollController!.offset * 100 / (widget.drawerWidth)) / 100,
+            duration: const Duration(milliseconds: 0),
+            curve: Curves.fastOutSlowIn);
+      } else {
+        if (scrollOffset != 0.0) {
+          setState(() {
+            scrollOffset = 0.0;
+            try {
+              widget.drawerIsOpen!(false);
+            } catch (_) {}
+          });
+        }
+        iconAnimationController?.animateTo(1.0,
+            duration: const Duration(milliseconds: 0),
+            curve: Curves.fastOutSlowIn);
+      }
+    });
     WidgetsBinding.instance?.addPostFrameCallback((_) => getInitState());
     super.initState();
   }
@@ -117,15 +114,16 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                       transform: Matrix4.translationValues(
                           scrollController!.offset, 0.0, 0.0),
                       child: HomeDrawer(
-                        screenIndex: widget.screenIndex == null
-                            ? DrawerIndex.HOME
-                            : widget.screenIndex,
+                        screenIndex: widget.screenIndex ?? DrawerIndex.home,
                         iconAnimationController: iconAnimationController,
                         callBackIndex: (DrawerIndex indexType) {
                           onDrawerClick();
                           try {
                             widget.onDrawerCall!(indexType);
-                          } catch (e) {}
+                          } catch (e) {
+                            // ignore: avoid_print
+                            print(e.toString());
+                          }
                         },
                       ),
                     );
@@ -149,11 +147,11 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                     children: <Widget>[
                       //this IgnorePointer we use as touch(user Interface) widget.screen View, for example scrolloffset == 1 means drawer is close we just allow touching all widget.screen View
                       IgnorePointer(
-                        ignoring: scrolloffset == 1 || false,
+                        ignoring: scrollOffset == 1 || false,
                         child: widget.screenView,
                       ),
                       //alternative touch(user Interface) for widget.screen, for example, drawer is close we need to tap on a few home screen area and close the drawer
-                      if (scrolloffset == 1.0)
+                      if (scrollOffset == 1.0)
                         InkWell(
                           onTap: () {
                             onDrawerClick();

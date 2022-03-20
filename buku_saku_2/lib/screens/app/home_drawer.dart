@@ -30,36 +30,36 @@ class _HomeDrawerState extends State<HomeDrawer> {
   void setDrawerListArray() {
     drawerList = <DrawerList>[
       DrawerList(
-        index: DrawerIndex.HOME,
+        index: DrawerIndex.home,
         labelName: 'Beranda',
-        icon: Icon(Icons.home),
+        icon: const Icon(Icons.home),
       ),
       DrawerList(
-        index: DrawerIndex.Export,
+        index: DrawerIndex.export,
         labelName: 'Ekspor Catatan',
         isAssetsImage: true,
         imageName: 'assets/icons/export.svg',
       ),
       DrawerList(
-        index: DrawerIndex.Rules,
+        index: DrawerIndex.rules,
         labelName: 'Dasar Peraturan',
         isAssetsImage: true,
         imageName: 'assets/icons/map.svg',
       ),
       DrawerList(
-        index: DrawerIndex.FeedBack,
+        index: DrawerIndex.feedBack,
         labelName: 'FeedBack',
-        icon: Icon(Icons.help),
+        icon: const Icon(Icons.help),
       ),
       DrawerList(
-        index: DrawerIndex.Share,
+        index: DrawerIndex.share,
         labelName: 'Rate the app',
-        icon: Icon(Icons.share),
+        icon: const Icon(Icons.share),
       ),
       DrawerList(
-        index: DrawerIndex.About,
+        index: DrawerIndex.about,
         labelName: 'About Us',
-        icon: Icon(Icons.info),
+        icon: const Icon(Icons.info),
       ),
     ];
   }
@@ -146,7 +146,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
               padding: const EdgeInsets.all(0.0),
               itemCount: drawerList?.length,
               itemBuilder: (BuildContext context, int index) {
-                return inkwell(drawerList![index]);
+                return menuList(drawerList![index]);
               },
             ),
           ),
@@ -186,17 +186,17 @@ class _HomeDrawerState extends State<HomeDrawer> {
   }
 
   void onTapped() {
-    print('Doing Something...'); // Print to console.
+    print('Disini fungsi sign out...'); // Print to console.
   }
 
-  Widget inkwell(DrawerList listData) {
+  Widget menuList(DrawerList listData) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
         splashColor: Colors.grey.withOpacity(0.1),
         highlightColor: Colors.transparent,
         onTap: () {
-          navigationtoScreen(listData.index!);
+          navigationToScreen(listData.index!);
         },
         child: Stack(
           children: <Widget>[
@@ -207,23 +207,23 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Container(
                     width: 6.0,
                     height: 46.0,
-                    // decoration: BoxDecoration(
-                    //   color: widget.screenIndex == listData.index
-                    //       ? Colors.blue
-                    //       : Colors.transparent,
-                    //   borderRadius: new BorderRadius.only(
-                    //     topLeft: Radius.circular(0),
-                    //     topRight: Radius.circular(16),
-                    //     bottomLeft: Radius.circular(0),
-                    //     bottomRight: Radius.circular(16),
-                    //   ),
-                    // ),
+                    decoration: BoxDecoration(
+                      color: widget.screenIndex == listData.index
+                          ? Colors.blue
+                          : Colors.transparent,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(0),
+                        topRight: Radius.circular(16),
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(16),
+                      ),
+                    ),
                   ),
                   const Padding(
                     padding: EdgeInsets.all(4.0),
                   ),
                   listData.isAssetsImage
-                      ? Container(
+                      ? SizedBox(
                           width: 24,
                           height: 24,
                           child: SvgPicture.asset(listData.imageName,
@@ -273,7 +273,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                             height: 46,
                             decoration: BoxDecoration(
                               color: Colors.blue.withOpacity(0.2),
-                              borderRadius: new BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(0),
                                 topRight: Radius.circular(28),
                                 bottomLeft: Radius.circular(0),
@@ -292,23 +292,18 @@ class _HomeDrawerState extends State<HomeDrawer> {
     );
   }
 
-  Future<void> navigationtoScreen(DrawerIndex indexScreen) async {
+  Future<void> navigationToScreen(DrawerIndex indexScreen) async {
     widget.callBackIndex!(indexScreen);
   }
 }
 
 enum DrawerIndex {
-  HOME,
-  Export,
-  Rules,
-  FeedBack,
-  Share,
-  About,
-
-  // ga perlu
-  Invite,
-  Testing,
-  Help,
+  home,
+  export,
+  rules,
+  feedBack,
+  share,
+  about,
 }
 
 class DrawerList {

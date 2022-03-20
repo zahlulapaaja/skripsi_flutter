@@ -1,4 +1,5 @@
 import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
+import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/introduction_animation/introduction_animation_screen.dart';
@@ -8,7 +9,6 @@ import 'package:buku_saku_2/screens/sign_in/verification_screen.dart';
 import 'package:buku_saku_2/screens/sign_in/sign_in_screen.dart';
 import 'package:buku_saku_2/screens/sign_in/sign_up_screen.dart';
 import 'package:buku_saku_2/screens/app/app_screen.dart';
-import 'package:buku_saku_2/screens/app/dictionary/detail_screen.dart';
 import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/note_detail_screen.dart';
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => NotesProvider()),
+        ChangeNotifierProvider(create: (_) => ScreenProvider()),
       ],
       child: MaterialApp(
         title: 'Buku Saku Prakom',
@@ -50,7 +51,6 @@ class MyApp extends StatelessWidget {
 
           // Mulai Aplikasinya
           AppScreen.id: (context) => const AppScreen(),
-          DetailScreen.id: (context) => const DetailScreen(),
           NoteDetailScreen.id: (context) => const NoteDetailScreen(),
           AddNoteScreen.id: (context) => const AddNoteScreen(),
           DetailAngkaKreditScreen.id: (context) =>

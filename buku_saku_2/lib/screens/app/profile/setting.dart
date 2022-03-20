@@ -1,7 +1,7 @@
-import 'package:buku_saku_2/screens/app/dictionary/components/batasan_penilaian.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/deskripsi_kegiatan.dart';
+import 'package:buku_saku_2/screens/app/dictionary/components/blue_grid_container.dart';
+import 'package:buku_saku_2/screens/app/dictionary/components/blue_container.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/detail_butir.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/menu_unsur.dart';
+import 'package:buku_saku_2/screens/app/dictionary/components/blue_card_button.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -33,15 +33,12 @@ class _SettingScreenState extends State<SettingScreen> {
       SizedBox(height: 20),
     );
 
-    listViews.add(
-      DetailButir(),
-    );
-    listViews.add(
-      DeskripsiKegiatan(),
-    );
-    listViews.add(
-      BatasanPenilaian(),
-    );
+    // listViews.add(
+    //   DetailButir(),
+    // );
+    // listViews.add(
+    //   BlueGridContainer(),
+    // );
   }
 
   Future<bool> getData() async {

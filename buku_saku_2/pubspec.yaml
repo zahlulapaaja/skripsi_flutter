@@ -26,6 +26,7 @@ dependencies:
   pie_chart: ^5.1.0
   dropdown_search: ^2.0.1
   number_inc_dec: ^0.8.0
+  auto_size_text: ^3.0.0
 
   #back end
   sqflite: ^2.0.2

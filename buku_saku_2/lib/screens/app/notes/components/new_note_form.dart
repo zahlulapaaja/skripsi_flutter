@@ -1,9 +1,8 @@
-import 'package:buku_saku_2/screens/app/app_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
-import 'package:flutter/material.dart';
-import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,7 +10,8 @@ import 'package:number_inc_dec/number_inc_dec.dart';
 import 'package:provider/provider.dart';
 
 class NewNoteForm extends StatefulWidget {
-  const NewNoteForm({Key? key}) : super(key: key);
+  const NewNoteForm({Key? key, this.id}) : super(key: key);
+  final String? id;
 
   @override
   State<NewNoteForm> createState() => _NewNoteFormState();
@@ -41,13 +41,10 @@ class _NewNoteFormState extends State<NewNoteForm> {
     'is_checked_bukti': {0: false},
   };
 
-  var dbHelper;
-
   @override
   void initState() {
     super.initState();
     addCheckboxBukti(index: 0);
-    dbHelper = DbHelper();
   }
 
   final _formKey = GlobalKey<FormState>();
@@ -78,9 +75,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
                   // fillColor: MaterialStateProperty.resolveWith(getColor),
                   value: selectedData['is_checked_bukti'][index],
                   onChanged: (bool? value) {
-                    print('test');
-                    print(index);
-                    print(value);
                     setState(() {
                       selectedData['is_checked_bukti'][index] =
                           !selectedData['is_checked_bukti'][index];
@@ -88,12 +82,12 @@ class _NewNoteFormState extends State<NewNoteForm> {
                   },
                 ),
               ),
-              SizedBox(width: 10),
-              Text('Disini nama buktinya apa'),
+              const SizedBox(width: 10),
+              const Text('Disini nama buktinya apa'),
             ],
           ),
           Row(
-            children: [
+            children: const [
               Icon(FontAwesomeIcons.times),
               Icon(FontAwesomeIcons.eye),
             ],
@@ -103,19 +97,23 @@ class _NewNoteFormState extends State<NewNoteForm> {
     );
   }
 
-  submitNote(context) async {
-    // if (_formKey.currentState!.validate()) {
-    //   //   final newNote = Note(
-    //   //     title: selectedData['butir'],
-    //   //     body: selectedData['uraian'],
-    //   //   );
-    //   //
-    //   //   // klo cuma pop datanya jadi ga keload
-    //   await context.read<Note>().addNewNote();
-    //
-    //   // .saveNote(newNote)
-    //   // .then({Navigator.pushNamed(context, AppScreen.id)});
-    // }
+  submitNote(noteProvider) async {
+    if (_formKey.currentState!.validate()) {
+      final newNote = Note(
+        id: 0,
+        judul: selectedData['butir'],
+        uraian: selectedData['uraian'],
+        kodeButir: '',
+        tanggalKegiatan: selectedData['date'].toString(),
+        jumlahKegiatan: selectedData['jml_kegiatan'],
+        angkaKredit: selectedData['angka_kredit'],
+        status: 1,
+        personId: 1,
+      );
+
+      noteProvider.addNewNote(newNote);
+      Navigator.pop(context);
+    }
   }
 
   removeCheckboxBukti() {
@@ -125,31 +123,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
   @override
   Widget build(BuildContext context) {
     final noteProvider = Provider.of<NotesProvider>(context);
-    var dbHelper = DbHelper();
-    Future<void> addUsers() async {
-      Note firstUser = Note(
-        title: 'Some thing',
-        body: 'Iya something gitu',
-      );
-
-      /*
-User secondUser = User(
-        name: userProvider.userTwo.name,
-        location: userProvider.userTwo.location,
-      );
-
-      User thirddUser = User(
-        name: userProvider.userThree.name,
-        location: userProvider.userThree.location,
-      );
-*/
-      // List<Note> listOfUsers = [
-      //   firstUser,
-      //   //secondUser,
-      //   //thirddUser,
-      // ];
-      return await dbHelper.saveNote(firstUser);
-    }
 
     return Form(
       key: _formKey,
@@ -160,18 +133,18 @@ User secondUser = User(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const FieldLabel(title: 'Jenjang'),
+                const FieldLabel(title: 'Butir Kegiatan'),
                 DropdownSearch<String>(
                   mode: Mode.BOTTOM_SHEET,
                   showClearButton: true,
                   items: dataButir,
-                  hint: "Jenjang Jabatan saat ini",
                   // popupItemDisabled: (String s) => s.startsWith('I'),
                   onChanged: (value) {
                     selectedData['butir'] = value;
                   },
                   selectedItem: dataButir[0],
                   dropdownSearchDecoration: const InputDecoration(
+                    hintText: "Butir Kegiatan",
                     contentPadding:
                         EdgeInsets.only(left: 10, top: 10, bottom: 10),
                     border: OutlineInputBorder(
@@ -196,13 +169,13 @@ User secondUser = User(
                   mode: Mode.BOTTOM_SHEET,
                   showClearButton: true,
                   items: dataJenjang,
-                  hint: "Jenjang Jabatan saat ini",
                   // popupItemDisabled: (String s) => s.startsWith('I'),
                   onChanged: (value) {
                     selectedData['jenjang'] = value;
                   },
                   selectedItem: dataJenjang[0],
                   dropdownSearchDecoration: const InputDecoration(
+                    hintText: "Jenjang Jabatan saat ini",
                     contentPadding: EdgeInsets.only(left: 10),
                     border: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -237,7 +210,7 @@ User secondUser = User(
                           " " +
                           selectedData['date'].year.toString()),
                       TextButton(
-                        child: Icon(FontAwesomeIcons.calendar),
+                        child: const Icon(FontAwesomeIcons.calendar),
                         onPressed: () {
                           showDatePicker(
                             context: context,
@@ -271,7 +244,7 @@ User secondUser = User(
                     borderRadius: const BorderRadius.all(Radius.circular(5)),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -280,7 +253,7 @@ User secondUser = User(
                         return null;
                       },
                       maxLines: 8,
-                      decoration: InputDecoration.collapsed(
+                      decoration: const InputDecoration.collapsed(
                           hintText: "Enter your text here"),
                       onChanged: (value) {
                         selectedData['uraian'] = value;
@@ -293,7 +266,7 @@ User secondUser = User(
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Container(
+            child: SizedBox(
               height: 90,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -307,8 +280,8 @@ User secondUser = User(
                         const FieldLabel(title: 'Jumlah Kegiatan'),
                         Expanded(
                           child: NumberInputWithIncrementDecrement(
+                            // TODO : Lengkapi logikanya
                             onChanged: (value) {
-                              print(value);
                               selectedData['jml_kegiatan'] = value;
                             },
                             onIncrement: (value) {
@@ -331,7 +304,7 @@ User secondUser = User(
                             initialValue: 1,
                             min: 1,
                             max: 10,
-                            numberFieldDecoration: InputDecoration(
+                            numberFieldDecoration: const InputDecoration(
                               contentPadding: EdgeInsets.zero,
                             ),
                           ),
@@ -349,7 +322,7 @@ User secondUser = User(
                         const FieldLabel(title: 'Angka Kredit'),
                         Expanded(
                           child: Container(
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               border:
                                   Border.all(width: 1, color: AppColors.black),
@@ -374,29 +347,8 @@ User secondUser = User(
             ),
           ),
           ElevatedButton(
-            onPressed: () async {
-              print('test');
-              print(selectedData);
-              if (_formKey.currentState!.validate()) {
-                final newNote = Note(
-                  title: selectedData['butir'],
-                  body: selectedData['uraian'],
-                );
-                //
-                //   // klo cuma pop datanya jadi ga keload
-                // context
-                //     .read<NotesProvider>()
-                //     .addNewNote(selectedData['butir'], selectedData['uraian']);
-
-                noteProvider.addingNotes(newNote);
-
-                Navigator.pop(context);
-
-                // .saveNote(newNote)
-                // .then({Navigator.pushNamed(context, AppScreen.id)});
-              }
-            },
-            child: Text('Gass'),
+            onPressed: () => submitNote(noteProvider),
+            child: const Text('Gass'),
           )
         ],
       ),

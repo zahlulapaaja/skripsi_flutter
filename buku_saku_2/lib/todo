@@ -14,3 +14,7 @@ aboutDialog untuk term and condition, alertDialog untuk hapus catatan, atau konf
 
 TODO : Coba bikin fitur select
 trus nanti bisa diapus catatan yg terpilih itu. karna kalo pake titik 3 itu susah utk diklik, itu masih aku, belom lagi klo orang tua yg pake nanti
+
+
+TODO : Gimana biar tabIcon walaupun selected tetap bisa diklik
+soalnya klo udh masuk halaman detail angka kredit, abis itu ga bisa balik lagi pake tabIcon

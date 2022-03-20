@@ -1,12 +1,15 @@
+import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
+import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/app/components/card_builder.dart';
-import 'package:dropdown_search/dropdown_search.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class DetailButir extends StatelessWidget {
-  const DetailButir({Key? key}) : super(key: key);
+  const DetailButir(
+      {Key? key, required this.butirCode, required this.butirTitle})
+      : super(key: key);
+  final String butirCode;
+  final String butirTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +30,14 @@ class DetailButir extends StatelessWidget {
                 SizedBox(
                   width: 75,
                   child: Text(
-                    'I',
+                    context.read<ScreenProvider>().selectedUnsurCode,
                     textAlign: TextAlign.left,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
-                // SizedBox(width: 50, child: Text('data')),
                 Expanded(
                   child: Text(
-                    'tata kelola dan tata laksana teknologi informasi'
-                        .toUpperCase(),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                    context.read<ScreenProvider>().selectedUnsur.toUpperCase(),
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
@@ -51,7 +50,7 @@ class DetailButir extends StatelessWidget {
                 SizedBox(
                   width: 75,
                   child: Text(
-                    'I.B',
+                    context.read<ScreenProvider>().selectedSubUnsurCode,
                     textAlign: TextAlign.left,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
@@ -59,9 +58,7 @@ class DetailButir extends StatelessWidget {
                 // SizedBox(width: 50, child: Text('data')),
                 Expanded(
                   child: Text(
-                    'Pengelolaan Data (Data Management)',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                    context.read<ScreenProvider>().selectedSubUnsur,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
@@ -74,7 +71,7 @@ class DetailButir extends StatelessWidget {
                 SizedBox(
                   width: 75,
                   child: Text(
-                    'I.B.27',
+                    butirCode,
                     textAlign: TextAlign.left,
                     style: AppConstants.kDictionaryTextStyle(
                         fontWeight: FontWeight.w700),
@@ -82,7 +79,7 @@ class DetailButir extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    'Melakukan Pemantauan (Monitoring) Implementasi Prosedur Pengelolaan Kualitas Data',
+                    butirTitle,
                     style: AppConstants.kDictionaryTextStyle(
                         fontWeight: FontWeight.w700),
                   ),

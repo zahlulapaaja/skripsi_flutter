@@ -1,11 +1,31 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BatasanPenilaian extends StatelessWidget {
-  const BatasanPenilaian({Key? key}) : super(key: key);
+class BlueGridContainer extends StatelessWidget {
+  BlueGridContainer({
+    Key? key,
+    required this.satuanHasil,
+    required this.angkaKredit,
+    required this.batasanPenilaian,
+    required this.pelaksana,
+  }) : super(key: key);
+
+  final String satuanHasil;
+  final double angkaKredit;
+  final String batasanPenilaian;
+  final String pelaksana;
+
+  List<String> titles = [
+    'Satuan Hasil',
+    'Angka Kredit',
+    'Batasan Penilaian',
+    'Pelaksana',
+  ];
+  List<String> bodies = [];
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +39,10 @@ class BatasanPenilaian extends StatelessWidget {
       itemCount: 4,
       itemBuilder: (context, index) {
         Size size = MediaQuery.of(context).size;
+        bodies.add(satuanHasil);
+        bodies.add(angkaKredit.toString());
+        bodies.add(batasanPenilaian);
+        bodies.add(pelaksana);
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -28,8 +52,8 @@ class BatasanPenilaian extends StatelessWidget {
                 children: <Widget>[
                   SvgPicture.asset("assets/icons/document.svg", width: 20),
                   const SizedBox(width: 5),
-                  const Text(
-                    'Batasan Penilaian',
+                  Text(
+                    titles[index],
                     style: AppConstants.kDictTitleTextStyle,
                   ),
                 ],
@@ -37,16 +61,15 @@ class BatasanPenilaian extends StatelessWidget {
             ),
             Container(
               width: size.width / 2 - 20,
+              height: 100,
               padding: const EdgeInsets.all(10.0),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: AppColors.info,
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              child: Text(
-                index == 1
-                    ? 'asdfjadfjasldf'
-                    : 'Laporan hasil pemantauan implementasi prosedur pengelolaan kualitas data',
+              child: AutoSizeText(
+                bodies[index],
                 textAlign: TextAlign.center,
                 style: AppConstants.kDictionaryTextStyle(),
               ),

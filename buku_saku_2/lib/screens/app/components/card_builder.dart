@@ -8,7 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CardBuilder extends StatelessWidget {
   // nanti yg Note wajib sifatnya
-  final Note? notes;
+  final Note notes;
   final String? date;
   final Function? onLongPressed;
   // final String tag;
@@ -19,8 +19,8 @@ class CardBuilder extends StatelessWidget {
 
   CardBuilder({
     Key? key,
+    required this.notes,
     this.index,
-    this.notes,
     this.date,
     // required this.tag,
     this.pinned = false,
@@ -49,14 +49,14 @@ class CardBuilder extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              notes!.title,
+              notes.judul,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: AppConstants.kCardTitleTextStyle,
             ),
             const SizedBox(height: 7),
             Text(
-              notes!.body,
+              notes.uraian,
               maxLines: index == 1 ? 10 : 5,
               overflow: TextOverflow.ellipsis,
               style: AppConstants.kCardBodyTextStyle,
