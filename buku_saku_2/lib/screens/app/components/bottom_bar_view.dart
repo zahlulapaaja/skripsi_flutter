@@ -3,6 +3,8 @@ import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
 import 'dart:math' as math;
 
+// TODO : Disini perlu dibersihin dikit UI nya
+
 class BottomBarView extends StatefulWidget {
   const BottomBarView(
       {Key? key, this.tabIconsList, this.changeIndex, this.addClick})
@@ -24,10 +26,10 @@ class _BottomBarViewState extends State<BottomBarView>
   void initState() {
     animationController = AnimationController(
       vsync: this,
-      // TODO : fungsi 1 detik disini apa ???
       duration: const Duration(milliseconds: 1000),
     );
     animationController?.forward();
+
     super.initState();
   }
 

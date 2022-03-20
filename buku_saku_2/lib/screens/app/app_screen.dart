@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -9,7 +10,7 @@ import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
 import 'package:buku_saku_2/screens/app/home/home_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
-import 'package:buku_saku_2/screens/app/dictionary/unsur_list_screen.dart';
+import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
 import 'package:buku_saku_2/screens/app/components/bottom_bar_view.dart';
 import 'package:provider/provider.dart';
 
@@ -119,8 +120,8 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               case 2:
                 animationController?.reverse().then<dynamic>((data) {
                   if (!mounted) return;
-                  context.read<ScreenProvider>().setTabBody =
-                      UnsurListScreen(animationController: animationController);
+                  context.read<ScreenProvider>().setTabBody = DictionaryScreen(
+                      animationController: animationController);
                 });
                 break;
             }

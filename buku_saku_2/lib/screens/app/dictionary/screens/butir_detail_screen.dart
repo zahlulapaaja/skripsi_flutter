@@ -30,6 +30,7 @@ class ButirDetailScreen extends StatelessWidget {
         body: detailButir['uraian'],
       ),
     );
+
     listViews.add(
       BlueGridContainer(
         satuanHasil: detailButir['satuan_hasil'],
@@ -94,6 +95,7 @@ class ButirDetailScreen extends StatelessWidget {
 
   Widget getMainListViewUI(BuildContext context) {
     addAllListData();
+
     return ListView.builder(
       padding: EdgeInsets.only(
         top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top,

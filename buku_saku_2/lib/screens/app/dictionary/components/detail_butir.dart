@@ -1,4 +1,4 @@
-import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
+import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -30,14 +30,17 @@ class DetailButir extends StatelessWidget {
                 SizedBox(
                   width: 75,
                   child: Text(
-                    context.read<ScreenProvider>().selectedUnsurCode,
+                    context.read<DictionaryProvider>().selectedUnsurCode,
                     textAlign: TextAlign.left,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    context.read<ScreenProvider>().selectedUnsur.toUpperCase(),
+                    context
+                        .read<DictionaryProvider>()
+                        .selectedUnsur
+                        .toUpperCase(),
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
@@ -50,7 +53,7 @@ class DetailButir extends StatelessWidget {
                 SizedBox(
                   width: 75,
                   child: Text(
-                    context.read<ScreenProvider>().selectedSubUnsurCode,
+                    context.read<DictionaryProvider>().selectedSubUnsurCode,
                     textAlign: TextAlign.left,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
@@ -58,7 +61,7 @@ class DetailButir extends StatelessWidget {
                 // SizedBox(width: 50, child: Text('data')),
                 Expanded(
                   child: Text(
-                    context.read<ScreenProvider>().selectedSubUnsur,
+                    context.read<DictionaryProvider>().selectedSubUnsur,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),

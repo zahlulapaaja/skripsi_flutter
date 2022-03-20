@@ -1,4 +1,5 @@
 import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
+import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => NotesProvider()),
         ChangeNotifierProvider(create: (_) => ScreenProvider()),
+        ChangeNotifierProvider(create: (_) => DictionaryProvider()),
       ],
       child: MaterialApp(
         title: 'Buku Saku Prakom',

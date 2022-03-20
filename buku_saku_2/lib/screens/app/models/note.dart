@@ -1,6 +1,7 @@
 class Note {
   // TODO : Nanti hapus semua null checknya
   // Ga juga sih, soalnya kan di halaman awal ga perlu semua atribut, cukup judul, uraian, gambar klo ada, dan status
+  // Ga perlu juga sih semua data itu, yg penting koe butirnya, nanti kan bisa panggil ke data json detailnya
   final int id;
   final String judul;
   final String uraian;

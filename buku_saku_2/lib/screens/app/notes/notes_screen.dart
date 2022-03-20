@@ -67,7 +67,7 @@ class _NotesScreenState extends State<NotesScreen>
     List<bool> activeTextButton = [true, false, false];
 
     listViews.add(
-      const SearchBox(),
+      SearchBox(),
     );
 
     listViews.add(

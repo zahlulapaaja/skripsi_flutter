@@ -54,7 +54,6 @@ class DetailAngkaKredit extends StatelessWidget {
                                   left: 8, right: 8, top: 4),
                               child: Column(
                                 children: <Widget>[
-                                  // TODO : Kenapa ada error overflowed ???, tapi pas cold restart ga ada
                                   Row(
                                     children: <Widget>[
                                       Container(
