@@ -19,7 +19,9 @@ class _CardGridViewState extends State<CardGridView> {
     return FutureBuilder(
       future: context.watch<NotesProvider>().notes,
       builder: (BuildContext context, AsyncSnapshot<List<Note>> snapshot) {
-        if (snapshot.hasData) {
+        if (snapshot.hasError) {
+          return const Center(child: Text('error fetching data'));
+        } else if (snapshot.hasData) {
           if (snapshot.data!.isEmpty) {
             return const Center(child: Text('Notes Still Empty'));
           }
@@ -90,8 +92,8 @@ class _CardGridViewState extends State<CardGridView> {
             },
           );
         } else {
-          return Center(
-            child: Text('kosong oi'),
+          return const Center(
+            child: CircularProgressIndicator(),
           );
         }
       },

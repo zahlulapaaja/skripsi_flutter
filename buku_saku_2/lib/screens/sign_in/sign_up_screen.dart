@@ -4,7 +4,6 @@ import 'package:flutter/gestures.dart';
 import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const String id = "sign_up_screen";
@@ -63,8 +62,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 children: <Widget>[
                   Container(
                     width: MediaQuery.of(context).size.width - 20,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 12.0, vertical: 20),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12.0, vertical: 20),
                     decoration: const BoxDecoration(
                       color: AppColors.offWhite,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -125,7 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           alignment: Alignment.centerRight,
                           child: TextButton(
                             onPressed: () {},
-                            child: Text(
+                            child: const Text(
                               'Lupa Password?',
                               style: TextStyle(
                                 fontSize: AppConstants.kTinyFontSize,
@@ -178,8 +177,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: Row(
                               children: <Widget>[
                                 Image.asset('assets/icons/google.png'),
-                                SizedBox(width: 10),
-                                Text(
+                                const SizedBox(width: 10),
+                                const Text(
                                   'Continue with Google',
                                   style: TextStyle(
                                     color: AppColors.black,

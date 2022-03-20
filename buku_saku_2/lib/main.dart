@@ -42,9 +42,9 @@ class MyApp extends StatelessWidget {
           SignInScreen.id: (context) => const SignInScreen(),
           SignUpScreen.id: (context) => const SignUpScreen(),
           IntroductionAnimationScreen.id: (context) =>
-              IntroductionAnimationScreen(),
+              const IntroductionAnimationScreen(),
           VerificationScreen.id: (context) =>
-              VerificationScreen("+62899221100"),
+              const VerificationScreen(phoneNumber: "+62899221100"),
           ResetPasswordScreen.id: (context) => const ResetPasswordScreen(),
           CreateNewPasswordScreen.id: (context) =>
               const CreateNewPasswordScreen(),

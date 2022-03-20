@@ -1,13 +1,6 @@
-import 'package:buku_saku_2/screens/app/dictionary/components/blue_grid_container.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/blue_container.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/detail_butir.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/blue_card_button.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:buku_saku_2/screens/app/components/searchbox.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/menu_kamus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NoteDetailScreen extends StatefulWidget {
@@ -21,7 +14,7 @@ class NoteDetailScreen extends StatefulWidget {
 class _NoteDetailScreenState extends State<NoteDetailScreen> {
   List<Widget> listViews = <Widget>[];
 
-  // TODO : OTW bikin screen detail catatan (kalo bisa sih beda sama screen edit/tambah nya)
+  // TODO : Ini laman detail, benerin gih
 
   @override
   void initState() {
@@ -31,20 +24,8 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
 
   void addAllListData() {
     listViews.add(
-      SizedBox(height: 20),
+      const SizedBox(height: 20),
     );
-
-    // listViews.add(
-    //   DetailButir(),
-    // );
-    // listViews.add(
-    //   BlueContainer(
-    //     body: 'adf',
-    //   ),
-    // );
-    // listViews.add(
-    //   BlueGridContainer(),
-    // );
   }
 
   @override
@@ -55,11 +36,9 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
         backgroundColor: Colors.transparent,
         floatingActionButton: FloatingActionButton(
           heroTag: 'button3tag',
-          onPressed: () {
-            print('tambah catatan');
-          },
+          onPressed: () {},
           backgroundColor: AppColors.primary,
-          child: Icon(FontAwesomeIcons.plus),
+          child: const Icon(FontAwesomeIcons.plus),
         ),
         body: Stack(
           children: <Widget>[
@@ -110,7 +89,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                 height: MediaQuery.of(context).padding.top,
               ),
               Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   left: 16,
                   right: 16,
                   top: 12 - 4.0,
@@ -118,12 +97,12 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
+                  children: const <Widget>[
                     Icon(
                       FontAwesomeIcons.chevronLeft,
                       color: AppColors.offWhite,
                     ),
-                    const Expanded(
+                    Expanded(
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(

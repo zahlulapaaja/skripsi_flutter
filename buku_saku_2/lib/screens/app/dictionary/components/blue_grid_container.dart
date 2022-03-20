@@ -19,13 +19,14 @@ class BlueGridContainer extends StatelessWidget {
   final String batasanPenilaian;
   final String pelaksana;
 
-  List<String> titles = [
+  final List<String> titles = [
     'Satuan Hasil',
     'Angka Kredit',
     'Batasan Penilaian',
     'Pelaksana',
   ];
-  List<String> bodies = [];
+
+  final List<String> bodies = [];
 
   @override
   Widget build(BuildContext context) {

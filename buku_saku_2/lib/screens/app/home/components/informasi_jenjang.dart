@@ -6,7 +6,7 @@ class InformasiJenjang extends StatelessWidget {
   final AnimationController? animationController;
   final Animation<double>? animation;
 
-  InformasiJenjang({Key? key, this.animationController, this.animation})
+  const InformasiJenjang({Key? key, this.animationController, this.animation})
       : super(key: key);
 
   @override
@@ -40,9 +40,9 @@ class InformasiJenjang extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Column(
-                          children: <Widget>[
+                          children: const <Widget>[
                             Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   vertical: 10.0, horizontal: 14.0),
                               child: Text(
                                 'Jenjang',
@@ -70,9 +70,9 @@ class InformasiJenjang extends StatelessWidget {
                       Expanded(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
+                          children: const <Widget>[
                             Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   vertical: 10.0, horizontal: 14.0),
                               child: Text(
                                 'Butuh 45.123 AK menuju Pranata Komputer Penyelia',

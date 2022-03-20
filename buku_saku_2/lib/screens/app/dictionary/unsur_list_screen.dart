@@ -1,14 +1,13 @@
 import 'dart:convert';
-import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
-import 'package:buku_saku_2/screens/app/dictionary/sub_unsur_list_screen.dart';
-import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_card_button.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/components/searchbox.dart';
+import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
+import 'package:buku_saku_2/screens/app/dictionary/sub_unsur_list_screen.dart';
+import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:provider/provider.dart';
 
 class UnsurListScreen extends StatefulWidget {
@@ -79,7 +78,7 @@ class _UnsurListScreenState extends State<UnsurListScreen> {
       ),
       scrollDirection: Axis.vertical,
       children: [
-        SearchBox(),
+        const SearchBox(),
         FutureBuilder(
           future: readJsonData(),
           builder: (context, AsyncSnapshot<List<ButirKegiatan>> snapshot) {

@@ -48,16 +48,15 @@ class AppBarUI extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
-                    (backButton)
-                        ? IconButton(
-                            icon: const Icon(
-                              FontAwesomeIcons.chevronLeft,
-                              color: AppColors.offWhite,
-                              size: AppConstants.kLargeFontSize,
-                            ),
-                            onPressed: backButtonCallback,
-                          )
-                        : const SizedBox(),
+                    if (backButton)
+                      IconButton(
+                        icon: const Icon(
+                          FontAwesomeIcons.chevronLeft,
+                          color: AppColors.offWhite,
+                          size: AppConstants.kLargeFontSize,
+                        ),
+                        onPressed: backButtonCallback,
+                      ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[

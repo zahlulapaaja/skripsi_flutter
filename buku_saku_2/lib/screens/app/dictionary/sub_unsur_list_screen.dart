@@ -7,6 +7,7 @@ import 'package:buku_saku_2/screens/app/components/searchbox.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class SubUnsurListScreen extends StatelessWidget {
   final List<dynamic> subUnsur;
   SubUnsurListScreen({Key? key, required this.subUnsur}) : super(key: key);
@@ -60,7 +61,7 @@ class SubUnsurListScreen extends StatelessWidget {
       ),
       scrollDirection: Axis.vertical,
       children: [
-        SearchBox(),
+        const SearchBox(),
         ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: 14.0),
           itemCount: subUnsur.length,

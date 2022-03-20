@@ -10,6 +10,8 @@ import 'package:buku_saku_2/screens/introduction_animation/components/welcome_vi
 
 class IntroductionAnimationScreen extends StatefulWidget {
   static const String id = 'introduction_animation_screen';
+
+  const IntroductionAnimationScreen({Key? key}) : super(key: key);
   @override
   _IntroductionAnimationScreenState createState() =>
       _IntroductionAnimationScreenState();
@@ -22,7 +24,7 @@ class _IntroductionAnimationScreenState
   @override
   void initState() {
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 8));
+        AnimationController(vsync: this, duration: const Duration(seconds: 8));
     _animationController?.animateTo(0.0);
     super.initState();
   }
@@ -35,7 +37,6 @@ class _IntroductionAnimationScreenState
 
   @override
   Widget build(BuildContext context) {
-    print(_animationController?.value);
     return Scaffold(
       backgroundColor: AppColors.offWhite,
       body: ClipRect(
@@ -44,10 +45,10 @@ class _IntroductionAnimationScreenState
             SplashView(
               animationController: _animationController!,
             ),
-            Onboarding1(
+            OnBoarding1(
               animationController: _animationController!,
             ),
-            Onboarding2(
+            OnBoarding2(
               animationController: _animationController!,
             ),
             WelcomeView(
@@ -72,7 +73,7 @@ class _IntroductionAnimationScreenState
 
   void _onSkipClick() {
     _animationController?.animateTo(0.75,
-        duration: Duration(milliseconds: 1200));
+        duration: const Duration(milliseconds: 1200));
   }
 
   void _onBackClick() {

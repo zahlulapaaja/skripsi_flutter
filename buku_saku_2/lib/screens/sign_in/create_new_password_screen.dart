@@ -26,12 +26,12 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
           children: [
             IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios_new_rounded,
                 color: AppColors.black,
               ),
             ),
-            Text(
+            const Text(
               'Create New Password',
               style: TextStyle(
                 color: AppColors.black,
@@ -44,7 +44,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,9 +52,9 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
+                const Text(
                     'Your new password must be different from previous used password'),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 FormFieldTemplate(
                   headingText: "New Password",
                   hintText: "Masukkan password baru...",
@@ -68,7 +68,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                   textInputAction: TextInputAction.done,
                   textInputType: TextInputType.text,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 FormFieldTemplate(
                   headingText: "Confirm Password",
                   hintText: "Konfirmasi password baru...",

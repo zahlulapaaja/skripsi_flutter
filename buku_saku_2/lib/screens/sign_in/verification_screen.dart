@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:async';
 import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -9,7 +11,7 @@ class VerificationScreen extends StatefulWidget {
   static const id = 'verification_screen';
   final String? phoneNumber;
 
-  VerificationScreen(this.phoneNumber);
+  const VerificationScreen({Key? key, this.phoneNumber}) : super(key: key);
 
   @override
   _VerificationScreenState createState() => _VerificationScreenState();
@@ -43,7 +45,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message!),
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -53,7 +55,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
     return Scaffold(
       backgroundColor: AppColors.offWhite,
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -61,18 +63,19 @@ class _VerificationScreenState extends State<VerificationScreen> {
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Container(
                     height: MediaQuery.of(context).size.height / 3,
-                    constraints: BoxConstraints(maxWidth: 350, maxHeight: 150),
+                    constraints:
+                        const BoxConstraints(maxWidth: 350, maxHeight: 150),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: Image.asset("assets/icons/verif.png"),
                     ),
                   ),
-                  SizedBox(height: 8),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  const SizedBox(height: 8),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
                     child: Text(
                       'Verify',
                       style: TextStyle(
@@ -90,18 +93,18 @@ class _VerificationScreenState extends State<VerificationScreen> {
                           children: [
                             TextSpan(
                                 text: "${widget.phoneNumber}",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: AppColors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: AppConstants.kSmallFontSize)),
                           ],
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: AppColors.black,
                               fontSize: AppConstants.kSmallFontSize)),
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Form(
                     key: formKey,
                     child: Padding(
@@ -109,7 +112,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                             vertical: 8.0, horizontal: 30),
                         child: PinCodeTextField(
                           appContext: context,
-                          pastedTextStyle: TextStyle(
+                          pastedTextStyle: const TextStyle(
                             color: AppColors.primary,
                             fontWeight: FontWeight.bold,
                           ),
@@ -131,11 +134,11 @@ class _VerificationScreenState extends State<VerificationScreen> {
                             activeFillColor: Colors.white,
                           ),
                           cursorColor: AppColors.black,
-                          animationDuration: Duration(milliseconds: 300),
+                          animationDuration: const Duration(milliseconds: 300),
                           errorAnimationController: errorController,
                           controller: textEditingController,
                           keyboardType: TextInputType.number,
-                          boxShadows: [
+                          boxShadows: const [
                             BoxShadow(
                               offset: Offset(0, 1),
                               color: Colors.black12,
@@ -182,13 +185,13 @@ class _VerificationScreenState extends State<VerificationScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 30.0),
                     child: Text(
                       hasError ? "Please fill up all the cells properly" : "",
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: AppColors.alert,
                           fontSize: 12,
                           fontWeight: FontWeight.w400),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                 ],
               ),
               Column(
@@ -202,18 +205,18 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       onPressed: () {},
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Didn't receive the code? ",
                         style: TextStyle(
                             color: AppColors.lightBlack, fontSize: 15),
                       ),
                       TextButton(
                         onPressed: () => snackBar("OTP resend!!"),
-                        child: Text(
+                        child: const Text(
                           "RESEND",
                           style: TextStyle(
                             color: AppColors.black,

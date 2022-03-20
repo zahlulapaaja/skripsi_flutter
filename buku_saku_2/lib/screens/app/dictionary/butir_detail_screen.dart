@@ -1,21 +1,21 @@
-import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
-import 'package:buku_saku_2/screens/app/notes/components/new_note_form.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_grid_container.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_container.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/detail_butir.dart';
+import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
+import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ButirDetailScreen extends StatelessWidget {
   ButirDetailScreen({Key? key, required this.detailButir}) : super(key: key);
 
   final Map<String, dynamic> detailButir;
-  List<Widget> listViews = <Widget>[];
+  final List<Widget> listViews = <Widget>[];
 
   void addAllListData() {
     listViews.add(
-      SizedBox(height: 20),
+      const SizedBox(height: 20),
     );
 
     listViews.add(
@@ -65,7 +65,8 @@ class ButirDetailScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => NewNoteForm(id: detailButir['id']),
+                builder: (context) =>
+                    AddNoteScreen(butirCode: detailButir['kode']),
               ),
             );
           },

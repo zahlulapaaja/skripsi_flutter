@@ -1,12 +1,11 @@
-import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_card_button.dart';
 import 'package:buku_saku_2/screens/app/components/searchbox.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/dictionary/butir_detail_screen.dart';
-import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class ButirListScreen extends StatelessWidget {
   ButirListScreen({Key? key, required this.butir}) : super(key: key);
 
@@ -60,7 +59,7 @@ class ButirListScreen extends StatelessWidget {
       ),
       scrollDirection: Axis.vertical,
       children: [
-        SearchBox(),
+        const SearchBox(),
         ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: 14.0),
           itemCount: butir.length,

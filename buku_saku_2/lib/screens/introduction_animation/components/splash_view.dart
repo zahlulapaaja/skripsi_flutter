@@ -17,10 +17,10 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     final _introductionanimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(0.0, -1.0))
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(0.0, -1.0))
             .animate(CurvedAnimation(
       parent: widget.animationController,
-      curve: Interval(
+      curve: const Interval(
         0.0,
         0.25,
         curve: Curves.fastOutSlowIn,
@@ -37,16 +37,14 @@ class _SplashViewState extends State<SplashView> {
                 width: MediaQuery.of(context).size.width,
                 child: Image.asset('assets/icons/logo_buku.png'),
               ),
-              SizedBox(
-                height: 48,
-              ),
+              const SizedBox(height: 48),
               InkWell(
                 onTap: () {
                   widget.animationController.animateTo(0.25);
                 },
                 child: Container(
                   height: 58,
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 96.0,
                     right: 96.0,
                     top: 16,
@@ -56,7 +54,7 @@ class _SplashViewState extends State<SplashView> {
                     borderRadius: BorderRadius.circular(38.0),
                     color: AppColors.primaryLight,
                   ),
-                  child: Text(
+                  child: const Text(
                     "Mulai",
                     style: TextStyle(
                       fontSize: AppConstants.kLargeFontSize,
@@ -66,7 +64,7 @@ class _SplashViewState extends State<SplashView> {
                   ),
                 ),
               ),
-              Image(
+              const Image(
                 image: AssetImage('assets/introduction/splash.png'),
               ),
             ],

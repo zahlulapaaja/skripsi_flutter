@@ -94,14 +94,14 @@ class _DetailAngkaKreditScreenState extends State<DetailAngkaKreditScreen>
     listViews.add(
       Row(
         children: [
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           Expanded(
             child: BlueRoundedButton(
               buttonTitle: 'update',
               onPressed: () {},
             ),
           ),
-          SizedBox(width: 14),
+          const SizedBox(width: 14),
         ],
       ),
     );
@@ -196,11 +196,11 @@ class _DetailAngkaKreditScreenState extends State<DetailAngkaKreditScreen>
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
+                          children: const <Widget>[
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: const Text(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
                                   'Detail Angka Kredit',
                                   textAlign: TextAlign.center,
                                   style: AppConstants.kNavHeaderTextStyle,

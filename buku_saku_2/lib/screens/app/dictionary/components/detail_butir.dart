@@ -43,7 +43,7 @@ class DetailButir extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 7),
+            const SizedBox(height: 7),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[

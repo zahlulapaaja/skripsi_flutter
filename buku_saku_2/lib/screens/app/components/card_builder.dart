@@ -1,10 +1,7 @@
-import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/app/models/note.dart';
-import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CardBuilder extends StatelessWidget {
   // nanti yg Note wajib sifatnya
@@ -17,7 +14,10 @@ class CardBuilder extends StatelessWidget {
   final int? index;
   final bool? pinned;
 
-  CardBuilder({
+  // TODO : Tambah atribut yang lengkap disini
+  // Dan bikin kondisi, kalo lagi dalam kondisi edit, ada tambahan input kayak status, dsb
+
+  const CardBuilder({
     Key? key,
     required this.notes,
     this.index,

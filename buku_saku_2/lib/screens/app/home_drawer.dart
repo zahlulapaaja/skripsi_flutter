@@ -186,6 +186,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
   }
 
   void onTapped() {
+    // ignore: avoid_print
     print('Disini fungsi sign out...'); // Print to console.
   }
 
@@ -266,7 +267,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                             0.0,
                             0.0),
                         child: Padding(
-                          padding: EdgeInsets.only(top: 8, bottom: 8),
+                          padding: const EdgeInsets.only(top: 8, bottom: 8),
                           child: Container(
                             width:
                                 MediaQuery.of(context).size.width * 0.75 - 64,

@@ -1,6 +1,4 @@
-import 'package:buku_saku_2/screens/app/home/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 
 class ScreenProvider with ChangeNotifier {

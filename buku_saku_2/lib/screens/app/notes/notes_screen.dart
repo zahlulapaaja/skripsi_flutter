@@ -1,14 +1,13 @@
-import 'package:buku_saku_2/screens/app/components/card_list_view.dart';
-import 'package:buku_saku_2/screens/app/notes/components/pinned_card_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:buku_saku_2/screens/app/components/card_list_view.dart';
+import 'package:buku_saku_2/screens/app/notes/components/pinned_card_list_view.dart';
 import 'package:buku_saku_2/screens/app/components/searchbox.dart';
 import 'package:buku_saku_2/screens/app/components/title_view.dart';
 import 'package:buku_saku_2/screens/app/components/card_grid_view.dart';
 import 'package:buku_saku_2/screens/app/notes/components/pinned_card_grid_view.dart';
-import 'package:buku_saku_2/screens/app/notes/components/multi_title_view.dart';
 
 class NotesScreen extends StatefulWidget {
   static const id = 'notes_screen';
@@ -33,7 +32,7 @@ class _NotesScreenState extends State<NotesScreen>
     topBarAnimation =
         Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
       parent: widget.animationController!,
-      curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn),
+      curve: const Interval(0, 0.5, curve: Curves.fastOutSlowIn),
     ));
     addAllData(false);
 
@@ -68,7 +67,7 @@ class _NotesScreenState extends State<NotesScreen>
     List<bool> activeTextButton = [true, false, false];
 
     listViews.add(
-      SearchBox(),
+      const SearchBox(),
     );
 
     listViews.add(
@@ -76,18 +75,18 @@ class _NotesScreenState extends State<NotesScreen>
         titleTxt: 'Pinned',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
-            curve:
-                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 2, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
 
     listViews.add(
-      isListView ? PinnedCardListView() : PinnedCardGridView(),
+      isListView ? const PinnedCardListView() : const PinnedCardGridView(),
     );
 
     listViews.add(
-      SizedBox(height: 20),
+      const SizedBox(height: 20),
     );
 
     listViews.add(
@@ -95,7 +94,7 @@ class _NotesScreenState extends State<NotesScreen>
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 2),
         child: ShaderMask(
           shaderCallback: (Rect bounds) {
-            return LinearGradient(
+            return const LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: <Color>[AppColors.offWhite, Colors.transparent],
@@ -112,6 +111,7 @@ class _NotesScreenState extends State<NotesScreen>
                   padding: const EdgeInsets.only(right: 20.0),
                   child: GestureDetector(
                     onTap: () {
+                      // ignore: avoid_print
                       print('tombol $index ditekan');
                       setState(() {
                         activeTextButton = [false, false, false];
@@ -135,7 +135,7 @@ class _NotesScreenState extends State<NotesScreen>
     );
 
     listViews.add(
-      isListView ? CardListView() : CardGridView(),
+      isListView ? const CardListView() : const CardGridView(),
     );
   }
 
@@ -228,6 +228,7 @@ class _NotesScreenState extends State<NotesScreen>
                           ),
                           GestureDetector(
                             onTap: () {
+                              // ignore: avoid_print
                               print('ganti tampilan');
                               listViews = [];
                               setState(() {

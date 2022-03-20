@@ -12,14 +12,14 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
       {Key? key, this.animationController, this.animation})
       : super(key: key);
 
-  Map<String, double> dataMap = {
+  final Map<String, double> dataMap = {
     "Flutter": 5,
     "React": 3,
     "Xamarin": 2,
     "Ionic": 2,
   };
 
-  List<Color> colorList = [
+  final List<Color> colorList = [
     AppColors.success,
     AppColors.primary,
     AppColors.alert,
@@ -54,8 +54,8 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 14.0),
                       child: Text(
                         'Angka Kredit Terkumpul',
@@ -67,7 +67,7 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 30.0),
                       child: PieChart(
                         dataMap: dataMap,
-                        animationDuration: Duration(milliseconds: 800),
+                        animationDuration: const Duration(milliseconds: 800),
                         chartLegendSpacing: 32,
                         chartRadius: MediaQuery.of(context).size.width / 3.2,
                         colorList: colorList,

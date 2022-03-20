@@ -24,12 +24,12 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
           children: [
             IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios_new_rounded,
                 color: AppColors.black,
               ),
             ),
-            Text(
+            const Text(
               'Reset Password',
               style: TextStyle(
                 color: AppColors.black,
@@ -42,7 +42,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -50,13 +50,13 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
+                const Text(
                     'Input your email and let’s help you get your password back'),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 FormFieldTemplate(
                   headingText: "Input Your Email Address",
                   hintText: "Masukkan email anda...",
-                  suffixIcon: Icon(Icons.mail),
+                  suffixIcon: const Icon(Icons.mail),
                   obsecureText: false,
                   maxLines: 1,
                   border: Border.all(color: AppColors.black),
