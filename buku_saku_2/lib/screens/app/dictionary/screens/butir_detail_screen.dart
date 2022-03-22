@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_grid_container.dart';
@@ -79,10 +80,16 @@ class ButirDetailScreen extends StatelessWidget {
             getMainListViewUI(context),
             AppBarUI(
               title: 'Detail Butir',
-              backButton: true,
-              backButtonCallback: () {
-                Navigator.pop(context);
-              },
+              leftIconButton: IconButton(
+                icon: const Icon(
+                  FontAwesomeIcons.chevronLeft,
+                  color: AppColors.offWhite,
+                  size: AppConstants.kLargeFontSize,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             SizedBox(
               height: MediaQuery.of(context).padding.bottom,

@@ -131,17 +131,14 @@ class AppConstants {
     // suffixIcon: SvgPicture.asset("assets/icons/search.svg"),
   );
 
-  static kTextFieldDecoration({String? hintText}) {
+  static kTextFieldDecoration(
+      {String? hintText, required BorderSide borderSide}) {
     return InputDecoration(
       isDense: true,
       hintText: hintText,
       contentPadding: const EdgeInsets.only(left: 10),
-      border: const OutlineInputBorder(
-        borderSide: BorderSide(
-          color: AppColors.black,
-          width: 4,
-          style: BorderStyle.solid,
-        ),
+      border: OutlineInputBorder(
+        borderSide: borderSide,
       ),
       hintStyle: const TextStyle(
         fontFamily: AppConstants.fontName,

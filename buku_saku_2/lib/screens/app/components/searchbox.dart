@@ -1,11 +1,11 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/blue_card_button.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class SearchBox extends StatelessWidget {
   SearchBox({Key? key}) : super(key: key);
 
@@ -13,24 +13,6 @@ class SearchBox extends StatelessWidget {
   List<String>? titles;
   List<String>? subtitles;
   List<dynamic>? detailButir;
-
-  // Pencarian sih bagusnya untuk semua teros, satu fungsi, nyari di semua butir
-  // void getData(dynamic data) {
-  //   codes = List<String>.generate(
-  //       data.length, (index) => data[index]['kode'].toString(),
-  //       growable: true);
-  //
-  //   titles = List<String>.generate(
-  //       data.length, (index) => data[index]['judul'].toString(),
-  //       growable: true);
-  //
-  //   subtitles = List<String>.generate(data.length,
-  //       (index) => "Angka Kredit : " + data[index]['angka_kredit'].toString(),
-  //       growable: true);
-  //
-  //   detailButir = List<dynamic>.generate(data.length, (index) => data[index],
-  //       growable: true);
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -56,13 +38,8 @@ class SearchBox extends StatelessWidget {
           Expanded(
             child: TextField(
               onChanged: (value) {
-                // print(value);
-
+                // ini searchbox di notes
                 context.read<DictionaryProvider>().setQuery = value;
-                // context.read<ScreenProvider>().setDictionaryList = Container(
-                //   child: Center(child: Text(value)),
-                // );
-                // codes!;
               },
               autocorrect: false,
               enableSuggestions: false,

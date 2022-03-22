@@ -1,19 +1,18 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AppBarUI extends StatelessWidget {
   // Kalo mau bikin animasi kayak kemaren, bisa ganti jadi stateful
   const AppBarUI({
     Key? key,
     required this.title,
-    this.backButton = false,
-    this.backButtonCallback,
+    this.leftIconButton,
+    this.rightIconButton,
   }) : super(key: key);
   final String title;
-  final bool backButton;
-  final Function()? backButtonCallback;
+  final IconButton? leftIconButton;
+  final IconButton? rightIconButton;
 
   @override
   Widget build(BuildContext context) {
@@ -47,16 +46,10 @@ class AppBarUI extends StatelessWidget {
                   bottom: 4,
                 ),
                 child: Stack(
-                  children: [
-                    if (backButton)
-                      IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.chevronLeft,
-                          color: AppColors.offWhite,
-                          size: AppConstants.kLargeFontSize,
-                        ),
-                        onPressed: backButtonCallback,
-                      ),
+                  children: <Widget>[
+                    (leftIconButton != null)
+                        ? leftIconButton!
+                        : const SizedBox(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -70,6 +63,12 @@ class AppBarUI extends StatelessWidget {
                         ),
                       ],
                     ),
+                    Positioned(
+                      right: 0,
+                      child: (rightIconButton != null)
+                          ? rightIconButton!
+                          : const SizedBox(),
+                    )
                   ],
                 ),
               )

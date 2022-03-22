@@ -74,8 +74,13 @@ class _BuktiFisikFieldState extends State<BuktiFisikField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: checkboxBukti,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: checkboxBukti,
+          ),
+          ElevatedButton(onPressed: () {}, child: const Text('Add Item'))
+        ],
       ),
     );
   }

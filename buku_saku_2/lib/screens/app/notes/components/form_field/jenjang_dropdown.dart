@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:dropdown_search/dropdown_search.dart';
@@ -29,7 +30,13 @@ class JenjangDropdown extends StatelessWidget {
             selectedItem: dataJenjang[0],
             dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
             dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
-                hintText: 'Jenjang Jabatan saat ini'),
+              hintText: 'Jenjang Jabatan saat ini',
+              borderSide: const BorderSide(
+                color: AppColors.black,
+                width: 4,
+                style: BorderStyle.solid,
+              ),
+            ),
           ),
         ],
       ),

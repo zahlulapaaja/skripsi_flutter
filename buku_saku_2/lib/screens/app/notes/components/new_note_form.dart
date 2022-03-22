@@ -21,16 +21,19 @@ class NewNoteForm extends StatefulWidget {
 
 class _NewNoteFormState extends State<NewNoteForm> {
   final _formKey = GlobalKey<FormState>();
-  int? selectedItem;
+  int? selectedIndex;
   List<String> dataButir = [];
   List<String> dataJenjang = [];
+  int maxJmlKegiatan = 10;
+  bool maxKegiatan = false;
+  bool minKegiatan = false;
 
   getData(NotesProvider noteProvider, DictionaryProvider dictProvider) {
     dataButir = List<String>.generate(
       dictProvider.allButir.length,
       (index) {
         if (widget.kodeButir == dictProvider.allButir[index]['kode']) {
-          selectedItem = index;
+          selectedIndex = index;
         }
         return dictProvider.allButir[index]['kode'] +
             " " +
@@ -54,10 +57,9 @@ class _NewNoteFormState extends State<NewNoteForm> {
     'is_checked_bukti': {0: false},
   };
 
-  submitNote(noteProvider) async {
+  submitNote(NotesProvider noteProvider) async {
     if (_formKey.currentState!.validate()) {
       final newNote = Note(
-        id: 0,
         judul: selectedData['butir'],
         uraian: selectedData['uraian'],
         kodeButir: '',
@@ -85,7 +87,12 @@ class _NewNoteFormState extends State<NewNoteForm> {
         children: <Widget>[
           ButirDropdown(
             dataButir: dataButir,
-            onChanged: (value) => selectedData['butir'],
+            selectedIndex: selectedIndex,
+            onChanged: (value) {
+              setState(() {
+                selectedData['butir'] = value;
+              });
+            },
           ),
           JenjangDropdown(
               dataJenjang: dataJenjang,
@@ -106,12 +113,38 @@ class _NewNoteFormState extends State<NewNoteForm> {
             },
           ),
           JumlahKegiatanField(
-            selectedData: selectedData['jml_kegiatan'],
+            angkaKredit: selectedData['angka_kredit'],
+            max: maxJmlKegiatan,
             onIncrement: (value) {
-              selectedData['jml_kegiatan'] = value.toInt();
+              selectedData['jml_kegiatan'] = value;
               setState(() {
-                selectedData['angka_kredit'] += 0.104;
-                // addCheckboxBukti(index: value.toInt() - 1);
+                if (value == maxJmlKegiatan) {
+                  if (!maxKegiatan) selectedData['angka_kredit'] += 0.104;
+                  maxKegiatan = true;
+                } else {
+                  maxKegiatan = false;
+                  minKegiatan = false;
+                  selectedData['angka_kredit'] += 0.104;
+                }
+              });
+            },
+            onDecrement: (value) {
+              selectedData['jml_kegiatan'] = value;
+              setState(() {
+                if (value == 1) {
+                  if (!minKegiatan) selectedData['angka_kredit'] -= 0.104;
+                  minKegiatan = true;
+                } else {
+                  minKegiatan = false;
+                  maxKegiatan = false;
+                  selectedData['angka_kredit'] -= 0.104;
+                }
+              });
+            },
+            onChanged: (value) {
+              selectedData['jml_kegiatan'] = value;
+              setState(() {
+                selectedData['angka_kredit'] = value * 0.104;
               });
             },
           ),

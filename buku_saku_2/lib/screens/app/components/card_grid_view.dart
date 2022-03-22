@@ -77,7 +77,7 @@ class _CardGridViewState extends State<CardGridView> {
                           setState(() {
                             context
                                 .read<NotesProvider>()
-                                .deleteNote(snapshot.data![index].id);
+                                .deleteNote(snapshot.data![index].id!);
                           });
                         }
                       },

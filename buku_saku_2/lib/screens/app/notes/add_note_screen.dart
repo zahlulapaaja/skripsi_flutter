@@ -1,7 +1,9 @@
+import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/notes/components/new_note_form.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddNoteScreen extends StatefulWidget {
   static const id = 'add_note_screen';
@@ -24,10 +26,16 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
             getMainListViewUI(),
             AppBarUI(
               title: 'Tambah Catatan',
-              backButton: true,
-              backButtonCallback: () {
-                Navigator.pop(context);
-              },
+              leftIconButton: IconButton(
+                icon: const Icon(
+                  FontAwesomeIcons.chevronLeft,
+                  color: AppColors.offWhite,
+                  size: AppConstants.kLargeFontSize,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             SizedBox(
               height: MediaQuery.of(context).padding.bottom,
@@ -46,7 +54,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       ),
       scrollDirection: Axis.vertical,
       children: <Widget>[
-        NewNoteForm(id: widget.butirCode),
+        NewNoteForm(kodeButir: widget.butirCode),
       ],
     );
   }
