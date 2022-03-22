@@ -13,10 +13,6 @@ class AddNoteScreen extends StatefulWidget {
 }
 
 class _AddNoteScreenState extends State<AddNoteScreen> {
-  List<Widget> listViews = <Widget>[];
-
-  // TODO : OTW bikin screen detail catatan (kalo bisa sih beda sama screen edit/tambah nya)
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,8 +45,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         bottom: 62 + MediaQuery.of(context).padding.bottom,
       ),
       scrollDirection: Axis.vertical,
-      children: const <Widget>[
-        NewNoteForm(id: 'tes'),
+      children: <Widget>[
+        NewNoteForm(id: widget.butirCode),
       ],
     );
   }

@@ -117,7 +117,7 @@ class AppConstants {
   );
 
   /// Text Field
-  static const kTextFieldDecoration = InputDecoration(
+  static const kSearchboxDecoration = InputDecoration(
     hintText: "Masukkan kata kunci...",
     hintStyle: TextStyle(
       fontFamily: AppConstants.fontName,
@@ -130,6 +130,27 @@ class AppConstants {
     focusedBorder: InputBorder.none,
     // suffixIcon: SvgPicture.asset("assets/icons/search.svg"),
   );
+
+  static kTextFieldDecoration({String? hintText}) {
+    return InputDecoration(
+      isDense: true,
+      hintText: hintText,
+      contentPadding: const EdgeInsets.only(left: 10),
+      border: const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.black,
+          width: 4,
+          style: BorderStyle.solid,
+        ),
+      ),
+      hintStyle: const TextStyle(
+        fontFamily: AppConstants.fontName,
+        color: AppColors.black,
+        fontSize: AppConstants.kSmallFontSize,
+        fontWeight: FontWeight.normal,
+      ),
+    );
+  }
 
   static const kTextFieldTextStyle = TextStyle(
     fontFamily: AppConstants.fontName,

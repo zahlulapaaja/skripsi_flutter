@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
+import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
@@ -77,12 +79,25 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             changeIndex(drawerIndexData);
             //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
           },
-          screenView: Stack(
-            children: <Widget>[
-              context.watch<ScreenProvider>().tabBody,
-              bottomBar(),
-            ],
-          ),
+          screenView: FutureBuilder(
+              future: context.read<ScreenProvider>().readJsonData,
+              builder: (context, AsyncSnapshot<List<ButirKegiatan>> snapshot) {
+                if (snapshot.hasError) {
+                  return Center(child: Text('ERROR!! ${snapshot.error}'));
+                } else if (snapshot.hasData) {
+                  // TODO : Nanti disini klo datanya kosong, kondisikan lagi
+
+                  context.read<DictionaryProvider>().storeData = snapshot.data!;
+                  return Stack(
+                    children: <Widget>[
+                      context.watch<ScreenProvider>().tabBody,
+                      bottomBar(),
+                    ],
+                  );
+                } else {
+                  return const Center(child: CircularProgressIndicator());
+                }
+              }),
         ),
       ),
     );
@@ -122,6 +137,8 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                   if (!mounted) return;
                   context.read<ScreenProvider>().setTabBody = DictionaryScreen(
                       animationController: animationController);
+                  context.read<DictionaryProvider>().setDictionaryList =
+                      UnsurScreen();
                 });
                 break;
             }

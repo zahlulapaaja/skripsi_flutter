@@ -92,7 +92,7 @@ class HeaderWithSearchbox extends StatelessWidget {
                       onChanged: (value) {},
                       autocorrect: false,
                       enableSuggestions: false,
-                      decoration: AppConstants.kTextFieldDecoration,
+                      decoration: AppConstants.kSearchboxDecoration,
                       style: AppConstants.kTextFieldTextStyle,
                     ),
                   ),

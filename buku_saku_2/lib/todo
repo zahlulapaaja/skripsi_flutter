@@ -12,3 +12,8 @@ trus nanti bisa diapus catatan yg terpilih itu. karna kalo pake titik 3 itu susa
 
 TODO : Gimana caranya biar tabIcon active walaupun selected tetap bisa diklik
 soalnya klo udh masuk halaman detail angka kredit, abis itu ga bisa balik lagi pake tabIcon
+
+
+TODO : animationController pake provider aja, biar ga perlu dipassing terussssss
+
+TODO : OTW bikin screen detail catatan (kalo bisa sih beda sama screen edit/tambah nya)

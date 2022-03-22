@@ -1,17 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
+import 'package:flutter/material.dart';
 import 'package:number_inc_dec/number_inc_dec.dart';
 
-class JumlahKegiatan extends StatefulWidget {
-  const JumlahKegiatan({Key? key}) : super(key: key);
+class JumlahKegiatanField extends StatelessWidget {
+  const JumlahKegiatanField({Key? key, this.selectedData, this.onIncrement})
+      : super(key: key);
 
-  @override
-  State<JumlahKegiatan> createState() => _JumlahKegiatanState();
-}
-
-class _JumlahKegiatanState extends State<JumlahKegiatan> {
-  // DateTime selectedDate = DateTime.now();
+  final int? selectedData;
+  final Function(num)? onIncrement;
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +28,27 @@ class _JumlahKegiatanState extends State<JumlahKegiatan> {
                   const FieldLabel(title: 'Jumlah Kegiatan'),
                   Expanded(
                     child: NumberInputWithIncrementDecrement(
+                      // TODO : Lengkapi logikanya
+                      onChanged: (value) {
+                        // selectedData['jml_kegiatan'] = value;
+                      },
+                      onIncrement: onIncrement,
+                      onDecrement: (value) {
+                        // selectedData['jml_kegiatan'] = value.toInt();
+                        // setState(() {
+                        //   selectedData['angka_kredit'] -= 0.104;
+                        //   removeCheckboxBukti();
+                        // });
+                      },
                       controller: TextEditingController(),
                       decIconSize: 20,
                       incIconSize: 20,
+                      initialValue: 1,
+                      min: 1,
+                      max: 10,
                       numberFieldDecoration: const InputDecoration(
-                          contentPadding: EdgeInsets.zero),
+                        contentPadding: EdgeInsets.zero,
+                      ),
                     ),
                   ),
                 ],
@@ -57,7 +70,7 @@ class _JumlahKegiatanState extends State<JumlahKegiatan> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(5)),
                       ),
-                      child: const Text('Halo'),
+                      child: Text('$selectedData'),
                     ),
                   ),
                 ],

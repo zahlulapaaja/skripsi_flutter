@@ -66,7 +66,7 @@ class SearchBox extends StatelessWidget {
               },
               autocorrect: false,
               enableSuggestions: false,
-              decoration: AppConstants.kTextFieldDecoration,
+              decoration: AppConstants.kSearchboxDecoration,
               style: AppConstants.kTextFieldTextStyle,
             ),
           ),
