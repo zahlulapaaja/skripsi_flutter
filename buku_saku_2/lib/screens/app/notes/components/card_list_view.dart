@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
+import 'package:buku_saku_2/screens/app/notes/components/card_builder.dart';
 import 'package:provider/provider.dart';
-
-import 'card_builder.dart';
 
 class CardListView extends StatelessWidget {
   const CardListView({Key? key}) : super(key: key);
@@ -14,11 +13,16 @@ class CardListView extends StatelessWidget {
     return FutureBuilder(
         future: context.watch<NotesProvider>().notes,
         builder: (context, AsyncSnapshot<List<Note>> snapshot) {
-          if (snapshot.hasData) {
+          if (snapshot.hasError) {
+            return const Center(child: Text('error fetching data'));
+          } else if (snapshot.hasData) {
+            if (snapshot.data!.isEmpty) {
+              return const Center(child: Text('Notes Still Empty'));
+            }
             return ListView.builder(
               itemCount: snapshot.data!.length,
-              physics: const ScrollPhysics(), // to enable GridView's scrolling
-              shrinkWrap: true, // You won't see infinite size error
+              physics: const ScrollPhysics(),
+              shrinkWrap: true,
               itemBuilder: (context, index) {
                 return Card(
                   color: AppColors.beige,
@@ -47,8 +51,6 @@ class CardListView extends StatelessWidget {
                 );
               },
             );
-          } else if (snapshot.hasError) {
-            return const Center(child: Text('ERROR'));
           } else {
             return const Center(child: CircularProgressIndicator());
           }

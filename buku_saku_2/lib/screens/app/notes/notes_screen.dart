@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:buku_saku_2/screens/app/components/card_list_view.dart';
-import 'package:buku_saku_2/screens/app/notes/components/pinned_card_list_view.dart';
-import 'package:buku_saku_2/screens/app/components/searchbox.dart';
-import 'package:buku_saku_2/screens/app/components/title_view.dart';
-import 'package:buku_saku_2/screens/app/components/card_grid_view.dart';
-import 'package:buku_saku_2/screens/app/notes/components/pinned_card_grid_view.dart';
+import 'package:buku_saku_2/screens/app/notes/components/card_list_view.dart';
+import 'package:buku_saku_2/screens/app/notes/components/card_grid_view.dart';
+import 'package:buku_saku_2/screens/app/notes/components/note_searchbox.dart';
+import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 
 class NotesScreen extends StatefulWidget {
   static const id = 'notes_screen';
@@ -18,131 +15,8 @@ class NotesScreen extends StatefulWidget {
   _NotesScreenState createState() => _NotesScreenState();
 }
 
-class _NotesScreenState extends State<NotesScreen>
-    with TickerProviderStateMixin {
-  Animation<double>? topBarAnimation;
+class _NotesScreenState extends State<NotesScreen> {
   bool isListView = false;
-
-  List<Widget> listViews = <Widget>[];
-  final ScrollController scrollController = ScrollController();
-  double topBarOpacity = 0.0;
-
-  @override
-  void initState() {
-    topBarAnimation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-      parent: widget.animationController!,
-      curve: const Interval(0, 0.5, curve: Curves.fastOutSlowIn),
-    ));
-    addAllData(false);
-
-    scrollController.addListener(() {
-      if (scrollController.offset >= 72) {
-        if (topBarOpacity != 1.0) {
-          setState(() {
-            topBarOpacity = 1.0;
-          });
-        }
-      } else if (scrollController.offset <= 72 &&
-          scrollController.offset >= 0) {
-        if (topBarOpacity != scrollController.offset / 72) {
-          setState(() {
-            topBarOpacity = scrollController.offset / 72;
-          });
-        }
-      } else if (scrollController.offset <= 0) {
-        if (topBarOpacity != 0.0) {
-          setState(() {
-            topBarOpacity = 0.0;
-          });
-        }
-      }
-    });
-    super.initState();
-  }
-
-  void addAllData(bool isListView) {
-    const int count = 9;
-    List<String> titleTxt = ['Catatan Terbaru', 'Kategori', 'Semua Catatan'];
-    List<bool> activeTextButton = [true, false, false];
-
-    listViews.add(
-      SearchBox(),
-    );
-
-    listViews.add(
-      TitleView(
-        titleTxt: 'Pinned',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 2, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      isListView ? const PinnedCardListView() : const PinnedCardGridView(),
-    );
-
-    listViews.add(
-      const SizedBox(height: 20),
-    );
-
-    listViews.add(
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 2),
-        child: ShaderMask(
-          shaderCallback: (Rect bounds) {
-            return const LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: <Color>[AppColors.offWhite, Colors.transparent],
-              stops: [0.8, 1.5],
-            ).createShader(bounds);
-          },
-          child: SizedBox(
-            height: 20,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: titleTxt.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 20.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      // ignore: avoid_print
-                      print('tombol $index ditekan');
-                      setState(() {
-                        activeTextButton = [false, false, false];
-                        activeTextButton[index] = true;
-                      });
-                    },
-                    child: Text(
-                      titleTxt[index],
-                      textAlign: TextAlign.left,
-                      style: activeTextButton[index]
-                          ? AppConstants.kTitleActiveTextStyle
-                          : AppConstants.kTitleViewTextStyle,
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ),
-      ),
-    );
-
-    listViews.add(
-      isListView ? const CardListView() : const CardGridView(),
-    );
-  }
-
-  Future<bool> getData() async {
-    await Future<dynamic>.delayed(const Duration(milliseconds: 50));
-    return true;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +27,23 @@ class _NotesScreenState extends State<NotesScreen>
         body: Stack(
           children: <Widget>[
             getMainListViewUI(),
-            getAppBarUI(),
+            AppBarUI(
+              title: 'Catatan',
+              rightIconButton: IconButton(
+                icon: SvgPicture.asset(
+                  isListView
+                      ? "assets/icons/grid-view.svg"
+                      : "assets/icons/list-view.svg",
+                  color: Colors.white,
+                  semanticsLabel: 'List view icons',
+                ),
+                onPressed: () {
+                  setState(() {
+                    isListView = !isListView;
+                  });
+                },
+              ),
+            ),
             SizedBox(
               height: MediaQuery.of(context).padding.bottom,
             )
@@ -164,95 +54,15 @@ class _NotesScreenState extends State<NotesScreen>
   }
 
   Widget getMainListViewUI() {
-    return ListView.builder(
-      controller: scrollController,
+    return ListView(
       padding: EdgeInsets.only(
         top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top,
         bottom: 62 + MediaQuery.of(context).padding.bottom,
       ),
-      itemCount: listViews.length,
       scrollDirection: Axis.vertical,
-      itemBuilder: (BuildContext context, int index) {
-        widget.animationController?.forward();
-        return listViews[index];
-      },
-    );
-  }
-
-  Widget getAppBarUI() {
-    return Column(
       children: <Widget>[
-        AnimatedBuilder(
-          animation: widget.animationController!,
-          builder: (BuildContext context, Widget? child) {
-            return Transform(
-              transform: Matrix4.translationValues(
-                  0.0, 30 * (1.0 - topBarAnimation!.value), 0.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                  borderRadius: const BorderRadius.only(
-                      // bottomLeft: Radius.circular(32.0),
-                      ),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: AppColors.grey.withOpacity(0.4 * topBarOpacity),
-                        offset: const Offset(1.1, 1.1),
-                        blurRadius: 10.0),
-                  ],
-                ),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: MediaQuery.of(context).padding.top,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 16,
-                        right: 16,
-                        top: 12 - 4.0 * topBarOpacity,
-                        bottom: 8 - 4.0 * topBarOpacity,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          const Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                'Daftar Catatan',
-                                textAlign: TextAlign.center,
-                                style: AppConstants.kNavHeaderTextStyle,
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              // ignore: avoid_print
-                              print('ganti tampilan');
-                              listViews = [];
-                              setState(() {
-                                isListView = !isListView;
-                                addAllData(isListView);
-                              });
-                            },
-                            child: SvgPicture.asset(
-                              isListView
-                                  ? "assets/icons/grid-view.svg"
-                                  : "assets/icons/list-view.svg",
-                              color: Colors.white,
-                              semanticsLabel: 'List view icons',
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            );
-          },
-        )
+        NoteSearchBox(),
+        isListView ? const CardListView() : const CardGridView(),
       ],
     );
   }

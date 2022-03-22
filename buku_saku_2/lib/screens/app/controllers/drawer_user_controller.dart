@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/app/home_drawer.dart';
+import 'package:buku_saku_2/screens/app/components/home_drawer.dart';
 
 class DrawerUserController extends StatefulWidget {
   const DrawerUserController({

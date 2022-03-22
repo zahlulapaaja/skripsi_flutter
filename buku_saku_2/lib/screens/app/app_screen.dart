@@ -7,7 +7,7 @@ import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/controllers/drawer_user_controller.dart';
-import 'package:buku_saku_2/screens/app/home_drawer.dart';
+import 'package:buku_saku_2/screens/app/components/home_drawer.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
 import 'package:buku_saku_2/screens/app/home/home_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';

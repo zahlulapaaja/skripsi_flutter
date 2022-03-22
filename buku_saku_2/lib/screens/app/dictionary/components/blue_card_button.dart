@@ -35,7 +35,6 @@ class BlueCardButton extends StatelessWidget {
                   style: AppConstants.kLargeTitleTextStyle,
                 ),
               ),
-              // SizedBox(width: 50, child: Text('data')),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

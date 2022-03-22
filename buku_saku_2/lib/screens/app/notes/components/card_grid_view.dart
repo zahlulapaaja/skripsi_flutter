@@ -1,19 +1,14 @@
+import 'package:buku_saku_2/screens/app/notes/components/card_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/app/components/card_builder.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 
-class CardGridView extends StatefulWidget {
+class CardGridView extends StatelessWidget {
   const CardGridView({Key? key}) : super(key: key);
 
-  @override
-  State<CardGridView> createState() => _CardGridViewState();
-}
-
-class _CardGridViewState extends State<CardGridView> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -28,11 +23,11 @@ class _CardGridViewState extends State<CardGridView> {
           return MasonryGridView.count(
             padding: const EdgeInsets.only(top: 10),
             crossAxisCount: 2,
-            itemCount: (snapshot.data!.isNotEmpty) ? snapshot.data!.length : 10,
+            itemCount: snapshot.data!.length,
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
-            physics: const ScrollPhysics(), // to enable GridView's scrolling
-            shrinkWrap: true, // You won't see infinite size error
+            physics: const ScrollPhysics(),
+            shrinkWrap: true,
             itemBuilder: (context, index) {
               return Card(
                 color: AppColors.beige,
@@ -74,11 +69,9 @@ class _CardGridViewState extends State<CardGridView> {
                         );
 
                         if (result == 'OK') {
-                          setState(() {
-                            context
-                                .read<NotesProvider>()
-                                .deleteNote(snapshot.data![index].id!);
-                          });
+                          context
+                              .read<NotesProvider>()
+                              .deleteNote(snapshot.data![index].id!);
                         }
                       },
                       child: CardBuilder(

@@ -6,8 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
-class SearchBox extends StatelessWidget {
-  SearchBox({Key? key}) : super(key: key);
+class NoteSearchBox extends StatelessWidget {
+  NoteSearchBox({Key? key}) : super(key: key);
 
   List<String>? codes;
   List<String>? titles;
@@ -52,27 +52,4 @@ class SearchBox extends StatelessWidget {
       ),
     );
   }
-
-  // Widget getMainListViewUI(BuildContext context, List<dynamic> data) {
-  //   return ListView.builder(
-  //     padding: const EdgeInsets.symmetric(horizontal: 14.0),
-  //     itemCount: data!.length,
-  //     physics: const ScrollPhysics(),
-  //     shrinkWrap: true,
-  //     itemBuilder: (context, index) {
-  //       // getData(data);
-  //       return BlueCardButton(
-  //         code: codes![index],
-  //         title: titles![index],
-  //         subtitle: subtitles![index],
-  //         onPressed: () {
-  //           context.read<ScreenProvider>().setUnsurCode = codes![index];
-  //           context.read<ScreenProvider>().setUnsur = titles![index];
-  //           // context.read<ScreenProvider>().setTabBody =
-  //           //     SubUnsurListScreen(subUnsur: subUnsur![index]);
-  //         },
-  //       );
-  //     },
-  //   );
-  // }
 }

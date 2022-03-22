@@ -1,14 +1,13 @@
-import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/app_screen.dart';
-import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
 import 'package:buku_saku_2/screens/app/home/components/header_with_searchbox.dart';
 import 'package:buku_saku_2/screens/app/home/components/detail_angka_kredit.dart';
-import 'package:buku_saku_2/screens/app/components/card_grid_view.dart';
-import 'package:buku_saku_2/screens/app/components/title_view.dart';
+import 'package:buku_saku_2/screens/app/home/components/title_view.dart';
+import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
+import 'package:buku_saku_2/screens/app/notes/components/card_grid_view.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -125,13 +124,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       const CardGridView(),
     );
   }
-
-  Future<bool> getData() async {
-    await Future<dynamic>.delayed(const Duration(milliseconds: 50));
-    return true;
-  }
-
-  var dbHelper = DbHelper();
 
   @override
   Widget build(BuildContext context) {

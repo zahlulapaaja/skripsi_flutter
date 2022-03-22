@@ -62,14 +62,20 @@ class DictSearchBox extends StatelessWidget {
                   fontSize: AppConstants.kSmallFontSize,
                   fontWeight: FontWeight.normal,
                 ),
-                // TODO : disini nanti logika untuk hapus isi searchbox
-                suffixIcon: Icon(Icons.close),
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
               ),
               style: AppConstants.kTextFieldTextStyle,
             ),
           ),
+          // IconButton(
+          //   icon: const Icon(Icons.close),
+          //   onPressed: () {
+          //     // TODO : disini nanti logika untuk hapus isi searchbox
+          //     // kalo diklik nanti tulisannya ilang, harusnya, masalahnya ini stateless
+          //   },
+          // ),
+          // const SizedBox(width: 10),
           SvgPicture.asset("assets/icons/search.svg"),
         ],
       ),
