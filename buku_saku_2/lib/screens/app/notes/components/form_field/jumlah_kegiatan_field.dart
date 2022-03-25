@@ -8,13 +8,15 @@ class JumlahKegiatanField extends StatelessWidget {
   const JumlahKegiatanField({
     Key? key,
     required this.max,
-    required this.angkaKredit,
+    required this.initialAngkaKredit,
+    required this.initialJmlKegiatan,
     this.onIncrement,
     this.onDecrement,
     this.onChanged,
   }) : super(key: key);
 
-  final double angkaKredit;
+  final double initialAngkaKredit;
+  final int initialJmlKegiatan;
   final int max;
   final Function(num)? onIncrement;
   final Function(num)? onDecrement;
@@ -46,7 +48,7 @@ class JumlahKegiatanField extends StatelessWidget {
                       controller: TextEditingController(),
                       decIconSize: 20,
                       incIconSize: 20,
-                      initialValue: 1,
+                      initialValue: initialJmlKegiatan,
                       numberFieldDecoration: AppConstants.kTextFieldDecoration(
                           borderSide: BorderSide.none),
                       widgetContainerDecoration: BoxDecoration(
@@ -77,7 +79,7 @@ class JumlahKegiatanField extends StatelessWidget {
                       ),
                       child: Align(
                         alignment: Alignment.center,
-                        child: Text(angkaKredit.toStringAsFixed(3),
+                        child: Text(initialAngkaKredit.toStringAsFixed(3),
                             style: AppConstants.kLargeTitleTextStyle),
                       ),
                     ),

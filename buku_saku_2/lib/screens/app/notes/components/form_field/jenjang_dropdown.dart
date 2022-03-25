@@ -5,12 +5,20 @@ import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
 class JenjangDropdown extends StatelessWidget {
-  const JenjangDropdown(
-      {Key? key, required this.dataJenjang, required this.onChanged})
+  JenjangDropdown({Key? key, required this.onChanged, this.initialData})
       : super(key: key);
 
-  final List<String> dataJenjang;
   final Function(String?) onChanged;
+  final String? initialData;
+  final List<String> dataJenjang = [
+    'Pranata Komputer Terampil',
+    'Pranata Komputer Mahir',
+    'Pranata Komputer Penyelia',
+    'Pranata Komputer Ahli Pertama',
+    'Pranata Komputer Ahli Muda',
+    'Pranata Komputer Ahli Madya',
+    'Pranata Komputer Ahli Utama',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +29,13 @@ class JenjangDropdown extends StatelessWidget {
         children: [
           const FieldLabel(title: 'Jenjang'),
           DropdownSearch<String>(
-            enabled: false,
+            // enabled: false,
             mode: Mode.BOTTOM_SHEET,
             items: dataJenjang,
             popupItemDisabled: (String s) => s.startsWith('I'),
             onChanged: onChanged,
             // TODO : Nanti dibawah sini pakai data profil, dan gabisa diubah
-            selectedItem: dataJenjang[0],
+            selectedItem: initialData,
             dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
             dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
               hintText: 'Jenjang Jabatan saat ini',

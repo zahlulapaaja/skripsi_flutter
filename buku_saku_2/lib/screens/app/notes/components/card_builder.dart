@@ -1,14 +1,16 @@
+import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
+import 'package:buku_saku_2/screens/app/notes/note_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class CardBuilder extends StatelessWidget {
-  // nanti yg Note wajib sifatnya
   final Note notes;
   final String? date;
   final Function? onLongPressed;
-  // final String tag;
 
   //sementara
   final int? index;
@@ -41,42 +43,94 @@ class CardBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: <Widget>[
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Text(
-              notes.judul,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: AppConstants.kCardTitleTextStyle,
+    return Card(
+      color: AppColors.beige,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: ClipPath(
+        clipper: ShapeBorderClipper(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0))),
+        child: Container(
+          decoration: const BoxDecoration(
+            border:
+                Border(left: BorderSide(color: AppColors.beigeDark, width: 7)),
+            color: Colors.transparent,
+          ),
+          padding: const EdgeInsets.all(20.0),
+          alignment: Alignment.topLeft,
+          child: GestureDetector(
+            onLongPress: () async {
+              var result = await showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: const Text('Hapus Catatan'),
+                  content: const Text('Hapus ga ni ??'),
+                  actions: <Widget>[
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'Cancel'),
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'OK'),
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ),
+              );
+
+              if (result == 'OK') {
+                context.read<NotesProvider>().deleteNote(notes.id!);
+              }
+            },
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NoteDetailScreen(id: notes.id!),
+                  ));
+            },
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: <Widget>[
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Text(
+                      notes.judul,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppConstants.kCardTitleTextStyle,
+                    ),
+                    const SizedBox(height: 7),
+                    Text(
+                      notes.uraian,
+                      maxLines: index == 1 ? 10 : 5,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppConstants.kCardBodyTextStyle,
+                    ),
+                    const SizedBox(height: 7),
+                    Text(
+                      date!,
+                      textAlign: TextAlign.left,
+                      style: AppConstants.kCardDateTextStyle,
+                    ),
+                  ],
+                ),
+                Positioned(
+                  height: 20,
+                  width: 20,
+                  right: 0,
+                  bottom: 0,
+                  child: getNoteIcon(),
+                ),
+              ],
             ),
-            const SizedBox(height: 7),
-            Text(
-              notes.uraian,
-              maxLines: index == 1 ? 10 : 5,
-              overflow: TextOverflow.ellipsis,
-              style: AppConstants.kCardBodyTextStyle,
-            ),
-            const SizedBox(height: 7),
-            Text(
-              date!,
-              textAlign: TextAlign.left,
-              style: AppConstants.kCardDateTextStyle,
-            ),
-          ],
+          ),
         ),
-        Positioned(
-          height: 20,
-          width: 20,
-          right: 0,
-          bottom: 0,
-          child: getNoteIcon(),
-        ),
-      ],
+      ),
     );
   }
 }

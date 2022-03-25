@@ -11,12 +11,12 @@ class ScreenProvider with ChangeNotifier {
     child: const Center(child: CircularProgressIndicator()),
   );
 
-  Future<List<ButirKegiatan>> get readJsonData async {
+  Future<List<Unsur>> get readJsonData async {
     final jsonData =
         await rootBundle.loadString('assets/jsonfile/data_juknis_trial.json');
     final list = json.decode(jsonData) as List<dynamic>;
 
-    return list.map((e) => ButirKegiatan.fromJson(e)).toList();
+    return list.map((e) => Unsur.fromJson(e)).toList();
   }
 
   Widget get tabBody => _tabBody;

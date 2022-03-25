@@ -1,4 +1,3 @@
-import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,6 @@ import 'package:buku_saku_2/screens/sign_in/sign_up_screen.dart';
 import 'package:buku_saku_2/screens/app/app_screen.dart';
 import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
-import 'package:buku_saku_2/screens/app/notes/note_detail_screen.dart';
 import 'package:provider/provider.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -41,6 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: AppScreen.id,
         routes: {
+          // yang bisa dipanggil disini adalah yang ga membawa data, itu verification harusnya ga ada
           SignInScreen.id: (context) => const SignInScreen(),
           SignUpScreen.id: (context) => const SignUpScreen(),
           IntroductionAnimationScreen.id: (context) =>
@@ -53,10 +52,7 @@ class MyApp extends StatelessWidget {
 
           // Mulai Aplikasinya
           AppScreen.id: (context) => const AppScreen(),
-          NoteDetailScreen.id: (context) => const NoteDetailScreen(),
           AddNoteScreen.id: (context) => const AddNoteScreen(),
-          DetailAngkaKreditScreen.id: (context) =>
-              const DetailAngkaKreditScreen(),
         },
       ),
     );

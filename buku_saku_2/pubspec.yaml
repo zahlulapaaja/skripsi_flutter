@@ -28,6 +28,11 @@ dependencies:
   number_inc_dec: ^0.8.0
   auto_size_text: ^3.0.0
 
+  #  manajemen file
+  file_picker: ^4.5.1
+  open_file: ^3.2.1
+  path_provider: ^2.0.9
+
   #back end
   sqflite: ^2.0.2
   provider: ^6.0.2

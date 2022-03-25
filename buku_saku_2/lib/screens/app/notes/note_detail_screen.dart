@@ -1,124 +1,145 @@
-import 'package:flutter/material.dart';
-import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/configs/constants.dart';
+import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
+import 'package:buku_saku_2/screens/app/models/database.dart';
+import 'package:buku_saku_2/screens/app/models/note.dart';
+import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:open_file/open_file.dart';
 
-class NoteDetailScreen extends StatefulWidget {
-  static const id = 'note_detail_screen';
-  const NoteDetailScreen({Key? key}) : super(key: key);
+// ignore: must_be_immutable
+class NoteDetailScreen extends StatelessWidget {
+  NoteDetailScreen({Key? key, required this.id}) : super(key: key);
+  final int id;
+  var dbHelper = DbHelper();
 
-  @override
-  _NoteDetailScreenState createState() => _NoteDetailScreenState();
-}
-
-class _NoteDetailScreenState extends State<NoteDetailScreen> {
-  List<Widget> listViews = <Widget>[];
-
-  // TODO : Ini laman detail, benerin gih
-
-  @override
-  void initState() {
-    addAllListData();
-    super.initState();
-  }
-
-  void addAllListData() {
-    listViews.add(
-      const SizedBox(height: 20),
-    );
+  Future<Note> getData(int id) async {
+    var result = await dbHelper.getNoteById(id);
+    return result;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppColors.offWhite,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        floatingActionButton: FloatingActionButton(
-          heroTag: 'button3tag',
-          onPressed: () {},
-          backgroundColor: AppColors.primary,
-          child: const Icon(FontAwesomeIcons.plus),
-        ),
-        body: Stack(
-          children: <Widget>[
-            getMainListViewUI(),
-            getAppBarUI(),
-            SizedBox(
-              height: MediaQuery.of(context).padding.bottom,
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget getMainListViewUI() {
-    return ListView.builder(
-      padding: EdgeInsets.only(
-        top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top,
-        bottom: 62 + MediaQuery.of(context).padding.bottom,
-      ),
-      itemCount: listViews.length,
-      scrollDirection: Axis.vertical,
-      itemBuilder: (BuildContext context, int index) {
-        return listViews[index];
+    return FutureBuilder(
+      future: getData(id),
+      builder: (context, AsyncSnapshot<Note> snapshot) {
+        if (snapshot.hasError) {
+          return Center(child: Text('error fetching data, ${snapshot.error}'));
+        } else if (snapshot.hasData) {
+          Note note = snapshot.data!;
+          return Container(
+            color: AppColors.offWhite,
+            child: Scaffold(
+              backgroundColor: Colors.transparent,
+              floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AddNoteScreen(note: note),
+                    ),
+                  );
+                },
+              ),
+              body: Stack(
+                children: <Widget>[
+                  ListView(
+                    padding: EdgeInsets.only(
+                      top: AppBar().preferredSize.height +
+                          MediaQuery.of(context).padding.top,
+                      bottom: 62 + MediaQuery.of(context).padding.bottom,
+                    ),
+                    scrollDirection: Axis.vertical,
+                    children: <Widget>[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(height: 30),
+                          Text('id: ${note.id}', textAlign: TextAlign.center),
+                          Text('judul: ${note.judul}',
+                              textAlign: TextAlign.center),
+                          Text('uraian: ${note.uraian}',
+                              textAlign: TextAlign.center),
+                          Text('tanggal kegiatan: ${note.tanggalKegiatan}',
+                              textAlign: TextAlign.center),
+                          Text('kode butir: ${note.kodeButir}',
+                              textAlign: TextAlign.center),
+                          Text('tanggal: ${note.tanggalKegiatan}',
+                              textAlign: TextAlign.center),
+                          (note.buktiFisik != null)
+                              ? GridView.builder(
+                                  padding: const EdgeInsets.only(top: 10),
+                                  gridDelegate:
+                                      const SliverGridDelegateWithMaxCrossAxisExtent(
+                                    maxCrossAxisExtent: 200,
+                                    childAspectRatio: 3 / 2,
+                                    crossAxisSpacing: 20,
+                                    mainAxisSpacing: 20,
+                                  ),
+                                  itemCount: note.buktiFisik!.length,
+                                  physics: const ScrollPhysics(),
+                                  shrinkWrap: true,
+                                  itemBuilder: (context, index) {
+                                    return Column(
+                                      children: <Widget>[
+                                        Expanded(
+                                          child: Card(
+                                            child: InkWell(
+                                              onTap: () {
+                                                openFile(note
+                                                    .buktiFisik![index].path);
+                                              },
+                                              child: Center(
+                                                  child: Text(
+                                                      '${note.buktiFisik![index].fileName}.${note.buktiFisik![index].extension}')),
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          '${note.buktiFisik![index].fileName}',
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                )
+                              : const Center(child: Text('bukti belum ada')),
+                          // Text('bukti: ${note.buktiFisik![0].path}',
+                          //     textAlign: TextAlign.center),
+                        ],
+                      ),
+                    ],
+                  ),
+                  AppBarUI(
+                    title: '',
+                    leftIconButton: IconButton(
+                      icon: const Icon(
+                        FontAwesomeIcons.chevronLeft,
+                        color: AppColors.offWhite,
+                        size: AppConstants.kLargeFontSize,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).padding.bottom,
+                  )
+                ],
+              ),
+            ),
+          );
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
       },
     );
   }
 
-  Widget getAppBarUI() {
-    return Column(
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            color: AppColors.primary,
-            borderRadius: const BorderRadius.only(
-                // bottomLeft: Radius.circular(32.0),
-                ),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  color: AppColors.grey.withOpacity(0.4),
-                  offset: const Offset(1.1, 1.1),
-                  blurRadius: 10.0),
-            ],
-          ),
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: MediaQuery.of(context).padding.top,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 16,
-                  right: 16,
-                  top: 12 - 4.0,
-                  bottom: 8 - 4.0,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Icon(
-                      FontAwesomeIcons.chevronLeft,
-                      color: AppColors.offWhite,
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'Detail Catatan',
-                          textAlign: TextAlign.center,
-                          style: AppConstants.kNavHeaderTextStyle,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-      ],
-    );
+  void openFile(String path) {
+    OpenFile.open(path);
   }
 }

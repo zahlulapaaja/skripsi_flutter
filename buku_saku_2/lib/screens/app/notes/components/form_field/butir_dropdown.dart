@@ -1,23 +1,41 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class ButirDropdown extends StatelessWidget {
-  const ButirDropdown(
+  ButirDropdown(
       {Key? key,
-      required this.dataButir,
       required this.onChanged,
-      this.selectedIndex})
+      this.initialData,
+      this.editMode = false})
       : super(key: key);
 
-  final List<String> dataButir;
   final Function(String?) onChanged;
-  final int? selectedIndex;
+  final String? initialData;
+  final bool editMode;
+  List<String>? dataButir;
+
+  getData(DictionaryProvider dictProvider) {
+    var data = dictProvider.allButir;
+    dataButir = List<String>.generate(
+      data.length,
+      (index) {
+        return data[index].kode + " " + data[index].judul;
+      },
+      growable: true,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    final dictProvider = Provider.of<DictionaryProvider>(context);
+    getData(dictProvider);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -25,14 +43,15 @@ class ButirDropdown extends StatelessWidget {
         children: <Widget>[
           const FieldLabel(title: 'Butir Kegiatan'),
           DropdownSearch(
+            enabled: editMode ? false : true,
             mode: Mode.BOTTOM_SHEET,
-            showClearButton: true,
+            showClearButton: editMode ? false : true,
             items: dataButir,
+            // TODO : gimana caranya yang diblok yang ga sesuai dengan jenjang saat ini
             popupItemDisabled: (String s) =>
                 s.startsWith('I.A.1') || s.startsWith('II.A.1'),
             onChanged: onChanged,
-            selectedItem:
-                (selectedIndex == null) ? null : dataButir[selectedIndex!],
+            selectedItem: initialData,
             dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
             dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
               hintText: 'Pilih Butir Kegiatan...',

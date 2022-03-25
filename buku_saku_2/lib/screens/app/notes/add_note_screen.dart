@@ -1,4 +1,5 @@
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
@@ -7,8 +8,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddNoteScreen extends StatefulWidget {
   static const id = 'add_note_screen';
-  const AddNoteScreen({Key? key, this.butirCode}) : super(key: key);
+  const AddNoteScreen({Key? key, this.butirCode, this.note}) : super(key: key);
   final String? butirCode;
+  final Note? note;
 
   @override
   _AddNoteScreenState createState() => _AddNoteScreenState();
@@ -23,9 +25,19 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         backgroundColor: Colors.transparent,
         body: Stack(
           children: <Widget>[
-            getMainListViewUI(),
+            ListView(
+              padding: EdgeInsets.only(
+                top: AppBar().preferredSize.height +
+                    MediaQuery.of(context).padding.top,
+                bottom: 62 + MediaQuery.of(context).padding.bottom,
+              ),
+              scrollDirection: Axis.vertical,
+              children: <Widget>[
+                NewNoteForm(kodeButir: widget.butirCode, note: widget.note),
+              ],
+            ),
             AppBarUI(
-              title: 'Tambah Catatan',
+              title: (widget.note == null) ? 'Tambah Catatan' : 'Edit Catatan',
               leftIconButton: IconButton(
                 icon: const Icon(
                   FontAwesomeIcons.chevronLeft,
@@ -43,19 +55,6 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget getMainListViewUI() {
-    return ListView(
-      padding: EdgeInsets.only(
-        top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top,
-        bottom: 62 + MediaQuery.of(context).padding.bottom,
-      ),
-      scrollDirection: Axis.vertical,
-      children: <Widget>[
-        NewNoteForm(kodeButir: widget.butirCode),
-      ],
     );
   }
 }

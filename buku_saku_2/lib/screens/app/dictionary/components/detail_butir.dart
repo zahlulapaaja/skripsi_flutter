@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -6,10 +7,18 @@ import 'package:provider/provider.dart';
 
 class DetailButir extends StatelessWidget {
   const DetailButir(
-      {Key? key, required this.butirCode, required this.butirTitle})
+      {Key? key,
+      required this.butir,
+      this.unsurCode,
+      this.unsurTitle,
+      this.subUnsurCode,
+      this.subUnsurTitle})
       : super(key: key);
-  final String butirCode;
-  final String butirTitle;
+  final String? unsurCode;
+  final String? unsurTitle;
+  final String? subUnsurCode;
+  final String? subUnsurTitle;
+  final ButirKegiatan butir;
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +39,14 @@ class DetailButir extends StatelessWidget {
                 SizedBox(
                   width: 75,
                   child: Text(
-                    context.read<DictionaryProvider>().selectedUnsurCode,
+                    unsurCode ?? butir.unsurCode!,
                     textAlign: TextAlign.left,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    context
-                        .read<DictionaryProvider>()
-                        .selectedUnsur
-                        .toUpperCase(),
+                    unsurTitle ?? butir.unsurTitle!.toUpperCase(),
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
@@ -53,7 +59,7 @@ class DetailButir extends StatelessWidget {
                 SizedBox(
                   width: 75,
                   child: Text(
-                    context.read<DictionaryProvider>().selectedSubUnsurCode,
+                    subUnsurCode ?? butir.subUnsurCode!,
                     textAlign: TextAlign.left,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
@@ -61,7 +67,7 @@ class DetailButir extends StatelessWidget {
                 // SizedBox(width: 50, child: Text('data')),
                 Expanded(
                   child: Text(
-                    context.read<DictionaryProvider>().selectedSubUnsur,
+                    subUnsurTitle ?? butir.subUnsurTitle!,
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
@@ -74,7 +80,7 @@ class DetailButir extends StatelessWidget {
                 SizedBox(
                   width: 75,
                   child: Text(
-                    butirCode,
+                    butir.kode,
                     textAlign: TextAlign.left,
                     style: AppConstants.kDictionaryTextStyle(
                         fontWeight: FontWeight.w700),
@@ -82,7 +88,7 @@ class DetailButir extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    butirTitle,
+                    butir.judul,
                     style: AppConstants.kDictionaryTextStyle(
                         fontWeight: FontWeight.w700),
                   ),

@@ -1,73 +1,16 @@
+import 'package:buku_saku_2/screens/app/models/bukti_fisik.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:open_file/open_file.dart';
 
-class BuktiFisikField extends StatefulWidget {
-  const BuktiFisikField({Key? key, this.selectedData}) : super(key: key);
-  final Map<int, bool>? selectedData;
-
-  @override
-  _BuktiFisikFieldState createState() => _BuktiFisikFieldState();
-}
-
-class _BuktiFisikFieldState extends State<BuktiFisikField> {
-  List<Widget> checkboxBukti = [
-    const FieldLabel(title: 'Bukti Fisik'),
-  ];
-
-  addCheckboxBukti({required int index}) {
-    if (widget.selectedData![index] == null) {
-      widget.selectedData![index] = false;
-    }
-
-    // TODO : Masih belom berrubah tampilannya ketika diklik, tapi nilainya udh berubah
-    // tapi abis itu ga berubah lagi sih, cma sekali berubahnya
-
-    checkboxBukti.add(
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: 20,
-                height: 20,
-                child: Checkbox(
-                  checkColor: Colors.white,
-                  // fillColor: MaterialStateProperty.resolveWith(getColor),
-                  value: widget.selectedData![index],
-                  onChanged: (bool? value) {
-                    setState(() {
-                      widget.selectedData![index] = value!;
-                    });
-                  },
-                ),
-              ),
-              const SizedBox(width: 10),
-              const Text('Disini nama buktinya apa'),
-            ],
-          ),
-          Row(
-            children: const [
-              Icon(FontAwesomeIcons.times),
-              Icon(FontAwesomeIcons.eye),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  removeCheckboxBukti() {
-    checkboxBukti.removeLast();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    addCheckboxBukti(index: 0);
-  }
+class BuktiFisikField extends StatelessWidget {
+  const BuktiFisikField(
+      {Key? key, required this.onPressed, this.fileAbc, this.selectedData})
+      : super(key: key);
+  final List<BuktiFisik>? selectedData;
+  final Function() onPressed;
+  final List<PlatformFile>? fileAbc;
 
   @override
   Widget build(BuildContext context) {
@@ -77,11 +20,59 @@ class _BuktiFisikFieldState extends State<BuktiFisikField> {
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: checkboxBukti,
+            children: <Widget>[
+              const FieldLabel(title: 'Bukti Fisik'),
+              (selectedData != null)
+                  ? GridView.builder(
+                      padding: const EdgeInsets.only(top: 10),
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 200,
+                        childAspectRatio: 3 / 2,
+                        crossAxisSpacing: 20,
+                        mainAxisSpacing: 20,
+                      ),
+                      itemCount: selectedData!.length,
+                      physics: const ScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: <Widget>[
+                            Expanded(
+                              child: Card(
+                                child: InkWell(
+                                  onTap: () {
+                                    openFile(selectedData![index].path);
+                                  },
+                                  child: Center(
+                                      child: Text(
+                                          'name: ${selectedData![index].extension}')),
+                                ),
+                              ),
+                            ),
+                            Text(
+                              '${selectedData![index].fileName}',
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
+                          ],
+                        );
+                      },
+                    )
+                  : const Center(child: Text('bukti belum ada')),
+            ],
           ),
-          ElevatedButton(onPressed: () {}, child: const Text('Add Item'))
+          ElevatedButton(onPressed: onPressed, child: const Text('Add Item'))
         ],
       ),
     );
+  }
+
+  void openFiles(List<PlatformFile> files) {
+    // bikin listview atau gridview disini
+  }
+
+  void openFile(String path) {
+    OpenFile.open(path);
   }
 }

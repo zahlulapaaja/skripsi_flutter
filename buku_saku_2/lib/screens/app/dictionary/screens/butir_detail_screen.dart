@@ -1,4 +1,5 @@
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_grid_container.dart';
@@ -9,9 +10,21 @@ import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ButirDetailScreen extends StatelessWidget {
-  ButirDetailScreen({Key? key, required this.detailButir}) : super(key: key);
+  ButirDetailScreen(
+      {Key? key,
+      required this.butir,
+      this.unsurCode,
+      this.unsurTitle,
+      this.subUnsurCode,
+      this.subUnsurTitle})
+      : super(key: key);
 
-  final Map<String, dynamic> detailButir;
+  final ButirKegiatan butir;
+  final String? unsurCode;
+  final String? unsurTitle;
+  final String? subUnsurCode;
+  final String? subUnsurTitle;
+
   final List<Widget> listViews = <Widget>[];
 
   void addAllListData() {
@@ -21,36 +34,39 @@ class ButirDetailScreen extends StatelessWidget {
 
     listViews.add(
       DetailButir(
-        butirCode: detailButir['kode'],
-        butirTitle: detailButir['judul'],
+        butir: butir,
+        unsurCode: unsurCode,
+        unsurTitle: unsurTitle,
+        subUnsurCode: subUnsurCode,
+        subUnsurTitle: subUnsurTitle,
       ),
     );
     listViews.add(
       BlueContainer(
         title: 'Deskripsi Kegiatan',
-        body: detailButir['uraian'],
+        body: butir.uraian,
       ),
     );
 
     listViews.add(
       BlueGridContainer(
-        satuanHasil: detailButir['satuan_hasil'],
-        angkaKredit: detailButir['angka_kredit'],
-        batasanPenilaian: detailButir['batasan_penilaian'],
-        pelaksana: detailButir['pelaksana'],
+        satuanHasil: butir.satuanHasil,
+        angkaKredit: butir.angkaKredit,
+        batasanPenilaian: butir.batasanPenilaian,
+        pelaksana: butir.pelaksana,
       ),
     );
 
     listViews.add(
       BlueContainer(
         title: 'Bukti Fisik',
-        body: detailButir['bukti_fisik'],
+        body: butir.buktiFisik,
       ),
     );
     listViews.add(
       BlueContainer(
         title: 'Contoh',
-        body: detailButir['contoh'],
+        body: butir.contoh,
       ),
     );
   }
@@ -67,8 +83,7 @@ class ButirDetailScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    AddNoteScreen(butirCode: detailButir['kode']),
+                builder: (context) => AddNoteScreen(butirCode: butir.kode),
               ),
             );
           },

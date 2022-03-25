@@ -81,11 +81,11 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
           },
           screenView: FutureBuilder(
               future: context.read<ScreenProvider>().readJsonData,
-              builder: (context, AsyncSnapshot<List<ButirKegiatan>> snapshot) {
+              builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
                 if (snapshot.hasError) {
                   return Center(child: Text('ERROR!! ${snapshot.error}'));
                 } else if (snapshot.hasData) {
-                  // TODO : Nanti disini klo datanya kosong, kondisikan lagi
+                  // TODO : Nanti disini klo datanya kosong, kondisikan lagi tampilannya
 
                   context.read<DictionaryProvider>().storeData = snapshot.data!;
                   return Stack(

@@ -16,11 +16,6 @@ class DictionaryScreen extends StatefulWidget {
 }
 
 class _DictionaryScreenState extends State<DictionaryScreen> {
-  List<String>? codes;
-  List<String>? titles;
-  List<String>? subtitles;
-  List<dynamic>? subUnsur;
-
   @override
   Widget build(BuildContext context) {
     return Container(

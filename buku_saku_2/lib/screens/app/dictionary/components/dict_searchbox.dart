@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -46,10 +47,10 @@ class DictSearchBox extends StatelessWidget {
                       UnsurScreen();
                 } else {
                   context.read<DictionaryProvider>().setQuery = value;
-                  List<Map<String, dynamic>> results =
+                  List<ButirKegiatan> results =
                       context.read<DictionaryProvider>().matchedButir;
                   context.read<DictionaryProvider>().setDictionaryList =
-                      ButirScreen(butir: results);
+                      ButirScreen(butirList: results);
                 }
               },
               autocorrect: false,
