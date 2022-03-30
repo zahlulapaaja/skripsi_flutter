@@ -16,9 +16,9 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class NewNoteForm extends StatefulWidget {
-  const NewNoteForm({Key? key, this.note, this.kodeButir}) : super(key: key);
+  const NewNoteForm({Key? key, this.note, this.butirTitle}) : super(key: key);
   final Note? note;
-  final String? kodeButir;
+  final String? butirTitle;
 
   @override
   State<NewNoteForm> createState() => _NewNoteFormState();
@@ -31,7 +31,10 @@ class _NewNoteFormState extends State<NewNoteForm> {
   bool minKegiatan = false;
   var dbHelper = DbHelper();
 
-  Note selectedNote = Note(judul: '', uraian: '');
+  Note selectedNote = Note(
+    tanggalKegiatan: DateTime.now(),
+    buktiFisik: [],
+  );
 
   submitNote(NotesProvider noteProvider) async {
     if (_formKey.currentState!.validate()) {
@@ -49,8 +52,8 @@ class _NewNoteFormState extends State<NewNoteForm> {
     if (widget.note != null) {
       selectedNote = widget.note!;
     } else {
+      if (widget.butirTitle != null) selectedNote.judul = widget.butirTitle!;
       selectedNote.angkaKredit = 0.104;
-      selectedNote.buktiFisik = [];
     }
     super.initState();
   }
@@ -64,15 +67,13 @@ class _NewNoteFormState extends State<NewNoteForm> {
         children: <Widget>[
           ButirDropdown(
             editMode: (widget.note?.id != null),
-            initialData: widget.note?.judul,
+            initialData:
+                (widget.note == null) ? selectedNote.judul : widget.note!.judul,
             onChanged: (value) {
               setState(() {
+                selectedNote.judul = value;
                 if (value != null) {
-                  selectedNote.judul = value;
                   selectedNote.kodeButir = value.split(' ')[0];
-                } else {
-                  selectedNote.judul = '';
-                  selectedNote.kodeButir = '';
                 }
               });
             },
@@ -82,7 +83,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
             onChanged: (value) => selectedNote.jenjang,
           ),
           DatePicker(
-            initialDate: selectedNote.tanggalKegiatan,
+            selectedDate: selectedNote.tanggalKegiatan,
             onChanged: (value) {
               setState(() {
                 if (value != null) {
@@ -157,11 +158,8 @@ class _NewNoteFormState extends State<NewNoteForm> {
               );
 
               setState(() {
-                selectedNote.buktiFisik!.add(newBukti);
+                selectedNote.buktiFisik.add(newBukti);
               });
-
-              print('From path: ${file.path}');
-              print('To path: ${newFile.path}');
             },
           ),
           ElevatedButton(

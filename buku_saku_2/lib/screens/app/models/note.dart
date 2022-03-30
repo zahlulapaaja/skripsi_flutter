@@ -5,8 +5,8 @@ class Note {
   // Ga juga sih, soalnya kan di halaman awal ga perlu semua atribut, cukup judul, uraian, gambar klo ada, dan status
   // Ga perlu juga sih semua data itu, yg penting koe butirnya, nanti kan bisa panggil ke data json detailnya
   int? id;
-  String judul;
-  String uraian;
+  String? judul;
+  String? uraian;
   String? kodeButir;
   DateTime? tanggalKegiatan;
   int jumlahKegiatan;
@@ -14,7 +14,7 @@ class Note {
   int? status;
   int? personId;
   DateTime? dateCreated;
-  List<BuktiFisik>? buktiFisik;
+  List<BuktiFisik> buktiFisik;
 
   // int status :
   // 0 = nothing
@@ -27,8 +27,8 @@ class Note {
 
   Note({
     this.id,
-    required this.judul,
-    required this.uraian,
+    this.judul,
+    this.uraian,
     this.kodeButir,
     this.tanggalKegiatan,
     this.jumlahKegiatan = 1,
@@ -36,7 +36,7 @@ class Note {
     this.status,
     this.personId,
     this.dateCreated,
-    this.buktiFisik,
+    required this.buktiFisik,
     this.jenjang,
   });
 

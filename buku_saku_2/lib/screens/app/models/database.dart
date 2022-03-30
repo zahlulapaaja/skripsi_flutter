@@ -95,8 +95,8 @@ class DbHelper {
 
     final insertedId = await db.insert('notes', note.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
-    if (note.buktiFisik != null) {
-      for (var bukti in note.buktiFisik!) {
+    if (note.buktiFisik.isNotEmpty) {
+      for (var bukti in note.buktiFisik) {
         await db.insert('bukti_fisik', bukti.toMap(insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
@@ -108,9 +108,9 @@ class DbHelper {
 
     final insertedId = await db
         .update('notes', note.toMap(), where: 'id = ?', whereArgs: [note.id]);
-    if (note.buktiFisik != null) {
+    if (note.buktiFisik.isNotEmpty) {
       await db.delete('bukti_fisik', where: 'idNote = ?', whereArgs: [note.id]);
-      for (var bukti in note.buktiFisik!) {
+      for (var bukti in note.buktiFisik) {
         await db.insert('bukti_fisik', bukti.toMap(insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
       }

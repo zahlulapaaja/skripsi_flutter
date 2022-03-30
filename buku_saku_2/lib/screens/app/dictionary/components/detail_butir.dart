@@ -1,9 +1,7 @@
-import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
-import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:provider/provider.dart';
+import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 
 class DetailButir extends StatelessWidget {
   const DetailButir(

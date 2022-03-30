@@ -47,9 +47,9 @@ class ButirDropdown extends StatelessWidget {
             mode: Mode.BOTTOM_SHEET,
             showClearButton: editMode ? false : true,
             items: dataButir,
-            // TODO : gimana caranya yang diblok yang ga sesuai dengan jenjang saat ini
-            popupItemDisabled: (String s) =>
-                s.startsWith('I.A.1') || s.startsWith('II.A.1'),
+            popupItemDisabled: (String s) {
+              return s.contains('I.A.1') || s.startsWith('II.A.1');
+            },
             onChanged: onChanged,
             selectedItem: initialData,
             dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
@@ -61,6 +61,12 @@ class ButirDropdown extends StatelessWidget {
                 style: BorderStyle.solid,
               ),
             ),
+            validator: (value) {
+              if (value == null) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
           ),
         ],
       ),

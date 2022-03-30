@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'dart:convert';
+
 import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
@@ -14,6 +16,7 @@ import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
 import 'package:buku_saku_2/screens/app/components/bottom_bar_view.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class AppScreen extends StatefulWidget {
@@ -80,7 +83,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
           },
           screenView: FutureBuilder(
-              future: context.read<ScreenProvider>().readJsonData,
+              future: readJsonData(),
               builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
                 if (snapshot.hasError) {
                   return Center(child: Text('ERROR!! ${snapshot.error}'));
@@ -101,6 +104,14 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
         ),
       ),
     );
+  }
+
+  Future<List<Unsur>> readJsonData() async {
+    final jsonData =
+        await rootBundle.loadString('assets/jsonfile/data_juknis_trial.json');
+    final list = json.decode(jsonData) as List<dynamic>;
+
+    return list.map((e) => Unsur.fromJson(e)).toList();
   }
 
   Widget bottomBar() {
@@ -138,7 +149,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                   context.read<ScreenProvider>().setTabBody = DictionaryScreen(
                       animationController: animationController);
                   context.read<DictionaryProvider>().setDictionaryList =
-                      UnsurScreen();
+                      const UnsurScreen();
                 });
                 break;
             }

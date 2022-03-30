@@ -8,10 +8,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:open_file/open_file.dart';
 
-// ignore: must_be_immutable
-class NoteDetailScreen extends StatelessWidget {
+class NoteDetailScreen extends StatefulWidget {
   NoteDetailScreen({Key? key, required this.id}) : super(key: key);
   final int id;
+
+  @override
+  State<NoteDetailScreen> createState() => _NoteDetailScreenState();
+}
+
+class _NoteDetailScreenState extends State<NoteDetailScreen> {
   var dbHelper = DbHelper();
 
   Future<Note> getData(int id) async {
@@ -22,7 +27,7 @@ class NoteDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: getData(id),
+      future: getData(widget.id),
       builder: (context, AsyncSnapshot<Note> snapshot) {
         if (snapshot.hasError) {
           return Center(child: Text('error fetching data, ${snapshot.error}'));
@@ -33,13 +38,25 @@ class NoteDetailScreen extends StatelessWidget {
             child: Scaffold(
               backgroundColor: Colors.transparent,
               floatingActionButton: FloatingActionButton(
-                onPressed: () {
-                  Navigator.push(
+                onPressed: () async {
+                  final value = await Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => AddNoteScreen(note: note),
                     ),
                   );
+                  setState(() {
+                    if (value != null) {
+                      print('welkam bek 2');
+                    } else {
+                      print('print');
+                    }
+                  });
+                  if (value != null) {
+                    print('welkam bek 2');
+                  } else {
+                    print('print');
+                  }
                 },
               ),
               body: Stack(
@@ -67,7 +84,7 @@ class NoteDetailScreen extends StatelessWidget {
                               textAlign: TextAlign.center),
                           Text('tanggal: ${note.tanggalKegiatan}',
                               textAlign: TextAlign.center),
-                          (note.buktiFisik != null)
+                          (note.buktiFisik.isNotEmpty)
                               ? GridView.builder(
                                   padding: const EdgeInsets.only(top: 10),
                                   gridDelegate:
@@ -77,7 +94,7 @@ class NoteDetailScreen extends StatelessWidget {
                                     crossAxisSpacing: 20,
                                     mainAxisSpacing: 20,
                                   ),
-                                  itemCount: note.buktiFisik!.length,
+                                  itemCount: note.buktiFisik.length,
                                   physics: const ScrollPhysics(),
                                   shrinkWrap: true,
                                   itemBuilder: (context, index) {
@@ -88,16 +105,16 @@ class NoteDetailScreen extends StatelessWidget {
                                             child: InkWell(
                                               onTap: () {
                                                 openFile(note
-                                                    .buktiFisik![index].path);
+                                                    .buktiFisik[index].path);
                                               },
                                               child: Center(
                                                   child: Text(
-                                                      '${note.buktiFisik![index].fileName}.${note.buktiFisik![index].extension}')),
+                                                      '${note.buktiFisik[index].fileName}.${note.buktiFisik[index].extension}')),
                                             ),
                                           ),
                                         ),
                                         Text(
-                                          '${note.buktiFisik![index].fileName}',
+                                          '${note.buktiFisik[index].fileName}',
                                           overflow: TextOverflow.ellipsis,
                                           maxLines: 1,
                                         ),

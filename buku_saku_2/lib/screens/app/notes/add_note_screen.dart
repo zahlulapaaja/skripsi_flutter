@@ -8,8 +8,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddNoteScreen extends StatefulWidget {
   static const id = 'add_note_screen';
-  const AddNoteScreen({Key? key, this.butirCode, this.note}) : super(key: key);
-  final String? butirCode;
+  const AddNoteScreen({Key? key, this.butirTitle, this.note}) : super(key: key);
+  final String? butirTitle;
   final Note? note;
 
   @override
@@ -33,7 +33,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               ),
               scrollDirection: Axis.vertical,
               children: <Widget>[
-                NewNoteForm(kodeButir: widget.butirCode, note: widget.note),
+                NewNoteForm(butirTitle: widget.butirTitle, note: widget.note),
               ],
             ),
             AppBarUI(

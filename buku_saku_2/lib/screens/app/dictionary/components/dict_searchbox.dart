@@ -44,7 +44,7 @@ class DictSearchBox extends StatelessWidget {
               onChanged: (value) {
                 if (value == '') {
                   context.read<DictionaryProvider>().setDictionaryList =
-                      UnsurScreen();
+                      const UnsurScreen();
                 } else {
                   context.read<DictionaryProvider>().setQuery = value;
                   List<ButirKegiatan> results =

@@ -83,7 +83,7 @@ class ButirDetailScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => AddNoteScreen(butirCode: butir.kode),
+                builder: (context) => AddNoteScreen(butirTitle: butir.judul),
               ),
             );
           },

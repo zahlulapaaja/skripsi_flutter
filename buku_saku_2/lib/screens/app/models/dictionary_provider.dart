@@ -7,7 +7,7 @@ class DictionaryProvider with ChangeNotifier {
   List<Unsur> _jsonData = [];
   List<ButirKegiatan> _allButir = [];
   List<ButirKegiatan> _matchedButir = [];
-  Widget _dictionaryList = UnsurScreen();
+  Widget _dictionaryList = const UnsurScreen();
 
   Widget get dictionaryList => _dictionaryList;
   List<Unsur> get jsonData => _jsonData;
@@ -36,7 +36,7 @@ class DictionaryProvider with ChangeNotifier {
 
     _query = query.toLowerCase();
     for (var butir in _allButir) {
-      String judul = butir.judul.toLowerCase();
+      String judul = butir.judul.trim().toLowerCase();
       if (judul.contains(_query)) {
         _matchedButir.add(butir);
       }

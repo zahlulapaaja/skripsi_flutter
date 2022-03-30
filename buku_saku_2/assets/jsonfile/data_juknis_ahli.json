@@ -1,0 +1,208 @@
+[
+  {
+    "unsur" : "I",
+    "judul_unsur" : "TATA KELOLA DAN TATA LAKSANA TEKNOLOGI INFORMASI",
+    "subunsur" : [
+      {
+      "kode" : "I.A",
+      "judul" : "Manajemen Layanan TI",
+      "butir" : [
+        {
+          "kode" : "I.A.1",
+          "judul" : "Melakukan Pemenuhan Permintaan dan Layanan Teknologi Informasi",
+          "uraian" : "Pemenuhan Permintaan Layanan Teknologi Informasi (TI) merupakan proses penyelesaian permintaan peralatan teknologi informasi dan atau layanan teknologi informasi dari user atau pengguna yang merupakan bagian dari operasi normal institusi. Tujuan dari proses ini adalah memenuhi permintaan pengguna terhadap permintaan peralatan/peranti TI dan atau layanan TI. Pengguna merupakan pegawai, klien, unit organisasi, dan tim TI, yang memanfaatkan layanan TI sebagai pengguna akhir. \nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. menerima permintaan layanan TI;\n2. memvalidasi permintaan layanan TI;\n3. mencatat permintaan layanan TI;\n4. mendefinisi permintaan layanan TI;\n5. mendefinisi kategori permintaan layanan TI;\n6. membuat ringkasan permintaan layanan TI;\n7. membuat deskripsi permintaan layanan TI; dan\n8. menentukan status penanganan permintaan layanan TI.",
+          "satuan_hasil" : "Laporan pemenuhan permintaan dan layanan TI",
+          "angka_kredit" : 0.15,
+          "batasan_penilaian" : "1 (satu) laporan per bulan",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan pemenuhan permintaan dan layanan TI mencakup namun tidak terbatas pada: \n1. banyaknya permintaan layanan yang dipenuhi; \n2. jenis layanan yang diminta dan penjelasan rincinya; \n3. sarana yang digunakan; dan \n4. informasi ketersediaan dan cara mendapatkan layanan.",
+          "contoh" : "Andi, A.Md., Pranata Komputer Mahir, telah menyelesaikan beberapa permintaaan layanan TI selama satu tahun (12 bulan) bekerja dan menyusun laporan setiap minggunya yang berisi detail layanan yang sudah ditangani. Maka Andi akan mendapatkan angka kredit sebesar 12 x 0,15 = 1,8."
+        }
+      ]
+    },
+    {
+      "kode" : "I.B",
+      "judul" : "Pengelolaan Data (Data Management)",
+      "butir" : [
+        {
+          "kode" : "I.B.1",
+          "judul" : "Melakukan pengumpulan informasi mengenai data instansi",
+          "uraian" : "Melakukan pengumpulan informasi mengenai data instansi adalah melakukan identifikasi dan pendokumentasian informasi yang dihasilkan suatu instansi, maupun kebutuhan data yang diperlukan oleh instansi. Tahapan kegiatan ini mencakup namun tidak terbatas pada: mengumpulkan informasi yang dihasilkan suatu instansi atau mengumpulkan informasi yang dibutuhkan dari instansi terkait. Sumber data bisa merupakan data primer ataupun pengolahan data sekunder.",
+          "satuan_hasil" : "Dokumen informasi data instansi",
+          "angka_kredit" : 0.55,
+          "batasan_penilaian" : "4 (empat) kali per tahun",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen informasi data instansi mengenai rincian data-data yang dihasilkan suatu instansi mencakup namun tidak terbatas pada: \n1. jenis data; \n2. deskripsi data; \n3. unit penghasil data; dan \n4. periode pengumpulan data.",
+          "contoh" : "Bagus Ananta, A.Md., seorang Pranata Komputer Mahir, melakukan pengumpulan informasi dari intansi lain terkait kegiatan penyusunan daerah dalam angka. Untuk memenuhi kebutuhan penyusunan Statistik Daerah Dalam Angka tersebut dilakukan kegiatan kunjungan ke beberapa instansi. Dari kegiatan tersebut Bagus Ananta akan mendapatkan angka kredit 1 x 0,550 = 0,550."
+        },
+        {
+          "kode" : "I.B.2",
+          "judul" : "Melakukan Pengadministrasian Kegiatan Tata Kelola Data",
+          "uraian" : "Melakukan pengadministrasian kegiatan tata kelola data adalah memastikan ketersediaan, aksesibilitas, kualitas, konsistensi, auditabilitas, dan keamanan data dalam organisasi sehingga dapat meningkatkan peran data sebagai aset organisasi yang dapat digunakan untuk pengambilan keputusan sesuai dengan tingkat kepatuhan terhadap standar data yang telah ditetapkan dan memiliki kemampuan untuk secara proaktif mengidentifikasi perubahan data dalam institusi dan mengomunikasikan perubahan-perubahan tersebut sesuai peruntukkannya. Tahapan kegiatan ini mencakup namun tidak terbatas pada: membuat dokumentasi atau laporan mengenai informasi pengumpulan, identifikasi atau deskripsi suatu set data, penyimpanan serta besaran set data dan aturan/kebijakan/prosedur penggunaan set data tersebut.",
+          "satuan_hasil" : "Dokumen administrasi kegiatan tata kelola data",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "1 (satu) kali per bulan. Kegiatan ini dapat dilakukan untuk setiap set data yang dihasilkan oleh suatu institusi.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen pengadministrasian kegiatan tata kelola data yang mencakup namun tidak terbatas pada: \n1. maksud dan tujuan kegiatan; \n2. waktu pelaksanaan; \n3. deskripsi set data/metadata; \n4. lokasi penyimpanan; \n5. besar set data; \n6. aturan/kebijakan/prosedur penggunaan data tersebut; dan \n7. penanggung jawab kegiatan.",
+          "contoh" : "Rudi Cahyadi, A.Md., Seorang Pranata Komputer Mahir melakukan pengadministrasian kegiatan tata kelola data hasil Survei Angkutan Umum, maka Rudi Cahyadi mendapat Angka Kredit sebesar 0,110."
+        },
+        {
+          "kode" : "I.B.3",
+          "judul" : "Melakukan Pencatatan Permasalahan Pengelolaan Data",
+          "uraian" : "Melakukan pencatatan permasalahan pengelolaan data adalah melakukan dokumentasi mengenai permasalahan dalam kegiatan pengelolaan data. Tahapan kegiatan ini mencakup namun tidak terbatas pada: menyusun dokumentasi dan laporan permasalahan yang terdiri dari jenis permasalahan, tanggal dan jangka waktu permasalahan. Permasalahan yang dicatat adalah permasalahan dalam perencanaan, pengumpulan, identifikasi, penyimpanan, dan penggunaan suatu set data.",
+          "satuan_hasil" : "Catatan permasalahan pengelolaan data",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "1 (satu) kali per bulan. Kegiatan ini dapat dilakukan untuk setiap set data dalam kegiatan pengelolaan data oleh suatu institusi.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen pengadministrasian kegiatan tata kelola data yang mencakup namun tidak terbatas pada:\n1. deskripsi set data;\n2. waktu terjadi permasalahan;\n3. deskripsi permasalahan; dan\n4. solusi permasalahan (jika ada).",
+          "contoh" : "Pada saat pengolahan data Sakernas ditemukan beberapa masalah, ada yang sudah mendapatkan solusi dan ada yang tidak. Mira Lesmana, A.Md., seorang Pranata Komputer Mahir kemudian mencatat permasalahan ini agar menjadi pembelajaran bagi kegiatan pengolahan selanjutnya. Maka Mira Lesmana mendapat Angka Kredit sebesar 0,110."
+        },
+        {
+          "kode" : "I.B.4",
+          "judul" : "Melakukan Perawatan Arsitektur Teknologi Data",
+          "uraian" : "Melakukan perawatan arsitektur teknologi data adalah melakukan kegiatan pemeliharaan, memonitor berjalannya arsitektur teknologi data yang telah diimplementasikan oleh suatu institusi/organisasi berdasarkan metrik tertentu serta pendokumentasian terhadap arsitektur teknologi saat ini atau saat ada perubahan tertentu. Kegiatan ini bertujuan untuk memastikan operasional arsitektur teknologi data yang telah diimplementasikan tetap berjalan sebagaimana mestinya dan jika ada perubahan maka akan terdokumentasi dengan baik. Arsitektur teknologi data mendefinisikan teknologi data yang dibutuhkan untuk mendukung kebutuhan bisnis. Tahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mengidentifikasi arsitektur teknologi data yang akan dirawat/dipelihara;\n2. memonitor dan memelihara arsitektur teknologi data yang telah diimplementasikan/sedang berjalan termasuk jika terdapat kerusakan pada item-item teknologi data pada arsitektur tersebut;\n3. mengidentifikasi perubahan arsitektur teknologi data; dan\n4. mendokumentasikan versioning dan log arsitektur teknologi data yang telah diimplementasikan/sedang berjalan serta perubahan arsitektur teknologi data berdasarkan kesesuaian dengan dokumen kebutuhan data organisasi.",
+          "satuan_hasil" : "Dokumen perawatan arsitektur teknologi data",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "Jumlah maksimum kegiatan perawatan arsitektur teknologi data dalam satu tahun adalah 12 (dua belas) kali.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan perawatan arsitektur teknologi data mencakup namun tidak terbatas pada:\n1. Identifikasi sistem/perangkat yang sedang berjalan dan perubahan yang dilakukan, jika ada; dan\n2. Monitoring dan pemeliharaan sistem/perangkat yang sedang berjalan.",
+          "contoh" : "Dewi, A.Md, Seorang Pranata Komputer Mahir melakukan monitoring kapasitas storage dan penggunaan memory di datalake melalui ambari (perangkat monitoring lain), dan membuat laporannya. Kemudian, atasannya meminta melakukan penyesuaian terhadap kapasitas server untuk sistem-sistem yang ada. Untuk kegiatan di atas, monitoring dan perawatan server, Dewi mendapatkan angka kredit sebesar 2 x 0,055 = 0,110."
+        },
+        {
+          "kode" : "I.B.5",
+          "judul" : "Melakukan Perawatan Arsitektur Integrasi Data",
+          "uraian" : "Melakukan perawatan arsitektur integrasi data adalah melakukan kegiatan pemeliharaan, memonitor berjalannya arsitektur integrasi data yang telah diimplementasikan oleh suatu institusi/organisasi berdasarkan metrik tertentu serta pendokumentasian terhadap arsitektur integrasi saat ini atau saat ada perubahan tertentu. Kegiatan ini bertujuan untuk memastikan operasional arsitektur integrasi data yang telah diimplementasikan tetap berjalan sebagaimana mestinya dan jika ada perubahan maka akan terdokumentasi dengan baik. \nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mengidentifikasi arsitektur integrasi data yang akan dirawat/dipelihara;\n2. memonitor dan memelihara arsitektur integrasi data yang telah diimplementasikan/sedang berjalan termasuk jika terdapat kerusakan pada item-item integrasi data pada arsitektur tersebut;\n3. mengidentifikasi perubahan arsitektur integrasi data; dan\n4. mendokumentasikan versioning dan log arsitektur integrasi data yang telah diimplementasikan/sedang berjalan serta perubahan arsitektur integrasi data berdasarkan kesesuaian dengan dokumen kebutuhan data organisasi.",
+          "satuan_hasil" : "Dokumen perawatan arsitektur teknologi data",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "12 (dua belas) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan perawatan arsitektur integrasi data mencakup namun tidak terbatas pada:\n1. Identifikasi arsitektur integrasi data yang sedang berjalan; dan\n2. Monitoring dan pemeliharaan arsitektur integrasi data yang sedang berjalan.",
+          "contoh" : "Untuk memantau web services yang mendukung integrasi data, Amanda, A.Md. seorang Pranata Komputer Mahir melakukan monitoring menggunakan aplikasi TIBCO (atau aplikasi monitoring lainnya) dan membuat laporannya. Dalam proses integrasi data, ternyata dibutuhkan tabel baru yang belum mempunyai service untuk mendapatkannya. Amanda kemudian membuatkan service/meng-update dari service yang lama untuk kebutuhan tabel baru ini. Terhadap dua kegiatan di atas, Amanda mendapatkan angka kredit untuk kegiatan monitoring dan pemeliharaan, yaitu sebesar 2 x 0,055=0,110."
+        },
+        {
+          "kode" : "I.B.6",
+          "judul" : "Melakukan Perawatan Data Model",
+          "uraian" : "Melakukan perawatan data model adalah kegiatan memantau dan memelihara data model yang telah diimplementasikan oleh suatu institusi/organisasi berdasarkan metrik tertentu. Kegiatan ini bertujuan agar data model yang ada selalu mutakhir sesuai dengan kebutuhan dan proses bisnis terkini. Data Model adalah model yang mengatur elemen-elemen data termasuk standardisasi hubungan antarelemen dan dengan sifat-sifat entitas pada kondisi sebenarnya.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mengidentifikasi atau menentukan data model yang akan dirawat;\n2. mengkaji data model saat ini;\n3. memantau dan memelihara data model; dan\n4. mendokumentasikan setiap langkah perawatan data model yang dilakukan dan hasilnya.",
+          "satuan_hasil" : "Dokumen perawatan data model",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "1 (satu) kali per bulan untuk setiap jenis perawatan data model. Kegiatan ini dapat dilakukan pada seluruh data model yang ada pada organisasi.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen perawatan data model mencakup namun tidak terbatas pada:\n1. Identifikasi data model saat ini; dan\n2. Penjelasan perubahan yang dilakukan.",
+          "contoh" : "Dengan adanya jabatan-jabatan fungsional yang baru ditetapkan oleh Kemenpan, maka Ridwan, A.Md. seorang Pranata Komputer Mahir diminta untuk meng-update entitas Jenis Jabatan Fungsional yang ada di sistem kepegawaian. Untuk kegiatan ini, Ridwan mendapatkan angka kredit 0,055."
+        },
+        {
+          "kode" : "I.B.7",
+          "judul" : "Melakukan Perawatan Kecerdasan Bisnis (Business Intelligence)",
+          "uraian" : "Melakukan perawatan kecerdasan bisnis (business intelligence) adalah melakukan perawatan dan pemeliharaan terhadap environment, solusi dan/atau teknologi kecerdasan bisnis (business intelligence). Kegiatan perawatan ini bertujuan untuk memastikan operasional kecerdasan bisnis (business intelligence) yang telah diimplementasikan tetap berjalan sebagaimana mestinya tanpa ada permasalahan yang dihadapi oleh user. Jika terdapat aspek yang tidak optimal pada sisi user, maka dapat merusak keseluruhan projek kecerdasan bisnis (business intelligence). Misalnya, jika CEO membuka dashboard dan membutuhkan lebih dari beberapa detik, maka kemungkinan dia akan mengunjungi dashboard itu kembali menjadi lebih kecil. Sehingga, diperlukan strategi perawatan kecerdasan bisnis (business intelligence) tersebut.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. memantau frekuensi dan penggunaan sumber daya (dalam bentuk perangkat keras atau perangkat lunak) berdasarkan suatu metrik. Metrik dapat terdiri dari:\na. Metrik penggunaan data warehouse/kecerdasan bisnis (business intelligence), diantaranya jumlah pengguna terdaftar, jumlah pengguna yang terhubung, jumlah pengguna yang terhubung secara bersamaan pada data warehouse/kecerdasan bisnis (business intelligence), dan berapa banyak kueri yang dijalankan (query request) dalam satuan waktu tertentu;\nb. Metrik performa, yaitu response time dalam menjalankan setiap kueri/mengambil data yang ada pada business intelligence; dan\nc. Beban penggunaan memori.\n2. Melakukan tuning kecerdasan bisnis (business intelligence) untuk optimasi, misalnya mengkonfigurasi threshold penggunaan memori sistem kecerdasan bisnis (business intelligence), melakukan caching data untuk meminimalkan beban penggunaan memori, dan lain-lain. Kegiatan ini tidak mencakup monitoring performa terkait proses Extract, Transform, dan Load (ETL) dan data warehouse, karena diasumsikan ETL dan data warehouse telah selesai diimplementasi.",
+          "satuan_hasil" : "Laporan perawatan kecerdasan bisnis (business intelligence)",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "1 (satu) kali per bulan untuk satu jenis perawatan per sistem kecerdasan bisnis (business intelligence). Kegiatan ini dapat dilakukan pada setiap sistem BI yang ada pada organisasi.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan perawatan kecerdasan bisnis (business intelligence) yang mencakup namun tidak terbatas pada:\n1. Deskripsi dari sistem kecerdasan bisnis (business intelligence); dan\n2. Hasil pemantauan kinerja kecerdasan bisnis (business intelligence).",
+          "contoh" : "Dini Lestari, A.Md., seorang Pranata Komputer Mahir melakukan konfigurasi memori kecerdasan bisnis (business intelligence) Sensus Penduduk untuk meningkatkan performa, maka Dini Lestari mendapatkan angka kredit 0,055. Selain itu, Dini Lestari juga melakukan caching data untuk kecerdasan bisnis (business intelligence) Sensus Penduduk, maka angka kredit menjadi 0,055. Di tengah periode pekerjaan, ternyata ada update untuk aplikasi BI yang digunakan institusi, dan Dini Lestari diminta untuk melakukannya. Kegiatan ini juga mendapatkan angka kredit 0,055. Sehingga total angka kredit yang didapatkan Dini Lestari yaitu sebesar 3 x 0,055=1,165."
+        },
+        {
+          "kode" : "I.B.8",
+          "judul" : "Melakukan Perawatan Taksonomi Data di Suatu Instansi",
+          "uraian" : "Melakukan perawatan taksonomi data adalah melakukan peninjauan terhadap data yang terdapat di organisasi untuk kemudian dikelompokkan berdasarkan taksonomi data yang telah disusun sebelumnya. Taksonomi yang dimaksud adalah struktur topik/kategori yang digunakan untuk pengelolaan konten sehingga konten dapat dengan mudah ditelusuri untuk penambahan, pengaksesan, pengubahan, ataupun penghapusan. Termasuk ke dalam kegiatan ini juga yaitu perawatan ontologi yang berupa representasi dari struktur konsep-konsep beserta hubungannya dalam suatu domain.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Melakukan identifikasi terhadap data yang ada di organisasi untuk mengetahui apakah terdapat data yang belum dikategorikan atau tidak sesuai pengelompokannya;\n2. Mengimplementasikan taksonomi data terhadap data yang belum dikategorikan atau memperbaiki hasil implementasi taksonomi data yang tidak sesuai; dan\n3. Menyusun daftar data yang belum dapat dikategorikan ke dalam hierarki taksonomi data yang telah dibuat beserta isunya.",
+          "satuan_hasil" : "Laporan perawatan taksonomi data",
+          "angka_kredit" : 0.275,
+          "batasan_penilaian" : "12 (dua belas) kali per tahun",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan mekanisme pemeliharaan taksonomi organisasi, yang mencakup namun tidak terbatas pada:\n1. deskripsi dari data yang diidentifikasi hasil implementasi taksonomi datanya;\n2. hasil implementasi taksonomi data; dan\n3. daftar data yang tidak dapat dikategorikan berdasarkan taksonomi data yang telah dibuat beserta isunya.",
+          "contoh" : "Luhut Sihombing, A.Md., seorang Pranata Komputer Mahir melakukan semua cakupan kegiatan perawatan taksonomi konten-konten halaman situs web di suatu instansi pada awal tahun 2021. Dari pekerjaan tersebut, Luhut Sihombing diberikan Angka Kredit sebesar 0,275."
+        },
+        {
+          "kode" : "I.B.9",
+          "judul" : "Melakukan Perawatan Arsitektur Data",
+          "uraian" : "Melakukan perawatan arsitektur data adalah melakukan kegiatan pemeliharaan, memonitor berjalannya arsitektur data yang telah diimplementasikan oleh suatu institusi/organisasi berdasarkan metrik tertentu serta pendokumentasian terhadap arsitektur saat ini atau saat ada perubahan tertentu. Kegiatan ini bertujuan untuk memastikan operasional arsitektur data yang telah diimplementasikan tetap berjalan sebagaimana mestinya dan jika ada perubahan maka akan terdokumentasi dengan baik.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mengidentifikasi arsitektur data yang akan dirawat/dipelihara;\n2. memonitor dan memelihara arsitektur data yang telah diimplementasikan/sedang berjalan;\n3. mengidentifikasi perubahan arsitektur data; dan\n4. mendokumentasikan versioning dan log arsitektur data yang telah diimplementasikan/sedang berjalan serta perubahan arsitektur data berdasarkan kesesuaian dengan dokumen kebutuhan data organisasi.",
+          "satuan_hasil" : "Laporan perawatan arsitektur data",
+          "angka_kredit" : 0.275,
+          "batasan_penilaian" : "5 (lima) arsitektur data per tahun.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan mekanisme pemeliharaan arsitektur data dan metadata yang mencakup namun tidak terbatas pada:\n1. identifikasi arsitektur data yang sedang berjalan;\n2. monitoring dan pemeliharaan arsitektur data yang sedang berjalan;\n3. identifkasi perubahan arsitektur data; dan\n4. versioning dan log arsitektur data yang sedang berjalan dan perubahan arsitektur data.",
+          "contoh" : "Dani Permana, A.Md., seorang Pranata Komputer Mahir melakukan perawatan arsitektur data di organisasinya, dengan melakukan pembaharuan dokumentasi berdasarkan perubahan arsitektur data yang sedang berjalan. Dani Permana mendapatkan angka kredit sebesar 0,275."
+        },
+        {
+          "kode" : "I.B.10",
+          "judul" : "Mengembangkan Data Model",
+          "uraian" : "Melakukan pengembangan pada data model yang telah dirancang atau diimplementasikan sebelumnya untuk memenuhi kebutuhan dan tujuan bisnis yang baru. Data model menggambarkan relasi (relationships) antar entitas data dan batasan- batasan (constraint) bagaimana data disimpan dan diakses dalam  suatu sistem database. Skema data model tersebut dapat dipresentasikan dalam level conceptual, logical, maupun physical. Kegiatan pengembangan meliputi penambahan/pengurangan/ perubahan entitas data, relasi, dan constraints dalam data model. Hal tersebut bertujuan untuk merespon adanya perubahan proses bisnis yang baru, untuk meningkatkan efektivitas, serta untuk mengurangi resiko dan biaya. \nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. menentukan kebutuhan pengembangan data model;\n2. mengidentifikasi atau menentukan data model yang akan dikembangkan;\n3. mengkaji data model yang telah diimplementasikan sebelumnya;\n4. mengembangkan data model: conceptual, logical, dan physical; dan\n5. mendokumentasikan pengembangan data model.",
+          "satuan_hasil" : "Dokumen pengembangan data model",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "12 (dua belas) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen pengembangan data model yang mencakup namun tidak terbatas pada:\n1. data model pada level conceptual, logical, dan physical yang digambarkan dalam entity-relationship model, network model, hierarchical model, star schema, ataupun standar model lain untuk menjelaskan keadaan saat ini;\n2. deskripsi setiap object (entitas, atribut, relasi, dan lain-lain) pada data model; dan\n3. perubahan yang dibuat.",
+          "contoh" : "Maulidia Hamid, A.Md., seorang Pranata Komputer Mahir diminta untuk menambah atribut baru pada database sistem aplikasi kepegawaian. Untuk kegiatan ini Maulidia Hamid mendapatkan angka kredit 0,110."
+        },
+        {
+          "kode" : "I.B.11",
+          "judul" : "Melakukan Perancangan Data Model Sederhana",
+          "uraian" : "Merancang data model yang menggambarkan hubungan antara berbagai jenis informasi yang akan disimpan dalam database. Kegiatan ini meliputi pemodelan data: untuk pengelolaan data sebagai sumber daya, untuk mendukung sistem informasi, serta untuk data warehouse. Rancangan dihasilkan dari proses mendefinisikan dan menganalisis kebutuhan data untuk mendukung alur atau bisnis proses suatu sistem. Data model sederhana minimal memiliki 3 entitas yang dilengkapi relasi dan constraint sesuai dengan hasil analisis.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mengidentifikasi dan mendefinisikan kebutuhan proses bisnis dan data;\n2. merancang conceptual data model berdasarkan kebutuhan data;\n3. merancang logical data model;\n4. merancang physical data model dengan memperhatikan kebutuhan teknis dan performa; dan\n5. mendokumentasikan perancangan data model.",
+          "satuan_hasil" : "Dokumen rancangan data model sederhana",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "12 (dua belas) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumen rancangan data model sederhana mencakup namun tidak terbatas pada:\n1. hasil analisis kebutuhan data;\n2. data model pada level conceptual, logical, dan physical yang digambarkan dalam entity-relationship model, network model, hierarchical model, star schema, ataupun standar model lain; dan\n3. deskripsi setiap object (entitas, atribut, relasi, dan lain-lain) pada data model.",
+          "contoh" : "Ahmad Subagyo, A.Md., seorang Pranata Komputer Penyelia melakukan perancangan data model sederhana pada sistem absensi pegawai yang terdiri dari tabel pegawai, tabel waktu presensi, dan tabel rekap presensi. Untuk kegitan ini Ahmad Subagyo mendapatkan angka kredit 0,110."
+        },
+        {
+          "kode" : "I.B.12",
+          "judul" : "Melakukan Uji Coba Rancangan Layanan Akses Data",
+          "uraian" : "Uji coba rancangan layanan akses data adalah kegiatan menelaah dan melakukan pengujian terhadap rancangan layanan akses data yang sudah dibuat untuk memastikan input-proses-output yang direncanakan sudah berjalan sesuai dengan yang diharapkan. Layanan akses data terdiri dari akses data secara manual dan elektronik. Layanan akses data secara manual dilakukan melalui SOP yang sudah ditentukan dimana pemohon data akan dibantu oleh operator untuk dapat mengakses data. Layanan akses data secara elektronik dilakukan melalui fasilitas akses data yang terdapat pada sistem/aplikasi.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Mempelajari spesifikasi layanan akses data;\n2. Mempelajari prosedur uji coba, yakni langkah-langkah pengujian rancangan layanan akses data;\n3. Melakukan pengujian berdasarkan tahapan yang sudah direncanakan; dan\n4. Membuat laporan hasil pengujian.",
+          "satuan_hasil" : "Laporan uji coba rancangan layanan akses data",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "8 (delapan) kali per tahun.\nUji coba dilakukan terhadap hasil rancangan yang dikerjakan oleh pihak lain. Uji coba yang dilakukan terhadap rancangan sendiri dianggap sebagai kesatuan kegiatan penyusunan rancangan.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen laporan uji coba yang mencakup namun tidak terbatas pada:\n1. deskripsi spesifikasi layanan akses data yang diuji;\n2. prosedur uji coba, yakni langkah-langkah pengujian rancangan layanan akses data;\n3. pelaksanaan pengujian; berisi waktu uji coba, dokumen/alat bantu/data set yang digunakan untuk melakukan pengujian, kendala yang dihadapi; dan\n4. hasil pengujian, menjelaskan hasil ujicoba dan keterangan lain yang diperlukan.",
+          "contoh" : "Shinta Amalia, A.Md., seorang Pranata Komputer Mahir melaksanakan kegiatan uji coba rancangan layanan akses data secara elektronik melalui sistem layanan informasi statistik berdasarkan panduan sistem yang ada dengan menyertakan bukti kegiatan yang lengkap sesuai dengan syarat bukti fisik yang diminta, setiap bukti fisik dapat menjelaskan proses kerja yang jelas dan tuntas. Atas pengajuan tsb, Shinta Amalia mendapatkan nilai sebesar 0,110.\nAkan tetapi, jika Shinta Amalia melaksanakan kegiatan uji coba dengan bukti yang diusulkan terdiri atas deskripsi kegiatan, waktu pengujian, tahap pengujian, dan catatan hasil uji coba, untuk bukti alat bantu pengujian tidak disertakan. Atas pengajuan tsb Shinta Amalia mendapatkan nilai 4/5 x 0,110 = 0,088."
+        },
+        {
+          "kode" : "I.B.13",
+          "judul" : "Melakukan Rancangan Visualisasi Informasi Sederhana",
+          "uraian" : "Dikategorikan dalam visualisasi informasi sederhana yakni  apabila inputnya menggunakan dataset sederhana; dan/atau  diproses dengan dukungan alat bantu/software dengan tanpa  melibatkan bahasa pemrograman; dan/atau output yang dihasilkan  berupa visualisasi statis dan dinamis (bukan interaktif). \nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Menyusun strategi penyajian informasi yang tepat agar pesan  yang ingin disampaikan mudah dipahami oleh pengguna.\n2. Strategi tersebut dituangkan dalam rancangan visualisasi informasi yang terdiri dari:\na. Informasi apa yang akan disajikan;\nb. Tujuan visualisasi informasi;\nc. Sasaran/target pengguna informasi;\nd. Sumber data yang menjadi rujukan;\ne. Teknik visualisasi yang akan digunakan;\nf. Tools yang digunakan; dan\ng. Rancangan output yang diharapkan.\n3. Mendokumentasikan hasil perancangan visualisasi informasi sederhana.",
+          "satuan_hasil" : "Dokumen rancangan visualisasi informasi sederhana",
+          "angka_kredit" : 0.220,
+          "batasan_penilaian" : "4 (empat) kali per tahun",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumen rancangan visualisasi informasi sederhana mencakup namun tidak terbatas pada:\n1. deskripsi visualisasi informasi;\n2. tujuan visualisasi informasi;\n3. sasaran/target pengguna informasi;\n4. sumber data yang menjadi rujukan disertai dummy dataset;\n5. teknik visualisasi yang akan digunakan;\n6. deskripsi alat bantu/software; dan\n7. rancangan output.",
+          "contoh" : "Kevin Woworuntu, A.Md., seorang Pranata Komputer Penyelia membuat perancangan visualisasi informasi dalam bentuk desain dashboard monitoring dengan dokumen rancangan yang memenuhi 5 unsur bukti fisik yang diminta, atas dokumen rancangan dimaksud maka Kevin Woworuntu mendapat nilai 0,220. \nBobot nilai untuk setiap kriteria penilaian, maksimum 20%. Jika dalam menyusun laporan dianggap tidak lengkap dan/atau isi laporan tidak mampu menjelaskan secara tutas maksud kegiatan, maka untuk setiap persentase bobot penilaian dapat diturunkan sesuai dengan kualitas laporan yang dibuat."
+        },
+        {
+          "kode" : "I.B.14",
+          "judul" : "Melakukan Uji Coba Rancangan Visualisasi Informasi",
+          "uraian" : "Merupakan kegiatan menelaah dan melakukan pengujian terhadap rancangan visualisasi yang sudah dibuat untuk memastikan input-proses-output yang direncanakan sudah berjalan sesuai dengan yang diharapkan. \nTahapan kegiatan ini mencakup namun tidak terbatas pada: \n1. Menelaah spesifikasi visualisasi informasi;\n2. Menetapkan prosedur uji coba, yakni langkah-langkah pengujian rancangan visualisasi informasi; \n3. Melakukan pengujian berdasarkan tahapan yang sudah direncanakan; dan\n4. Merumuskan hasil pengujian.",
+          "satuan_hasil" : "Laporan uji coba rancangan visualisasi informasi",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "8 (delapan) kali per tahun. Uji coba dilakukan terhadap hasil rancangan yang dikerjakan oleh pihak lain. Uji coba yang dilakukan terhadap rancangan sendiri dianggap sebagai kesatuan kegiatan penyusunan rancangan.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen laporan uji coba yang mencakup namun tidak terbatas pada:\n1. deskripsi spesifikasi visualisasi informasi yang diuji;\n2. prosedur uji coba, yakni langkah-langkah pengujian rancangan visualisasi informasi;\n3. pelaksanaan pengujian; berisi waktu uji coba, dokumen/alat bantu/data set yang digunakan untuk melakukan pengujian kendala yang dihadapi; dan\n4. hasil pengujian, menjelaskan hasil ujicoba dan keterangan lain yang diperlukan.",
+          "contoh" : "Iin Sukaesi, A.Md., seorang Pranata Komputer Mahir melaksanakan kegiatan uji coba visualisasi informasi dengan menyertakan bukti kegiatan yang lengkap sesuai dengan syarat bukti fisik yang diminta, setiap bukti fisik dapat menjelaskan proses kerja yang jelas dan tuntas. Atas pengajuan tsb, Iin Sukaesi mendapatkan nilai sebesar 0,110.\nNamun jika Iin Sukaesi, A.Md. melaksanakan kegiatan uji coba dengan bukti yang diusulkan terdiri atas deskripsi kegiatan, waktu pengujian, tahap pengujian, dan catatan hasil uji coba, untuk bukti alat bantu pengujian tidak disertakan. Atas pengajuan tersebut, pejabat fungsional Pranata Komputer mendapatkan nilai 3/4 x 0,110 = 0,0825."
+        },
+        {
+          "kode" : "I.B.15",
+          "judul" : "Melakukan Penyiapan Data Uji Coba Rancangan Database",
+          "uraian" : "Melakukan penyiapan data uji coba rancangan basis data (database) adalah kegiatan menyiapkan data dummy yang sesuai dengan skema database yang telah dirancang sebelumnya dan merekam/memasukkan data dummy tersebut ke dalam skema basis data (database) terkait yang telah terimplementasikan ke suatu media RDBMS.\nKegiatan penyiapan data uji coba rancangan basis data (database) bertujuan untuk melakukan testing rancangan basis data (database) yang telah dirancang berdasarkan skema basis data (database), apakah skema basis data (database) tersebut dengan data dummy yang disiapkan fungsi penyimpanan, pengelolaan dan pemanfaatan dalam kegiatan transaksional atau/dan analisis dapat berjalan sebagaimana mestinya, baik yang menggunakan sistem/aplikasi yang terhubung ke basis data (database) tersebut atau pemanfaatan langsung pada media RDBMS terkait.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Penyiapan informasi RDBMS yang akan digunakan;\n2. Tersedianya skema logic database yang diimplementasikan pada suatu RDBMS terpilih termasuk di dalamnya adanya skema logic E-R, dan contraints antar tabel;\n3. Daftar basis data (database)-tabel yang akan diisi data uji cobanya dan yang tidak. Pada tabel yang akan diisi data uji cobanya perlu disertakan daftar kolom mana saja yang akan diisi data dummynya dan mana yang tidak;\n4. Pengecekan jumlah data uji coba yang berhasil disimpan ke dalam media RDBMS pada masing-masing tabel yang telah dilist pada poin c di atas dibandingkan terhadap data inputan awal;\n5. Daftar fungsi yang akan dites dari hasil penyiapan data uji coba rancangan basis data (database) seperti pengujian penyimpanan, pengujian pengelolaan, dan pengujian dalam kegiatan transaksional atau/dan analisis, baik yang menggunakan sistem/aplikasi yang terhubung atau menggunakan media RDBMS terkait; dan\n6. Evaluasi dari penyiapan data uji coba rancangan basis data (database).",
+          "satuan_hasil" : "Data uji coba rancangan basis data (database)",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "2 (dua) kali per bulan. Batasan minimal pengisian data uji coba rancangan basis data (database) ini adalah terisinya setiap tabel yang terdaftar pada daftar tabel yang akan diisi data dummny sebanyak baris kolom pada dokumen tersebut.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Bukti fisik penyiapan data uji coba rancangan basis data (database) mencakup namun tidak terbatas pada:\n1. dokumentasi RDBMS yang akan digunakan;\n2. dokumen skema logic database yang diimplementasikan pada suatu RDBMS terpilih termasuk di dalamnya adanya skema logic E-R, dan contraints antar tabel;\n3. daftar database-tabel-kolom yang akan diisi data uji cobanya dan yang tidak;\n4. dokumen perbandingan jumlah data uji coba yang berhasil disimpan ke RDBMS terpilih pada daftar basis data (database)-tabel-kolom poin c di atas dibandingkan terhadap data inputan awal;\n5. dokumen daftar fungsi yang telah dites dari hasil penyiapan data uji coba rancangan basis data (database) seperti pengujian penyimpanan, pengujian pengelolaan, dan pengujian dalam kegiatan transaksional atau/dan analisis, baik yang menggunakan sistem/aplikasi yang terhubung atau menggunakan media RDBMS terkait; dan\n6. dokumen evaluasi dari penyiapan data uji coba rancangan basis data (database).",
+          "contoh" : "Bowo Randani, A.Md., seorang Pranata Komputer Mahir melakukan penyiapan data uji coba rancangan basis data (database), maka Pranata Komputer tersebut akan mendapatkan angka kredit sebesar 0,055.\nJika Bowo Randani tidak melakukan salah satu dari cakupan \nkegiatan, maka total angka kredit yang diperoleh adalah 5/6 x 0,055 = 0,044.\nNamun jika bukti fisik poin 3 dan 4 tidak dilampirkan maka tidak mendapat poin."
+        },
+        {
+          "kode" : "I.B.16",
+          "judul" : "I.B.16.Melakukan Uji Coba Rancangan Layanan Integrasi Data",
+          "uraian" : "Melakukan uji coba rancangan layanan integrasi data adalah suatu rangkaian kegiatan menguji proses integrasi sesuai dokumen rancangan yang didalamnya menguji dari penyiapan data inputan dummy, pelaksanaan integrasi data menggunakan inputan data dummy hingga didapatkan output data yang diharapkan. Kegiatan uji coba rancangan layanan integrasi data bertujuan untuk menjamin berjalannya alur layanan permintaan integrasi data dari inputan data yang ditentukan hingga mendapatkan output-an data yang diharapkan.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1.mempelajari skenario integrasi data yang akan diuji coba (apa yang dijadikan input dan apa output yang diharapkan);\n2.penyiapan tools yang akan dipergunakan dalam integrasi data;\n3.melaksanakan integrasi data sesuai input data, alur yang ditelah dirancang hingga menghasilkan output data;\n4.pengecekan output data dengan requirement;\n5.pendokumentasian RDBMS atau non-RDBMS yang digunakan;\n6.pendokumentasian integrator yang digunakan misal penggunaan ETL Tools atau built-in; dan\n7.pengisian metrik pengujian seperti ketersediaan data, volume dan kecepatan data, kompleksitas solusi.",
+          "satuan_hasil" : "Laporan uji coba rancangan layanan integrasi data",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "2 (dua) kali per bulan.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan uji coba rancangan layanan integrasi data mencakup namun tidak terbatas pada:\n1.dokumen skenario integrasi data yang akan diuji coba;\n2.dokumentasi tools yang akan dipergunakan dalam integrasi data;\n3.dokumentasi on-process selama proses integrasi data (progess selama integrasi, kendala, dan sebagainya);\n4.dokumen assesment output data dengan requirement;\n5.dokumentasi RDBMS atau non-RDBMS yang digunakan;\n6.dokumentasi integrator yang digunakan misal ETL Tools atau built-in; dan\n7.metrik pengujian seperti ketersediaan data, volume dan kecepatan data, kompleksitas solusi.",
+          "contoh" : "Ravi Ahmad, A.Md., seorang Pranata Komputer Mahir melakukan uji coba rancangan layanan integrasi data secara lengkap dan tuntas, maka yang bersangkutan akan diberikan angka kredit sebesar 0,110, Jika Ravi Ahmad tidak melakukan salah satu dari cakupan kegiatan, maka total angka kredit yang diperoleh adalah 6/7 x 0,110 = 0,09429."
+        }
+      ]
+    }
+    ]
+    
+  }
+]

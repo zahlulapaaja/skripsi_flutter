@@ -1,4 +1,3 @@
-import 'package:buku_saku_2/screens/app/models/bukti_fisik.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/database.dart';

@@ -99,14 +99,14 @@ class CardBuilder extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Text(
-                      notes.judul,
+                      notes.judul!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: AppConstants.kCardTitleTextStyle,
                     ),
                     const SizedBox(height: 7),
                     Text(
-                      notes.uraian,
+                      notes.uraian!,
                       maxLines: index == 1 ? 10 : 5,
                       overflow: TextOverflow.ellipsis,
                       style: AppConstants.kCardBodyTextStyle,
