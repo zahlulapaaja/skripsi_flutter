@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
@@ -149,7 +150,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                   context.read<ScreenProvider>().setTabBody = DictionaryScreen(
                       animationController: animationController);
                   context.read<DictionaryProvider>().setDictionaryList =
-                      const UnsurScreen();
+                      const JenjangScreen();
                 });
                 break;
             }

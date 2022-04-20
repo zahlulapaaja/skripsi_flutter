@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
@@ -7,7 +8,7 @@ class DictionaryProvider with ChangeNotifier {
   List<Unsur> _jsonData = [];
   List<ButirKegiatan> _allButir = [];
   List<ButirKegiatan> _matchedButir = [];
-  Widget _dictionaryList = const UnsurScreen();
+  Widget _dictionaryList = const JenjangScreen();
 
   Widget get dictionaryList => _dictionaryList;
   List<Unsur> get jsonData => _jsonData;
