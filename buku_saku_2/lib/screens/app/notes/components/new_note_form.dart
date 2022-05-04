@@ -158,7 +158,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
               );
 
               setState(() {
-                selectedNote.buktiFisik.add(newBukti);
+                selectedNote.buktiFisik?.add(newBukti);
               });
             },
           ),

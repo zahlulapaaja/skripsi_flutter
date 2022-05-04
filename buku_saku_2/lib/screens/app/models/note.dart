@@ -14,7 +14,7 @@ class Note {
   int? status;
   int? personId;
   DateTime? dateCreated;
-  List<BuktiFisik> buktiFisik;
+  List<BuktiFisik>? buktiFisik;
 
   // int status :
   // 0 = nothing
@@ -36,7 +36,7 @@ class Note {
     this.status,
     this.personId,
     this.dateCreated,
-    required this.buktiFisik,
+    this.buktiFisik,
     this.jenjang,
   });
 

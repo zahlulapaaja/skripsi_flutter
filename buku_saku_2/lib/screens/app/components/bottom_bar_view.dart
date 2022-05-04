@@ -101,8 +101,8 @@ class _BottomBarViewState extends State<BottomBarView>
                               child: TabIcons(
                                   tabIconData: widget.tabIconsList?[3],
                                   removeAllSelect: () {
-                                    setRemoveAllSelection(
-                                        widget.tabIconsList?[3]);
+                                    // setRemoveAllSelection(
+                                    //     widget.tabIconsList?[3]);
                                     widget.changeIndex!(3);
                                   }),
                             ),

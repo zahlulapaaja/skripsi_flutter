@@ -84,7 +84,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               textAlign: TextAlign.center),
                           Text('tanggal: ${note.tanggalKegiatan}',
                               textAlign: TextAlign.center),
-                          (note.buktiFisik.isNotEmpty)
+                          (note.buktiFisik != null)
                               ? GridView.builder(
                                   padding: const EdgeInsets.only(top: 10),
                                   gridDelegate:
@@ -94,7 +94,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                     crossAxisSpacing: 20,
                                     mainAxisSpacing: 20,
                                   ),
-                                  itemCount: note.buktiFisik.length,
+                                  itemCount: note.buktiFisik!.length,
                                   physics: const ScrollPhysics(),
                                   shrinkWrap: true,
                                   itemBuilder: (context, index) {
@@ -105,16 +105,16 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                             child: InkWell(
                                               onTap: () {
                                                 openFile(note
-                                                    .buktiFisik[index].path);
+                                                    .buktiFisik![index].path);
                                               },
                                               child: Center(
                                                   child: Text(
-                                                      '${note.buktiFisik[index].fileName}.${note.buktiFisik[index].extension}')),
+                                                      '${note.buktiFisik![index].fileName}.${note.buktiFisik![index].extension}')),
                                             ),
                                           ),
                                         ),
                                         Text(
-                                          '${note.buktiFisik[index].fileName}',
+                                          '${note.buktiFisik![index].fileName}',
                                           overflow: TextOverflow.ellipsis,
                                           maxLines: 1,
                                         ),

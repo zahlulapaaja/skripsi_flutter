@@ -13,6 +13,9 @@ class DbHelper {
   final String _dbSyntax2 =
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idNote INTEGER, path TEXT,
   fileName TEXT, extension TEXT)''';
+  final String _dbSyntax3 =
+      '''CREATE TABLE profile( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, profilePict TEXT, jenjang TEXT,
+  golongan TEXT, ak_now DOUBLE(200,3), ak_utama_collected DOUBLE(200,3), ak_penunjang_collected DOUBLE(200,3))''';
 
   Future<Database> get dbInstance async {
     if (_database != null) return _database!;
@@ -28,6 +31,7 @@ class DbHelper {
       onCreate: (db, version) {
         db.execute(_dbSyntax);
         db.execute(_dbSyntax2);
+        db.execute(_dbSyntax3);
       },
     );
   }
@@ -36,22 +40,13 @@ class DbHelper {
     final db = await dbInstance;
 
     final List<Map<String, dynamic>> maps = await db.query('notes');
-    final List<Map<String, dynamic>> files = await db.query('bukti_fisik');
     return List.generate(maps.length, (i) {
-      List<BuktiFisik> buktiFisik = [];
-      for (var file in files) {
-        if (file['idNote'] == maps[i]['id']) {
-          buktiFisik
-              .add(BuktiFisik(path: file['path'], fileName: file['fileName']));
-        }
-      }
       return Note(
         id: maps[i]['id'],
         judul: maps[i]['judul'],
         uraian: maps[i]['uraian'],
         status: maps[i]['status'],
         tanggalKegiatan: DateTime.parse(maps[i]['tanggalKegiatan']),
-        buktiFisik: buktiFisik,
       );
     });
   }
@@ -90,13 +85,31 @@ class DbHelper {
     );
   }
 
+  Future<List<Note>> getNoteByKey(String key) async {
+    final db = await dbInstance;
+
+    // TODO : nanti jangan cuma judul, tapi uraian juga bisa masuk pencarian
+    final List<Map<String, dynamic>> maps =
+        await db.query('notes', where: 'judul LIKE ?', whereArgs: ['%$key%']);
+
+    return List.generate(maps.length, (i) {
+      return Note(
+        id: maps[i]['id'],
+        judul: maps[i]['judul'],
+        uraian: maps[i]['uraian'],
+        status: maps[i]['status'],
+        tanggalKegiatan: DateTime.parse(maps[i]['tanggalKegiatan']),
+      );
+    });
+  }
+
   Future<void> saveNote(Note note) async {
     final db = await dbInstance;
 
     final insertedId = await db.insert('notes', note.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
-    if (note.buktiFisik.isNotEmpty) {
-      for (var bukti in note.buktiFisik) {
+    if (note.buktiFisik != null) {
+      for (var bukti in note.buktiFisik!) {
         await db.insert('bukti_fisik', bukti.toMap(insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
@@ -108,18 +121,56 @@ class DbHelper {
 
     final insertedId = await db
         .update('notes', note.toMap(), where: 'id = ?', whereArgs: [note.id]);
-    if (note.buktiFisik.isNotEmpty) {
+    if (note.buktiFisik != null) {
       await db.delete('bukti_fisik', where: 'idNote = ?', whereArgs: [note.id]);
-      for (var bukti in note.buktiFisik) {
+      for (var bukti in note.buktiFisik!) {
         await db.insert('bukti_fisik', bukti.toMap(insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
   }
 
-  Future<void> deleteNote(noteId) async {
+  Future<void> deleteNote(int noteId) async {
     final db = await dbInstance;
 
     await db.delete('notes', where: 'id = ?', whereArgs: [noteId]);
+  }
+
+  Future<String> getProfile() async {
+    final db = await dbInstance;
+
+    final List<Map<String, dynamic>> maps = await db.query('profile');
+    print(maps);
+    return maps[0]['name'];
+  }
+
+  Future<void> saveProfileTest(String name) async {
+    final db = await dbInstance;
+
+    final insertedId = await db.insert(
+        'profile',
+        {
+          'name': name,
+          'profilePict': 'kosong',
+          'jenjang': 'Prakom Aja',
+          'ak_now': 14.9,
+        },
+        conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  Future<void> updateNameTest(String data) async {
+    // harusnya nanti yang dibawa disini adalah semua data, bukan cuma satu string
+    final db = await dbInstance;
+
+    final insertedId = await db.update(
+        'profile',
+        {
+          'name': data,
+          'profilePict': 'kosong',
+          'jenjang': 'Prakom Aja',
+          'ak_now': 14.9,
+        },
+        where: 'id = ?',
+        whereArgs: [1]);
   }
 }

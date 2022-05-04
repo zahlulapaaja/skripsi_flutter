@@ -7,6 +7,7 @@ import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
+import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/controllers/drawer_user_controller.dart';
@@ -152,6 +153,10 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                   context.read<DictionaryProvider>().setDictionaryList =
                       const JenjangScreen();
                 });
+                break;
+
+              case 3:
+                Navigator.pushNamed(context, SettingScreen.id);
                 break;
             }
           },

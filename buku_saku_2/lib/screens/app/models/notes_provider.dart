@@ -4,11 +4,19 @@ import 'package:buku_saku_2/screens/app/models/database.dart';
 
 class NotesProvider with ChangeNotifier {
   List<Note> _notes = [];
+  String _searchKey = '';
   var dbHelper = DbHelper();
 
   Future<List<Note>> get notes async {
-    _notes = await dbHelper.getNotes();
+    (_searchKey == '')
+        ? _notes = await dbHelper.getNotes()
+        : _notes = await dbHelper.getNoteByKey(_searchKey);
     return _notes;
+  }
+
+  set setQuery(String key) {
+    _searchKey = key;
+    notifyListeners();
   }
 
   void addNewNote(Note note) async {

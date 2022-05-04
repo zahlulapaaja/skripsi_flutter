@@ -1,5 +1,6 @@
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
+import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/introduction_animation/introduction_animation_screen.dart';
@@ -39,20 +40,13 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: AppScreen.id,
         routes: {
-          // yang bisa dipanggil disini adalah yang ga membawa data, itu verification harusnya ga ada
-          SignInScreen.id: (context) => const SignInScreen(),
-          SignUpScreen.id: (context) => const SignUpScreen(),
           IntroductionAnimationScreen.id: (context) =>
               const IntroductionAnimationScreen(),
-          VerificationScreen.id: (context) =>
-              const VerificationScreen(phoneNumber: "+62899221100"),
-          ResetPasswordScreen.id: (context) => const ResetPasswordScreen(),
-          CreateNewPasswordScreen.id: (context) =>
-              const CreateNewPasswordScreen(),
 
           // Mulai Aplikasinya
           AppScreen.id: (context) => const AppScreen(),
           AddNoteScreen.id: (context) => const AddNoteScreen(),
+          SettingScreen.id: (context) => const SettingScreen(),
         },
       ),
     );

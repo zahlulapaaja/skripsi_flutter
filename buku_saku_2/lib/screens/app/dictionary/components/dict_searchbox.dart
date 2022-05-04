@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -44,7 +45,7 @@ class DictSearchBox extends StatelessWidget {
               onChanged: (value) {
                 if (value == '') {
                   context.read<DictionaryProvider>().setDictionaryList =
-                      const UnsurScreen();
+                      const JenjangScreen();
                 } else {
                   context.read<DictionaryProvider>().setQuery = value;
                   List<ButirKegiatan> results =

@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -25,8 +26,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   final ScrollController scrollController = ScrollController();
   double topBarOpacity = 0.0;
 
+  var dbHelper = DbHelper();
+  String? name;
+
+  Future<String> getProfileData() async {
+    var result = await dbHelper.getProfile();
+    return result;
+  }
+
   @override
-  void initState() {
+  initState() {
     topBarAnimation =
         Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
       parent: widget.animationController!,
@@ -94,6 +103,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     listViews.add(
       DetailAngkaKredit(
+        name: 'name',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve: const Interval((1 / count) * 1, 1.0,
