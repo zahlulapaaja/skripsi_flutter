@@ -104,11 +104,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     listViews.add(
       DetailAngkaKredit(
         name: 'name',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 1, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
       ),
     );
 
