@@ -3,7 +3,7 @@
     "unsur" : "I",
     "judul_unsur" : "TATA KELOLA DAN TATA LAKSANA TEKNOLOGI INFORMASI",
     "subunsur" : [
-      {
+    {
       "kode" : "I.A",
       "judul" : "Manajemen Layanan TI",
       "butir" : [
@@ -191,14 +191,409 @@
         },
         {
           "kode" : "I.B.16",
-          "judul" : "I.B.16.Melakukan Uji Coba Rancangan Layanan Integrasi Data",
-          "uraian" : "Melakukan uji coba rancangan layanan integrasi data adalah suatu rangkaian kegiatan menguji proses integrasi sesuai dokumen rancangan yang didalamnya menguji dari penyiapan data inputan dummy, pelaksanaan integrasi data menggunakan inputan data dummy hingga didapatkan output data yang diharapkan. Kegiatan uji coba rancangan layanan integrasi data bertujuan untuk menjamin berjalannya alur layanan permintaan integrasi data dari inputan data yang ditentukan hingga mendapatkan output-an data yang diharapkan.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1.mempelajari skenario integrasi data yang akan diuji coba (apa yang dijadikan input dan apa output yang diharapkan);\n2.penyiapan tools yang akan dipergunakan dalam integrasi data;\n3.melaksanakan integrasi data sesuai input data, alur yang ditelah dirancang hingga menghasilkan output data;\n4.pengecekan output data dengan requirement;\n5.pendokumentasian RDBMS atau non-RDBMS yang digunakan;\n6.pendokumentasian integrator yang digunakan misal penggunaan ETL Tools atau built-in; dan\n7.pengisian metrik pengujian seperti ketersediaan data, volume dan kecepatan data, kompleksitas solusi.",
+          "judul" : "Melakukan Uji Coba Rancangan Layanan Integrasi Data",
+          "uraian" : "Melakukan uji coba rancangan layanan integrasi data adalah suatu rangkaian kegiatan menguji proses integrasi sesuai dokumen rancangan yang didalamnya menguji dari penyiapan data inputan dummy, pelaksanaan integrasi data menggunakan inputan data dummy hingga didapatkan output data yang diharapkan. Kegiatan uji coba rancangan layanan integrasi data bertujuan untuk menjamin berjalannya alur layanan permintaan integrasi data dari inputan data yang ditentukan hingga mendapatkan output-an data yang diharapkan.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mempelajari skenario integrasi data yang akan diuji coba (apa yang dijadikan input dan apa output yang diharapkan);\n2. penyiapan tools yang akan dipergunakan dalam integrasi data;\n3. melaksanakan integrasi data sesuai input data, alur yang ditelah dirancang hingga menghasilkan output data;\n4. pengecekan output data dengan requirement;\n5. pendokumentasian RDBMS atau non-RDBMS yang digunakan;\n6. pendokumentasian integrator yang digunakan misal penggunaan ETL Tools atau built-in; dan\n7. pengisian metrik pengujian seperti ketersediaan data, volume dan kecepatan data, kompleksitas solusi.",
           "satuan_hasil" : "Laporan uji coba rancangan layanan integrasi data",
           "angka_kredit" : 0.110,
           "batasan_penilaian" : "2 (dua) kali per bulan.",
           "pelaksana" : "Pranata Komputer Mahir",
           "bukti_fisik" : "Laporan uji coba rancangan layanan integrasi data mencakup namun tidak terbatas pada:\n1.dokumen skenario integrasi data yang akan diuji coba;\n2.dokumentasi tools yang akan dipergunakan dalam integrasi data;\n3.dokumentasi on-process selama proses integrasi data (progess selama integrasi, kendala, dan sebagainya);\n4.dokumen assesment output data dengan requirement;\n5.dokumentasi RDBMS atau non-RDBMS yang digunakan;\n6.dokumentasi integrator yang digunakan misal ETL Tools atau built-in; dan\n7.metrik pengujian seperti ketersediaan data, volume dan kecepatan data, kompleksitas solusi.",
           "contoh" : "Ravi Ahmad, A.Md., seorang Pranata Komputer Mahir melakukan uji coba rancangan layanan integrasi data secara lengkap dan tuntas, maka yang bersangkutan akan diberikan angka kredit sebesar 0,110, Jika Ravi Ahmad tidak melakukan salah satu dari cakupan kegiatan, maka total angka kredit yang diperoleh adalah 6/7 x 0,110 = 0,09429."
+        },
+        {
+          "kode" : "I.B.17",
+          "judul" : "Melakukan Uji Coba Prosedur Validasi Kebutuhan Informasi",
+          "uraian" : "Melakukan uji coba prosedur validasi kebutuhan informasi merupakan kegiatan uji coba dan pengecekan terhadap prosedur validasi kebutuhan informasi yang ada pada suatu instansi berdasarkan kriteria tertentu. Kegiatan uji coba prosedur validasi kebutuhan informasi dilakukan mengikuti langkah-langkah pengujian validasi kebutuhan informasi menggunakan kriteria tertentu yang telah disusun pada suatu institusi.",
+          "satuan_hasil" : "Laporan uji coba prosedur validasi kebutuhan informasi",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "12 (dua belas) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan uji coba prosedur validasi kebutuhan informasi yang mencakup namun tidak terbatas pada:\n1. tanggal uji coba;\n2. obyek uji coba;\n3. prosedur pengujian validasi kebutuhan informasi yang digunakan dalam uji coba;\n4. hasil uji coba; dan\n5. dokumentasi uji coba.",
+          "contoh" : "Rafika A.Md., seorang Pranata Komputer Mahir melakukan uji coba prosedur validasi kebutuhan informasi kepegawaian menggunakan prosedur validasi kebutuhan informasi kepegawaian yang ada pada instansi sebanyak 1 kali, maka angka kredit yang diperoleh Rafika adalah 1 x 0,110 = 0,110."
+        },
+        {
+          "kode" : "I.B.18",
+          "judul" : "Melakukan Instalasi/Updating DBMS",
+          "uraian" : "Melakukan instalasi program Database Management System merupakan kegiatan instalasi perangkat lunak DBMS yang bertujuan untuk menunjang kebutuhan institusi. DBMS yang diinstal harus merupakan produk legal. Melakukan updating program Database Management System adalah kegiatan updating perangkat lunak DBMS yang bertujuan untuk menunjang kebutuhan institusi. DBMS yang diinstal harus merupakan produk legal. Tahapan kegiatan ini mencakup namun tidak terbatas pada instalasi perangkat lunak DBMS yang bertujuan untuk menunjang kebutuhan institusi.",
+          "satuan_hasil" : "Laporan hasil instalasi/updating DBMS Angka",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "24 (dua puluh empat) kali per tahun. Batasan kegiatan instalasi/updating program DBMS digunakan untuk menunjang kebutuhan institusi dan merupakan produk legal.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan hasil instalasi DBMS yang mencakup namun tidak terbatas pada:\n1. jenis sistem komputer;\n2. jenis DBMS;\n3. tanggal dan lama pelaksanaan;\n4. tujuan Instalasi DBMS; dan\n5. dokumentasi/screenshot pelaksanaan instalasi.\nLaporan hasil updating DBMS yang mencakup namun tidak terbatas pada:\n1. jenis sistem komputer;\n2. jenis DBMS;\n3. tanggal dan lama pelaksanaan;\n4. tujuan updating DBMS; dan\n5. dokumentasi/screenshot pelaksanaan updating.",
+          "contoh" : "Rosalinda, A.Md., seorang Pranata Komputer Mahir melakukan instalasi program Relational Database Management System (RDBMS) PostgreSQL pada physical/virtual server untuk menunjang kegiatan manajemen data kepegawaian pada Sistem Manajemen Kepegawaian, maka Rosalinda mendapat Angka Kredit sebesar 0,055."
+        },
+        {
+          "kode" : "I.B.19",
+          "judul" : "Melakukan Penggandaan Data",
+          "uraian" : "Melakukan penggandaan data merupakan kegiatan duplikasi data agar data dapat digunakan di komputer lain. Tahapan kegiatan ini mencakup namun tidak terbatas pada penggandaan data dari suatu media komputer ke media komputer lain, baik ke jenis media komputer yang sama maupun jenis media komputer yang berbeda, tanpa mengalami perubahan bentuk. Penggandaan data tidak boleh melanggar hak cipta. Kegiatan lain yang setara dengan kategori ini adalah mengunggah (upload), mengunduh (download) dan penginputan ke basis data (database).",
+          "satuan_hasil" : "Laporan penggandaan data Angka",
+          "angka_kredit" : 0.001,
+          "batasan_penilaian" : "4 (empat) kali per hari. Kegiatan ini dapat dilakukan terhadap setiap kegiatan penggandaan data dengan ukuran data lebih besar dari 50kb.",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan penggandaan data yang mencakup namun tidak terbatas pada:\n1. tanggal penggandaan;\n2. nama data yang digandakan;\n3. ukuran file yang digandakan;\n4. media penyimpanan;\n5. hasil penggandaan; dan\n6. dokumentasi/screenshot pelaksanaan penggandaan.",
+          "contoh" : "Raihan Firdaus, A.Md., seorang Pranata Komputer Terampil melakukan dokumen SK pegawai ke aplikasi SIMPEG. Di hari yang sama melakukan menggandakan data hasil tata kelola data di media penyimpanan eksternal, maka Raihan Firdaus memperoleh Angka Kredit sebesar 0,001 x 2 = 0,002."
+        },
+        {
+          "kode" : "I.B.20",
+          "judul" : "Melakukan Pemantauan (Monitoring) Kinerja Database",
+          "uraian" : "Melakukan pemantauan (monitoring) kinerja database merupakan kegiatan memantau dan mengawasi kinerja suatu database [mengukur kinerja] suatu basis data (database) secara real time dengan tujuan mengidentifikasi masalah dan faktor-faktor lain yang memiliki kemungkinan akan menyebabkan masalah.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Identifikasi obyek basis data (database) yang akan dipantau,\n2. Mengamati dan memantau kinerja basis data (database), dan\n3. Mencatat permasalahan yang terjadi.\nyang termasuk kinerja basis data (database), diantaranya kapasitas, koneksi [utilisasi CPU dan memori], statistik koneksi, detail dari buffer cache, kinerja query, informasi sumber daya yang dipakai, informasi user dan session, informasi jika terjadi deadlock, serta kesalahan yang terjadi pada sistem maupun user.",
+          "satuan_hasil" : "Laporan hasil pemantauan kinerja basis data (database)",
+          "angka_kredit" : 0.010,
+          "batasan_penilaian" : "1 (satu) kali per minggu",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen melakukan pemantauan (monitoring) kinerja basis data (database) yang mencakup namun tidak terbatas pada :\n1. periode pemantauan;\n2. nama basis data (database);\n3. catatan permasalahan;\n4. solusi permasalahan; dan\n5. ringkasan hasil pemantauan.",
+          "contoh" : "Afika Daud, A.Md., seorang Pranata Komputer Mahir melakukan pemantauan kinerja basis data (database) aplikasi Performa untuk memastikan aplikasi berjalan lancar, maka Afika Daud mendapatkan angka kredit sebesar 0,010."
+        },
+        {
+          "kode" : "I.B.21",
+          "judul" : "Melakukan Pengarsipan, Pencarian Kembali (Retrieve), Atau Penghapusan Data (Purge)",
+          "uraian" : "Melakukan pengarsipan data merupakan kegiatan menyimpan dan mengelola data menurut sistem pengarsipan tertentu dalam suatu institusi (termasuk di dalamnya adalah kegiatan archieve atau backup). Melakukan pencarian kembali basis data (database) adalah kegiatan pencarian dari arsip (retrieve) ataupun pemulihan data yang rusak karena adanya gangguan dalam sistem (restore) dengan tujuan agar data tersebut dapat berfungsi sebagaimana mestinya. Melakukan penghapusan data (purge) adalah kegiatan pemusnahan atau penghapusan secara permanen terhadap suatu data digital.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. pengarsipan data (archieve data) atau pencadangan data (backup data);\n2. pencarian kembali (retrieve) dari archieve data,\n3. pemulihan data (restore) menggunakan salah satu versi backup data;\n4. penghapusan terhadap set data yang dihasilkan oleh suatu institusi baik disimpan dalam suatu repository data maupun yg disimpan secara terpisah-pisah.",
+          "satuan_hasil" : "Daftar data yang diarsipkan, diambil, atau dihapus",
+          "angka_kredit" : 0.060,
+          "batasan_penilaian" : "1 (satu) kali per minggu",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumentasi kegiatan yang mencakup namun tidak terbatas pada:\n1. deskripsi data;\n2. maksud dan tujuan kegiatan;\n3. media penyimpanan;\n4. besaran data;\n5. waktu pelaksanaan; dan\n6. dokumentasi/screenshot pelaksanaan.",
+          "contoh" : "Di akhir bulan, Devi Murni, A.Md., seorang Pranata Komputer Penyelia melakukan pengarsipan email organisasi untuk menjaga kapasitas email agar tetap bisa menerima email. Untuk keperluan pemeriksaan salah satu kegiatan, Pranata Komputer diminta mencari dokumentasi surat menyurat terkait kegiatan tersebut. Sehingga Devi Murni harus melakukan retrieve terhadap archieve email di tahun kegiatan berlangsung. Dari kegiatan tersebut Devi Murni akan mendapatkan angka kredit 2 x 0,060 = 0,120 untuk rangkaian kegiatan ini."
+        },
+        {
+          "kode" : "I.B.22",
+          "judul" : "Melakukan Implementasi Teknologi Data",
+          "uraian" : "Melakukan implementasi teknologi data merupakan kegiatan pengimplementasian sistem back end dan proses yang mendukung penyimpanan, perpindahan, dan pengaksesan data untuk menunjang pengelolaan data sesuai dengan rancangan arsitektur teknologi data.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. konfigurasi infrastruktur (hardware, software, network);\n2. testing untuk memastikan fitur atau fungsi yang dibutuhkan berjalan dengan baik;\n3. implementasi logic atau rule yang berkaitan dengan proses penyimpanan, pemindahan, transformasi data; dan\n4. mengatur hak akses dari pengguna teknologi data.",
+          "satuan_hasil" : "Dokumen implementasi teknologi data",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "12 (dua belas) kali per tahun",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen implementasi teknologi data yang mencakup namun tidak terbatas pada:\n1. hasil dan dokumentasi konfigurasi infrastruktur;\n2. hasil pengujian fitur yang dibutuhkan pada teknologi data;\n3. hasil dan dokumentasi implementasi logic atau rule yang berkaitan dengan proses penyimpanan, pemindahan, dan transformasi data; dan\n4. hasil pengaturan hak akses dari pengguna teknologi data.",
+          "contoh" : "Farrel Aditra, A.Md., seorang Pranata Komputer Mahir melakukan implementasi teknologi data terhadap sistem monitoring yang ada di organisasi, maka Farrel Aditra mendapat angka kredit sebesar 0,110. Jika Farrel Aditra tidak melakukan salah satu dari cakupan kegiatan implementasi teknologi data maka total angka kredit yang diperoleh adalah 3/4 x 0,110 =0,0825."
+        },
+        {
+          "kode" : "I.B.23",
+          "judul" : "Memberikan Support Pemecahan Masalah Teknologi Data",
+          "uraian" : "Memberikan support pemecahan masalah teknologi data merupakan kegiatan yang berkaitan dukungan teknis dan operasional terhadap pemecahan masalah penggunaan teknologi data sesuai dengan kebutuhan organisasi dalam pengelolaan data.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. melaksanakan tindakan preventive untuk mengantisipasi hal-hal yang tidak terduga dan dapat berdampak pada sistem dan pengguna data (seperti, backup dan recovery baik data maupun konfigurasi lainnya);\n2. mengelola physical storage environment,\n3. mengelola kinerja teknologi data (seperti, memastikan ketersediaan space, optimisasi query, dan hal lainnya yang memungkinkan teknologi data dapat memberikan hasil yang optimal dan efisien);\n4. memberikan hak akses teknologi data berdasarkan permintaan akses teknologi data yang telah disetujui; dan\n5. troubleshooting jika terdapat gangguan selama penggunaan teknologi data.",
+          "satuan_hasil" : "Laporan pemecahan masalah teknologi data Angka",
+          "angka_kredit" : 0.0275,
+          "batasan_penilaian" : "1 (satu) kali per bulan",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan pemecahan masalah teknologi data yang mencakup namun tidak terbatas pada:\n1. hasil dan dokumentasi tindakan preventive yang dilakukan; atau\n2. hasil monitoring physical storage environment; atau\n3. hasil dan dokumentasi pengelolaan kinerja teknologi data; atau\n4. dokumentasi pemenuhan permintaan hak akses; atau\n5. dokumentasi troubleshooting terhadap gangguan penggunaan teknologi data.",
+          "contoh" : "Iman Santoso, A.Md., seorang Pranata Komputer Mahir melakukan support pemecahan masalah teknologi data dalam bentuk implementasi tindakan preventif, maka Iman Santoso mendapat angka kredit sebesar 0,028.\nJika Iman Santoso juga melakukan troubleshooting maka Iman Santoso juga akan mendapatkan angka kredit 0,028. Sehingga total angka kredit yang diperoleh adalah 2 x 0,028 =0,056."
+        },
+        {
+          "kode" : "I.B.24",
+          "judul" : "Melakukan Implementasi Data Warehouse",
+          "uraian" : "Melakukan implementasi data warehouse adalah implementasi pembentukan skema warehouse ke suatu RDBMS hingga didapatkannya skema warehouse yang di dalamnya berupa datamart/data cube berdasarkan rancangan skema warehouse dan mekanisme pembentukan warehouse, data inputan yang telah disiapkan. Kegiatan melakukan implementasi data warehouse bertujuan untuk menerapkan racangan warehouse yang sudah dibuat ke dalam suatu media DBMS termasuk memasukkan data yang dibutuhkan hingga terbentuk datamart yang didalamnya terdapat sejumlah tabel dimension dan tabel fact.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mempelajari rancangan skema data warehouse;\n2. implementasi rancangan skema data warehouse ke suatu RDBMS terpilih;\n3. proses ETL data inputan hingga data ter-ingest ke dalam skema data warehouse yang telah terimplementasi; dan\n4. pengecekan hasil ETL dan evaluasi hasil impelementasi data warehouse secara keseluruhan.",
+          "satuan_hasil" : "Laporan implementasi data warehouse",
+          "angka_kredit" : 0.760,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Laporan implementasi data warehouse mencakup namun tidak terbatas pada:\n1. dokumentasi hasil implementasi skema data warehouse ke RDBMS terpilih;\n2. dokumentasi proses ETL data inputan hingga data ter-ingest ke dalam skema data warehouse yang telah terimplementasi; dan\n3. dokumen pengecekan hasil ETL dan evaluasi hasil impelementasi data warehouse.",
+          "contoh" : "Ahmad Sobari, A.Md., seorang Pranata Komputer Penyelia melakukan implementasi data warehouse akan secara lengkap dan tuntas sehingga diberikan angka kredit sebesar 0,760,\nJika Ahmad Sobari tidak melakukan salah satu dari cakupan kegiatan, maka total angka kredit yang diperoleh adalah 5/6 x 0,760 = 0,633."
+        },
+        {
+          "kode" : "I.B.25",
+          "judul" : "Melakukan Pemantauan (Monitoring) Autentifikasi Atau Perilaku Akses Pengguna",
+          "uraian" : "Autentifikasi atau perilaku akses pengguna adalah mekanisme pemberian hak akses terhadap suatu sistem kepada pengguna tertentu. Mekanisme ini diterapkan dalam pengaturan hak akses database ataupun hak akses terhadap suatu aplikasi/sistem informasi. Kegiatan pemantauan (monitoring) autentifikasi atau perilaku akses pengguna adalah melakukan pemantauan (monitoring) rekaman (log) akses pengguna terhadap basis data yang bisa berupa keseluruhan basis data (database), tabel atau set data tertentu. Selain itu, kegiatan ini juga mengidentifikasi jika ditemukan pelanggaran hak akses terhadap basis data, baik secara konfigurasi maupun algoritma aplikasi/sistem informasi. Tujuan kegiatan ini adalah memastikan pengguna yang mengakses suatu sistem dapat melakukan operasi sesuai dengan batas yang ditentukan.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mengidentifikasi hak akses pengguna terhadap basis data (database);\n2. mengidentifikasi rekaman (log) akses user terhadap suatu basis data (database);\n3. melakukan uji keabsahan pengguna terhadap data set tertentu; dan\n4. mendokumentasikan berupa log akses basis data atau log pengguna jika berupa sistem informasi. Untuk log sistem informasi menyesuaikan dengan arsitektur sistem yang dibuat.",
+          "satuan_hasil" : "Laporan hasil pemantauan autentifikasi atau perilaku akses pengguna",
+          "angka_kredit" : 0.1275,
+          "batasan_penilaian" : "1 (satu) kali per bulan",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan hasil pemantauan autentifikasi atau perilaku akses pengguna ini mencakup namun tidak terbatas pada:\n1. hasil identifikasi hak akses pengguna terhadap basis data (database);\n2. hasil rekaman (log) akses user terhadap suatu basis data;\n3. hasil uji keabsahan pengguna terhadap data set tertentu; dan\n4. log akses basis data atau log pengguna jika berupa sistem informasi.",
+          "contoh" : "Sutisna, A.Md., seorang Pranata Komputer Mahir melakukan uji coba terhadap sistem berbasis web yang telah berjalan. Dia melihat akses IP terhadap server melalui cpanel, dan membuat laporan daftar IP yang dicurigai ilegal. Jika dia menyusun laporan akses server tersebut, maka Sutisna mendapatkan angka kredit 0,128."
+        },
+        {
+          "kode" : "I.B.26",
+          "judul" : "Melakukan Registrasi Permasalahan Kualitas Data",
+          "uraian" : "Melakukan registrasi permasalahan kualitas data adalah kegiatan yang mendaftarkan, mencatat, logging, atau mendokumentasikan setiap permasalahan kualitas data, baik yang di-trigger oleh keluhan user dan/atau yang diidentifikasi oleh Pranata Komputer terkait. Masalah kualitas data biasanya muncul ketika end-user tidak dapat mengakses sumber data atau menyajikan data secara tidak biasa. Contoh permasalahan yang terjadi: Terdapat nilai dari suatu field yang missing. Istilah kualitas data mengacu pada karakteristik/dimensi yang terkait dengan data berkualitas tinggi dan proses yang digunakan untuk mengukur atau meningkatkan kualitas data. Data dikatakan berkualitas tinggi jika memenuhi harapan, tujuan, dan kebutuhan data konsumen.\nTahapan kegiatan ini mencakup namun tidak terbatas pada mengidentifikasi dan mencatat permasalahan kualitas data berdasarkan laporan dari user dan/atau yang diidentifikasi oleh Pranata Komputer. Pencatatan permasalahan dapat berupa nama user yang melaporkan serta bagian/departemen asalnya (jika permasalahan berasal dari pelaporan user), sumber data yang bermasalah, dan deskripsi permasalahan.",
+          "satuan_hasil" : "Dokumen hasil registrasi permasalahan kualitas data",
+          "angka_kredit" : 0.225,
+          "batasan_penilaian" : "1 (satu) kali per bulan untuk setiap sumber data.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumentasi hasil registrasi permasalahan kualitas data yang mencakup namun tidak terbatas pada:\n1. deskripsi terkait sumber data;\n2. nama dan satuan kerja user pengguna data, serta keluhannya (jika permasalahan kualitas di-trigger oleh user);\n3. tahapan identifikasi permasalahan kualitas data; dan\n4. ringkasan daftar permasalahan kualitas data yang terjadi/ditemukan.",
+          "contoh" : "Suwardono, A.Md., seorang Pranata Komputer Mahir melakukan profiling data Sensus Penduduk 2020 untuk mendapatkan permasalahan kualitas data yang terjadi, maka Suwardono mendapatkan angka kredit sebesar 0,225.\nJika Suwardono juga mendapat keluhan dari pengguna data bahwa terdapat data yang duplikasi, sehingga Suwardono perlu mengidentifikasi detail permasalahan data yang terjadi dan menemukan kumpulan data yang duplikasi tersebut. Sehingga dari kegiatan-kegiatan tersebut Suwardono mendapatkan angka kedit sebesar 2 x 0,225 = 0,450."
+        },
+        {
+          "kode" : "I.B.27",
+          "judul" : "Melakukan Pemantauan (Monitoring) Implementasi Prosedur Pengelolaan Kualitas Data",
+          "uraian" : "Melakukan pemantauan implementasi prosedur pengelolaan kualitas data adalah proses menganalisa rangkaian kegiatan pengelolaan data dari mekanisme input hingga menjadi sebuah data yang siap diolah atau didiseminasikan lebih lanjut. Rangkaian kegiatan pengelolaan data dapat berupa standar pengelolaan data), validasi isian data dan proses memastikan kelengkapan data baik secara individu maupun batch. Tujuan kegiatan ini adalah memastikan setiap proses pengelolaannya sudah melewati standar yang telah diterapkan sehingga menghasilkan data yang berkualitas.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. mengidentifikasi implementasi prosedur pengelolaan kualitas data yang akan dipantau;\n2. mengidentifikasi standar pengelolaan kualitas data yang akan digunakan;\n3. melakukan pemantauan proses pengelolaan data sudah sesuai dengan prosedur yang ditetapkan seperti urutan melakukan input data;\n4. melakukan pemantauan terhadap kelengkapan data (keterisian dan kelengkapan) sehingga menghasilkan data yang berkualitas dan terpercaya;\n5. melakukan pemantauan terhadap validasi set data yang telah dimasukkan sehingga memenuhi standar yang diharapkan; dan\n6. mendokumentasikan hasil kegiatan pemantauan (monitoring) implementasi prosedur pengelolaan kualitas data.",
+          "satuan_hasil" : "Laporan hasil pemantauan implementasi prosedur pengelolaan kualitas data",
+          "angka_kredit" : 0.225,
+          "batasan_penilaian" : "1 (satu) kali per bulan.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan hasil pemantauan implementasi prosedur pengelolaan kualitas data ini mencakup namun tidak terbatas pada:\n1. hasil identifikasi implementasi prosedur pengelolaan kualitas data yang akan dipantau;\n2. standar pengelolaan kualitas data yang akan digunakan;\n3. hasil pemantauan proses pengelolaan data sudah sesuai dengan prosedur yang ditetapkan seperti urutan melakukan input data;\n4. hasil pemantauan kelengkapan data (keterisian dan kelengkapan) sehingga menghasilkan data yang berkualitas dan terpercaya;\n5. hasil pemantauan validasi terhadap data set yang telah dimasukkan sehingga memenuhi standar yang diharapkan; dan\n6. dokumentasi kegiatan pemantauan.",
+          "contoh" : "Renata Halim, A.Md., seorang Pranata Komputer Mahir menjadi supervisor data entri suatu survei di instansi kabupaten yang bertugas untuk memantau implementasi prosedur pengelolaan kualitas data entri. Renata Halim memantau proses data entrinya dan memastikan bahwa rangkaian kegiatan data entrinya sesuai dengan prosedur yang telah ditetapkan. Selanjutnya, Renata Halim memerika kelengkapan dan validasi hasil entri tersebut. Jika seluruh rangkaian kegiatan tersebut dilakukan dan didokumentasikan, maka Renata Halim mendapatkan angka kredit sebesar 0,225."
+        }
+      ]
+    },
+    {
+      "kode" : "I.C",
+      "judul" : "Audit TI",
+      "butir" : [
+        {
+          "kode" : "I.C.1",
+          "judul" : "Melakukan Pengumpulan Informasi Dasar untuk Kebutuhan Audit TI",
+          "uraian" : "Melakukan pengumpulan informasi dasar untuk kebutuhan audit TI adalah melakukan pengumpulan, pemeliharaan dan verifikasi kelengkapan informasi dasar dari area dan obyek TI yang diaudit. Informasi dasar mencakup informasi yang melekat pada area dan obyek TI yang diaudit, misalnya informasi tentang kontrol apa saja yang sudah ada di instansi, seberapa efektif implementasi kontrol tersebut, dan sebagainya. Informasi dasar terdapat pada seluruh rangkaian proses audit dari awal perencanaan hingga akhir penyusunan laporan audit.\nPengumpulan informasi dilakukan secara sistematis berdasarkan konteks dan cakupan audit dengan menggunakan metode atau pendekatan yang sesuai, serta memperhatikan referensi waktu audit. Beberapa cara untuk mendapatkan informasi diantaranya melalui ekstraksi dari dokumen, wawancara dengan auditee, pengujian kontrol, melakukan observasi dan assessment mandiri, serta pendekatan lain yang sesuai dengan kebutuhan audit.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. identifikasi area dan obyek TI yang akan diaudit; dan\n2. pengumpulan informasi dasar untuk kebutuhan audit TI.\nCakupan area TI meliputi namun tidak terbatas pada: keamanan informasi, manajemen layanan, manajemen konfigurasi, operasional sistem. Sedangkan cakupan obyek TI meliputi namun tidak terbatas pada: perangkat keras, piranti lunak, sarana komunikasi, serta fasilitas apapun yang dapat digunakan untuk menginput, menyimpan, mengirimkan, memproses, dan menghasilkan data dalam berbagai bentuk.",
+          "satuan_hasil" : "Dokumen informasi dasar audit TI Angka",
+          "angka_kredit" : 0.38,
+          "batasan_penilaian" : "Kegiatan ini dapat dilakukan untuk setiap area TI yang dilakukan audit. Jumlah maksimum kegiatan yang dapat dinilai adalah 2 (dua) kali per tahun. Nilai angka kredit maksimal akan diberikan jika minimal ada 3 obyek yang dicakup dalam 1 area TI. Jika hanya ada 1 obyek, maka akan diberikan nilai angka kredit sepertiganya.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumentasi informasi dasar audit TI yang memuat namun tidak terbatas pada:\n1. area dan obyek TI yang akan diaudit;\n2. waktu pengumpulan informasi dasar;\n3. daftar informasi yang dikumpulkan untuk tiap-tiap obyek audit; dan\n4. metode pengumpulan dari setiap butir informasi dasar.",
+          "contoh" : "Nia Paramita, A.Md., seorang Pranata Komputer Mahir melakukan pengumpulan informasi untuk audit TI terhadap area keamanan informasi yang terdiri dari 3 obyek keamanan informasi, yaitu keamanan informasi pada aplikasi kepegawaian, keamanan informasi aplikasi keuangan, dan keamanan informasi aplikasi perencanaan dengan lengkap, maka angka kredit yang diperoleh adalah 1 x 0,380 = 0,380.\nSatuan kegiatan ini adalah keamanan informasi yang merupakan 1 area TI. Angka kredit tersebut diperoleh jika Pranata Komputer menyerahkan bukti fisik yang lengkap. Namun, jika Pranata Komputer tersebut tidak menyertakan bukti fisik metode pengumpulan informasi, maka angka kredit yang diperoleh adalah 3/4 x 0,380 = 0,285."
+        },
+        {
+          "kode" : "I.C.2",
+          "judul" : "Melakukan Pengumpulan Dokumen untuk Kebutuhan Audit TI",
+          "uraian" : "Melakukan pengumpulan dokumen untuk kebutuhan audit TI adalah melakukan pengumpulan, pemeliharaan dan verifikasi kelengkapan dokumen dari area dan obyek TI yang diaudit. Pengumpulan dokumen dilakukan secara sistematis berdasarkan konteks dan cakupan audit dengan menggunakan metode atau pendekatan yang sesuai, serta memperhatikan referensi waktu audit. Dokumen untuk kebutuhan audit TI dapat berupa hardcopy maupun softcopy yang diperoleh dari auditee atau stakeholder terkait.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. identifikasi area dan obyek TI yang akan diaudit;\n2. identifikasi dokumen-dokumen yang dibutuhkan untuk audit TI; dan\n3. pengumpulan dokumen-dokumen untuk kebutuhan audit TI.\nDokumen yang dikumpulkan dapat berupa hardcopy maupun softcopy yang berkaitan dengan area dan obyek TI yang diaudit. Misalnya dokumentasi pembangunan sistem, dokumentasi bugs aplikasi, dokumentasi rancangan arsitektur, dan sebagainya. Cakupan area TI meliputi namun tidak terbatas pada: keamanan informasi, manajemen layanan, manajemen konfigurasi, operasional sistem. Sedangkan cakupan obyek TI: perangkat keras, piranti lunak, sarana komunikasi, serta fasilitas apapun yang dapat digunakan untuk menginput, menyimpan, mengirimkan, memproses, dan menghasilkan data dalam berbagai bentuk.",
+          "satuan_hasil" : "Dokumen untuk kebutuhan audit TI Angka",
+          "angka_kredit" : 0.73,
+          "batasan_penilaian" : "Jumlah maksimum kegiatan yang dapat dinilai adalah 2 (dua) kali per tahun. Nilai angka kredit maksimal akan diberikan jika minimal ada 3 obyek yang dicakup dalam 1 area TI. Jika hanya ada 1 obyek, maka akan diberikan nilai angka kredit sepertiganya",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumen untuk kebutuhan audit TI yang dikumpulkan memuat namun tidak terbatas pada:\n1. area dan obyek TI yang akan diaudit;\n2. waktu pengumpulan dokumen;\n3. daftar informasi yang dikumpulkan untuk tiap-tiap obyek audit\n4. metode pengumpulan dokumen; dan\n5. dokumentasi area dan obyek TI yang diaudit.",
+          "contoh" : "Dewa Mahendra, A.Md., seorang Pranata Komputer Penyelia melakukan pengumpulan dokumen untuk kebutuhan audit TI terhadap area keamanan informasi pada perangkat lunak (aplikasi) yang terdiri dari 3 obyek dokumentasi, yaitu dokumentasi pembangunan aplikasi, dokumentasi bugs aplikasi, dokumentasi rancangan arsitektur aplikasi, maka angka kredit yang diperoleh Dewa Mahendra adalah 1 x 0,730 = 0,730.\nSatuan kegiatan ini adalah keamanan informasi yang merupakan 1 area TI. Angka kredit tersebut diperoleh jika Pranata Komputer menyerahkan bukti fisik yang lengkap. Namun, jika Pranata Komputer tersebut tidak menyertakan bukti fisik metode pengumpulan informasi, maka angka kredit yang diperoleh adalah 4/5 x 0,730 = 0,584."
+        }
+      ]
+    }
+    ]
+    
+  },
+  {
+    "unsur" : "II",
+    "judul_unsur" : "INFRASTRUKTUR TEKNOLOGI INFORMASI",
+    "subunsur" : [
+    {
+      "kode" : "II.A",
+      "judul" : "Sistem Jaringan Komputer",
+      "butir" : [
+        {
+          "kode" : "II.A.1",
+          "judul" : "Melakukan Analisis Kebutuhan Pengguna Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Melakukan analisis kebutuhan pengguna sistem jaringan komputer lokal (Local Area Network) adalah kegiatan untuk melakukan identifikasi kebutuhan pengguna terhadap jaringan komputer lokal (LAN) sekaligus melakukan analisis terhadap hasil identifikasi tersebut.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Melakukan identifikasi kebutuhan (data dan informasi yang dikumpulkan); dan\n2. Melakukan analisis kebutuhan.",
+          "satuan_hasil" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer lokal",
+          "angka_kredit" : 0.600,
+          "batasan_penilaian" : "Hanya dapat dilakukan jika terdapat kebutuhan/kondisi tertentu yang menyebabkan perlunya perubahan/implementasi baru terhadap sistem jaringan komputer. Sistem jaringan komputer lokal minimal terdiri dari 5 komputer/perangkat lainnya menggunakan perangkat jaringan seperti seperti switch, hub, wireless atau perangkat jaringan lainnya.",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Laporan dokumen analisis kebutuhan pengguna sistem jaringan lokal yang mencakup namun tidak terbatas pada:\n1. latar belakang, bahwa dibutuhkan perubahan/implementasi baru terhadap sistem jaringan komputer;\n2. tujuan;\n3. identifikasi kebutuhan (data dan informasi yang dikumpulkan);\n4. analisis kondisi berjalan;\n5. analisis perencanaan;\n6. rancangan topologi jaringan;\n7. rencana biaya yang diperlukan;\n8. rencana jadwal implementasi; dan\n9. lembar persetujuan dokumen.",
+          "contoh" : "Abelina Akbar A.Md., seorang Pranata Komputer Penyelia melakukan analisis kebutuhan pengguna sistem jaringan komputer di kantornya dengan memberikan bukti pekerjaan yang lengkap, maka Abelina Akbar mendapat nilai 1 X 0,600 = 0,600."
+        },
+        {
+          "kode" : "II.A.2",
+          "judul" : "Melakukan Analisis Kondisi Sistem Jaringan Komputer Lokal (Local Area Network) yang Sedang Berjalan",
+          "uraian" : "Melakukan analisis kondisi sistem jaringan komputer lokal (Local Area Network) yang sedang berjalan adalah kegiatan mengidentifikasi dan menelaah sistem jaringan komputer lokal yang sudah ada.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. melakukan identifikasi kondisi sistem yang sedang berjalan; dan\n2. melakukan analisis kondisi sistem yang sedang berjalan.",
+          "satuan_hasil" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer lokal",
+          "angka_kredit" : 0.340,
+          "batasan_penilaian" : "4 (empat) laporan per Tahun",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer lokal yang mencakup namun tidak terbatas pada:\n1. latar belakang dan tujuan analisis;\n2. hasil identifikasi perangkat;\n3. topologi jaringan yang sedang berjalan beserta penjelasannya;\n4. data/informasi lalu lintas jaringan komputer;\n5. hasil analisis; dan\n6. lembar persetujuan dokumen.",
+          "contoh" : "Arsanti Suwandi A.Md., seorang Pranata Komputer Penyelia melakukan analisis kondisi sistem jaringan komputer lokal yang sedang berjalan untuk lingkup kantornya dengan menyertakan bukti fisik yang lengkap, maka Arsanti Suwandi mendapatkan angka kredit 0,340. Jika Arsanti Suwandi tidak menyertakan hasil analisis dan lembar persetujuan dokumen maka Arsanti Suwandi mendapat angka 4/6 x 0,340 = 0,226."
+        },
+        {
+          "kode" : "II.A.3",
+          "judul" : "Menerapkan Rancangan Logis Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Menerapkan rancangan logis sistem jaringan komputer lokal (Local Area Network) adalah kegiatan implementasi hasil rancangan logis yang diterapkan pada sistem jaringan komputer lokal. Rancangan Logis sistem jaringan komputer yaitu rancangan yang menggambarkan hubungan logika antar perangkat/komponen dalam sebuah jaringan komputer.\nKegiatan ini mencakup konfigurasi perangkat sesuai dengan rancangan logis pada satu sistem jaringan lokal.",
+          "satuan_hasil" : "Dokumen implementasi rancangan logis sistem jaringan komputer lokal",
+          "angka_kredit" : 0.220,
+          "batasan_penilaian" : "Penerapan rancangan logis yang diusulkan harus diterapkan minimal pada satu sistem jaringan lokal.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen implementasi rancangan logis sistem jaringan komputer lokal yang mencakup namun tidak terbatas pada:\n1. lokasi implementasi-waktu pelaksanaan;\n2. identitas perangkat;\n3. rancangan logis;\n4. konfigurasi pada setiap perangkat beserta screenshot; dan\n5. lembar persetujuan dokumen.",
+          "contoh" : "Arya Duta A.Md., seorang Pranata Komputer Mahir melakukan implementasi rancangan logis VLAN pada dua gedung yang berbeda yaitu gedung 1 lantai 5 dan gedung 2 lantai 3, maka Arya Duta mendapatkan angka kredit sebesar 2 X 0,220 = 0,440."
+        },
+        {
+          "kode" : "II.A.4",
+          "judul" : "Menerapkan Rancangan Fisik Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Menerapkan rancangan fisik sistem jaringan komputer lokal (Local Area Network) adalah kegiatan implementasi hasil rancangan fisik yang diterapkan pada sistem jaringan komputer lokal. Rancangan fisik sistem jaringan komputer yaitu rancangan yang menggambarkan hubungan fisik antar perangkat/komponen dalam sebuah jaringan komputer.\nTahapan kegiatan ini meliputi namun tidak terbatas pada :\n1. pemasangan perangkat/komponen Jaringan; dan\n2. konfigurasi dasar perangkat agar dapat terhubung pada jaringan komputer lokal.",
+          "satuan_hasil" : "Dokumen implementasi rancangan fisik sistem jaringan komputer lokal",
+          "angka_kredit" : 0.540,
+          "batasan_penilaian" : "Penerapan rancangan fisik yang diusulkan harus diterapkan minimal pada satu sistem jaringan lokal.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen implementasi sistem jaringan komputer lokal yang mencakup namun tidak terbatas pada:\n1. lokasi implementasi;\n2. waktu pelaksanaan;\n3. identitas perangkat;\n4. rancangan fisik (topologi);\n5. instalasi dan foto pemasangan perangkat;\n6. konfigurasi dasar pada setiap perangkat beserta screenshot; dan\n7. lembar persetujuan dokumen.",
+          "contoh" : "Gilang Ramadhan, A.Md., seorang Pranata Komputer Mahir melakukan implementasi rancangan fisik pada kantornya dengan disertai bukti fisik yang lengkap, maka Gilang Ramadhan mendapatkan angka kredit sebesar 0,540. Namun, jika bukti fisik yang disertakan belum terdapat lembar persetujuan dari instansi, maka Gilang Ramadhan mendapatkan AK 6/7 x 0,54 = 0,46."
+        },
+        {
+          "kode" : "II.A.5",
+          "judul" : "Menerapkan Rancangan Logis Sistem Pengamanan Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Menerapkan rancangan logis sistem pengamanan jaringan komputer lokal (Local Area Network) adalah kegiatan implementasi sistem keamanan pada sistem jaringan komputer lokal. Rancangan Logis sistem pengamanan jaringan komputer yaitu rancangan yang berisi rencana pengamanan sistem jaringan komputer lokal, termasuk diantaranya konfigurasi keamanan yang perlu diterapkan.\nCakupan kegiatan ini meliputi konfigurasi keamanan pada perangkat sesuai dengan rancangan logis sistem pengamanan pada satu sistem jaringan lokal.",
+          "satuan_hasil" : "Dokumen implementasi rancangan logis pengamanan sistem jaringan komputer",
+          "angka_kredit" : 0.165,
+          "batasan_penilaian" : "Penerapan rancangan logis sistem pengamananan yang diusulkan harus diterapkan minimal pada 1(satu) sistem jaringan lokal.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen implementasi sistem jaringan komputer lokal yang meliputi:\n1. lokasi implementasi;\n2. waktu pelaksanaan;\n3. identitas perangkat;\n4. rancangan logis pengamanan jaringan;\n5. konfigurasi pada setiap perangkat beserta screenshot; dan\n6. lembar persetujuan dokumen.",
+          "contoh" : "Adelina Sarah, A.Md., seorang Pranata Komputer Mahir melakukan implementasi rancangan logis sistem pengamanan pada perangkat keamanan, switch dan 5 komputer yang terhubung pada kantornya disertai dengan bukti fisik yang lengkap, maka angka kredit yang diperoleh Adelina Sarah adalah 1 X 0,165 = 0,165."
+        },
+        {
+          "kode" : "II.A.6",
+          "judul" : "Menyusun Rancangan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Menyusun rancangan uji coba sistem jaringan komputer lokal (Local Area Network) adalah kegiatan membuat rancangan uji coba untuk memastikan sistem jaringan komputer lokal dapat berfungsi dengan baik.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. penyusunan rancangan uji fungsionalitas perangkat; dan\n2. penyusunan rancangan uji koneksi antar perangkat.",
+          "satuan_hasil" : "Dokumen rancangan uji coba sistem jaringan komputer lokal",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "1. dibuat mengikuti rancangan logis atau rancangan fisik yang telah dibuat sebelumnya.\n2. rancangan uji coba mencakup minimal 1 (satu) sistem jaringan komputer lokal",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen rancangan uji coba yang meliputi namun tidak terbatas pada:\n1. tujuan uji coba;\n2. perangkat pengujian yang diperlukan;\n3. perangkat jaringan yang akan diujicobakan;\n4. skenario dan variabel uji coba;\n5. hasil uji coba yang diharapkan; dan\n6. lembar persetujuan.",
+          "contoh" : "Mulyadi Untoro, A.Md., seorang Pranata Komputer Mahir menyusun rancangan uji coba sistem jaringan komputer di kantornya dengan disertai bukti fisik yang lengkap, maka dari kegiatan tersebut Mulyadi Untoro mendapat angka kredit 0,110."
+        },
+        {
+          "kode" : "II.A.7",
+          "judul" : "Melakukan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Melakukan uji coba sistem jaringan komputer lokal adalah melakukan uji coba pada sistem jaringan komputer lokal berdasarkan rancangan uji coba untuk memastikan sistem jaringan komputer lokal dapat berfungsi dengan baik.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. uji fungsionalitas perangkat; dan\n2. uji koneksi antar perangkat,\nsesuai dengan rancangan uji coba perangkat",
+          "satuan_hasil" : "Dokumen uji coba sistem jaringan komputer lokal",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Uji coba minimal dilakukan pada 1 (satu) sistem jaringan komputer lokal.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen uji coba sistem jaringan komputer lokal meliputi namun tidak terbatas pada:\n1. perangkat pengujian yang digunakan;\n2. perangkat jaringan yang diujicobakan;\n3. skenario dan variabel uji coba; dan\n4. screenshot hasil uji coba.",
+          "contoh" : "Kaimana Syarief, A.Md., seorang Pranata Komputer Mahir melakukan uji coba sistem jaringan komputer lokal pada kantornya disertai dengan bukti fisik yang lengkap, maka dari kegiatan tersebut Kaimana Syarief mendapat angka kredit sebesar 1 x 0,060 = 0,060."
+        },
+        {
+          "kode" : "II.A.8",
+          "judul" : "Melakukan Pemantauan (Monitoring) Jaringan",
+          "uraian" : "Melakukan pemantauan jaringan adalah kegiatan memantau dan mengevaluasi aktivitas dari perangkat yang terhubung ke dalam sistem jaringan komputer dalam suatu periode tertentu.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Pemantauan perangkat jaringan; dan\n2. Mencatat/merekam hasil pemantauan.",
+          "satuan_hasil" : "Laporan hasil pemantauan jaringan",
+          "angka_kredit" : 0.020,
+          "batasan_penilaian" : "Jumlah maksimum kegiatan yang dinilai adalah 1 (satu) kali per minggu.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumentasi hasil pemantauan jaringan, yang mencakup namun tidak terbatas pada:\n1. Periode dan data hasil pemantauan; dan\n2. Ringkasan pemantauan.",
+          "contoh" : "Lamera Anastasia, A.Md., seorang Pranata Komputer Mahir memantau ketersediaan dan aktivitas perangkat switch, router dan firewall selama satu minggu disertai dan membuat laporan bukti fisik yang lengkap. Jika Lamera Anastasia melakukan kegiatan tersebut dua kali seminggu maka angka kredit yang didapatkan tetap sebesar 1 X 0,02 = 0,02."
+        },
+        {
+          "kode" : "II.A.9",
+          "judul" : "Melakukan Deteksi dan Atau Perbaikan Terhadap Permasalahan yang Terjadi Pada Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Melakukan deteksi sistem jaringan komputer lokal adalah kegiatan untuk mengetahui penyebab tidak berfungsinya sistem jaringan komputer lokal, sedangkan perbaikan sistem jaringan komputer lokal adalah kegiatan untuk membuat sistem jaringan komputer lokal berfungsi kembali dengan baik.\nCakupan kegiatan ini meliputi:\n1. Deteksi penyebab tidak berfungsinya sistem jaringan komputer lokal; dan\n2. dan atau Perbaikan sistem jaringan komputer lokal agar berfungsi kembali dengan baik.",
+          "satuan_hasil" : "Dokumen hasil pendeteksian dan atau perbaikan terhadap permasalahan yang terjadi pada sistem jaringan komputer lokal",
+          "angka_kredit" : 0.011,
+          "batasan_penilaian" : "Setiap perangkat sistem jaringan komputer lokal yang terdeteksi/diperbaiki diberi angka kredit sebesar 0,011.",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Dokumen hasil pendeteksian/perbaikan kerusakan peralatan sistem jaringan komputer lokal yang mencakup namun tidak terbatas pada:\n1. Tanggal Deteksi/Perbaikan;\n2. Perangkat yang dideteksi/diperbaiki dan lokasi;\n3. Deteksi yang ditemukan/Perbaikan yang dilakukan dan lama perbaikan; dan\n4. Kesimpulan.",
+          "contoh" : "Abdul Aziz, A.Md., seorang Pranata Komputer Terampil mendapat laporan adanya gangguan jaringan internet, Kemudian yang bersangkutan melakukan pendeteksian kerusakan sistem jaringan komputer lokal di kantornya, dan diketahui terjadi bottleneck pada switch, maka angka kredit yang diperoleh Abdul Aziz adalah 1 x 0,011 = 0,011.\nKemudian jika Abdul Aziz melakukan perbaikan kerusakan pada switch, maka Abdul Aziz juga akan mendapatkan angka kredit sebesar 1 x 0,011 = 0,011."
+        },
+        {
+          "kode" : "II.A.10",
+          "judul" : "Menyusun Pedoman Operasional Sistem Jaringan Komputer dan Keamanan Jaringan",
+          "uraian" : "Menyusun pedoman operasional sistem jaringan komputer dan keamanan jaringan adalah kegiatan menyusun pedoman pengelolaan dan penggunaan sistem jaringan komputer dan keamanan jaringan.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. Penyusunan pedoman operasional sistem jaringan komputer;\n2. Penyusunan pedoman operasional keamanan jaringan;\n3. Penyusunan panduan pengguna sistem jaringan komputer; dan\n4. Penyusunan panduan pengguna keamanan jaringan.",
+          "satuan_hasil" : "Buku pedoman operasional sistem jaringan komputer dan keamanan jaringan",
+          "angka_kredit" : 1.686,
+          "batasan_penilaian" : "1. Keseluruhan pedoman operasional sistem jaringan komputer dan keamanan jaringan diberi angka kredit sebesar 1,686.\n2. Untuk pedoman yang tidak memuat seluruh aspek pada cakupan, maka penilaian akan diproporsikan dengan nilai sebesar 25% untuk setiap komponen cakupan.\n3. Setiap panduan dalam cakupan disyaratkan minimal terdiri dari 30 halaman. Jika kurang dari 30 halaman maka penilaian akan diproporsikan.",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Buku  pedoman  operasional  sistem  jaringan  komputer/keamanan jaringan yang mencakup namun tidak terbatas pada:\n1. Deskripsi ringkas pedoman;\n2. Arsitektur sistem jaringan komputer/keamanan jaringan dan penjelasannya;\n3. Identitas perangkat dan fungsinya;\n4. Pedoman operasional dapat berupa tahapan instalasi/ konfigurasi, pengoperasian atau pemeliharaan sistem jaringan komputer/keamanan jaringan;\n5. Lembar Persetujuan;\n6. Panduan Pengguna;\n7. Deskripsi ringkas panduan;\n8. Tata cara pemakaian sistem jaringan komputer/ keamanan jaringan untuk pengguna; dan\n9. Lembar Persetujuan.",
+          "contoh" : "Tio Santoso A.Md., seorang Pranata Komputer Penyelia telah membangun sistem dan keamanan jaringan di kantornya dengan melakukan penyusunan pedoman operasional keamanan jaringan disertai dengan bukti fisik yang lengkap, maka untuk kegiatan menyusun operasional keamanan jaringan tersebut Tio Santoso memperoleh angka kredit sebesar 1 x 1,686 = 1,686."
+        }
+      ]
+    },    
+    {
+      "kode" : "II.B",
+      "judul" : "Manajemen Infrastruktur TI",
+      "butir" : [
+        {
+          "kode" : "II.B.1",
+          "judul" : "Melakukan Pemeriksaan Kesesuaian Antara Perangkat TI End User dengan Spesifikasi Teknis",
+          "uraian" : "Melakukan pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis adalah kegiatan memeriksa kesesuaian spesifikasi perangkat TI End user terhadap spesifikasi teknis yang terdapat pada dokumen kontrak pengadaan, dokumen pengalihan BMN atau dokumen sejenisnya.\nTahapan kegiatan ini meliputi namun tidak terbatas pada:\n1. Identifikasi perangkat TI yang akan diperiksa;\n2. Menyiapkan form pemeriksaan; dan\n3. Pemeriksaan keseluruhan spesifikasi teknis perangkat TI End user yang terdapat dalam kontrak pengadaan, dokumen pengalihan BMN atau dokumen sejenisnya.",
+          "satuan_hasil" : "Dokumen hasil pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis",
+          "angka_kredit" : 0.225,
+          "batasan_penilaian" : "1. Penghitungan angka kredit berdasarkan satuan kegiatan; dan\n2. Maksimal kegiatan yang dapat diniai adalah 3 (tiga) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen hasil pemeriksaan kesesuaian antara perangkat TI End user dengan spesifikasi teknis yang meliputi namun tidak terbatas pada:\n1. Tanggal dan Lokasi;\n2. Daftar perangkat TI End user dan spesifikasi teknis sebagai acuan pemeriksaan (berdasarkan kontrak/dokumen sejenis);\n3. Perangkat TI End User yang diperiksa, spesifikasi teknis perangkat TI, hasil pemeriksaan (User Acceptance Test dan Acceptance Test Procedure);\n4. Lembar pemeriksaan kesesuaian perangkat TI End user dilengkapi dengan foto/screenshoot hasil pemeriksaan; dan\n5. Lembar Persetujuan.",
+          "contoh" : "Amran Rinaldi, A.Md., seorang Pranata Komputer Mahir melakukan pemeriksaan kesesuaian antara 10 buah perangkat komputer dan 10 buah UPS dengan spesifikasi teknis pada dokumen kontrak disertai dengan bukti fisik yang lengkap, maka untuk kegiatan tersebut Amran Rinaldi memperoleh angka kredit sebesar 0,225."
+        },
+        {
+          "kode" : "II.B.2",
+          "judul" : "Melakukan Pencatatan Infrastruktur TI",
+          "uraian" : "Melakukan pencatatan infrastruktur TI adalah kegiatan inventarisasi perangkat infrastruktur TI yang meliputi namun tidak terbatas pada:\n1. Perangkat keras (Perangkat keras end user, perangkat jaringan,\nserver, storage);\n2. Piranti lunak (sistem operasi end user maupun server termasuk juga virtual server); dan\n3. Perangkat pendukung TI dan pendukung pusat data seperti mesin perekam absen, cctv, access door, dan sebagainya.\nTahapan kegiatan ini meliputi namun tidak terbatas pada:\n1. Menentukan latar belakang dan tujuan pencatatan; dan\n2. Melakukan pencatatan perangkat (nama, merek, identitas, lokasi, pemanfaatan, kondisi, dan sebagainya).",
+          "satuan_hasil" : "Dokumen pencatatan infrastruktur TI",
+          "angka_kredit" : 0.209,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan dan bukan satuan perangkat; dan\n2. Kegiatan ini hanya dapat diajukan maksimal 2 (dua) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan dokumentasi pencatatan infrastruktur TI yang meliputi namun tidak terbatas pada:\n1. Tanggal pencatatan;\n2. Latar belakang dan tujuan pencatatan;\n3. Nama perangkat;\n4. Merek dan tipe perangkat;\n5. Identitas perangkat (SN/BMN/identitas lain);\n6. Lokasi infrastruktur TI;\n7. Pemanfaatan perangkat;\n8. Kondisi/status infrastruktur TI;\n9. Keterangan terkait pengadaan (tahun pengadaan, penyedia), jika ada; dan\n10. Lembar persetujuan.",
+          "contoh" : "Eliza Florence, A.Md., seorang Pranata Komputer Terampil melakukan pencatatan infrastruktur TI di kantornya disertai dengan bukti yang lengkap, maka untuk kegiatan tersebut Eliza Florence memperoleh angka kredit sebesar 1 X 0,209 = 0,209."
+        },
+        {
+          "kode" : "II.B.3",
+          "judul" : "Melakukan Pengujian Perangkat TI End User",
+          "uraian" : "Melakukan pengujian perangkat TI End user adalah kegiatan untuk melakukan pengujian pada perangkat TI baik perangkat keras maupun perangkat lunak end user. Perangkat TI yang terpasang pada komputer end user adalah perangkat resmi organisasi dan memiliki lisensi. Pengujian dilakukan untuk memastikan bahwa perangkat TI End user tersebut sudah berfungsi dengan baik dan dapat digunakan untuk membantu tujuan organisasi. Kegiatan ini merupakan bagian dari user acceptance test, dapat dilakukan mengikuti pengadaan atau jika terdapat kebutuhan organisasi untuk melakukan pengujian infrastruktur TI.\nTahapan dari kegiatan ini meliputi namun tidak terbatas pada:\n1. Menentukan tujuan/ kebutuhan pengujian;\n2. Menentukan daftar perangkat dan daftar pengujian;\n3. Menentukan tahapan pengujian;\n4. Melakukan pengujian; dan\n5. Membuat dokumentasi pengujian.",
+          "satuan_hasil" : "Dokumen hasil pengujian perangkat TI End user",
+          "angka_kredit" : 0.225,
+          "batasan_penilaian" : "Pemberian angka kredit berdasarkan satuan kegiatan. Kegiatan ini dapat diajukan maksimal 3 kali dalam setahun. Kegiatan ini dapat diajukan untuk pengujian perangkat pertama kali.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen hasil pengujian perangkat TI End user berisi:\n1. latar belakang dan tujuan;\n2. Waktu pengujian;\n3. Nama perangkat (merek/tipe);\n4. Serial number/identitas lain perangkat;\n5. Tahapan pengujian;\n6. Lembar pengujian (form UAT);\n7. Bukti pengujian (foto atau screenshot); dan\n8. Lembar persetujuan.",
+          "contoh" : "Azka Syahreza, A.Md., seorang Pranata Komputer Mahir melakukan pengujian aplikasi video conference yang sudah dibeli oleh kantornya untuk end user untuk membantu komunikasi. Melalui pengujian, Azka Syahreza akan mengetahui fitur, fungsi, kelebihan dan kelemahan aplikasi tersebut. Kegiatan ini dengan disertai bukti yang lengkap, maka Azka Syahreza akan memperoleh angka kredit 1 X 0,225 = 0,225."
+        },
+
+
+
+
+
+
+        // start here
+        {
+          "kode" : "II.A.4",
+          "judul" : "Menerapkan Rancangan Fisik Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Menerapkan rancangan fisik sistem jaringan komputer lokal (Local Area Network) adalah kegiatan implementasi hasil rancangan fisik yang diterapkan pada sistem jaringan komputer lokal. Rancangan fisik sistem jaringan komputer yaitu rancangan yang menggambarkan hubungan fisik antar perangkat/komponen dalam sebuah jaringan komputer.\nTahapan kegiatan ini meliputi namun tidak terbatas pada :\n1. pemasangan perangkat/komponen Jaringan; dan\n2. konfigurasi dasar perangkat agar dapat terhubung pada jaringan komputer lokal.",
+          "satuan_hasil" : "Dokumen implementasi rancangan fisik sistem jaringan komputer lokal",
+          "angka_kredit" : 0.540,
+          "batasan_penilaian" : "Penerapan rancangan fisik yang diusulkan harus diterapkan minimal pada satu sistem jaringan lokal.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen implementasi sistem jaringan komputer lokal yang mencakup namun tidak terbatas pada:\n1. lokasi implementasi;\n2. waktu pelaksanaan;\n3. identitas perangkat;\n4. rancangan fisik (topologi);\n5. instalasi dan foto pemasangan perangkat;\n6. konfigurasi dasar pada setiap perangkat beserta screenshot; dan\n7. lembar persetujuan dokumen.",
+          "contoh" : "Gilang Ramadhan, A.Md., seorang Pranata Komputer Mahir melakukan implementasi rancangan fisik pada kantornya dengan disertai bukti fisik yang lengkap, maka Gilang Ramadhan mendapatkan angka kredit sebesar 0,540. Namun, jika bukti fisik yang disertakan belum terdapat lembar persetujuan dari instansi, maka Gilang Ramadhan mendapatkan AK 6/7 x 0,54 = 0,46."
+        },
+        {
+          "kode" : "II.A.5",
+          "judul" : "Menerapkan Rancangan Logis Sistem Pengamanan Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Menerapkan rancangan logis sistem pengamanan jaringan komputer lokal (Local Area Network) adalah kegiatan implementasi sistem keamanan pada sistem jaringan komputer lokal. Rancangan Logis sistem pengamanan jaringan komputer yaitu rancangan yang berisi rencana pengamanan sistem jaringan komputer lokal, termasuk diantaranya konfigurasi keamanan yang perlu diterapkan.\nCakupan kegiatan ini meliputi konfigurasi keamanan pada perangkat sesuai dengan rancangan logis sistem pengamanan pada satu sistem jaringan lokal.",
+          "satuan_hasil" : "Dokumen implementasi rancangan logis pengamanan sistem jaringan komputer",
+          "angka_kredit" : 0.165,
+          "batasan_penilaian" : "Penerapan rancangan logis sistem pengamananan yang diusulkan harus diterapkan minimal pada 1(satu) sistem jaringan lokal.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen implementasi sistem jaringan komputer lokal yang meliputi:\n1. lokasi implementasi;\n2. waktu pelaksanaan;\n3. identitas perangkat;\n4. rancangan logis pengamanan jaringan;\n5. konfigurasi pada setiap perangkat beserta screenshot; dan\n6. lembar persetujuan dokumen.",
+          "contoh" : "Adelina Sarah, A.Md., seorang Pranata Komputer Mahir melakukan implementasi rancangan logis sistem pengamanan pada perangkat keamanan, switch dan 5 komputer yang terhubung pada kantornya disertai dengan bukti fisik yang lengkap, maka angka kredit yang diperoleh Adelina Sarah adalah 1 X 0,165 = 0,165."
+        },
+        {
+          "kode" : "II.A.6",
+          "judul" : "Menyusun Rancangan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Menyusun rancangan uji coba sistem jaringan komputer lokal (Local Area Network) adalah kegiatan membuat rancangan uji coba untuk memastikan sistem jaringan komputer lokal dapat berfungsi dengan baik.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. penyusunan rancangan uji fungsionalitas perangkat; dan\n2. penyusunan rancangan uji koneksi antar perangkat.",
+          "satuan_hasil" : "Dokumen rancangan uji coba sistem jaringan komputer lokal",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "1. dibuat mengikuti rancangan logis atau rancangan fisik yang telah dibuat sebelumnya.\n2. rancangan uji coba mencakup minimal 1 (satu) sistem jaringan komputer lokal",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen rancangan uji coba yang meliputi namun tidak terbatas pada:\n1. tujuan uji coba;\n2. perangkat pengujian yang diperlukan;\n3. perangkat jaringan yang akan diujicobakan;\n4. skenario dan variabel uji coba;\n5. hasil uji coba yang diharapkan; dan\n6. lembar persetujuan.",
+          "contoh" : "Mulyadi Untoro, A.Md., seorang Pranata Komputer Mahir menyusun rancangan uji coba sistem jaringan komputer di kantornya dengan disertai bukti fisik yang lengkap, maka dari kegiatan tersebut Mulyadi Untoro mendapat angka kredit 0,110."
+        },
+        {
+          "kode" : "II.A.7",
+          "judul" : "Melakukan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Melakukan uji coba sistem jaringan komputer lokal adalah melakukan uji coba pada sistem jaringan komputer lokal berdasarkan rancangan uji coba untuk memastikan sistem jaringan komputer lokal dapat berfungsi dengan baik.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. uji fungsionalitas perangkat; dan\n2. uji koneksi antar perangkat,\nsesuai dengan rancangan uji coba perangkat",
+          "satuan_hasil" : "Dokumen uji coba sistem jaringan komputer lokal",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Uji coba minimal dilakukan pada 1 (satu) sistem jaringan komputer lokal.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen uji coba sistem jaringan komputer lokal meliputi namun tidak terbatas pada:\n1. perangkat pengujian yang digunakan;\n2. perangkat jaringan yang diujicobakan;\n3. skenario dan variabel uji coba; dan\n4. screenshot hasil uji coba.",
+          "contoh" : "Kaimana Syarief, A.Md., seorang Pranata Komputer Mahir melakukan uji coba sistem jaringan komputer lokal pada kantornya disertai dengan bukti fisik yang lengkap, maka dari kegiatan tersebut Kaimana Syarief mendapat angka kredit sebesar 1 x 0,060 = 0,060."
+        },
+        {
+          "kode" : "II.A.8",
+          "judul" : "Melakukan Pemantauan (Monitoring) Jaringan",
+          "uraian" : "Melakukan pemantauan jaringan adalah kegiatan memantau dan mengevaluasi aktivitas dari perangkat yang terhubung ke dalam sistem jaringan komputer dalam suatu periode tertentu.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Pemantauan perangkat jaringan; dan\n2. Mencatat/merekam hasil pemantauan.",
+          "satuan_hasil" : "Laporan hasil pemantauan jaringan",
+          "angka_kredit" : 0.020,
+          "batasan_penilaian" : "Jumlah maksimum kegiatan yang dinilai adalah 1 (satu) kali per minggu.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumentasi hasil pemantauan jaringan, yang mencakup namun tidak terbatas pada:\n1. Periode dan data hasil pemantauan; dan\n2. Ringkasan pemantauan.",
+          "contoh" : "Lamera Anastasia, A.Md., seorang Pranata Komputer Mahir memantau ketersediaan dan aktivitas perangkat switch, router dan firewall selama satu minggu disertai dan membuat laporan bukti fisik yang lengkap. Jika Lamera Anastasia melakukan kegiatan tersebut dua kali seminggu maka angka kredit yang didapatkan tetap sebesar 1 X 0,02 = 0,02."
+        },
+        {
+          "kode" : "II.A.9",
+          "judul" : "Melakukan Deteksi dan Atau Perbaikan Terhadap Permasalahan yang Terjadi Pada Sistem Jaringan Komputer Lokal (Local Area Network)",
+          "uraian" : "Melakukan deteksi sistem jaringan komputer lokal adalah kegiatan untuk mengetahui penyebab tidak berfungsinya sistem jaringan komputer lokal, sedangkan perbaikan sistem jaringan komputer lokal adalah kegiatan untuk membuat sistem jaringan komputer lokal berfungsi kembali dengan baik.\nCakupan kegiatan ini meliputi:\n1. Deteksi penyebab tidak berfungsinya sistem jaringan komputer lokal; dan\n2. dan atau Perbaikan sistem jaringan komputer lokal agar berfungsi kembali dengan baik.",
+          "satuan_hasil" : "Dokumen hasil pendeteksian dan atau perbaikan terhadap permasalahan yang terjadi pada sistem jaringan komputer lokal",
+          "angka_kredit" : 0.011,
+          "batasan_penilaian" : "Setiap perangkat sistem jaringan komputer lokal yang terdeteksi/diperbaiki diberi angka kredit sebesar 0,011.",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Dokumen hasil pendeteksian/perbaikan kerusakan peralatan sistem jaringan komputer lokal yang mencakup namun tidak terbatas pada:\n1. Tanggal Deteksi/Perbaikan;\n2. Perangkat yang dideteksi/diperbaiki dan lokasi;\n3. Deteksi yang ditemukan/Perbaikan yang dilakukan dan lama perbaikan; dan\n4. Kesimpulan.",
+          "contoh" : "Abdul Aziz, A.Md., seorang Pranata Komputer Terampil mendapat laporan adanya gangguan jaringan internet, Kemudian yang bersangkutan melakukan pendeteksian kerusakan sistem jaringan komputer lokal di kantornya, dan diketahui terjadi bottleneck pada switch, maka angka kredit yang diperoleh Abdul Aziz adalah 1 x 0,011 = 0,011.\nKemudian jika Abdul Aziz melakukan perbaikan kerusakan pada switch, maka Abdul Aziz juga akan mendapatkan angka kredit sebesar 1 x 0,011 = 0,011."
+        },
+        {
+          "kode" : "II.A.10",
+          "judul" : "Menyusun Pedoman Operasional Sistem Jaringan Komputer dan Keamanan Jaringan",
+          "uraian" : "Menyusun pedoman operasional sistem jaringan komputer dan keamanan jaringan adalah kegiatan menyusun pedoman pengelolaan dan penggunaan sistem jaringan komputer dan keamanan jaringan.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. Penyusunan pedoman operasional sistem jaringan komputer;\n2. Penyusunan pedoman operasional keamanan jaringan;\n3. Penyusunan panduan pengguna sistem jaringan komputer; dan\n4. Penyusunan panduan pengguna keamanan jaringan.",
+          "satuan_hasil" : "Buku pedoman operasional sistem jaringan komputer dan keamanan jaringan",
+          "angka_kredit" : 1.686,
+          "batasan_penilaian" : "1. Keseluruhan pedoman operasional sistem jaringan komputer dan keamanan jaringan diberi angka kredit sebesar 1,686.\n2. Untuk pedoman yang tidak memuat seluruh aspek pada cakupan, maka penilaian akan diproporsikan dengan nilai sebesar 25% untuk setiap komponen cakupan.\n3. Setiap panduan dalam cakupan disyaratkan minimal terdiri dari 30 halaman. Jika kurang dari 30 halaman maka penilaian akan diproporsikan.",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Buku  pedoman  operasional  sistem  jaringan  komputer/keamanan jaringan yang mencakup namun tidak terbatas pada:\n1. Deskripsi ringkas pedoman;\n2. Arsitektur sistem jaringan komputer/keamanan jaringan dan penjelasannya;\n3. Identitas perangkat dan fungsinya;\n4. Pedoman operasional dapat berupa tahapan instalasi/ konfigurasi, pengoperasian atau pemeliharaan sistem jaringan komputer/keamanan jaringan;\n5. Lembar Persetujuan;\n6. Panduan Pengguna;\n7. Deskripsi ringkas panduan;\n8. Tata cara pemakaian sistem jaringan komputer/ keamanan jaringan untuk pengguna; dan\n9. Lembar Persetujuan.",
+          "contoh" : "Tio Santoso A.Md., seorang Pranata Komputer Penyelia telah membangun sistem dan keamanan jaringan di kantornya dengan melakukan penyusunan pedoman operasional keamanan jaringan disertai dengan bukti fisik yang lengkap, maka untuk kegiatan menyusun operasional keamanan jaringan tersebut Tio Santoso memperoleh angka kredit sebesar 1 x 1,686 = 1,686."
         }
       ]
     }
