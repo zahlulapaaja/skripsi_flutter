@@ -511,89 +511,371 @@
           "bukti_fisik" : "Dokumen hasil pengujian perangkat TI End user berisi:\n1. latar belakang dan tujuan;\n2. Waktu pengujian;\n3. Nama perangkat (merek/tipe);\n4. Serial number/identitas lain perangkat;\n5. Tahapan pengujian;\n6. Lembar pengujian (form UAT);\n7. Bukti pengujian (foto atau screenshot); dan\n8. Lembar persetujuan.",
           "contoh" : "Azka Syahreza, A.Md., seorang Pranata Komputer Mahir melakukan pengujian aplikasi video conference yang sudah dibeli oleh kantornya untuk end user untuk membantu komunikasi. Melalui pengujian, Azka Syahreza akan mengetahui fitur, fungsi, kelebihan dan kelemahan aplikasi tersebut. Kegiatan ini dengan disertai bukti yang lengkap, maka Azka Syahreza akan memperoleh angka kredit 1 X 0,225 = 0,225."
         },
-
-
-
-
-
-
-        // start here
         {
-          "kode" : "II.A.4",
-          "judul" : "Menerapkan Rancangan Fisik Sistem Jaringan Komputer Lokal (Local Area Network)",
-          "uraian" : "Menerapkan rancangan fisik sistem jaringan komputer lokal (Local Area Network) adalah kegiatan implementasi hasil rancangan fisik yang diterapkan pada sistem jaringan komputer lokal. Rancangan fisik sistem jaringan komputer yaitu rancangan yang menggambarkan hubungan fisik antar perangkat/komponen dalam sebuah jaringan komputer.\nTahapan kegiatan ini meliputi namun tidak terbatas pada :\n1. pemasangan perangkat/komponen Jaringan; dan\n2. konfigurasi dasar perangkat agar dapat terhubung pada jaringan komputer lokal.",
-          "satuan_hasil" : "Dokumen implementasi rancangan fisik sistem jaringan komputer lokal",
-          "angka_kredit" : 0.540,
-          "batasan_penilaian" : "Penerapan rancangan fisik yang diusulkan harus diterapkan minimal pada satu sistem jaringan lokal.",
-          "pelaksana" : "Pranata Komputer Mahir",
-          "bukti_fisik" : "Dokumen implementasi sistem jaringan komputer lokal yang mencakup namun tidak terbatas pada:\n1. lokasi implementasi;\n2. waktu pelaksanaan;\n3. identitas perangkat;\n4. rancangan fisik (topologi);\n5. instalasi dan foto pemasangan perangkat;\n6. konfigurasi dasar pada setiap perangkat beserta screenshot; dan\n7. lembar persetujuan dokumen.",
-          "contoh" : "Gilang Ramadhan, A.Md., seorang Pranata Komputer Mahir melakukan implementasi rancangan fisik pada kantornya dengan disertai bukti fisik yang lengkap, maka Gilang Ramadhan mendapatkan angka kredit sebesar 0,540. Namun, jika bukti fisik yang disertakan belum terdapat lembar persetujuan dari instansi, maka Gilang Ramadhan mendapatkan AK 6/7 x 0,54 = 0,46."
+          "kode" : "II.B.4",
+          "judul" : "Melakukan Pemasangan Kabel Untuk Infrastruktur TI",
+          "uraian" : "Melakukan pemasangan kabel untuk infrastruktur TI adalah kegiatan pemasangan kabel jaringan untuk menghubungkan perangkat infrastruktur TI yang meliputi namun tidak terbatas pada:\n1. Perangkat keras (Perangkat keras end user, perangkat jaringan, server, storage); dan\n2. Perangkat pendukung pusat data.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Penyiapan kabel jaringan; dan\n2. Pemasangan kabel jaringan yang menghubungkan antar perangkat dan memastikan bahwa kabel jaringan yang terhubung telah berfungsi dengan baik.",
+          "satuan_hasil" : "Laporan hasil pemasangan kabel untuk infrastruktur TI",
+          "angka_kredit" : 0.059,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan dan bukan satuan kabel.\n2. Kegiatan ini hanya dapat diajukan maksimal 2 (dua) kali per bulan.",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan hasil pemasangan kabel untuk infrastruktur TI yang berisi namun tidak terbatas pada:\n1. Jadwal pemasangan;\n2. Lokasi pemasangan;\n3. Tujuan pemasangan;\n4. Nama perangkat yang dihubungkan dengan kabel dan jenis kabel;\n5. Banyaknya node yang dipasang;\n6. Foto kegiatan; dan\n7. Lembar persetujuan.",
+          "contoh" : "Zaidan Hasibuan, A.Md., seorang Pranata Komputer Terampil membuat 5 buah kabel UTP kemudian melakukan pemasangan kabel tersebut pada 5 printer baru dan menghubungkannya ke node jaringan. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka Zaidan Hasibuan mendapat angka kredit 1 X 0,059 = 0,059."
         },
         {
-          "kode" : "II.A.5",
-          "judul" : "Menerapkan Rancangan Logis Sistem Pengamanan Jaringan Komputer Lokal (Local Area Network)",
-          "uraian" : "Menerapkan rancangan logis sistem pengamanan jaringan komputer lokal (Local Area Network) adalah kegiatan implementasi sistem keamanan pada sistem jaringan komputer lokal. Rancangan Logis sistem pengamanan jaringan komputer yaitu rancangan yang berisi rencana pengamanan sistem jaringan komputer lokal, termasuk diantaranya konfigurasi keamanan yang perlu diterapkan.\nCakupan kegiatan ini meliputi konfigurasi keamanan pada perangkat sesuai dengan rancangan logis sistem pengamanan pada satu sistem jaringan lokal.",
-          "satuan_hasil" : "Dokumen implementasi rancangan logis pengamanan sistem jaringan komputer",
+          "kode" : "II.B.5",
+          "judul" : "Menyusun Rencana Pemeliharaan Perangkat TI End User",
+          "uraian" : "Menyusun rencana pemeliharaan perangkat TI End user adalah membuat rencana pemeliharaan/ perawatan perangkat TI End user baik secara fisik maupun dari perangkat lunak yang terinstal di dalamnya untuk menjamin sistem TI berjalan dengan normal dan stabil.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Melakukan inventarisasi atau identifikasi perangkat-perangkat TI yang perlu dilakukan pemeliharaan;\n2. Membuat daftar kegiatan pemeliharaan serta detail pekerjaan yang perlu dilakukan untuk tiap jenis perangkat TI;\n3. Menentukan jadwal pemeliharaan untuk tiap jenis perangkat TI; dan\n4. Menentukan siapa yang akan melakukan pemeliharaan untuk tiap jenis perangkat TI.\nRencana kegiatan pemeliharaan dapat berupa:\n1. Melakukan pemeriksaan secara berkala untuk mengungkap dan mengantisipasi adanya permasalahan pada perangkat TI (preventive).\n2. Melakukan perubahan konfigurasi pada perangkat TI sesuai dengan kebutuhan terkini (adaptive).\n3. Melakukan upgrade/penyempurnaan agar kinerja perangkat TI lebih optimal (perfective).",
+          "satuan_hasil" : "Dokumen rencana pemeliharaan perangkat TI End user",
+          "angka_kredit" : 0.100,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan dan bukan satuan perangkat.\n2. Kegiatan ini hanya dapat diajukan maksimal 2 (dua) kali setahun.",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumen rencana pemeliharaan perangkat TI End user mencakup namun tidak terbatas pada:\n1. Daftar perangkat TI end user yang akan dipelihara;\n2. Jenis dan tahapan pemeliharaan untuk setiap kegiatan pemeliharaan;\n3. Jadwal pemeliharaan (waktu, kegiatan pemeliharaan, perangkat, lokasi, dan petugas); dan\n4. Lembar Persetujuan.",
+          "contoh" : "Aria Lubis, A.Md., seorang Pranata Komputer Penyelia membuat rencana pemeliharaan perangkat TI end user untuk satu bulan pemeliharaan. Kegiatan tersebut disertai dengan bukti fisik yang lengkap, maka Aria Lubis mendapat angka kredit 1 X 0,1 = 0,1."
+        },
+        {
+          "kode" : "II.B.6",
+          "judul" : "Melakukan Pemeliharaan Perangkat TI End User",
+          "uraian" : "Deskripsi Melakukan pemeliharaan perangkat TI End user adalah melakukan pemeliharaan perangkat TI sesuai dengan rencana pemeliharaan yang telah disusun sebelumnya.\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Melakukan pemeliharaan perangkat TI End user; dan\n2. Mendokumentasikan proses pemeliharaan.",
+          "satuan_hasil" : "Laporan pemeliharaan perangkat TI End user",
+          "angka_kredit" : 0.116,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan dan bukan perangkat.\n2. Jumlah maksimum kegiatan pemeliharaan infrastruktur TI yang dapat dinilai adalah 24 (dua puluh empat) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan pemeliharaan perangkat TI End user mencakup namun tidak terbatas pada:\n1. Waktu, lokasi dan petugas pemeliharaan;\n2. Perangkat yang dipelihara;\n3. Tahapan kegiatan pemeliharaan yang dilakukan;\n4. Hasil pemeliharaan perangkat TI;\n5. Foto bukti pemeliharaan;\n6. Referensi ke rencana pemeliharaan yang telah disusun; dan\n7. Lembar persetujuan.",
+          "contoh" : "Azada Abimanya, A.Md., seorang Pranata Komputer Terampil melakukan pemeliharaan komputer pengguna pada 10 komputer di kantornya, kegiatan tersebut disertai dengan bukti fisik yang lengkap, maka Azada Abimanya mendapatkan nilai 1 X 0,116 = 0,116."
+        },
+        {
+          "kode" : "II.B.7",
+          "judul" : "Melakukan Pemasangan Perangkat Fisik TI",
+          "uraian" : "Melakukan pemasangan perangkat fisik TI yaitu melakukan pemasangan atau penggantian perangkat fisik TI (bukan komponen perangkat) agar perangkat TI tersebut terhubung dengan jaringan dan berfungsi dengan baik. Perangkat fisik TI dalam hal ini dapat berupa:\n1. Perangkat keras (Perangkat keras end user, perangkat jaringan,\nserver, storage).\n2. Perangkat pendukung TI dan pendukung pusat data seperti mesin perekam absen, cctv, access door, dan sebagainya.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Mengidentifikasi kebutuhan pemasangan atau penggantian perangkat fisik TI;\n2. Melakukan pemasangan perangkat fisik TI; dan\n3. Membuat laporan pemasangan perangkat fisik TI.\nKegiatan ini dapat diajukan untuk pemasangan perangkat pertama kali.",
+          "satuan_hasil" : "Dokumen hasil pemasangan perangkat fisik TI",
           "angka_kredit" : 0.165,
-          "batasan_penilaian" : "Penerapan rancangan logis sistem pengamananan yang diusulkan harus diterapkan minimal pada 1(satu) sistem jaringan lokal.",
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan dan bukan perangkat.\n2. Jumlah maksimum kegiatan yang dapat diajukan maksimal 12 (dua belas) kali dalam setahun.",
           "pelaksana" : "Pranata Komputer Mahir",
-          "bukti_fisik" : "Dokumen implementasi sistem jaringan komputer lokal yang meliputi:\n1. lokasi implementasi;\n2. waktu pelaksanaan;\n3. identitas perangkat;\n4. rancangan logis pengamanan jaringan;\n5. konfigurasi pada setiap perangkat beserta screenshot; dan\n6. lembar persetujuan dokumen.",
-          "contoh" : "Adelina Sarah, A.Md., seorang Pranata Komputer Mahir melakukan implementasi rancangan logis sistem pengamanan pada perangkat keamanan, switch dan 5 komputer yang terhubung pada kantornya disertai dengan bukti fisik yang lengkap, maka angka kredit yang diperoleh Adelina Sarah adalah 1 X 0,165 = 0,165."
+          "bukti_fisik" : "Dokumen hasil pemasangan perangkat fisik TI mencakup namun tidak terbatas pada:\n1. Waktu dan lokasi pemasangan;\n2. Hasil identifikasi kebutuhan pemasangan atau penggantian perangkat fisik TI;\n3. Tahapan kegiatan pemasangan perangkat fisik TI yang dilakukan sampai berfungsi;\n4. Bukti instalasi dan konfigurasi berupa foto atau screenshot; dan\n5. Lembar persetujuan.",
+          "contoh" : "Mirza Mahardika, A.Md., seorang Pranata Komputer Mahir melakukan pemasangan 5 switch baru untuk kebutuhan pengolahan di kantornya, kegiatan tersebut disertai dengan bukti fisik yang lengkap, maka Mirza Mahardika mendapat angka kredit 1 X 0,165 = 0,165."
         },
         {
-          "kode" : "II.A.6",
-          "judul" : "Menyusun Rancangan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)",
-          "uraian" : "Menyusun rancangan uji coba sistem jaringan komputer lokal (Local Area Network) adalah kegiatan membuat rancangan uji coba untuk memastikan sistem jaringan komputer lokal dapat berfungsi dengan baik.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. penyusunan rancangan uji fungsionalitas perangkat; dan\n2. penyusunan rancangan uji koneksi antar perangkat.",
-          "satuan_hasil" : "Dokumen rancangan uji coba sistem jaringan komputer lokal",
-          "angka_kredit" : 0.110,
-          "batasan_penilaian" : "1. dibuat mengikuti rancangan logis atau rancangan fisik yang telah dibuat sebelumnya.\n2. rancangan uji coba mencakup minimal 1 (satu) sistem jaringan komputer lokal",
-          "pelaksana" : "Pranata Komputer Mahir",
-          "bukti_fisik" : "Dokumen rancangan uji coba yang meliputi namun tidak terbatas pada:\n1. tujuan uji coba;\n2. perangkat pengujian yang diperlukan;\n3. perangkat jaringan yang akan diujicobakan;\n4. skenario dan variabel uji coba;\n5. hasil uji coba yang diharapkan; dan\n6. lembar persetujuan.",
-          "contoh" : "Mulyadi Untoro, A.Md., seorang Pranata Komputer Mahir menyusun rancangan uji coba sistem jaringan komputer di kantornya dengan disertai bukti fisik yang lengkap, maka dari kegiatan tersebut Mulyadi Untoro mendapat angka kredit 0,110."
-        },
-        {
-          "kode" : "II.A.7",
-          "judul" : "Melakukan Uji Coba Sistem Jaringan Komputer Lokal (Local Area Network)",
-          "uraian" : "Melakukan uji coba sistem jaringan komputer lokal adalah melakukan uji coba pada sistem jaringan komputer lokal berdasarkan rancangan uji coba untuk memastikan sistem jaringan komputer lokal dapat berfungsi dengan baik.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. uji fungsionalitas perangkat; dan\n2. uji koneksi antar perangkat,\nsesuai dengan rancangan uji coba perangkat",
-          "satuan_hasil" : "Dokumen uji coba sistem jaringan komputer lokal",
-          "angka_kredit" : 0.110,
-          "batasan_penilaian" : "Uji coba minimal dilakukan pada 1 (satu) sistem jaringan komputer lokal.",
-          "pelaksana" : "Pranata Komputer Mahir",
-          "bukti_fisik" : "Dokumen uji coba sistem jaringan komputer lokal meliputi namun tidak terbatas pada:\n1. perangkat pengujian yang digunakan;\n2. perangkat jaringan yang diujicobakan;\n3. skenario dan variabel uji coba; dan\n4. screenshot hasil uji coba.",
-          "contoh" : "Kaimana Syarief, A.Md., seorang Pranata Komputer Mahir melakukan uji coba sistem jaringan komputer lokal pada kantornya disertai dengan bukti fisik yang lengkap, maka dari kegiatan tersebut Kaimana Syarief mendapat angka kredit sebesar 1 x 0,060 = 0,060."
-        },
-        {
-          "kode" : "II.A.8",
-          "judul" : "Melakukan Pemantauan (Monitoring) Jaringan",
-          "uraian" : "Melakukan pemantauan jaringan adalah kegiatan memantau dan mengevaluasi aktivitas dari perangkat yang terhubung ke dalam sistem jaringan komputer dalam suatu periode tertentu.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Pemantauan perangkat jaringan; dan\n2. Mencatat/merekam hasil pemantauan.",
-          "satuan_hasil" : "Laporan hasil pemantauan jaringan",
-          "angka_kredit" : 0.020,
+          "kode" : "II.B.8",
+          "judul" : "Melakukan Pemantauan (Monitoring) Kinerja Infrastruktur TI",
+          "uraian" : "Pemantauan kinerja infrastruktur TI adalah aktivitas mengawasi, mengamati, dan mendokumentasikan kinerja beberapa atau semua komponen pada infrastruktur TI di suatu institusi. Pemantauan dilakukan untuk mencegah terjadinya potensi gangguan serius yang mengganggu produktivitas institusi. Kinerja infrastruktur TI adalah metrik standar kinerja dari perangkat TI di sebuah institusi untuk memenuhi kebutuhan para pengguna. Ukuran kinerja tersebut mencakup tetapi tidak terbatas, antara lain:\n1. Availibility. Ketersediaan komponen perangkat TI yang bisa digunakan dalam satuan waktu. Contoh: jumlah waktu (jam) ketersediaan server aplikasi & database yang bisa diakses pengguna dalam satu hari.\n2. Traffic. Mengukur kesibukan/kepadatan request layanan terhadap sebuah perangkat TI. Semakin tinggi traffic, berpotensi mengganggu kinerja.\n3. Reponse Time. Kecepatan mendapatkan respon dari request yang dilakukan pengguna. Kondisi terburuk dari ukuran ini adalah error, dimana pengguna tidak mendapatkan respon sama sekali. Contoh response time adalah kecepatan yang diperoleh oleh pengguna untuk mendapatkan/menjalankan fungsi, fitur, atau layanan/service pada aplikasi yang terinstal di server.\n4. Latensi. Yaitu waktu yang dibutuhkan untuk mengirimkan paket data, baik dalam jaringan lokal maupun internet. Umumnya untuk mengukur kecepatan transfer di internet (upload dan download) maupun kecepatan berbagi data di jaringan lokal institusi.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Mengidentifikasi kinerja infrastruktur TI yang akan dipantau;\n2. Menjalankan tools atau aplikasi untuk mengawasi dan mengamati metrik kinerja perangkat TI;\n3. Merekam tangkapan layar hasil pemantauan, misalnya dashboard\natau report yang digenerate dari tools tersebut; dan\n4. Melakukan dokumentasi kegiatan pemantauan.\nBeberapa contoh metrik pada masing masing komponen sebagai berikut:\n1. Perangkat keras:\na. Rata-rata delay (Latensi),\nb. Utilisasi CPU (traffic), Jumlah penggunaan memori (traffic)\n2. Perangkat jaringan:\nAntrian data (Latensi), Kecepatan transmisi paket (traffic),\n3. Server\nWaktu untuk merespon sebuah request data (latensi), jumlah request yang diproses per detik (traffic)",
+          "satuan_hasil" : "Laporan hasil pemantauan kinerja infrastruktur TI",
+          "angka_kredit" : 0.055,
           "batasan_penilaian" : "Jumlah maksimum kegiatan yang dinilai adalah 1 (satu) kali per minggu.",
           "pelaksana" : "Pranata Komputer Mahir",
-          "bukti_fisik" : "Dokumentasi hasil pemantauan jaringan, yang mencakup namun tidak terbatas pada:\n1. Periode dan data hasil pemantauan; dan\n2. Ringkasan pemantauan.",
-          "contoh" : "Lamera Anastasia, A.Md., seorang Pranata Komputer Mahir memantau ketersediaan dan aktivitas perangkat switch, router dan firewall selama satu minggu disertai dan membuat laporan bukti fisik yang lengkap. Jika Lamera Anastasia melakukan kegiatan tersebut dua kali seminggu maka angka kredit yang didapatkan tetap sebesar 1 X 0,02 = 0,02."
+          "bukti_fisik" : "Laporan yang dilengkapi dengan:\n1. Waktu dan lokasi pemantauan;\n2. Hasil identifikasi kinerja infrastruktur TI yang dipantau;\n3. Deskripsi tools yang digunakan;\n4. Foto atau tangkapan layar dari hasil pemantauan, seperti\ndashboard atau report;\n5. Hasil pemantauan; dan\n6. Lembar persetujuan.",
+          "contoh" : "Dennis Arya, A.Md., seorang Pranata Komputer Mahir melakukan pemantauan kinerja perangkat keras tertentu, kegiatan ini disertai dengan bukti fisik yang lengkap, maka Dennis Arya memperoleh angka kredit 1 X 0,055 = 0,055."
         },
         {
-          "kode" : "II.A.9",
-          "judul" : "Melakukan Deteksi dan Atau Perbaikan Terhadap Permasalahan yang Terjadi Pada Sistem Jaringan Komputer Lokal (Local Area Network)",
-          "uraian" : "Melakukan deteksi sistem jaringan komputer lokal adalah kegiatan untuk mengetahui penyebab tidak berfungsinya sistem jaringan komputer lokal, sedangkan perbaikan sistem jaringan komputer lokal adalah kegiatan untuk membuat sistem jaringan komputer lokal berfungsi kembali dengan baik.\nCakupan kegiatan ini meliputi:\n1. Deteksi penyebab tidak berfungsinya sistem jaringan komputer lokal; dan\n2. dan atau Perbaikan sistem jaringan komputer lokal agar berfungsi kembali dengan baik.",
-          "satuan_hasil" : "Dokumen hasil pendeteksian dan atau perbaikan terhadap permasalahan yang terjadi pada sistem jaringan komputer lokal",
-          "angka_kredit" : 0.011,
-          "batasan_penilaian" : "Setiap perangkat sistem jaringan komputer lokal yang terdeteksi/diperbaiki diberi angka kredit sebesar 0,011.",
+          "kode" : "II.B.9",
+          "judul" : "Melakukan Deteksi dan atau Perbaikan Terhadap Permasalahan Perangkat TI End User",
+          "uraian" : "Mendeteksi masalah pada perangkat TI end user adalah melakukan sejumlah langkah-langkah untuk menentukan tipe masalah yang terjadi dan komponen apa yang bermasalah/rusak. Hal ini untuk menentukan tindakan perbaikan apa saja yang akan diambil. Deteksi bisa menggunakan tools/aplikasi atau fisik. Memperbaiki masalah pada perangkat TI adalah melakukan sejumlah langkah-langkah perbaikan berdasarkan pendeteksian di awal, agar perangkat TI yang bermasalah tersebut dapat berfungsi normal. Perbaikan bisa melalui tools/aplikasi atau bersifat perbaikan perangkat keras.\nMendeteksi masalah pada perangkat TI mencakup beberapa kegiatan tetapi tidak terbatas pada:\n1. Mengidentifikasi perangkat TI end user yang mengalami permasalahan\n2. Melakukan deteksi terhadap permasalahan perangkat TI, yang mencakup namun tidak terbatas pada:\na. Memeriksa kondisi sistem operasi pada perangkat, apakah normal atau crash/corrupt.\nb. Memeriksa komponen perangkat keras tersebut, seperti: monitor, memori, processor, harddrive, kipas, kabel, power supply, dan lain-lain. Apakah terpasang sempurna. Jika terpasang sempurna, apakah berjalan/hidup.\nc. Memeriksa apakah perangkat telah mendapatkan aliran listrik yang cukup, atau memeriksa baterai apakah sudah terisi.\n3. Menentukan tipe permasalahan yang terjadi berdasarkan hasil deteksi; dan\n4. Melakukan dokumentasi kegiatan pendeteksian.\nMemperbaiki masalah pada perangkat TI, mencakup beberapa kegiatan tetapi tidak terbata pada:\n1. Mengidentifikasi permasalahan perangkat TI end user\nberdasarkan hasil deteksi;\n2. Menentukan tindakan perbaikan apa saja yang akan diambil;\n3. Melakukan perbaikan, mencakup namun tidak terbatas pada:\na. Instalasi atau recovery sistem operasi.\nb. Scanning disk/sistem, defragmentasi disk, termasuk meningkatkan efisiensi ruang hard drive dan menghapus proses-proses yang tidak perlu.\nc. Scanning dan membersihkan malware, virus, dan sejenisnya yang memperlambat kinerja.\nd. Menata dan membersihkan fisik komponen perangkat keras.\ne. Memperbaiki dan/atau mengganti satu atau beberapa perangkat yang terdeteksi mengalami kerusakan.\n4. Membuat status dan/atau kondisi perbaikan perangkat TI; dan\n5. Melakukan dokumentasi kegiatan perbaikan.",
+          "satuan_hasil" : "Dokumen hasil pendeteksian dan atau perbaikan terhadap permasalahan perangkat TI End user",
+          "angka_kredit" : 0.049,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan perangkat.\n2. Deteksi dan perbaikan masing-masing mendapatkan angka kredit.\n3. Maksimal kegiatan yang dapat diajukan penilaian sebulan 4 kali.",
           "pelaksana" : "Pranata Komputer Terampil",
-          "bukti_fisik" : "Dokumen hasil pendeteksian/perbaikan kerusakan peralatan sistem jaringan komputer lokal yang mencakup namun tidak terbatas pada:\n1. Tanggal Deteksi/Perbaikan;\n2. Perangkat yang dideteksi/diperbaiki dan lokasi;\n3. Deteksi yang ditemukan/Perbaikan yang dilakukan dan lama perbaikan; dan\n4. Kesimpulan.",
-          "contoh" : "Abdul Aziz, A.Md., seorang Pranata Komputer Terampil mendapat laporan adanya gangguan jaringan internet, Kemudian yang bersangkutan melakukan pendeteksian kerusakan sistem jaringan komputer lokal di kantornya, dan diketahui terjadi bottleneck pada switch, maka angka kredit yang diperoleh Abdul Aziz adalah 1 x 0,011 = 0,011.\nKemudian jika Abdul Aziz melakukan perbaikan kerusakan pada switch, maka Abdul Aziz juga akan mendapatkan angka kredit sebesar 1 x 0,011 = 0,011."
+          "bukti_fisik" : "Untuk kegiatan pendeteksian, terdiri dari:\n1. Waktu dan lokasi;\n2. Deskripsi perangkat TI yang dideteksi;\n3. Foto dari perangkat yang dideteksi. Bisa juga dalam bentuk tangkapan layar, tergantung pada jenis pendeteksian;\n4. Identifikasi permasalahan perangkat TI berdasarkan hasil pendeteksian; dan\n5. Lembar persetujuan.\nUntuk kegiatan perbaikan, terdiri dari:\n1. Waktu dan lokasi;\n2. Deskripsi perangkat TI yang diperbaiki;\n3. Foto dari perangkat yang diperbaiki. Bisa juga dalam bentuk tangkapan layar, tergantung pada jenis perbaikan;\n4. Deskripsi tindakan perbaikan; dan\n5. Lembar persetujuan.",
+          "contoh" : "Fawwaz Haris, A.Md., seorang Pranata Komputer Terampil mendeteksi dan memperbaiki sebuah PC desktop, kegiatan ini disertai dengan bukti fisik yang lengkap, maka Fawwaz Haris memperoleh angka kredit sebesar 2 x 0,049 = 0,098."
         },
         {
-          "kode" : "II.A.10",
-          "judul" : "Menyusun Pedoman Operasional Sistem Jaringan Komputer dan Keamanan Jaringan",
-          "uraian" : "Menyusun pedoman operasional sistem jaringan komputer dan keamanan jaringan adalah kegiatan menyusun pedoman pengelolaan dan penggunaan sistem jaringan komputer dan keamanan jaringan.\nCakupan kegiatan ini meliputi namun tidak terbatas pada:\n1. Penyusunan pedoman operasional sistem jaringan komputer;\n2. Penyusunan pedoman operasional keamanan jaringan;\n3. Penyusunan panduan pengguna sistem jaringan komputer; dan\n4. Penyusunan panduan pengguna keamanan jaringan.",
-          "satuan_hasil" : "Buku pedoman operasional sistem jaringan komputer dan keamanan jaringan",
-          "angka_kredit" : 1.686,
-          "batasan_penilaian" : "1. Keseluruhan pedoman operasional sistem jaringan komputer dan keamanan jaringan diberi angka kredit sebesar 1,686.\n2. Untuk pedoman yang tidak memuat seluruh aspek pada cakupan, maka penilaian akan diproporsikan dengan nilai sebesar 25% untuk setiap komponen cakupan.\n3. Setiap panduan dalam cakupan disyaratkan minimal terdiri dari 30 halaman. Jika kurang dari 30 halaman maka penilaian akan diproporsikan.",
+          "kode" : "II.B.10",
+          "judul" : "Melakukan Instalasi/Upgrade Sistem Operasi Komputer/ Perangkat Lunak Pada Infrastruktur TI",
+          "uraian" : "Instalasi sistem operasi adalah langkah pemasangan sistem operasi untuk pertama kali/pemulihan sistem pada suatu perangkat TI. Upgrade sistem operasi adalah langkah pemasangan versi terbaru pada suatu perangkat TI yang sudah memiliki sistem operasi versi sebelumnya. Instalasi atau upgrade dilakukan terhadap beberapa atau semua komponen yang ada di sebuah infrastruktur TI, yang mencakup namun tidak terbatas pada:\n1. Perangkat keras (Perangkat keras end user, perangkat jaringan server, storage).\n2. Perangkat pendukung TI dan pendukung pusat data seperti mesin perekam absen, cctv, access door, dan sebagainya.\nKegiatan instalasi mencakup namun tidak terbatas pada:\n1. Mengidentifikasi sistem operasi/perangkat TI/infrastruktur TI yang akan diinstal.\n2. Memeriksa spesifikasi teknis sistem operasi/perangkat TI/infrastruktur TI yang akan diinstal.\n3. Menyiapkan lokasi/hard drive instalasi.\n4. Menyalin file sistem ke hard drive, memasukkan lisensi, dan pembuatan user.\n5. Melakukan dokumentasi kegiatan instalasi.\nUpgrade mencakup tapi tidak terbatas pada:\n1. Memeriksa spesifikasi teknis sistem operasi/perangkat TI/infrastruktur TI yang akan diinstal.\n2. Melakukan pemasangan sistem operasi terbaru dari versi sebelumnya.\n3. Melakukan dokumentasi kegiatan upgrade.",
+          "satuan_hasil" : "Laporan pelaksanaan instalasi/upgrade sistem operasi komputer/ perangkat lunak pada infrastruktur TI",
+          "angka_kredit" : 0.042,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan.\n2. Maksimal kegiatan yang dapat diajukan penilaian sebulan 2 kali.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan pelaksanaan yang terdiri dari namun tidak terbatas pada:\n1. Spesifikasi teknis perangkat keras, hard drive, memori, processor, dan lain-lain dari perangkat TI yang akan diinstal/di upgrade;\n2. Spesifikasi sistem operasi atau piranti lunak yang diinstal/upgrade;\n3. Foto atau tangkapan layar dari perangkat TI yang telah diinstal/upgrade;\n4. Dokumentasi kegiatan instalasi atau upgrade; dan\n5. Lembar persetujuan.",
+          "contoh" : "Rahman Habibi, A.Md., seorang Pranata Komputer Mahir menginstal sistem operasi ke 5 PC. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka Rahman Habibi mendapatkan angka kredit sebesar 1 X 0,042 = 0,042."
+        }
+      ]
+    }
+    ]
+    
+  },
+  {
+    "unsur" : "III",
+    "judul_unsur" : "SISTEM INFORMASI DAN MULTIMEDIA",
+    "subunsur" : [
+    {
+      "kode" : "III.A",
+      "judul" : "Sistem Informasi",
+      "butir" : [
+        {
+          "kode" : "III.A.1",
+          "judul" : "Menyusun petunjuk operasional program aplikasi",
+          "uraian" : "Membuat petunjuk operasional program aplikasi sistem informasi adalah membuat dokumentasi mengenai tahapan proses pengoperasian program aplikasi/sistem informasi. Petunjuk operasional menyajikan gambaran umum fitur-fitur aplikasi dan memberikan penjelasan langkah-langkah untuk penggunaan fungsi aplikasi sistem informasi. Petunjuk operasional disusun untuk mempermudah pengoperasian program aplikasi sistem informasi oleh pengguna. Informasi yang ditulis harus Informasi yang ditulis harus terstruktur, mudah dimengerti, dan dapat disertai dengan contoh, gambar, alur, bagan, dan sebagainya.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Membuat user guide, user manual, atau help file baik itu merupakan dokumen terpisah dengan program aplikasi ataupun tergabung dengan aplikasi;\n2. Membuat petunjuk instalasi program aplikasi;\n3. Membuat suplemen yang berisi petunjuk penggunaan program aplikasi sistem informasi;\n4. Membuat bahan ajar dalam rangka memberi pengarahan untuk penggunaan suatu program aplikasi sistem informasi; dan\n5. Membuat petunjuk cara pembaruan (update) suatu program aplikasi sistem informasi.\nBentuk/format dokumen disesuaikan dengan kebutuhan program aplikasi. Petunjuk yang ditulis dapat berupa dokumen pengolah kata atau dokumen presentasi.",
+          "satuan_hasil" : "Buku/dokumen petunjuk operasional program aplikasi",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Jumlah dokumen maksimal 54 (lima puluh empat) dokumen per tahun. Angka kredit dapat diberikan dengan ketentuan sebagai berikut:\n1. Jika berupa buku atau dokumen dengan format penulisan setara dengan kertas ukuran A4 dan spasi 1,5:\na. < 10 halaman memperoleh Angka Kredit sebesar 0,028\nb. 10 - 19 halaman memperoleh Angka Kredit sebesar 0,056\nc. 20 - 29 halaman memperoleh Angka Kredit sebesar 0,084\nd. > 29 halaman memperoleh Angka Kredit sebesar 0,110\nJumlah minimal halaman yang dapat diajukan angka kreditnya adalah 5 (lima) halaman. Jika jumlah halaman kurang dari 5 (lima), dapat dilakukan pengajuan angka kredit dengan menggabungkan dengan beberapa dokumen petunjuk operasional.\n2. Bahan ajar dengan format dokumen presentasi dapat memperoleh angka kredit dengan ketentuan:\na. < 20 halaman memperoleh Angka Kredit sebesar 0,036\nb. 20 - 39 halaman memperoleh Angka Kredit sebesar 0,072\nc. > 39 halaman memperoleh Angka Kredit sebesar 0,110\nJumlah minimal halaman yang dapat diajukan angka kreditnya adalah 10 (sepuluh) halaman. Jika jumlah halaman kurang dari\n10 (sepuluh), dapat dilakukan pengajuan angka kredit dengan menggabungkan dengan beberapa dokumen petunjuk operasional.\n3. Halaman dokumen yang dapat dinilai hanya halaman utama, yaitu tidak termasuk halaman judul, halaman pelengkap pendahuluan (kata pengantar, daftar isi, daftar gambar, dan sebagainya), dan daftar pustaka.\n4. Halaman dokumen yang hanya berisi hasil tangkapan layar (screenshot) program aplikasi tanpa dilengkapi dengan penjelasan tidak termasuk sebagai halaman yang dapat diajukan angka kreditnya.\n5. Satu program aplikasi/sistem informasi dapat memiliki lebih dari satu bentuk dokumen petunjuk operasional dan dapat diajukan angka kreditnya tetapi dengan syarat dokumen satu dengan lainnya tidak menuliskan hal yang sama. Misalnya, petunjuk penggunaan aplikasi telah ditulis dalam bentuk buku, tetapi ditulis juga dalam bentuk paparan bahan ajar. Bahan ajar menjelaskan sesuatu yang sama hanya dalam format yang berbeda, maka dokumentasi yang dapat diajukan hanya salah satu saja.\nContoh :\n1. Petunjuk penggunaan aplikasi telah ditulis dalam bentuk buku, tetapi ditulis juga dalam bentuk paparan bahan ajar. Bahan ajar menjelaskan sesuatu yang sama hanya dalam format yang berbeda, maka dokumentasi yang dapat diajukan angka kreditnya hanya salah satu saja.\n2. Sebuah aplikasi telah rilis dengan disertai user guide. Pada saat aplikasi telah digunakan, ada beberapa hal yang perlu ditegaskan kembali kepada pengguna aplikasi, sehingga tim pengembang menyusun suplemen penggunaan aplikasi. Untuk kasus ini, dokumen yang dapat diajukan angka kreditnya ada dua, yaitu user guide dan suplemen.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Buku/pedoman petunjuk operasional program aplikasi mencakup namun tidak terbatas pada:\n1. Panduan penggunaan program aplikasi oleh pengguna;\n2. Menu/fitur;\n3. Tangkapan layar (screenshot) program aplikasi; dan\n4. Langkah-langkah pengoperasian program aplikasi. Informasi yang dimuat mencakup namun tidak terbatas pada:\n1. Penjelasan singkat yang meliputi:\na. Nama program aplikasi/sistem informasi;\nb. Target pengguna;\nc. Cakupan dan tujuan pembuatan program aplikasi/sistem informasi;\nd. Prasyarat penggunaan program aplikasi/sistem informasi;\ne. Jumlah halaman;\nf. Abstrak;\ng. Versi (histori) dokumen; dan\nh. Keterangan penulis.\n2. Lampiran dokumen petunjuk pengoperasian sistem komputer; dan\n3. Pengesahan dokumen oleh atasan PPFK langsung.",
+          "contoh" : "Kartono Raharjo, A.Md., seorang Pranata Komputer Mahir dalam satu tahun menyusun 7 (tujuh) dokumen petunjuk operasional, yang terdiri dari:\na. Tiga (3) buku pengolahan data survei dengan jumlah halaman > 30 (pada kertas A4 spasi 1,5);\nb. Dua (2) suplemen petunjuk operasional masing-masing 5 halaman; dan\nc. Empat (4) bahan ajar tentang penggunaan sistem informasi dalam format presentasi dengan 45 halaman.\nAsumsi: Semua dokumen menjelaskan hal yang berbeda. Angka kredit yang diperoleh Kartono Raharjo dalam satu tahun dari kegiatan tersebut adalah: (3 x 0,110 )+( 2 x 0,028)+(4x 0,110) = 0,826."
+        },
+        {
+          "kode" : "III.A.2",
+          "judul" : "Menyusun Dokumentasi Pengembangan Sistem Informasi",
+          "uraian" : "Menyusun dokumentasi pengembangan sistem informasi adalah kegiatan membuat dokumentasi lengkap terkait kegiatan pengembangan sistem informasi.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Membuat dokumentasi produk (output) dari pengembangan sistem informasi. Dokumentasi produk menjelaskan sistem yang sedang dikembangkan menyangkut fungsionalitas yang ada pada sistem, baik sistem lama maupun yang akan dikembangkan; dan\n2. Membuat dokumentasi proses pengembangan sistem informasi. Dokumentasi proses merupakan dokumentasi yang disusun untuk membantu mengatur proses pengembangan agar lebih terorganisir.",
+          "satuan_hasil" : "Dokumen pengembangan sistem informasi Angka ",
+          "angka_kredit" : 0.030,
+          "batasan_penilaian" : "18 (delapan belas) dokumen per tahun",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Kompilasi dokumen pengembangan sistem informasi yang dibedakan sebagai berikut:\n1. Jika dokumentasi yang disusun merupakan dokumentasi produk/sistem, maka bukti fisik mencakup namun tidak terbatas pada:\na. kondisi/permasalahan sistem lama;\nb. kebutuhan/perbaikan pengembangan system; dan\nc. spesifikasi sistem baru.\n2. Jika dokumentasi yang disusun merupakan dokumentasi proses, maka bukti fisik mencakup namun tidak terbatas pada:\na. Rencana jadwal, biaya, dan sumber daya untuk pengembangan sistem baru; dan\nb. Catatan permasalahan selama pengembangan.",
+          "contoh" : "Medina Kartini, A.Md., seorang Pranata Komputer Mahir membuat dokumentasi pengembangan sistem informasi perpustakaan dari sistem yang lama diremajakan menjadi sistem yang baru. Yang bersangkutan membuat 2 (dua) dokumentasi , yaitu produk dan proses yang masing-masing memenuhi minimal bukti fisik lengkap yang harus dipenuhi. Angka Kredit yang diperoleh Medina Kartini adalah 2 x 0,03 = 0,06."
+        },
+        {
+          "kode" : "III.A.3",
+          "judul" : "Melakukan Analisis Kebutuhan Program Aplikasi",
+          "uraian" : "Melakukan analisis kebutuhan program aplikasi adalah sebuah proses untuk mendapatkan informasi spesifikasi program aplikasi yang diinginkan pengguna. Proses pengumpulan informasi ini bisa menggunakan metode Interview, Kuesioner, Observasi dan lain-lain.\nTahapan kegiatan ini mencakup namun tidak terbatas pada pembuatan dokumentasi berupa:\n1. Penjelasan singkat tentang program aplikasi yang dianalisis;\n2. Metode pengumpulan data;\n3. Sumber data;\n4. Uraian langkah-langkah dalam menganalisis kebutuhan; dan\n5. Hasil analisis kebutuhan program aplikasi.",
+          "satuan_hasil" : "Dokumen hasil analisis kebutuhan program aplikasi",
+          "angka_kredit" : 0.030,
+          "batasan_penilaian" : "18 (delapan belas) kali per tahun",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen hasil analisis kebutuhan program aplikasi, identifikasi dan analisis kebutuhan pengguna dengan outline mencakup namun tidak terbatas pada:\n1. Penjelasan singkat program aplikasi yang dianalisis (20%);\n2. Metode pengumpulan data (10%);\n3. Sumber data (10%);\n4. Uraian langkah-langkah dalam menganalisis kebutuhan, (20%); dan\n5. Hasil Analisis kebutuhan program aplikasi (40%).",
+          "contoh" : "Arifin Hasan, A.Md., seorang Pranata Komputer Mahir melakukan analisis kebutuhan sistem informasi inventaris surat. Pada dokumentasinya, Arifin Hasan melampirkan penjelasan singkat sistem informasi yang dianalisis, metode yang dipilih untuk mengumpulkan data, sumber data, uraian tahapan dalam mengalisa kebutuhan dan hasil analisisnya. Kegiatan tersebut disertai dengan bukti fisik yang lengkap, maka angka kredit yang diperoleh Arifin Hasan adalah 1 x 0,03 = 0,03."
+        },
+        {
+          "kode" : "III.A.4",
+          "judul" : "Membuat Program Aplikasi",
+          "uraian" : "Membuat program aplikasi merupakan pembuatan perangkat lunak siap pakai yang nantinya akan digunakan untuk membantu melaksanakan pekerjaan penggunanya. Di mana aplikasi ini ditujukan untuk digunakan pihak lain dan disusun dalam bentuk modul/obyek dengan struktur yang mudah dikelola dan memerlukan uji coba yang ekstensif serta dilengkapi dokumentasi yang rinci dan akurat.\nPemberian angka kredit untuk pembuatan program aplikasi didasarkan pada kompleksitas ataupun skala aplikasi tersebut dengan kriteria sebagai berikut:\n1. Untuk aplikasi sederhana namun skalanya besar (misalnya dilihat dari jumlah fitur yang disediakan) maka dapat diberikan angka kredit hingga 100% dari angka kredit yang ditentukan.\n2. Untuk aplikasi dengan tingkat kompleksitas tinggi (misalnya dilihat dari tingkat kompleksitas fungsi-fungsinya, tingkat kerumitan algoritma, maupun tingkat integrasinya dengan library\nmaupun banyak sistem lainnya) maka dapat diberikan angka kredit sebesar hingga 100% dari angka kredit yang ditentukan.\n3. Untuk aplikasi sederhana maka dapat diberikan angka kredit hingga sebesar 50% dari angka kredit yang ditentukan.\nSuatu program aplikasi dikategorikan kompleks apabila paling tidak memenuhi satu dari kriteria berikut ini:\n1. Memiliki minimal 10 fitur utama;\n2. (kriteria integrasi dengan  library/sistem lainnya) Sistem/aplikasi tersebut berkaitan langsung dengan sistem lainnya misalnya Sistem Informasi Monitoring yang inputan datanya adalah keluaran dari aplikasi entri berbasis desktop sehingga dari kedua sistem itu ada keterhubungan dan harus saling melengkapi dan berkesuaian satu sama lainnya;\n3. (kriteria  integrasi  dengan  library/sistem  lainnya)  sistem/aplikasi berbasis client-server, bisa dilihat dari arsitektur sistemnya;\n4. (kriteria integrasi dengan  library/sistem lainnya) Sistem/aplikasi tersebut terhubung/menggunakan lebih dari 1 (satu) database; dan\n5. Untuk sistem/aplikasi yang implementasi codingnya menggunakan model procedural, dikatakan kompleks apabila line of code (LOC) minimal 1000 (seribu) baris (angka diperoleh dari best practice pemrograman), sedangkan yang menggunakan model Object Oriented Programming dikatakan kompleks apabila terdiri dari minimal 5 (lima) class.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Membuat library program.\n2. Membuat aplikasi untuk piranti mobile.\n3. Pembuatan program (mencakup pula program tabulasi, dashboard maupun visualisasi data) dengan paket bantu pemrograman (editing, coding, compile/generate) dengan software generator. Kegiatan ini diberi angka kredit sebesar 80% dari maksimum angka kredit yang dapat diperoleh sesuai kompleksitas dan skala aplikasinya. Contoh: pembuatan aplikasi berbasis android (peranti mobile) menggunakan tools zero code semisal AppInstitute, Appypie dan tool generator lainnya. Apabila aplikasinya adalah aplikasi sederhana maka angka kredit yang dapat diperoleh adalah sebesar 80% x 50% x 0,550 = 0,220.\nSementara itu, pembuatan program aplikasi/sistem informasi dengan menggunakan framework (misal php: Yii, Laravel, Codeigniter, dan sebagainya) bukan termasuk dalam kategori pembuatan program dengan tools generator sehingga memperoleh 100% dari maksimum angka kredit sesuai dengan kompleksitasnya.\n4. Membuat modul bagian dari program aplikasi/sistem informasi, baik front end maupun back end aplikasi (misalnya membuat view dan script client dari aplikasi), kegiatan ini diberi angka kredit sesuai proporsi modul tersebut terhadap aplikasi/sistem informasi dan kompleksitasnya mengikuti kompleksitas dari keseluruhan aplikasi/sistem informasi itu sendiri.\n5. Membuat aplikasi GIS (Geographics Information System)\n6. Membuat/mengedit suara (musik, narasi).\n7. Membuat Animasi. Animasi adalah file yang datanya mampu menghasilkan gambar-gambar dimensi 3 (tiga) atau dimensi yang bergerak. Sebagai contoh, animasi gif yang mampu direkacipta dengan menggunakan perangkat lunak GIF Animator.\n8. Membuat E-Book. Kegiatan ini dikatagorikan menjadi 2 (dua):\na. Jika kegiatan tersebut hanya mengubah buku ke dalam media elektronik dan menambahkan animasi atau fasililitas lain, maka kegiatan ini dikategorikan ke dalam kegiatan pemrograman.\nb. Hanya mengubah ke dalam media elektronik yang sederhana, maka dikategorikan sebagai kegiatan perekaman data.",
+          "satuan_hasil" : "Program aplikasi",
+          "angka_kredit" : 0.550,
+          "batasan_penilaian" : "18 (delapan belas) program per tahun",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Program aplikasi mencakup namun tidak terbatas pada:\n1. Source code document. Source code document adalah dokumen teknis yang menjelaskan bagaimana coding pada program yang dibuat tersebut berjalan (75%). Di dalam source code document tersebut dapat mencakup namun tidak terbatas pada:\na. Deskripsi singkat program aplikasi\nb. Petunjuk installasi\n \nc. Penjelasan terkait standarisasi coding yang digunakan misalnya organisasi file, standarisasi penamaan fungsi maupun variabel dan sebagainya\nd. Framework yang digunakan\ne. Pattern design yang digunakan (misalnya MVC, MVP, dan sebagainya)\nf. Penjelasan fungsi-fungsi tertentu yang perlu untuk diberikan penjelasan mengenai fungsi, logic dan cara penggunaanya.\n2. Pedoman Pengoperasian (terdiri dari end user documentation dan/atau system admin documentation (15%).\n3. Demo/list program (tidak diperlukan apabila prosedur penggunaan program telah tertuang dalam pedoman pengoperasian program (10%).",
+          "contoh" : "Hanif Baswedan, A.Md., seorang Pranata Komputer Mahir membangun sebuah program tabulasi data penjualan produk interaktif dan real time. Program tersebut tidak hanya menampilkan beberapa tabulasi dan monitoring statis namun menyediakan tabulasi maupun monitoring dinamis sesuai dengan parameter yang diinput oleh user. Apabila sistem tersebut kompleks dan disertai dengan bukti fisik yang lengkap, maka Hanif Baswedan memperoleh angka kredit sebesar 1 x 0,550 = 0,550,\nYahya Baswedan, A.Md., seorang Pranata Komputer Mahir membangun sebuah program tabulasi data penjualan produk interaktif dan real time. Program tersebut tidak hanya menampilkan beberapa tabulasi dan monitoring statis namun menyediakan tabulasi maupun monitoring dinamis sesuai dengan parameter yang diinput oleh user. Apabila Yahya Baswedan hanya mengumpulkan source program dan demo/list program maka ia memperoleh angka kredit sebesar 85% dari maksimum angka kredit yang dapat diberikan menurut kompleksitas sistem. Di mana apabila sistem tersebut kompleks maka dapat memperoleh maksimum 100% x 0,550. sehingga angka kredit yang diperoleh Yahya Baswedan adalah sebesar 85% x 100% x 0,550 = 0,4675. Namun apabila Yahya Baswedan mengumpulkan source program dan membuat pedoman pengoperasian maka ia dapat memperoleh 100% dari maksimum angka kredit yang dapat diberikan menurut kompleksitas sistem."
+        },
+        {
+          "kode" : "III.A.5",
+          "judul" : "Mengembangkan dan/atau Meremajakan Program Aplikasi",
+          "uraian" : "Mengembangkan program aplikasi adalah kegiatan menambah/menigkatkan dan atau merubah cakupan, kinerja, dan fungsi program pada aplikasi/sistem informasi yang telah ada. Sedangkan peremajaan program aplikasi adalah segala kegiatan untuk merubah atau menyesuaikan fungsionalitas sistem yang telah ada dengan teknologi baru, environment baru, maupun requirement atau kebutuhan baru.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Menambahkan fitur baru pada program aplikasi/sistem informasi yang telah ada;\n2. Mengubah logic pada fitur yang sudah ada pada program aplikasi/sistem informasi yang telah ada;\n3. Merubah atau menambahkan tabel atau field pada database yang digunakan oleh program aplikasi dan melakukan penyesuaian yang diakibatkan oleh perubahan tersebut; dan\n4. Menyesuaikan aplikasi yang sudah ada dengan environment baru (misalnya untuk aplikasi berbasis web adanya migrasi server di mana kondisi server berbeda dari php 5.3 menjadi 5.6 sehingga beberapa fungsi deprecated dan memerlukan penyesuaian, atau setting server yang berbeda yang mana memerlukan penyesuaian pada layer aplikasi yang dijalankan di atasnya.",
+          "satuan_hasil" : "Dokumentasi pengembangan dan atau peremajaan program aplikasi",
+          "angka_kredit" : 0.275,
+          "batasan_penilaian" : "18 (delapan belas) kegiatan per tahun",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumentasi pengembangan dan atau peremajaan program aplikasi lama dan baru yang di dalamnya mencakup namun tidak terbatas:\n1. Kondisi/permasalahan sistem lama;\n2. Kebutuhan/perbaikan pengembangan sistem; dan\n3. Source code document untuk perubahan yang dilakukan pada sistem lama untuk menghasilkan sistem yang baru.",
+          "contoh" : "Kayana Laudya, A.Md., seorang Pranata Komputer Mahir melakukan perubahan pada sebuah program aplikasi pencatatan barang yang telah ada dengan menambahkan fitur baru berupa fitur untuk edit jumlah barang rusak. Pranata Komputer tersebut mengumpulkan dokumentasi perubahan source code yang dilakukan dan kebutuhan perbaikan pengembangan sistem dengan mencantumkan kondisi atau permasalahan pada sistem lama sehingga dibutuhkan penambahan fitur tersebut. Kegiatan tersebut disertai dengan bukti fisik yang lengkap, maka Kayana Laudya diberikan angka kredit sebesar 1 x 0,275 = 0,275.\nLaksana Laudya, A.Md., seorang Pranata Komputer Mahir melakukan perubahan pada sebuah program aplikasi pencatatan barang yang telah ada dengan menambahkan fitur baru berupa fitur untuk edit jumlah barang rusak. Pranata Komputer tersebut hanya mengumpulkan dokumentasi perubahan source code yang dilakukan dan kebutuhan perbaikan pengembangan sistem tanpa mencantumkan kondisi atau permasalahan pada sistem lama sehingga dibutuhkan penambahan fitur tersebut maka Laksana Laudya diberikan angka kredit sebesar 2/3 x 0,275 = 0,183."
+        },
+        {
+          "kode" : "III.A.6",
+          "judul" : "Melakukan Uji Coba Program Aplikasi",
+          "uraian" : "Melakukan uji coba program aplikasi adalah kegiatan menganalisis suatu entitas software untuk mendeteksi perbedaan antara kondisi yang ada dengan kondisi yang diinginkan (defect/errors/bugs) dan mengevaluasi fitur-fitur dari entitas software. Tujuan dari kegiatan melakukan ujicoba program aplikasi adalah untuk melihat tingkat kebenaran suatu aplikasi berdasarkan spesifikasi tertentu. Pranata Komputer yang melakukan ujicoba program harus berbeda dengan yang membuat program aplikasi. Program aplikasi yaitu program yang dirancang untuk menangani task khusus bagi pengguna.\nTahapan kegiatan ini mencakup namun tidak terbatas pada melakukan ujicoba program aplikasi berdasarkan skenario ujicoba dan data ujicoba yang telah didefinisikan untuk memastikan jalan tidaknya fitur-fitur yang terdapat pada aplikasi tersebut. Hasil ujicoba akan menghasilkan tingkat pemenuhan aplikasi terhadap kebutuhan/spesifikasi yang telah ditetapkan (misal kebutuhan fungsional dan non fungsional. Jenis ujicoba yang dapat dilakukan yaitu white box maupun black box. Level ujicoba yang dilakukan dapat mencakup unit testing, integration testing, system testing, maupun acceptance testing.",
+          "satuan_hasil" : "Laporan uji coba program aplikasi",
+          "angka_kredit" : 0.165,
+          "batasan_penilaian" : "36 (tiga puluh enam) program aplikasi per tahun.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan uji coba program aplikasi yang mencakup namun tidak terbatas pada:\n1. Program aplikasi yang diuji coba (per modul);\n2. Skenario pengujian;\n3. Mekanisme pengujian;\n4. Waktu uji coba program;\n5. Hasil uji coba program aplikasi yang terdiri dari input, output\nyang diharapkan, dan output aktual yang diberikan aplikasi;\n6. Deskripsi cakupan dan ruang lingkup aplikasi yang akan diuji coba;\n7. Spesifikasi program aplikasi; dan\n8. Prosedur/langkah-langkah yang dilakukan pada saat pelaksanaan ujicoba program aplikasi.",
+          "contoh" : "Moza Paramita, A.Md., seorang Pranata Komputer Mahir melakukan ujicoba unit testing program aplikasi peramalan data time series, maka angka kredit yang diperoleh adalah 0,165. Setelah mengalami perbaikan dan pengembangan, Moza Paramita kembali melakukan ujicoba unit testing terhadap aplikasi peramalan data time series. Sehingga Moza Paramita melakukan 2 kali testing dan mendapatkan angka kredit 2 x 0,165 = 0,33.\nJika Moza Paramita juga melakukan integration testing pada aplikasi yang sama, maka angka kredit menjadi 3 x 0,165 = 0,495. Disisi lain, jika Moza Paramita juga melakukan uji coba pada aplikasi lainnya yang berbeda, maka angka kredit yang diperoleh adalah 4 x 0,165 = 0,66."
+        }
+      ]
+    },    
+    {
+      "kode" : "III.B",
+      "judul" : "Pengolahan Data",
+      "butir" : [
+        {
+          "kode" : "III.B.1",
+          "judul" : "Melakukan Perekaman Data Dengan Pemindaian",
+          "uraian" : "Melakukan perekaman data dengan pemindaian adalah kegiatan merekam/memasukkan data ke dalam suatu media komputer dengan menggunakan suatu alat pemindai seperti scanner untuk mendapatkan informasi dari suatu obyek/dokumen.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Melakukan perekaman dokumen yang terdiri atas teks maupun gambar dengan menggunakan scanner.\n2. Melakukan perekaman data dari suatu obyek/barang yang memiliki barcode atau kode QR dengan menggunakan scanner untuk mendapatkan informasi detil obyek tertentu.",
+          "satuan_hasil" : "Laporan perekaman data dengan pemindaian data dengan pemindaian file/data hasil pemindaian",
+          "angka_kredit" : 0.002,
+          "batasan_penilaian" : "(0,002 x d) / s. Penghitungan angka kredit didasarkan atas kecepatan scanner dalam dokumen per jam (s), dan jumlah dokumen yang dikerjakan (d).",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan perekaman data dengan pemindaian data dengan pemindaian file/data hasil pemindaian yang mencakup namun tidak terbatas pada:\n1. Data yang direkam;\n2. Nama/jenis dokumen;\n3. Periode perekaman data;\n4. Jumlah dokumen hasil perekaman;\n5. Jenis/tipe dan kecepatan alat pemindai; dan\n6. Screenshot/foto dokumen yang direkam, proses pemindaian dokumen, serta hasil pemindaian.",
+          "contoh" : "Andre Kusuma, A.Md., seorang Pranata Komputer Terampil melakukan pemindaian dokumen laporan penggunaan inventaris barang milik negara sebanyak menggunakan 500 lembar dengan menggunakan mesin scanner yang memiliki kecepatan pemindaian dalam satu jam sebanyak 360 lembar. Setelah melengkapi bukti fisik yang dibutuhkan maka perhitungan angka kredit yang diperoleh Andre Kusuma adalah sebagai berikut: (0,002 x 500) / 360 = 0,00278."
+        },
+        {
+          "kode" : "III.B.2",
+          "judul" : "Melakukan Perekaman Data Tanpa Validasi",
+          "uraian" : "Melakukan perekaman data tanpa validasi adalah kegiatan merekam/memasukkan data ke dalam suatu media komputer dengan menggunakan suatu program aplikasi tanpa adanya proses pengecekan/validasi terhadap data yang direkam baik antar data itu sendiri maupun terhadap data lain yang diperlukan untuk pengecekan hasil perekaman.\nTahapan kegiatan ini mencakup namun tidak terbatas pada melakukan perekaman atau memasukkan data melalui suatu aplikasi tanpa adanya proses lebih lanjut yang dilakukan oleh aplikasi untuk pengecekan dan validasi data berdasarkan aturan- aturan tertentu yang sudah ditetapkan untuk menjamin validitas dan konsistensi data. Contoh melakukan perekaman data dengan menggunakan aplikasi Ms.Word atau Ms. Excel seperti pembuatan SPJ, Laporan Tahunan Kegiatan Instansi.",
+          "satuan_hasil" : "Laporan perekaman data tanpa validasi",
+          "angka_kredit" : 0.000467,
+          "batasan_penilaian" : "Per 1000 (seribu) karakter",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan perekaman data yang ditandatangani oleh atasan langsung, mencakup namun tidak terbatas pada:\n1. Nama/jenis data yang direkam;\n2. Nama aplikasi yang digunakan;\n3. Periode perekaman data;\n4. Jumlah dokumen hasil perekaman; dan\n5. Screenshot/foto dokumen dan sistem/aplikasi.",
+          "contoh" : "Andomeda, A.Md., seorang Pranata Komputer Terampil melakukan perekaman data penggunaan inventaris kantor sebanyak 100 dokumen dengan menggunakan suatu aplikasi Ms.Word. Satu dokumen rata-rata memiliki 700 karakter yang harus direkam. Kegiatan tersebut disertai dengan bukti fisik yang lengkap. Perhitungan angka kredit yang diperoleh Andomeda adalah sebagai berikut: ((100 x 700) / 1000) x 0,00047 = 0,033."
+        },
+        {
+          "kode" : "III.B.3",
+          "judul" : "Melakukan Validasi Hasil Perekaman Data",
+          "uraian" : "Melakukan validasi hasil perekaman data adalah kegiatan pengecekan terhadap data yang sudah berhasil direkam oleh suatu aplikasi. Pengecekan dilakukan dengan melihat keterkaitan antar data itu sendiri mapun terhadap data lain. Validasi bertujuan untuk mengecek kebenaran isian hasil perekaman berdasarkan aturan- aturan pengecekan yang sudah ditetapkan. Data dianggap valid apabila sudah memenuhi ukuran tertentu.\nTahapan kegiatan ini mencakup namun tidak terbatas pada melakukan pengecekan data yang sudah direkam berdasarkan daftar aturan isian nilai yang sudah ditetapkan melalui suatu aplikasi yang menyediakan fasilitas pengecekan data.",
+          "satuan_hasil" : "Laporan validasi hasil perekaman data",
+          "angka_kredit" : 0.000467,
+          "batasan_penilaian" : "Per 1000 (seribu) karakter",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan validasi hasil perekaman data berupa dokumentasi yang ditandatangani oleh atasan langsung, dilengkapi keterangan mencakup namun tidak terbatas pada:\n1. Nama/jenis data yang divalidasi;\n2. Nama sistem informasi/aplikasi yang digunakan;\n3. Periode perekaman data;\n4. Jumlah karakter hasil validasi;\n5. Jenis validasi yang dilakukan; dan\n6. Lampiran yang terdiri atas screenshot file data yang divalidasi, screenshot kegiatan validasi, dan hasil validasi/pengecekan.",
+          "contoh" : "Andra Kesuma, A.Md. seorang Pranata Komputer Terampil melakukan validasi hasil perekaman data penggunaan inventaris kantor sebanyak menggunakan 100 dokumen dengan menggunakan suatu aplikasi Ms. Word. Satu dokumen rata-rata memiliki 700 karakter yang harus divalidasi. Kegiatan tersebut disertai dengan bukti fisik yang lengkap sehingga perhitungan angka kredit yang diperoleh Andra Kesuma adalah sebagai berikut: ((100 x 700) / 1000) x 0,00047 = 0,033."
+        },
+        {
+          "kode" : "III.B.4",
+          "judul" : "Melakukan Perekaman Data dengan Validasi",
+          "uraian" : "Melakukan perekaman data dengan validasi adalah kegiatan merekam/memasukkan data ke dalam suatu media komputer dengan menggunakan suatu program aplikasi perekaman/pemasukan data yang dilengkapi proses pengecekan/validasi terhadap data yang dimasukkan baik antar data itu sendiri maupun terhadap data lain yang diperlukan untuk pengecekan hasil perekaman.\nTahapan kegiatan ini mencakup namun tidak terbatas pada merekam atau memasukkan data melalui suatu aplikasi. Kemudian data diproses lebih lanjut oleh aplikasi untuk dilakukan pengecekan dan validasi berdasarkan aturan-aturan tertentu yang sudah ditetapkan untuk menjamin validitas dan konsistensi data. Pengecekan dan validasi adalah salah satu cara untuk mendapatkan data yang berkualitas.",
+          "satuan_hasil" : "Laporan perekaman data dengan validasi",
+          "angka_kredit" : 0.001,
+          "batasan_penilaian" : "Per 1000 (seribu) karakter",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan perekaman data dengan validasi berupa dokumentasi yang ditandatangani oleh atasan langsung dengan keterangan mencakup namun tidak terbatas pada:\n1. Nama/jenis data yang divalidasi (10%);\n2. Nama sistem informasi/aplikasi yang digunakan (10%);\n3. Jenis basis data (10%);\n4. Periode perekaman data (10%);\n5. Jumlah karakter hasil perekaman (10%);\n6. Foto dokumen yang direkam (10%);\n7. Uraian jenis validasi dan screenshoot sistem/aplikasi yang menampilkan kegiatan perekaman data dengan validasi (40%); dan\n8. Daftar validasi yang digunakan.",
+          "contoh" : "Andi Raharja, A.Md., seorang Pranata Komputer Terampil melakukan perekaman data pegawai sebanyak 300 dokumen dengan menggunakan aplikasi entri data pegawai yang memiliki fasilitas validasi/pengecekan atas data yang direkam. Satu dokumen rata- rata memiliki 600 karakter yang harus direkam dan divalidasi. Setelah melengkapi seluruh bukti fisik yang dibutuhkan maka perhitungan angka kredit yang diperoleh Andi Raharja adalah sebagai berikut: ((300 x 600) / 1000) x 0,001 = 0,18."
+        },
+        {
+          "kode" : "III.B.5",
+          "judul" : "Membuat Query Sederhana",
+          "uraian" : "Membuat query sederhana adalah melakukan operasi-operasi CRUD pada database melalui perintah query sederhana. Tahapan kegiatan ini mencakup namun tidak terbatas pada Membuat query sederhana dengan SELECT, UPDATE, DELETE, INSERT.",
+          "satuan_hasil" : "Laporan query data",
+          "angka_kredit" : 0.088,
+          "batasan_penilaian" : "Minimal menggunakan satu di antara keywords SELECT, UPDATE, DELETE, INSERT",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan query data mencakup namun tidak terbatas pada Script file yang mengandung query beserta dokumentasi yang berisi informasi data yang di-query, tipe dan besaran data yang di-query, ringkasan hasil query, informasi data yang akan di query, syntax query data.",
+          "contoh" : "Danial Arsalan, A.Md., seorang Pranata Komputer Terampil melakukan pembuatan query untuk memilih data rumah tangga yang memiliki internet. Kegiatan tersebut disertai dengan bukti fisik yang lengkap, maka angka kredit yang diperoleh Danial Arsalan adalah 1 X 0,088 = 0,088."
+        },
+        {
+          "kode" : "III.B.6",
+          "judul" : "Melakukan Konversi Data",
+          "uraian" : "Melakukan konversi data adalah melakukan perubahan format atau tipe data ke dalam format atau tipe lain dengan tujuan agar data tersebut dapat diproses lebih lanjut atau digunakan oleh software atau aplikasi lain.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Mengidentifikasi/menentukan data yang akan dikonversi;\n2. Mengubah tipe data;\n3. File format;\n4. Struktur data; dan\n5. Mendokumentasikan hasil konversi data.",
+          "satuan_hasil" : "Laporan konversi data",
+          "angka_kredit" : 0.002,
+          "batasan_penilaian" : "Minimal melakukan satu jenis perubahan terhadap data",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan konversi data mencakup namun tidak terbatas pada:\n1. Informasi terkait data sebelum dikonversi (tipe, format, dan lain- lain);\n2. Informasi terkait data setelah dikonversi (tipe, format, dan lain- lain);\n3. Bukti fisik berupa data sebelum konversi;\n4. Bukti fisik berupa data hasil konversi;\n5. Satuan konveri; dan\n6. Penjelasan konversi data.",
+          "contoh" : "Elvan Adhitama, A.Md., seorang Pranata Komputer Terampil melakukan konversi data dari format PostgreSQL ke json. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka angka kredit yang diperoleh Elvan Adhitama adalah 1 X 0,002 = 0,002."
+        },
+        {
+          "kode" : "III.B.7",
+          "judul" : "Melakukan Kompilasi Data Pengolahan",
+          "uraian" : "Melakukan kompilasi data pengolahan adalah melakukan penggabungan, pengumpulan, dan pengelompokkan data hasil pengolahan sehingga menjadi satu kesatuan file utuh.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Identifikasi data yang akan dikompilasi;\n2. Pengumpulan data yang akan dikompilasi;\n3. Penggabungan data; dan\n4. Membuat dokumentasi.",
+          "satuan_hasil" : "Laporan kompilasi data pengolahan",
+          "angka_kredit" : 0.044,
+          "batasan_penilaian" : "Minimal menggabungkan dua data pengolahan menjadi satu",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan hasil kompilasi data pengolahan mencakup namun tidak terbatas pada:\n1. Informasi masing-masing data yang dikompilasi (nama, tipe, ukuran);\n2. Jumlah data yang dikompilasi;\n3. Penjelasan tentang cara melakukan kompilasi;\n4. File output hasil kompilasi;\n5. Sumber data;\n6. Jenis data pengolahan yang dikompilasi; dan\n7. Keterangan sebelum dan sesudah kompilasi.",
+          "contoh" : "Nayaka Pratama, A.Md., seorang Pranata Komputer Terampil melakukan kompilasi data hasil pengolahan Susenas dari 34 provinsi yang ada di Indonesia. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka angka kredit yang diperoleh Nayaka Pratama adalah 1 X 0,044 = 0,044."
+        }
+      ]
+    },    
+    {
+      "kode" : "III.C",
+      "judul" : "Area TI spesial/khusus",
+      "butir" : [
+        {
+          "kode" : "III.C.1",
+          "judul" : "Melakukan Perekaman Data Spasial",
+          "uraian" : "Melakukan perekaman data spasial adalah kegiatan mengubah suatu data analog menjadi data digital menggunakan media elektronik baik itu berupa software GIS (digitasi) ataupun perangkat keras seperti GPS, Satelit dan lain-lain.\nKegiatan ini mencakup pencarian object perekaman, perekaman data spasial dan penyimpanan data hasil perekaman dalam media atau format lainnya. Tahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Melakukan identifikasi fitur spasial dengan penginderaan jauh yang bersumber dari citra satelit foto udara atau sumber lainnya.\n2. Melakukan penelusuran atau pengukuran di lapangan terhadap suatu object misalnya batas wilayah, hutan, posisi gedung atau obejek dan lain-lain dengan menggunkan bantuan peta (digital/analog), GPS.\n3. Melakukan digitasi suatu obyek menggunakan media komputer (mobile/desktop)  dari  suatu  data  analog,  citra  satelit  maupun data-data lainnya sehingga membentuk suatu fitur spasial digital (point, polygon, line, dan bentuk vektor lainnya)",
+          "satuan_hasil" : "Laporan perekaman data spasial",
+          "angka_kredit" : 0.001,
+          "batasan_penilaian" : "Kegiatan ini dinilai untuk setiap fitur atau kumpulan fitur (file) berdasarkan besaran file atau jumlah data spasial yang dihasilkan. Untuk data vektor besaran file yang dihasilkan dihitung berdasarkan format shapefile (SHP) untuk data raster disesuaikan sesuai kompleksitas dan kewajaran. Dengan ketentuan untuk setiap 4 point atau 2 line atau 1 polygon (disesuaikan terhadap kompleksitas polygon ) atau 1 KB file shapefile (.SHP) setara dengan 0,001 AK. Untuk penghitungan file adalah besaran dari hasil proses digitasi murni yang dilakukan Pranata Komputer (selisih file sebelum dan sesudah digitasi). Untuk data raster disesuaikan dengan cakupan data dan cara perekaman. Untuk data raster dengan cakupan sedang dan cara perekaman yang relatif mudah mendapatkan 0,001 untuk setiap spot.",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan hasil perekaman data spasial yang mencakup namun tidak terbatas pada:\n1. Nama Peta;\n2. Peta digital hasil dari perekaman;\n3. Besaran file; dan\n4. Direktori penyimpanan.",
+          "contoh" : "Bayu Lintang, A.Md., seorang Pranata Komputer Terampil melakukan digitasi sebanyak 1 polygon desa yang cukup kompleks dengan besar file SHP 10 Kb. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka Bayu Lintang mendapatkan angka kredit 10 x 0,001 = 0,01.\nBanyu Biru, A.Md., seorang Pranata Komputer Terampil mendapatkan tugas untuk melakukan tracing di suatu desa dengan menggunakan GPS. Banyu Biru mengelilingi batas desa dan melakukan perekaman koordinat. Ketika dieksport ke sistem, didapatkan ukuran file hasil perekaman ini adalah sebesar 2Kb. Maka Banyu Biru akan mendapatkan angka kredit sebesar 2 x 0,001 = 0,002."
+        },
+        {
+          "kode" : "III.C.2",
+          "judul" : "Membuat Peta Tematik Sederhana",
+          "uraian" : "Membuat peta tematik sederhana adalah kegiatan membuat peta yang menggambarkan suatu tema atau tujuan khusus dengan jumlah dan jenis data kecil (cakupan area lebih kecil) dan tingkat kerumitan rendah. Peta tematik yang memiliki tingkat kerumitan rendah adalah peta yang secara jumlah record relatif lebih kecil/ tidak ada pengolahan data terlebih dahulu/ cakupan area yang lebih kecil (tingkat Kota/Provinsi).\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Penyiapan dan pemilihan data, filtering (query), simbologi data, overlay dengan data pendukung, export ke media terntentu, dan pembuatan komponen peta seperti judul, skala, legenda;\n2. Membuat peta tematik dengan jumlah dan jenis data sedikit dan tingkat kerumitan rendah;\n3. Membuat peta tematik dalam berbagai format digital; dan\n4. Membuat peta tematik dalam bentuk infografis.",
+          "satuan_hasil" : "Peta tematik sederhana",
+          "angka_kredit" : 0.020,
+          "batasan_penilaian" : "10 (sepuluh) peta per bulan. Untuk pembuatan peta tematik menggunakan generator hanya dapat di hitung sekali untuk setiap tema.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumentasi pembuatan peta tematik, Dokumen hasil peta tematik.",
+          "contoh" : "Aliyah Azizah, A.Md., seorang Pranata Komputer Mahir melakukan pembuatan peta tematik kepadatan penduduk di Kota Bogor untuk setiap kecamatan. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka Aliyah Azizah mendapatkan angka kredit sebesar 1 x 0,020 = 0,020."
+        },
+        {
+          "kode" : "III.C.3",
+          "judul" : "Melakukan Pengolahan Data Atribut Dan Spasial Sederhana",
+          "uraian" : "Melakukan pengolahan data atribut dan spasial sederhana adalah kegiatan mengubah bentuk, isi, informasi dan struktur dari atribut maupun data spasial secara sederhana.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Penyiapan data, filtering (query) data, relasi data, pengolahan data dan prosesing data;\n2. Pengolahan data dengan jumlah dan jenis yang relatif sedikit;\n3. Pengolahan data spasial dengan metode sederhana misalnya move, split, merge, dan lain-lain;\n4. Pengolahan data raster (citra satelit) maupun data vector; dan\n5. Pengolahan atribut dari data spasial.",
+          "satuan_hasil" : "Dokumen hasil pengolahan data atribut dan spasial sederhana",
+          "angka_kredit" : 0.040,
+          "batasan_penilaian" : "52 (lima puluh dua) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Dokumen hasil pengolahan data atribut dan spasial sederhana mencakup namun tidak terbatas pada: Dokumentasi kegiatan, Dokumentasi atau laporan tentang data yang diolah (perubahan sebelum dan sesudah) serta tujuan pengolahan data spasial",
+          "contoh" : "Bahira Ananta, A.Md., seorang Pranata Komputer Mahir melakukan merging suatu kumpulan data spasial berdasarkan atributnya. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka Bahira Ananta mendapatkan angka kredit sebesar 1 x 0,040 = 0,040."
+        },
+        {
+          "kode" : "III.C.4",
+          "judul" : "Melakukan Editing Data Spasial",
+          "uraian" : "Melakukan editing data spasial adalah kegiatan mengubah suatu fitur spasial hasil dari suatu digitasi atau perekaman data spasial baik perubahan pada geometri atau pixel maupun pada atribut.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Penyiapan data, filtering (query) data, relasi data, dan editing\ndata;\n2. Editing fitur spasial (vektor atau raster) atau atribut; dan\n3. Editing komposisi atribut.",
+          "satuan_hasil" : "Laporan hasil editing data spasial",
+          "angka_kredit" : 0.020,
+          "batasan_penilaian" : "Untuk kegiatan editing dapat dinilai berdasarkan kegiatan atau jumlah data spasial. Untuk setiap kegiatan setara dengan angka kredit sebesar 0,02 atau untuk setiap editing 20 fitur data spasial setara dengan angka kredit 0,02.",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Laporan hasil editing data spasial mencakup namun tidak terbatas pada:\n1. Dokumentasi kegiatan;\n2. Dokumentasi atau laporan tentang data yang diedit (perubahan sebelum dan sesudah); dan\n3. Tujuan editing data spasial.",
+          "contoh" : "Camila Eliza, A.Md., seorang Pranata Komputer Mahir melakukan perbaikan lokasi kantor kelurahan pada satu kecamatan yang terdiri dari 20 titik koordinat. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka Camila Eliza mendapatkan angka kredit sebesar 1 x 0,02 = 0,02.\nSelain itu, karena adanya pemekaran wilayah RW, maka perlu ada perbaikan peta yang lebih kompleks. Perbaikan batas RW ini dianggap 1 kegiatan dan Camila Eliza juga berhak mendapatkan angka kredit sebesar 1 x 0,02."
+        },
+        {
+          "kode" : "III.C.5",
+          "judul" : "Melakukan Verifikasi Data Spasial",
+          "uraian" : "Melakukan verifikasi data spasial adalah kegiatan memeriksa data spasial berdasarkan kebenaran/kesesuaian lokasi, kaidah- kaidah data spasial, dan syarat-syarat dari suatu data spasial yang telah ditentukan.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Penyiapan data, filtering (query), visualisasi, overlay, pembuatan rule pengecekan, proses pengecekan dan pembuatan laporan hasil pengecekan;\n2. Verifikasi baik secara langsung (ground check) maupun tidak langsung;\n3. Verifikasi topologi dan toponimi; dan\n4. Verifikasi berdasarkan syarat-syarat dan kaidah yang telah di tentukan oleh organisasi.",
+          "satuan_hasil" : "Laporan hasil verifikasi data spasial",
+          "angka_kredit" : 0.113,
+          "batasan_penilaian" : "2 (dua) kali per bulan.",
           "pelaksana" : "Pranata Komputer Penyelia",
-          "bukti_fisik" : "Buku  pedoman  operasional  sistem  jaringan  komputer/keamanan jaringan yang mencakup namun tidak terbatas pada:\n1. Deskripsi ringkas pedoman;\n2. Arsitektur sistem jaringan komputer/keamanan jaringan dan penjelasannya;\n3. Identitas perangkat dan fungsinya;\n4. Pedoman operasional dapat berupa tahapan instalasi/ konfigurasi, pengoperasian atau pemeliharaan sistem jaringan komputer/keamanan jaringan;\n5. Lembar Persetujuan;\n6. Panduan Pengguna;\n7. Deskripsi ringkas panduan;\n8. Tata cara pemakaian sistem jaringan komputer/ keamanan jaringan untuk pengguna; dan\n9. Lembar Persetujuan.",
-          "contoh" : "Tio Santoso A.Md., seorang Pranata Komputer Penyelia telah membangun sistem dan keamanan jaringan di kantornya dengan melakukan penyusunan pedoman operasional keamanan jaringan disertai dengan bukti fisik yang lengkap, maka untuk kegiatan menyusun operasional keamanan jaringan tersebut Tio Santoso memperoleh angka kredit sebesar 1 x 1,686 = 1,686."
+          "bukti_fisik" : "Laporan hasil verifikasi data spasial mencakup namun tidak terbatas pada:\n1. Dokumentasi kegiatan; dan\n2. Tujuan, tahapan, dan hasil dari verifikasi data spasial.",
+          "contoh" : "Ghayda Azahra, A.Md., seorang Pranata Komputer Penyelia melakukan verifikasi hasil digitasi suatu polygon batas wilayah hasil digitasi dengan kunjungan ke lapangan. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka Ghayda Azahra mendapatkan angka kredit sebesar 1 x 0,113 = 0,113."
+        },
+        {
+          "kode" : "III.C.6",
+          "judul" : "Membuat Desain Grafis",
+          "uraian" : "Membuat desain grafis adalah proses pembuatan media komunikasi visual meliputi pemilihan, kreasi, dan penyusunan kumpulan obyek pada suatu media yang terkait dengan kegiatan organisasi. Kegiatan ini bertujuan untuk membantu organisasi dalam memvisualisasikan sesuatu yang akan digunakan sebagai media komunikasi.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Mendefinisikan tujuan dari desain grafis yang akan dibuat;\n2. Perancangan tema dan rencana jadwal pembuatan desain grafis;\n3. Pemilihan obyek seperti font, warna, dan layout; dan\n4. Hasil desain grafis.",
+          "satuan_hasil" : "Dokumen desain grafis",
+          "angka_kredit" : 0.020,
+          "batasan_penilaian" : "2 (dua) kali per minggu",
+          "pelaksana" : "Pranata Komputer Mahir",
+          "bukti_fisik" : "Bukti fisik kegiatan membuat desain grafis meliputi:\n1. Hasil desain grafis 60%; dan\n2. Dokumentasi Proses Pembuatan 40%.\nDokumentasi desain grafis mencakup namun tidak terbatas pada:\n1. Tujuan dari desain grafis yang akan dibuat;\n2. Tema desain grafis yang akan dibuat beserta rencana jadwal pembuatan desain grafis; dan\n3. Daftar obyek yang digunakan dalam pembuatan desain grafis dan sumber.",
+          "contoh" : "Khalida Madina, A.Md., seorang Pranata Komputer Mahir membuat suatu spanduk infografis. Kegiatan ini disertai dengan bukti fisik yang lengkap, proses pembuatan. maka Khalida Madina mendapatkan angka kredit sebesar 1 x 0,02 = 0,02.\nLina Madina, A.Md., seorang Pranata Komputer Mahir membuat suatu infografis pembatas bab pada publikasi yang berisi 12 Bab, dengan menyertakan dokumentasi proses pembuatan desain grafis, dan foto seluruh infografis pembatas bab maka Lina Madina mendapatkan angka kredit sebesar 12 x (0,020 x ((40% x 1)+(60% x 1))) = 12 x 0,0200 = 0,24000."
+        },
+        {
+          "kode" : "III.C.7",
+          "judul" : "Melakukan Editing Obyek Multimedia Sederhana Dengan Piranti Lunak",
+          "uraian" : "Melakukan editing obyek multimedia sederhana dengan piranti lunak adalah kegiatan memanipulasi obyek sederhana baik audio, animasi, video, teks, grafik dan gambar menggunakan piranti lunak yang terkait dengan kegiatan organisasi.\nTujuan kegiatan ini untuk melakukan perbaikan terhadap produk multimedia milik organisasi sehingga lebih baik dan lebih mudah dipahami. Tahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Mendefinisikan tujuan dari editing obyek multimedia sederhana dengan piranti lunak yang akan dibuat;\n2. Pemilihan obyek yang akan dilakukan editing;\n3. Perancangan perubahan setelah editing obyek;\n4. Pemilihan piranti lunak untuk editing obyek; dan\n5. Hasil editing obyek.",
+          "satuan_hasil" : "Dokumentasi perubahan pemrograman multimedia",
+          "angka_kredit" : 0.255,
+          "batasan_penilaian" : "2 (dua) kali per bulan.",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Bukti fisik kegiatan melakukan editing obyek multimedia sederhana dengan piranti lunak meliputi:\n1. Hasil editing obyek 80%; dan\n2. Dokumentasi proses 20%.\nDokumentasi mencakup namun tidak terbatas pada:\n1. Tujuan dari editing obyek multimedia sederhana dengan piranti lunak yang akan dibuat;\n2. Daftar obyek yang digunakan dalam melakukan editing obyek multimedia sederhana;\n3. Perancangan perubahan setelah editing obyek desain grafis; dan\n4. Piranti lunak yang akan digunakan dalam editing.",
+          "contoh" : "Nadira Ahmad, A.Md., seorang Pranata Komputer Penyelia melakukan editing suatu video dengan menggunakan Shortcut. Nadira Ahmad juga menyertakan dokumentasi obyek sebelum dan sesudah editing, lalu menyertakan dokumentasi tahapan manipulasi secara lengkap maka Nadira Ahmad mendapatkan angka kredit sebesar 1 x 0,255 = 0,255."
+        },
+        {
+          "kode" : "III.C.8",
+          "judul" : "Membuat Obyek Multimedia Sederhana dengan Piranti Lunak",
+          "uraian" : "Pembuatan obyek multimedia sederhana dengan perangkat lunak merupakan pembuatan dari awal atau proses kompilasi dari obyek-obyek multimedia sederhana dalam bentuk file multimedia. Obyek multimedia yang dimaksud dalam butir ini adalah representasi digital (file) multimedia. Obyek multimedia sederhana adalah obyek multimedia yang tidak memerlukan input/masukan/interaksi dari user. Tujuan dari kegiatan pembuatan obyek multimedia sederhana adalah membuat file multimedia yang diperlukan untuk mendukung proses bisnis atau kegiatan institusi dalam menyampaikan informasi kepada user dalam kerangka pelaksanaan tugas dan fungsi institusi.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Identifikasi kebutuhan:\na. menentukan tujuan dari pembuatan multimedia;\nb. Mengidentifikasi user dari multimedia; dan\nc. Menentukan presentasi dari multimedia yang dibuat.\n2. Menentukan skenario sederhana dalam multimedia berdasarkan kebutuhan user.\n3. Menentukan  media  dan/atau  obyek  yang  akan  diintegrasikan/ dikombinasikan.\n4. Menentukan piranti lunak yang sesuai untuk membuat multimedia sederhana.\n5. Membuat obyek multimedia berdasarkan kebutuhan yang sudah diidentifikasi.\n6. Mendokumentasikan proses pembuatan obyek multimedia sederhana dengan piranti lunak.",
+          "satuan_hasil" : "Dokumen obyek multimedia sederhana",
+          "angka_kredit" : 0.690,
+          "batasan_penilaian" : "3 (tiga) kali per tahun",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumen obyek multimedia sederhana setidaknya mencakup namun tidak terbatas pada:\n1. Hasil identifikasi kebutuhan yang mencakup tujuan pembuatan dan user dari multimedia;\n2. Skenario sederhana dalam multimedia berdasarkan kebutuhan user (storyboard);\n3. Deskripsi media dan/atau obyek yang akan diintegrasikan/ dikombinasikan;\n4. Informasi piranti lunak yang sesuai untuk membuat multimedia sederhana; dan\n5. Informasi file multimedia yang dibuat, seperti: screenshot atau link dari file yang bisa diakses.",
+          "contoh" : "Tamara Zoya, A.Md., seorang Pranata Komputer Penyelia mendapatkan penugasan untuk membuat multimedia sederhana yang berisi penjelasan mengenai bagian dalam ruang perpustakaan. Berikut tahapan kegiatan yang dilakukannya :\n1. Ruang perpustakan disusun membentuk bilik-bilik kecil. Setiap bilik terdiri dari 3 rak. Setiap bilik memiliki kode bilik. Setiap rak memiliki kode rak.\n2. Dia memulai pekerjaannya dengan menggambar denah perpustakaan yang berisi bilik-bilik.\n3. Dia kemudian merekam setiap bilik yang ada dalam perpustakaan.\n4. Pada setiap bilik, dia tidak lupa merekam kode bilik dan mengambil contoh 1 buku dari bilik yang direkam.\n5. Kemudian dia merekam suara dari pengisi suara untuk memberikan penjelasan buku-buku yang tersimpan pada setiap bilik.\n6. Dia juga berencana menampilkan penjelasan pengisi suara dalam bentuk teks.\n7. Dia mulai menyusun file multimedia dengan bantuan aplikasi komputer. Pada bagian awal video, gambar denah perpustakaan ditampilkan dengan ditambahkan suara pengisi suara dan ditambahkan tampilan teks di bagian kanan atas.\n8. Untuk menambah perhatian user yang masih anak-anak, dia menambahkan callout pada teks dan menambahkan animasi tokoh kartun yang sedang memberikan penjelasan.\n9. Dia juga melakukan pengaturan letak tampilan agar tetap enak dinikmati user. Hal serupa dilakukan untuk setiap penjelasan pada setiap bilik.\nKegiatan ini disertai dengan bukti fisik yang lengkap, Tamara Zoya mendapatkan angka kredit sebesar 1 x 0,690 = 0,690."
+        },
+        {
+          "kode" : "III.C.9",
+          "judul" : "Membuat Prototype Sederhana Pada Program Multimedia",
+          "uraian" : "Membuat prototype sederhana pada program multimedia adalah membuat representasi konkret dari sebagian atau seluruh sistem multimedia. Termasuk dalam prototype sederhana adalah prototype yang dibuat dengan tidak memerlukan software khusus dalam membuatnya, dapat dibuat dengan apapun, bahkan dengan tulisan tangan. Umumnya berupa prototype yang fix/tetap yang tidak interaktif. Prototype sederhana dapat berupa ilustrasi dengan tangan, storyboard, wireframe, mockup, maupun video.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Mendefinisikan kebutuhan pengguna;\n2. Menentukan fungsi-fungsi pada prototype;\n3. Membangun prototype; dan\n4. Mengevaluasi prototype;\nSelanjutnya jika ada masukan atas prototype dapat mengulangi proses pengembangan dan evaluasi prototype, jika tidak ada masukan atas prototype, dapat melanjutkan ke tahap pembangunan program multimedia.",
+          "satuan_hasil" : "Dokumentasi prototype sederhana pada program multimedia",
+          "angka_kredit" : 0.220,
+          "batasan_penilaian" : "1 (satu) kali per bulan. Maksimal 1 prototype untuk 1 (satu) program multimedia, prototype yang diajukan adalah prototype terakhir yang telah disetujui jika menggunakan metode iterative prototyping.",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumen hasil pembuatan prototype sederhana pada program multimedia mencakup namun tidak terbatas pada:\n1. Hasil identifikasi kebutuhan pengguna.\n2. Hasil analisis fungsi-fungsi prototype.\n3. Hasil prototype sederhana dapat berupa:\na. Dokumen sketsa/ilustrasi;\nb. Dokumen mockup;\nc. Dokumen storyboard; dan\nd. Video prototype.\n4. Catatan masukan atas prototype.",
+          "contoh" : "Nadira Warda, A.Md., seorang Pranata Komputer Penyelia membuat storyboard video sosialisasi perubahan proses bisnis di tempat dia bekerja dengan menggunakan Ms. Word. Kegiatan ini disertai dengan bukti fisik yang lengkap, Angka kredit yang akan diperoleh Nadira Warda dari pembuatan story board tersebut adalah 1 x 0,220 = 0,220."
+        },
+        {
+          "kode" : "III.C.10",
+          "judul" : "Membuat Program Multimedia Sederhana",
+          "uraian" : "Membuat program multimedia sederhana adalah kegiatan membangun program atau perangkat lunak yang dapat menjalankan atau merekam berbagai macam media informasi seperti: teks, dokumen, suara, gambar, animasi serta video dengan kerumitan pembuatan yang sederhana, maksud sederhana disini adalah program yang dibangun tidak memerlukan interaksi aktif dengan pengguna, misalnya video, web multimedia tanpa interaksi aktif pengguna.\nTahapan kegiatan ini mencakup namun tidak terbatas pada multimedia development life cycle (MDLC) yang terdiri dari:\n1. Concept (pembuatan konsep);\n2. Design (perancangan);\n3. Material collecting (pengumpulan materi);\n4. Assembly (pembangunan);\n5. Testing (pengujian); dan\n6. Distribution (dapat diartikan sebagai implementasi atau pemberitahuan bahwa sistem sudah siap digunakan).",
+          "satuan_hasil" : "Program multimedia sederhana",
+          "angka_kredit" : 0.440,
+          "batasan_penilaian" : "1 (satu) kali per bulan.",
+          "pelaksana" : "Pranata Komputer Penyelia",
+          "bukti_fisik" : "Dokumen hasil program multimedia sederhana mencakup namun tidak terbatas pada:\n1. Dokumentasi pembuatan konsep;\n2. Dokumentasi perancangan;\n3. Dokumentasi pengumpulan materi;\n4. Dokumentasi  pembangunan;\n5. Dokumentasi pengujian; dan\n6. Dokumentasi implementasi sistem atau penggunaan sistem.",
+          "contoh" : "Rahardian Wijaya, A.Md., seorang Pranata Komputer Penyelia membuat web profile tentang instansi tempat dia bekerja yang menampilkan video dan animasi tentang profile instansi. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka angka kredit yang akan diperoleh Rahardian Wijaya dari pembuatan web profile tersebut adalah 1 x 0,440 = 0,440."
+        },
+        {
+          "kode" : "III.C.11",
+          "judul" : "Melakukan Uji Coba Program Multimedia Interaktif",
+          "uraian" : "Melakukan uji coba program multimedia interaktif adalah melaksanakan skenario uji coba yang telah dibuatd dan mendokumentasikannya. Uji coba dilakukan sebelum program multimedia dirilis, untuk menilai kelayakan program sebelum program multimedia dirilis kepada pengguna.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Mengidentifikasi fitur dari program multimedia yang akan diuji coba;\n2. Memahami skenario uji coba;\n3. Menentukan input dan expected output;\n4. Menentukan perangkat yang akan digunakan, untuk uji coba yang dilakukan menggunakan bantuan perangkat;\n5. Melaksanakan ujicoba terhadap program multimedia berdasarkan skenario uji coba; dan\n6. Mendokumentasikan dan melaporkan hasil uji coba program multimedia interaktif.",
+          "satuan_hasil" : "Laporan uji coba program multimedia interaktif",
+          "angka_kredit" : 0.020,
+          "batasan_penilaian" : "3 (tiga) kali per bulan.",
+          "pelaksana" : "Pranata Komputer Terampil",
+          "bukti_fisik" : "Laporan uji coba program multimedia ini mencakup namun tidak terbatas pada:\n1. Hasil identifikasi fitur dari program multimedia yang akan diuji coba (screenshot dan metadata file);\n2. Skenario uji coba;\n3. Daftar input dan expected output;\n4. Informasi tool yang akan digunakan, jika uji coba yang dilakukan menggunakan bantuan tool; dan\n5. Hasil ujicoba yang berisi:\na. Nama program multimedia\nb. Deskripsi program multimedia\nc. User dari multimedia",
+          "contoh" : "Raihana Humaira, A.Md., seorang Pranata Komputer Terampil mendapatkan penugasan dari atasannya untuk melakukan uji coba pada program multimedia interaktif, dengan beberapa skenario yang telah diberikan. Raihana Humaira menyusun daftar input dan expected output dari skenario tersebut. Selama ujicoba, dilakukan checklist untuk input dan expected outputnya sesuai, dan  tanda silang untuk yang expected outputnya tidak sesuai dengan skenario. Kemudian, semua temuan ini disusun dalam suatu laporan. Kegiatan ini disertai dengan bukti fisik yang lengkap, maka angka kredit yang diperoleh Raihana Humaira sebesar 1 x 0,020 = 0,020."
         }
       ]
     }
