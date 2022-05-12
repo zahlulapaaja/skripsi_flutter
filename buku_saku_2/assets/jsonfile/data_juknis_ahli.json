@@ -1486,5 +1486,811 @@
       ]
     }
     ]
+  },
+  {
+    "unsur" : "II",
+    "judul_unsur" : "INFRASTRUKTUR TEKNOLOGI INFORMASI",
+    "subunsur" : [
+    {
+      "kode" : "II.A",
+      "judul" : "Sistem Jaringan Komputer",
+      "butir" : [
+        {
+          "kode" : "II.A.1",
+          "judul" : "Melakukan Analisis Kebutuhan Pengguna Sistem Jaringan Komputer Kompleks",
+          "uraian" : "Melakukan analisis kebutuhan pengguna sistem jaringan komputer kompleks adalah kegiatan penelaahan dan penguraian kebutuhan pengguna sistem jaringan komputer kompleks serta studi kelayakan untuk mendapatkan rekomendasi kebutuhan penggunaan jaringan komputer kompleks.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logical pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Menentukan tujuan dan batasan dari analisis kebutuhan sistem jaringan komputer kompleks yang dilakukan;\n2. Melakukan identifikasi kebutuhan pengguna yang mencakup perkiraan jumlah pengguna, jumlah dan jenis perangkat jaringan (hardware/software) serta perangkat pendukung lainnya;\n3. Menelaah kebutuhan pengguna; dan\n4. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer kompleks",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Kegiatan ini dapat diajukan maksimal 12 (dua belas) kali pertahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer kompleks yang mencakup namun tidak terbatas pada:\n1. Tujuan dan batasan analisis sistem sistem;\n2. Identifikasi kebutuhan pengguna (jumlah pengguna, perangkat jaringan, dan pengguna);\n3. Hasil telaah kebutuhan pengguna;\n4. Rekomendasi; dan\n5. Lembar persetujuan.",
+          "contoh" : "Bayu Satria, M.Si. seorang Pranata Komputer Ahli Muda melakukan analisis kebutuhan pengguna untuk pembangunan sistem jaringan wireless terpusat, maka Bayu Satria memperoleh angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "II.A.2",
+          "judul" : "Melakukan Analisis Kondisi Sistem Jaringan Komputer Kompleks Yang Sedang Berjalan",
+          "uraian" : "Melakukan analisis kondisi sistem jaringan komputer kompleks yang sedang berjalan adalah kegiatan analisis terhadap sistem jaringan komputer kompleks yang sedang berjalan.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan dari kegiatan yang dilakukan meliputi namun tidak terbatas pada:\n1. Menentukan tujuan dan batasan dari analisis kondisi sistem jaringan komputer kompleks yang sedang berjalan;\n2. Identifikasi sistem berjalan terkait : arsitektur/topologi, utilitas/pemanfaatan, performa/kinerja sistem, permasalahan yang dihadapi;\n3. Menelaah sistem berjalan; dan\n4. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen hasil analisis kondisi sistem jaringan komputer kompleks yang sedang berjalan",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Kegiatan ini dapat diajukan maksimal 12 (dua belas) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer kompleks mencakup namun tidak terbatas pada:\n1. Tujuan dan batasan analisis sistem berjalan;\n2. Identifikasi sistem berjalan, berupa:\na. Arsitektur/topologi;\nb. Utilitas/pemanfaatan;\nc. Performa/kinerja sistem; dan\nd. Permasalahan  yang dihadapi;\n3. Hasil telaah sistem berjalan;\n4. Rekomendasi; dan\n5. Lembar persetujuan.",
+          "contoh" : "Mentari Pratiwi, M.T. seorang Pranata Komputer Ahli Muda melakukan analisis kebutuhan sistem berjalan pada sistem wireless terpusat, maka Mentari Pratiwi memperoleh angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "II.A.3",
+          "judul" : "Membuat Rancangan Logis (Logical Design) Sistem Jaringan",
+          "uraian" : "Membuat Rancangan Logis sistem jaringan komputer yaitu membuat rancangan yang menggambarkan hubungan logika antar perangkat/ komponen  dalam sebuah jaringan komputer.\nSistem Jaringan Komputer merupakan beberapa komputer atau perangkat lain yang terhubung dalam satu jaringan dengan pusat jaringan (sistem client-server) menggunakan perangkat jaringan seperti switch, hub, wireless atau perangkat jaringan lainnya.\nTahapan membuat rancangan logis sistem jaringan komputer meliputi namun tidak terbatas pada:\n1. Menentukan tujuan dan batasan dari pembuatan rancangan logis sistem jaringan komputer;\n2. Membuat topologi rancangan logis sistem jaringan komputer; dan\n3. Menjelaskan fungsi logis masing komponen dalam sistem rancangan jaringan komputer.",
+          "satuan_hasil" : "Dokumen rancangan logis sistem jaringan komputer",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 12 kali dalam 1 (satu) tahun",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen Laporan Rancangan logis yang mencakup namun tidak terbatas pada:\n1. Tujuan dan batasan;\n2. Rancangan logis topologi, jenis perangkat jaringan dan spesifikasinya, fungsi masing masing perangkat serta penjelasan lain yang diperlukan; dan\n3. Lembar persetujuan.",
+          "contoh" : "Indri Kartika, S.Kom. seorang Pranata Komputer Ahli Muda membuat rancangan logis jaringan komputer BPS Provinsi Jawa Tengah, maka Indri Kartika memperoleh angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "II.A.4",
+          "judul" : "Membuat Rancangan Fisik (Physical Design) Sistem Jaringan Komputer",
+          "uraian" : "Membuat rancangan fisik sistem jaringan komputer yaitu membuat rancangan yang menggambarkan hubungan fisik antar perangkat/komponen dalam sebuah jaringan komputer.\nSistem Jaringan Komputer merupakan beberapa komputer atau perangkat lain yang terhubung dalam satu jaringan dengan pusat jaringan (sistem client-server) menggunakan perangkat jaringan seperti switch, hub, wireless atau perangkat jaringan lainnya.\nTahapan membuat rancangan fisik sistem jaringan komputer meliputi namun tidak terbatas pada:\n1. Menentukan tujuan dan batasan dari pembuatan rancangan fisik sistem jaringan komputer;\n2. Membuat Topologi rancangan fisik sistem jaringan komputer; dan\n3. Menjelaskan fungsi dan spesifikasi masing-masing perangkat fisik dalam sistem.",
+          "satuan_hasil" : "Dokumen rancangan fisik sistem jaringan komputer",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 12 (dua belas) kali per tahun",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen rancangan fisik sistem jaringan komputer yang meliputi namun tidak terbatas pada:\n1. Tujuan dan batasan;\n2. Lokasi rancangan yang akan diterapkan;\n3. Rancangan fisik topologi danjenis perangkat jaringan dan spesifikasinya, fungsi masing masing perangkat serta penjelasan lain yang diperlukan; dan\n4. Lembar persetujuan.",
+          "contoh" : "Agnes Mefa, S.ST., M.T. seorang Pranata Komputer Ahli Muda membuat rancangan fisik jaringan komputer BPS Provinsi Jawa Tengah, maka Agnes Mefa memperoleh angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "II.A.5",
+          "judul" : "Menerapkan Rancangan Fisik Sistem Jaringan Komputer Kompleks",
+          "uraian" : "Menerapkan rancangan fisik sistem jaringan komputer kompleks yaitu kegiatan implementasi rancangan fisik yang meliputi instalasi dan konfigurasi.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan kegiatan ini meliputi namun tidak terbatas pada:\n1. Membuat jadwal implementasi;\n2. Instalasi perangkat;\n3. Konfigurasi perangkat; dan\n4. Mendokumentasikan kegiatan.",
+          "satuan_hasil" : "Dokumen implementasi rancangan fisik sistem jaringan komputer kompleks",
+          "angka_kredit" : 1.265,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 12 kali dalam 1 tahun",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen implementasi rancangan fisik sistem jaringan komputer kompleks yang meliputi namun tidak terbatas pada:\n1. Lokasi implementasi;\n2. Waktu pelaksanaan;\n3. Identitas perangkat;\n4. Rancangan fisik (topologi);\n5. Instalasi dan foto pemasangan perangkat;\n6. Konfigurasi pada setiap perangkat beserta screenshot; dan\n7. Lembar persetujuan dokumen.",
+          "contoh" : "Sugiarti, S.ST. seorang Pranata Komputer Ahli Pertama melakukan instalasi dan konfigurasi access switch di 7 lantai dan distribution switch termasuk pengkabelannya dalam kegiatan peremajaan perangkat jaringan, maka Sugiarti mendapatkan angka kredit sebesar 1,265."
+        },
+        {
+          "kode" : "II.A.6",
+          "judul" : "Menerapkan Rancangan Logis Sistem Pengamanan Jaringan Komputer Kompleks",
+          "uraian" : "Menerapkan rancangan logis sistem pengamanan jaringan komputer kompleks adalah kegiatan implementasi sistem keamanan pada sistem jaringan komputer kompleks.\nRancangan Logis sistem pengamanan jaringan komputer yaitu rancangan yang berisi rencana pengamanan sistem jaringan komputer kompleks termasuk diantaranya konfigurasi keamanan yang perlu diterapkan.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nCakupan kegiatan ini meliputi implementasi/ konfigurasi keamanan pada perangkat jaringan (hardware/software).",
+          "satuan_hasil" : "Dokumen implementasi rancangan logis sistem pengamanan jaringan komputer kompleks",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 4 kali dalam 1 tahun",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen implementasi rancangan logis sistem pengamanan jaringan komputer kompleks meliputi namun tidak terbatas pada:\n1. Jadwal dan lokasi implementasi;\n2. Identitas perangkat;\n3. Rancangan logis pengamanan jaringan;\n4. Konfigurasi pada setiap perangkat beserta screenshot; dan\n5. Lembar persetujuan dokumen.",
+          "contoh" : "Mutiara Indah, S.ST. seorang Pranata Komputer Ahli Pertama menerapkan rancangan logis sistem pengamananan pada server farm di data centre, maka Mutiara Indah mendapatkan angka kredit 0,330."
+        },
+        {
+          "kode" : "II.A.7",
+          "judul" : "Menyusun Prosedur Pemanfaatan Sistem Jaringan",
+          "uraian" : "Menyusun prosedur pemanfaatan sistem jaringan komputer adalah pembuatan tata cara pemanfaatan sistem jaringan komputer. Tata cara tersebut mencakup administrasi sistem jaringan, pengelolaan pengguna sistem jaringan, pemanfaatan sistem jaringan, dan pemeliharaan maupun penanganan gangguan dalam sistem jaringan.\nPerbaikan/revisi dari prosedur pemanfaatan sistem jaringan yang sudah ada dapat tercakup dalam kegiatan ini.\nProsedur pemanfaatan sistem jaringan yang dibuat dapat berupa:\n1. Administrasi sistem jaringan;\n2. Pengelolaan pengguna dalam sistem jaringan;\n3. Pemanfaatan sistem jaringan;\n4. Pemeliharaan sistem jaringan;\n5. Monitoring sistem jaringan; dan\n6. Perbaikan/penanganan gangguan dalam sistem jaringan baik sistem jaringan sederhana ataupun kompleks.",
+          "satuan_hasil" : "Dokumen prosedur pemanfaatan sistem jaringan",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "1. Prosedur yang dapat dinilai merupakan salah satu area pada cakupan.\n2. Prosedur pemanfaatan dapat dibuat jika sistem jaringan telah beroperasi.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen prosedur pemanfaatan sistem jaringan meliputi tetapi tidak terbatas pada:\n1. Nama prosedur;\n2. Deskripsi prosedur;\n3. Tanggal pembuatan/revisi dan tanggal berlaku;\n4. Prasyarat pelaksana;\n5. Perangkat/kelengkapan yang diperlukan;\n6. Prosedur, pelaksana, input, waktu, output; dan\n7. Pengesahan/persetujuan.\nBukti sistem jaringan telah beroperasi (misalnya: arsitektur jaringan dengan menunjukkan bagian dari arsitektur yang dibuat dokumentasi pemanfaatannya).",
+          "contoh" : "Sulthan Alfatih, S.Tr.Stat. seorang Pranata Komputer Ahli Pertama membuat prosedur penanganan gangguan pada jaringan wireless, maka Sulthan Alfatih mendapatkan angka kredit sebesar 0,055."
+        },
+        {
+          "kode" : "II.A.8",
+          "judul" : "Menyusun Rancangan Uji Coba Sistem Jaringan Kompleks",
+          "uraian" : "Membuat rancangan uji coba sistem jaringan kompleks yaitu membuat rencana untuk uji coba sistem jaringan kompleks yang telah dibangun. Rancangan berisi rencana tahapan maupun skenario uji coba yang akan dilakukan untuk memastikan bahwa sistem jaringan kompleks sudah berfungsi sesuai dengan spesifikasinya.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logical pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nRancangan uji coba mencakup rancangan untuk melakukan uji fungsionalitas, uji kinerja (beban, performa), uji keamanan, dan uji pemulihan jika terjadi kerusakan.",
+          "satuan_hasil" : "Dokumen rancangan uji coba sistem jaringan kompleks",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Rancangan uji coba dibuat bila terdapat rancangan/implementasi baru dari sistem jaringan kompleks.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "1. Bukti adanya rancangan/implementasi baru dari sistem jaringan; dan\n2. Dokumen rancangan uji coba sistem jaringan kompleks meliputi namun tidak terbatas pada:\na. Deskripsi uji coba;\nb. Prasyarat pelaksana uji coba;\nc. Perlengkapan yang diperlukan;\nd. Tahapan dan pelaksana uji coba;\ne. Input, Proses dan Output yang diharapkan; dan\nf. Lembar Persetujuan.",
+          "contoh" : "Eka Rachma, S.ST., M.T. seorang Pranata Komputer Ahli Muda membuat rancangan uji coba sistem keamanan jaringan terpusat pada perangkat yang terdapat di kantor pusat dan daerah, maka Eka Rachma memperoleh angka kredit sebesar 0,110."
+        },
+        {
+          "kode" : "II.A.9",
+          "judul" : "Melakukan Uji Coba Sistem Jaringan Komputer Kompleks",
+          "uraian" : "Melakukan uji coba sistem jaringan komputer kompleks yaitu melakukan kegiatan uji coba sesuai dengan tahapan yang dibuat pada rancangan uji coba.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya Lan tetidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nMelakukan uji coba sistem jaringan kompleks mencakup pelaksanaan semua tahapan uji coba yang terdapat dalam rancangan uji coba mencakup uji fungsionalitas, uji kinerja (beban, performa), uji keamanan, dan uji pemulihan jika terjadi kerusakan.",
+          "satuan_hasil" : "Laporan uji coba sistem jaringan komputer kompleks",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "1. Uji coba dilakukan berdasarkan rancangan uji coba.\n2. Prakom yang melakukan uji coba harus berbeda dengan prakom yang mengimplementasikan sistem jaringan kompleks.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "1. Rancangan Uji Coba\n2. Laporan uji coba sistem jaringan kompleks meliputi namun tidak terbatas pada:\na. Waktu pelaksanaan;\nb. Kepatuhan terhadap prasyarat pelaksana/prasyarat yang dipenuhi;\nc. Kepatuhan terhadap perlengkapan yang diperlukan/ perlengkapan yang digunakan;\nd. Output uji coba dan deskripsinya;\ne. Kesimpulan hasil uji coba; dan\nf. Lembar Persetujuan.",
+          "contoh" : "Candra Afrian, S.ST. seorang Pranata Komputer Ahli Pertama melakukan uji coba sistem keamanan jaringan terpusat pada perangkat yang terdapat di kantor pusat dan daerah, maka Candra Afrian memperoleh angka kredit sebesar 0,110."
+        },
+        {
+          "kode" : "II.A.10",
+          "judul" : "Melakukan Evaluasi Uji Coba Sistem Jaringan Komputer Sederhana",
+          "uraian" : "Melakukan evaluasi uji coba sistem jaringan komputer sederhana yaitu melakukan evaluasi terhadap hasil uji coba sistem jaringan komputer sederhana yang telah dilakukan sebelumnya.\nSistem jaringan komputer sederhana merupakan beberapa komputer atau perangkat TI lain yang terhubung dalam satu jaringan menggunakan perangkat jaringan seperti switch, hub, wireless atau perangkat jaringan lainnya dalam lingkup yang kecil.\nTahapan melakukan evaluasi uji coba sistem jaringan komputer sederhana meliputi namun tidak terbatas pada:\n1. Memberikan evaluasi/penilaian terhadap hasil uji coba; dan\n2. Memberikan rekomendasi terhadap hasil uji coba.",
+          "satuan_hasil" : "Dokumen hasil evaluasi uji coba sistem jaringan komputer sederhana",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "Kegiatan evaluasi uji coba dapat dilakukan setelah kegiatan uji coba dilakukan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen hasil evaluasi uji coba sistem jaringan komputer sederhana yang mencakup namun tidak terbatas pada:\n1. Hasil Uji Coba; dan\n2. Dokumen evaluasi uji coba sistem jaringan komputer meliputi:\na. Penilaian/evaluasi hasil uji coba;\nb. Rekomendasi terhadap hasil uji coba; dan\nc. Lembar Persetujuan.",
+          "contoh" : "Gilang Wibisono, S.Tr.Stat. seorang Pranata Komputer Ahli Pertama melakukan evaluasi hasil uji coba sistem jaringan komputer wired dan wireless di BPS Kota Medan, maka Gilang Wibisono memperoleh angka kredit sebesar 0,055."
+        },
+        {
+          "kode" : "II.A.11",
+          "judul" : "Melakukan Evaluasi Uji Coba Sistem Jaringan Komputer Kompleks",
+          "uraian" : "Melakukan evaluasi uji coba sistem jaringan komputer kompleks yaitu melakukan evaluasi terhadap hasil uji coba sistem jaringan komputer kompleks yang telah dilakukan sebelumnya.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN  (lintas  gedung/daerah),  menggunakan  pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan dari kegiatan melakukan evaluasi uji coba sistem jaringan komputer kompleks mencakup namun tidak terbatas pada:\n1. Identifikasi sistem jaringan kompleks dan uji coba yang dilakukan;\n2. Memberikan evaluasi/penilaian terhadap hasil uji coba; dan\n3. Memberikan rekomendasi terhadap hasil uji coba.",
+          "satuan_hasil" : "Dokumen hasil evaluasi uji coba sistem jaringan komputer kompleks",
+          "angka_kredit" : 0.160,
+          "batasan_penilaian" : "1. Prakom yang melakukan evaluasi uji coba harus berbeda dengan prakom yang mengimplementasikan sistem jaringan komputer kompleks.\n2. Kegiatan evaluasi uji coba dapat dilakukan setelah kegiatan uji coba dilakukan.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil evaluasi uji coba sistem jaringan komputer kompleks yang mencakup namun tidak terbatas pada :\n1. Hasil Uji Coba;\n2. Dokumen evaluasi uji coba sistem jaringan komputer kompleks meliputi:\na. Penilaian/evaluasi hasil uji coba;\nb. Rekomendasi terhadap hasil uji coba; dan\nc. Lembar Persetujuan.",
+          "contoh" : "Andre Prasetyo, M.Si. seorang Pranata Komputer Ahli Muda melakukan evaluasi hasil uji coba sistem jaringan terpusat yang menghubungkan instansi pusat dan daerah, maka prakom tersebut memperoleh angka kredit sebesar 0,160."
+        },
+        {
+          "kode" : "II.A.12",
+          "judul" : "Menyusun Dokumentasi Penggunaan Sistem Jaringan Komputer",
+          "uraian" : "Menyusun dokumentasi penggunaan sistem jaringan komputer yaitu kegiatan pembuatan dokumentasi segala hal yang berkaitan dengan pemanfaatan atau pengelolaan sistem jaringan komputer.\nCakupan kegiatan ini yaitu pembuatan dokumentasi pemanfaatan dapat berupa:\n1. Pemanfaatan sistem jaringan; dan\n2. Pengelolaan sistem jaringan.",
+          "satuan_hasil" : "Dokumen penggunaan sistem jaringan komputer",
+          "angka_kredit" : 0.080 ,
+          "batasan_penilaian" : "1. Dokumentasi penggunaan dapat dibuat jika sistem jaringan operasional.\n2. Dokumen yang dapat dinilai merupakan dokumen yang terkait dengan salah satu area pada cakupan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "1. Dokumen penggunaan sistem jaringan komputer, yang mencakup namun tidak terbatas pada:\na. Mekanisme pengguna dalam memanfaatkan sistem jaringan atau mekanisme pengelola jaringan untuk mengelola sistem jaringan; dan\nb. Lembar persetujuan.\n2. Bukti sistem jaringan telah beroperasi (misalnya: arsitektur jaringan dengan menunjukkan bagian dari arsitektur yang dibuat dokumentasi pemanfaatannya).",
+          "contoh" : "Rina Setyowati, S.ST. seorang Pranata Komputer Ahli Pertama membuat panduan penggunaan jaringan VPN Mobile di instansinya, maka Rina Setyowati mendapatkan angka kredit sebesar 0,080."
+        },
+        {
+          "kode" : "II.A.13",
+          "judul" : "Melakukan Analisis Permasalahan Dari Hasil Pemantauan (Monitoring) Jaringan",
+          "uraian" : "Melakukan analisis permasalahan dari hasil pemantauan (monitoring) jaringan yaitu melakukan evaluasi dan penelaahan terhadap hasil pemantauan jaringan jika terdapat anomali/permasalahan.\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Identifikasi permasalahan;\n2. Melakukan evaluasi/analisis permasalahan hasil pemantauan jaringan; dan\n3. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen hasil analisis permasalahan dari hasil pemantauan jaringan",
+          "angka_kredit" : 0.080,
+          "batasan_penilaian" : "Kegiatan ini dapat dilakukan jika terdapat anomali/permasalahan pada hasil pemantauan jaringan.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "1. Dokumen hasil analisis permasalahan dari hasil pemantauan jaringan yang mencakup namun tidak terbatas pada:\na. Hasil evaluasi/analisis permasalahan hasil pemantauan jaringan;\nb. Rekomendasi; dan\nc. Lembar persetujuan.\n2. Hasil pemantauan sebelumnya.",
+          "contoh" : "Juanda Putra, M.Si. seorang Pranata Komputer Ahli Muda melakukan evaluasi dan analisis terhadap hasil pemantauan traffic jaringan berupa anomali traffic jaringan di salah satu gedung dan memberikan rekomendasi, maka Juanda Putra memperoleh angka kredit sebesar 0,080."
+        },
+        {
+          "kode" : "II.A.14",
+          "judul" : "Melakukan Optimalisasi Sistem Jaringan",
+          "uraian" : "Melakukan optimalisasi sistem jaringan adalah kegiatan untuk meningkatkan kinerja atau fungsionalitas dari sistem jaringan yang sudah ada atas permintaan pengguna atau untuk mengatasi permasalahan yang terjadi.\nCakupan kegiatan ini yaitu:\n1. Peningkatan kinerja; atau\n2. Peningkatan fungsionalitas dari sistem jaringan.",
+          "satuan_hasil" : "Dokumen optimalisasi sistem jaringan",
+          "angka_kredit" : 0.060,
+          "batasan_penilaian" : "1. Kegiatan ini dapat diajukan jika terdapat permintaan dari pengguna atau untuk mengatasi permasalahan yang terjadi pada sistem jaringan.\n2. Pemberian angka kredit berdasarkan satuan kegiatan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "1. Dokumen optimalisasi sistem jaringan yang mencakup namun tidak terbatas pada :\na. Latar belakang dan Tujuan;\nb. Lokasi;\nc. Metode dan tahapan optimalisasi sistem jaringan;\nd. Perbandingan kondisi sebelum dan setelah dilakukan optimalisasi sistem jaringan; dan\ne. Lembar persetujuan.\n2. Bukti permintaan pengguna atau analisis permasalahan sistem jaringan.",
+          "contoh" : "Umar Dedi, S.ST. seorang Pranata Komputer Ahli Pertama melakukan optimalisasi sistem jaringan di kantornya pada perangkat Mikrotik router dengan mengaktifkan DHCP server, manajemen bandwidth, hotspot, firewall sehingga sistem jaringan di kantornya menjadi lebih optimal dan maksimal dalam penggunaan dan pengawasannya, maka Umar Dedi mendapatkan angka kredit sebesar 0,060."
+        },
+        {
+          "kode" : "II.A.15",
+          "judul" : "Melakukan Deteksi dan atau Perbaikan Terhadap Permasalahan yang Terjadi Pada Sistem Jaringan Kompleks",
+          "uraian" : "Melakukan deteksi sistem jaringan kompleks adalah kegiatan untuk mengetahui penyebab dari munculnya permasalahan, pesan error, atau tidak berfungsinya suatu sistem jaringan kompleks.\nMelakukan perbaikan terhadap permasalahan pada sistem jaringan kompleks adalah kegiatan yang bertujuan untuk membuat sistem jaringan kompleks berfungsi dengan baik dan sebagaimana mestinya.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN  (lintas  gedung/daerah),  menggunakan  pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan kegiatan deteksi meliputi:\n1. Melakukan identifikasi permasalahan yang muncul seperti sebab dan akibat/implikasi dari permasalahan; dan\n2. Membuat pencatatan analisa permasalahan yang berisi daftar kemungkinan penyebab dari permasalahan yang muncul.\nTahapan kegiatan perbaikan meliputi:\n1. Melakukan identifikasi hasil deteksi permasalahan;\n2. Menentukan solusi/alternatif solusi berdasarkan hasil deteksi;\n3. Melakukan perbaikan; dan\n4. Mendokumentasikan proses dan langkah-langkah perbaikan.",
+          "satuan_hasil" : "Dokumen hasil  deteksi  dan atau perbaikan terhadap permasalahan yang terjadi pada sistem jaringan kompleks",
+          "angka_kredit" : 0.083,
+          "batasan_penilaian" : "1. Perbaikan dan deteksi dilakukan hanya pada perangkat jaringan yang terkait dengan sistem jaringan kompleks; dan\n2. Maksimal kegiatan yang dapat dinilai adalah 4 kali dalam satu bulan untuk setiap kegiatan deteksi atau perbaikan sistem jaringan kompleks sesuai cakupan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen laporan deteksi dan atau perbaikan permasalahan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Waktu pelaksanaan kegiatan;\n \n\n\n\n2. Nama dan jenis perangkat jaringan yang dideteksi/perbaiki;\n3. Lokasi jaringan kompleks;\n4. Bukti permasalahan pada sistem jaringan kompleks;\n5. Dibedakan menjadi:\na. Untuk kegiatan deteksi mencantumkan:\ni. Hasil identifikasi permasalahan; dan\nii. Analisa permasalahan.\nb. Untuk kegiatan perbaikan mencantumkan:\n(1) Hasil identifikasi penyebab permasalahan;\n(2) Solusi/alternatif solusi;\n(3) Lama perbaikan; dan\n(4) Langkah tindakan perbaikan permasalahan.\n6. Dokumentasi kegiatan (foto/screenshot); dan\n7. Lembar persetujuan.",
+          "contoh" : "Agus Fitran, S.Tr.Stat. seorang Pranata Komputer Ahli Pertama mendapat laporan dari Helpdesk bahwa ada developer yang tidak dapat mengakses service yang disediakan oleh server elearning. Agus Fitran melakukan langkah-langkah deteksi penyebab user tersebut tidak dapat mengakses service disertai dengan error yang dilaporkan dan langkah-langkah perbaikan. Sehingga Agus Fitran mendapatkan angka kredit sebesar 2 x 0,083= 0,166."
+        },
+        {
+          "kode" : "II.A.16",
+          "judul" : "Menyusun Rumusan Kebijakan Keamanan Jaringan",
+          "uraian" : "Menyusun rumusan kebijakan keamanan jaringan adalah aktivitas penyusunan rumusan tata kelola keamanan infrastruktur jaringan dengan berdasarkan kepada kebijakan TI institusi, etika penggunaan jaringan dan kebijakan pengaksesan infrastruktur jaringan.\nKebijakan keamanan jaringan dirumuskan menyeluruh untuk satu organisasi, mencakup seluruh aspek keamanan jaringan, yang meliputi confidentiality, integrity, availability, authentication, dan nonrepudiation.",
+          "satuan_hasil" : "Dokumen rumusan kebijakan keamanan jaringan",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Jumlah maksimum kegiatan pembuatan kebijakan keamanan data yang dapat dinilai adalah 1 (satu) kali per semester.",
+          "pelaksana" : "Pranata Komputer Ahli Madya",
+          "bukti_fisik" : "Dokumen rumusan kebijakan keamanan jaringan yang telah disetujui pimpinan organisasi yang mencakup namun tidak terbatas pada:\n1. Tujuan dan sasaran standar keamanan jaringan;\n2. Tanggal/versi dokumen;\n3. Ruang lingkup standar keamanan jaringan;\n4. Dasar rujukan/referensi;\n5. Butir-butir tata kelola keamanan jaringan; dan\n6. Halaman pengesahan.",
+          "contoh" : "Dr. Ahsan Fahmi seorang Pranata Komputer Ahli Madya menyusun rumusan kebijakan keamanan jaringan pada suatu instansi, maka Ahsan Fahmi mendapatkan angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "II.A.17",
+          "judul" : "Melakukan Reviu Kebijakan Keamanan Jaringan",
+          "uraian" : "Melakukan reviu kebijakan keamanan jaringan adalah melakukan kajian atau reviu secara sistematis dalam menganalisis dan mengevaluasi terkait implementasi kebijakan keamanan jaringan yang berlaku di lingkungan institusi saat ini.\nKegiatan ini bertujuan untuk memastikan bahwa kebijakan keamanan yang disusun selaras dengan kebijakan institusi, etika pengguna dan kebijakan pengaksesan infrastruktur jaringan.\nTahapan kegiatan reviu kebijakan keamanan jaringan meliputi namun tidak terbatas pada:\n1. Identifikasi kebijakan keamanan jaringan;\n2. Melakukan analisa terkait kekurangan, potensi masalah dan isu yang mungkin terjadi;\n3. Menentukan kesenjangan (gap) keamanan jaringan yang digunakan;\n4. Melakukan kajian terhadap teknologi kemanan jaringan terkini atau best practice yang dapat mendukung dan meningkatkan kinerja keamanan jaringan organisasi; dan\n5. Memberikan rekomendasi terkait kebijakan keamanan jaringan.",
+          "satuan_hasil" : "Dokumen hasil reviu kebijakan keamanan jaringan",
+          "angka_kredit" : 0.165,
+          "batasan_penilaian" : "1. Kegiatan ini dapat dilakukan untuk setiap kebijakan kemanan jaringan yang berlaku pada organisasi saat sekarang; dan\n2. Jumlah maksimum kegiatan reviu kebijakan kemanan jaringan yang digunakan organisasi saat ini yang dapat dinilai adalah satu kali dalam satu semester.",
+          "pelaksana" : "Pranata Komputer Ahli Madya",
+          "bukti_fisik" : "Dokumen hasil reviu kebijakan keamanan jaringan yang digunakan organisasi saat ini yang mencakup namun tidak terbatas pada:\n1. Hasil Identifikasi kebijakan keamanan jaringan;\n2. Hasil analisa terkait kekurangan, potensi masalah dan isu yang mungkin terjadi;\n3. Kesenjangan kemanan jaringan yang digunakan;\n4. Kajian kebijakan kemanan jaringan yang selaras dengan kebijakan organisasi; dan\n5. Rekomendasi.",
+          "contoh" : "Dr. Akrim seorang Pranata Komputer Ahli Madya melakukan reviu kebijakan keamanan jaringan yang sudah ada, maka Akrim mendapatkan angka kredit sebesar 0,165."
+        },
+        {
+          "kode" : "II.A.18",
+          "judul" : "Menyusun Prosedur Keamanan Jaringan",
+          "uraian" : "Menyusun prosedur keamanan jaringan merupakan kegiatan yang dilakukan untuk membuat prosedur tetap (SOP) kegiatan yang terkait dengan implementasi keamanan jaringan pada suatu satuan kerja, di mana prosedur ini yang akan menjadi acuan dalam setiap kegiatan yang terkait dengan keamanan jaringan.\nProsedur yang disusun harus mengacu kepada kebijakan keamanan jaringan yang berlaku di organisasi.\nTahapan penyusunan prosedur keamanan adalah sebagai berikut:\n1. Menentukan ruang lingkup/cakupan prosedur keamanan;\n2. Mengidentifikasi peran yang terlibat;\n3. Mengkaji dokumen kebijakan keamanan institusi;\n4. Mengidentifikasi resiko atau permasalahan yang mungkin timbul; dan\n5. Menyusun proses, alur dan langkah-langkah terkait keamanan jaringan.\nPenyusunan prosedur keamanan jaringan ini tidak hanya meliputi prosedur keamanan jaringan secara logik, namun juga keamanan jaringan secara fisik, yang berlaku di organisasi.",
+          "satuan_hasil" : "Dokumen Prosedur keamanan jaringan",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dilaksanakan adalah 3 kali tiap semester",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen prosedur keamanan jaringan yang mencakup namun tidak terbatas pada:\n1. Tujuan dan sasaran prosedur keamanan jaringan;\n2. Tanggal/versi dokumen;\n3. Ruang lingkup prosedur keamanan jaringan;\n4. Tanggung jawab dari setiap stakeholder;\n5. Kemungkinan resiko atau permasalahan yang dapat terjadi;\n6. Butir-butir prosedur keamanan jaringan;\n7. Dasar rujukan/referensi; dan\n8. Halaman pengesahan.",
+          "contoh" : "Moh Nasir, M.T. Seorang Pranata Komputer Ahli Muda membuat prosedur keamanan jaringan, maka Moh. Nasir mendapatkan angka kredit sebesar 0,110."
+        },
+        {
+          "kode" : "II.A.19",
+          "judul" : "Menyusun Petunjuk Teknis Sistem Jaringan Komputer Dan Keamanan Jaringan",
+          "uraian" : "Penyusunan petunjuk teknis sistem jaringan komputer dan keamanan jaringan merupakan kegiatan pengusunan pedoman teknis penggunaan infrastuktur jaringan komputer dan keamanan jaringan pada organisasi, dengan berpedoman kepada kebijakan yang berlaku, agar kegiatan terkait penggunaan sistem jaringan dan keamanan jaringan tersebut berjalan dengan baik.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Membuat latar belakang dan tujuan\n2. Membuat petunjuk teknis/pedoman dalam penggunaan/pengelolaan sistem jaringan atau sistem keamanan jaringan",
+          "satuan_hasil" : "Buku petunjuk teknis sistem jaringan komputer dan keamanan jaringan",
+          "angka_kredit" : 0.440,
+          "batasan_penilaian" : "1. Kegiatan ini dapat dilakukan untuk setiap kebijakan sistem jaringan komputer dan keamanan jaringan yang berlaku pada organisasi.\n2. Jumlah maksimum kegiatan penyusunan petunjuk teknis ini yang dapat dinilai adalah 1 (satu) kali per semester",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "1. Dokumen yang berisi petunjuk teknis sistem jaringan dan keamanan jaringan yang mencakup namun tidak terbatas pada:\na. Tujuan dan sasaran petunjuk teknis penggunaan sistem jaringan komputer dan keamanan jaringan;\nb. Tanggal/versi dokumen;\nc. Butir-butir petunjuk teknis mengenai penggunaan/pengelolaan sistem jaringan komputer dan keamanan jaringan;\nd. Dasar rujukan/referensi; dan\ne. Halaman pengesahan.\n2. Kebijakan yang menjadi dasar juknis",
+          "contoh" : "Firdaus Alba, M.T. seorang Pranata Komputer Ahli Muda membuat petunjuk teknis sistem jaringan komputer dan keamanan jaringan, maka prakom tersebut memperoleh angka kredit sebesar 0,440."
+        },
+        {
+          "kode" : "II.A.20",
+          "judul" : "Melakukan Pemeriksaan Kepatuhan Terhadap Kebijakan Keamanan Jaringan",
+          "uraian" : "Pemeriksaan kepatuhan terhadap kebijakan keamanan jaringan adalah pemeriksan kepatuhan yang dilakukan pada implementasi keamanan jaringan yang diterapkan, terhadap kebijakan dan prosedur keamanan jaringan yang telah ditetapkan dalam suatu organisasi. Pemeriksaan kepatuhan juga bertujuan untuk memberikan acuan dalam mencegah pelanggaran kebijakan keamanan jaringan yang mungkin dilakukan.\nTahapan pemeriksaan kepatuhan terhadap kebijakan keamanan jaringan meliputi namun tidak terbatas pada:\n1. Pemeriksaan atau audit pada implementasi yang dilakukan oleh organisasi terhadap terhadap kebijakan dan prosedur keamanan jaringan yang telah ditetapkan dalam suatu organisasi;\n2. Identifikasi resiko yang ditimbulkan akibat hal-hal yang tidak dilaksanakan; dan\n3. Memberikan rekomendasi yang diperlukan.",
+          "satuan_hasil" : "Dokumen hasil pemeriksaan kepatuhan terhadap kebijakan keamanan jaringan",
+          "angka_kredit" : 0.440,
+          "batasan_penilaian" : "Pemeriksaan kepatuhan terhadap kebijaka keamanan jaringan harus dilakukan secara bulanan, dan dapat dikompilasi menjadi catatan pemeriksaan kepatuhan selama satu semester",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil pemeriksaan kepatuhan terhadap kebijakan keamanan jaringan yang mencakup namun tidak terbatas pada:\n1. Tujuan dan sasaran pemeriksaan;\n2. Tanggal/versi dokumen;\n3. Hasil audit pemeriksaan kepatuhan;\n4. Rekomendasi yang harus ditindaklanjuti oleh pihak terkait;\n5. Halaman pengesahan; dan\n6. Dasar rujukan/referensi.",
+          "contoh" : "Sulthoni A, M.T. seorang Pranata Komputer Ahli Muda melakukan pemeriksaan kepatuhan sistem jaringan yang ada terhadap kebijakan keamanan jaringan maka Sulthoni mendapatkan angka kredit sebesar 0,440."
+        }
+      ]
+    },
+    {
+      "kode" : "I.B",
+      "judul" : "Manajemen Infrastruktur TI",
+      "butir" : [
+        {
+          "kode" : "II.B.1",
+          "judul" : "Menyusun Rencana Pengoperasian Infrastruktur TI",
+          "uraian" : "Menyusun rencana pengoperasian infrastruktur TI adalah menyusun dokumen perencanaan yang berisi rincian operasional teknis infrastruktur TI pada suatu satuan kerja atau institusi.\nRencana pengoperasian harus diambil dan dibreakdown dari rencana strategis (renstra) TI institusi agar selaras/align dengan misi dan sasaran strategis TI institusi.\nRencana pengoperasian disusun setidaknya harus melibatkan pegawai yang terlibat dalam implementasi operasional, agar rencana lebih realistis dan terukur.",
+          "satuan_hasil" : "Dokumen rencana pengoperasian infrastruktur TI",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Kegiatan ini dapat dilakukan maksimal 1 kali dalam 3 bulan.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen rencana pengoperasian infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Dasar rencana pengoperasian;\n2. Deskripsi kegiatan yang dilakukan;\n3. Jadwal implementasi kegiatan;\n4. Daftar perangkat infrastruktur TI;\n5. Standar/ kinerja kualitas yang harus dicapai;\n6. Kualifikasi dan nama operator; dan\n7. Lembar persetujuan.",
+          "contoh" : "Yeni Rima, M.T. seorang Pranata Komputer Ahli Muda membuat dokumen perencanaan pengoperasian infrastruktur TI di instansinya, maka Yeni Rima diberikan AK sebesar 0,110."
+        },
+        {
+          "kode" : "II.B.2",
+          "judul" : "Menyusun KAK",
+          "uraian" : "KAK (Kerangka Acuan Kerja) merupakan dokumen yang menjelaskan gambaran latar belakang, tujuan, keluaran kegiatan, ruang lingkup dan struktur sebuah proyek pengadaan barang dan jasa yang telah disepakati.\nKAK digunakan sebagai acuan dalam pengalokasian anggaran belanja serta sebagai alat kontrol dalam pelaksanaan pengadaan barang dan jasa agar kegiatan/proyek sesuai dengan apa yang diharapkan.\nTahapan dalam menyusun KAK adalah sebagai berikut :\n1. Mempersiapkan dokumen pendukung, seperti: renstra institusi, dasar hukum,dan dokumen lain yang diperlukan.\n2. Menyusun dokumen KAK yang berisi rincian item-item yang dibutuhkan dan spesifikasi.\nKegiatan penyusunan KAK ini mencakup seluruh kegiatan TI dan tidak terbatas pada:\n1. KAK pengadaan barang dan jasa TI;\n2. KAK kerjasama antar institusi terkait TI;\n3. KAK jasa konsultan TI; dan\n4. KAK pelatihan TI.",
+          "satuan_hasil" : "Dokumen Kerangka Acuan Kerja",
+          "angka_kredit" : 0.880,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah sebanyak 3 (tiga) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen KAK yang minimal bagian yang harus dilampirkan (screenshot):\na. Halaman judul;\nb. Maksud dan tujuan;\nc. Spesifikasi teknis; dan\nd. Halaman pengesahan oleh Pejabat yang berwenang.",
+          "contoh" : "Bagus Suhada, M.T. seorang Pranata Komputer Ahli Muda membuat KAK pengadaan piranti lunak antivirus. Jika bukti yang diajukan lengkap maka Bagus Suhada diberikan angka kredit sebesar 0,880."
+        },
+        {
+          "kode" : "II.B.3",
+          "judul" : "Melakukan Evaluasi Proposal Teknis Penyedia Barang/Jasa Infrastruktur TI",
+          "uraian" : "Melakukan evaluasi proposal teknis penyedia barang/jasa infrastruktur TI adalah melakukan pemeriksaan dan evaluasi terhadap konten proposal teknis penyedia barang/jasa infrastruktur TI.\nBarang/Jasa Infrastruktur TI mencakup:\n1. Perangkat keras (Perangkat keras end user, perangkat jaringan server, storage);\n2. Perangkat lunak (sistem operasi end user maupun server);\n3. Perangkat pendukung TI dan pendukung pusat data seperti mesin perekam absen, cctv, access door, cooling, elektrikal, dan sebagainya; dan\n4. Penyedia jasa konsultan TI dan/atau yang terkait dengan peningkatan kapabilitas SDM TI (pelatihan).\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Evaluasi kualifikasi pelaku usaha tersebut terhadap kebutuhan kualifikasi minimum pengadaan barang/jasa infrastruktur TI yang disyaratkan;\n2. Evaluasi kelengkapan dan kejelasan konten proposal yang disyaratkan;\n3. Evaluasi kesesuaian proposal dengan Kerangka Acuan Kerja milik unit kerja/ institusi;\n4. Evaluator menerima proposal teknis dan mendapatkan paparan dari calon penyedia; dan\n5. Evaluator memeriksa proposal dan mencatat temuan dari proposal teknis tersebut dan mem-probing/mendalami temuan tersebut ke calon penyedia.",
+          "satuan_hasil" : "Dokumen hasil evaluasi proposal teknis penyedia barang/jasa infrastruktur TI",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah sebanyak 6 kali dalam 1 tahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "1. Dokumen hasil evaluasi proposal teknis penyedia barang/jasa infrastruktur TI yang mencakup namun tidak terbatas pada:\na. Deskripsi pengadaan barang dan jasa TI\nb. Lembar penilaian\nc. Hasil klarifikasi penyedia (jika ada)\nd. Hasil Evaluasi\ne. Lembar Persetujuan\n2. Proposal Penyedia (minimal screenshot spesifikasi teknis)",
+          "contoh" : "Yulia Virantina, M.T. seorang Pranata Komputer Ahli Muda melakukan evaluasi proposal teknis pengadaan printer, di saat yang sama juga melakukan evaluasi proposal teknis pengadaan laptop. Maka Yulia Virantina diberikan angka kredit sebesar 2 x 0,110 = 0,220."
+        },
+        {
+          "kode" : "II.B.4",
+          "judul" : "Melakukan Pengkajian Terhadap Pemenuhan/Kesesuaian Infrastruktur TI Terhadap Regulasi",
+          "uraian" : "Melakukan pengkajian terhadap pemenuhan/kesesuaian infrastruktur TI terhadap regulasi adalah kegiatan mempelajari/mengkaji regulasi dari pemerintah, standar internasional atau best practice terhadap infrastruktur TI. Termasuk dalam kegiatan ini menelaah pemenuhan/kesesuaian regulasi.\nTahapan dari kegiatan ini yaitu:\n1. Melakukan pengkajian terhadap regulasi terkait dan/atau standar internasional dan/atau praktik terbaik yang terkait dengan infrastruktur TI;\n2. Melakukan pemetaan pemenuhan/kesesuaian infrastruktur TI terhadap regulasi;\n3. Mengidentifikasi gap;\n4. Melakukan analisis gap; dan\n5. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen kajian terhadap pemenuhan/kesesuaian infrastruktur TI terhadap regulasi",
+          "angka_kredit" : 0.825,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 1 (satu) kali per semester.",
+          "pelaksana" : "Pranata Komputer Ahli Madya",
+          "bukti_fisik" : "Dokumen kajian terhadap pemenuhan/ kesesuaian infrastruktur TI terhadap regulasi yang terdiri namun tidak terbatas pada:\n1. Latar belakang, tujuan, dan batasan;\n2. Deskripsi mengenai regulasi/standar/praktek terbaik yang digunakan;\n3. Hasil kajian terhadap regulasi/standar/praktek terbaik yang digunakan;\n4. Hasil pemetaan pemenuhan/kesesuaian infrastruktur TI terhadap regulasi/standar/praktek terbaik yang digunakan;\n5. Hasil identifikasi gap;\n6. Hasil analisis gap;\n7. Rekomendasi; dan\n8. Lembar persetujuan.",
+          "contoh" : "Dr. Novianto Budi Kurniawan seorang Pranata Komputer Ahli Madya melakukan kajian terhadap standar pengelolaan data centre dan melakukan assessment terhadap pengelolaan yang sedang berjalan berdasarkan hasil kajian tersebut, maka Novianto Budi Kurniawan mendapatkan angka kredit sebesar 0,825."
+        },
+        {
+          "kode" : "II.B.5",
+          "judul" : "Melakukan Pemeriksaan Kesesuaian Antara Infrastruktur TI dengan Spesifikasi Teknis",
+          "uraian" : "Melakukan pemeriksaan kesesuaian antara Infrastruktur TI dengan spesifikasi teknis adalah kegiatan melakukan pengecekan kondisi/fungsionalitas infrastruktur TI (dapat berupa barang/jasa) dengan spesifikasi teknis yang tertuang pada kontrak.\nSpesifikasi teknis adalah rincian/ketentuan pada barang/jasa yang disyaratkan saat pengadaan.\nAdapun tahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Membuat lembar kerja sesuai dengan daftar spesifikasi teknis;\n2. Memeriksa kesesuaian antara infrastruktur TI dengan spesifikasi teknis; dan\n3. Membuat laporan hasil pemeriksaan kesesuaian.",
+          "satuan_hasil" : "Dokumen hasil pemeriksaan kesesuaian antara Infrastruktur TI dengan spesifikasi teknis",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 3 (tiga) kali kegiatan pemeriksaan per tahun",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen hasil pemeriksaan kesesuaian antara Infrastruktur TI dengan spesifikasi teknis yang mencakup namun tidak terbatas pada:\n1. Daftar barang/jasa yang diperiksa;\n2. Daftar spesifikasi teknis dari pengadaan;\n3. Lembar kesesuaian antara barang/jasa dengan spesifikasi teknis;\n4. Hasil pemeriksaan berisi kesimpulan dan rekomendasi;\n5. Bukti pemeriksaan (foto dan screenshot); dan\n6. Lembar persetujuan.",
+          "contoh" : "Eka Mifta, S.ST. seorang Pranata Komputer Ahli Pertama melakukan pemeriksaan kesesuaian antara perangkat firewall dengan spesifikasi teknis pada kontrak pengadaan, maka Eka Mifta mendapatkan angka kredit sebesar 0,110. Jika bukti fisik yang diajukan tidak menyertakan bukti pemeriksaan (foo dan screenshot) serta lembar persetujuan dari atasan, maka AK yang didapat sebesar 4/6 x 0,110= 0,073."
+        },
+        {
+          "kode" : "II.B.6",
+          "judul" : "Melakukan Pengujian Infrastruktur TI",
+          "uraian" : "Melakukan pengujian infrastruktur TI adalah kegiatan untuk memeriksa serta melakukan pengujian pada perangkat sesuai dengan kebutuhan/ tujuan pengujian untuk memastikan perangkat sudah berfungsi dengan baik dan dapat digunakan untuk membantu tujuan organisasi.\nKegiatan ini merupakan bagian dari user acceptance test, dapat dilakukan mengikuti pengadaan atau jika terdapat kebutuhan organisasi untuk melakukan pengujian infrastruktur TI.\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Menentukan tujuan/kebutuhan pengujian;\n2. Menentukan  daftar  perangkat  dan daftar pengujian, untuk pengujian pengadaan dapat berdasarkan spesifikasi teknis;\n3. Menentukan tahapan pengujian;\n4. Melakukan pengujian; dan\n5. Membuat dokumentasi pengujian.",
+          "satuan_hasil" : "Laporan hasil pengujian infrastruktur TI",
+          "angka_kredit" : 0.090,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan;\n2. Maksimal kegiatan yang dapat dinilai adalah 3 (tiga) kali per tahun; dan\n3. Kegiatan yang dapat diajukan adalah kegiatan pengujian perangkat untuk yang pertama kali.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Laporan hasil pengujian infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Tujuan/kebutuhan pengujian;\n2. Daftar perangkat dan daftar pengujian, jika pengujian pengadaan dapat menggunakan daftar spesifikasi teknis;\n3. Tahapan pengujian;\n4. Lembar pengujian (form UAT);\n5. Hasil pengujian berisi kesimpulan dan rekomendasi;\n6. Bukti pengujian (foto atau screenshot); dan\n7. Lembar persetujuan.",
+          "contoh" : "Yusfil Khoir, S.ST. seorang Pranata Komputer Ahli Pertama melakukan pengujian pada terhadap 10 server dalam rangka user acceptance test setelah dilakukannya kegiatan pengadaan server, maka Yusfil Khoir mendapatkan nilai sebesar 0,090.\nJika bukti fisik yang diajukan tidak menyertakan hasil pengujian, bukti pengujian serta lembar persetujuan maka AK yang didapat sebesar 4/7 x 0,90 = 0,514."
+        },
+        {
+          "kode" : "II.B.7",
+          "judul" : "Menyusun Rencana Pemeliharaan Infrastruktur TI",
+          "uraian" : "Menyusun rencana pemeliharaan infrastruktur TI adalah membuat rencana pemeliharaan infrastruktur TI pada suatu institusi/ organisasi untuk rentang waktu 1 tahun.\nTahapan dalam kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi komponen-komponen infrastruktur TI suatu satuan kerja/ institusi yang akan dijadwalkan pemeliharaan.\n2. Menyusun rencana pemeliharaan, meliputi namun tidak terbatas pada:\na. Deskripsi kegiatan pemeliharaan yang dilakukan;\nb. Jadwal pemeliharaan;\nc. Tools/peralatan yang dibutuhkan dalam pemeliharaan; dan\nd. Personil yang dibutuhkan.\n3. Mendokumentasikan rencana pemeliharaan.",
+          "satuan_hasil" : "Dokumen rencana pemeliharaan infrastruktur TI",
+          "angka_kredit" : 0.374,
+          "batasan_penilaian" : "1. Kegiatan ini dapat dilakukan untuk setiap kegiatan perencanaan pemeliharaan terhadap komponen dalam infrastruktur TI dalam suatu satuan kerja/institusi.\n2. Jumlah maksimum kegiatan yang dapat diajukan yaitu 2 (dua) kali pertahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen rencana pemeliharaan infrastruktur TI mencakup namun tidak terbatas pada:\n1. Latar belakang pemeliharaan (secara umum).\n2. Daftar perangkat infrastruktur TI disertai informasi :\na. Jenis dan tahapan pemeliharaan untuk setiap kegiatan pemeliharaan; dan\nb. Jadwal pemeliharaan (waktu, kegiatan pemeliharaan, perangkat, lokasi, dan petugas).\n3. Lembar persetujuan.",
+          "contoh" : "Herman Saputra, M.T., seorang Pranata Komputer Ahli Muda membuat rencana pemeliharaan perangkat server, storage, dan perangkat jaringan di data centre maka Herman Saputra mendapat Angka Kredit sebesar 0,374.\nHerman Saputra, MT seorang Pranata Komputer Ahli Muda melakukan kegiatan perencanaan pemeliharaan laptop dalam suatu instansi, maka Herman Saputra tersebut mendapat Angka Kredit sebesar 0,374."
+        },
+        {
+          "kode" : "II.B.8",
+          "judul" : "Melakukan Pemeliharaan Infrastruktur TI",
+          "uraian" : "Melakukan pemeliharaan infrastruktur TI adalah melakukan pemeliharaan komponen dalam infrastruktur TI dalam suatu institusi berdasarkan rencana pemeliharaan infrastruktur TI yang telah disusun.\nTahapan kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi komponen infrastruktur TI;\n2. Melakukan pemeliharaan komponen infrastruktur TI; dan\n3. Mendokumentasikan proses pemeliharaan infrastruktur TI.",
+          "satuan_hasil" : "Laporan pemeliharaan infrastruktur TI",
+          "angka_kredit" : 0.060,
+          "batasan_penilaian" : "1. Jumlah maksimum kegiatan pemeliharaan infrastruktur TI yang dapat dinilai adalah 1 (satu) kali per minggu.\n2. Pemberian angka kredit berdasarkan satuan kegiatan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen melakukan kegiatan pemeliharaan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Waktu, lokasi dan nama petugas pemeliharaan;\n2. Perangkat yang dipelihara;\n3. Tahapan kegiatan pemeliharaan yang dilakukan;\n4. Hasil pemeliharaan perangkat TI;\n5. Kesimpulan dan rekomendasi pemeliharaan;\n6. Foto bukti pemeliharaan;\n7. Referensi ke rencana pemeliharaan yang telah disusun; dan\n8. Lembar persetujuan.",
+          "contoh" : "Eka Putri, S.ST. seorang Pranata Komputer Ahli Pertama melakukan upgrade pada tiga firewall pada satu waktu/momen kegiatan di suatu instansi, maka Eka Putri tersebut mendapat Angka Kredit sebesar 0,060.\nEka Putri, S.ST. seorang Pranata Komputer melakukan pemeliharaan pada dua buah scanner pada satu waktu/momen kegiatan maka Eka Putri mendapat Angka Kredit sebesar 0,060. Jika bukti fisik yang diajukan tidak menyertakan referensi dan lembar persetujuan maka nilai AK yang didapat sebesar 6/8 x 0,06 = 0,045."
+        },
+        {
+          "kode" : "II.B.9",
+          "judul" : "Melakukan Pemasangan Infrastruktur TI",
+          "uraian" : "Melakukan pemasangan infrastruktur TI adalah melakukan pemasangan atau instalasi komponen infrastruktur TI dalam suatu institusi di pusat data atau pusat pengolahan.\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi komponen infrastruktur TI;\n2. Pemasangan/instalasi;\n3. Konfigurasi komponen infrastruktur TI; dan\n4. Mendokumentasikan proses pemasangan/instalasi.",
+          "satuan_hasil" : "Laporan pemasangan infrastruktur TI",
+          "angka_kredit" : 0.165,
+          "batasan_penilaian" : "1. Jumlah maksimum kegiatan pemasangan infrastruktur TI yang dapat dinilai adalah 12 (dua belas) kali per tahun.\n2. Pemberian angka kredit berdasarkan satuan kegiatan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Laporan pemasangan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Latar belakang dan tujuan pemasangan;\n2. Waktu dan lokasi pemasangan;\n3. Hasil identifikasi kebutuhan pemasangan atau penggantian perangkat TI;\n4. Tahapan kegiatan pemasangan perangkat TI yang dilakukan sampai berfungsi dengan baik;\n5. Kesimpulan;\n6. Bukti instalasi dan konfigurasi berupa foto atau screenshot; dan\n7. Lembar persetujuan.",
+          "contoh" : "Dwi Puspita, S.ST seorang Pranata Komputer Ahli Pertama melakukan instalasi dan konfigurasi server dan storage di sebuah satuan kerja, maka Dwi Puspita tersebut mendapat Angka Kredit sebesar 0,165.\nDwi Puspita, S.ST seorang Pranata Komputer Ahli Pertama melakukan pemasangan instalasi 5 buah mesin handkey di sebuah satuan kerja, maka Dwi Puspita mendapat Angka Kredit sebesar 0,165."
+        },
+        {
+          "kode" : "II.B.10",
+          "judul" : "Melakukan Pengaturan Akses Keamanan Fisik TI",
+          "uraian" : "Melakukan pengaturan akses keamanan fisik infrastruktur TI merupakan kegiatan yang dilakukan untuk mengatur dan memastikan bahwa perangkat fisik dapat diakses dengan aturan tertentu yang menjamin keamanan dan keberlangsungan seluruh sistem serta perangkat, peripheral dan media yang ada. Hal ini harus selaras dengan kebijakan yang berlaku di organisasi.\nTermasuk dalam cakupan kegiatan ini adalah pengaturan akses untuk pihak ketiga yang perlu melakukan pengaksesan ke infrastruktur TI.\nTahapan kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi perangkat yang memerlukan pengaturan akses keamanan;\n2. Identifikasi personil yang memerlukan akses ke infrastuktur TI; dan\n3. Pengaturan pengaksesan seluruh infrastruktur TI secara fisik untuk menjamin keamanan dan keberlangsungan seluruh sistem beserta perangkat, peripheral dan media yang digunakan.",
+          "satuan_hasil" : "Dokumen aturan akses keamanan fisik TI",
+          "angka_kredit" : 0.015,
+          "batasan_penilaian" : "1. Pengaturan akses keamanan fisik infrastruktur TI dapat dilakukan maksimal sebanyak 1 kali dalam satu bulan.\n2. Pemberian angka kredit berdasarkan satuan kegiatan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen aturan akses keamanan fisik TI meliputi namun tidak terbatas pada :\n1. Tanggal pembuatan akses;\n2. Nama perangkat yang diterapkan pengaturan akses;\n3. Personil yang diberikan akses dengan tujuan, rentang waktu, dan lokasi akses;\n4. Tahapan pengaturan akses pada sistem keamanan;\n5. Bukti pengaturan akses (foto/screenshot);\n6. Lembar persetujuan; dan\n7. Lampiran: form permintaan akses.",
+          "contoh" : "Muh. Aldian, S.Tr.Stat. seorang Pranata Komputer Ahli Pertama melakukan pengaturan akses untuk pegawai dan pihak ketiga yang memerlukan akses ke ruang Data Centre dengan melakukan pengaturan pada sistem access door, maka Muh. Aldian mendapatkan angka kredit sebesar 0,015."
+        },
+        {
+          "kode" : "II.B.11",
+          "judul" : "Melakukan Analisis Permasalahan Dari Hasil Pemantauan (Monitoring) Kinerja Infrastruktur TI",
+          "uraian" : "Melakukan analisis permasalahan dari hasil pemantauan (monitoring) kinerja infrastruktur TI yaitu melakukan evaluasi dan penelaahan terhadap hasil pemantauan kinerja infrastruktur TI jika terdapat anomali/permasalahan.\nTahapan kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi kinerja infrastruktur TI;\n2. Melakukan analisis permasalahan hasil pemantauan kinerja infrastruktur TI; dan\n3. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen hasil analisis permasalahan dari hasil pemantauan kinerja infrastruktur TI",
+          "angka_kredit" : 0.080,
+          "batasan_penilaian" : "1. Kegiatan ini dapat dilakukan jika terdapat anomali/permasalahan pada hasil pemantauan (monitoring) kinerja infrastruktur TI.\n2. Jumlah maksimum kegiatan yang dinilai adalah satu kali per minggu.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil analisis permasalahan dari hasil pemantauan kinerja infrastruktur TI yang mencakup namun tidak terbatas pada :\n1. Hasil identifikasi infrastruktur TI;\n2. Hasil pemantauan kinerja infrastruktur sebelumnya;\n3. Analisis permasalahan berdasarkan hasil pemantauan kinerja infrastruktur TI;\n4. Rekomendasi; dan\n5. Lembar persetujuan.",
+          "contoh" : "Sawung Anggara, S.ST, M.T. seorang Pranata Komputer Ahli Muda melakukan evaluasi dan analisis terhadap hasil pemantauan kinerja server berupa anomali besarnya pemakaian memori pada cluster web server dan memberikan rekomendasi, maka Sawung Anggara memperoleh angka kredit sebesar 0,080.\nSawung Anggara, S.ST, M.T. seorang Pranata Komputer Ahli Muda melakukan pembuatan laporan analisis insiden kegagalan server dengan menggunakan data kinerja harian perangkat server yang diinventaris setiap hari maka Sawung Anggara mendapat Angka Kredit sebesar 0,080."
+        },
+        {
+          "kode" : "II.B.12",
+          "judul" : "Melakukan Deteksi Dan Atau Perbaikan Terhadap Permasalahan Infrastruktur TI",
+          "uraian" : "Melakukan deteksi dan atau perbaikan terhadap permasalahan infrastruktur TI adalah kegiatan pelaporan terhadap suatu permasalahan yang terjadi pada infrastruktur TI baik masih dalam bentuk laporan deteksi permasalahan saja maupun sekaligus dengan perbaikannya.\nMelakukan deteksi terkait permasalahan infrastruktur TI adalah kegiatan untuk mengetahui penyebab dari munculnya permasalahan, pesan error, atau tidak berfungsinya perangkat infrastruktur TI.\nMelakukan Perbaikan terhadap permasalahan infrastruktur TI adalah kegiatan yang bertujuan untuk membuat perangkat infrastruktur TI berfungsi dengan baik dan sebagaimana mestinya.\nTahapan dari kegiatan deteksi mencakup namun tidak terbatas pada :\n1. Melakukan identifikasi permasalahan yang muncul seperti sebab dan akibat/implikasi dari permasalahan; dan\n2. Membuat pencatatan analisa permasalahan yang berisi daftar kemungkinan penyebab dari permasalahan yang muncul.\nTahapan dari kegiatan perbaikan diantaranya :\n1. Melakukan identifikasi hasil deteksi permasalahan;\n2. Menentukan solusi/alternatif solusi berdasarkan hasil deteksi;\n3. Melakukan perbaikan; dan\n4. Mendokumentasikan proses dan langkah-langkah perbaikan.",
+          "satuan_hasil" : "Laporan hasil deteksi dan atau perbaikan terhadap permasalahan infrastruktur TI",
+          "angka_kredit" : 0.030,
+          "batasan_penilaian" : "1. Maksimal kegiatan yang dapat dinilai adalah 8 kali dalam satu bulan untuk setiap kegiatan deteksi atau perbaikan perangkat TI sesuai cakupan.\n2. Perbaikan dilakukan secara swakelola bukan oleh pihak ke 3.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen laporan deteksi dan atau perbaikan permasalahan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Waktu pelaksanaan kegiatan;\n2. Nama dan jenis perangkat;\n3. Fungsi perangkat;\n4. Bukti permasalahan pada infrastruktur TI:\na. Untuk kegiatan deteksi mencantumkan :\ni. Hasil identifikasi permasalahan\nii. Analisa permasalahan\nb. Untuk kegiatan perbaikan mencantumkan :\n(1) Hasil identifikasi penyebab permasalahan;\n(2) Solusi/alternatif solusi; dan\n(3) Langkah tindakan perbaikan permasalahan.\n5. Dokumentasi kegiatan (foto/screenshot); dan\n6. Lembar persetujuan.",
+          "contoh" : "Rahman, S.ST. seorang Pranata Komputer Ahli Pertama melakukan deteksi permasalahan pada Data Center dan melakukan perbaikan sparepart yang mengalami kerusakan, Kegiatan tersebut didokumentasikan dalam laporan hasil deteksi dan perbaikan permasalahan perangkat TI, maka Rahman mendapat Angka Kredit sebesar dua kali 0,030 yaitu 0,060.\nRahman, S.ST. seorang Pranata Komputer Ahli Pertama melakukan deteksi permasalahan pada mesin handkey, kemudian membuat dokumentasinya, hasil laporan diteruskan ke Tim Support dari penyedia perangkat untuk proses perbaikan, maka Rahman mendapat Angka Kredit sebesar 0,030."
+        },
+        {
+          "kode" : "II.B.13",
+          "judul" : "Menyusun Prosedur Pemanfaatan Infrastruktur TI",
+          "uraian" : "Menyusun prosedur pemanfaatan infrastruktur TI adalah kegiatan menyusun langkah-langkah yang spesifik, tindakan atau operasi yang dijadikan pedoman dan dasar dalam menjalankan aktivitas/kegiatan pemanfaatan infrastruktur TI.\nTahapan dari kegiatan menyusun prosedur pemanfaatan infrastruktur TI meliputi namun tidak terbatas pada :\n1. Identifikasi perangkat TI;\n2. Identifikasi pengguna perangkat TI;\n3. Identifikasi proses bisnis yang melibatkan perangkat TI tersebut; dan\n4. Menyusun prosedur pemanfaatan infrastruktur TI.\nKegiatan ini juga mencakup:\n1. Penyusunan panduan/petunjuk teknis pemanfaatan infrastruktur TI untuk perangkat TI yang memang perlu dioperasikan agar sesuai kebutuhan organisasi; dan\n2. Modifikasi/penerjemahan petunjuk pengoperasian sesuai pedoman yang dikeluarkan oleh penyedia perangkat agar lebih memudahkan penggunanya.",
+          "satuan_hasil" : "Dokumen prosedur pemanfaatan infrastruktur TI",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 12 (dua belas) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen prosedur pemanfaatan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Nama dan versi/tanggal pembuatan prosedur;\n2. Tujuan dan sasaran prosedur;\n3. Dasar rujukan/referensi;\n4. Alur tahapan, dimana setiap tahap dilengkapi dengan informasi pihak/role yang melakukan aktivitas, lama waktu pengerjaan, tools yang digunakan dan kelengkapan pendukung lainnya; dan\n5. Halaman pengesahan.\nDokumen petunjuk teknis pemanfaatan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Judul dan versi/tanggal pembuatan petunjuk teknis;\n2. Tujuan dan sasaran;\n3. Langkah-langkah atau tahapan penggunaan perangkat; dan\n4. Halaman pengesahan.\nDokumen modifikasi/penerjemahan petunjuk pengoperasian sesuai pedoman, yang mencakup namun tidak terbatas pada:\n1. Judul dan versi/tanggal pembuatan petunjuk teknis;\n2. Tujuan dan sasaran;\n3. Langkah-langkah atau tahapan penggunaan perangkat; dan\n4. Halaman pengesahan.",
+          "contoh" : "Sulisetyo, S.ST. Seorang Pranata Komputer Ahli Pertama melakukan pembuatan prosedur/SOP pemanfaatan TI pada sistem layanan TI di institusinya, maka Sulisetyo mendapat Angka Kredit sebesar 0,055. Sulisetyo, S.ST Seorang Pranata Komputer Ahli Pertama membuat petunjuk teknis pengoperasian perangkat UPS, maka Sulisetyo mendapat Angka Kredit sebesar 0,055."
+        },
+        {
+          "kode" : "II.B.14",
+          "judul" : "Menyiapkan Peralatan Video Conference (Vicon/Streaming), Monitoring Peralatan (Audio, Video, Dan Perangkat Jaringan), Dan Mengatur Layout",
+          "uraian" : "Menyiapkan peralatan video conference (vicon/streaming), monitoring peralatan (audio, video dan perangkat jaringan), dan mengatur layout adalah kegiatan yang dilakukan untuk menyediakan layanan vicon dan memastikan bahwa layanan vicon berjalan dengan baik untuk kebutuhan organisasi.\nTahapan dari kegiatan ini adalah:\n1. Menyiapkan peralatan video conference (vicon/streaming);\n2. Memastikan bahwa perangkat vicon sudah terkoneksi;\n3. Melakukan pengaturan (setting) dan konfigurasi, termasuk pengaturan layout; dan\n4. Melakukan monitoring selama pelaksanaan video conference (vicon).",
+          "satuan_hasil" : "Laporan hasil penyiapan peralatan vicon, monitoring peralatan, dan pengaturan layout",
+          "angka_kredit" : 0.033,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 8 (delapan) kali per bulan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "1. Laporan hasil penyiapan peralatan vicon, monitoring peralatan, dan pengaturan layout yang mencakup namun tidak terbatas pada:\na. Tanggal dan waktu;\nb. Detail setting dan konfigurasi;\nc. Hasil monitoring selama vicon; dan\nd. Catatan jika terdapat gangguan dan penanganannya.\n2. Bukti permintaan dan penugasan",
+          "contoh" : "Samarul Falah, S.ST. seorang Pranata Komputer Ahli Pertama mendapatkan tugas sebagai operator vicon kegiatan rilis inflasi, maka Samarul Falah akan mendapatkan angka kredit 1 x 0,033 = 0,033.\nSamarul Falah, S.ST. seorang Pranata Komputer Ahli Pertama mendapatkan tugas sebagai operator vicon kegiatan raker instansi pusat dan daerah, maka Samarul Falah akan mendapatkan angka kredit 1 x 0,033 = 0,033."
+        },
+        {
+          "kode" : "II.B.15",
+          "judul" : "Melakukan Optimalisasi Kinerja Infrastruktur TI",
+          "uraian" : "Melakukan optimalisasi kinerja infrastruktur TI adalah kegiatan untuk meningkatkan kinerja melalui penyesuaian konfigurasi, versi, kapasitas, atau fungsionalitas dari infrastruktur TI yang sudah ada untuk mengatasi permasalahan yang terjadi atau menyesuaikan kebutuhan organisasi.\nTahapan kegiatan mencakup namun tidak terbatas pada :\n1. Identifikasi kebutuhan terhadap optimalisasi kinerja infrastruktur TI;\n2. Optimalisasi kinerja; dan\n3. Membuat dokumentasi.",
+          "satuan_hasil" : "Dokumen optimalisasi kinerja infrastruktur TI",
+          "angka_kredit" : 0.015,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan.\n2. Jumlah maksimum kegiatan optimalisasi infrastruktur TI yang dapat dinilai adalah satu kali dalam satu minggu",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen optimalisasi kinerja infrastruktur TI yang mencakup namun tidak terbatas pada :\n1. Latar belakang dan tujuan optimalisasi kinerja;\n2. Lokasi;\n3. Metode dan tahapan optimalisasi kinerja infrastruktur TI;\n4. Perbandingan kondisi sebelum dan setelah dilakukan optimalisasi kinerja infrastruktur TI; dan\n5. Lembar persetujuan.",
+          "contoh" : "Hanif Wahyu, S.ST. seorang Pranata Komputer Ahli Pertama melakukan tuning database dalam sebuah Enterprise Data Warehouse (EDW) environment untuk fase ETL, maka Hanif Wahyu mendapat Angka Kredit sebesar 0,015.\nHanif Wahyu, S.ST. seorang Pranata Komputer Ahli Pertama menindaklajuti hasil analisis permasalahan web server yang kapasitas penyimpanannya sudah 90% dengan meningkatkan kapasitas penyimpanannya pada VM (virtual machine) untuk menjaga kinerja layanan, maka Hanif Wahyu mendapatkan nilai 0,015."
+        }
+      ]
+    }
+    ]
+  },
+  {
+    "unsur" : "III",
+    "judul_unsur" : "SISTEM INFORMASI DAN MULTIMEDIA",
+    "subunsur" : [
+    {
+      "kode" : "III.A",
+      "judul" : "Sistem Informasi",
+      "butir" : [
+        {
+          "kode" : "III.A.1",
+          "judul" : "Menyusun usulan pembangunan sistem informasi",
+          "uraian" : "Melakukan analisis kebutuhan pengguna sistem jaringan komputer kompleks adalah kegiatan penelaahan dan penguraian kebutuhan pengguna sistem jaringan komputer kompleks serta studi kelayakan untuk mendapatkan rekomendasi kebutuhan penggunaan jaringan komputer kompleks.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logical pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Menentukan tujuan dan batasan dari analisis kebutuhan sistem jaringan komputer kompleks yang dilakukan;\n2. Melakukan identifikasi kebutuhan pengguna yang mencakup perkiraan jumlah pengguna, jumlah dan jenis perangkat jaringan (hardware/software) serta perangkat pendukung lainnya;\n3. Menelaah kebutuhan pengguna; dan\n4. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer kompleks",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Kegiatan ini dapat diajukan maksimal 12 (dua belas) kali pertahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer kompleks yang mencakup namun tidak terbatas pada:\n1. Tujuan dan batasan analisis sistem sistem;\n2. Identifikasi kebutuhan pengguna (jumlah pengguna, perangkat jaringan, dan pengguna);\n3. Hasil telaah kebutuhan pengguna;\n4. Rekomendasi; dan\n5. Lembar persetujuan.",
+          "contoh" : "Bayu Satria, M.Si. seorang Pranata Komputer Ahli Muda melakukan analisis kebutuhan pengguna untuk pembangunan sistem jaringan wireless terpusat, maka Bayu Satria memperoleh angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "III.A.2",
+          "judul" : "Melakukan Analisis Kondisi Sistem Jaringan Komputer Kompleks Yang Sedang Berjalan",
+          "uraian" : "Melakukan analisis kondisi sistem jaringan komputer kompleks yang sedang berjalan adalah kegiatan analisis terhadap sistem jaringan komputer kompleks yang sedang berjalan.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan dari kegiatan yang dilakukan meliputi namun tidak terbatas pada:\n1. Menentukan tujuan dan batasan dari analisis kondisi sistem jaringan komputer kompleks yang sedang berjalan;\n2. Identifikasi sistem berjalan terkait : arsitektur/topologi, utilitas/pemanfaatan, performa/kinerja sistem, permasalahan yang dihadapi;\n3. Menelaah sistem berjalan; dan\n4. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen hasil analisis kondisi sistem jaringan komputer kompleks yang sedang berjalan",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Kegiatan ini dapat diajukan maksimal 12 (dua belas) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil analisis kebutuhan pengguna sistem jaringan komputer kompleks mencakup namun tidak terbatas pada:\n1. Tujuan dan batasan analisis sistem berjalan;\n2. Identifikasi sistem berjalan, berupa:\na. Arsitektur/topologi;\nb. Utilitas/pemanfaatan;\nc. Performa/kinerja sistem; dan\nd. Permasalahan  yang dihadapi;\n3. Hasil telaah sistem berjalan;\n4. Rekomendasi; dan\n5. Lembar persetujuan.",
+          "contoh" : "Mentari Pratiwi, M.T. seorang Pranata Komputer Ahli Muda melakukan analisis kebutuhan sistem berjalan pada sistem wireless terpusat, maka Mentari Pratiwi memperoleh angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "III.A.3",
+          "judul" : "Membuat Rancangan Logis (Logical Design) Sistem Jaringan",
+          "uraian" : "Membuat Rancangan Logis sistem jaringan komputer yaitu membuat rancangan yang menggambarkan hubungan logika antar perangkat/ komponen  dalam sebuah jaringan komputer.\nSistem Jaringan Komputer merupakan beberapa komputer atau perangkat lain yang terhubung dalam satu jaringan dengan pusat jaringan (sistem client-server) menggunakan perangkat jaringan seperti switch, hub, wireless atau perangkat jaringan lainnya.\nTahapan membuat rancangan logis sistem jaringan komputer meliputi namun tidak terbatas pada:\n1. Menentukan tujuan dan batasan dari pembuatan rancangan logis sistem jaringan komputer;\n2. Membuat topologi rancangan logis sistem jaringan komputer; dan\n3. Menjelaskan fungsi logis masing komponen dalam sistem rancangan jaringan komputer.",
+          "satuan_hasil" : "Dokumen rancangan logis sistem jaringan komputer",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 12 kali dalam 1 (satu) tahun",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen Laporan Rancangan logis yang mencakup namun tidak terbatas pada:\n1. Tujuan dan batasan;\n2. Rancangan logis topologi, jenis perangkat jaringan dan spesifikasinya, fungsi masing masing perangkat serta penjelasan lain yang diperlukan; dan\n3. Lembar persetujuan.",
+          "contoh" : "Indri Kartika, S.Kom. seorang Pranata Komputer Ahli Muda membuat rancangan logis jaringan komputer BPS Provinsi Jawa Tengah, maka Indri Kartika memperoleh angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "III.A.4",
+          "judul" : "Membuat Rancangan Fisik (Physical Design) Sistem Jaringan Komputer",
+          "uraian" : "Membuat rancangan fisik sistem jaringan komputer yaitu membuat rancangan yang menggambarkan hubungan fisik antar perangkat/komponen dalam sebuah jaringan komputer.\nSistem Jaringan Komputer merupakan beberapa komputer atau perangkat lain yang terhubung dalam satu jaringan dengan pusat jaringan (sistem client-server) menggunakan perangkat jaringan seperti switch, hub, wireless atau perangkat jaringan lainnya.\nTahapan membuat rancangan fisik sistem jaringan komputer meliputi namun tidak terbatas pada:\n1. Menentukan tujuan dan batasan dari pembuatan rancangan fisik sistem jaringan komputer;\n2. Membuat Topologi rancangan fisik sistem jaringan komputer; dan\n3. Menjelaskan fungsi dan spesifikasi masing-masing perangkat fisik dalam sistem.",
+          "satuan_hasil" : "Dokumen rancangan fisik sistem jaringan komputer",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 12 (dua belas) kali per tahun",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen rancangan fisik sistem jaringan komputer yang meliputi namun tidak terbatas pada:\n1. Tujuan dan batasan;\n2. Lokasi rancangan yang akan diterapkan;\n3. Rancangan fisik topologi danjenis perangkat jaringan dan spesifikasinya, fungsi masing masing perangkat serta penjelasan lain yang diperlukan; dan\n4. Lembar persetujuan.",
+          "contoh" : "Agnes Mefa, S.ST., M.T. seorang Pranata Komputer Ahli Muda membuat rancangan fisik jaringan komputer BPS Provinsi Jawa Tengah, maka Agnes Mefa memperoleh angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "III.A.5",
+          "judul" : "Menerapkan Rancangan Fisik Sistem Jaringan Komputer Kompleks",
+          "uraian" : "Menerapkan rancangan fisik sistem jaringan komputer kompleks yaitu kegiatan implementasi rancangan fisik yang meliputi instalasi dan konfigurasi.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan kegiatan ini meliputi namun tidak terbatas pada:\n1. Membuat jadwal implementasi;\n2. Instalasi perangkat;\n3. Konfigurasi perangkat; dan\n4. Mendokumentasikan kegiatan.",
+          "satuan_hasil" : "Dokumen implementasi rancangan fisik sistem jaringan komputer kompleks",
+          "angka_kredit" : 1.265,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 12 kali dalam 1 tahun",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen implementasi rancangan fisik sistem jaringan komputer kompleks yang meliputi namun tidak terbatas pada:\n1. Lokasi implementasi;\n2. Waktu pelaksanaan;\n3. Identitas perangkat;\n4. Rancangan fisik (topologi);\n5. Instalasi dan foto pemasangan perangkat;\n6. Konfigurasi pada setiap perangkat beserta screenshot; dan\n7. Lembar persetujuan dokumen.",
+          "contoh" : "Sugiarti, S.ST. seorang Pranata Komputer Ahli Pertama melakukan instalasi dan konfigurasi access switch di 7 lantai dan distribution switch termasuk pengkabelannya dalam kegiatan peremajaan perangkat jaringan, maka Sugiarti mendapatkan angka kredit sebesar 1,265."
+        },
+        {
+          "kode" : "III.A.6",
+          "judul" : "Menerapkan Rancangan Logis Sistem Pengamanan Jaringan Komputer Kompleks",
+          "uraian" : "Menerapkan rancangan logis sistem pengamanan jaringan komputer kompleks adalah kegiatan implementasi sistem keamanan pada sistem jaringan komputer kompleks.\nRancangan Logis sistem pengamanan jaringan komputer yaitu rancangan yang berisi rencana pengamanan sistem jaringan komputer kompleks termasuk diantaranya konfigurasi keamanan yang perlu diterapkan.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nCakupan kegiatan ini meliputi implementasi/ konfigurasi keamanan pada perangkat jaringan (hardware/software).",
+          "satuan_hasil" : "Dokumen implementasi rancangan logis sistem pengamanan jaringan komputer kompleks",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 4 kali dalam 1 tahun",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen implementasi rancangan logis sistem pengamanan jaringan komputer kompleks meliputi namun tidak terbatas pada:\n1. Jadwal dan lokasi implementasi;\n2. Identitas perangkat;\n3. Rancangan logis pengamanan jaringan;\n4. Konfigurasi pada setiap perangkat beserta screenshot; dan\n5. Lembar persetujuan dokumen.",
+          "contoh" : "Mutiara Indah, S.ST. seorang Pranata Komputer Ahli Pertama menerapkan rancangan logis sistem pengamananan pada server farm di data centre, maka Mutiara Indah mendapatkan angka kredit 0,330."
+        },
+        {
+          "kode" : "III.A.7",
+          "judul" : "Menyusun Prosedur Pemanfaatan Sistem Jaringan",
+          "uraian" : "Menyusun prosedur pemanfaatan sistem jaringan komputer adalah pembuatan tata cara pemanfaatan sistem jaringan komputer. Tata cara tersebut mencakup administrasi sistem jaringan, pengelolaan pengguna sistem jaringan, pemanfaatan sistem jaringan, dan pemeliharaan maupun penanganan gangguan dalam sistem jaringan.\nPerbaikan/revisi dari prosedur pemanfaatan sistem jaringan yang sudah ada dapat tercakup dalam kegiatan ini.\nProsedur pemanfaatan sistem jaringan yang dibuat dapat berupa:\n1. Administrasi sistem jaringan;\n2. Pengelolaan pengguna dalam sistem jaringan;\n3. Pemanfaatan sistem jaringan;\n4. Pemeliharaan sistem jaringan;\n5. Monitoring sistem jaringan; dan\n6. Perbaikan/penanganan gangguan dalam sistem jaringan baik sistem jaringan sederhana ataupun kompleks.",
+          "satuan_hasil" : "Dokumen prosedur pemanfaatan sistem jaringan",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "1. Prosedur yang dapat dinilai merupakan salah satu area pada cakupan.\n2. Prosedur pemanfaatan dapat dibuat jika sistem jaringan telah beroperasi.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen prosedur pemanfaatan sistem jaringan meliputi tetapi tidak terbatas pada:\n1. Nama prosedur;\n2. Deskripsi prosedur;\n3. Tanggal pembuatan/revisi dan tanggal berlaku;\n4. Prasyarat pelaksana;\n5. Perangkat/kelengkapan yang diperlukan;\n6. Prosedur, pelaksana, input, waktu, output; dan\n7. Pengesahan/persetujuan.\nBukti sistem jaringan telah beroperasi (misalnya: arsitektur jaringan dengan menunjukkan bagian dari arsitektur yang dibuat dokumentasi pemanfaatannya).",
+          "contoh" : "Sulthan Alfatih, S.Tr.Stat. seorang Pranata Komputer Ahli Pertama membuat prosedur penanganan gangguan pada jaringan wireless, maka Sulthan Alfatih mendapatkan angka kredit sebesar 0,055."
+        },
+        {
+          "kode" : "III.A.8",
+          "judul" : "Menyusun Rancangan Uji Coba Sistem Jaringan Kompleks",
+          "uraian" : "Membuat rancangan uji coba sistem jaringan kompleks yaitu membuat rencana untuk uji coba sistem jaringan kompleks yang telah dibangun. Rancangan berisi rencana tahapan maupun skenario uji coba yang akan dilakukan untuk memastikan bahwa sistem jaringan kompleks sudah berfungsi sesuai dengan spesifikasinya.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logical pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nRancangan uji coba mencakup rancangan untuk melakukan uji fungsionalitas, uji kinerja (beban, performa), uji keamanan, dan uji pemulihan jika terjadi kerusakan.",
+          "satuan_hasil" : "Dokumen rancangan uji coba sistem jaringan kompleks",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Rancangan uji coba dibuat bila terdapat rancangan/implementasi baru dari sistem jaringan kompleks.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "1. Bukti adanya rancangan/implementasi baru dari sistem jaringan; dan\n2. Dokumen rancangan uji coba sistem jaringan kompleks meliputi namun tidak terbatas pada:\na. Deskripsi uji coba;\nb. Prasyarat pelaksana uji coba;\nc. Perlengkapan yang diperlukan;\nd. Tahapan dan pelaksana uji coba;\ne. Input, Proses dan Output yang diharapkan; dan\nf. Lembar Persetujuan.",
+          "contoh" : "Eka Rachma, S.ST., M.T. seorang Pranata Komputer Ahli Muda membuat rancangan uji coba sistem keamanan jaringan terpusat pada perangkat yang terdapat di kantor pusat dan daerah, maka Eka Rachma memperoleh angka kredit sebesar 0,110."
+        },
+        {
+          "kode" : "III.A.9",
+          "judul" : "Melakukan Uji Coba Sistem Jaringan Komputer Kompleks",
+          "uraian" : "Melakukan uji coba sistem jaringan komputer kompleks yaitu melakukan kegiatan uji coba sesuai dengan tahapan yang dibuat pada rancangan uji coba.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya Lan tetidak hanya LAN tetapi juga CAN/MAN/WAN (lintas gedung/daerah), menggunakan pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nMelakukan uji coba sistem jaringan kompleks mencakup pelaksanaan semua tahapan uji coba yang terdapat dalam rancangan uji coba mencakup uji fungsionalitas, uji kinerja (beban, performa), uji keamanan, dan uji pemulihan jika terjadi kerusakan.",
+          "satuan_hasil" : "Laporan uji coba sistem jaringan komputer kompleks",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "1. Uji coba dilakukan berdasarkan rancangan uji coba.\n2. Prakom yang melakukan uji coba harus berbeda dengan prakom yang mengimplementasikan sistem jaringan kompleks.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "1. Rancangan Uji Coba\n2. Laporan uji coba sistem jaringan kompleks meliputi namun tidak terbatas pada:\na. Waktu pelaksanaan;\nb. Kepatuhan terhadap prasyarat pelaksana/prasyarat yang dipenuhi;\nc. Kepatuhan terhadap perlengkapan yang diperlukan/ perlengkapan yang digunakan;\nd. Output uji coba dan deskripsinya;\ne. Kesimpulan hasil uji coba; dan\nf. Lembar Persetujuan.",
+          "contoh" : "Candra Afrian, S.ST. seorang Pranata Komputer Ahli Pertama melakukan uji coba sistem keamanan jaringan terpusat pada perangkat yang terdapat di kantor pusat dan daerah, maka Candra Afrian memperoleh angka kredit sebesar 0,110."
+        },
+        {
+          "kode" : "III.A.10",
+          "judul" : "Melakukan Evaluasi Uji Coba Sistem Jaringan Komputer Sederhana",
+          "uraian" : "Melakukan evaluasi uji coba sistem jaringan komputer sederhana yaitu melakukan evaluasi terhadap hasil uji coba sistem jaringan komputer sederhana yang telah dilakukan sebelumnya.\nSistem jaringan komputer sederhana merupakan beberapa komputer atau perangkat TI lain yang terhubung dalam satu jaringan menggunakan perangkat jaringan seperti switch, hub, wireless atau perangkat jaringan lainnya dalam lingkup yang kecil.\nTahapan melakukan evaluasi uji coba sistem jaringan komputer sederhana meliputi namun tidak terbatas pada:\n1. Memberikan evaluasi/penilaian terhadap hasil uji coba; dan\n2. Memberikan rekomendasi terhadap hasil uji coba.",
+          "satuan_hasil" : "Dokumen hasil evaluasi uji coba sistem jaringan komputer sederhana",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "Kegiatan evaluasi uji coba dapat dilakukan setelah kegiatan uji coba dilakukan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen hasil evaluasi uji coba sistem jaringan komputer sederhana yang mencakup namun tidak terbatas pada:\n1. Hasil Uji Coba; dan\n2. Dokumen evaluasi uji coba sistem jaringan komputer meliputi:\na. Penilaian/evaluasi hasil uji coba;\nb. Rekomendasi terhadap hasil uji coba; dan\nc. Lembar Persetujuan.",
+          "contoh" : "Gilang Wibisono, S.Tr.Stat. seorang Pranata Komputer Ahli Pertama melakukan evaluasi hasil uji coba sistem jaringan komputer wired dan wireless di BPS Kota Medan, maka Gilang Wibisono memperoleh angka kredit sebesar 0,055."
+        },
+        {
+          "kode" : "III.A.11",
+          "judul" : "Melakukan Evaluasi Uji Coba Sistem Jaringan Komputer Kompleks",
+          "uraian" : "Melakukan evaluasi uji coba sistem jaringan komputer kompleks yaitu melakukan evaluasi terhadap hasil uji coba sistem jaringan komputer kompleks yang telah dilakukan sebelumnya.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN  (lintas  gedung/daerah),  menggunakan  pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan dari kegiatan melakukan evaluasi uji coba sistem jaringan komputer kompleks mencakup namun tidak terbatas pada:\n1. Identifikasi sistem jaringan kompleks dan uji coba yang dilakukan;\n2. Memberikan evaluasi/penilaian terhadap hasil uji coba; dan\n3. Memberikan rekomendasi terhadap hasil uji coba.",
+          "satuan_hasil" : "Dokumen hasil evaluasi uji coba sistem jaringan komputer kompleks",
+          "angka_kredit" : 0.160,
+          "batasan_penilaian" : "1. Prakom yang melakukan evaluasi uji coba harus berbeda dengan prakom yang mengimplementasikan sistem jaringan komputer kompleks.\n2. Kegiatan evaluasi uji coba dapat dilakukan setelah kegiatan uji coba dilakukan.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil evaluasi uji coba sistem jaringan komputer kompleks yang mencakup namun tidak terbatas pada :\n1. Hasil Uji Coba;\n2. Dokumen evaluasi uji coba sistem jaringan komputer kompleks meliputi:\na. Penilaian/evaluasi hasil uji coba;\nb. Rekomendasi terhadap hasil uji coba; dan\nc. Lembar Persetujuan.",
+          "contoh" : "Andre Prasetyo, M.Si. seorang Pranata Komputer Ahli Muda melakukan evaluasi hasil uji coba sistem jaringan terpusat yang menghubungkan instansi pusat dan daerah, maka prakom tersebut memperoleh angka kredit sebesar 0,160."
+        },
+        {
+          "kode" : "III.A.12",
+          "judul" : "Menyusun Dokumentasi Penggunaan Sistem Jaringan Komputer",
+          "uraian" : "Menyusun dokumentasi penggunaan sistem jaringan komputer yaitu kegiatan pembuatan dokumentasi segala hal yang berkaitan dengan pemanfaatan atau pengelolaan sistem jaringan komputer.\nCakupan kegiatan ini yaitu pembuatan dokumentasi pemanfaatan dapat berupa:\n1. Pemanfaatan sistem jaringan; dan\n2. Pengelolaan sistem jaringan.",
+          "satuan_hasil" : "Dokumen penggunaan sistem jaringan komputer",
+          "angka_kredit" : 0.080 ,
+          "batasan_penilaian" : "1. Dokumentasi penggunaan dapat dibuat jika sistem jaringan operasional.\n2. Dokumen yang dapat dinilai merupakan dokumen yang terkait dengan salah satu area pada cakupan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "1. Dokumen penggunaan sistem jaringan komputer, yang mencakup namun tidak terbatas pada:\na. Mekanisme pengguna dalam memanfaatkan sistem jaringan atau mekanisme pengelola jaringan untuk mengelola sistem jaringan; dan\nb. Lembar persetujuan.\n2. Bukti sistem jaringan telah beroperasi (misalnya: arsitektur jaringan dengan menunjukkan bagian dari arsitektur yang dibuat dokumentasi pemanfaatannya).",
+          "contoh" : "Rina Setyowati, S.ST. seorang Pranata Komputer Ahli Pertama membuat panduan penggunaan jaringan VPN Mobile di instansinya, maka Rina Setyowati mendapatkan angka kredit sebesar 0,080."
+        },
+        {
+          "kode" : "III.A.13",
+          "judul" : "Melakukan Analisis Permasalahan Dari Hasil Pemantauan (Monitoring) Jaringan",
+          "uraian" : "Melakukan analisis permasalahan dari hasil pemantauan (monitoring) jaringan yaitu melakukan evaluasi dan penelaahan terhadap hasil pemantauan jaringan jika terdapat anomali/permasalahan.\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Identifikasi permasalahan;\n2. Melakukan evaluasi/analisis permasalahan hasil pemantauan jaringan; dan\n3. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen hasil analisis permasalahan dari hasil pemantauan jaringan",
+          "angka_kredit" : 0.080,
+          "batasan_penilaian" : "Kegiatan ini dapat dilakukan jika terdapat anomali/permasalahan pada hasil pemantauan jaringan.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "1. Dokumen hasil analisis permasalahan dari hasil pemantauan jaringan yang mencakup namun tidak terbatas pada:\na. Hasil evaluasi/analisis permasalahan hasil pemantauan jaringan;\nb. Rekomendasi; dan\nc. Lembar persetujuan.\n2. Hasil pemantauan sebelumnya.",
+          "contoh" : "Juanda Putra, M.Si. seorang Pranata Komputer Ahli Muda melakukan evaluasi dan analisis terhadap hasil pemantauan traffic jaringan berupa anomali traffic jaringan di salah satu gedung dan memberikan rekomendasi, maka Juanda Putra memperoleh angka kredit sebesar 0,080."
+        },
+        {
+          "kode" : "III.A.14",
+          "judul" : "Melakukan Optimalisasi Sistem Jaringan",
+          "uraian" : "Melakukan optimalisasi sistem jaringan adalah kegiatan untuk meningkatkan kinerja atau fungsionalitas dari sistem jaringan yang sudah ada atas permintaan pengguna atau untuk mengatasi permasalahan yang terjadi.\nCakupan kegiatan ini yaitu:\n1. Peningkatan kinerja; atau\n2. Peningkatan fungsionalitas dari sistem jaringan.",
+          "satuan_hasil" : "Dokumen optimalisasi sistem jaringan",
+          "angka_kredit" : 0.060,
+          "batasan_penilaian" : "1. Kegiatan ini dapat diajukan jika terdapat permintaan dari pengguna atau untuk mengatasi permasalahan yang terjadi pada sistem jaringan.\n2. Pemberian angka kredit berdasarkan satuan kegiatan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "1. Dokumen optimalisasi sistem jaringan yang mencakup namun tidak terbatas pada :\na. Latar belakang dan Tujuan;\nb. Lokasi;\nc. Metode dan tahapan optimalisasi sistem jaringan;\nd. Perbandingan kondisi sebelum dan setelah dilakukan optimalisasi sistem jaringan; dan\ne. Lembar persetujuan.\n2. Bukti permintaan pengguna atau analisis permasalahan sistem jaringan.",
+          "contoh" : "Umar Dedi, S.ST. seorang Pranata Komputer Ahli Pertama melakukan optimalisasi sistem jaringan di kantornya pada perangkat Mikrotik router dengan mengaktifkan DHCP server, manajemen bandwidth, hotspot, firewall sehingga sistem jaringan di kantornya menjadi lebih optimal dan maksimal dalam penggunaan dan pengawasannya, maka Umar Dedi mendapatkan angka kredit sebesar 0,060."
+        },
+        {
+          "kode" : "III.A.15",
+          "judul" : "Melakukan Deteksi dan atau Perbaikan Terhadap Permasalahan yang Terjadi Pada Sistem Jaringan Kompleks",
+          "uraian" : "Melakukan deteksi sistem jaringan kompleks adalah kegiatan untuk mengetahui penyebab dari munculnya permasalahan, pesan error, atau tidak berfungsinya suatu sistem jaringan kompleks.\nMelakukan perbaikan terhadap permasalahan pada sistem jaringan kompleks adalah kegiatan yang bertujuan untuk membuat sistem jaringan kompleks berfungsi dengan baik dan sebagaimana mestinya.\nSistem jaringan kompleks yaitu sistem jaringan yang menangani jaringan secara luas, tidak hanya LAN tetapi juga CAN/MAN/WAN  (lintas  gedung/daerah),  menggunakan  pemisahan logikal pada zona jaringan serta penerapan keamanan dengan penerapan berbagai teknologi jaringan untuk mendukung kebutuhan tersebut.\nTahapan kegiatan deteksi meliputi:\n1. Melakukan identifikasi permasalahan yang muncul seperti sebab dan akibat/implikasi dari permasalahan; dan\n2. Membuat pencatatan analisa permasalahan yang berisi daftar kemungkinan penyebab dari permasalahan yang muncul.\nTahapan kegiatan perbaikan meliputi:\n1. Melakukan identifikasi hasil deteksi permasalahan;\n2. Menentukan solusi/alternatif solusi berdasarkan hasil deteksi;\n3. Melakukan perbaikan; dan\n4. Mendokumentasikan proses dan langkah-langkah perbaikan.",
+          "satuan_hasil" : "Dokumen hasil  deteksi  dan atau perbaikan terhadap permasalahan yang terjadi pada sistem jaringan kompleks",
+          "angka_kredit" : 0.083,
+          "batasan_penilaian" : "1. Perbaikan dan deteksi dilakukan hanya pada perangkat jaringan yang terkait dengan sistem jaringan kompleks; dan\n2. Maksimal kegiatan yang dapat dinilai adalah 4 kali dalam satu bulan untuk setiap kegiatan deteksi atau perbaikan sistem jaringan kompleks sesuai cakupan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen laporan deteksi dan atau perbaikan permasalahan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Waktu pelaksanaan kegiatan;\n \n\n\n\n2. Nama dan jenis perangkat jaringan yang dideteksi/perbaiki;\n3. Lokasi jaringan kompleks;\n4. Bukti permasalahan pada sistem jaringan kompleks;\n5. Dibedakan menjadi:\na. Untuk kegiatan deteksi mencantumkan:\ni. Hasil identifikasi permasalahan; dan\nii. Analisa permasalahan.\nb. Untuk kegiatan perbaikan mencantumkan:\n(1) Hasil identifikasi penyebab permasalahan;\n(2) Solusi/alternatif solusi;\n(3) Lama perbaikan; dan\n(4) Langkah tindakan perbaikan permasalahan.\n6. Dokumentasi kegiatan (foto/screenshot); dan\n7. Lembar persetujuan.",
+          "contoh" : "Agus Fitran, S.Tr.Stat. seorang Pranata Komputer Ahli Pertama mendapat laporan dari Helpdesk bahwa ada developer yang tidak dapat mengakses service yang disediakan oleh server elearning. Agus Fitran melakukan langkah-langkah deteksi penyebab user tersebut tidak dapat mengakses service disertai dengan error yang dilaporkan dan langkah-langkah perbaikan. Sehingga Agus Fitran mendapatkan angka kredit sebesar 2 x 0,083= 0,166."
+        },
+        {
+          "kode" : "II.A.16",
+          "judul" : "Menyusun Rumusan Kebijakan Keamanan Jaringan",
+          "uraian" : "Menyusun rumusan kebijakan keamanan jaringan adalah aktivitas penyusunan rumusan tata kelola keamanan infrastruktur jaringan dengan berdasarkan kepada kebijakan TI institusi, etika penggunaan jaringan dan kebijakan pengaksesan infrastruktur jaringan.\nKebijakan keamanan jaringan dirumuskan menyeluruh untuk satu organisasi, mencakup seluruh aspek keamanan jaringan, yang meliputi confidentiality, integrity, availability, authentication, dan nonrepudiation.",
+          "satuan_hasil" : "Dokumen rumusan kebijakan keamanan jaringan",
+          "angka_kredit" : 0.330,
+          "batasan_penilaian" : "Jumlah maksimum kegiatan pembuatan kebijakan keamanan data yang dapat dinilai adalah 1 (satu) kali per semester.",
+          "pelaksana" : "Pranata Komputer Ahli Madya",
+          "bukti_fisik" : "Dokumen rumusan kebijakan keamanan jaringan yang telah disetujui pimpinan organisasi yang mencakup namun tidak terbatas pada:\n1. Tujuan dan sasaran standar keamanan jaringan;\n2. Tanggal/versi dokumen;\n3. Ruang lingkup standar keamanan jaringan;\n4. Dasar rujukan/referensi;\n5. Butir-butir tata kelola keamanan jaringan; dan\n6. Halaman pengesahan.",
+          "contoh" : "Dr. Ahsan Fahmi seorang Pranata Komputer Ahli Madya menyusun rumusan kebijakan keamanan jaringan pada suatu instansi, maka Ahsan Fahmi mendapatkan angka kredit sebesar 0,330."
+        },
+        {
+          "kode" : "II.A.17",
+          "judul" : "Melakukan Reviu Kebijakan Keamanan Jaringan",
+          "uraian" : "Melakukan reviu kebijakan keamanan jaringan adalah melakukan kajian atau reviu secara sistematis dalam menganalisis dan mengevaluasi terkait implementasi kebijakan keamanan jaringan yang berlaku di lingkungan institusi saat ini.\nKegiatan ini bertujuan untuk memastikan bahwa kebijakan keamanan yang disusun selaras dengan kebijakan institusi, etika pengguna dan kebijakan pengaksesan infrastruktur jaringan.\nTahapan kegiatan reviu kebijakan keamanan jaringan meliputi namun tidak terbatas pada:\n1. Identifikasi kebijakan keamanan jaringan;\n2. Melakukan analisa terkait kekurangan, potensi masalah dan isu yang mungkin terjadi;\n3. Menentukan kesenjangan (gap) keamanan jaringan yang digunakan;\n4. Melakukan kajian terhadap teknologi kemanan jaringan terkini atau best practice yang dapat mendukung dan meningkatkan kinerja keamanan jaringan organisasi; dan\n5. Memberikan rekomendasi terkait kebijakan keamanan jaringan.",
+          "satuan_hasil" : "Dokumen hasil reviu kebijakan keamanan jaringan",
+          "angka_kredit" : 0.165,
+          "batasan_penilaian" : "1. Kegiatan ini dapat dilakukan untuk setiap kebijakan kemanan jaringan yang berlaku pada organisasi saat sekarang; dan\n2. Jumlah maksimum kegiatan reviu kebijakan kemanan jaringan yang digunakan organisasi saat ini yang dapat dinilai adalah satu kali dalam satu semester.",
+          "pelaksana" : "Pranata Komputer Ahli Madya",
+          "bukti_fisik" : "Dokumen hasil reviu kebijakan keamanan jaringan yang digunakan organisasi saat ini yang mencakup namun tidak terbatas pada:\n1. Hasil Identifikasi kebijakan keamanan jaringan;\n2. Hasil analisa terkait kekurangan, potensi masalah dan isu yang mungkin terjadi;\n3. Kesenjangan kemanan jaringan yang digunakan;\n4. Kajian kebijakan kemanan jaringan yang selaras dengan kebijakan organisasi; dan\n5. Rekomendasi.",
+          "contoh" : "Dr. Akrim seorang Pranata Komputer Ahli Madya melakukan reviu kebijakan keamanan jaringan yang sudah ada, maka Akrim mendapatkan angka kredit sebesar 0,165."
+        },
+        {
+          "kode" : "II.A.18",
+          "judul" : "Menyusun Prosedur Keamanan Jaringan",
+          "uraian" : "Menyusun prosedur keamanan jaringan merupakan kegiatan yang dilakukan untuk membuat prosedur tetap (SOP) kegiatan yang terkait dengan implementasi keamanan jaringan pada suatu satuan kerja, di mana prosedur ini yang akan menjadi acuan dalam setiap kegiatan yang terkait dengan keamanan jaringan.\nProsedur yang disusun harus mengacu kepada kebijakan keamanan jaringan yang berlaku di organisasi.\nTahapan penyusunan prosedur keamanan adalah sebagai berikut:\n1. Menentukan ruang lingkup/cakupan prosedur keamanan;\n2. Mengidentifikasi peran yang terlibat;\n3. Mengkaji dokumen kebijakan keamanan institusi;\n4. Mengidentifikasi resiko atau permasalahan yang mungkin timbul; dan\n5. Menyusun proses, alur dan langkah-langkah terkait keamanan jaringan.\nPenyusunan prosedur keamanan jaringan ini tidak hanya meliputi prosedur keamanan jaringan secara logik, namun juga keamanan jaringan secara fisik, yang berlaku di organisasi.",
+          "satuan_hasil" : "Dokumen Prosedur keamanan jaringan",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dilaksanakan adalah 3 kali tiap semester",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen prosedur keamanan jaringan yang mencakup namun tidak terbatas pada:\n1. Tujuan dan sasaran prosedur keamanan jaringan;\n2. Tanggal/versi dokumen;\n3. Ruang lingkup prosedur keamanan jaringan;\n4. Tanggung jawab dari setiap stakeholder;\n5. Kemungkinan resiko atau permasalahan yang dapat terjadi;\n6. Butir-butir prosedur keamanan jaringan;\n7. Dasar rujukan/referensi; dan\n8. Halaman pengesahan.",
+          "contoh" : "Moh Nasir, M.T. Seorang Pranata Komputer Ahli Muda membuat prosedur keamanan jaringan, maka Moh. Nasir mendapatkan angka kredit sebesar 0,110."
+        },
+        {
+          "kode" : "II.A.19",
+          "judul" : "Menyusun Petunjuk Teknis Sistem Jaringan Komputer Dan Keamanan Jaringan",
+          "uraian" : "Penyusunan petunjuk teknis sistem jaringan komputer dan keamanan jaringan merupakan kegiatan pengusunan pedoman teknis penggunaan infrastuktur jaringan komputer dan keamanan jaringan pada organisasi, dengan berpedoman kepada kebijakan yang berlaku, agar kegiatan terkait penggunaan sistem jaringan dan keamanan jaringan tersebut berjalan dengan baik.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Membuat latar belakang dan tujuan\n2. Membuat petunjuk teknis/pedoman dalam penggunaan/pengelolaan sistem jaringan atau sistem keamanan jaringan",
+          "satuan_hasil" : "Buku petunjuk teknis sistem jaringan komputer dan keamanan jaringan",
+          "angka_kredit" : 0.440,
+          "batasan_penilaian" : "1. Kegiatan ini dapat dilakukan untuk setiap kebijakan sistem jaringan komputer dan keamanan jaringan yang berlaku pada organisasi.\n2. Jumlah maksimum kegiatan penyusunan petunjuk teknis ini yang dapat dinilai adalah 1 (satu) kali per semester",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "1. Dokumen yang berisi petunjuk teknis sistem jaringan dan keamanan jaringan yang mencakup namun tidak terbatas pada:\na. Tujuan dan sasaran petunjuk teknis penggunaan sistem jaringan komputer dan keamanan jaringan;\nb. Tanggal/versi dokumen;\nc. Butir-butir petunjuk teknis mengenai penggunaan/pengelolaan sistem jaringan komputer dan keamanan jaringan;\nd. Dasar rujukan/referensi; dan\ne. Halaman pengesahan.\n2. Kebijakan yang menjadi dasar juknis",
+          "contoh" : "Firdaus Alba, M.T. seorang Pranata Komputer Ahli Muda membuat petunjuk teknis sistem jaringan komputer dan keamanan jaringan, maka prakom tersebut memperoleh angka kredit sebesar 0,440."
+        },
+        {
+          "kode" : "II.A.20",
+          "judul" : "Melakukan Pemeriksaan Kepatuhan Terhadap Kebijakan Keamanan Jaringan",
+          "uraian" : "Pemeriksaan kepatuhan terhadap kebijakan keamanan jaringan adalah pemeriksan kepatuhan yang dilakukan pada implementasi keamanan jaringan yang diterapkan, terhadap kebijakan dan prosedur keamanan jaringan yang telah ditetapkan dalam suatu organisasi. Pemeriksaan kepatuhan juga bertujuan untuk memberikan acuan dalam mencegah pelanggaran kebijakan keamanan jaringan yang mungkin dilakukan.\nTahapan pemeriksaan kepatuhan terhadap kebijakan keamanan jaringan meliputi namun tidak terbatas pada:\n1. Pemeriksaan atau audit pada implementasi yang dilakukan oleh organisasi terhadap terhadap kebijakan dan prosedur keamanan jaringan yang telah ditetapkan dalam suatu organisasi;\n2. Identifikasi resiko yang ditimbulkan akibat hal-hal yang tidak dilaksanakan; dan\n3. Memberikan rekomendasi yang diperlukan.",
+          "satuan_hasil" : "Dokumen hasil pemeriksaan kepatuhan terhadap kebijakan keamanan jaringan",
+          "angka_kredit" : 0.440,
+          "batasan_penilaian" : "Pemeriksaan kepatuhan terhadap kebijaka keamanan jaringan harus dilakukan secara bulanan, dan dapat dikompilasi menjadi catatan pemeriksaan kepatuhan selama satu semester",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil pemeriksaan kepatuhan terhadap kebijakan keamanan jaringan yang mencakup namun tidak terbatas pada:\n1. Tujuan dan sasaran pemeriksaan;\n2. Tanggal/versi dokumen;\n3. Hasil audit pemeriksaan kepatuhan;\n4. Rekomendasi yang harus ditindaklanjuti oleh pihak terkait;\n5. Halaman pengesahan; dan\n6. Dasar rujukan/referensi.",
+          "contoh" : "Sulthoni A, M.T. seorang Pranata Komputer Ahli Muda melakukan pemeriksaan kepatuhan sistem jaringan yang ada terhadap kebijakan keamanan jaringan maka Sulthoni mendapatkan angka kredit sebesar 0,440."
+        }
+      ]
+    },
+    {
+      "kode" : "I.B",
+      "judul" : "Manajemen Infrastruktur TI",
+      "butir" : [
+        {
+          "kode" : "II.B.1",
+          "judul" : "Menyusun Rencana Pengoperasian Infrastruktur TI",
+          "uraian" : "Menyusun rencana pengoperasian infrastruktur TI adalah menyusun dokumen perencanaan yang berisi rincian operasional teknis infrastruktur TI pada suatu satuan kerja atau institusi.\nRencana pengoperasian harus diambil dan dibreakdown dari rencana strategis (renstra) TI institusi agar selaras/align dengan misi dan sasaran strategis TI institusi.\nRencana pengoperasian disusun setidaknya harus melibatkan pegawai yang terlibat dalam implementasi operasional, agar rencana lebih realistis dan terukur.",
+          "satuan_hasil" : "Dokumen rencana pengoperasian infrastruktur TI",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Kegiatan ini dapat dilakukan maksimal 1 kali dalam 3 bulan.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen rencana pengoperasian infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Dasar rencana pengoperasian;\n2. Deskripsi kegiatan yang dilakukan;\n3. Jadwal implementasi kegiatan;\n4. Daftar perangkat infrastruktur TI;\n5. Standar/ kinerja kualitas yang harus dicapai;\n6. Kualifikasi dan nama operator; dan\n7. Lembar persetujuan.",
+          "contoh" : "Yeni Rima, M.T. seorang Pranata Komputer Ahli Muda membuat dokumen perencanaan pengoperasian infrastruktur TI di instansinya, maka Yeni Rima diberikan AK sebesar 0,110."
+        },
+        {
+          "kode" : "II.B.2",
+          "judul" : "Menyusun KAK",
+          "uraian" : "KAK (Kerangka Acuan Kerja) merupakan dokumen yang menjelaskan gambaran latar belakang, tujuan, keluaran kegiatan, ruang lingkup dan struktur sebuah proyek pengadaan barang dan jasa yang telah disepakati.\nKAK digunakan sebagai acuan dalam pengalokasian anggaran belanja serta sebagai alat kontrol dalam pelaksanaan pengadaan barang dan jasa agar kegiatan/proyek sesuai dengan apa yang diharapkan.\nTahapan dalam menyusun KAK adalah sebagai berikut :\n1. Mempersiapkan dokumen pendukung, seperti: renstra institusi, dasar hukum,dan dokumen lain yang diperlukan.\n2. Menyusun dokumen KAK yang berisi rincian item-item yang dibutuhkan dan spesifikasi.\nKegiatan penyusunan KAK ini mencakup seluruh kegiatan TI dan tidak terbatas pada:\n1. KAK pengadaan barang dan jasa TI;\n2. KAK kerjasama antar institusi terkait TI;\n3. KAK jasa konsultan TI; dan\n4. KAK pelatihan TI.",
+          "satuan_hasil" : "Dokumen Kerangka Acuan Kerja",
+          "angka_kredit" : 0.880,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah sebanyak 3 (tiga) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen KAK yang minimal bagian yang harus dilampirkan (screenshot):\na. Halaman judul;\nb. Maksud dan tujuan;\nc. Spesifikasi teknis; dan\nd. Halaman pengesahan oleh Pejabat yang berwenang.",
+          "contoh" : "Bagus Suhada, M.T. seorang Pranata Komputer Ahli Muda membuat KAK pengadaan piranti lunak antivirus. Jika bukti yang diajukan lengkap maka Bagus Suhada diberikan angka kredit sebesar 0,880."
+        },
+        {
+          "kode" : "II.B.3",
+          "judul" : "Melakukan Evaluasi Proposal Teknis Penyedia Barang/Jasa Infrastruktur TI",
+          "uraian" : "Melakukan evaluasi proposal teknis penyedia barang/jasa infrastruktur TI adalah melakukan pemeriksaan dan evaluasi terhadap konten proposal teknis penyedia barang/jasa infrastruktur TI.\nBarang/Jasa Infrastruktur TI mencakup:\n1. Perangkat keras (Perangkat keras end user, perangkat jaringan server, storage);\n2. Perangkat lunak (sistem operasi end user maupun server);\n3. Perangkat pendukung TI dan pendukung pusat data seperti mesin perekam absen, cctv, access door, cooling, elektrikal, dan sebagainya; dan\n4. Penyedia jasa konsultan TI dan/atau yang terkait dengan peningkatan kapabilitas SDM TI (pelatihan).\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Evaluasi kualifikasi pelaku usaha tersebut terhadap kebutuhan kualifikasi minimum pengadaan barang/jasa infrastruktur TI yang disyaratkan;\n2. Evaluasi kelengkapan dan kejelasan konten proposal yang disyaratkan;\n3. Evaluasi kesesuaian proposal dengan Kerangka Acuan Kerja milik unit kerja/ institusi;\n4. Evaluator menerima proposal teknis dan mendapatkan paparan dari calon penyedia; dan\n5. Evaluator memeriksa proposal dan mencatat temuan dari proposal teknis tersebut dan mem-probing/mendalami temuan tersebut ke calon penyedia.",
+          "satuan_hasil" : "Dokumen hasil evaluasi proposal teknis penyedia barang/jasa infrastruktur TI",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah sebanyak 6 kali dalam 1 tahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "1. Dokumen hasil evaluasi proposal teknis penyedia barang/jasa infrastruktur TI yang mencakup namun tidak terbatas pada:\na. Deskripsi pengadaan barang dan jasa TI\nb. Lembar penilaian\nc. Hasil klarifikasi penyedia (jika ada)\nd. Hasil Evaluasi\ne. Lembar Persetujuan\n2. Proposal Penyedia (minimal screenshot spesifikasi teknis)",
+          "contoh" : "Yulia Virantina, M.T. seorang Pranata Komputer Ahli Muda melakukan evaluasi proposal teknis pengadaan printer, di saat yang sama juga melakukan evaluasi proposal teknis pengadaan laptop. Maka Yulia Virantina diberikan angka kredit sebesar 2 x 0,110 = 0,220."
+        },
+        {
+          "kode" : "II.B.4",
+          "judul" : "Melakukan Pengkajian Terhadap Pemenuhan/Kesesuaian Infrastruktur TI Terhadap Regulasi",
+          "uraian" : "Melakukan pengkajian terhadap pemenuhan/kesesuaian infrastruktur TI terhadap regulasi adalah kegiatan mempelajari/mengkaji regulasi dari pemerintah, standar internasional atau best practice terhadap infrastruktur TI. Termasuk dalam kegiatan ini menelaah pemenuhan/kesesuaian regulasi.\nTahapan dari kegiatan ini yaitu:\n1. Melakukan pengkajian terhadap regulasi terkait dan/atau standar internasional dan/atau praktik terbaik yang terkait dengan infrastruktur TI;\n2. Melakukan pemetaan pemenuhan/kesesuaian infrastruktur TI terhadap regulasi;\n3. Mengidentifikasi gap;\n4. Melakukan analisis gap; dan\n5. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen kajian terhadap pemenuhan/kesesuaian infrastruktur TI terhadap regulasi",
+          "angka_kredit" : 0.825,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 1 (satu) kali per semester.",
+          "pelaksana" : "Pranata Komputer Ahli Madya",
+          "bukti_fisik" : "Dokumen kajian terhadap pemenuhan/ kesesuaian infrastruktur TI terhadap regulasi yang terdiri namun tidak terbatas pada:\n1. Latar belakang, tujuan, dan batasan;\n2. Deskripsi mengenai regulasi/standar/praktek terbaik yang digunakan;\n3. Hasil kajian terhadap regulasi/standar/praktek terbaik yang digunakan;\n4. Hasil pemetaan pemenuhan/kesesuaian infrastruktur TI terhadap regulasi/standar/praktek terbaik yang digunakan;\n5. Hasil identifikasi gap;\n6. Hasil analisis gap;\n7. Rekomendasi; dan\n8. Lembar persetujuan.",
+          "contoh" : "Dr. Novianto Budi Kurniawan seorang Pranata Komputer Ahli Madya melakukan kajian terhadap standar pengelolaan data centre dan melakukan assessment terhadap pengelolaan yang sedang berjalan berdasarkan hasil kajian tersebut, maka Novianto Budi Kurniawan mendapatkan angka kredit sebesar 0,825."
+        },
+        {
+          "kode" : "II.B.5",
+          "judul" : "Melakukan Pemeriksaan Kesesuaian Antara Infrastruktur TI dengan Spesifikasi Teknis",
+          "uraian" : "Melakukan pemeriksaan kesesuaian antara Infrastruktur TI dengan spesifikasi teknis adalah kegiatan melakukan pengecekan kondisi/fungsionalitas infrastruktur TI (dapat berupa barang/jasa) dengan spesifikasi teknis yang tertuang pada kontrak.\nSpesifikasi teknis adalah rincian/ketentuan pada barang/jasa yang disyaratkan saat pengadaan.\nAdapun tahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Membuat lembar kerja sesuai dengan daftar spesifikasi teknis;\n2. Memeriksa kesesuaian antara infrastruktur TI dengan spesifikasi teknis; dan\n3. Membuat laporan hasil pemeriksaan kesesuaian.",
+          "satuan_hasil" : "Dokumen hasil pemeriksaan kesesuaian antara Infrastruktur TI dengan spesifikasi teknis",
+          "angka_kredit" : 0.110,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 3 (tiga) kali kegiatan pemeriksaan per tahun",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen hasil pemeriksaan kesesuaian antara Infrastruktur TI dengan spesifikasi teknis yang mencakup namun tidak terbatas pada:\n1. Daftar barang/jasa yang diperiksa;\n2. Daftar spesifikasi teknis dari pengadaan;\n3. Lembar kesesuaian antara barang/jasa dengan spesifikasi teknis;\n4. Hasil pemeriksaan berisi kesimpulan dan rekomendasi;\n5. Bukti pemeriksaan (foto dan screenshot); dan\n6. Lembar persetujuan.",
+          "contoh" : "Eka Mifta, S.ST. seorang Pranata Komputer Ahli Pertama melakukan pemeriksaan kesesuaian antara perangkat firewall dengan spesifikasi teknis pada kontrak pengadaan, maka Eka Mifta mendapatkan angka kredit sebesar 0,110. Jika bukti fisik yang diajukan tidak menyertakan bukti pemeriksaan (foo dan screenshot) serta lembar persetujuan dari atasan, maka AK yang didapat sebesar 4/6 x 0,110= 0,073."
+        },
+        {
+          "kode" : "II.B.6",
+          "judul" : "Melakukan Pengujian Infrastruktur TI",
+          "uraian" : "Melakukan pengujian infrastruktur TI adalah kegiatan untuk memeriksa serta melakukan pengujian pada perangkat sesuai dengan kebutuhan/ tujuan pengujian untuk memastikan perangkat sudah berfungsi dengan baik dan dapat digunakan untuk membantu tujuan organisasi.\nKegiatan ini merupakan bagian dari user acceptance test, dapat dilakukan mengikuti pengadaan atau jika terdapat kebutuhan organisasi untuk melakukan pengujian infrastruktur TI.\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada:\n1. Menentukan tujuan/kebutuhan pengujian;\n2. Menentukan  daftar  perangkat  dan daftar pengujian, untuk pengujian pengadaan dapat berdasarkan spesifikasi teknis;\n3. Menentukan tahapan pengujian;\n4. Melakukan pengujian; dan\n5. Membuat dokumentasi pengujian.",
+          "satuan_hasil" : "Laporan hasil pengujian infrastruktur TI",
+          "angka_kredit" : 0.090,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan;\n2. Maksimal kegiatan yang dapat dinilai adalah 3 (tiga) kali per tahun; dan\n3. Kegiatan yang dapat diajukan adalah kegiatan pengujian perangkat untuk yang pertama kali.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Laporan hasil pengujian infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Tujuan/kebutuhan pengujian;\n2. Daftar perangkat dan daftar pengujian, jika pengujian pengadaan dapat menggunakan daftar spesifikasi teknis;\n3. Tahapan pengujian;\n4. Lembar pengujian (form UAT);\n5. Hasil pengujian berisi kesimpulan dan rekomendasi;\n6. Bukti pengujian (foto atau screenshot); dan\n7. Lembar persetujuan.",
+          "contoh" : "Yusfil Khoir, S.ST. seorang Pranata Komputer Ahli Pertama melakukan pengujian pada terhadap 10 server dalam rangka user acceptance test setelah dilakukannya kegiatan pengadaan server, maka Yusfil Khoir mendapatkan nilai sebesar 0,090.\nJika bukti fisik yang diajukan tidak menyertakan hasil pengujian, bukti pengujian serta lembar persetujuan maka AK yang didapat sebesar 4/7 x 0,90 = 0,514."
+        },
+        {
+          "kode" : "II.B.7",
+          "judul" : "Menyusun Rencana Pemeliharaan Infrastruktur TI",
+          "uraian" : "Menyusun rencana pemeliharaan infrastruktur TI adalah membuat rencana pemeliharaan infrastruktur TI pada suatu institusi/ organisasi untuk rentang waktu 1 tahun.\nTahapan dalam kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi komponen-komponen infrastruktur TI suatu satuan kerja/ institusi yang akan dijadwalkan pemeliharaan.\n2. Menyusun rencana pemeliharaan, meliputi namun tidak terbatas pada:\na. Deskripsi kegiatan pemeliharaan yang dilakukan;\nb. Jadwal pemeliharaan;\nc. Tools/peralatan yang dibutuhkan dalam pemeliharaan; dan\nd. Personil yang dibutuhkan.\n3. Mendokumentasikan rencana pemeliharaan.",
+          "satuan_hasil" : "Dokumen rencana pemeliharaan infrastruktur TI",
+          "angka_kredit" : 0.374,
+          "batasan_penilaian" : "1. Kegiatan ini dapat dilakukan untuk setiap kegiatan perencanaan pemeliharaan terhadap komponen dalam infrastruktur TI dalam suatu satuan kerja/institusi.\n2. Jumlah maksimum kegiatan yang dapat diajukan yaitu 2 (dua) kali pertahun.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen rencana pemeliharaan infrastruktur TI mencakup namun tidak terbatas pada:\n1. Latar belakang pemeliharaan (secara umum).\n2. Daftar perangkat infrastruktur TI disertai informasi :\na. Jenis dan tahapan pemeliharaan untuk setiap kegiatan pemeliharaan; dan\nb. Jadwal pemeliharaan (waktu, kegiatan pemeliharaan, perangkat, lokasi, dan petugas).\n3. Lembar persetujuan.",
+          "contoh" : "Herman Saputra, M.T., seorang Pranata Komputer Ahli Muda membuat rencana pemeliharaan perangkat server, storage, dan perangkat jaringan di data centre maka Herman Saputra mendapat Angka Kredit sebesar 0,374.\nHerman Saputra, MT seorang Pranata Komputer Ahli Muda melakukan kegiatan perencanaan pemeliharaan laptop dalam suatu instansi, maka Herman Saputra tersebut mendapat Angka Kredit sebesar 0,374."
+        },
+        {
+          "kode" : "II.B.8",
+          "judul" : "Melakukan Pemeliharaan Infrastruktur TI",
+          "uraian" : "Melakukan pemeliharaan infrastruktur TI adalah melakukan pemeliharaan komponen dalam infrastruktur TI dalam suatu institusi berdasarkan rencana pemeliharaan infrastruktur TI yang telah disusun.\nTahapan kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi komponen infrastruktur TI;\n2. Melakukan pemeliharaan komponen infrastruktur TI; dan\n3. Mendokumentasikan proses pemeliharaan infrastruktur TI.",
+          "satuan_hasil" : "Laporan pemeliharaan infrastruktur TI",
+          "angka_kredit" : 0.060,
+          "batasan_penilaian" : "1. Jumlah maksimum kegiatan pemeliharaan infrastruktur TI yang dapat dinilai adalah 1 (satu) kali per minggu.\n2. Pemberian angka kredit berdasarkan satuan kegiatan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen melakukan kegiatan pemeliharaan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Waktu, lokasi dan nama petugas pemeliharaan;\n2. Perangkat yang dipelihara;\n3. Tahapan kegiatan pemeliharaan yang dilakukan;\n4. Hasil pemeliharaan perangkat TI;\n5. Kesimpulan dan rekomendasi pemeliharaan;\n6. Foto bukti pemeliharaan;\n7. Referensi ke rencana pemeliharaan yang telah disusun; dan\n8. Lembar persetujuan.",
+          "contoh" : "Eka Putri, S.ST. seorang Pranata Komputer Ahli Pertama melakukan upgrade pada tiga firewall pada satu waktu/momen kegiatan di suatu instansi, maka Eka Putri tersebut mendapat Angka Kredit sebesar 0,060.\nEka Putri, S.ST. seorang Pranata Komputer melakukan pemeliharaan pada dua buah scanner pada satu waktu/momen kegiatan maka Eka Putri mendapat Angka Kredit sebesar 0,060. Jika bukti fisik yang diajukan tidak menyertakan referensi dan lembar persetujuan maka nilai AK yang didapat sebesar 6/8 x 0,06 = 0,045."
+        },
+        {
+          "kode" : "II.B.9",
+          "judul" : "Melakukan Pemasangan Infrastruktur TI",
+          "uraian" : "Melakukan pemasangan infrastruktur TI adalah melakukan pemasangan atau instalasi komponen infrastruktur TI dalam suatu institusi di pusat data atau pusat pengolahan.\nTahapan dari kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi komponen infrastruktur TI;\n2. Pemasangan/instalasi;\n3. Konfigurasi komponen infrastruktur TI; dan\n4. Mendokumentasikan proses pemasangan/instalasi.",
+          "satuan_hasil" : "Laporan pemasangan infrastruktur TI",
+          "angka_kredit" : 0.165,
+          "batasan_penilaian" : "1. Jumlah maksimum kegiatan pemasangan infrastruktur TI yang dapat dinilai adalah 12 (dua belas) kali per tahun.\n2. Pemberian angka kredit berdasarkan satuan kegiatan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Laporan pemasangan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Latar belakang dan tujuan pemasangan;\n2. Waktu dan lokasi pemasangan;\n3. Hasil identifikasi kebutuhan pemasangan atau penggantian perangkat TI;\n4. Tahapan kegiatan pemasangan perangkat TI yang dilakukan sampai berfungsi dengan baik;\n5. Kesimpulan;\n6. Bukti instalasi dan konfigurasi berupa foto atau screenshot; dan\n7. Lembar persetujuan.",
+          "contoh" : "Dwi Puspita, S.ST seorang Pranata Komputer Ahli Pertama melakukan instalasi dan konfigurasi server dan storage di sebuah satuan kerja, maka Dwi Puspita tersebut mendapat Angka Kredit sebesar 0,165.\nDwi Puspita, S.ST seorang Pranata Komputer Ahli Pertama melakukan pemasangan instalasi 5 buah mesin handkey di sebuah satuan kerja, maka Dwi Puspita mendapat Angka Kredit sebesar 0,165."
+        },
+        {
+          "kode" : "II.B.10",
+          "judul" : "Melakukan Pengaturan Akses Keamanan Fisik TI",
+          "uraian" : "Melakukan pengaturan akses keamanan fisik infrastruktur TI merupakan kegiatan yang dilakukan untuk mengatur dan memastikan bahwa perangkat fisik dapat diakses dengan aturan tertentu yang menjamin keamanan dan keberlangsungan seluruh sistem serta perangkat, peripheral dan media yang ada. Hal ini harus selaras dengan kebijakan yang berlaku di organisasi.\nTermasuk dalam cakupan kegiatan ini adalah pengaturan akses untuk pihak ketiga yang perlu melakukan pengaksesan ke infrastruktur TI.\nTahapan kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi perangkat yang memerlukan pengaturan akses keamanan;\n2. Identifikasi personil yang memerlukan akses ke infrastuktur TI; dan\n3. Pengaturan pengaksesan seluruh infrastruktur TI secara fisik untuk menjamin keamanan dan keberlangsungan seluruh sistem beserta perangkat, peripheral dan media yang digunakan.",
+          "satuan_hasil" : "Dokumen aturan akses keamanan fisik TI",
+          "angka_kredit" : 0.015,
+          "batasan_penilaian" : "1. Pengaturan akses keamanan fisik infrastruktur TI dapat dilakukan maksimal sebanyak 1 kali dalam satu bulan.\n2. Pemberian angka kredit berdasarkan satuan kegiatan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen aturan akses keamanan fisik TI meliputi namun tidak terbatas pada :\n1. Tanggal pembuatan akses;\n2. Nama perangkat yang diterapkan pengaturan akses;\n3. Personil yang diberikan akses dengan tujuan, rentang waktu, dan lokasi akses;\n4. Tahapan pengaturan akses pada sistem keamanan;\n5. Bukti pengaturan akses (foto/screenshot);\n6. Lembar persetujuan; dan\n7. Lampiran: form permintaan akses.",
+          "contoh" : "Muh. Aldian, S.Tr.Stat. seorang Pranata Komputer Ahli Pertama melakukan pengaturan akses untuk pegawai dan pihak ketiga yang memerlukan akses ke ruang Data Centre dengan melakukan pengaturan pada sistem access door, maka Muh. Aldian mendapatkan angka kredit sebesar 0,015."
+        },
+        {
+          "kode" : "II.B.11",
+          "judul" : "Melakukan Analisis Permasalahan Dari Hasil Pemantauan (Monitoring) Kinerja Infrastruktur TI",
+          "uraian" : "Melakukan analisis permasalahan dari hasil pemantauan (monitoring) kinerja infrastruktur TI yaitu melakukan evaluasi dan penelaahan terhadap hasil pemantauan kinerja infrastruktur TI jika terdapat anomali/permasalahan.\nTahapan kegiatan ini mencakup namun tidak terbatas pada :\n1. Identifikasi kinerja infrastruktur TI;\n2. Melakukan analisis permasalahan hasil pemantauan kinerja infrastruktur TI; dan\n3. Memberikan rekomendasi.",
+          "satuan_hasil" : "Dokumen hasil analisis permasalahan dari hasil pemantauan kinerja infrastruktur TI",
+          "angka_kredit" : 0.080,
+          "batasan_penilaian" : "1. Kegiatan ini dapat dilakukan jika terdapat anomali/permasalahan pada hasil pemantauan (monitoring) kinerja infrastruktur TI.\n2. Jumlah maksimum kegiatan yang dinilai adalah satu kali per minggu.",
+          "pelaksana" : "Pranata Komputer Ahli Muda",
+          "bukti_fisik" : "Dokumen hasil analisis permasalahan dari hasil pemantauan kinerja infrastruktur TI yang mencakup namun tidak terbatas pada :\n1. Hasil identifikasi infrastruktur TI;\n2. Hasil pemantauan kinerja infrastruktur sebelumnya;\n3. Analisis permasalahan berdasarkan hasil pemantauan kinerja infrastruktur TI;\n4. Rekomendasi; dan\n5. Lembar persetujuan.",
+          "contoh" : "Sawung Anggara, S.ST, M.T. seorang Pranata Komputer Ahli Muda melakukan evaluasi dan analisis terhadap hasil pemantauan kinerja server berupa anomali besarnya pemakaian memori pada cluster web server dan memberikan rekomendasi, maka Sawung Anggara memperoleh angka kredit sebesar 0,080.\nSawung Anggara, S.ST, M.T. seorang Pranata Komputer Ahli Muda melakukan pembuatan laporan analisis insiden kegagalan server dengan menggunakan data kinerja harian perangkat server yang diinventaris setiap hari maka Sawung Anggara mendapat Angka Kredit sebesar 0,080."
+        },
+        {
+          "kode" : "II.B.12",
+          "judul" : "Melakukan Deteksi Dan Atau Perbaikan Terhadap Permasalahan Infrastruktur TI",
+          "uraian" : "Melakukan deteksi dan atau perbaikan terhadap permasalahan infrastruktur TI adalah kegiatan pelaporan terhadap suatu permasalahan yang terjadi pada infrastruktur TI baik masih dalam bentuk laporan deteksi permasalahan saja maupun sekaligus dengan perbaikannya.\nMelakukan deteksi terkait permasalahan infrastruktur TI adalah kegiatan untuk mengetahui penyebab dari munculnya permasalahan, pesan error, atau tidak berfungsinya perangkat infrastruktur TI.\nMelakukan Perbaikan terhadap permasalahan infrastruktur TI adalah kegiatan yang bertujuan untuk membuat perangkat infrastruktur TI berfungsi dengan baik dan sebagaimana mestinya.\nTahapan dari kegiatan deteksi mencakup namun tidak terbatas pada :\n1. Melakukan identifikasi permasalahan yang muncul seperti sebab dan akibat/implikasi dari permasalahan; dan\n2. Membuat pencatatan analisa permasalahan yang berisi daftar kemungkinan penyebab dari permasalahan yang muncul.\nTahapan dari kegiatan perbaikan diantaranya :\n1. Melakukan identifikasi hasil deteksi permasalahan;\n2. Menentukan solusi/alternatif solusi berdasarkan hasil deteksi;\n3. Melakukan perbaikan; dan\n4. Mendokumentasikan proses dan langkah-langkah perbaikan.",
+          "satuan_hasil" : "Laporan hasil deteksi dan atau perbaikan terhadap permasalahan infrastruktur TI",
+          "angka_kredit" : 0.030,
+          "batasan_penilaian" : "1. Maksimal kegiatan yang dapat dinilai adalah 8 kali dalam satu bulan untuk setiap kegiatan deteksi atau perbaikan perangkat TI sesuai cakupan.\n2. Perbaikan dilakukan secara swakelola bukan oleh pihak ke 3.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen laporan deteksi dan atau perbaikan permasalahan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Waktu pelaksanaan kegiatan;\n2. Nama dan jenis perangkat;\n3. Fungsi perangkat;\n4. Bukti permasalahan pada infrastruktur TI:\na. Untuk kegiatan deteksi mencantumkan :\ni. Hasil identifikasi permasalahan\nii. Analisa permasalahan\nb. Untuk kegiatan perbaikan mencantumkan :\n(1) Hasil identifikasi penyebab permasalahan;\n(2) Solusi/alternatif solusi; dan\n(3) Langkah tindakan perbaikan permasalahan.\n5. Dokumentasi kegiatan (foto/screenshot); dan\n6. Lembar persetujuan.",
+          "contoh" : "Rahman, S.ST. seorang Pranata Komputer Ahli Pertama melakukan deteksi permasalahan pada Data Center dan melakukan perbaikan sparepart yang mengalami kerusakan, Kegiatan tersebut didokumentasikan dalam laporan hasil deteksi dan perbaikan permasalahan perangkat TI, maka Rahman mendapat Angka Kredit sebesar dua kali 0,030 yaitu 0,060.\nRahman, S.ST. seorang Pranata Komputer Ahli Pertama melakukan deteksi permasalahan pada mesin handkey, kemudian membuat dokumentasinya, hasil laporan diteruskan ke Tim Support dari penyedia perangkat untuk proses perbaikan, maka Rahman mendapat Angka Kredit sebesar 0,030."
+        },
+        {
+          "kode" : "II.B.13",
+          "judul" : "Menyusun Prosedur Pemanfaatan Infrastruktur TI",
+          "uraian" : "Menyusun prosedur pemanfaatan infrastruktur TI adalah kegiatan menyusun langkah-langkah yang spesifik, tindakan atau operasi yang dijadikan pedoman dan dasar dalam menjalankan aktivitas/kegiatan pemanfaatan infrastruktur TI.\nTahapan dari kegiatan menyusun prosedur pemanfaatan infrastruktur TI meliputi namun tidak terbatas pada :\n1. Identifikasi perangkat TI;\n2. Identifikasi pengguna perangkat TI;\n3. Identifikasi proses bisnis yang melibatkan perangkat TI tersebut; dan\n4. Menyusun prosedur pemanfaatan infrastruktur TI.\nKegiatan ini juga mencakup:\n1. Penyusunan panduan/petunjuk teknis pemanfaatan infrastruktur TI untuk perangkat TI yang memang perlu dioperasikan agar sesuai kebutuhan organisasi; dan\n2. Modifikasi/penerjemahan petunjuk pengoperasian sesuai pedoman yang dikeluarkan oleh penyedia perangkat agar lebih memudahkan penggunanya.",
+          "satuan_hasil" : "Dokumen prosedur pemanfaatan infrastruktur TI",
+          "angka_kredit" : 0.055,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 12 (dua belas) kali per tahun.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen prosedur pemanfaatan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Nama dan versi/tanggal pembuatan prosedur;\n2. Tujuan dan sasaran prosedur;\n3. Dasar rujukan/referensi;\n4. Alur tahapan, dimana setiap tahap dilengkapi dengan informasi pihak/role yang melakukan aktivitas, lama waktu pengerjaan, tools yang digunakan dan kelengkapan pendukung lainnya; dan\n5. Halaman pengesahan.\nDokumen petunjuk teknis pemanfaatan infrastruktur TI yang mencakup namun tidak terbatas pada:\n1. Judul dan versi/tanggal pembuatan petunjuk teknis;\n2. Tujuan dan sasaran;\n3. Langkah-langkah atau tahapan penggunaan perangkat; dan\n4. Halaman pengesahan.\nDokumen modifikasi/penerjemahan petunjuk pengoperasian sesuai pedoman, yang mencakup namun tidak terbatas pada:\n1. Judul dan versi/tanggal pembuatan petunjuk teknis;\n2. Tujuan dan sasaran;\n3. Langkah-langkah atau tahapan penggunaan perangkat; dan\n4. Halaman pengesahan.",
+          "contoh" : "Sulisetyo, S.ST. Seorang Pranata Komputer Ahli Pertama melakukan pembuatan prosedur/SOP pemanfaatan TI pada sistem layanan TI di institusinya, maka Sulisetyo mendapat Angka Kredit sebesar 0,055. Sulisetyo, S.ST Seorang Pranata Komputer Ahli Pertama membuat petunjuk teknis pengoperasian perangkat UPS, maka Sulisetyo mendapat Angka Kredit sebesar 0,055."
+        },
+        {
+          "kode" : "II.B.14",
+          "judul" : "Menyiapkan Peralatan Video Conference (Vicon/Streaming), Monitoring Peralatan (Audio, Video, Dan Perangkat Jaringan), Dan Mengatur Layout",
+          "uraian" : "Menyiapkan peralatan video conference (vicon/streaming), monitoring peralatan (audio, video dan perangkat jaringan), dan mengatur layout adalah kegiatan yang dilakukan untuk menyediakan layanan vicon dan memastikan bahwa layanan vicon berjalan dengan baik untuk kebutuhan organisasi.\nTahapan dari kegiatan ini adalah:\n1. Menyiapkan peralatan video conference (vicon/streaming);\n2. Memastikan bahwa perangkat vicon sudah terkoneksi;\n3. Melakukan pengaturan (setting) dan konfigurasi, termasuk pengaturan layout; dan\n4. Melakukan monitoring selama pelaksanaan video conference (vicon).",
+          "satuan_hasil" : "Laporan hasil penyiapan peralatan vicon, monitoring peralatan, dan pengaturan layout",
+          "angka_kredit" : 0.033,
+          "batasan_penilaian" : "Maksimal kegiatan yang dapat dinilai adalah 8 (delapan) kali per bulan.",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "1. Laporan hasil penyiapan peralatan vicon, monitoring peralatan, dan pengaturan layout yang mencakup namun tidak terbatas pada:\na. Tanggal dan waktu;\nb. Detail setting dan konfigurasi;\nc. Hasil monitoring selama vicon; dan\nd. Catatan jika terdapat gangguan dan penanganannya.\n2. Bukti permintaan dan penugasan",
+          "contoh" : "Samarul Falah, S.ST. seorang Pranata Komputer Ahli Pertama mendapatkan tugas sebagai operator vicon kegiatan rilis inflasi, maka Samarul Falah akan mendapatkan angka kredit 1 x 0,033 = 0,033.\nSamarul Falah, S.ST. seorang Pranata Komputer Ahli Pertama mendapatkan tugas sebagai operator vicon kegiatan raker instansi pusat dan daerah, maka Samarul Falah akan mendapatkan angka kredit 1 x 0,033 = 0,033."
+        },
+        {
+          "kode" : "II.B.15",
+          "judul" : "Melakukan Optimalisasi Kinerja Infrastruktur TI",
+          "uraian" : "Melakukan optimalisasi kinerja infrastruktur TI adalah kegiatan untuk meningkatkan kinerja melalui penyesuaian konfigurasi, versi, kapasitas, atau fungsionalitas dari infrastruktur TI yang sudah ada untuk mengatasi permasalahan yang terjadi atau menyesuaikan kebutuhan organisasi.\nTahapan kegiatan mencakup namun tidak terbatas pada :\n1. Identifikasi kebutuhan terhadap optimalisasi kinerja infrastruktur TI;\n2. Optimalisasi kinerja; dan\n3. Membuat dokumentasi.",
+          "satuan_hasil" : "Dokumen optimalisasi kinerja infrastruktur TI",
+          "angka_kredit" : 0.015,
+          "batasan_penilaian" : "1. Pemberian angka kredit berdasarkan satuan kegiatan.\n2. Jumlah maksimum kegiatan optimalisasi infrastruktur TI yang dapat dinilai adalah satu kali dalam satu minggu",
+          "pelaksana" : "Pranata Komputer Ahli Pertama",
+          "bukti_fisik" : "Dokumen optimalisasi kinerja infrastruktur TI yang mencakup namun tidak terbatas pada :\n1. Latar belakang dan tujuan optimalisasi kinerja;\n2. Lokasi;\n3. Metode dan tahapan optimalisasi kinerja infrastruktur TI;\n4. Perbandingan kondisi sebelum dan setelah dilakukan optimalisasi kinerja infrastruktur TI; dan\n5. Lembar persetujuan.",
+          "contoh" : "Hanif Wahyu, S.ST. seorang Pranata Komputer Ahli Pertama melakukan tuning database dalam sebuah Enterprise Data Warehouse (EDW) environment untuk fase ETL, maka Hanif Wahyu mendapat Angka Kredit sebesar 0,015.\nHanif Wahyu, S.ST. seorang Pranata Komputer Ahli Pertama menindaklajuti hasil analisis permasalahan web server yang kapasitas penyimpanannya sudah 90% dengan meningkatkan kapasitas penyimpanannya pada VM (virtual machine) untuk menjaga kinerja layanan, maka Hanif Wahyu mendapatkan nilai 0,015."
+        }
+      ]
+    }
+    ]
   }
 ]
