@@ -616,12 +616,12 @@
           "kode" : "III.A.2",
           "judul" : "Menyusun Dokumentasi Pengembangan Sistem Informasi",
           "uraian" : "Menyusun dokumentasi pengembangan sistem informasi adalah kegiatan membuat dokumentasi lengkap terkait kegiatan pengembangan sistem informasi.\nTahapan kegiatan ini mencakup namun tidak terbatas pada:\n1. Membuat dokumentasi produk (output) dari pengembangan sistem informasi. Dokumentasi produk menjelaskan sistem yang sedang dikembangkan menyangkut fungsionalitas yang ada pada sistem, baik sistem lama maupun yang akan dikembangkan; dan\n2. Membuat dokumentasi proses pengembangan sistem informasi. Dokumentasi proses merupakan dokumentasi yang disusun untuk membantu mengatur proses pengembangan agar lebih terorganisir.",
-          "satuan_hasil" : "Dokumen pengembangan sistem informasi Angka ",
+          "satuan_hasil" : "Dokumen pengembangan sistem informasi Angka",
           "angka_kredit" : 0.030,
           "batasan_penilaian" : "18 (delapan belas) dokumen per tahun",
           "pelaksana" : "Pranata Komputer Mahir",
           "bukti_fisik" : "Kompilasi dokumen pengembangan sistem informasi yang dibedakan sebagai berikut:\n1. Jika dokumentasi yang disusun merupakan dokumentasi produk/sistem, maka bukti fisik mencakup namun tidak terbatas pada:\na. kondisi/permasalahan sistem lama;\nb. kebutuhan/perbaikan pengembangan system; dan\nc. spesifikasi sistem baru.\n2. Jika dokumentasi yang disusun merupakan dokumentasi proses, maka bukti fisik mencakup namun tidak terbatas pada:\na. Rencana jadwal, biaya, dan sumber daya untuk pengembangan sistem baru; dan\nb. Catatan permasalahan selama pengembangan.",
-          "contoh" : "Medina Kartini, A.Md., seorang Pranata Komputer Mahir membuat dokumentasi pengembangan sistem informasi perpustakaan dari sistem yang lama diremajakan menjadi sistem yang baru. Yang bersangkutan membuat 2 (dua) dokumentasi , yaitu produk dan proses yang masing-masing memenuhi minimal bukti fisik lengkap yang harus dipenuhi. Angka Kredit yang diperoleh Medina Kartini adalah 2 x 0,03 = 0,06."
+          "contoh" : "Medina Kartini, A.Md., seorang Pranata Komputer Mahir membuat dokumentasi pengembangan sistem informasi perpustakaan dari sistem yang lama diremajakan menjadi sistem yang baru. Yang bersangkutan membuat 2 (dua) dokumentasi, yaitu produk dan proses yang masing-masing memenuhi minimal bukti fisik lengkap yang harus dipenuhi. Angka Kredit yang diperoleh Medina Kartini adalah 2 x 0,03 = 0,06."
         },
         {
           "kode" : "III.A.3",
