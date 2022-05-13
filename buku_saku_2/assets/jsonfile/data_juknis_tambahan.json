@@ -200,7 +200,7 @@
       ]
     },
     {
-      "kode" : "IV.D",
+      "kode" : "V.D",
       "judul" : "Penyusunan  Standar/  Pedoman/  Petunjuk  Pelaksanaan/  Petunjuk Teknis di Bidang Teknologi Informasi Berbasis Komputer",
       "butir" : [
         {
@@ -383,6 +383,130 @@
         }
       ]
     }
-    ] 
+    ]
+  },
+  {
+    "unsur" : "V",
+    "judul_unsur" : "PENUNJANG KEGIATAN PRANATA KOMPUTER",
+    "subunsur" : [
+    {
+      "kode" : "V.A",
+      "judul" : "Pengajar/Pelatih di Bidang Teknologi Informasi Berbasis Komputer",
+      "butir" : [
+        {
+          "kode" : "V.A.1",
+          "judul" : "Mengajar/Melatih/Membimbing yang Berkaitan dengan Bidang Teknologi Informasi",
+          "uraian" : "Mengajar atau melatih pada unit organisasi pemerintah dalam kegiatan teknologi informasi berbasis komputer. Kegiatan tersebut adalah mengajar/melatih pada pendidikan dan pelatihan dalam bidang teknologi informasi berbasis komputer yang diselenggarakan oleh instansi pemerintah",
+          "satuan_hasil" : "Sertifikat/Laporan",
+          "angka_kredit" : 0.400,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Sertifikat/laporan dilengkapi dengan surat tugas mengajar dari penyelenggara diklat",
+          "contoh" : "Roziana Novitasari, S.Kom., MMSI., Pranata Komputer Ahli Muda, ditugaskan mengajar tentang Tata Kelola Sistem Informasi pada suatu diklat teknis fungsional di Pusdiklat BPS sebanyak 6 jam pelajaran. Dengan menunjukkan surat tugas mengajar dan surat keterangan mengajar dari penyelenggara diklat, Roziana Novitasari memperoleh angka kredit sebesar 1 x 0,40 = 0,40."
+        }
+      ]
+    },
+    {
+      "kode" : "V.B",
+      "judul" : "Keanggotaan dalam Tim Penilai/Tim Uji Kompetensi",
+      "butir" : [
+        {
+          "kode" : "V.B.1",
+          "judul" : "Menjadi Anggota Tim Penilai/Tim Uji Kompetensi",
+          "uraian" : "Pranata Komputer yang menjadi anggota Tim Penilai/Tim Uji Kompetensi pada instansinya dapat memperoleh angka kredit sebesar 0,04 untuk setiap Pejabat Pranata Komputer yang dinilai.",
+          "satuan_hasil" : "Laporan",
+          "angka_kredit" : 0.040,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Salinan SK Tim Penilai dan Laporan Hasil Penilaian",
+          "contoh" : "Yulia Virantina, SST., M.T., Pranata Komputer Ahli Muda ditunjuk menjadi anggota Tim Penilai Pranata Komputer BPS. Pada periode 2020, Yulia Virantina menilai 14 orang Pranata Komputer. Dengan melampirkan bukti laporan hasil penilaian untuk setiap Prakom yang dinilai dan salinan SK tim penilai, maka Yulia Virantina memperoleh angka kredit sebesar 14 x 0,04 = 0,56."
+        }
+      ]
+    },
+    {
+      "kode" : "V.C",
+      "judul" : "Perolehan Penghargaan",
+      "butir" : [
+        {
+          "kode" : "V.C.1",
+          "judul" : "Memperoleh Penghargaan/Tanda Jasa Satya Lencana Karya Satya",
+          "uraian" : "",
+          "satuan_hasil" : "Piagam",
+          "angka_kredit" : "1. 30 (tiga puluh) tahun : 3\n2. 20 (dua puluh) tahun : 2\n3. 10 (sepuluh) tahun : 1",
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Fotokopi sertifikat",
+          "contoh" : "Riska Rasyid, S.Kom., Pranata Komputer Ahli Muda, mendapat penghargaan Satya Lencana Karya Satya 20 tahun. Kemudian mengajukannya untuk penilaian angka kredit maka Riska Rasyid memperoleh angka kredit sebesar 1 x 2 = 2."
+        },
+        {
+          "kode" : "V.C.2",
+          "judul" : "Penghargaan/Tanda Jasa Atas Prestasi Kerja",
+          "uraian" : "",
+          "satuan_hasil" : "Sertifikat/Piagam",
+          "angka_kredit" : "1. Tingkat Internasional: 33% AK Kenaikan pangkat\n2. Tingkat Nasional : 25% AK Kenaikan pangkat\n3. Tingkat Provinsi : 15% AK Kenaikan pangkat",
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Fotokopi sertifikat/piagam/surat keterangan",
+          "contoh" : "Chandra Irawan, S.T., M.T., Pranata Komputer Ahli Muda pangkat 3c mendapatkan penghargaan di bidang teknologi informasi tingkat nasional, maka Chandra Irawan mendapat angka kredit sebesar 25% x 100 = 25."
+        }
+      ]
+    },
+    {
+      "kode" : "V.D",
+      "judul" : "Perolehan Gelar Kesarjanaan Lainnya yang Tidak Sesuai dengan Tugas Bidang Jabatan Fungsional Pranata Komputer",
+      "butir" : [
+        {
+          "kode" : "V.D.1",
+          "judul" : "Membuat Buku Standar/ Pedoman/ Petunjuk Pelaksanaan/ Petunjuk Teknis di Bidang Teknologi Informasi",
+          "uraian" : "Gelar kesarjanaan lainnya adalah gelar kesarjanaan yang diperoleh oleh fungsional Pranata Komputer yang tidak sesuai dengan bidang tugasnya.\nApabila suatu instansi/unit teknologi informasi berbasis komputer memiliki kualifikasi pendidikan (jurusan) yang secara spesifik ditetapkan sebagai 'jurusan yang diperlukan' bagi dan 'sesuai dengan bidang tugas' Pranata Komputer di lingkungan instansi/unit Pranata Komputer yang bersangkutan, maka yang dimaksud dengan 'memperoleh gelar kesarjanaan lainnya' adalah perolehan gelar yang tidak sesuai dengan bidang tugas Pranata Komputer.\nApabila suatu instansi/unit Pranata Komputer tidak\nmenetapkan kualifikasi pendidikan (jurusan) tertentu sebagai\n'jurusan yang diperlukan' bagi dan 'sesuai dengan bidang tugas'\nPranata Komputer, maka angka kredit yang diberikan untuk\nperolehan gelar kesarjanaan mengacu kepada ketentuan penilaian\nuntuk unsur pendidikan sebagai bagian Kegiatan Utama.",
+          "satuan_hasil" : "Ijazah",
+          "angka_kredit" : "1. Sarjana : 5\n2. Magister : 10\n3. Doktor : 15",
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Fotocopy ijazah  kesarjanaan  dan  transkrip  yang  telah dilegalisir instansi yang berwenang sesuai dengan ketentuan yang berlaku serta surat tugas/ijin belajar.",
+          "contoh" : "Mumpuni Dyah Sandradewi, S.Kom., Pranata Komputer Ahli Pertama, memperoleh gelar Pasca Sarjana Ekonomi Manajemen, maka Mumpuni Dyah Sandradewi memperoleh angka kredit sebagai unsur penunjang sebesar 1 x 10 = 10."
+        }
+      ]
+    },
+    {
+      "kode" : "V.E",
+      "judul" : "Pelaksanaan Tugas Lain yang Mendukung Pelaksanaan Tugas Pranata Komputer",
+      "butir" : [
+        {
+          "kode" : "V.E.1",
+          "judul" : "Melakukan Kegiatan yang Mendukung Pelaksanaan Tugas Pranata Komputer : Diskusi dan Pembahasan Terkait TI",
+          "uraian" : "Mengikuti diskusi/pembahasan terkait Teknologi Informasi yang diselenggarakan oleh instansi pemerintah. Satu pertemuan setara dengan 3 (tiga) jam.",
+          "satuan_hasil" : "Pertemuan",
+          "angka_kredit" : 0.040,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Undangan, daftar hadir, dan notulensi rapat.",
+          "contoh" : "Alwie Attar, M.T., Pranata Komputer Ahli Muda, menghadiri rapat Strategi Pengolahan Dokumen Sensus Ekonomi selama 2 jam. Dengan melampirkan salinan undangan, daftar hadir, dan notulensi rapat, Alwie Attar, M.T., akan mendapatkan angka kredit sebesar (2/3) x 0,04 = 0,027. Di kesempatan lain, Alwie Attar, M.T., menghadiri rapat Alokasi Petugas Pengolahan Dokumen Sensus Ekonomi selama 5 jam. Dengan melampirkan salinan undangan, daftar hadir, dan notulensi rapat, Alwie Attar, M.T., akan mendapatkan angka kredit sebesar 1 x 0,04 = 0,04.\nAlif Bintang, M.Eng, Pranata Komputer Ahli Muda, mengikuti konsinyering \"Satu Data Indonesia\" yang berlangsung selama 3 hari, dan terdiri atas 6 sessi. Dengan melampirkan salinan undangan, daftar hadir, dan notulensi konsinyering, Alif Bintang, M.Eng mendapatkan angka kredit sebesar 6 x 0,04 = 0,24."
+        },
+        {
+          "kode" : "V.E.2",
+          "judul" : "Melakukan Kegiatan yang Mendukung Pelaksanaan Tugas Pranata Komputer : Administrasi Kegiatan terkait Teknologi Informasi",
+          "uraian" : "",
+          "satuan_hasil" : "Kegiatan",
+          "angka_kredit" : 0.040,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Laporan dan surat tugas",
+          "contoh" : "Herenda Medishita, S.Kom., Pranata Komputer Ahli Pertama, diminta untuk menyiapkan berkas administrasi untuk kegiatan webinar “Peran Teknologi Informasi dalam Menunjang Kegiatan Perkantoran di Masa Pandemi”. Untuk kegiatan ini, Ini Herenda Medishita mendapatkan angka kredit sebesar 0,04."
+        },
+        {
+          "kode" : "V.E.3",
+          "judul" : "Melakukan Kegiatan yang Mendukung Pelaksanaan Tugas Pranata Komputer : Sosialisasi/Internalisasi Kegiatan terkait Teknologi Informasi",
+          "uraian" : "",
+          "satuan_hasil" : "Kegiatan",
+          "angka_kredit" : 0.040,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Surat undangan, surat tugas, dan bukti kehadiran.",
+          "contoh" : "Satria Safrima Putra, M.T., Pranata Komputer Ahli Madya, menghadiri kegiatan internalisasi pemanfaatan Data Center di Kementerian Perhubungan. Untuk kegiatan ini, Satria Safrima Putra mendapatkan angka kredit sebesar 0,04."
+        }
+      ]
+    }
+    ]
   }
 ]
