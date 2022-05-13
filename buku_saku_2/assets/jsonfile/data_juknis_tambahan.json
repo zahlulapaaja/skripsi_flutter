@@ -1,0 +1,388 @@
+[
+  {
+    "unsur" : "IV",
+    "judul_unsur" : "PENGEMBANGAN PROFESI PRANATA KOMPUTER",
+    "subunsur" : [
+    {
+      "kode" : "IV.A",
+      "judul" : "Perolehan Ijazah/Gelar Pendidikan Formal Sesuai Bidang Tugas Jabatan Fungsional Pranata Komputer",
+      "butir" : [
+        {
+          "kode" : "IV.A.1",
+          "judul" : "Perolehan Ijazah/Gelar Pendidikan Formal Sesuai Bidang Tugas Jabatan Fungsional Pranata Komputer",
+          "uraian" : "Pendidikan formal yang dimaksud adalah pendidikan formal pada perguruan tinggi dalam negeri yang terakreditasi minimal B atau perguruan tinggi luar negeri yang ijazahnya diakui oleh kementerian yang membidangi pendidikan tinggi.\nYang dimaksud dengan pendidikan sesuai bidang tugas jabatan adalah pendidikan yang sesuai dengan bidang ilmu teknologi informasi, sebagaimana tercantum pada Peraturan Standar Kompetensi Pranata Komputer.\nApabila memperoleh gelar atau ijazah di luar bidang teknologi informasi dan bidang lain di luar kualifikasi yang ditetapkan oleh Kepala Badan Pusat Statistik, maka pendidikannya diperhitungkan sebagai unsur penunjang.",
+          "satuan_hasil" : "Ijazah",
+          "angka_kredit" : "25 % dari angka kredit kenaikan pangkat",
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "1. Fotocopy ijazah dan transkrip (daftar nilai dari mata kuliah yang ditempuh) yang dilegalisir oleh instansi yang berwenang.\n2. Fotocopy Surat Tugas atau Izin Belajar bagi Pranata Komputer yang meningkatkan pendidikan, dan ketentuan lain yang dipersyaratkan.",
+          "contoh" : "Tri Wibisono, S.Kom., Pranata Komputer Ahli Muda pangkat 3c memperoleh ijazah S2 Manajemen Sistem Informasi dengan gelar MMSI, maka Tri Wibisono, S.Kom memperoleh angka kredit dari pendidikan sebesar 25% x 100 = 25.\nPutri Fauziah, S.Kom., Pranata Komputer Ahli Pertama pangkat 3a memperoleh ijazah S2 Manajemen Sistem Informasi dengan gelar MMSI, maka Putri Fauziah, S.Kom memperoleh angka kredit dari pendidikan sebesar 25% x 50 = 12,5."
+        }
+      ]
+    },
+    {
+      "kode" : "IV.B",
+      "judul" : "Pembuatan Karya Tulis/Karya Ilmiah Di Bidang Teknologi Informasi Berbasis Komputer",
+      "uraian": "Karya Tulis Ilmiah dalam bentuk tulisan cetak atau non cetak yang disusun secara perorangan atau kelompok mengenai penelitian/pengkajian suatu pokok bahasan atau pengembangan gagasan tertentu dengan cara melakukan identifikasi, deskripsi, analisis, dan memberikan konklusi ataupun rekomendasi. Sistematika KTI dalam bentuk buku ilmiah memiliki unsur-unsur sebagai berikut:\n1. Sampul dan nama penulis;\n2. Karya cipta;\n3. Pengantar;\n4. Daftar isi;\n5. Pendahuluan;\n6. Batang tubuh;\n7. Ucapan penghargaan (opsional);\n8. Indeks;\n9. Glosarium (opsional);\n10. Daftar acuan;\n11. Bibliografi (opsional); dan\n12. Lampiran (opsional).\nSistematika KTI dalam bentuk makalah lengkap memiliki unsur- unsur sebagai berikut :\n1. Judul;\n2. Nama dan alamat penulis;\n3. Abstrak dan kata kunci;\n4. Pendahuluan;\n5. Metodologi dan data;\n6. Hasil dan pembahasan;\n7. Kesimpulan; dan\n8. Daftar Referensi.",
+      "mekanisme_penilaian" : "Pranata Komputer yang secara bersama-sama membuat Karya Tulis/Karya Ilmiah di bidang sistem teknologi informasi berbasis komputer, diberikan Angka Kredit dengan ketentuan sebagai berikut:\n1. Apabila terdiri atas 2 (dua) orang penulis maka pembagian Angka Kredit yaitu 60% (enam puluh persen) bagi penulis utama dan 40% (empat puluh persen) bagi penulis pembantu;\n2. Apabila terdiri atas 3 (tiga) orang penulis maka pembagian Angka Kredit yaitu 50% (lima puluh persen) bagi penulis utama dan masing-masing 25% (dua puluh lima persen) bagi penulis pembantu;\n3. Apabila terdiri atas 4 (empat) orang penulis maka pembagian Angka Kredit yaitu 40% (empat puluh persen) bagi penulis utama dan masing-masing 20% (dua puluh persen) bagi penulis pembantu; dan\n4. Apabila tidak terdapat atau tidak dapat ditentukan penulis utama dan penulis pembantu maka pembagian Angka Kredit dibagi sebesar proporsi yang sama untuk setiap penulis; dan\n5. Jumlah penulis pembantu paling banyak 3 (tiga) orang.",
+      "butir" : [
+        {
+          "kode" : "IV.B.1.a",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Hasil Penelitian/Pengkajian/ Survei/Evaluasi di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan : Dalam Bentuk Buku/Majalah Ilmiah Internasional yang Diterbitkan Internasional yang Terindeks",
+          "uraian" : "Karya ilmiah hasil penelitian adalah karya ilmiah yang memuat hasil penelitian yang didapat dari analisis data baik data primer maupun sekunder. Data tersebut dapat diperoleh melalui mekanisme: Sensus/Survei, Wawancara, data crawling dan lain-lain. Karya ilmiah hasil pengkajian adalah karya ilmiah yang memuat hasil analisis dan evaluasi yang mendalam dari literatur/pustaka maupun teori yang relevan.\nJurnal Internasional adalah terbitan berkala ilmiah dengan kriteria sebagai berikut:\n1. Karya tulis yang diterbitkan ditulis dengan memenuhi kaidah ilmiah dan etika keilmuan;\n2. Memiliki Digital Object Identifier (DOI);\n3. Ditulis dengan menggunakan bahasa resmi PBB (Inggris, Perancis, Arab, Rusia, dan Tiongkok);\n4. Memiliki terbitan versi daring;\n5. Dikelola secara profesional;\n6. Dewan Editor (Editorial Board) adalah pakar di bidangnya dan sedikitnya berasal dari 4 negara;\n7. Artikel ilmiah yang diterbitkan dalam satu terbitan (issue) ditulis oleh penulis dari berbagai negara; dan\n8. Memuat karya ilmiah dari penulis yang berasal dari berbagai negara dalam setiap terbitannya.\nBuku ilmiah merupakan bentuk publikasi ilmiah yang berisi pembahasan mendalam tentang suatu ilmu atau cabang ilmu, terkait dengan permasalahan lampau dan terkini yang diperoleh dari ringkasan hasil penelitian terbaru dan memberikan penjelasan teori, filosofi dan panduan yang disusun bagian per bagian secara berkesinambungan.\nMakalah ilmiah merupakan tulisan ilmiah yang disusun berdasarkan analisis dan sintesis data hasil litbang dan/atau tinjauan, ulasan/reviu, kajian, dan pemikiran sistematis yang belum pernah ditulis dan dipublikasikan oleh orang lain, topik yang dibahas berupa topik baru yang menambah informasi baru dan/atau memperkuat temuan/topik sebelumnya.\nTerindeks internasional adalah terindeks oleh database internasional, antara lain:\n1. KTI terindeks dalam web of science (Thomson Reuters dan atau SCOPUS) (20);\n2. KTI terindeks dalam Directory of Open Access Journal (DOAJ), IEEE, Pubmed, CABI, Elsevier, Springer, dan atau yang setara (17,5);\n3. KTI terindeks dalam Aggregator (Google Scholar, Microsoft Academic Search, ESBCO, Proquest, Researchgate, Gale atau yang setara (15); dan\n4. KTI internasional yang diterbitkan oleh publisher nasional (12,5)",
+          "satuan_hasil" : "Jurnal/Buku",
+          "angka_kredit" : 20.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Cover, Daftar isi dan makalah/buku yang sudah diterbitkan",
+          "contoh" : "Mohammad Yamin., M.Eng., seorang Pranata Komputer Ahli Madya membuat karya ilmiah bidang teknologi informasi dalam bentuk makalah berjudul “Measuring Impact of Healthcare Information System in Administration and Operational Management”, sudah diterbitkan dalam jurnal internasional Springer, maka Mohammad Yamin mendapatkan angka kredit sebesar 17,5."
+        },
+        {
+          "kode" : "IV.B.1.b",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Hasil Penelitian/Pengkajian/ Survei/Evaluasi di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan : Dalam Bentuk Buku/Majalah Ilmiah Internasional yang Diterbitkan Nasional",
+          "uraian" : "Karya ilmiah hasil penelitian adalah karya ilmiah yang memuat hasil penelitian yang didapat dari analisis data baik data primer maupun sekunder. Data tersebut dapat diperoleh melalui mekanisme: Sensus/Survei, Wawancara, data crawling dan lain-lain. Karya ilmiah hasil pengkajian adalah karya ilmiah yang memuat hasil analisis dan evaluasi yang mendalam dari literatur/pustaka maupun teori yang relevan.\nBuku ilmiah internasional yang diterbitkan nasional adalah buku ilmiah yang diterbitkan dalam skala nasional dengan menggunakan bahasa asing maupun Bahasa Indonesia.\nMajalah ilmiah internasional yang diterbitkan nasional adalah majalah ilmiah yang diterbitkan dalam skala nasional dengan menggunakan bahasa asing maupun Bahasa Indonesia",
+          "satuan_hasil" : "Jurnal/Buku",
+          "angka_kredit" : 12.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Jurnal/Buku yang sudah diterbitkan\nPenilaian KTI dalam kategori ini juga mencakup:\n1. KTI Internasional yang diterbitkan oleh publisher nasional terakreditasi oleh Lembaga yang berwenang (12.5);\n2. KTI Berbahasa Indonesia yang diterbitkan oleh publisher nasional terakreditasi oleh Lembaga yang berwenang (10); dan\n3. KTI Berbahasa Indonesia yang diterbitkan oleh publisher nasional tidak terakreditasi oleh Lembaga yang berwenang (6).",
+          "contoh" : "Rahendra Setia, S.T, M.Eng., Pranata Komputer Ahli Madya sebagai penulis utama dan Harry Nugroho Putro, S.T., MMSI., Pranata Komputer Ahli Muda sebagai penulis pembantu, membuat karya ilmiah dalam bentuk makalah berjudul “Indonesia Local Government Information Completeness on The Web”, sudah diterbitkan di jurnal nasional. Sebagai penulis utama, Rahendra Setia memperoleh angka kredit sebesar 60% x 12,5 = 7,5 dan Harry Nugroho Putro sebagai penulis pembantu mendapatkan angka kredit sebesar 40% x 12,5 = 5,0."
+        },
+        {
+          "kode" : "IV.B.1.c",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Hasil Penelitian/Pengkajian/ Survei/Evaluasi di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan : Dalam Bentuk Buku/Majalah Ilmiah Internasional yang Diterbitkan dan Diakui Oleh Organisasi Profesi dan Instansi Pembina",
+          "uraian" : "Karya ilmiah hasil penelitian adalah karya ilmiah yang memuat hasil penelitian yang didapat dari analisis data baik data primer maupun sekunder. Data tersebut dapat diperoleh melalui mekanisme: Sensus/Survei, Wawancara, data crawling dan lain-lain. Karya ilmiah hasil pengkajian adalah karya ilmiah yang memuat hasil analisis dan evaluasi yang mendalam dari literatur/pustaka maupun teori yang relevan.\nBuku ilmiah internasional yang diterbitkan dan diakui oleh organisasi profesi dan Instansi Pembina adalah buku ilmiah yang diterbitkan dalam skala nasional dengan menggunakan bahasa asing maupun Bahasa Indonesia.\nMajalah ilmiah internasional yang diterbitkan dan diakui oleh organisasi profesi dan Instansi Pembina adalah majalah ilmiah yang diterbitkan dalam skala nasional dengan menggunakan bahasa asing maupun Bahasa Indonesia.",
+          "satuan_hasil" : "Jurnal/Buku/Naskah",
+          "angka_kredit" : 6.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Jurnal/buku/naskah yang sudah diterbitkan\nPenilaian KTI dalam kategori ini juga mencakup:\n1. KTI Internasional yang diterbitkan dan diakui oleh organisasi profesi dan Instansi Pembina (6); dan\n2. KTI. Berbahasa Indonesia yang diterbitkan dan diakui oleh organisasi profesi dan Instansi Pembina (6).",
+          "contoh" : "Rihardina Paramita, S.Kom., M.I.Kom., dan Ardani Yuanita, S.T., M.T.I, Pranata Komputer Ahli Muda dari Kementerian Keuangan melakukan penelitian mengenai “e-Government Research and Services at an Era Pandemic Covid-19”. Hasil penelitiannya diterbitkan dalam majalah yang diakui oleh instansi pembina. Dalam hal ini Rihardina Paramita dan Ardani Yuanita masing-masing memperoleh angka kredit sebesar 50% x 6 = 3."
+        },
+        {
+          "kode" : "IV.B.2.a",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Hasil Penelitian/Pengkajian/Survei/Evaluasi di Bidang Teknologi Informasi Berbasis Komputer yang Tidak Dipublikasikan : Dalam Bentuk Buku",
+          "uraian" : "Buku/makalah yang tidak dipublikasikan adalah karya tulis yang hanya beredar pada lingkup internal di tempat penulis bekerja. Walau tidak beredar secara luas, namun digunakan sebagai buku pegangan pada kegiatan perkantoran, seperti bahan belajar mengajar TIK maupun non TIK serta telah dipresentasikan dan dinyatakan layak oleh tim penguji.\nTim penguji karya tulis ilmiah terdiri dari anggota yang dipilih dan ditugaskan oleh tim penilai/pejabat penandatangan Angka kredit.\nKriteria tim penguji:\n1. berpendidikan minimal pasca sarjana bidang teknologi informasi;\n2. berjumlah minimal 3; dan\n3. ditunjuk oleh pejabat penandatangan angka kredit. Tahapan presentasi KTI :\n1. Menyusun naskah KTI;\n2. Meminta persetujuan ke tim penguji/reviuwer dengan melampirkan naskah KTI; dan\n3. Mempresentasikan naskah KTI yang telah disetujui dan dihadiri minimal 2 dari instansi lain.\nKarya tulis/karya ilmiah dalam bentuk buku/makalah yang tidak dipublikasikan harus dipresentasikan dan dinyatakan layak oleh tim penguji serta digunakan/diimplementasikan di institusi.",
+          "satuan_hasil" : "Buku",
+          "angka_kredit" : 8.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "1. Naskah buku;\n2. Lembar pengesahan yang ditandatangani oleh sekurang-kurangnya pejabat eselon III;\n3. Naskah/fotokopi buku panduan proses belajar mengajar (silabus) atau surat keterangan dari instansi/lembaga pendidikan dan pelatihan yang menyebutkan buku tersebut sebagai buku pegangan dalam proses belajar mengajar atau Fotokopi buku lain yang mencantumkan buku tersebut sebagai referensi pada daftar pustakanya; dan\n4. Bukti penugasan tertulis",
+          "contoh" : "Nadia Yantrisiana, S.T., MMSI., Pranata Komputer Ahli Muda membuat karya tulis dalam bentuk buku yang berjudul “Pemanfaatan Multimedia untuk Meningkatkan Kualitas Pendidikan”. Hasil karya ini dipergunakan oleh Universitas Negeri Semarang sebagai referensi pendidikan, maka Nadia Yantrisiana mendapatkan angka kredit sebesar 1 x 8 = 8."
+        },
+        {
+          "kode" : "IV.B.2.b",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Hasil Penelitian/Pengkajian/Survei/Evaluasi di Bidang Teknologi Informasi Berbasis Komputer yang Tidak Dipublikasikan : Dalam Bentuk Makalah",
+          "uraian" : "Buku/makalah yang tidak dipublikasikan adalah karya tulis yang hanya beredar pada lingkup internal di tempat penulis bekerja. Walau tidak beredar secara luas, namun digunakan sebagai buku pegangan pada kegiatan perkantoran, seperti bahan belajar mengajar TIK maupun non TIK serta telah dipresentasikan dan dinyatakan layak oleh tim penguji.\nTim penguji karya tulis ilmiah terdiri dari anggota yang dipilih dan ditugaskan oleh tim penilai/pejabat penandatangan Angka kredit.\nKriteria tim penguji:\n1. berpendidikan minimal pasca sarjana bidang teknologi informasi;\n2. berjumlah minimal 3; dan\n3. ditunjuk oleh pejabat penandatangan angka kredit. Tahapan presentasi KTI :\n1. Menyusun naskah KTI;\n2. Meminta persetujuan ke tim penguji/reviuwer dengan melampirkan naskah KTI; dan\n3. Mempresentasikan naskah KTI yang telah disetujui dan dihadiri minimal 2 dari instansi lain.\nKarya tulis/karya ilmiah dalam bentuk buku/makalah yang tidak dipublikasikan harus dipresentasikan dan dinyatakan layak oleh tim penguji serta digunakan/diimplementasikan di institusi.",
+          "satuan_hasil" : "Makalah",
+          "angka_kredit" : 4.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "1. Makalah yang sudah dipresentasikan;\n2. Surat persetujuan dari tim penguji/reviewer; dan\n3. Dokumentasi presentasi KTI yang mencakup undangan, daftar hadir, hasil penilaian dari tim penguji.",
+          "contoh" : "Yulian Pratama, SST, M.T., Pranata Komputer Ahli Muda, membuat karya tulis dalam bentuk makalah berjudul “Sistem Informasi Kemahasiswaan untuk Himpunan Mahasiswa STIS”. Karya tulis dimaksud telah dipresentasikan di STIS dan dinyatakan layak oleh tim penguji, maka Yulian Pratama memperoleh angka kredit sebesar 1x 4 = 4."
+        },
+        {
+          "kode" : "IV.B.3.a",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Berupa Tinjauan atau Ulasan Ilmiah Hasil Gagasan Sendiri di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan : Dalam Bentuk Buku yang Diterbitkan dan Diedarkan Secara Nasional",
+          "uraian" : "Karya tulis/karya ilmiah berupa tinjauan atau ulasan ilmiah hasil gagasan sendiri merupakan karya ilmiah hasil menelaah teori, konsep, atau prinsip, mengembangkan suatu model, menganalisis suatu fakta atau fenomena tertentu dalam bidang teknologi informasi berbasis komputer\nKriteria:\n1. Termasuk karya tulis non penelitian yang berisi hasil telaah teori, konsep, atau prinsip, pengembangan model, analisis suatu fakta atau fenomena tertentu; dan\n2. Kelengkapan karya tulis meliputi pendahuluan, teori, hasil dan pembahasan serta kesimpulan.",
+          "satuan_hasil" : "Buku",
+          "angka_kredit" : 8.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Buku yang sudah diterbitkan",
+          "contoh" : "Alex Prasetyo, S.Kom., M.T, Pranata Komputer Ahli Madya (penulis utama) dan Budi Setiawan, S.Kom, Pranata Komputer Ahli Muda (penulis kedua) menulis tinjauan ilmiah mengenai “Pemanfaatan Teknologi Informasi dan Media Online dalam Good Governance” diterbitkan dalam bentuk buku, dan dipublikasikan secara nasional. Sebagai penulis utama, Alex Prasetyo memperoleh angka kredit sebesar 60% x 8 = 4,8, sedangan Budi Setiawan sebagai penulis pembantu memperoleh angka kredit sebesar 40% x 8 = 3,2.\nRini Rachmawati, MMSI, Pranata Komputer Ahli Madya membuat karya ilmiah dalam bentuk buku berjudul “Pengembangan Perkotaan dalam Era Teknologi Informasi dan Komunikasi” dan diterbitkan secara nasional. Sebagai penulis Rini Rachmawati mendapatkan angka kredit sebesar 8."
+        },
+        {
+          "kode" : "IV.B.3.b",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Berupa Tinjauan atau Ulasan Ilmiah Hasil Gagasan Sendiri di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan : Dalam Bentuk Majalah Ilmiah yang Diakui Oleh Organisasi Profesi dan Instansi Pembina",
+          "uraian" : "Karya tulis/karya ilmiah berupa tinjauan atau ulasan ilmiah hasil gagasan sendiri merupakan karya ilmiah hasil menelaah teori, konsep, atau prinsip, mengembangkan suatu model, menganalisis suatu fakta atau fenomena tertentu dalam bidang teknologi informasi berbasis komputer\nKriteria:\n1. Termasuk karya tulis non penelitian yang berisi hasil telaah teori, konsep, atau prinsip, pengembangan model, analisis suatu fakta atau fenomena tertentu; dan\n2. Kelengkapan karya tulis meliputi pendahuluan, teori, hasil dan pembahasan serta kesimpulan.",
+          "satuan_hasil" : "Naskah",
+          "angka_kredit" : 4.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Artikel dan majalah yang memuat artikel dimaksud",
+          "contoh" : "Firdaus Herliansyah, S.Kom, M.T.I., Pranata Komputer Ahli Muda pada RSUD Kota Semarang (penulis utama) dan Citra Dewi, S.Kom., M.Kom., Pranata Komputer Ahli Pertama (penulis kedua) menulis tinjauan singkat dalam bentuk artikel mengenai “ Aplikasi Pengaturan Antrian dan Pemanggilan Pasien pada Unit Pelayanan Pasien Rawat jalan  RSUD  Kota  Semarang‟  serta  dimuat  dalam  majalah teknologi informasi setempat dan diakui oleh instansi pembina. Sebagai penulis utama FIrdaus Herliansyah memperoleh angka kredit sebesar 60% x 4 = 2,4, dan Citra Dewi sebagai penulis pembantu memperoleh angka kredit sebesar 40% x 4 = 1,6.\nSetia Utama, S.Kom., M.T., dan Harry Perdana, S.Kom, MMSI., Pranata Komputer Ahli Muda pada Dinas Tenaga Kerja Propinsi Jawa Barat mengulas tentang “Perangkat Lunak Lembar Informasi Ketenagakerjaan Propinsi Jawa Barat Berbasis Web” dan dimuat dalam salah satu majalah teknologi informasi dan diakui oleh instansi pembina. Dalam hal ini, Setia Utama dan Harry Perdana masing- masing mendapatkan angka kredit 50% x 4 = 2,0."
+        },
+        {
+          "kode" : "IV.B.4.a",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Berupa Tinjauan atau Ulasan Ilmiah Hasil Gagasan Sendiri di Bidang Teknologi Informasi Berbasis Komputer yang Tidak Dipublikasikan : Dalam Bentuk Buku",
+          "uraian" : "Karya tulis/karya ilmiah berupa tinjauan atau ulasan ilmiah hasil gagasan sendiri merupakan karya ilmiah hasil menelaah teori, konsep, atau prinsip, mengembangkan suatu model, menganalisis suatu fakta atau fenomena tertentu dalam bidang teknologi informasi berbasis komputer\nKriteria:\n1. Termasuk karya tulis non penelitian yang berisi hasil telaah teori, konsep, atau prinsip, pengembangan model, analisis suatu fakta atau fenomena tertentu; dan\n2. Kelengkapan karya tulis meliputi pendahuluan, teori, hasil dan pembahasan serta kesimpulan.\nBuku/makalah yang tidak dipublikasikan adalah karya tulis yang hanya beredar pada lingkup internal di tempat penulis bekerja. Walau tidak beredar secara luas, namun digunakan sebagai buku pegangan pada kegiatan perkantoran, seperti bahan belajar mengajar TIK maupun non TIK serta telah dipresentasikan dan dinyatakan layak oleh tim penguji.\nTim penguji karya tulis ilmiah terdiri dari anggota yang dipilih dan ditugaskan oleh tim penilai/pejabat penandatangan Angka kredit.\nKriteria tim penguji:\n1. berpendidikan minimal pasca sarjana bidang teknologi informasi;\n2. berjumlah minimal 3; dan\n3. ditunjuk oleh pejabat penandatangan angka kredit. Tahapan presentasi KTI:\n1. Menyusun naskah KTI;\n2. Meminta persetujuan ke tim penguji/reviuwer dengan melampirkan naskah KTI; dan\n3. Mempresentasikan naskah KTI yang telah disetujui dan dihadiri minimal 2 dari instansi lain.\nKarya tulis/karya ilmiah dalam bentuk buku/makalah yang tidak dipublikasikan harus dipresentasikan dan dinyatakan layak oleh tim penguji serta digunakan/diimplementasikan di institusi.\nKarya tulis/ilmiah berupa tinjauan atau tulisan ilmiah hasil gagasan sendiri mengenai teknologi informasi dalam bentuk buku yang tidak dipublikasikan hanya dapat dinilai apabila buku tersebut digunakan untuk kegiatan perkantoran seperti bahan diklat teknologi informasi atau mata kuliah lain di luar diklat teknologi informasi.",
+          "satuan_hasil" : "Buku",
+          "angka_kredit" : 7.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "1. Naskah buku;\n2. Lembar pengesahan yang ditandatangani oleh sekurang-kurangnya pejabat eselon III;\n3. Naskah/fotokopi buku panduan proses belajar mengajar (silabus) atau surat keterangan dari instansi/lembaga pendidikan dan pelatihan yang menyebutkan buku tersebut sebagai buku pegangan dalam proses belajar mengajar atau fotokopi buku lain yang mencantumkan buku tersebut sebagai referensi pada daftar pustakanya; dan\n4. Bukti penugasan tertulis.",
+          "contoh" : "Hady Wijaya, S.Kom., M.Eng., Pranata Komputer Ahli Madya dan Bangun Prakarsa, M.T, Pranata Komputer Ahli Muda membuat karya tulis ilmiah dalam bentuk buku berjudul “Penerapan Teknologi Informasi dan Komunikasi untuk mendukung pengembangan e-goverment Pemerintah Kota Bogor” yang digunakan sebagai referensi dalam kegiatan pada Pemerintah Kota Bogor maka Hady Wijaya dan Bangun Prakarsa masing-masing memperoleh angka kredit sebesar 50% x 7 = 3,5."
+        },
+        {
+          "kode" : "IV.B.4.b",
+          "judul" : "Membuat Karya Tulis/Karya Ilmiah Berupa Tinjauan atau Ulasan Ilmiah Hasil Gagasan Sendiri di Bidang Teknologi Informasi Berbasis Komputer yang Tidak Dipublikasikan : Dalam Bentuk Makalah",
+          "uraian" : "Karya tulis/karya ilmiah berupa tinjauan atau ulasan ilmiah hasil gagasan sendiri merupakan karya ilmiah hasil menelaah teori, konsep, atau prinsip, mengembangkan suatu model, menganalisis suatu fakta atau fenomena tertentu dalam bidang teknologi informasi berbasis komputer\nKriteria:\n1. Termasuk karya tulis non penelitian yang berisi hasil telaah teori, konsep, atau prinsip, pengembangan model, analisis suatu fakta atau fenomena tertentu; dan\n2. Kelengkapan karya tulis meliputi pendahuluan, teori, hasil dan pembahasan serta kesimpulan.\nBuku/makalah yang tidak dipublikasikan adalah karya tulis yang hanya beredar pada lingkup internal di tempat penulis bekerja. Walau tidak beredar secara luas, namun digunakan sebagai buku pegangan pada kegiatan perkantoran, seperti bahan belajar mengajar TIK maupun non TIK serta telah dipresentasikan dan dinyatakan layak oleh tim penguji.\nTim penguji karya tulis ilmiah terdiri dari anggota yang dipilih dan ditugaskan oleh tim penilai/pejabat penandatangan Angka kredit.\nKriteria tim penguji:\n1. berpendidikan minimal pasca sarjana bidang teknologi informasi;\n2. berjumlah minimal 3; dan\n3. ditunjuk oleh pejabat penandatangan angka kredit. Tahapan presentasi KTI:\n1. Menyusun naskah KTI;\n2. Meminta persetujuan ke tim penguji/reviuwer dengan melampirkan naskah KTI; dan\n3. Mempresentasikan naskah KTI yang telah disetujui dan dihadiri minimal 2 dari instansi lain.\nKarya tulis/karya ilmiah dalam bentuk buku/makalah yang tidak dipublikasikan harus dipresentasikan dan dinyatakan layak oleh tim penguji serta digunakan/diimplementasikan di institusi.\nMakalah yang tidak dipublikasikan dapat dinilai apabila makalah tersebut digunakan untuk kebutuhan instansi dan telah dipresentasikan serta dinyatakan layak oleh tim penguji.",
+          "satuan_hasil" : "Makalah",
+          "angka_kredit" : 3.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "1. Makalah yang sudah dipresentasikan;\n2. Surat persetujuan dari tim penguji/reviuwer; dan\n3. Dokumentasi presentasi KTI yang mencakup undangan, daftar hadir, hasil penilaian dari tim penguji.",
+          "contoh" : "Edi Wibowo, S.T., M.T., (penulis utama) dan Wahid Effendi, S.Kom., M.I.Kom. (penulis pembantu), Pranata Komputer Ahli Muda pada Bappeda Provinsi Jawa Barat menulis makalah mengenai “Sistem Informasi Geografis (SIG) Pariwisata Jawa Barat”, makalah tersebut digunakan sebagai referensi bagi Pemerintah Provinsi Jawa Barat. Sebagai penulis utama, Edi Wibowo memperoleh angka kredit sebesar 60% x 3,5 = 2,1 dan Wahid Effendi sebagai penulis pembantu memperoleh angka kredit sebesar 40% x 3,5 = 1,4."
+        },
+        {
+          "kode" : "IV.B.5",
+          "judul" : "Menyampaikan Prasaran Berupa Tinjauan, Gagasan dan atau Ulasan Ilmiah dalam Pertemuan Ilmiah",
+          "uraian" : "Pertemuan ilmiah dimaksud adalah pertemuan yang melibatkan beberapa instansi terkait dan membahas suatu permasalahan secara ilmiah dimana beberapa peserta mempresentasikan naskahnya. Angka kredit sebesar 2,5 diberikan untuk setiap naskah yang disampaikan dalam pertemuan ilmiah di bidang teknologi informasi.",
+          "satuan_hasil" : "Naskah",
+          "angka_kredit" : 2.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "1. Undangan;\n2. Daftar hadir/bukti kehadiran; dan\n3. Naskah yang dipresentasikan.",
+          "contoh" : "Priyanto Tamami, M.T.I, Pranata Komputer Ahli Muda, menulis KTI dengan judul “Desain dan Implementasi Microservice pada Sistem Penatausahaan Pencairan Dana”, kemudian dipresentasikan dalam Forum Ilmiah Pranata Komputer yang diselenggarakan oleh BPS, Priyanto Tamami memperoleh angka kredit sebesar 1 x 2,5 = 2,5."
+        },
+        {
+          "kode" : "IV.B.6",
+          "judul" : "Membuat Artikel di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan",
+          "uraian" : "Artikel merupakan karangan faktual secara lengkap dan panjang yang dibuat untuk dipublikasikan di media online maupun cetak dan bertujuan menyampaikan gagasan/fakta yang meyakinkan.\nYang termasuk media cetak antara lain surat kabar, majalah, tabloid. Sedangkan yang termasuk media online adalah website yang dikelola lembaga resmi dan ada dewan redaksinya seperti detik.com, tempo.com, kompas.com, vivanews.com, okezone.com, dan lain-lain.\nAngka kredit 2 diberikan untuk setiap artikel yang dimuat dalam media online maupun media cetak, baik media dengan jangkauan lokal maupun nasional dengan kriteria penilaian sebagai berikut:\n1. Penilaian media massa : Untuk media massa cetak dengan jangkauan nasional diberikan bobot 100%, sedangkan media cetak dengan jangkauan lokal/regional/daerah dan media online diberikan bobot 80%; dan\n2. Penilaian isian/konten : Tulisan dinilai maksimal 100% apabila secara konten bermuatan TI dan mencantumkan rekomendasi/saran kebijakan kepada pengguna. Tulisan dinilai maksimal 60% apabila secara konten bermuatan TI dan tidak tidak mencantumkan rekomendasi dan saran kebijakan kepada pengguna.",
+          "satuan_hasil" : "Artikel",
+          "angka_kredit" : 2.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Artikel yang dimuat di media online atau media cetak",
+          "contoh" : "Budi Prabowo, S.Kom., M.T.I, Pranata Komputer Ahli Madya, menulis artikel tentang “Rancang Bangun Sistem Informasi Kenaikan Pangkat Pegawai pada Dinas Komunikasi dan Informatika Provinsi Jawa Barat” yang telah dipublikasikan pada Majalah TI Info Komputer dengan menyertakan rekomendasi dan saran, maka Budi Prabowo, S.Kom., M.T.I. mendapatkan angka kredit 1 x 1 x 2 = 2.\nBasuki Rahmat, S.Kom., Pranata Komputer Ahli Pertama, menulis artikel tentang “Implementasi Aplikasi Sistem Informasi Kependudukan (SIDUK) di Pemerintah Kota Depok” yang telah dipublikasikan pada Surat Kabar “Radar Depok” tetapi tidak menyertakan rekomendasi dan saran, maka Budi Prabowo, S.Kom., M.T.I. mendapatkan angka kredit 0,8 x 0,6 x 2 = 0,96."
+        }
+      ]
+    },
+    {
+      "kode" : "IV.C",
+      "judul" : "Menerjemahkan/Menyadur Buku atau Karya Tulis di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan",
+      "butir" : [
+        {
+          "kode" : "IV.C.1.a",
+          "judul" : "Menerjemahkan/Menyadur Buku atau Karya Ilmiah di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan : Dalam Bentuk Buku yang Diterbitkan dan Diedarkan Secara Nasional",
+          "uraian" : "Menerjemahkan/menyadur buku atau karya ilmiah di bidang teknologi informasi yang dipublikasikan adalah melakukan penerjemahan atau penyaduran buku atau karya ilmiah di bidang teknologi informasi yang hasil terjemahan/sadurannya dipublikasikan.",
+          "satuan_hasil" : "Buku",
+          "angka_kredit" : 7.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Buku saduran ber-ISBN yang telah diterbitkan dan diedarkan secara nasional",
+          "contoh" : "Heri Setiawan, M.T.I (penulis utama) dan David Setianto, M.T (penulis pembantu), Pranata Komputer Ahli Muda pada Dinas Komunikasi dan Informatika Kota Tangerang, menyadur buku “Management Information System” dalam 2 volume (I dan II). Untuk setiap volumenya, Heri Setiawan sebagai penulis utama memperoleh angka sebesar 60% x 7 = 4,2 sedangkan David Setianto sebagai penulis pembantu memperoleh angka kredit 40% x 7 = 2,8."
+        },
+        {
+          "kode" : "IV.C.1.b",
+          "judul" : "Menerjemahkan/Menyadur Buku atau Karya Ilmiah di Bidang Teknologi Informasi Berbasis Komputer yang Dipublikasikan : Dalam Majalah Ilmiah yang Diakui oleh Organisasi Profesi dan Instansi Pembina",
+          "uraian" : "Menerjemahkan/menyadur buku atau karya ilmiah di bidang teknologi informasi yang dipublikasikan adalah melakukan penerjemahan atau penyaduran buku atau karya ilmiah di bidang teknologi informasi yang hasil terjemahan/sadurannya dipublikasikan.",
+          "satuan_hasil" : "Naskah",
+          "angka_kredit" : 3.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Fotocopy cover, daftar isi dan artikel terjemahan/saduran yang dimuat di majalah yang diakui oleh instansi pembina",
+          "contoh" : "Kurniawan Candra Kusuma, S.Kom., M.T., (penulis utama) dan Stevanus Chandra, S.Kom. (penulis pembantu), Pranata Komputer Ahli Pertama pada Badan Nuklir Nasional menyadur makalah mengenai “Scientific Research in Information System” dan dimuat dalam jurnal Teknologi Informasi yang diakui oleh Instansi Pembina. Sebagai penulis utama, Kurniawan Candra Kusuma memperoleh angka kredit sebesar 60% x 3,5 = 2,1 sedangkan Stevanus Chandra sebagai penulis pembantu memperoleh angka kredit sebesar 40% x 3,5 = 1,4."
+        },
+        {
+          "kode" : "IV.C.2.a",
+          "judul" : "Menerjemahkan/Menyadur Buku atau Karya Ilmiah di Bidang Teknologi Informasi Berbasis Komputer yang Tidak Dipublikasikan : Dalam Bentuk Buku",
+          "uraian" : "Menerjemahkan/menyadur buku atau karya ilmiah di bidang teknologi informasi yang tidak dipublikasikan adalah melakukan penerjemahan atau penyaduran buku atau karya ilmiah di bidang teknologi informasi yang hasil terjemahan/sadurannya tidak dipublikasikan. Buku terjemahan /saduran yang tidak dipublikasikan hanya dapat dinilai apabila buku tersebut digunakan untuk kebutuhan instansi.",
+          "satuan_hasil" : "Buku",
+          "angka_kredit" : 3.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Buku saduran yang dilegalisasi oleh eselon II",
+          "contoh" : "Arif Setiawan, S.Kom., M.Eng, Pranata Komputer Ahli Madya menerjemahkan buku “Computing & Information Technology “ tidak diterbitkan, tetapi digunakan sebagai bahan kuliah pada salah satu Universitas di Padang, maka Arif Setiawan memperoleh angka kredit sebesar 1 x 3 = 3."
+        },
+        {
+          "kode" : "IV.C.2.b",
+          "judul" : "Menerjemahkan/Menyadur Buku atau Karya Ilmiah di Bidang Teknologi Informasi Berbasis Komputer yang Tidak Dipublikasikan : Dalam Bentuk Makalah",
+          "uraian" : "Menerjemahkan/menyadur buku atau karya ilmiah di bidang teknologi informasi yang tidak dipublikasikan adalah melakukan penerjemahan atau penyaduran buku atau karya ilmiah di bidang teknologi informasi yang hasil terjemahan/sadurannya tidak dipublikasikan. Buku terjemahan /saduran yang tidak dipublikasikan hanya dapat dinilai apabila buku tersebut digunakan untuk kebutuhan instansi.",
+          "satuan_hasil" : "Makalah",
+          "angka_kredit" : 1.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Makalah saduran yang dilegalisasi oleh Eselon II",
+          "contoh" : "Doni Kusuma, S.Kom, Pranata Komputer Ahli Pertama, menyadur makalah mengenai “Information and Communication Technology In Organization” dan memaparkannya dalam seminar internal, maka Doni Kusuma memperoleh angka kredit sebesar 1 x 1,5 = 1,5."
+        }
+      ]
+    },
+    {
+      "kode" : "IV.D",
+      "judul" : "Penyusunan  Standar/  Pedoman/  Petunjuk  Pelaksanaan/  Petunjuk Teknis di Bidang Teknologi Informasi Berbasis Komputer",
+      "butir" : [
+        {
+          "kode" : "IV.D.1",
+          "judul" : "Membuat Buku Standar/ Pedoman/ Petunjuk Pelaksanaan/ Petunjuk Teknis di Bidang Teknologi Informasi",
+          "uraian" : "Membuat standar/pedoman/petunjuk pelaksanaan/petunjuk teknis di bidang teknologi informasi adalah membuat pedoman pengelolaan kegiatan teknologi informasi pada unit kerja tersebut dapat berjalan dengan baik sesuai dengan maksud dan tujuan. Pedoman/petunjuk teknis ini dapat dinilai apabila telah diaplikasikan dan dipresentasikan serta dinyatakan layak oleh tim penguji.",
+          "satuan_hasil" : "Buku",
+          "angka_kredit" : 3.000,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Buku/naskah yang dilegalisasi oleh Eselon II",
+          "contoh" : "Lintang Dian Aryanti, M.T., Pranata Komputer Ahli Muda, membuat Petunjuk Teknis pengelolaan IT Service Desk di Pemerintah Provinsi Banten. Sebagai penyusun Lintang Dian Aryanti memperoleh angka kredit sebesar 1 x 3 = 3."
+        }
+      ]
+    },
+    {
+      "kode" : "IV.E",
+      "judul" : "Pengembangan Kompetensi di Bidang Teknologi Informasi",
+      "butir" : [
+        {
+          "kode" : "IV.E.1",
+          "judul" : "Mengikuti Pelatihan Fungsional",
+          "uraian" : "",
+          "satuan_hasil" : "Sertifikat/Laporan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Surat tugas dan sertifikat yang dikeluarkan oleh penyelenggara pelatihan",
+          "contoh" : "Alan Pamungkas, S.Si., M.T., Pranata Komputer Ahli Muda mengikuti Diklat Dasar Fungsional Pranata Komputer yang diselenggarakan Pusdiklat BPS selama 6 hari. Dengan menunjukkan surat tugas dan sertifikat diklat dari penyelenggara maka Alam Pamungkas memperoleh angka kredit sebesar 0,5."
+        },
+        {
+          "kode" : "IV.E.2",
+          "judul" : "Mengikuti Seminar/Lokakarya/Konferensi/Simposium/Studi Banding Lapangan",
+          "uraian" : "Pranata Komputer yang mengikuti seminar diberikan angka kredit apabila yang bersangkutan berperan sebagai pemrasaran/pembahas/narasumber/moderator atau peserta. Khusus sebagai peserta seminar/lokakarya yang bisa dinilai dibatasi hanya 3 (tiga) kali dalam satu tahun.",
+          "satuan_hasil" : "Sertifikat/Laporan",
+          "angka_kredit" : "1. Pemrasaran/Narasumber/Keynote Speaker : 3\n2. Penyaji/Presenter/Moderator/Panitia : 2\n3. Peserta : 1",
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Sertifikat dari penyelenggara seminar",
+          "contoh" : "Dr. Hadi Wijaya, M.T., Pranata Komputer Ahli Utama diundang sebagai pembicara pada seminar nasional “Optimalisasi Pemanfaatan Teknologi Pengembangan Kompetensi ASN” di Universitas Indonesia. Di kesempatan lain, Hadi Wijaya hadir sebagai peserta pada seminar “Big Data untuk Official Statistics” di BPS. Dengan menunjukkan surat keterangan dari penyelenggara, Hadi Wijaya memperoleh angka kredit sebesar 1 x 3 = 3 (dari UI) dan 1 x 1 = 1 (dari BPS). Sehingga total angka kredit yang diperoleh Hadi Wijaya adalah 4.\nAdi Nugroho, S.T., M.Eng., Pranata Komputer Ahli Madya pada Badan SAR Nasional diundang pada Seminar Nasional “Inovasi Teknologi dan Infrastruktur untuk Mitigasi Bencana” sebagai moderator. Dengan menunjukkan surat keterangan dari panitia seminar, Adi Nugroho memperoleh angka kredit sebesar 1 x 2 = 2."
+        },
+        {
+          "kode" : "IV.E.3",
+          "judul" : "Mengikuti Pelatihan Teknis/Magang di Bidang Tugas Jabatan Fungsional Pranata Komputer dan Memperoleh Sertifikat",
+          "uraian" : "",
+          "satuan_hasil" : "Sertifikat/Laporan",
+          "angka_kredit" : "Jumlah angka kredit yang diberikan berdasarkan lamanya mengikuti pelatihan teknis/magang adalah sebagai berikut:\n1. Lamanya lebih dari 960 jam memperoleh angka kredit sebesar 15;\n2. Lamanya antara 641 - 960 jam memperoleh angka kredit sebesar 9;\n3. Lamanya antara 481 - 640 jam memperoleh angka kredit sebesar 6;\n4. Lamanya antara 161 - 480 jam memperoleh angka kredit sebesar 3;\n5. Lamanya antara 81 - 160 jam memperoleh angka kredit sebesar 2;\n6. Lamanya antara 30 - 80 jam memperoleh angka kredit sebesar 1; dan\n7. Lamanya kurang dari 30 jam memperoleh angka kredit sebesar 0,5.",
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Sertifikat yang dikeluarkan oleh penyelenggara diklat dan surat penugasan mengikuti diklat.",
+          "contoh" : "Rita Amalia, S.Kom., Pranata Komputer Ahli Pertama telah mengikuti kursus Graphic Designer selama 90 jam dan memperoleh sertifikat, maka Rita Amalia memperoleh angka kredit sebesar 1 x 2 = 2."
+        },
+        {
+          "kode" : "IV.E.4",
+          "judul" : "Mengikuti Pelatihan Manajerial/Sosial Kultural di Bidang Tugas Jabatan Fungsional Pranata Komputer dan Memperoleh Sertifikat",
+          "uraian" : "",
+          "satuan_hasil" : "Sertifikat/Laporan",
+          "angka_kredit" : "Jumlah angka kredit yang diberikan berdasarkan lamanya mengikuti pelatihan manajerial/sosial kultural di bidang tugas Jabatan Fungsional Pranata Komputer adalah sebagai berikut:\n1. Lamanya lebih dari 960 jam memperoleh angka kredit sebesar 7,5;\n2. Lamanya antara 641 - 960 jam memperoleh angka kredit sebesar 4,5;\n3. Lamanya antara 481 - 640 jam memperoleh angka kredit sebesar 3;\n4. Lamanya antara 161 - 480 jam memperoleh angka kredit sebesar 1,5;\n5. Lamanya antara 81 - 160 jam memperoleh angka kredit sebesar 1;\n6. Lamanya antara 30 - 80 jam memperoleh angka kredit sebesar 0,5; dan\n7. Lamanya kurang dari 30 jam memperoleh angka kredit sebesar 0,25.",
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Sertifikat yang dikeluarkan penyelenggara diklat dan surat tugas mengikuti diklat",
+          "contoh" : "Addy Kristiawan, S.Kom, M.T., Pranata Komputer Ahli Muda telah mengikuti “Training Managerial Skill & Leadership” selama 40 jam dan memperoleh sertifikat, maka Addy Kristiawan memperoleh angka kredit sebesar 1 x 0,5 = 0,5."
+        },
+        {
+          "kode" : "IV.E.5",
+          "judul" : "Maintain Performance (Pemeliharaan Kinerja dan Target Kinerja)",
+          "uraian" : "Kegiatan yang dilakukan dalam rangka memperpanjang/mempertahankan kompetensi yang telah diperoleh sebelumnya melalui prosedur yang berlaku.",
+          "satuan_hasil" : "Sertifikat/Laporan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Sertifikat/Laporan yang menunjukan perpanjangan.",
+          "contoh" : "Arung Chakra, Phd, Pranata Komputer Ahli Madya pada tahun 2020 mendapatkan Penilaian Prestasi Kerja dengan nilai total sebesar 89,67 (Baik). Capaian ini naik 0,23 point dari Penilaian Prestasi Kerja Arung Chakra, Phd pada tahun 2019, yaitu sebesar 89,44 (Baik). Untuk itu, Arung Chakra, Phd mendapatkan angka kredit sebesar 0,5."
+        }
+      ]
+    },
+    {
+      "kode" : "IV.F",
+      "judul" : "Kegiatan Lain yang Mendukung Pengembangan Profesi yang Ditetapkan Oleh Instansi Pembina",
+      "uraian" : "Melaksanakan kegiatan lain yang mendukung pengembangan profesi yang ditetapkan oleh Instansi Pembina di bidang teknologi informasi berbasis komputer.",
+      "butir" : [
+        {
+          "kode" : "IV.F.1",
+          "judul" : "Mengikuti Kunjungan Kerja",
+          "uraian" : "",
+          "satuan_hasil" : "Sertifikat/Laporan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "4 x setahun",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Laporan dan Surat Tugas",
+          "contoh" : "Qonita Luthfa, MMSI., Pranata Komputer Ahli Madya, ditugaskan mengikuti kunjungan kerja ke Google Indonesia dalam rangka Pemanfaatan API Google Maps untuk Aplikasi Pemetaan. Dengan melampirkan sertifikat/laporan dan surat tugas yang diperoleh, Qonita Luthfa memperoleh angka kredit sebesar 1 x 0,5 = 0,5."
+        },
+        {
+          "kode" : "IV.F.2",
+          "judul" : "Mengikuti Kompetisi di Bidang Teknologi Informasi",
+          "uraian" : "Mengikuti kompetisi di Bidang Teknologi Informasi adalah berpartisipasi dalam kegiatan kompetisi di Bidang Teknologi Informasi.\nPenilaian kegiatan ini mengikuti kategori sebagai berikut:\na. Kompetisi internasional mendapatkan angka kredit penuh (100%);\nb. Kompetisi nasional mendapatkan angka kredit sebesar 80%; dan\nc. Kompetisi regional mendapatkan angka kredit sebesar 60%.",
+          "satuan_hasil" : "Sertifikat/Laporan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Surat tugas, sertifikat, dan laporan.",
+          "contoh" : "Ratu Marsya, M.Sc. Pranata Komputer Ahli Muda, mengikuti kompetisi Hackathon Pemanfaatan Data Transaksi di Jalan Bebas Hambatan untuk Kebijakan Transportasi Publik yang diselenggarakan Kementrian Perhubungan, Ratu Marsya memperoleh angka kredit sebesar 80% x 0,5 = 0,4."
+        },
+        {
+          "kode" : "IV.F.3",
+          "judul" : "Menjadi Tim Penilai Kompetisi di Bidang Teknologi Informasi",
+          "uraian" : "Menjadi tim penilai kompetisi di Bidang Teknologi Informasi berarti terlibat dan berperan untuk memberikan penilaian dalam kegiatan kompetisi Teknologi Informasi yang diadakan oleh suatu Lembaga atau Organisasi Pemerintah ataupun Non-Pemerintah.\nPenilaian kegiatan ini mengikuti kategori sebagai berikut:\n1. Menjadi Tim Penilai kompetisi internasional mendapatkan angka kredit penuh (100%);\n2. Menjadi Tim Penilai kompetisi Nasional mendapatkan angka kredit sebesar 80%; dan\n3. Menjadi Tim Penilai kompetisi regional mendapatkan angka kredit sebesar 60%.",
+          "satuan_hasil" : "Laporan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Dokumentasi penugasan menjadi Tim Penilai Kompetisi TI, yang bisa dibuktikan dengan dokumentasi permintaan atau permohonan menjadi Tim Penilai, atau Surat Tugas dari Lembaga atau Organisasi, dan atau pengakuan atau pernyataan dari penyelenggara Kompetisi TI baik berupa surat, plakat ataupun sertifikat.\nLaporan dan dokumentasi kegiatan penilaian, yang mencakup namun tidak terbatas pada Nama Kegiatan, Waktu pelaksanaan, serta Narasi Penilaian kegiatan atau kompetisi TI.",
+          "contoh" : "Andi, S.T., M.T., seorang Pranata Komputer Ahli Muda menjadi salah satu juri dalam kegiatan Hackaton Nasional yang diselenggarakan oleh salah satu organisasi non-pemerintah , maka Andi, ST, MT memperoleh angka kredit sebesar 80% x 0,5 = 0,4."
+        },
+        {
+          "kode" : "IV.F.4",
+          "judul" : "Menjadi Reviewer Karya Tulis Ilmiah, Jurnal, Konferensi, Forum Ilmiah dan Lain-Lain di Bidang Teknologi Informasi.",
+          "uraian" : "Reviewer Karya Tulis Ilmiah, Jurnal, Konferensi, Forum Ilmiah dan lain-lain di bidang teknologi informasi adalah orang yang memberikan ulasan dan tinjauan terhadap karya tulis ilmiah di bidang teknologi informasi untuk menilai dan mengetahui kualitas, kelebihan serta kekurangan yang dimiliki oleh karya tulis ilmiah tersebut. Tugas reviewer adalah melakukan tinjauan dan ulasan terhadap artikel yang dikirimkan dan memberikan masukan atau komentar supaya artikel tersebut lebih baik lagi kontennya. Sampai pada akhirnya reviewer memberikan rekomendasi apakah artikel tersebut harus diterima atau harus ditolak.\nPenilaian kegiatan ini mengikuti kategori sebagai berikut:\n1. Jurnal internasional mendapatkan angka kredit penuh (100%);\n2. Jurnal nasional mendapatkan angka kredit sebesar 80%;\n3. Konferensi atau forum ilmiah Internasional mendapatkan angka kredit sebesar 80%; dan\n4. Konferensi atau forum ilmiah nasional mendapatkan angka kredit sebesar 60%.",
+          "satuan_hasil" : "Laporan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Dokumentasi dan Informasi penugasan menjadi reviewer Karya Tulis Ilmiah, Jurnal, Konferensi, Forum Ilmiah dan lain-lain di bidang teknologi informasi yang dibuktikan dengan adanya permintaan dan persetujuan untuk melakukan review oleh Jurnal, Konferensi, Forum Ilmiah dan lain-lain di bidang teknologi informasi. Laporan hasil review, meliputi judul artikel (karya tulis ilmiah), nama Jurnal, Konferensi, Forum Ilmiah dan lain-lain di bidang teknologi informasi yang meminta untuk melakukan review, komentar atau masukan hasil review, dan keputusan hasil review.",
+          "contoh" : "Dr. Novianto Budi Kurniawan, Pranata Komputer Ahli Madya melakukan review 1 buah karya tulis imiah di bidang teknologi informasi pada jurnal Internasional IEEE Systems, maka Novianto Budi Kurniawan memperoleh angka kredit sebesar 100% x 0,5 = 0,5.\nDisaat yang bersamaan, Novianto Budi Kurniawan melakukan review pada sebuah Konferensi Internasional yang diselenggarakan oleh IEEE Chapter Indonesia sebanyak 3 artikel, maka Novianto Budi Kurniawan memperoleh angka kredit sebesar 80% x 0,5 x 3 = 1,2. Sehingga, total angka kredit yang diperoleh adalah 0,5 + 1,2 = 1,7."
+        },
+        {
+          "kode" : "IV.F.5",
+          "judul" : "Menjadi Editor Karya Tulis Ilmiah, Jurnal, Konferensi, Forum Ilmiah dan Lain-Lain di Bidang Teknologi Informasi.",
+          "uraian" : "Editor Karya Tulis Ilmiah, Jurnal, Konferensi, Forum Ilmiah dan lain-lain di bidang teknologi informasi adalah orang yang bertanggung jawab terhadap penerimaan, pengecekan dan pengelolaan karya tulis ilmiah di bidang teknologi informasi di tahap awal. Tugas Editor adalah melakukan pemeriksaan dan tinjauan awal terhadap artikel yang diterima dan memberikan keputusan awal apakah karya tulis ilmiah tersebut ditolak atau diteruskan kepada reviewer untuk di ulas. Sampai pada akhirnya Editor memberikan keputusan apakah artikel tersebut harus diterima atau harus ditolak berdasarkan rekomendasi dari reviewer.\nPenilaian kegiatan ini mengikuti kategori sebagai berikut:\n1. Jurnal internasional mendapatkan angka kredit penuh (100%);\n2. Jurnal nasional mendapatkan angka kredit sebesar 80%;\n3. Konferensi atau forum ilmiah Internasional mendapatkan angka kredit sebesar 80%; dan\n4. Konferensi atau forum ilmiah nasional mendapatkan angka kredit sebesar 60%.",
+          "satuan_hasil" : "Laporan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Dokumentasi dan Informasi penugasan menjadi Editor Karya Tulis Ilmiah, Jurnal, Konferensi, Forum Ilmiah dan lain-lain di bidang teknologi informasi yang dibuktikan dengan adanya permintaan dan persetujuan untuk menjadi Editor Jurnal, Konferensi, Forum Ilmiah dan lain-lain di bidang teknologi informasi. Laporan hasil editor meliputi nama Jurnal, Konferensi, Forum Ilmiah dan lain-lain di bidang teknologi informasi, keterangan jumlah artikel yang diterima/dikelola, judul artikel (karya tulis ilmiah), daftar reviewer yang terlibat, dan keputusan Editor berdasarkan hasil review",
+          "contoh" : "Herman Saputra, MT, Pranata Komputer Ahli Muda menjadi editor dari sebuah jurnal nasional bidang teknologi informasi yang diselenggarakan oleh Pusat Pendidikan dan Pelatihan Badan Pusat Statistik, maka Herman Saputra memperoleh angka kredit 80% x 0,5 = 0,4. Disaat yang sama Herman Saputra juga menjadi editor pada konferensi nasional bidang teknologi informasi yang diselenggarakan oleh Sekolah Tinggi Ilmu Statistik, maka Herman Saputra memperoleh angka kredit 60% x 0,5 = 0,3. Total angka kredit yang diperoleh Herman Saputra adalah 0,7."
+        },
+        {
+          "kode" : "IV.F.6",
+          "judul" : "Memberikan Konsultasi di Bidang Teknologi Informasi",
+          "uraian" : "Memberikan konsultasi di Bidang Teknologi Informasi adalah kegiatan memberikan saran, nasihat, solusi dan sejenisnya atas permasalahan di Bidang Teknologi Informasi. Penilaian kegiatan ini dianggap sebagai suatu bentuk konsultasi jika konsultasi diberikan kepada orang/ unit kerja/ institusi/ orga- nisasi di luar unit kerja eselon dua pranata komputer tersebut. Permasalahan yang dikonsultasikan merupakan permasalahan di Bidang Teknologi Informasi pada sebuah unit kerja, bukan permasalahan teknis yang bersifat individual.",
+          "satuan_hasil" : "Laporan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Dokumentasi kegiatan dan laporan",
+          "contoh" : "Malik, M.Eng., Pranata Komputer Ahli Muda memberikan konsultasi terkait implementasi manajemen layanan TI kepada Dinas Kominfo Provinsi Bengkulu. Atas kegiatan tersebut Malik memperoleh angka kredit sebesar 0,5."
+        },
+        {
+          "kode" : "IV.F.7",
+          "judul" : "Keikutsertaan dalam organisasi profesi",
+          "uraian" : "Keikutsertaan dalam organisasi profesi yang dapat dinilaikan adalah organisasi profesi bidang komputer/teknologi informasi dalam lingkup international/nasional/propinsi/kabupaten/kota.",
+          "satuan_hasil" : "Tahun",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "Pertahun masa keanggotaan / kepengurusan",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Surat Keterangan dari Ketua Organisasi Profesi mengenai kepengurusan/keanggotaan.",
+          "contoh" : "Dr. Alfatihah Reno MNSPM, SST, M.Si, Pranata Komputer Ahli Madya, dipercaya menjadi Sekretaris pada Perkumpulan Pranata Komputer Indonesia (iPrakom) untuk periode kepengurusan 2017 - 2020.\nSebagai anggota dari iPrakom, dengan melampirkan Surat Keterangan Keanggotaan, Alfatihah Reno MNSPM mendapatkan angka kredit 0,50. Dan sebagai pengurus iPrakom, dengan melampirkan Surat Keputusan, Alfatihah Reno MNSPM mendapatkan tambahan angka kredit sebesar 0,50."
+        },
+        {
+          "kode" : "IV.F.8",
+          "judul" : "Melakukan Kegiatan Pembinaan Jabatan Fungsional Pranata Komputer",
+          "uraian" : "Melakukan kegiatan pembinaan profesi pranata komputer adalah kegiatan memberikan saran, nasihat, solusi dan sejenisnya atas permasalahan terkait jabatan fungsional pranata komputer. Penilaian kegiatan ini dianggap sebagai suatu bentuk pembinaan jika pembinaan diberikan kepada orang/unit kerja/institusi/organisasi di luar unit kerja eselon dua pranata komputer tersebut.\nKegiatan yang termasuk pembinaan profesi pranata komputer adalah Sosialisasi Jabatan Fungsional Pranata Komputer dan Konsultasi Jabatan Fungsional Pranata Komputer.",
+          "satuan_hasil" : "Kegiatan",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "Pertahun masa keanggotaan / kepengurusan",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Surat Tugas / Surat Keterangan",
+          "contoh" : "Sulthoni Ashiddiiqi, M.Si., Pranata Komputer Ahli Muda, diminta untuk menjadi narasumber pada acara Bimbingan Teknis Penilaian Angka Kredit Jabatan Fungsional di Kementrian Agama. Di acara Bimtek ini, Sulthoni Ashiddiiqi memberikan penjelasan tentang Petunjuk Teknis Penilaian Angka Kredit Jabatan Fungsional Pranata Komputer selama 8 jam. Dengan melampirkan Surat Tugas untuk kegiatan ini, Sulthoni Ashiddiiqi mendapatkan angka kredit sebesar 0,5."
+        },
+        {
+          "kode" : "IV.F.9",
+          "judul" : "Mendapatkan Sertifikasi Keahlian di Bidang TI",
+          "uraian" : "Mendapatkan Sertifikasi Keahlian di Bidang TI adalah mengikuti ujian sertifikasi yang diadakan oleh lembaga pendidikan dan atau pelatihan di bidang Teknologi Informasi dan mendapat Sertifikat keahlian di Bidang TI.",
+          "satuan_hasil" : "Sertifikat",
+          "angka_kredit" : 0.500,
+          "batasan_penilaian" : "Sertifikat",
+          "pelaksana" : "Semua Jenjang",
+          "bukti_fisik" : "Surat Keterangan dari Ketua Organisasi Profesi mengenai kepengurusan/keanggotaan.",
+          "contoh" : "Sela Anisada, M.Si., Pranata Komputer Ahli Muda, mengikuti ujian sertifikasi Togaf 9. Sela Anisada berhasil lulus dan mendapatkan sertifikat Togaf. Sela Anisada mendapatkan angka kredit sebesar 0,5."
+        }
+      ]
+    }
+    ] 
+  }
+]
