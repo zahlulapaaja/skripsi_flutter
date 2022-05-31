@@ -3,10 +3,10 @@ import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
 
 class BlueContainer extends StatelessWidget {
-  const BlueContainer({Key? key, required this.title, required this.body})
+  const BlueContainer({Key? key, this.title, required this.body})
       : super(key: key);
-  final String title;
-  final String body;
+  final String? title;
+  final Widget body;
 
   @override
   Widget build(BuildContext context) {
@@ -15,25 +15,23 @@ class BlueContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 8, bottom: 4),
-            child: Text(
-              title,
-              style: AppConstants.kDictTitleTextStyle,
-            ),
-          ),
+          title != null
+              ? Padding(
+                  padding: const EdgeInsets.only(top: 8, bottom: 4),
+                  child: Text(
+                    title!,
+                    style: AppConstants.kDictTitleTextStyle,
+                  ),
+                )
+              : const SizedBox(),
           Container(
             padding: const EdgeInsets.all(10.0),
-            alignment: Alignment.center,
+            // alignment: Alignment.center,
             decoration: BoxDecoration(
               color: AppColors.info,
               borderRadius: BorderRadius.circular(10.0),
             ),
-            child: Text(
-              body,
-              textAlign: TextAlign.justify,
-              style: AppConstants.kDictionaryTextStyle(),
-            ),
+            child: body,
           ),
         ],
       ),

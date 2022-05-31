@@ -22,12 +22,12 @@ class BlueCardButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: AppConstants.kDictBtnStyle,
-        child: SizedBox(
-          height: 80,
+        child: Container(
+          constraints: const BoxConstraints(minHeight: 80),
           child: Row(
             children: [
               Container(
-                width: 75,
+                constraints: const BoxConstraints(minWidth: 75),
                 padding: const EdgeInsets.all(4.0),
                 child: Text(
                   code,
@@ -40,11 +40,12 @@ class BlueCardButton extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      title,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppConstants.kCardTitleTextStyle,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: Text(
+                        title,
+                        style: AppConstants.kCardTitleTextStyle,
+                      ),
                     ),
                     Text(
                       '($subtitle)',

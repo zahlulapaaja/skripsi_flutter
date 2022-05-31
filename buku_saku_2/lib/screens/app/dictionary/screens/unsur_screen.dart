@@ -23,7 +23,11 @@ class UnsurScreen extends StatelessWidget {
           await rootBundle.loadString('assets/jsonfile/data_juknis_ahli.json');
     }
 
-    final list = json.decode(jsonData) as List<dynamic>;
+    final jsonDataAddition = await rootBundle
+        .loadString('assets/jsonfile/data_juknis_tambahan.json');
+
+    List<dynamic> list = json.decode(jsonData) as List<dynamic>;
+    list += json.decode(jsonDataAddition) as List<dynamic>;
     return list.map((e) => Unsur.fromJson(e)).toList();
   }
 
