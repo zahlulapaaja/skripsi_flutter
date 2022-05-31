@@ -21,7 +21,7 @@ class JenjangScreen extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   context.read<DictionaryProvider>().setDictionaryList =
-                      const UnsurScreen();
+                      const UnsurScreen(jenjang: 'terampil');
                 },
                 style: AppConstants.kDictBtnStyle,
                 child: Column(
@@ -48,7 +48,10 @@ class JenjangScreen extends StatelessWidget {
             child: SizedBox(
               height: 150,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<DictionaryProvider>().setDictionaryList =
+                      const UnsurScreen(jenjang: 'ahli');
+                },
                 style: TextButton.styleFrom(
                   backgroundColor: AppColors.info,
                   padding: const EdgeInsets.all(20.0),

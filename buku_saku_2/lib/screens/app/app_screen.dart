@@ -84,25 +84,16 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             changeIndex(drawerIndexData);
             //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
           },
-          screenView: FutureBuilder(
-              future: readJsonData(),
-              builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
-                if (snapshot.hasError) {
-                  return Center(child: Text('ERROR!! ${snapshot.error}'));
-                } else if (snapshot.hasData) {
-                  // TODO : Nanti disini klo datanya kosong, kondisikan lagi tampilannya
-
-                  context.read<DictionaryProvider>().storeData = snapshot.data!;
-                  return Stack(
+          screenView: 
+       
+                  Stack(
                     children: <Widget>[
                       context.watch<ScreenProvider>().tabBody,
                       bottomBar(),
                     ],
-                  );
-                } else {
-                  return const Center(child: CircularProgressIndicator());
-                }
-              }),
+                  
+       
+              ),
         ),
       ),
     );
