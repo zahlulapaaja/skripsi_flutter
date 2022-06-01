@@ -19,6 +19,7 @@ class Unsur {
             uraian: json['subunsur'][i]['butir'][j]['uraian'],
             satuanHasil: json['subunsur'][i]['butir'][j]['satuan_hasil'],
             angkaKredit: json['subunsur'][i]['butir'][j]['angka_kredit'],
+            persenAK: json['subunsur'][i]['butir'][j]['persen_ak'],
             batasanPenilaian: json['subunsur'][i]['butir'][j]
                 ['batasan_penilaian'],
             pelaksana: json['subunsur'][i]['butir'][j]['pelaksana'],
@@ -49,6 +50,7 @@ class ButirKegiatan {
   final String uraian;
   final String satuanHasil;
   final double angkaKredit;
+  final bool? persenAK;
   final String batasanPenilaian;
   final String pelaksana;
   final String buktiFisik;
@@ -64,6 +66,7 @@ class ButirKegiatan {
     required this.uraian,
     required this.satuanHasil,
     required this.angkaKredit,
+    this.persenAK,
     required this.batasanPenilaian,
     required this.pelaksana,
     required this.buktiFisik,

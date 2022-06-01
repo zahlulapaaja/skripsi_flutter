@@ -33,7 +33,6 @@ class UnsurScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Unsur> unsur = context.read<DictionaryProvider>().jsonData;
     return FutureBuilder(
         future: readJsonData(),
         builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
@@ -43,6 +42,7 @@ class UnsurScreen extends StatelessWidget {
             // TODO : Nanti disini klo datanya kosong, kondisikan lagi tampilannya
 
             context.read<DictionaryProvider>().storeData = snapshot.data!;
+            List<Unsur> unsur = context.read<DictionaryProvider>().jsonData;
             return ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 14.0),
               itemCount: unsur.length,

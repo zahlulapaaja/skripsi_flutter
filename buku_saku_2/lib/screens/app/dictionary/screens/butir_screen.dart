@@ -29,11 +29,16 @@ class ButirScreen extends StatelessWidget {
         physics: const ScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (context, index) {
+          String? subtitle;
+          butirList[index].persenAK != true
+              ? subtitle = butirList[index].angkaKredit.toStringAsFixed(3)
+              : subtitle =
+                  (butirList[index].angkaKredit * 100).toInt().toString() +
+                      '% AK Naik Pangkat';
           return BlueCardButton(
             code: butirList[index].kode,
             title: butirList[index].judul,
-            subtitle: "Angka Kredit: " +
-                butirList[index].angkaKredit.toStringAsFixed(3),
+            subtitle: "Angka Kredit: " + subtitle,
             onPressed: () {
               Navigator.push(
                 context,

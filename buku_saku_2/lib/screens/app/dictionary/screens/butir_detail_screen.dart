@@ -1,9 +1,7 @@
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/test.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/app/dictionary/components/blue_grid_container.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_container.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/ringkasan_butir.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
@@ -38,6 +36,7 @@ class ButirDetailScreen extends StatelessWidget {
         code: butir.kode,
         jenjang: butir.pelaksana,
         angkaKredit: butir.angkaKredit,
+        persenAK: butir.persenAK,
       ),
     );
 
@@ -126,18 +125,80 @@ class ButirDetailScreen extends StatelessWidget {
 
     listViews.add(
       BlueContainer(
-        body: TestButir(butir: butir),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Satuan Hasil',
+                  style: AppConstants.kDictionaryTextStyle(
+                      fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  butir.satuanHasil,
+                  style: AppConstants.kDictionaryTextStyle(),
+                ),
+                const SizedBox(height: 12),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Angka Kredit',
+                  style: AppConstants.kDictionaryTextStyle(
+                      fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  butir.persenAK != true
+                      ? butir.angkaKredit.toStringAsFixed(3)
+                      : (butir.angkaKredit * 100).toInt().toString() +
+                          '% AK Kenaikan Pangkat',
+                  style: AppConstants.kDictionaryTextStyle(),
+                ),
+                const SizedBox(height: 12),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Batasan Penilaian',
+                  style: AppConstants.kDictionaryTextStyle(
+                      fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  butir.batasanPenilaian == "" ? "-" : butir.batasanPenilaian,
+                  style: AppConstants.kDictionaryTextStyle(),
+                ),
+                const SizedBox(height: 12),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Pelaksana',
+                  style: AppConstants.kDictionaryTextStyle(
+                      fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  butir.pelaksana,
+                  style: AppConstants.kDictionaryTextStyle(),
+                ),
+                const SizedBox(height: 12),
+              ],
+            ),
+          ],
+        ),
       ),
     );
-
-    // listViews.add(
-    //   BlueGridContainer(
-    //     satuanHasil: butir.satuanHasil,
-    //     angkaKredit: butir.angkaKredit,
-    //     batasanPenilaian: butir.batasanPenilaian,
-    //     pelaksana: butir.pelaksana,
-    //   ),
-    // );
 
     listViews.add(
       BlueContainer(

@@ -8,10 +8,12 @@ class RingkasanButir extends StatelessWidget {
     required this.code,
     required this.jenjang,
     required this.angkaKredit,
+    this.persenAK,
   }) : super(key: key);
   final String code;
   final String jenjang;
   final double angkaKredit;
+  final bool? persenAK;
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +57,15 @@ class RingkasanButir extends StatelessWidget {
               ],
             ),
             Text(
-              angkaKredit.toStringAsFixed(3),
-              style: const TextStyle(
+              persenAK != true
+                  ? angkaKredit.toStringAsFixed(3)
+                  : (angkaKredit * 100).toInt().toString() +
+                      '% AK\nNaik Pangkat',
+              textAlign: TextAlign.end,
+              style: TextStyle(
                 fontFamily: AppConstants.fontName,
                 color: AppColors.black,
-                fontSize: 24,
+                fontSize: persenAK != true ? 24 : 18,
                 fontWeight: FontWeight.w500,
               ),
             ),
