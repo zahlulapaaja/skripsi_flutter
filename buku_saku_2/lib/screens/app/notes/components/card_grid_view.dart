@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/card_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
@@ -19,6 +20,7 @@ class CardGridView extends StatelessWidget {
           if (snapshot.data!.isEmpty) {
             return const Center(child: Text('Notes Still Empty'));
           }
+          context.read<DictionaryProvider>().setDisableButir2 = snapshot.data!;
           return MasonryGridView.count(
             padding: const EdgeInsets.only(top: 10),
             crossAxisCount: 2,

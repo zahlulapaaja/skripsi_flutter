@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
@@ -18,6 +19,9 @@ class CardListView extends StatelessWidget {
             if (snapshot.data!.isEmpty) {
               return const Center(child: Text('Notes Still Empty'));
             }
+
+            context.read<DictionaryProvider>().setDisableButir2 =
+                snapshot.data!;
             return ListView.builder(
               itemCount: snapshot.data!.length,
               physics: const ScrollPhysics(),

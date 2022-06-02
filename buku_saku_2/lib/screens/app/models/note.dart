@@ -1,4 +1,5 @@
 import 'package:buku_saku_2/screens/app/models/bukti_fisik.dart';
+import 'package:buku_saku_2/screens/app/models/database.dart';
 
 class Note {
   // TODO : Nanti hapus semua null checknya

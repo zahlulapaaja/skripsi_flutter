@@ -13,35 +13,17 @@ class UnsurScreen extends StatelessWidget {
   final String jenjang;
   const UnsurScreen({Key? key, required this.jenjang}) : super(key: key);
 
-  Future<List<Unsur>> readJsonData() async {
-    dynamic jsonData;
-    if (jenjang == 'terampil') {
-      jsonData = await rootBundle
-          .loadString('assets/jsonfile/data_juknis_terampil.json');
-    } else if (jenjang == 'ahli') {
-      jsonData =
-          await rootBundle.loadString('assets/jsonfile/data_juknis_ahli.json');
-    }
-
-    final jsonDataAddition = await rootBundle
-        .loadString('assets/jsonfile/data_juknis_tambahan.json');
-
-    List<dynamic> list = json.decode(jsonData) as List<dynamic>;
-    list += json.decode(jsonDataAddition) as List<dynamic>;
-    return list.map((e) => Unsur.fromJson(e)).toList();
-  }
-
   @override
   Widget build(BuildContext context) {
+    context.read<DictionaryProvider>().setJenjang = jenjang;
     return FutureBuilder(
-        future: readJsonData(),
+        future: context.read<DictionaryProvider>().readJsonData,
         builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
           if (snapshot.hasError) {
             return Center(child: Text('ERROR!! ${snapshot.error}'));
           } else if (snapshot.hasData) {
             // TODO : Nanti disini klo datanya kosong, kondisikan lagi tampilannya
 
-            context.read<DictionaryProvider>().storeData = snapshot.data!;
             List<Unsur> unsur = context.read<DictionaryProvider>().jsonData;
             return ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 14.0),

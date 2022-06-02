@@ -230,13 +230,18 @@ class ButirDetailScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         floatingActionButton: FloatingActionButton(
           heroTag: 'button2tag',
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => AddNoteScreen(butirTitle: butir.judul),
-              ),
-            );
+          onPressed: () async {
+            bool exist = await butir.isExist;
+            // todo : masukin alert disini
+            exist
+                ? print('ada alert yang kasih tau udh ada catatannya')
+                : Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          AddNoteScreen(butirTitle: butir.judul),
+                    ),
+                  );
           },
           backgroundColor: AppColors.primary,
           child: const Icon(FontAwesomeIcons.plus),

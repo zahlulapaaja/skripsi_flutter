@@ -40,7 +40,8 @@ class BlueCardButton extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Padding(
+                    Container(
+                      constraints: const BoxConstraints(minHeight: 75),
                       padding: const EdgeInsets.only(bottom: 10.0),
                       child: Text(
                         title,

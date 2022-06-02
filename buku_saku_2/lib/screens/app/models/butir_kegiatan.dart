@@ -1,3 +1,5 @@
+import 'package:buku_saku_2/screens/app/models/database.dart';
+
 class Unsur {
   String? code;
   String? title;
@@ -60,6 +62,8 @@ class ButirKegiatan {
   String? subUnsurCode;
   String? subUnsurTitle;
 
+  var dbHelper = DbHelper();
+
   ButirKegiatan({
     required this.kode,
     required this.judul,
@@ -76,4 +80,9 @@ class ButirKegiatan {
     this.subUnsurCode,
     this.subUnsurTitle,
   });
+
+  Future<bool> get isExist async {
+    var result = await dbHelper.getNoteByKey(judul);
+    return result.isNotEmpty;
+  }
 }
