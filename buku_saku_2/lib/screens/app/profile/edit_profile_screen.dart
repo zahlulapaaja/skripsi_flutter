@@ -94,8 +94,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 print(snapshot.data![0]['id']);
                 // nanti ganti name ini jadi jenjang aja (termasuk di db nya)
                 return DropdownField(
-                  data: List.generate(
-                      snapshot.data!.length, (i) => snapshot.data![i]['name']),
+                  data: List.generate(snapshot.data!.length,
+                      (i) => snapshot.data![i]['jenjang']),
                   onChanged: (value) {
                     print('changed');
                   },

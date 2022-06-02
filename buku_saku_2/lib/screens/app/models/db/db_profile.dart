@@ -7,15 +7,15 @@ class DbProfile extends DbHelper {
   Future<Profile> getProfile() async {
     final db = await dbInstance;
 
-    final List<Map<String, dynamic>> maps = await db.query('profile');
+    final List<Map<String, dynamic>> maps = await db.query('profil');
 
     if (maps.isEmpty) {
       return Profile();
     } else {
       return Profile(
         id: maps[0]['id'],
-        name: maps[0]['name'],
-        profilePict: maps[0]['profilePict'],
+        nama: maps[0]['nama'],
+        fotoProfil: maps[0]['fotoProfil'],
       );
     }
   }
@@ -34,14 +34,14 @@ class DbProfile extends DbHelper {
     return maps;
   }
 
-  Future<void> saveProfileTest(String name) async {
+  Future<void> saveProfileTest(String nama) async {
     final db = await dbInstance;
 
     final insertedId = await db.insert(
-        'profile',
+        'profil',
         {
-          'name': name,
-          'profilePict': 'kosong',
+          'nam': nama,
+          'fotoProfil': 'kosong',
           'jenjang': 'Prakom Aja',
           'ak_now': 14.9,
         },
@@ -53,10 +53,10 @@ class DbProfile extends DbHelper {
     final db = await dbInstance;
 
     final insertedId = await db.update(
-        'profile',
+        'profil',
         {
-          'name': data,
-          'profilePict': 'kosong',
+          'nama': data,
+          'fotoProfil': 'kosong',
           'jenjang': 'Prakom Aja',
           'ak_now': 14.9,
         },

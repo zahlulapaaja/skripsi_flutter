@@ -1,24 +1,24 @@
 class BuktiFisik {
   final int? id;
   final String path;
-  final int? idNote;
-  final String? fileName;
+  final int? idCatatan;
+  final String? namaFile;
   final String? extension;
 
   BuktiFisik({
     this.id,
     required this.path,
-    this.idNote,
-    this.fileName,
+    this.idCatatan,
+    this.namaFile,
     this.extension,
   });
 
-  Map<String, dynamic> toMap(int idNote) {
+  Map<String, dynamic> toMap(int idCatatan) {
     return {
       'id': id,
       'path': path,
-      'idNote': idNote,
-      'fileName': fileName,
+      'idCatatan': idCatatan,
+      'namaFile': namaFile,
       'extension': extension,
     };
   }

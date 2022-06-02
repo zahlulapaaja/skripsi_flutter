@@ -153,7 +153,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
               final newFile = await saveFilePermanently(file);
               final newBukti = BuktiFisik(
                 path: newFile.path,
-                fileName: file.name,
+                namaFile: file.name,
                 extension: file.extension,
               );
 

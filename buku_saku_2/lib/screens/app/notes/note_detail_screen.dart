@@ -109,12 +109,12 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                               },
                                               child: Center(
                                                   child: Text(
-                                                      '${note.buktiFisik![index].fileName}.${note.buktiFisik![index].extension}')),
+                                                      '${note.buktiFisik![index].namaFile}.${note.buktiFisik![index].extension}')),
                                             ),
                                           ),
                                         ),
                                         Text(
-                                          '${note.buktiFisik![index].fileName}',
+                                          '${note.buktiFisik![index].namaFile}',
                                           overflow: TextOverflow.ellipsis,
                                           maxLines: 1,
                                         ),

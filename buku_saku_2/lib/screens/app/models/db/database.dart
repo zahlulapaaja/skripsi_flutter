@@ -8,21 +8,24 @@ class DbHelper {
   Database? _database;
   final String _dbName = 'bukusaku.db';
   final String _dbSyntax =
-      '''CREATE TABLE notes( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, kodeButir TEXT,
-  tanggalKegiatan TEXT, jumlahKegiatan INTEGER, angkaKredit INTEGER, status INTEGER, personId INTEGER)''';
+      '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, kodeButir TEXT,
+  tanggalKegiatan TEXT, jumlahKegiatan INTEGER, angkaKredit INTEGER, status INTEGER, idProfil INTEGER)''';
   final String _dbSyntax2 =
-      '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idNote INTEGER, path TEXT,
-  fileName TEXT, extension TEXT)''';
+      '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, path TEXT,
+  namaFile TEXT, extension TEXT)''';
   final String _dbSyntax3 =
-      '''CREATE TABLE profile( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, profilePict TEXT, jenjang INTEGER,
-  golongan TEXT, ak_now DOUBLE(200,3), ak_utama_collected DOUBLE(200,3), ak_penunjang_collected DOUBLE(200,3))''';
-
+      '''CREATE TABLE profil( id INTEGER PRIMARY KEY AUTOINCREMENT, nama TEXT, fotoProfil TEXT, idJenjang INTEGER,
+  akSaatIni DOUBLE(200,3), akUtamaTerkumpul DOUBLE(200,3), akPenunjangTerkumpul DOUBLE(200,3))''';
   final String _dbSyntax4 =
-      '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, name TEXT )''';
+      '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, kodeJenjang INTEGER, jenjang TEXT, golongan TEXT )''';
   final String _dbSyntax5 =
-      '''INSERT INTO jenjang VALUES (11, "Pranata Komputer Terampil"), (12, "Pranata Komputer Mahir"),
-    (13, "Pranata Komputer Penyelia"), (21, "Pranata Komputer Ahli Pertama"), (22, "Pranata Komputer Ahli Muda"),
-    (23, "Pranata Komputer Ahli Madya"), (24, "Pranata Komputer Ahli Utama")''';
+      '''INSERT INTO jenjang VALUES (0, 11, "Pranata Komputer Terampil", "IIc"), (1, 11, "Pranata Komputer Terampil", "IId"),
+      (2, 12, "Pranata Komputer Mahir", "IIIa"), (3, 12, "Pranata Komputer Mahir", "IIIb"), (4, 13, "Pranata Komputer Penyelia", "IIIc"),
+      (5, 13, "Pranata Komputer Penyelia", "IIId"), (6, 21, "Pranata Komputer Ahli Pertama", "IIIa"),
+      (7, 21, "Pranata Komputer Ahli Pertama", "IIIb"), (8, 22, "Pranata Komputer Ahli Muda", "IIIc"),
+      (9, 22, "Pranata Komputer Ahli Muda", "IIId"), (10, 23, "Pranata Komputer Ahli Madya", "IVa"),
+      (11, 23, "Pranata Komputer Ahli Madya", "IVb"), (12, 23, "Pranata Komputer Ahli Madya", "IVc"),
+      (13, 24, "Pranata Komputer Ahli Utama", "IVd"), (14, 24, "Pranata Komputer Ahli Utama", "IVe")''';
 
   Future<Database> get dbInstance async {
     if (_database != null) return _database!;
@@ -48,7 +51,7 @@ class DbHelper {
   Future<List<Note>> getNotes() async {
     final db = await dbInstance;
 
-    final List<Map<String, dynamic>> maps = await db.query('notes');
+    final List<Map<String, dynamic>> maps = await db.query('catatan');
     return List.generate(maps.length, (i) {
       return Note(
         id: maps[i]['id'],
@@ -64,17 +67,17 @@ class DbHelper {
     final db = await dbInstance;
 
     final List<Map<String, dynamic>> maps =
-        await db.query('notes', where: 'id = ?', whereArgs: [id]);
+        await db.query('catatan', where: 'id = ?', whereArgs: [id]);
     final List<Map<String, dynamic>> files =
-        await db.query('bukti_fisik', where: 'idNote = ?', whereArgs: [id]);
+        await db.query('bukti_fisik', where: 'idCatatan = ?', whereArgs: [id]);
 
     List<BuktiFisik> buktiFisik = List.generate(
         files.length,
         (index) => BuktiFisik(
               id: files[index]['id'],
-              idNote: files[index]['idNote'],
+              idCatatan: files[index]['idCatatan'],
               path: files[index]['path'],
-              fileName: files[index]['fileName'],
+              namaFile: files[index]['namaFile'],
               extension: files[index]['extension'],
             ));
     return Note(
@@ -87,7 +90,6 @@ class DbHelper {
       angkaKredit: maps[0]['angkaKredit'],
       status: maps[0]['status'],
 
-      // this.personId,
       // this.dateCreated,
       // this.jenjang,
       buktiFisik: buktiFisik,
@@ -99,7 +101,7 @@ class DbHelper {
 
     // TODO : nanti jangan cuma judul, tapi uraian juga bisa masuk pencarian
     final List<Map<String, dynamic>> maps =
-        await db.query('notes', where: 'judul LIKE ?', whereArgs: ['%$key%']);
+        await db.query('catatan', where: 'judul LIKE ?', whereArgs: ['%$key%']);
 
     return List.generate(maps.length, (i) {
       return Note(
@@ -115,7 +117,7 @@ class DbHelper {
   Future<void> saveNote(Note note) async {
     final db = await dbInstance;
 
-    final insertedId = await db.insert('notes', note.toMap(),
+    final insertedId = await db.insert('catatan', note.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
     if (note.buktiFisik != null) {
       for (var bukti in note.buktiFisik!) {
@@ -129,9 +131,10 @@ class DbHelper {
     final db = await dbInstance;
 
     final insertedId = await db
-        .update('notes', note.toMap(), where: 'id = ?', whereArgs: [note.id]);
+        .update('catatan', note.toMap(), where: 'id = ?', whereArgs: [note.id]);
     if (note.buktiFisik != null) {
-      await db.delete('bukti_fisik', where: 'idNote = ?', whereArgs: [note.id]);
+      await db
+          .delete('bukti_fisik', where: 'idCatatan = ?', whereArgs: [note.id]);
       for (var bukti in note.buktiFisik!) {
         await db.insert('bukti_fisik', bukti.toMap(insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
@@ -142,25 +145,17 @@ class DbHelper {
   Future<void> deleteNote(int noteId) async {
     final db = await dbInstance;
 
-    await db.delete('notes', where: 'id = ?', whereArgs: [noteId]);
+    await db.delete('catatan', where: 'id = ?', whereArgs: [noteId]);
   }
 
-  // Future<String> getProfile() async {
-  //   final db = await dbInstance;
-
-  //   final List<Map<String, dynamic>> maps = await db.query('profile');
-  //   print(maps);
-  //   return maps[0]['name'];
-  // }
-
-  Future<void> saveProfileTest(String name) async {
+  Future<void> saveProfileTest(String nama) async {
     final db = await dbInstance;
 
     final insertedId = await db.insert(
-        'profile',
+        'profil',
         {
-          'name': name,
-          'profilePict': 'kosong',
+          'nama': nama,
+          'fotoProfil': 'kosong',
           'jenjang': 'Prakom Aja',
           'ak_now': 14.9,
         },
@@ -172,10 +167,10 @@ class DbHelper {
     final db = await dbInstance;
 
     final insertedId = await db.update(
-        'profile',
+        'profil',
         {
-          'name': data,
-          'profilePict': 'kosong',
+          'nama': data,
+          'fotoProfil': 'kosong',
           'jenjang': 'Prakom Aja',
           'ak_now': 14.9,
         },

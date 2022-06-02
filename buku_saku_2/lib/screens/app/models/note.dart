@@ -13,7 +13,7 @@ class Note {
   int jumlahKegiatan;
   double angkaKredit;
   int? status;
-  int? personId;
+  int? idProfil;
   DateTime? dateCreated;
   List<BuktiFisik>? buktiFisik;
 
@@ -35,7 +35,7 @@ class Note {
     this.jumlahKegiatan = 1,
     this.angkaKredit = 0,
     this.status,
-    this.personId,
+    this.idProfil,
     this.dateCreated,
     this.buktiFisik,
     this.jenjang,
@@ -51,7 +51,7 @@ class Note {
       'jumlahKegiatan': jumlahKegiatan,
       'angkaKredit': angkaKredit,
       'status': status,
-      'personId': personId,
+      'idProfil': idProfil,
     };
   }
 }

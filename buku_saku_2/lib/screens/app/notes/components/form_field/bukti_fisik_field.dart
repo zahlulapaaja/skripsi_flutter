@@ -51,7 +51,7 @@ class BuktiFisikField extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '${selectedData![index].fileName}',
+                              '${selectedData![index].namaFile}',
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                             ),

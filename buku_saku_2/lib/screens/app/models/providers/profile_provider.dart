@@ -20,7 +20,7 @@ class ProfileProvider with ChangeNotifier {
   }
 
   set setProfile(Profile data) {
-    print(_profile?.name);
+    print(_profile?.nama);
     _profile = data;
     notifyListeners();
   }
