@@ -1,4 +1,4 @@
-import 'package:buku_saku_2/screens/app/models/database.dart';
+import 'package:buku_saku_2/screens/app/models/db/database.dart';
 
 class Unsur {
   String? code;

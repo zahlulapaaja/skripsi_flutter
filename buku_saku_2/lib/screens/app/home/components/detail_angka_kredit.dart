@@ -1,4 +1,4 @@
-import 'package:buku_saku_2/screens/app/models/database.dart';
+import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -10,406 +10,379 @@ class DetailAngkaKredit extends StatelessWidget {
 
   var dbHelper = DbHelper();
 
-  Future<String> getProfileData() async {
-    var result = await dbHelper.getProfile();
-    return result;
-  }
-
   DetailAngkaKredit({Key? key, this.name}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: getProfileData(),
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return Padding(
-            padding: const EdgeInsets.only(
-                left: 14.0, right: 14.0, top: 14.0, bottom: 24.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(8.0),
-                  bottomLeft: Radius.circular(8.0),
-                  bottomRight: Radius.circular(8.0),
-                  topRight: Radius.circular(68.0),
-                ),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: AppColors.grey.withOpacity(0.2),
-                    offset: const Offset(1.1, 1.1),
-                    blurRadius: 10.0,
-                  ),
-                ],
-              ),
-              child: Column(
+    return Padding(
+      padding: const EdgeInsets.only(
+          left: 14.0, right: 14.0, top: 14.0, bottom: 24.0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(8.0),
+            bottomLeft: Radius.circular(8.0),
+            bottomRight: Radius.circular(8.0),
+            topRight: Radius.circular(68.0),
+          ),
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: AppColors.grey.withOpacity(0.2),
+              offset: const Offset(1.1, 1.1),
+              blurRadius: 10.0,
+            ),
+          ],
+        ),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+              child: Row(
                 children: <Widget>[
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 16, left: 16, right: 16),
-                    child: Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                left: 8, right: 8, top: 4),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Container(
-                                      height: 48,
-                                      width: 2,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            AppColors.success.withOpacity(0.5),
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(4.0)),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 4, bottom: 2),
-                                            child: Text(
-                                              snapshot.data!,
-                                              // TODO : kondisikan ternary dengan snapshotnya, ah itulah pokoknya, bikin lebih rapi kondisinya
-                                              // karena sekarang kondisinya masih keluar error, karna waktu datanya belom ada, tetep dipaksa dipanggil
-                                              // 'PAK Saat Ini',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontFamily:
-                                                    AppConstants.fontName,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: AppConstants
-                                                    .kNormalFontSize,
-                                                letterSpacing: -0.1,
-                                                color: AppColors.lightBlack
-                                                    .withOpacity(0.5),
-                                              ),
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: <Widget>[
-                                              SizedBox(
-                                                width: 28,
-                                                height: 28,
-                                                child: SvgPicture.asset(
-                                                  "assets/icons/star.svg",
-                                                  color: AppColors.success,
-                                                  semanticsLabel: name,
-                                                  // 'PAK Saat Ini',
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 4, bottom: 3),
-                                                child: Text(
-                                                  (23.541).toStringAsFixed(3),
-                                                  textAlign: TextAlign.center,
-                                                  style: const TextStyle(
-                                                    fontFamily:
-                                                        AppConstants.fontName,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: AppConstants
-                                                        .kNormalFontSize,
-                                                    color: AppColors.black,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8, right: 8, top: 4),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Container(
+                                height: 48,
+                                width: 2,
+                                decoration: BoxDecoration(
+                                  color: AppColors.success.withOpacity(0.5),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(4.0)),
                                 ),
-                                const SizedBox(height: 8),
-                                Row(
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    Container(
-                                      height: 48,
-                                      width: 2,
-                                      decoration: BoxDecoration(
-                                        color: AppColors.primaryLight
-                                            .withOpacity(0.5),
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(4.0)),
-                                      ),
-                                    ),
                                     Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 4, bottom: 2),
-                                            child: Text(
-                                              'AK Terkumpul',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontFamily:
-                                                    AppConstants.fontName,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: AppConstants
-                                                    .kNormalFontSize,
-                                                letterSpacing: -0.1,
-                                                color: AppColors.lightBlack
-                                                    .withOpacity(0.5),
-                                              ),
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: <Widget>[
-                                              SizedBox(
-                                                width: 28,
-                                                height: 28,
-                                                child: SvgPicture.asset(
-                                                  "assets/icons/star.svg",
-                                                  color: AppColors.primary,
-                                                  semanticsLabel:
-                                                      'AK Terkumpul',
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 4, bottom: 3),
-                                                child: Text(
-                                                  (23.541).toStringAsFixed(3),
-                                                  textAlign: TextAlign.center,
-                                                  style: const TextStyle(
-                                                    fontFamily:
-                                                        AppConstants.fontName,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: AppConstants
-                                                        .kNormalFontSize,
-                                                    color: AppColors.black,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          )
-                                        ],
+                                      padding: const EdgeInsets.only(
+                                          left: 4, bottom: 2),
+                                      child: Text(
+                                        "snapshot.data!",
+                                        // TODO : kondisikan ternary dengan snapshotnya, ah itulah pokoknya, bikin lebih rapi kondisinya
+                                        // karena sekarang kondisinya masih keluar error, karna waktu datanya belom ada, tetep dipaksa dipanggil
+                                        // 'PAK Saat Ini',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: AppConstants.fontName,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize:
+                                              AppConstants.kNormalFontSize,
+                                          letterSpacing: -0.1,
+                                          color: AppColors.lightBlack
+                                              .withOpacity(0.5),
+                                        ),
                                       ),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 16),
-                          child: Center(
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              children: <Widget>[
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    width: 100,
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(100.0),
-                                      ),
-                                      border: Border.all(
-                                          width: 4,
-                                          color: AppColors.primaryDark
-                                              .withOpacity(0.2)),
                                     ),
-                                    child: Column(
+                                    Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                          CrossAxisAlignment.end,
                                       children: <Widget>[
-                                        Text(
-                                          (75.999).toStringAsFixed(3),
-                                          textAlign: TextAlign.center,
-                                          style: const TextStyle(
-                                            fontFamily: AppConstants.fontName,
-                                            fontWeight: FontWeight.normal,
-                                            fontSize: 24,
-                                            letterSpacing: 0.0,
-                                            color: AppColors.black,
+                                        SizedBox(
+                                          width: 28,
+                                          height: 28,
+                                          child: SvgPicture.asset(
+                                            "assets/icons/star.svg",
+                                            color: AppColors.success,
+                                            semanticsLabel: name,
+                                            // 'PAK Saat Ini',
                                           ),
                                         ),
-                                        Text(
-                                          'Angka Kredit',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontFamily: AppConstants.fontName,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize:
-                                                AppConstants.kTinyFontSize - 2,
-                                            letterSpacing: 0.0,
-                                            color:
-                                                AppColors.grey.withOpacity(0.5),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 4, bottom: 3),
+                                          child: Text(
+                                            (23.541).toStringAsFixed(3),
+                                            textAlign: TextAlign.center,
+                                            style: const TextStyle(
+                                              fontFamily: AppConstants.fontName,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize:
+                                                  AppConstants.kNormalFontSize,
+                                              color: AppColors.black,
+                                            ),
                                           ),
                                         ),
                                       ],
-                                    ),
-                                  ),
+                                    )
+                                  ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: CustomPaint(
-                                    painter: CurvePainter(colors: [
-                                      AppColors.primaryDark,
-                                      AppColors.primary,
-                                      AppColors.primaryLight,
-                                    ], angle: 140 + (360 - 140)),
-                                    child: const SizedBox(
-                                      width: 108,
-                                      height: 108,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
+                              )
+                            ],
                           ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 24, right: 24, top: 8, bottom: 8),
-                    child: Container(
-                      height: 2,
-                      decoration: const BoxDecoration(
-                        color: AppColors.grey,
-                        borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                          const SizedBox(height: 8),
+                          Row(
+                            children: <Widget>[
+                              Container(
+                                height: 48,
+                                width: 2,
+                                decoration: BoxDecoration(
+                                  color:
+                                      AppColors.primaryLight.withOpacity(0.5),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(4.0)),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 4, bottom: 2),
+                                      child: Text(
+                                        'AK Terkumpul',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: AppConstants.fontName,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize:
+                                              AppConstants.kNormalFontSize,
+                                          letterSpacing: -0.1,
+                                          color: AppColors.lightBlack
+                                              .withOpacity(0.5),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: <Widget>[
+                                        SizedBox(
+                                          width: 28,
+                                          height: 28,
+                                          child: SvgPicture.asset(
+                                            "assets/icons/star.svg",
+                                            color: AppColors.primary,
+                                            semanticsLabel: 'AK Terkumpul',
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 4, bottom: 3),
+                                          child: Text(
+                                            (23.541).toStringAsFixed(3),
+                                            textAlign: TextAlign.center,
+                                            style: const TextStyle(
+                                              fontFamily: AppConstants.fontName,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize:
+                                                  AppConstants.kNormalFontSize,
+                                              color: AppColors.black,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                        left: 24, right: 24, top: 8, bottom: 16),
-                    child: Row(
-                      children: <Widget>[
-                        Expanded(
-                          flex: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                const Text(
-                                  'Jabatan',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: AppConstants.fontName,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: AppConstants.kTinyFontSize,
-                                    letterSpacing: -0.2,
-                                    color: AppColors.lightBlack,
-                                  ),
+                    padding: const EdgeInsets.only(right: 16),
+                    child: Center(
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(100.0),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 6),
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                      color: AppColors.beige,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(5.0)),
-                                    ),
-                                    child: const Padding(
-                                      padding: EdgeInsets.all(4.0),
-                                      child: Text(
-                                        'Prakom Ahli Madya',
-                                        textAlign: TextAlign.center,
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontFamily: AppConstants.fontName,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize:
-                                              AppConstants.kSmallFontSize - 1,
-                                          color: AppColors.black,
-                                        ),
-                                      ),
+                                border: Border.all(
+                                    width: 4,
+                                    color:
+                                        AppColors.primaryDark.withOpacity(0.2)),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    (75.999).toStringAsFixed(3),
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      fontFamily: AppConstants.fontName,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 24,
+                                      letterSpacing: 0.0,
+                                      color: AppColors.black,
                                     ),
                                   ),
-                                ),
-                              ],
+                                  Text(
+                                    'Angka Kredit',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: AppConstants.fontName,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: AppConstants.kTinyFontSize - 2,
+                                      letterSpacing: 0.0,
+                                      color: AppColors.grey.withOpacity(0.5),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              const Text(
-                                'Angka Kredit',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: AppConstants.fontName,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: AppConstants.kTinyFontSize,
-                                  letterSpacing: -0.2,
-                                  color: AppColors.lightBlack,
-                                ),
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: CustomPaint(
+                              painter: CurvePainter(colors: [
+                                AppColors.primaryDark,
+                                AppColors.primary,
+                                AppColors.primaryLight,
+                              ], angle: 140 + (360 - 140)),
+                              child: const SizedBox(
+                                width: 108,
+                                height: 108,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 6),
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    color: AppColors.beige,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5.0)),
-                                  ),
-                                  child: const Padding(
-                                    padding: EdgeInsets.all(4.0),
-                                    child: Text(
-                                      'Sudah Terkumpul 12,658 Angka Kredit',
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                        fontFamily: AppConstants.fontName,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize:
-                                            AppConstants.kSmallFontSize - 1,
-                                        color: AppColors.black,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
               ),
             ),
-          );
-        });
+            Padding(
+              padding:
+                  const EdgeInsets.only(left: 24, right: 24, top: 8, bottom: 8),
+              child: Container(
+                height: 2,
+                decoration: const BoxDecoration(
+                  color: AppColors.grey,
+                  borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 24, right: 24, top: 8, bottom: 16),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          const Text(
+                            'Jabatan',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: AppConstants.fontName,
+                              fontWeight: FontWeight.w500,
+                              fontSize: AppConstants.kTinyFontSize,
+                              letterSpacing: -0.2,
+                              color: AppColors.lightBlack,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                color: AppColors.beige,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5.0)),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.all(4.0),
+                                child: Text(
+                                  'Prakom Ahli Madya',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  style: TextStyle(
+                                    fontFamily: AppConstants.fontName,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: AppConstants.kSmallFontSize - 1,
+                                    color: AppColors.black,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        const Text(
+                          'Angka Kredit',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: AppConstants.fontName,
+                            fontWeight: FontWeight.w500,
+                            fontSize: AppConstants.kTinyFontSize,
+                            letterSpacing: -0.2,
+                            color: AppColors.lightBlack,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 6),
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: AppColors.beige,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5.0)),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(4.0),
+                              child: Text(
+                                'Sudah Terkumpul 12,658 Angka Kredit',
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                                style: TextStyle(
+                                  fontFamily: AppConstants.fontName,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: AppConstants.kSmallFontSize - 1,
+                                  color: AppColors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
 

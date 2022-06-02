@@ -1,7 +1,7 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
-import 'package:buku_saku_2/screens/app/models/database.dart';
+import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:flutter/material.dart';

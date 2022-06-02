@@ -5,7 +5,10 @@ import 'dart:convert';
 import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
+import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
+import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +37,8 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
   AnimationController? animationController;
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
   DrawerIndex? drawerIndex;
+
+  var dbHelper = DbProfile();
 
   void initialTabBody() {
     for (var tabIcon in tabIconsList) {
@@ -84,23 +89,35 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.offWhite,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: DrawerUserController(
-          screenIndex: drawerIndex,
-          drawerWidth: MediaQuery.of(context).size.width * 0.75,
-          onDrawerCall: (DrawerIndex drawerIndexData) {
-            changeIndex(drawerIndexData);
-            //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
-          },
-          screenView: Stack(
-            children: <Widget>[
-              context.watch<ScreenProvider>().tabBody,
-              bottomBar(),
-            ],
-          ),
-        ),
-      ),
+      child: FutureBuilder(
+          future: context.read<ProfileProvider>().getProfileData,
+          builder: (context, AsyncSnapshot<Profile> snapshot) {
+            if (snapshot.hasError) {
+              print(snapshot.error);
+              return Center(child: Text('ERROR!! ${snapshot.error}'));
+            } else if (snapshot.hasData) {
+              // kalo data kosong arahin dulu ke laman edit profil
+              return Scaffold(
+                backgroundColor: Colors.transparent,
+                body: DrawerUserController(
+                  screenIndex: drawerIndex,
+                  drawerWidth: MediaQuery.of(context).size.width * 0.75,
+                  onDrawerCall: (DrawerIndex drawerIndexData) {
+                    changeIndex(drawerIndexData);
+                    //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
+                  },
+                  screenView: Stack(
+                    children: <Widget>[
+                      context.watch<ScreenProvider>().tabBody,
+                      bottomBar(),
+                    ],
+                  ),
+                ),
+              );
+            } else {
+              return const Center(child: CircularProgressIndicator());
+            }
+          }),
     );
   }
 

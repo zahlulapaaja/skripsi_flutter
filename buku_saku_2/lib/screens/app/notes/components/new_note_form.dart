@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:buku_saku_2/screens/app/models/database.dart';
+import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/screens/app/models/bukti_fisik.dart';
 import 'package:file_picker/file_picker.dart';

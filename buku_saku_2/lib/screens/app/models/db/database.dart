@@ -14,8 +14,15 @@ class DbHelper {
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idNote INTEGER, path TEXT,
   fileName TEXT, extension TEXT)''';
   final String _dbSyntax3 =
-      '''CREATE TABLE profile( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, profilePict TEXT, jenjang TEXT,
+      '''CREATE TABLE profile( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, profilePict TEXT, jenjang INTEGER,
   golongan TEXT, ak_now DOUBLE(200,3), ak_utama_collected DOUBLE(200,3), ak_penunjang_collected DOUBLE(200,3))''';
+
+  final String _dbSyntax4 =
+      '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, name TEXT )''';
+  final String _dbSyntax5 =
+      '''INSERT INTO jenjang VALUES (11, "Pranata Komputer Terampil"), (12, "Pranata Komputer Mahir"),
+    (13, "Pranata Komputer Penyelia"), (21, "Pranata Komputer Ahli Pertama"), (22, "Pranata Komputer Ahli Muda"),
+    (23, "Pranata Komputer Ahli Madya"), (24, "Pranata Komputer Ahli Utama")''';
 
   Future<Database> get dbInstance async {
     if (_database != null) return _database!;
@@ -32,6 +39,8 @@ class DbHelper {
         db.execute(_dbSyntax);
         db.execute(_dbSyntax2);
         db.execute(_dbSyntax3);
+        db.execute(_dbSyntax4);
+        db.execute(_dbSyntax5);
       },
     );
   }
@@ -136,13 +145,13 @@ class DbHelper {
     await db.delete('notes', where: 'id = ?', whereArgs: [noteId]);
   }
 
-  Future<String> getProfile() async {
-    final db = await dbInstance;
+  // Future<String> getProfile() async {
+  //   final db = await dbInstance;
 
-    final List<Map<String, dynamic>> maps = await db.query('profile');
-    print(maps);
-    return maps[0]['name'];
-  }
+  //   final List<Map<String, dynamic>> maps = await db.query('profile');
+  //   print(maps);
+  //   return maps[0]['name'];
+  // }
 
   Future<void> saveProfileTest(String name) async {
     final db = await dbInstance;

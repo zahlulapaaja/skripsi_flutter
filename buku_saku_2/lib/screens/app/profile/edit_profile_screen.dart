@@ -1,11 +1,14 @@
 import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
-import 'package:buku_saku_2/screens/app/models/database.dart';
+import 'package:buku_saku_2/screens/app/models/db/database.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
+import 'package:buku_saku_2/screens/app/profile/components/dropdown_field.dart';
 import 'package:buku_saku_2/screens/app/profile/components/setting_menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class EditProfileScreen extends StatefulWidget {
   static const id = 'edit_profile_screen';
@@ -85,6 +88,19 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             textInputAction: TextInputAction.done,
             textInputType: TextInputType.emailAddress,
           ),
+          FutureBuilder(
+              future: context.watch<ProfileProvider>().getJenjang,
+              builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
+                print(snapshot.data![0]['id']);
+                // nanti ganti name ini jadi jenjang aja (termasuk di db nya)
+                return DropdownField(
+                  data: List.generate(
+                      snapshot.data!.length, (i) => snapshot.data![i]['name']),
+                  onChanged: (value) {
+                    print('changed');
+                  },
+                );
+              }),
           SettingMenuButton(
             icon: Icons.settings,
             title: 'Setelan',

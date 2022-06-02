@@ -9,6 +9,8 @@ import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:provider/provider.dart';
 
+import 'screens/app/models/providers/profile_provider.dart';
+
 final navigatorKey = GlobalKey<NavigatorState>();
 void main() => runApp(const MyApp());
 
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => NotesProvider()),
         ChangeNotifierProvider(create: (_) => ScreenProvider()),
         ChangeNotifierProvider(create: (_) => DictionaryProvider()),
+        ChangeNotifierProvider(create: (_) => ProfileProvider()),
       ],
       child: MaterialApp(
         title: 'Buku Saku Prakom',
