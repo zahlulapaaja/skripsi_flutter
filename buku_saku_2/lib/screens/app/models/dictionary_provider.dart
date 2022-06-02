@@ -2,10 +2,8 @@ import 'dart:convert';
 
 import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
-import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:flutter/material.dart';
-import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
 import 'package:flutter/services.dart';
 
 class DictionaryProvider with ChangeNotifier {
@@ -25,7 +23,8 @@ class DictionaryProvider with ChangeNotifier {
   List<String> disableButir2 = [];
   // ketika pengaturan jenjang diganti, disable nya harus dikosongin nanti
 
-  var dbHelper = DbHelper();
+  List<String> get disableButir =>
+      List.from(disableButir1)..addAll(disableButir2);
 
   Future<List<Unsur>> get readJsonData async {
     dynamic jsonData;
@@ -59,9 +58,6 @@ class DictionaryProvider with ChangeNotifier {
     for (Note note in notes) {
       disableButir2.add(note.judul!);
     }
-
-    print("disableButir2");
-    print(disableButir2);
   }
 
   set storeData(List<Unsur> listUnsur) {
@@ -85,8 +81,6 @@ class DictionaryProvider with ChangeNotifier {
       }
     }
     _allButir = butirList;
-    print("disableButir1");
-    print(disableButir1);
   }
 
   set setQuery(String query) {

@@ -1,9 +1,6 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/app/models/database.dart';
 import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
-import 'package:buku_saku_2/screens/app/models/note.dart';
-import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +21,8 @@ class ButirDropdown extends StatelessWidget {
   final bool editMode;
   final String? jenjang;
 
-  List<String>? dataButir;
+  List<String> dataButir = [];
+  List<String> disableButir = [];
 
   getData(DictionaryProvider dictProvider) {
     var data = dictProvider.allButir;
@@ -35,12 +33,13 @@ class ButirDropdown extends StatelessWidget {
       },
       growable: true,
     );
+
+    disableButir = dictProvider.disableButir;
   }
 
   @override
   Widget build(BuildContext context) {
     final dictProvider = Provider.of<DictionaryProvider>(context);
-    final noteProvider = Provider.of<NotesProvider>(context);
     getData(dictProvider);
 
     return Padding(
@@ -55,10 +54,12 @@ class ButirDropdown extends StatelessWidget {
             showClearButton: editMode ? false : true,
             items: dataButir,
             popupItemDisabled: (String s) {
-              // print(notes);
-              List<String?> disable = [];
-
-              return s.startsWith('II.A.1');
+              int i = 0;
+              while (i < disableButir.length) {
+                if (s.contains(disableButir[i])) return true;
+                i++;
+              }
+              return false;
             },
             onChanged: onChanged,
             selectedItem: initialData,
