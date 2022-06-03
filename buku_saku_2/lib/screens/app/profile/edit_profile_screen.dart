@@ -1,9 +1,10 @@
 import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
-import 'package:buku_saku_2/screens/app/models/db/database.dart';
+import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
+import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/components/dropdown_field.dart';
-import 'package:buku_saku_2/screens/app/profile/components/setting_menu_button.dart';
+import 'package:buku_saku_2/screens/app/profile/components/form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -19,11 +20,20 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
+  //rapiin lagi bawah bawah ni
   final _formKey = GlobalKey<FormState>();
-  var dbHelper = DbHelper();
-  final _textController = TextEditingController();
+  var dbHelper = DbProfile();
+  final _nameTextController = TextEditingController();
+  final _akUtamaTextController = TextEditingController();
+  final _akPenunjangTextController = TextEditingController();
 
-  // String? name;
+  List<String> golongan = [];
+  String? selectedJenjang;
+  String? selectedGolongan;
+  Profile data = Profile();
+  List<Jenjang> listJenjang = [];
+  List<String> jenjang = [];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,80 +68,115 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget getMainListViewUI(BuildContext context) {
     return Form(
       key: _formKey,
-      child: ListView(
-        padding: EdgeInsets.only(
-          top: AppBar().preferredSize.height +
-              MediaQuery.of(context).padding.top,
-          bottom: 62 + MediaQuery.of(context).padding.bottom,
-        ),
-        scrollDirection: Axis.vertical,
-        children: <Widget>[
-          const SizedBox(height: 20),
-          FormFieldTemplate(
-            headingText: "Full Name",
-            hintText: "Masukkan nama lengkap anda...",
-            suffixIcon: const SizedBox(),
-            obsecureText: false,
-            maxLines: 1,
-            controller: _textController,
-            textInputAction: TextInputAction.done,
-            textInputType: TextInputType.emailAddress,
-          ),
-          Divider(color: Colors.black),
-          FormFieldTemplate(
-            headingText: "Full Name",
-            hintText: "Masukkan nama lengkap anda...",
-            suffixIcon: const SizedBox(),
-            obsecureText: false,
-            maxLines: 1,
-            controller: _textController,
-            textInputAction: TextInputAction.done,
-            textInputType: TextInputType.emailAddress,
-          ),
-          FutureBuilder(
-              future: context.watch<ProfileProvider>().getJenjang,
-              builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
-                print(snapshot.data![0]['id']);
-                // nanti ganti name ini jadi jenjang aja (termasuk di db nya)
-                return DropdownField(
-                  data: List.generate(snapshot.data!.length,
-                      (i) => snapshot.data![i]['jenjang']),
+      child: FutureBuilder(
+          future: context.read<ProfileProvider>().getProfileData,
+          builder: (context, AsyncSnapshot<Profile> snapshot) {
+            if (snapshot.data!.id != null) {
+              data = snapshot.data!;
+              listJenjang = data.listJenjang!;
+              jenjang = List.generate(listJenjang.length, (i) {
+                if (listJenjang[i].id == data.idJenjang) {
+                  selectedJenjang = listJenjang[i].jenjang;
+                  selectedGolongan = listJenjang[i].golongan;
+                }
+                return listJenjang[i].jenjang;
+              });
+
+              _nameTextController.text = data.nama!;
+              _akUtamaTextController.text = data.akUtamaTerkumpul.toString();
+              _akPenunjangTextController.text =
+                  data.akPenunjangTerkumpul.toString();
+            }
+
+            return ListView(
+              padding: EdgeInsets.only(
+                top: AppBar().preferredSize.height +
+                    MediaQuery.of(context).padding.top,
+                bottom: 62 + MediaQuery.of(context).padding.bottom,
+              ),
+              scrollDirection: Axis.vertical,
+              children: <Widget>[
+                const SizedBox(height: 20),
+                ProfileFormField(
+                  headingText: "Full Name",
+                  hintText: "Masukkan nama lengkap anda...",
+                  suffixIcon: const SizedBox(),
+                  obsecureText: false,
+                  maxLines: 1,
+                  controller: _nameTextController,
+                  textInputAction: TextInputAction.done,
+                  textInputType: TextInputType.emailAddress,
+                ),
+                DropdownField(
+                  data: jenjang,
+                  initialData: selectedJenjang,
                   onChanged: (value) {
                     print('changed');
+                    setState(() {
+                      selectedJenjang = value;
+                      golongan = [];
+                      for (var row in listJenjang) {
+                        if (row.jenjang == value) {
+                          golongan.add(row.golongan);
+                        }
+                      }
+                    });
                   },
-                );
-              }),
-          SettingMenuButton(
-            icon: Icons.settings,
-            title: 'Setelan',
-            subtitle: 'Tema, Riwayat, Dll...',
-            onPressed: () {},
-          ),
-          ElevatedButton(
-            onPressed: () => saveData(_textController.text),
-            child: const Text('Gass'),
-          )
-        ],
-      ),
+                ),
+                DropdownField(
+                  data: golongan,
+                  initialData: selectedGolongan,
+                  onChanged: (value) {
+                    for (var row in listJenjang) {
+                      if (row.jenjang == selectedJenjang) {
+                        if (row.golongan == value) {
+                          setState(() {
+                            data.idJenjang = row.id;
+                          });
+                        }
+                      }
+                    }
+                    print('changed');
+                  },
+                ),
+                ProfileFormField(
+                  headingText: "Angka Kredit Utama Saat Ini",
+                  hintText: "Masukkan nama lengkap anda...",
+                  suffixIcon: const SizedBox(),
+                  obsecureText: false,
+                  maxLines: 1,
+                  controller: _akUtamaTextController,
+                  textInputAction: TextInputAction.done,
+                  textInputType:
+                      const TextInputType.numberWithOptions(decimal: true),
+                ),
+                ProfileFormField(
+                  headingText: "Angka Kredit Pengembangan Profesi Saat Ini",
+                  hintText: "Masukkan nama lengkap anda...",
+                  suffixIcon: const SizedBox(),
+                  obsecureText: false,
+                  maxLines: 1,
+                  controller: _akPenunjangTextController,
+                  textInputAction: TextInputAction.done,
+                  textInputType: TextInputType.number,
+                ),
+                ElevatedButton(
+                  onPressed: () => saveData(data),
+                  child: const Text('Gass'),
+                )
+              ],
+            );
+          }),
     );
   }
 
-  saveData(String data) async {
+  saveData(Profile data) async {
     if (_formKey.currentState!.validate()) {
-      // final newNote = selectedNote;
+      data.nama = _nameTextController.text;
+      data.akUtamaTerkumpul = double.parse(_akUtamaTextController.text);
+      data.akPenunjangTerkumpul = double.parse(_akPenunjangTextController.text);
 
-      // (widget.note?.id != null)
-      //     ? noteProvider.updateNote(newNote)
-      //     : noteProvider.addNewNote(newNote);
-      print(data);
-      // if (dbHelper.getNameTest() == null || dbHelper.getNameTest() == '') {
-      // await dbHelper.saveProfileTest(data);
-      //   print(dbHelper.getNameTest());
-      // } else {
-      // TODO : deteksi ada data atau tidak, logika di atas kurang pas
-      await dbHelper.updateNameTest(data);
-      // }
-
+      int status = await dbHelper.saveProfile(data);
       Navigator.pop(context);
     }
   }

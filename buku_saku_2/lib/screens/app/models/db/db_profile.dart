@@ -8,6 +8,7 @@ class DbProfile extends DbHelper {
     final db = await dbInstance;
 
     final List<Map<String, dynamic>> maps = await db.query('profil');
+    final List<Map<String, dynamic>> jenjang = await db.query('jenjang');
 
     if (maps.isEmpty) {
       return Profile();
@@ -16,51 +17,49 @@ class DbProfile extends DbHelper {
         id: maps[0]['id'],
         nama: maps[0]['nama'],
         fotoProfil: maps[0]['fotoProfil'],
+        idJenjang: maps[0]['idJenjang'],
+        akSaatIni: maps[0]['akSaatIni'],
+        akUtamaTerkumpul: maps[0]['akUtamaTerkumpul'],
+        akPenunjangTerkumpul: maps[0]['akPenunjangTerkumpul'],
+        listJenjang: List.generate(jenjang.length, (i) {
+          return Jenjang(
+            id: jenjang[i]['id'],
+            kodeJenjang: jenjang[i]['kodeJenjang'],
+            jenjang: jenjang[i]['jenjang'],
+            golongan: jenjang[i]['golongan'],
+          );
+        }),
       );
     }
   }
 
-  Future<List<dynamic>> getJenjang() async {
+  Future<List<Jenjang>> getJenjang() async {
     final db = await dbInstance;
 
     final List<Map<String, dynamic>> maps = await db.query('jenjang');
-    return maps;
+    return List.generate(maps.length, (i) {
+      return Jenjang(
+        id: maps[i]['id'],
+        kodeJenjang: maps[i]['kodeJenjang'],
+        jenjang: maps[i]['jenjang'],
+        golongan: maps[i]['golongan'],
+      );
+    });
   }
 
-  Future<List<dynamic>> getGolonga() async {
+  Future<int> saveProfile(Profile data) async {
     final db = await dbInstance;
+    int insertedId;
 
-    final List<Map<String, dynamic>> maps = await db.query('golongan');
-    return maps;
-  }
+    var profil = await db.query('profil');
 
-  Future<void> saveProfileTest(String nama) async {
-    final db = await dbInstance;
+    if (profil.isEmpty) {
+      insertedId = await db.insert('profil', data.toMap(),
+          conflictAlgorithm: ConflictAlgorithm.replace);
+    } else {
+      insertedId = await db.update('profil', data.toMap(), where: 'id = 1');
+    }
 
-    final insertedId = await db.insert(
-        'profil',
-        {
-          'nam': nama,
-          'fotoProfil': 'kosong',
-          'jenjang': 'Prakom Aja',
-          'ak_now': 14.9,
-        },
-        conflictAlgorithm: ConflictAlgorithm.replace);
-  }
-
-  Future<void> updateNameTest(String data) async {
-    // harusnya nanti yang dibawa disini adalah semua data, bukan cuma satu string
-    final db = await dbInstance;
-
-    final insertedId = await db.update(
-        'profil',
-        {
-          'nama': data,
-          'fotoProfil': 'kosong',
-          'jenjang': 'Prakom Aja',
-          'ak_now': 14.9,
-        },
-        where: 'id = ?',
-        whereArgs: [1]);
+    return insertedId;
   }
 }
