@@ -1,10 +1,12 @@
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/components/setting_menu_button.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class SettingScreen extends StatelessWidget {
   static const id = 'setting_screen';
@@ -56,7 +58,9 @@ class SettingScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => EditProfileScreen(),
+                builder: (context) => EditProfileScreen(
+                  initialData: context.read<ProfileProvider>().profil,
+                ),
               ),
             );
           },

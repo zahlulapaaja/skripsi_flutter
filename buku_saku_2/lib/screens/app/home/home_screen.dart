@@ -1,6 +1,7 @@
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -99,9 +100,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     listViews.add(
-      DetailAngkaKredit(
-        name: 'name',
-      ),
+      DetailAngkaKredit(),
     );
 
     listViews.add(

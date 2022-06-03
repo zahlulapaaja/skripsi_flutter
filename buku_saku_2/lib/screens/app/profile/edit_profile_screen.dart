@@ -12,7 +12,8 @@ import 'package:provider/provider.dart';
 
 class EditProfileScreen extends StatefulWidget {
   static const id = 'edit_profile_screen';
-  EditProfileScreen({Key? key}) : super(key: key);
+  final Profile? initialData;
+  EditProfileScreen({Key? key, this.initialData}) : super(key: key);
 
   @override
   State<EditProfileScreen> createState() => _EditProfileScreenState();
@@ -29,9 +30,24 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   List<String> golongan = [];
   String? selectedJenjang;
   String? selectedGolongan;
+
   Profile data = Profile();
   List<Jenjang> listJenjang = [];
   List<String> jenjang = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    if (widget.initialData != null) {
+      _nameTextController.text = widget.initialData!.nama!;
+      _akUtamaTextController.text =
+          widget.initialData!.akUtamaTerkumpul.toString();
+      _akPenunjangTextController.text =
+          widget.initialData!.akPenunjangTerkumpul.toString();
+    }
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,11 +96,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 }
                 return listJenjang[i].jenjang;
               });
-
-              _nameTextController.text = data.nama!;
-              _akUtamaTextController.text = data.akUtamaTerkumpul.toString();
-              _akPenunjangTextController.text =
-                  data.akPenunjangTerkumpul.toString();
             }
 
             return ListView(
@@ -158,7 +169,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   textInputType: TextInputType.number,
                 ),
                 ElevatedButton(
-                  onPressed: () => saveData(data),
+                  onPressed: () {
+                    saveData(data);
+                  },
                   child: const Text('Gass'),
                 )
               ],
@@ -173,7 +186,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       data.akUtamaTerkumpul = double.parse(_akUtamaTextController.text);
       data.akPenunjangTerkumpul = double.parse(_akPenunjangTextController.text);
 
-      int status = await dbHelper.saveProfile(data);
+      int status = await context.read<ProfileProvider>().saveProfile(data);
       // nanti status ini dipake utk kasih alert berhasil
       Navigator.pop(context);
     }

@@ -1,19 +1,29 @@
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
+import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math' as math;
 
-class DetailAngkaKredit extends StatelessWidget {
-  final String? name;
+import 'package:provider/provider.dart';
 
+class DetailAngkaKredit extends StatefulWidget {
+  const DetailAngkaKredit({Key? key}) : super(key: key);
+
+  @override
+  State<DetailAngkaKredit> createState() => _DetailAngkaKreditState();
+}
+
+class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
   var dbHelper = DbHelper();
-
-  DetailAngkaKredit({Key? key, this.name}) : super(key: key);
+  Profile? data;
 
   @override
   Widget build(BuildContext context) {
+    data = context.watch<ProfileProvider>().profil;
+
     return Padding(
       padding: const EdgeInsets.only(
           left: 14.0, right: 14.0, top: 14.0, bottom: 24.0),
@@ -45,6 +55,18 @@ class DetailAngkaKredit extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 8, right: 8, top: 4),
                       child: Column(
                         children: <Widget>[
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Halo ' + data!.nama! + "...",
+                              style: const TextStyle(
+                                fontFamily: AppConstants.fontName,
+                                fontWeight: FontWeight.w600,
+                                fontSize: AppConstants.kNormalFontSize,
+                                color: AppColors.black,
+                              ),
+                            ),
+                          ),
                           Row(
                             children: <Widget>[
                               Container(
@@ -94,7 +116,7 @@ class DetailAngkaKredit extends StatelessWidget {
                                           child: SvgPicture.asset(
                                             "assets/icons/star.svg",
                                             color: AppColors.success,
-                                            semanticsLabel: name,
+                                            semanticsLabel: "data",
                                             // 'PAK Saat Ini',
                                           ),
                                         ),
