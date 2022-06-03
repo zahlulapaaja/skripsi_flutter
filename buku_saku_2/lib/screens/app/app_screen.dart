@@ -10,6 +10,7 @@ import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
+import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -97,6 +98,10 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               return Center(child: Text('ERROR!! ${snapshot.error}'));
             } else if (snapshot.hasData) {
               // kalo data kosong arahin dulu ke laman edit profil
+              if (snapshot.data!.id == null) {
+                Navigator.pushNamed(context, EditProfileScreen.id);
+              }
+
               return Scaffold(
                 backgroundColor: Colors.transparent,
                 body: DrawerUserController(

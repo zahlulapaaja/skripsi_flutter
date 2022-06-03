@@ -1,4 +1,3 @@
-import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
@@ -111,7 +110,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   data: jenjang,
                   initialData: selectedJenjang,
                   onChanged: (value) {
-                    print('changed');
                     setState(() {
                       selectedJenjang = value;
                       golongan = [];
@@ -136,7 +134,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         }
                       }
                     }
-                    print('changed');
                   },
                 ),
                 ProfileFormField(
@@ -177,6 +174,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       data.akPenunjangTerkumpul = double.parse(_akPenunjangTextController.text);
 
       int status = await dbHelper.saveProfile(data);
+      // nanti status ini dipake utk kasih alert berhasil
       Navigator.pop(context);
     }
   }

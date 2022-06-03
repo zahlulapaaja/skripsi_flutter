@@ -67,7 +67,7 @@ class SettingScreen extends StatelessWidget {
                 Container(
                   width: 75,
                   padding: const EdgeInsets.all(4.0),
-                  child: Icon(
+                  child: const Icon(
                     FontAwesomeIcons.userCircle,
                     color: AppColors.black,
                     size: 40,
@@ -77,14 +77,14 @@ class SettingScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
+                    children: const <Widget>[
                       Text(
                         'title',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: AppConstants.kCardTitleTextStyle,
                       ),
-                      const SizedBox(height: 5),
+                      SizedBox(height: 5),
                       Text(
                         'subtitle',
                         textAlign: TextAlign.left,
