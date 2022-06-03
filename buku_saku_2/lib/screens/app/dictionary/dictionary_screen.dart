@@ -2,7 +2,7 @@ import 'package:buku_saku_2/screens/app/dictionary/components/dict_searchbox.dar
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
-import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:provider/provider.dart';
 
 class DictionaryScreen extends StatefulWidget {

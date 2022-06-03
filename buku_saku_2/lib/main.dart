@@ -1,12 +1,12 @@
-import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
-import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/introduction_animation/introduction_animation_screen.dart';
 import 'package:buku_saku_2/screens/app/app_screen.dart';
-import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:provider/provider.dart';
 

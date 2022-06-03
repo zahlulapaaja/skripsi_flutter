@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_card_button.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/sub_unsur_screen.dart';
-import 'package:buku_saku_2/screens/app/models/dictionary_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 

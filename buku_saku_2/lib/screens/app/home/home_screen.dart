@@ -9,7 +9,7 @@ import 'package:buku_saku_2/screens/app/home/detail_angka_kredit_screen.dart';
 import 'package:buku_saku_2/screens/app/home/components/header_with_searchbox.dart';
 import 'package:buku_saku_2/screens/app/home/components/detail_angka_kredit.dart';
 import 'package:buku_saku_2/screens/app/home/components/title_view.dart';
-import 'package:buku_saku_2/screens/app/models/screen_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/card_grid_view.dart';
 import 'package:provider/provider.dart';
 

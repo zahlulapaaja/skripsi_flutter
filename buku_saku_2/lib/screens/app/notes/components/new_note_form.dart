@@ -11,7 +11,7 @@ import 'package:buku_saku_2/screens/app/notes/components/form_field/jenjang_drop
 import 'package:buku_saku_2/screens/app/notes/components/form_field/jumlah_kegiatan_field.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/uraian_text_area.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
-import 'package:buku_saku_2/screens/app/models/notes_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
