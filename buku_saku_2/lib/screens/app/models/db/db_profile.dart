@@ -6,9 +6,24 @@ import 'package:sqflite/sqflite.dart';
 class DbProfile extends DbHelper {
   Future<Profile> getProfile() async {
     final db = await dbInstance;
+    Jenjang? jenjang;
 
     final List<Map<String, dynamic>> maps = await db.query('profil');
-    final List<Map<String, dynamic>> jenjang = await db.query('jenjang');
+    final List<Map<String, dynamic>> maps2 = await db.query('jenjang');
+
+    final List<Jenjang> listJenjang = List.generate(maps2.length, (i) {
+      final Jenjang item = Jenjang(
+        id: maps2[i]['id'],
+        kodeJenjang: maps2[i]['kodeJenjang'],
+        jenjang: maps2[i]['jenjang'],
+        golongan: maps2[i]['golongan'],
+      );
+
+      if (maps[0]['idJenjang'] == maps2[i]['id']) {
+        jenjang = item;
+      }
+      return item;
+    });
 
     if (maps.isEmpty) {
       return Profile();
@@ -17,18 +32,11 @@ class DbProfile extends DbHelper {
         id: maps[0]['id'],
         nama: maps[0]['nama'],
         fotoProfil: maps[0]['fotoProfil'],
-        idJenjang: maps[0]['idJenjang'],
+        jenjang: jenjang,
         akSaatIni: maps[0]['akSaatIni'],
         akUtamaTerkumpul: maps[0]['akUtamaTerkumpul'],
         akPenunjangTerkumpul: maps[0]['akPenunjangTerkumpul'],
-        listJenjang: List.generate(jenjang.length, (i) {
-          return Jenjang(
-            id: jenjang[i]['id'],
-            kodeJenjang: jenjang[i]['kodeJenjang'],
-            jenjang: jenjang[i]['jenjang'],
-            golongan: jenjang[i]['golongan'],
-          );
-        }),
+        listJenjang: listJenjang,
       );
     }
   }

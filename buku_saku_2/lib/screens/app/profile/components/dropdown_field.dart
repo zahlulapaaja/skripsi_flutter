@@ -1,10 +1,8 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class DropdownField extends StatelessWidget {
@@ -23,27 +21,8 @@ class DropdownField extends StatelessWidget {
   final String? jenjang;
   final List<String> data;
 
-  List<String> dataButir = [];
-  List<String> disableButir = [];
-
-  getData(DictionaryProvider dictProvider) {
-    var data = dictProvider.allButir;
-    dataButir = List<String>.generate(
-      data.length,
-      (index) {
-        return data[index].kode + " " + data[index].judul;
-      },
-      growable: true,
-    );
-
-    disableButir = dictProvider.disableButir;
-  }
-
   @override
   Widget build(BuildContext context) {
-    final dictProvider = Provider.of<DictionaryProvider>(context);
-    getData(dictProvider);
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -56,11 +35,6 @@ class DropdownField extends StatelessWidget {
             showClearButton: editMode ? false : true,
             items: data,
             popupItemDisabled: (String s) {
-              int i = 0;
-              while (i < disableButir.length) {
-                if (s.contains(disableButir[i])) return true;
-                i++;
-              }
               return false;
             },
             onChanged: onChanged,

@@ -2,7 +2,7 @@ class Profile {
   int? id;
   String? nama;
   String? fotoProfil;
-  int? idJenjang;
+  Jenjang? jenjang;
   double? akSaatIni;
   double? akUtamaTerkumpul;
   double? akPenunjangTerkumpul;
@@ -12,7 +12,7 @@ class Profile {
     this.id,
     this.nama,
     this.fotoProfil,
-    this.idJenjang,
+    this.jenjang,
     this.akSaatIni,
     this.akUtamaTerkumpul,
     this.akPenunjangTerkumpul,
@@ -21,9 +21,10 @@ class Profile {
 
   Map<String, dynamic> toMap() {
     return {
+      'id': id,
       'nama': nama,
       'fotoProfil': fotoProfil,
-      "idJenjang": idJenjang,
+      "idJenjang": jenjang!.id,
       "akSaatIni": akSaatIni,
       "akUtamaTerkumpul": akUtamaTerkumpul,
       "akPenunjangTerkumpul": akPenunjangTerkumpul,

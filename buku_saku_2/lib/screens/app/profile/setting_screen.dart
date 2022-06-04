@@ -58,9 +58,7 @@ class SettingScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => EditProfileScreen(
-                  initialData: context.read<ProfileProvider>().profil,
-                ),
+                builder: (context) => const EditProfileScreen(),
               ),
             );
           },

@@ -88,7 +88,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                       padding: const EdgeInsets.only(
                                           left: 4, bottom: 2),
                                       child: Text(
-                                        "snapshot.data!",
+                                        "Ak Saat Ini",
                                         // TODO : kondisikan ternary dengan snapshotnya, ah itulah pokoknya, bikin lebih rapi kondisinya
                                         // karena sekarang kondisinya masih keluar error, karna waktu datanya belom ada, tetep dipaksa dipanggil
                                         // 'PAK Saat Ini',
@@ -124,7 +124,8 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                           padding: const EdgeInsets.only(
                                               left: 4, bottom: 3),
                                           child: Text(
-                                            (23.541).toStringAsFixed(3),
+                                            (data!.akSaatIni)!
+                                                .toStringAsFixed(3),
                                             textAlign: TextAlign.center,
                                             style: const TextStyle(
                                               fontFamily: AppConstants.fontName,
@@ -197,7 +198,9 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                           padding: const EdgeInsets.only(
                                               left: 4, bottom: 3),
                                           child: Text(
-                                            (23.541).toStringAsFixed(3),
+                                            (data!.akUtamaTerkumpul! +
+                                                    data!.akPenunjangTerkumpul!)
+                                                .toStringAsFixed(3),
                                             textAlign: TextAlign.center,
                                             style: const TextStyle(
                                               fontFamily: AppConstants.fontName,
@@ -245,7 +248,10 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    (75.999).toStringAsFixed(3),
+                                    (data!.akSaatIni! +
+                                            data!.akUtamaTerkumpul! +
+                                            data!.akPenunjangTerkumpul!)
+                                        .toStringAsFixed(3),
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontFamily: AppConstants.fontName,
@@ -306,6 +312,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
               padding: const EdgeInsets.only(
                   left: 24, right: 24, top: 8, bottom: 16),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Expanded(
                     flex: 1,
@@ -334,12 +341,11 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5.0)),
                               ),
-                              child: const Padding(
+                              child: Padding(
                                 padding: EdgeInsets.all(4.0),
                                 child: Text(
-                                  'Prakom Ahli Madya',
+                                  data!.jenjang!.jenjang,
                                   textAlign: TextAlign.center,
-                                  maxLines: 2,
                                   style: TextStyle(
                                     fontFamily: AppConstants.fontName,
                                     fontWeight: FontWeight.w600,
@@ -379,10 +385,10 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(5.0)),
                             ),
-                            child: const Padding(
+                            child: Padding(
                               padding: EdgeInsets.all(4.0),
                               child: Text(
-                                'Sudah Terkumpul 12,658 Angka Kredit',
+                                'Sudah Terkumpul ${(data!.akUtamaTerkumpul! + data!.akPenunjangTerkumpul!).toStringAsFixed(3)} Angka Kredit',
                                 textAlign: TextAlign.center,
                                 maxLines: 2,
                                 style: TextStyle(

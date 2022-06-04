@@ -3,15 +3,15 @@ import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProfileProvider with ChangeNotifier {
-  Profile? _profile;
+  Profile _profile = Profile();
   List<Jenjang>? _jenjang;
   var dbHelper = DbProfile();
 
-  Profile get profil => _profile!;
+  Profile get profil => _profile;
 
   Future<Profile> get getProfileData async {
     _profile = await dbHelper.getProfile();
-    return _profile!;
+    return _profile;
   }
 
   Future<List<Jenjang>> get getJenjang async {
@@ -21,6 +21,9 @@ class ProfileProvider with ChangeNotifier {
 
   Future<int> saveProfile(Profile data) async {
     int res = await dbHelper.saveProfile(data);
+    if (res == 1) {
+      _profile = await dbHelper.getProfile();
+    }
     notifyListeners();
     return res;
   }
