@@ -66,6 +66,7 @@ class DictionaryProvider with ChangeNotifier {
   set storeData(List<Unsur> listUnsur) {
     // store data ini cma dipanggil saat masuk form baru
     List<ButirKegiatan> butirList = [];
+    int? kodeJenjang;
     disableButir1 = [];
     for (var unsur in listUnsur) {
       for (var subunsur in unsur.subunsurList!) {
@@ -76,10 +77,17 @@ class DictionaryProvider with ChangeNotifier {
           butir.subUnsurTitle = subunsur.title;
           butirList.add(butir);
 
-          //nanti ini ganti
-          if (butir.pelaksana == 'Pranata Komputer Ahli Madya') {
-            print('halo hai');
-            //   disableButir1.add(butir.judul);
+          for (var item in _listJenjang!) {
+            if (butir.pelaksana == item.jenjang) {
+              kodeJenjang = item.kodeJenjang;
+            } else if (butir.pelaksana == "Semua Jenjang") {
+              // disamain agar diterima di semua jenjang dan ga null jadinya
+              kodeJenjang = _jenjang!.kodeJenjang;
+            }
+          }
+
+          if ((kodeJenjang! - _jenjang!.kodeJenjang).abs() >= 2) {
+            disableButir1.add(butir.judul);
           }
         }
       }

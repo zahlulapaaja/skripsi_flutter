@@ -40,16 +40,18 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       _nameTextController.text = data.nama!;
       _akSaatIniTextController.text = data.akSaatIni!.toStringAsFixed(3);
       for (var i = 0; i < data.listJenjang!.length; i++) {
-        if (data.listJenjang![i].id == data.jenjang!.id) {
-          selectedJenjang = data.listJenjang![i].jenjang;
-          selectedGolongan = data.listJenjang![i].golongan;
+        Jenjang item = data.listJenjang![i];
+        if (item.id == data.jenjang!.id) {
+          selectedJenjang = item.jenjang;
+          selectedGolongan = item.golongan;
         }
-        if (i > 0 &&
-            data.listJenjang![i].jenjang != data.listJenjang![i - 1].jenjang) {
-          jenjang.add(data.listJenjang![i].jenjang);
+        if (i == 0) {
+          jenjang.add(item.jenjang);
+        } else if (item.jenjang != data.listJenjang![i - 1].jenjang) {
+          jenjang.add(item.jenjang);
         }
-        if (data.listJenjang![i].kodeJenjang == data.jenjang!.kodeJenjang) {
-          golongan.add(data.listJenjang![i].golongan);
+        if (item.kodeJenjang == data.jenjang!.kodeJenjang) {
+          golongan.add(item.golongan);
         }
       }
     }
