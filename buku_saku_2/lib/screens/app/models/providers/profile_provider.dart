@@ -8,16 +8,18 @@ class ProfileProvider with ChangeNotifier {
   var dbHelper = DbProfile();
 
   Profile get profil => _profile;
+  List<Jenjang> get listJenjang => _jenjang!;
 
   Future<Profile> get getProfileData async {
     _profile = await dbHelper.getProfile();
+    _jenjang = _profile.listJenjang;
     return _profile;
   }
 
-  Future<List<Jenjang>> get getJenjang async {
-    _jenjang = await dbHelper.getJenjang();
-    return _jenjang!;
-  }
+  // Future<List<Jenjang>> get getJenjang async {
+  //   _jenjang = await dbHelper.getJenjang();
+  //   return _jenjang!;
+  // }
 
   Future<int> saveProfile(Profile data) async {
     int res = await dbHelper.saveProfile(data);

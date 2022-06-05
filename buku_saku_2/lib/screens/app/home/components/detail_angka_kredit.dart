@@ -256,7 +256,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                     style: const TextStyle(
                                       fontFamily: AppConstants.fontName,
                                       fontWeight: FontWeight.normal,
-                                      fontSize: 24,
+                                      fontSize: 20,
                                       letterSpacing: 0.0,
                                       color: AppColors.black,
                                     ),
@@ -315,7 +315,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Expanded(
-                    flex: 1,
+                    flex: 2,
                     child: Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Column(

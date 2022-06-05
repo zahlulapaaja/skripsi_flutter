@@ -50,7 +50,7 @@ class RingkasanButir extends StatelessWidget {
                   style: const TextStyle(
                     fontFamily: AppConstants.fontName,
                     color: AppColors.black,
-                    fontSize: AppConstants.kNormalFontSize,
+                    fontSize: AppConstants.kSmallFontSize,
                     fontWeight: FontWeight.normal,
                   ),
                 ),

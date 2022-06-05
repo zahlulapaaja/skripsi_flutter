@@ -3,10 +3,15 @@ import 'dart:convert';
 import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
+import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class DictionaryProvider with ChangeNotifier {
+  final jsonPrakomAhli = 'assets/jsonfile/data_juknis_ahli.json';
+  final jsonPrakomTerampil = 'assets/jsonfile/data_juknis_terampil.json';
+  final jsonTambahan = 'assets/jsonfile/data_juknis_tambahan.json';
+
   String _query = '';
   List<Unsur> _jsonData = [];
   List<ButirKegiatan> _allButir = [];
@@ -18,7 +23,8 @@ class DictionaryProvider with ChangeNotifier {
   List<ButirKegiatan> get allButir => _allButir;
   List<ButirKegiatan> get matchedButir => _matchedButir;
 
-  String _jenjang = '';
+  Jenjang? _jenjang;
+  List<Jenjang>? _listJenjang;
   List<String> disableButir1 = [];
   List<String> disableButir2 = [];
   // ketika pengaturan jenjang diganti, disable nya harus dikosongin nanti
@@ -28,18 +34,14 @@ class DictionaryProvider with ChangeNotifier {
 
   Future<List<Unsur>> get readJsonData async {
     dynamic jsonData;
-    if (_jenjang.toLowerCase().contains('terampil')) {
-      jsonData = await rootBundle
-          .loadString('assets/jsonfile/data_juknis_terampil.json');
-    } else if (_jenjang.toLowerCase().contains('ahli')) {
-      jsonData =
-          await rootBundle.loadString('assets/jsonfile/data_juknis_ahli.json');
+
+    if (_jenjang!.jenjang.toLowerCase().contains('ahli')) {
+      jsonData = await rootBundle.loadString(jsonPrakomAhli);
     } else {
-      print('belom ada jenjang');
+      jsonData = await rootBundle.loadString(jsonPrakomTerampil);
     }
 
-    final jsonDataAddition = await rootBundle
-        .loadString('assets/jsonfile/data_juknis_tambahan.json');
+    final jsonDataAddition = await rootBundle.loadString(jsonTambahan);
 
     List<dynamic> list = json.decode(jsonData) as List<dynamic>;
     list += json.decode(jsonDataAddition) as List<dynamic>;
@@ -48,8 +50,9 @@ class DictionaryProvider with ChangeNotifier {
     return _jsonData;
   }
 
-  set setJenjang(String jenjang) {
-    _jenjang = jenjang;
+  set setJenjang(Profile profil) {
+    _jenjang = profil.jenjang;
+    _listJenjang = profil.listJenjang;
   }
 
   set setDisableButir2(List<Note> notes) {
@@ -75,7 +78,8 @@ class DictionaryProvider with ChangeNotifier {
 
           //nanti ini ganti
           if (butir.pelaksana == 'Pranata Komputer Ahli Madya') {
-            disableButir1.add(butir.judul);
+            print('halo hai');
+            //   disableButir1.add(butir.judul);
           }
         }
       }

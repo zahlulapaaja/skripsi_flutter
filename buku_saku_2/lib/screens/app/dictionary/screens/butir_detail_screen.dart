@@ -1,5 +1,7 @@
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
+import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/dictionary/components/blue_container.dart';
@@ -7,6 +9,7 @@ import 'package:buku_saku_2/screens/app/dictionary/components/ringkasan_butir.da
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class ButirDetailScreen extends StatelessWidget {
   ButirDetailScreen(
@@ -224,6 +227,9 @@ class ButirDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Jenjang> listJenjang = context.read<ProfileProvider>().listJenjang;
+    Jenjang jenjang = context.read<ProfileProvider>().profil.jenjang!;
+
     return Container(
       color: AppColors.offWhite,
       child: Scaffold(
@@ -233,15 +239,28 @@ class ButirDetailScreen extends StatelessWidget {
           onPressed: () async {
             bool exist = await butir.isExist;
             // todo : masukin alert disini
-            exist
-                ? print('ada alert yang kasih tau udh ada catatannya')
-                : Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          AddNoteScreen(butirTitle: butir.judul),
-                    ),
-                  );
+
+            int? kodeJenjang;
+            for (var item in listJenjang) {
+              if (item.jenjang == butir.pelaksana) {
+                kodeJenjang = item.kodeJenjang;
+              }
+            }
+
+            if ((kodeJenjang! - jenjang.kodeJenjang).abs() < 2) {
+              exist
+                  ? print('ada alert yang kasih tau udh ada catatannya')
+                  : Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            AddNoteScreen(butirTitle: butir.judul),
+                      ),
+                    );
+            } else {
+              print(
+                  'ada alert yang kasih tau ga bisa ambil catatan ini berdasarkan jenjang anda');
+            }
           },
           backgroundColor: AppColors.primary,
           child: const Icon(FontAwesomeIcons.plus),

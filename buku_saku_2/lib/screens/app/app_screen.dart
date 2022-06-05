@@ -59,14 +59,6 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
     });
   }
 
-  void initialData() {
-    // todo : nanti ini diatur berdasarkan databse
-    context.read<DictionaryProvider>().setJenjang =
-        'Pranata Komputer Ahli Pertama';
-
-    // setiap data yang dari database profil nanti di set disini
-  }
-
   @override
   void initState() {
     super.initState();
@@ -76,7 +68,6 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
       vsync: this,
     );
 
-    initialData();
     initialTabBody();
   }
 
@@ -100,6 +91,9 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               // kalo data kosong arahin dulu ke laman edit profil
               if (snapshot.data!.id == null) {
                 Navigator.pushNamed(context, EditProfileScreen.id);
+              } else {
+                context.read<DictionaryProvider>().setJenjang =
+                    context.read<ProfileProvider>().profil;
               }
 
               return Scaffold(

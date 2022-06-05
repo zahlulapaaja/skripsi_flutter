@@ -1,6 +1,7 @@
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/components/dropdown_field.dart';
 import 'package:buku_saku_2/screens/app/profile/components/form_field.dart';
@@ -162,6 +163,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       data.akSaatIni = double.parse(_akSaatIniTextController.text);
 
       int status = await context.read<ProfileProvider>().saveProfile(data);
+
+      if (status == 1) {
+        context.read<DictionaryProvider>().setJenjang = data;
+      }
       // nanti status ini dipake utk kasih alert berhasil
       Navigator.pop(context);
     }

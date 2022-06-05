@@ -13,18 +13,38 @@ class UnsurScreen extends StatelessWidget {
   final String jenjang;
   const UnsurScreen({Key? key, required this.jenjang}) : super(key: key);
 
+  Future<List<Unsur>> readJsonData() async {
+    const jsonPrakomAhli = 'assets/jsonfile/data_juknis_ahli.json';
+    const jsonPrakomTerampil = 'assets/jsonfile/data_juknis_terampil.json';
+    const jsonTambahan = 'assets/jsonfile/data_juknis_tambahan.json';
+    dynamic jsonData;
+
+    if (jenjang.contains('ahli')) {
+      jsonData = await rootBundle.loadString(jsonPrakomAhli);
+    } else {
+      jsonData = await rootBundle.loadString(jsonPrakomTerampil);
+    }
+
+    final jsonDataAddition = await rootBundle.loadString(jsonTambahan);
+
+    List<dynamic> list = json.decode(jsonData) as List<dynamic>;
+    list += json.decode(jsonDataAddition) as List<dynamic>;
+
+    return list.map((e) => Unsur.fromJson(e)).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
-    context.read<DictionaryProvider>().setJenjang = jenjang;
+    // context.read<DictionaryProvider>().setJenjang = jenjang;
     return FutureBuilder(
-        future: context.read<DictionaryProvider>().readJsonData,
+        future: readJsonData(),
         builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
           if (snapshot.hasError) {
             return Center(child: Text('ERROR!! ${snapshot.error}'));
           } else if (snapshot.hasData) {
             // TODO : Nanti disini klo datanya kosong, kondisikan lagi tampilannya
 
-            List<Unsur> unsur = context.read<DictionaryProvider>().jsonData;
+            List<Unsur> unsur = snapshot.data!;
             return ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 14.0),
               itemCount: unsur.length,
