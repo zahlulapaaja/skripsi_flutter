@@ -22,6 +22,7 @@ class DictionaryProvider with ChangeNotifier {
   List<Unsur> get jsonData => _jsonData;
   List<ButirKegiatan> get allButir => _allButir;
   List<ButirKegiatan> get matchedButir => _matchedButir;
+  List<Jenjang>? get listJenjang => _listJenjang;
 
   Jenjang? _jenjang;
   List<Jenjang>? _listJenjang;

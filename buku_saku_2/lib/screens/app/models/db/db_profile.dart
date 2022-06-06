@@ -18,15 +18,18 @@ class DbProfile extends DbHelper {
         jenjang: maps2[i]['jenjang'],
         golongan: maps2[i]['golongan'],
       );
-
-      if (maps[0]['idJenjang'] == maps2[i]['id']) {
-        jenjang = item;
+      if (maps.isNotEmpty) {
+        if (maps[0]['idJenjang'] == maps2[i]['id']) {
+          jenjang = item;
+        }
       }
       return item;
     });
 
     if (maps.isEmpty) {
-      return Profile();
+      return Profile(
+        listJenjang: listJenjang,
+      );
     } else {
       return Profile(
         id: maps[0]['id'],

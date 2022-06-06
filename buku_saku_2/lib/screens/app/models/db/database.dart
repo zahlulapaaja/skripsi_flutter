@@ -9,16 +9,18 @@ class DbHelper {
   final String _dbName = 'bukusaku.db';
   final String _dbSyntax =
       '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, kodeButir TEXT,
-  tanggalKegiatan TEXT, jumlahKegiatan INTEGER, angkaKredit INTEGER, status INTEGER, idProfil INTEGER)''';
+  jumlahKegiatan INTEGER, angkaKredit INTEGER, status INTEGER, idProfil INTEGER)''';
   final String _dbSyntax2 =
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, path TEXT,
   namaFile TEXT, extension TEXT)''';
   final String _dbSyntax3 =
+      '''CREATE TABLE tanggal_kegiatan( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, tanggal TEXT)''';
+  final String _dbSyntax4 =
       '''CREATE TABLE profil( id INTEGER PRIMARY KEY AUTOINCREMENT, nama TEXT, fotoProfil TEXT, idJenjang INTEGER,
   akSaatIni DOUBLE(200,3), akUtamaTerkumpul DOUBLE(200,3), akPenunjangTerkumpul DOUBLE(200,3))''';
-  final String _dbSyntax4 =
-      '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, kodeJenjang INTEGER, jenjang TEXT, golongan TEXT )''';
   final String _dbSyntax5 =
+      '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, kodeJenjang INTEGER, jenjang TEXT, golongan TEXT )''';
+  final String _dbSyntax6 =
       '''INSERT INTO jenjang VALUES (0, 11, "Pranata Komputer Terampil", "IIc"), (1, 11, "Pranata Komputer Terampil", "IId"),
       (2, 12, "Pranata Komputer Mahir", "IIIa"), (3, 12, "Pranata Komputer Mahir", "IIIb"), (4, 13, "Pranata Komputer Penyelia", "IIIc"),
       (5, 13, "Pranata Komputer Penyelia", "IIId"), (6, 21, "Pranata Komputer Ahli Pertama", "IIIa"),
@@ -44,21 +46,31 @@ class DbHelper {
         db.execute(_dbSyntax3);
         db.execute(_dbSyntax4);
         db.execute(_dbSyntax5);
+        db.execute(_dbSyntax6);
       },
     );
   }
 
   Future<List<Note>> getNotes() async {
     final db = await dbInstance;
-
     final List<Map<String, dynamic>> maps = await db.query('catatan');
+    final List<Map<String, dynamic>> maps2 = await db.query('tanggal_kegiatan');
+
     return List.generate(maps.length, (i) {
+      List<DateTime>? listTanggal = [];
+      if (maps2.isNotEmpty) {
+        for (var item in maps2) {
+          if (item['idCatatan'] == maps[i]['id']) {
+            listTanggal.add(DateTime.parse(item['tanggal']));
+          }
+        }
+      }
       return Note(
         id: maps[i]['id'],
         judul: maps[i]['judul'],
         uraian: maps[i]['uraian'],
         status: maps[i]['status'],
-        tanggalKegiatan: DateTime.parse(maps[i]['tanggalKegiatan']),
+        listTanggal: listTanggal,
       );
     });
   }
@@ -85,7 +97,7 @@ class DbHelper {
       judul: maps[0]['judul'],
       uraian: maps[0]['uraian'],
       // kodeButir: maps[0]['kodeButir'],
-      tanggalKegiatan: DateTime.parse(maps[0]['tanggalKegiatan']),
+      // tanggalKegiatan: DateTime.parse(maps[0]['tanggalKegiatan']),
       jumlahKegiatan: maps[0]['jumlahKegiatan'],
       angkaKredit: maps[0]['angkaKredit'],
       status: maps[0]['status'],
@@ -109,7 +121,7 @@ class DbHelper {
         judul: maps[i]['judul'],
         uraian: maps[i]['uraian'],
         status: maps[i]['status'],
-        tanggalKegiatan: DateTime.parse(maps[i]['tanggalKegiatan']),
+        // tanggalKegiatan: DateTime.parse(maps[i]['tanggalKegiatan']),
       );
     });
   }

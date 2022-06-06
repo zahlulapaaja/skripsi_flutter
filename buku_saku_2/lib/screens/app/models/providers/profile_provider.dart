@@ -13,6 +13,7 @@ class ProfileProvider with ChangeNotifier {
   Future<Profile> get getProfileData async {
     _profile = await dbHelper.getProfile();
     _jenjang = _profile.listJenjang;
+
     return _profile;
   }
 

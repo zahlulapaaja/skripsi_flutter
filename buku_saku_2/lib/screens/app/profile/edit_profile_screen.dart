@@ -36,6 +36,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   void initState() {
     data = context.read<ProfileProvider>().profil;
+    // print(data);
     if (data.id != null) {
       _nameTextController.text = data.nama!;
       _akSaatIniTextController.text = data.akSaatIni!.toStringAsFixed(3);
@@ -54,7 +55,17 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           golongan.add(item.golongan);
         }
       }
+    } else {
+      for (var i = 0; i < data.listJenjang!.length; i++) {
+        Jenjang item = data.listJenjang![i];
+        if (i == 0) {
+          jenjang.add(item.jenjang);
+        } else if (item.jenjang != data.listJenjang![i - 1].jenjang) {
+          jenjang.add(item.jenjang);
+        }
+      }
     }
+    print(jenjang);
     super.initState();
   }
 
@@ -163,6 +174,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     if (_formKey.currentState!.validate()) {
       data.nama = _nameTextController.text;
       data.akSaatIni = double.parse(_akSaatIniTextController.text);
+
+      if (data.id == null) {
+        data.akUtamaTerkumpul = 0;
+        data.akPenunjangTerkumpul = 0;
+      }
 
       int status = await context.read<ProfileProvider>().saveProfile(data);
 

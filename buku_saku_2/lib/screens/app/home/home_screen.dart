@@ -1,7 +1,8 @@
-import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
+import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -39,6 +40,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       parent: widget.animationController!,
       curve: const Interval(0, 0.5, curve: Curves.fastOutSlowIn),
     ));
+
+    Profile data = context.read<ProfileProvider>().profil;
+    context.read<DictionaryProvider>().setJenjang = data;
+    if (data.id == null) {
+      Future.delayed(Duration.zero, () {
+        Navigator.pushNamed(context, EditProfileScreen.id);
+      });
+    }
+
     addAllListData();
     scrollControllerAnimation();
 
@@ -100,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     listViews.add(
-      DetailAngkaKredit(),
+      const DetailAngkaKredit(),
     );
 
     listViews.add(

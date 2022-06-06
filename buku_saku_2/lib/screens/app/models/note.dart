@@ -9,7 +9,7 @@ class Note {
   String? judul;
   String? uraian;
   String? kodeButir;
-  DateTime? tanggalKegiatan;
+  List<DateTime>? listTanggal;
   int jumlahKegiatan;
   double angkaKredit;
   int? status;
@@ -31,7 +31,7 @@ class Note {
     this.judul,
     this.uraian,
     this.kodeButir,
-    this.tanggalKegiatan,
+    this.listTanggal,
     this.jumlahKegiatan = 1,
     this.angkaKredit = 0,
     this.status,
@@ -47,7 +47,7 @@ class Note {
       'id': id,
       'judul': judul,
       'uraian': uraian,
-      'tanggalKegiatan': tanggalKegiatan.toString(),
+      // 'tanggalKegiatan': listTanggal,
       'jumlahKegiatan': jumlahKegiatan,
       'angkaKredit': angkaKredit,
       'status': status,

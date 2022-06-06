@@ -32,7 +32,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
   var dbHelper = DbHelper();
 
   Note selectedNote = Note(
-    tanggalKegiatan: DateTime.now(),
+    // tanggalKegiatan: DateTime.now(),
     buktiFisik: [],
   );
 
@@ -78,16 +78,13 @@ class _NewNoteFormState extends State<NewNoteForm> {
               });
             },
           ),
-          JenjangDropdown(
-            initialData: widget.note?.jenjang,
-            onChanged: (value) => selectedNote.jenjang,
-          ),
+          const JenjangDropdown(),
           DatePicker(
-            selectedDate: selectedNote.tanggalKegiatan,
+            // selectedDate: selectedNote.tanggalKegiatan,
             onChanged: (value) {
               setState(() {
                 if (value != null) {
-                  selectedNote.tanggalKegiatan = value;
+                  // selectedNote.tanggalKegiatan = value;
                 }
               });
             },

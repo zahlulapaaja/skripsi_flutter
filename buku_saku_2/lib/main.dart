@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           AppScreen.id: (context) => const AppScreen(),
           AddNoteScreen.id: (context) => const AddNoteScreen(),
           SettingScreen.id: (context) => const SettingScreen(),
-          EditProfileScreen.id: (context) => EditProfileScreen(),
+          EditProfileScreen.id: (context) => const EditProfileScreen(),
         },
       ),
     );

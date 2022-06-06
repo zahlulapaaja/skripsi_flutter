@@ -31,11 +31,12 @@ class DropdownField extends StatelessWidget {
           const FieldLabel(title: 'Butir Kegiatan'),
           DropdownSearch(
             enabled: editMode ? false : true,
-            mode: Mode.BOTTOM_SHEET,
-            showClearButton: editMode ? false : true,
+            // mode: Mode.BOTTOM_SHEET,
+            showClearButton: false,
             items: data,
             popupItemDisabled: (String s) {
-              return false;
+              // ini ngasal dulu
+              return s.startsWith("%");
             },
             onChanged: onChanged,
             selectedItem: initialData,

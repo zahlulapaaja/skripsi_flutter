@@ -1,16 +1,11 @@
 // ignore_for_file: avoid_print
 
-import 'dart:convert';
-
 import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
-import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
-import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
-import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -22,7 +17,6 @@ import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:buku_saku_2/screens/app/dictionary/dictionary_screen.dart';
 import 'package:buku_saku_2/screens/app/components/bottom_bar_view.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class AppScreen extends StatefulWidget {
@@ -89,12 +83,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               return Center(child: Text('ERROR!! ${snapshot.error}'));
             } else if (snapshot.hasData) {
               // kalo data kosong arahin dulu ke laman edit profil
-              if (snapshot.data!.id == null) {
-                Navigator.pushNamed(context, EditProfileScreen.id);
-              } else {
-                context.read<DictionaryProvider>().setJenjang =
-                    context.read<ProfileProvider>().profil;
-              }
+              // kasih alert dulu biar ga tiba2 sampe ke laman edit profil, intinya lebih rapi lah
 
               return Scaffold(
                 backgroundColor: Colors.transparent,

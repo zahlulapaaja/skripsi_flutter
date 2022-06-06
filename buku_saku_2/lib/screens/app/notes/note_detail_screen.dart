@@ -78,11 +78,11 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               textAlign: TextAlign.center),
                           Text('uraian: ${note.uraian}',
                               textAlign: TextAlign.center),
-                          Text('tanggal kegiatan: ${note.tanggalKegiatan}',
+                          Text('tanggal kegiatan: ${note.listTanggal}',
                               textAlign: TextAlign.center),
                           Text('kode butir: ${note.kodeButir}',
                               textAlign: TextAlign.center),
-                          Text('tanggal: ${note.tanggalKegiatan}',
+                          Text('tanggal: ${note.listTanggal}',
                               textAlign: TextAlign.center),
                           (note.buktiFisik != null)
                               ? GridView.builder(
