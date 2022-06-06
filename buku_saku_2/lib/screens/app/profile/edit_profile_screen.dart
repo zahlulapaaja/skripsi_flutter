@@ -36,7 +36,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   void initState() {
     data = context.read<ProfileProvider>().profil;
-    // print(data);
     if (data.id != null) {
       _nameTextController.text = data.nama!;
       _akSaatIniTextController.text = data.akSaatIni!.toStringAsFixed(3);
@@ -65,7 +64,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         }
       }
     }
-    print(jenjang);
     super.initState();
   }
 
@@ -123,6 +121,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             textInputType: TextInputType.emailAddress,
           ),
           DropdownField(
+            title: "Jenjang",
             data: jenjang,
             initialData: selectedJenjang,
             onChanged: (value) {
@@ -139,6 +138,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             },
           ),
           DropdownField(
+            title: "Golongan",
             data: golongan,
             initialData: selectedGolongan,
             onChanged: (value) {

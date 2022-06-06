@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:flutter/material.dart';
-import 'package:buku_saku_2/screens/app/models/bukti_fisik.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/bukti_fisik_field.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/butir_dropdown.dart';
@@ -26,15 +25,18 @@ class NewNoteForm extends StatefulWidget {
 
 class _NewNoteFormState extends State<NewNoteForm> {
   final _formKey = GlobalKey<FormState>();
-  int maxJmlKegiatan = 10;
+  int maxJmlKegiatan = 100;
   bool maxKegiatan = false;
   bool minKegiatan = false;
   var dbHelper = DbHelper();
 
   Note selectedNote = Note(
-    // tanggalKegiatan: DateTime.now(),
+    listTanggal: [],
     buktiFisik: [],
   );
+
+// belom ngabil dari db
+  List<DateTime> selectedDate = [];
 
   submitNote(NotesProvider noteProvider) async {
     if (_formKey.currentState!.validate()) {
@@ -80,12 +82,19 @@ class _NewNoteFormState extends State<NewNoteForm> {
           ),
           const JenjangDropdown(),
           DatePicker(
-            // selectedDate: selectedNote.tanggalKegiatan,
-            onChanged: (value) {
+            selectedDate: selectedDate,
+            // onchanged maksudnya kalo nambah tanggal
+            onAdd: (value) {
               setState(() {
                 if (value != null) {
-                  // selectedNote.tanggalKegiatan = value;
+                  selectedDate.add(value);
                 }
+              });
+            },
+            onReduced: (date) {
+              // masalahnya kalo ada dua tanggal sama bakal ilang dua2
+              setState(() {
+                selectedDate.removeWhere((element) => element == date);
               });
             },
           ),

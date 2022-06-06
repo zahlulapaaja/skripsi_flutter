@@ -27,7 +27,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: getData(widget.id),
+      future: dbHelper.getNoteById(widget.id),
       builder: (context, AsyncSnapshot<Note> snapshot) {
         if (snapshot.hasError) {
           return Center(child: Text('error fetching data, ${snapshot.error}'));

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:buku_saku_2/screens/app/models/bukti_fisik.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
@@ -57,6 +56,7 @@ class DbHelper {
     final List<Map<String, dynamic>> maps2 = await db.query('tanggal_kegiatan');
 
     return List.generate(maps.length, (i) {
+      // perlukah tanggal disini ? keknya ga kepake, cma kepake di notebyid
       List<DateTime>? listTanggal = [];
       if (maps2.isNotEmpty) {
         for (var item in maps2) {
@@ -82,16 +82,26 @@ class DbHelper {
         await db.query('catatan', where: 'id = ?', whereArgs: [id]);
     final List<Map<String, dynamic>> files =
         await db.query('bukti_fisik', where: 'idCatatan = ?', whereArgs: [id]);
+    final List<Map<String, dynamic>> dates = await db
+        .query('tanggal_kegiatan', where: 'idCatatan = ?', whereArgs: [id]);
 
     List<BuktiFisik> buktiFisik = List.generate(
-        files.length,
-        (index) => BuktiFisik(
-              id: files[index]['id'],
-              idCatatan: files[index]['idCatatan'],
-              path: files[index]['path'],
-              namaFile: files[index]['namaFile'],
-              extension: files[index]['extension'],
-            ));
+      files.length,
+      (index) => BuktiFisik(
+        id: files[index]['id'],
+        idCatatan: files[index]['idCatatan'],
+        path: files[index]['path'],
+        namaFile: files[index]['namaFile'],
+        extension: files[index]['extension'],
+      ),
+    );
+
+    List<DateTime>? listTanggal = [];
+    if (dates.isNotEmpty) {
+      for (var item in dates) {
+        listTanggal.add(DateTime.parse(item['tanggal']));
+      }
+    }
     return Note(
       id: maps[0]['id'],
       judul: maps[0]['judul'],
@@ -103,7 +113,7 @@ class DbHelper {
       status: maps[0]['status'],
 
       // this.dateCreated,
-      // this.jenjang,
+      listTanggal: listTanggal,
       buktiFisik: buktiFisik,
     );
   }
@@ -122,6 +132,7 @@ class DbHelper {
         uraian: maps[i]['uraian'],
         status: maps[i]['status'],
         // tanggalKegiatan: DateTime.parse(maps[i]['tanggalKegiatan']),
+        // tanggal dan bukti fisik ga perlu kan ya, karna ga dicantumin di hasil pencarian
       );
     });
   }
@@ -137,56 +148,47 @@ class DbHelper {
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
-  }
-
-  Future<void> updateNote(Note note) async {
-    final db = await dbInstance;
-
-    final insertedId = await db
-        .update('catatan', note.toMap(), where: 'id = ?', whereArgs: [note.id]);
-    if (note.buktiFisik != null) {
-      await db
-          .delete('bukti_fisik', where: 'idCatatan = ?', whereArgs: [note.id]);
-      for (var bukti in note.buktiFisik!) {
-        await db.insert('bukti_fisik', bukti.toMap(insertedId),
+    if (note.listTanggal != null) {
+      for (var tanggal in note.listTanggal!) {
+        await db.insert('tanggal_kegiatan',
+            {"idCatatan": insertedId, "tanggal": tanggal.toString()},
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
+  }
+
+  Future<int> updateNote(Note note) async {
+    final db = await dbInstance;
+
+    final updateCount = await db
+        .update('catatan', note.toMap(), where: 'id = ?', whereArgs: [note.id]);
+    await db
+        .delete('bukti_fisik', where: 'idCatatan = ?', whereArgs: [note.id]);
+    if (note.buktiFisik != null) {
+      for (var bukti in note.buktiFisik!) {
+        await db.insert('bukti_fisik', bukti.toMap(note.id!),
+            conflictAlgorithm: ConflictAlgorithm.replace);
+      }
+    }
+    await db.delete('tanggal_kegiatan',
+        where: 'idCatatan = ?', whereArgs: [note.id]);
+    if (note.listTanggal != null) {
+      for (var tanggal in note.listTanggal!) {
+        await db.insert('tanggal_kegiatan',
+            {"idCatatan": note.id, "tanggal": tanggal.toString()},
+            conflictAlgorithm: ConflictAlgorithm.replace);
+      }
+    }
+
+    return updateCount;
   }
 
   Future<void> deleteNote(int noteId) async {
     final db = await dbInstance;
 
     await db.delete('catatan', where: 'id = ?', whereArgs: [noteId]);
-  }
-
-  Future<void> saveProfileTest(String nama) async {
-    final db = await dbInstance;
-
-    final insertedId = await db.insert(
-        'profil',
-        {
-          'nama': nama,
-          'fotoProfil': 'kosong',
-          'jenjang': 'Prakom Aja',
-          'ak_now': 14.9,
-        },
-        conflictAlgorithm: ConflictAlgorithm.replace);
-  }
-
-  Future<void> updateNameTest(String data) async {
-    // harusnya nanti yang dibawa disini adalah semua data, bukan cuma satu string
-    final db = await dbInstance;
-
-    final insertedId = await db.update(
-        'profil',
-        {
-          'nama': data,
-          'fotoProfil': 'kosong',
-          'jenjang': 'Prakom Aja',
-          'ak_now': 14.9,
-        },
-        where: 'id = ?',
-        whereArgs: [1]);
+    await db.delete('bukti_fisik', where: 'idCatatan = ?', whereArgs: [noteId]);
+    await db.delete('tanggal_kegiatan',
+        where: 'idCatatan = ?', whereArgs: [noteId]);
   }
 }

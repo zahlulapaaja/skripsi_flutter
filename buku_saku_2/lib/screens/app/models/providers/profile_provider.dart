@@ -17,11 +17,6 @@ class ProfileProvider with ChangeNotifier {
     return _profile;
   }
 
-  // Future<List<Jenjang>> get getJenjang async {
-  //   _jenjang = await dbHelper.getJenjang();
-  //   return _jenjang!;
-  // }
-
   Future<int> saveProfile(Profile data) async {
     int res = await dbHelper.saveProfile(data);
     if (res == 1) {

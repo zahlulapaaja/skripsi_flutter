@@ -6,18 +6,18 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class DropdownField extends StatelessWidget {
-  DropdownField({
+  const DropdownField({
     Key? key,
+    required this.title,
+    required this.data,
     required this.onChanged,
     this.initialData,
-    this.editMode = false,
     this.jenjang,
-    required this.data,
   }) : super(key: key);
 
   final Function(String?) onChanged;
+  final String title;
   final String? initialData;
-  final bool editMode;
   final String? jenjang;
   final List<String> data;
 
@@ -28,21 +28,16 @@ class DropdownField extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          const FieldLabel(title: 'Butir Kegiatan'),
+          FieldLabel(title: title),
           DropdownSearch(
-            enabled: editMode ? false : true,
-            // mode: Mode.BOTTOM_SHEET,
+            mode: Mode.MENU,
             showClearButton: false,
             items: data,
-            popupItemDisabled: (String s) {
-              // ini ngasal dulu
-              return s.startsWith("%");
-            },
             onChanged: onChanged,
             selectedItem: initialData,
             dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
             dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
-              hintText: 'Pilih Butir Kegiatan...',
+              hintText: "Pilih $title...",
               borderSide: const BorderSide(
                 color: AppColors.black,
                 width: 4,

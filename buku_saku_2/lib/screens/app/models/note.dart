@@ -1,6 +1,3 @@
-import 'package:buku_saku_2/screens/app/models/bukti_fisik.dart';
-import 'package:buku_saku_2/screens/app/models/db/database.dart';
-
 class Note {
   // TODO : Nanti hapus semua null checknya
   // Ga juga sih, soalnya kan di halaman awal ga perlu semua atribut, cukup judul, uraian, gambar klo ada, dan status
@@ -47,11 +44,56 @@ class Note {
       'id': id,
       'judul': judul,
       'uraian': uraian,
-      // 'tanggalKegiatan': listTanggal,
       'jumlahKegiatan': jumlahKegiatan,
       'angkaKredit': angkaKredit,
       'status': status,
       'idProfil': idProfil,
+    };
+  }
+}
+
+class BuktiFisik {
+  final int? id;
+  final String path;
+  final int? idCatatan;
+  final String? namaFile;
+  final String? extension;
+
+  BuktiFisik({
+    this.id,
+    required this.path,
+    this.idCatatan,
+    this.namaFile,
+    this.extension,
+  });
+
+  Map<String, dynamic> toMap(int idCatatan) {
+    return {
+      'id': id,
+      'path': path,
+      'idCatatan': idCatatan,
+      'namaFile': namaFile,
+      'extension': extension,
+    };
+  }
+}
+
+class TanggalKegiatan {
+  final int? id;
+  final int? idCatatan;
+  final DateTime? tanggal;
+
+  TanggalKegiatan({
+    this.id,
+    this.idCatatan,
+    this.tanggal,
+  });
+
+  Map<String, dynamic> toMap(int idCatatan) {
+    return {
+      'id': id,
+      'idCatatan': idCatatan,
+      'tanggal': tanggal,
     };
   }
 }
