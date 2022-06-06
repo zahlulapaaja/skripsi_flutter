@@ -78,7 +78,8 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               textAlign: TextAlign.center),
                           Text('uraian: ${note.uraian}',
                               textAlign: TextAlign.center),
-                          Text('tanggal kegiatan: ${note.listTanggal}',
+                          Text(
+                              'tanggal kegiatan: ${note.listTanggal.toString()}',
                               textAlign: TextAlign.center),
                           Text('kode butir: ${note.kodeButir}',
                               textAlign: TextAlign.center),

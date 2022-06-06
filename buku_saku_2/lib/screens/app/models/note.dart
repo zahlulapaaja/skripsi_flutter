@@ -56,15 +56,15 @@ class BuktiFisik {
   final int? id;
   final String path;
   final int? idCatatan;
-  final String? namaFile;
-  final String? extension;
+  final String namaFile;
+  final String extension;
 
   BuktiFisik({
     this.id,
-    required this.path,
     this.idCatatan,
-    this.namaFile,
-    this.extension,
+    required this.path,
+    required this.namaFile,
+    required this.extension,
   });
 
   Map<String, dynamic> toMap(int idCatatan) {
@@ -81,12 +81,12 @@ class BuktiFisik {
 class TanggalKegiatan {
   final int? id;
   final int? idCatatan;
-  final DateTime? tanggal;
+  final DateTime tanggal;
 
   TanggalKegiatan({
     this.id,
     this.idCatatan,
-    this.tanggal,
+    required this.tanggal,
   });
 
   Map<String, dynamic> toMap(int idCatatan) {

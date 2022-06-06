@@ -103,11 +103,11 @@ class DbHelper {
       }
     }
     return Note(
+      //cek kelengkapan variabelnya
       id: maps[0]['id'],
       judul: maps[0]['judul'],
       uraian: maps[0]['uraian'],
       // kodeButir: maps[0]['kodeButir'],
-      // tanggalKegiatan: DateTime.parse(maps[0]['tanggalKegiatan']),
       jumlahKegiatan: maps[0]['jumlahKegiatan'],
       angkaKredit: maps[0]['angkaKredit'],
       status: maps[0]['status'],
@@ -131,8 +131,6 @@ class DbHelper {
         judul: maps[i]['judul'],
         uraian: maps[i]['uraian'],
         status: maps[i]['status'],
-        // tanggalKegiatan: DateTime.parse(maps[i]['tanggalKegiatan']),
-        // tanggal dan bukti fisik ga perlu kan ya, karna ga dicantumin di hasil pencarian
       );
     });
   }

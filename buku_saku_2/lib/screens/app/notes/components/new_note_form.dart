@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
@@ -15,9 +16,9 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class NewNoteForm extends StatefulWidget {
-  const NewNoteForm({Key? key, this.note, this.butirTitle}) : super(key: key);
+  const NewNoteForm({Key? key, this.note, this.butir}) : super(key: key);
   final Note? note;
-  final String? butirTitle;
+  final ButirKegiatan? butir;
 
   @override
   State<NewNoteForm> createState() => _NewNoteFormState();
@@ -30,13 +31,9 @@ class _NewNoteFormState extends State<NewNoteForm> {
   bool minKegiatan = false;
   var dbHelper = DbHelper();
 
-  Note selectedNote = Note(
-    listTanggal: [],
-    buktiFisik: [],
-  );
+  late Note selectedNote;
 
 // belom ngabil dari db
-  List<DateTime> selectedDate = [];
 
   submitNote(NotesProvider noteProvider) async {
     if (_formKey.currentState!.validate()) {
@@ -54,8 +51,13 @@ class _NewNoteFormState extends State<NewNoteForm> {
     if (widget.note != null) {
       selectedNote = widget.note!;
     } else {
-      if (widget.butirTitle != null) selectedNote.judul = widget.butirTitle!;
-      selectedNote.angkaKredit = 0.104;
+      // widget.butir!.angkaKredit = 0;
+      // print(widget.butir!.angkaKredit);
+      selectedNote = Note(
+        judul: widget.butir != null ? widget.butir!.judul : null,
+        angkaKredit: widget.butir != null ? widget.butir!.angkaKredit : 0,
+        listTanggal: [],
+      );
     }
     super.initState();
   }
@@ -71,30 +73,34 @@ class _NewNoteFormState extends State<NewNoteForm> {
             editMode: (widget.note?.id != null),
             initialData:
                 (widget.note == null) ? selectedNote.judul : widget.note!.judul,
-            onChanged: (value) {
+            onChanged: (butir) {
               setState(() {
-                selectedNote.judul = value;
-                if (value != null) {
-                  selectedNote.kodeButir = value.split(' ')[0];
+                selectedNote.judul = butir?.judul;
+
+                if (butir?.judul != null) {
+                  selectedNote.kodeButir = butir!.judul.split(' ')[0];
+                  selectedNote.angkaKredit = butir.angkaKredit;
+                  print(butir);
                 }
               });
             },
           ),
           const JenjangDropdown(),
           DatePicker(
-            selectedDate: selectedDate,
+            selectedDate: selectedNote.listTanggal!,
             // onchanged maksudnya kalo nambah tanggal
             onAdd: (value) {
               setState(() {
                 if (value != null) {
-                  selectedDate.add(value);
+                  selectedNote.listTanggal!.add(value);
                 }
               });
             },
             onReduced: (date) {
               // masalahnya kalo ada dua tanggal sama bakal ilang dua2
               setState(() {
-                selectedDate.removeWhere((element) => element == date);
+                selectedNote.listTanggal!
+                    .removeWhere((element) => element == date);
               });
             },
           ),
@@ -117,12 +123,14 @@ class _NewNoteFormState extends State<NewNoteForm> {
               selectedNote.jumlahKegiatan = value.toInt();
               setState(() {
                 if (value == maxJmlKegiatan) {
-                  if (!maxKegiatan) selectedNote.angkaKredit += 0.104;
+                  if (!maxKegiatan) {
+                    selectedNote.angkaKredit += widget.butir!.angkaKredit;
+                  }
                   maxKegiatan = true;
                 } else {
                   maxKegiatan = false;
                   minKegiatan = false;
-                  selectedNote.angkaKredit += 0.104;
+                  selectedNote.angkaKredit += widget.butir!.angkaKredit;
                 }
               });
             },
@@ -160,7 +168,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
               final newBukti = BuktiFisik(
                 path: newFile.path,
                 namaFile: file.name,
-                extension: file.extension,
+                extension: file.extension!,
               );
 
               setState(() {

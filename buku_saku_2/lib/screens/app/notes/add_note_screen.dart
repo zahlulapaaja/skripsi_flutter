@@ -11,8 +11,8 @@ import 'package:provider/provider.dart';
 
 class AddNoteScreen extends StatefulWidget {
   static const id = 'add_note_screen';
-  const AddNoteScreen({Key? key, this.butirTitle, this.note}) : super(key: key);
-  final String? butirTitle;
+  const AddNoteScreen({Key? key, this.butir, this.note}) : super(key: key);
+  final ButirKegiatan? butir;
   final Note? note;
 
   @override
@@ -48,7 +48,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                             snapshot.data!;
 
                         return NewNoteForm(
-                            butirTitle: widget.butirTitle, note: widget.note);
+                            butir: widget.butir, note: widget.note);
                       } else {
                         return const Center(
                           child: CircularProgressIndicator(),
