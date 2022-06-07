@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
+import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/bukti_fisik_field.dart';
@@ -34,6 +36,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
 
   late Note selectedNote;
   ButirKegiatan? selectedButir;
+  String? alert;
 
   // belom ngabil dari db
 
@@ -61,12 +64,18 @@ class _NewNoteFormState extends State<NewNoteForm> {
             : 0,
         listTanggal: [],
       );
+
+      // keknya penggunaan selectedbutir bisa disederhanain lagi
       selectedButir = widget.selectedButir;
       if (selectedButir != null) {
+        context.read<ProfileProvider>().setSelectedButir = selectedButir!;
+        alert = context.read<ProfileProvider>().getAlert;
         selectedNote.judul = selectedButir!.kode + " " + selectedButir!.judul;
         selectedNote.kodeButir = selectedButir!.kode;
         selectedNote.angkaKredit = selectedButir!.angkaKredit;
-        selectedNote.akSatuan = selectedButir!.angkaKredit;
+        (alert == null)
+            ? selectedNote.akSatuan = selectedButir!.angkaKredit
+            : selectedNote.akSatuan = selectedButir!.angkaKredit * 0.8;
       }
     }
     super.initState();
@@ -75,6 +84,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
   @override
   Widget build(BuildContext context) {
     final noteProvider = Provider.of<NotesProvider>(context);
+
     return Form(
       key: _formKey,
       child: Column(
@@ -83,16 +93,24 @@ class _NewNoteFormState extends State<NewNoteForm> {
             editMode: (widget.note?.id != null),
             initialData:
                 (widget.note == null) ? selectedNote.judul : widget.note!.judul,
+            alert: alert,
             onChanged: (butir) {
+              print("test");
               setState(() {
                 selectedButir = butir;
                 selectedNote.judul = butir?.judul;
 
                 if (butir?.judul != null) {
+                  context.read<ProfileProvider>().setSelectedButir =
+                      selectedButir!;
+                  alert = context.read<ProfileProvider>().getAlert;
+
                   selectedNote.judul = butir!.kode + " " + butir.judul;
                   selectedNote.kodeButir = butir.kode;
-                  selectedNote.akSatuan = butir.angkaKredit;
                   selectedNote.angkaKredit = butir.angkaKredit;
+                  (alert == null)
+                      ? selectedNote.akSatuan = butir.angkaKredit
+                      : selectedNote.akSatuan = butir.angkaKredit * 0.8;
                 }
               });
             },
@@ -138,6 +156,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
               });
             },
           ),
+          const Text("note : ak yg dicatat adalah ak penuh"),
           BuktiFisikField(
             selectedData: selectedNote.buktiFisik,
             onPressed: () async {

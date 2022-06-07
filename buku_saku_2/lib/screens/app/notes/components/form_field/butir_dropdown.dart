@@ -14,13 +14,13 @@ class ButirDropdown extends StatelessWidget {
     required this.onChanged,
     this.initialData,
     this.editMode = false,
-    this.jenjang,
+    this.alert,
   }) : super(key: key);
 
   final Function(ButirKegiatan?) onChanged;
   final String? initialData;
   final bool editMode;
-  final String? jenjang;
+  final String? alert;
 
   List<String> dataButir = [];
   List<double> dataAK = [];
@@ -90,6 +90,7 @@ class ButirDropdown extends StatelessWidget {
               return null;
             },
           ),
+          Text("alert : $alert"),
         ],
       ),
     );
