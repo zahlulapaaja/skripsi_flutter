@@ -38,7 +38,12 @@ class DatePicker extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Row(
                       children: (selectedDate.isEmpty)
-                          ? [const Text("Pilih Tanggal...")]
+                          ? [
+                              const Text(
+                                "Pilih Tanggal...",
+                                style: AppConstants.kTextFieldHintStyle,
+                              )
+                            ]
                           : List.generate(selectedDate.length, (index) {
                               return DatePill(
                                 date: selectedDate[index],

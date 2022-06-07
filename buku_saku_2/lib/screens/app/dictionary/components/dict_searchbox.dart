@@ -56,17 +56,7 @@ class DictSearchBox extends StatelessWidget {
               },
               autocorrect: false,
               enableSuggestions: false,
-              decoration: const InputDecoration(
-                hintText: "Masukkan kata kunci...",
-                hintStyle: TextStyle(
-                  fontFamily: AppConstants.fontName,
-                  color: AppColors.grey,
-                  fontSize: AppConstants.kSmallFontSize,
-                  fontWeight: FontWeight.normal,
-                ),
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-              ),
+              decoration: AppConstants.kSearchboxDecoration,
               style: AppConstants.kTextFieldTextStyle,
             ),
           ),

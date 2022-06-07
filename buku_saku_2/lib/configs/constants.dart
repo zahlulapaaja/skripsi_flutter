@@ -142,7 +142,7 @@ class AppConstants {
       ),
       hintStyle: const TextStyle(
         fontFamily: AppConstants.fontName,
-        color: AppColors.black,
+        color: AppColors.grey,
         fontSize: AppConstants.kSmallFontSize,
         fontWeight: FontWeight.normal,
       ),
@@ -164,9 +164,9 @@ class AppConstants {
   );
 
   static const kTextFieldHintStyle = TextStyle(
-    color: AppColors.lightBlack,
+    color: AppColors.grey,
     fontSize: AppConstants.kSmallFontSize,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.normal,
   );
 
   static const kFieldLabel = TextStyle(

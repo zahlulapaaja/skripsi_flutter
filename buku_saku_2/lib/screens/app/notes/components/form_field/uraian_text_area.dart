@@ -1,4 +1,5 @@
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,17 @@ class UraianTextArea extends StatelessWidget {
                 maxLength: 255,
                 maxLines: 8,
                 decoration: const InputDecoration.collapsed(
-                    hintText: "Enter your text here"),
+                  hintText: "Masukkan uraian kegiatan...",
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                  hintStyle: TextStyle(
+                    fontFamily: AppConstants.fontName,
+                    color: AppColors.grey,
+                    fontSize: AppConstants.kSmallFontSize,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
                 onChanged: onChanged,
               ),
             ),
