@@ -35,7 +35,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
   late Note selectedNote;
   ButirKegiatan? selectedButir;
 
-// belom ngabil dari db
+  // belom ngabil dari db
 
   submitNote(NotesProvider noteProvider) async {
     if (_formKey.currentState!.validate()) {
@@ -66,6 +66,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
         selectedNote.judul = selectedButir!.kode + " " + selectedButir!.judul;
         selectedNote.kodeButir = selectedButir!.kode;
         selectedNote.angkaKredit = selectedButir!.angkaKredit;
+        selectedNote.akSatuan = selectedButir!.angkaKredit;
       }
     }
     super.initState();
@@ -90,6 +91,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
                 if (butir?.judul != null) {
                   selectedNote.judul = butir!.kode + " " + butir.judul;
                   selectedNote.kodeButir = butir.kode;
+                  selectedNote.akSatuan = butir.angkaKredit;
                   selectedNote.angkaKredit = butir.angkaKredit;
                 }
               });
@@ -126,13 +128,13 @@ class _NewNoteFormState extends State<NewNoteForm> {
           ),
           JumlahKegiatanField(
             initialJmlKegiatan: selectedNote.jumlahKegiatan,
-            initialAngkaKredit: selectedNote.angkaKredit,
+            akSatuan: selectedNote.akSatuan ?? 0,
             onChanged: (value) {
               setState(() {
                 selectedNote.jumlahKegiatan = value;
                 // harusnya nanti field setelah butir kegiatan muncul kalo butir kegiatan udh dipilih
                 // dan angka kredit adanya setelah butir terpilih
-                // selectedNote.angkaKredit = value;
+                selectedNote.angkaKredit = value * selectedNote.akSatuan!;
               });
             },
           ),

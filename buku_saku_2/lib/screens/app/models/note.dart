@@ -20,6 +20,8 @@ class Note {
   // 2 = pinned
   // 3 = checked
 
+// ini sementara, biar klo update, bisa panggil ak satuan
+  double? akSatuan;
   // nanti ini di tabel profile
   final String? jenjang;
 
@@ -31,6 +33,7 @@ class Note {
     this.listTanggal,
     this.jumlahKegiatan = 1,
     this.angkaKredit = 0,
+    this.akSatuan,
     this.status,
     this.idProfil,
     this.dateCreated,

@@ -110,6 +110,7 @@ class DbHelper {
       kodeButir: maps[0]['kodeButir'],
       jumlahKegiatan: maps[0]['jumlahKegiatan'],
       angkaKredit: maps[0]['angkaKredit'],
+      akSatuan: maps[0]['angkaKredit'] / maps[0]['jumlahKegiatan'],
       status: maps[0]['status'],
 
       // this.dateCreated,

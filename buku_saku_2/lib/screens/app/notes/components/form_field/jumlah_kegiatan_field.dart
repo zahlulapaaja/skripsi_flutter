@@ -7,12 +7,12 @@ import 'package:number_inc_dec/number_inc_dec.dart';
 class JumlahKegiatanField extends StatelessWidget {
   JumlahKegiatanField({
     Key? key,
-    required this.initialAngkaKredit,
+    required this.akSatuan,
     required this.initialJmlKegiatan,
     this.onChanged,
   }) : super(key: key);
 
-  final double initialAngkaKredit;
+  final double akSatuan;
   final int initialJmlKegiatan;
   final Function(int)? onChanged;
 
@@ -84,8 +84,7 @@ class JumlahKegiatanField extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
-                            (initialAngkaKredit * initialJmlKegiatan)
-                                .toStringAsFixed(3),
+                            (akSatuan * initialJmlKegiatan).toStringAsFixed(3),
                             style: AppConstants.kLargeTitleTextStyle),
                       ),
                     ),
