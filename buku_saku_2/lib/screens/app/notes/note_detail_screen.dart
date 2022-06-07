@@ -9,7 +9,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:open_file/open_file.dart';
 
 class NoteDetailScreen extends StatefulWidget {
-  NoteDetailScreen({Key? key, required this.id}) : super(key: key);
+  const NoteDetailScreen({Key? key, required this.id}) : super(key: key);
   final int id;
 
   @override
@@ -18,11 +18,6 @@ class NoteDetailScreen extends StatefulWidget {
 
 class _NoteDetailScreenState extends State<NoteDetailScreen> {
   var dbHelper = DbHelper();
-
-  Future<Note> getData(int id) async {
-    var result = await dbHelper.getNoteById(id);
-    return result;
-  }
 
   @override
   Widget build(BuildContext context) {

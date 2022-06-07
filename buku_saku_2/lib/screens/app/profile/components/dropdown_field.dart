@@ -12,13 +12,13 @@ class DropdownField extends StatelessWidget {
     required this.data,
     required this.onChanged,
     this.initialData,
-    this.jenjang,
+    this.hintText,
   }) : super(key: key);
 
   final Function(String?) onChanged;
   final String title;
+  final String? hintText;
   final String? initialData;
-  final String? jenjang;
   final List<String> data;
 
   @override
@@ -37,7 +37,7 @@ class DropdownField extends StatelessWidget {
             selectedItem: initialData,
             dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
             dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
-              hintText: "Pilih $title...",
+              hintText: hintText,
               borderSide: const BorderSide(
                 color: AppColors.black,
                 width: 4,
@@ -46,7 +46,7 @@ class DropdownField extends StatelessWidget {
             ),
             validator: (value) {
               if (value == null) {
-                return 'Please enter some text';
+                return 'Jawaban masih kosong';
               }
               return null;
             },

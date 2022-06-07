@@ -4,12 +4,16 @@ import 'package:buku_saku_2/configs/constants.dart';
 
 class BlueRoundedButton extends StatelessWidget {
   final String buttonTitle;
-  final Function onPressed;
+  final Function() onPressed;
+  final ButtonStyle? style;
+  final double height;
 
   const BlueRoundedButton({
     Key? key,
     required this.buttonTitle,
     required this.onPressed,
+    this.style,
+    this.height = 50,
   }) : super(key: key);
 
   @override
@@ -26,9 +30,19 @@ class BlueRoundedButton extends StatelessWidget {
           end: Alignment.centerRight,
         ),
       ),
-      child: MaterialButton(
-        onPressed: onPressed(),
-        height: 50,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(EdgeInsets.zero),
+          backgroundColor: MaterialStateProperty.all(Colors.transparent),
+          shadowColor: MaterialStateProperty.all(Colors.transparent),
+          minimumSize: MaterialStateProperty.all(Size.fromHeight(height)),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+        ),
         child: Text(
           buttonTitle.toUpperCase(),
           style: const TextStyle(

@@ -63,7 +63,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Halo ' + data!.nama! + "...",
+                              'Halo ' + data!.nama!.split(" ")[0] + "...",
                               style: const TextStyle(
                                 fontFamily: AppConstants.fontName,
                                 fontWeight: FontWeight.w500,
