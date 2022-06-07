@@ -74,6 +74,14 @@ class AppConstants {
     fontWeight: FontWeight.normal,
   );
 
+  static const kDetailCardTextStyle = TextStyle(
+    fontFamily: AppConstants.fontName,
+    color: AppColors.black,
+    fontSize: AppConstants.kNormalFontSize - 1,
+    decoration: TextDecoration.none,
+    fontWeight: FontWeight.normal,
+  );
+
   /// Dictionary
 
   static const kNormalTitleTextStyle = TextStyle(

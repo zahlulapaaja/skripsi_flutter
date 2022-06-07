@@ -47,6 +47,7 @@ class DatePicker extends StatelessWidget {
                           : List.generate(selectedDate.length, (index) {
                               return DatePill(
                                 date: selectedDate[index],
+                                reducedButton: true,
                                 onReduced: onReduced,
                               );
                             }),
@@ -77,10 +78,15 @@ class DatePicker extends StatelessWidget {
 }
 
 class DatePill extends StatelessWidget {
-  const DatePill({Key? key, required this.date, required this.onReduced})
+  const DatePill(
+      {Key? key,
+      required this.date,
+      this.onReduced,
+      this.reducedButton = false})
       : super(key: key);
 
   final DateTime date;
+  final bool reducedButton;
   final Function(DateTime)? onReduced;
 
   @override
@@ -90,16 +96,16 @@ class DatePill extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
       margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(5),
         color: AppColors.primaryLight.withOpacity(0.75),
       ),
       child: Row(
         children: [
           Text(
             date.day.toString() +
-                "-" +
+                "/" +
                 date.month.toString() +
-                "-" +
+                "/" +
                 date.year.toString(),
             style: const TextStyle(
               fontFamily: AppConstants.fontName,
@@ -109,22 +115,25 @@ class DatePill extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          const SizedBox(width: 5),
-          RawMaterialButton(
-            onPressed: () {
-              onReduced!(date);
-            },
-            // constraints: BoxConstraints(maxWidth: 15),
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-            constraints: const BoxConstraints(minWidth: 0),
-            fillColor: Colors.white,
-            child: const Icon(
-              FontAwesomeIcons.times,
-              size: 10,
-            ),
-            shape: const CircleBorder(),
-          )
+          reducedButton ? const SizedBox(width: 5) : const SizedBox(),
+          reducedButton
+              ? RawMaterialButton(
+                  onPressed: () {
+                    onReduced!(date);
+                  },
+                  // constraints: BoxConstraints(maxWidth: 15),
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                  constraints: const BoxConstraints(minWidth: 0),
+                  fillColor: Colors.white,
+                  child: const Icon(
+                    FontAwesomeIcons.times,
+                    size: 10,
+                  ),
+                  shape: const CircleBorder(),
+                )
+              : const SizedBox(),
         ],
       ),
     );

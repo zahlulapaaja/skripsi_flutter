@@ -4,6 +4,8 @@ import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
+import 'package:buku_saku_2/screens/app/notes/components/form_field/date_picker.dart';
+import 'package:buku_saku_2/screens/app/notes/components/white_box_shadow.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:open_file/open_file.dart';
@@ -32,28 +34,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
             color: AppColors.offWhite,
             child: Scaffold(
               backgroundColor: Colors.transparent,
-              floatingActionButton: FloatingActionButton(
-                onPressed: () async {
-                  final value = await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AddNoteScreen(note: note),
-                    ),
-                  );
-                  setState(() {
-                    if (value != null) {
-                      print('welkam bek 2');
-                    } else {
-                      print('print');
-                    }
-                  });
-                  if (value != null) {
-                    print('welkam bek 2');
-                  } else {
-                    print('print');
-                  }
-                },
-              ),
               body: Stack(
                 children: <Widget>[
                   ListView(
@@ -67,67 +47,135 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const SizedBox(height: 30),
-                          Text('id: ${note.id}', textAlign: TextAlign.center),
-                          Text('judul: ${note.judul}',
-                              textAlign: TextAlign.center),
-                          Text('uraian: ${note.uraian}',
-                              textAlign: TextAlign.center),
-                          Text(
-                              'tanggal kegiatan: ${note.listTanggal.toString()}',
-                              textAlign: TextAlign.center),
-                          Text('kode butir: ${note.kodeButir}',
-                              textAlign: TextAlign.center),
-                          Text(
-                              'angka kredit: ${note.angkaKredit.toStringAsFixed(3)}',
-                              textAlign: TextAlign.center),
-                          (note.buktiFisik != null)
-                              ? GridView.builder(
-                                  padding: const EdgeInsets.only(top: 10),
-                                  gridDelegate:
-                                      const SliverGridDelegateWithMaxCrossAxisExtent(
-                                    maxCrossAxisExtent: 200,
-                                    childAspectRatio: 3 / 2,
-                                    crossAxisSpacing: 20,
-                                    mainAxisSpacing: 20,
-                                  ),
-                                  itemCount: note.buktiFisik!.length,
-                                  physics: const ScrollPhysics(),
-                                  shrinkWrap: true,
-                                  itemBuilder: (context, index) {
-                                    return Column(
-                                      children: <Widget>[
-                                        Expanded(
-                                          child: Card(
-                                            child: InkWell(
-                                              onTap: () {
-                                                openFile(note
-                                                    .buktiFisik![index].path);
-                                              },
-                                              child: Center(
-                                                  child: Text(
-                                                      '${note.buktiFisik![index].namaFile}.${note.buktiFisik![index].extension}')),
-                                            ),
-                                          ),
+                          const SizedBox(height: 10),
+                          WhiteBoxShadow(
+                            children: <Widget>[
+                              WhiteBoxBody(
+                                title: "Jenjang",
+                                body: "note.jenjang!",
+                              ),
+                              WhiteBoxBody(
+                                title: "Butir Kegiatan",
+                                widgetBody: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      note.kodeButir!,
+                                      style: AppConstants.kDetailCardTextStyle,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Flexible(
+                                      child: Text(
+                                        note.judul!.substring(
+                                            note.judul!.indexOf(" ") + 1),
+                                        style:
+                                            AppConstants.kDetailCardTextStyle,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          WhiteBoxShadow(
+                            children: <Widget>[
+                              WhiteBoxBody(
+                                title: "Tanggal Kegiatan",
+                                widgetBody: Row(
+                                  children: note.listTanggal == null
+                                      ? [const Text("-")]
+                                      : List.generate(
+                                          note.listTanggal!.length,
+                                          (index) {
+                                            return DatePill(
+                                              date: note.listTanggal![index],
+                                            );
+                                          },
                                         ),
-                                        Text(
-                                          '${note.buktiFisik![index].namaFile}',
-                                          overflow: TextOverflow.ellipsis,
-                                          maxLines: 1,
+                                ),
+                              ),
+                            ],
+                          ),
+                          WhiteBoxShadow(
+                            children: <Widget>[
+                              WhiteBoxBody(
+                                title: "Uraian Kegiatan",
+                                body: note.uraian!,
+                              ),
+                              WhiteBoxBody(
+                                title: "Jumlah Kegiatan",
+                                body: note.jumlahKegiatan.toString(),
+                              ),
+                              WhiteBoxBody(
+                                title: "Angka Kredit",
+                                body: note.angkaKredit.toStringAsFixed(3),
+                              ),
+                            ],
+                          ),
+                          const WhiteBoxShadow(
+                            children: <Widget>[
+                              WhiteBoxBody(
+                                title: "Kegiatan Tim",
+                                body:
+                                    "Jumlah anggota tim : 3\nPeran : penyusun utama",
+                              ),
+                            ],
+                          ),
+                          WhiteBoxShadow(
+                            children: <Widget>[
+                              WhiteBoxBody(
+                                title: "Bukti Fisik",
+                                widgetBody: (note.buktiFisik!.isNotEmpty)
+                                    ? GridView.builder(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        gridDelegate:
+                                            const SliverGridDelegateWithMaxCrossAxisExtent(
+                                          maxCrossAxisExtent: 200,
+                                          childAspectRatio: 3 / 2,
+                                          crossAxisSpacing: 20,
+                                          mainAxisSpacing: 20,
                                         ),
-                                      ],
-                                    );
-                                  },
-                                )
-                              : const Center(child: Text('bukti belum ada')),
-                          // Text('bukti: ${note.buktiFisik![0].path}',
-                          //     textAlign: TextAlign.center),
+                                        itemCount: note.buktiFisik!.length,
+                                        physics: const ScrollPhysics(),
+                                        shrinkWrap: true,
+                                        itemBuilder: (context, index) {
+                                          return Column(
+                                            children: <Widget>[
+                                              Expanded(
+                                                child: Card(
+                                                  child: InkWell(
+                                                    onTap: () {
+                                                      openFile(note
+                                                          .buktiFisik![index]
+                                                          .path);
+                                                    },
+                                                    child: Center(
+                                                        child: Text(
+                                                            '${note.buktiFisik![index].namaFile}.${note.buktiFisik![index].extension}')),
+                                                  ),
+                                                ),
+                                              ),
+                                              Text(
+                                                note.buktiFisik![index]
+                                                    .namaFile,
+                                                overflow: TextOverflow.ellipsis,
+                                                maxLines: 1,
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      )
+                                    : const Text(
+                                        'bukti belum ada (urus dulu sana)'),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ],
                   ),
                   AppBarUI(
-                    title: '',
+                    title: 'Detail Catatan',
                     leftIconButton: IconButton(
                       icon: const Icon(
                         FontAwesomeIcons.chevronLeft,
@@ -136,6 +184,21 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                       ),
                       onPressed: () {
                         Navigator.pop(context);
+                      },
+                    ),
+                    rightIconButton: IconButton(
+                      icon: const Icon(
+                        FontAwesomeIcons.edit,
+                        color: AppColors.offWhite,
+                        size: AppConstants.kLargeFontSize,
+                      ),
+                      onPressed: () async {
+                        final value = await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddNoteScreen(note: note),
+                          ),
+                        );
                       },
                     ),
                   ),
