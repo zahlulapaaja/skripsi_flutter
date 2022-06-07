@@ -1,5 +1,6 @@
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -19,10 +20,14 @@ class DetailAngkaKredit extends StatefulWidget {
 class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
   var dbHelper = DbHelper();
   Profile? data;
+  double akUtama = 0.0;
+  double akPenunjang = 0.0;
 
   @override
   Widget build(BuildContext context) {
     data = context.watch<ProfileProvider>().profil;
+    akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
+    akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
 
     return Padding(
       padding: const EdgeInsets.only(
@@ -61,8 +66,9 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                               'Halo ' + data!.nama! + "...",
                               style: const TextStyle(
                                 fontFamily: AppConstants.fontName,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                                 fontSize: AppConstants.kNormalFontSize,
+                                fontStyle: FontStyle.italic,
                                 color: AppColors.black,
                               ),
                             ),
@@ -198,8 +204,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                           padding: const EdgeInsets.only(
                                               left: 4, bottom: 3),
                                           child: Text(
-                                            (data!.akUtamaTerkumpul! +
-                                                    data!.akPenunjangTerkumpul!)
+                                            (akUtama + akPenunjang)
                                                 .toStringAsFixed(3),
                                             textAlign: TextAlign.center,
                                             style: const TextStyle(
@@ -248,9 +253,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    (data!.akSaatIni! +
-                                            data!.akUtamaTerkumpul! +
-                                            data!.akPenunjangTerkumpul!)
+                                    (data!.akSaatIni! + akUtama + akPenunjang)
                                         .toStringAsFixed(3),
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
@@ -388,7 +391,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                             child: Padding(
                               padding: EdgeInsets.all(4.0),
                               child: Text(
-                                'Sudah Terkumpul ${(data!.akUtamaTerkumpul! + data!.akPenunjangTerkumpul!).toStringAsFixed(3)} Angka Kredit',
+                                'Sudah Terkumpul ${(akUtama + akPenunjang).toStringAsFixed(3)} Angka Kredit',
                                 textAlign: TextAlign.center,
                                 maxLines: 2,
                                 style: TextStyle(

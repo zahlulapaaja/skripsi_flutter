@@ -16,9 +16,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class NewNoteForm extends StatefulWidget {
-  const NewNoteForm({Key? key, this.note, this.butir}) : super(key: key);
+  const NewNoteForm({Key? key, this.note, this.selectedButir})
+      : super(key: key);
   final Note? note;
-  final ButirKegiatan? butir;
+  final ButirKegiatan? selectedButir;
 
   @override
   State<NewNoteForm> createState() => _NewNoteFormState();
@@ -26,12 +27,13 @@ class NewNoteForm extends StatefulWidget {
 
 class _NewNoteFormState extends State<NewNoteForm> {
   final _formKey = GlobalKey<FormState>();
-  int maxJmlKegiatan = 100;
-  bool maxKegiatan = false;
-  bool minKegiatan = false;
+
+  // beberapa pindahin langsung ke tempat mereka, karena inis sifatnya konstan
+
   var dbHelper = DbHelper();
 
   late Note selectedNote;
+  ButirKegiatan? selectedButir;
 
 // belom ngabil dari db
 
@@ -51,13 +53,20 @@ class _NewNoteFormState extends State<NewNoteForm> {
     if (widget.note != null) {
       selectedNote = widget.note!;
     } else {
-      // widget.butir!.angkaKredit = 0;
-      // print(widget.butir!.angkaKredit);
       selectedNote = Note(
-        judul: widget.butir != null ? widget.butir!.judul : null,
-        angkaKredit: widget.butir != null ? widget.butir!.angkaKredit : 0,
+        judul:
+            widget.selectedButir != null ? widget.selectedButir!.judul : null,
+        angkaKredit: widget.selectedButir != null
+            ? widget.selectedButir!.angkaKredit
+            : 0,
         listTanggal: [],
       );
+      selectedButir = widget.selectedButir;
+      if (selectedButir != null) {
+        selectedNote.judul = selectedButir!.kode + " " + selectedButir!.judul;
+        selectedNote.kodeButir = selectedButir!.kode;
+        selectedNote.angkaKredit = selectedButir!.angkaKredit;
+      }
     }
     super.initState();
   }
@@ -75,12 +84,13 @@ class _NewNoteFormState extends State<NewNoteForm> {
                 (widget.note == null) ? selectedNote.judul : widget.note!.judul,
             onChanged: (butir) {
               setState(() {
+                selectedButir = butir;
                 selectedNote.judul = butir?.judul;
 
                 if (butir?.judul != null) {
-                  selectedNote.kodeButir = butir!.judul.split(' ')[0];
+                  selectedNote.judul = butir!.kode + " " + butir.judul;
+                  selectedNote.kodeButir = butir.kode;
                   selectedNote.angkaKredit = butir.angkaKredit;
-                  print(butir);
                 }
               });
             },
@@ -109,48 +119,20 @@ class _NewNoteFormState extends State<NewNoteForm> {
             onChanged: (value) {
               setState(() {
                 if (value != null) {
-                  selectedNote.uraian = value;
+                  selectedNote.uraian = value.trim();
                 }
               });
             },
           ),
           JumlahKegiatanField(
-            // 0.104 nanti diganti jadi butir terpilih
             initialJmlKegiatan: selectedNote.jumlahKegiatan,
             initialAngkaKredit: selectedNote.angkaKredit,
-            max: maxJmlKegiatan,
-            onIncrement: (value) {
-              selectedNote.jumlahKegiatan = value.toInt();
-              setState(() {
-                if (value == maxJmlKegiatan) {
-                  if (!maxKegiatan) {
-                    selectedNote.angkaKredit += widget.butir!.angkaKredit;
-                  }
-                  maxKegiatan = true;
-                } else {
-                  maxKegiatan = false;
-                  minKegiatan = false;
-                  selectedNote.angkaKredit += widget.butir!.angkaKredit;
-                }
-              });
-            },
-            onDecrement: (value) {
-              selectedNote.jumlahKegiatan = value.toInt();
-              setState(() {
-                if (value == 1) {
-                  if (!minKegiatan) selectedNote.angkaKredit -= 0.104;
-                  minKegiatan = true;
-                } else {
-                  minKegiatan = false;
-                  maxKegiatan = false;
-                  selectedNote.angkaKredit -= 0.104;
-                }
-              });
-            },
             onChanged: (value) {
-              selectedNote.jumlahKegiatan = value.toInt();
               setState(() {
-                selectedNote.angkaKredit = value * 0.104;
+                selectedNote.jumlahKegiatan = value;
+                // harusnya nanti field setelah butir kegiatan muncul kalo butir kegiatan udh dipilih
+                // dan angka kredit adanya setelah butir terpilih
+                // selectedNote.angkaKredit = value;
               });
             },
           ),

@@ -48,7 +48,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                             snapshot.data!;
 
                         return NewNoteForm(
-                            butir: widget.butir, note: widget.note);
+                            selectedButir: widget.butir, note: widget.note);
                       } else {
                         return const Center(
                           child: CircularProgressIndicator(),

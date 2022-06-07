@@ -175,10 +175,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       data.nama = _nameTextController.text;
       data.akSaatIni = double.parse(_akSaatIniTextController.text);
 
-      if (data.id == null) {
-        data.akUtamaTerkumpul = 0;
-        data.akPenunjangTerkumpul = 0;
-      }
+// untuk inisiasi, tapi nanti ini kan ga dipake
+      // if (data.id == null) {
+      //   data.akUtamaTerkumpul = 0;
+      //   data.akPenunjangTerkumpul = 0;
+      // }
 
       int status = await context.read<ProfileProvider>().saveProfile(data);
 

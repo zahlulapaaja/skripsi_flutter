@@ -43,6 +43,7 @@ class Note {
     return {
       'id': id,
       'judul': judul,
+      'kodeButir': kodeButir,
       'uraian': uraian,
       'jumlahKegiatan': jumlahKegiatan,
       'angkaKredit': angkaKredit,
@@ -74,26 +75,6 @@ class BuktiFisik {
       'idCatatan': idCatatan,
       'namaFile': namaFile,
       'extension': extension,
-    };
-  }
-}
-
-class TanggalKegiatan {
-  final int? id;
-  final int? idCatatan;
-  final DateTime tanggal;
-
-  TanggalKegiatan({
-    this.id,
-    this.idCatatan,
-    required this.tanggal,
-  });
-
-  Map<String, dynamic> toMap(int idCatatan) {
-    return {
-      'id': id,
-      'idCatatan': idCatatan,
-      'tanggal': tanggal,
     };
   }
 }

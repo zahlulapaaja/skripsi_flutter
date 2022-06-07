@@ -32,6 +32,7 @@ class UraianTextArea extends StatelessWidget {
                   }
                   return null;
                 },
+                maxLength: 255,
                 maxLines: 8,
                 decoration: const InputDecoration.collapsed(
                     hintText: "Enter your text here"),

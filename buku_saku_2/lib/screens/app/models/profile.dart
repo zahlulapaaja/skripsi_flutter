@@ -4,9 +4,11 @@ class Profile {
   String? fotoProfil;
   Jenjang? jenjang;
   double? akSaatIni;
-  double? akUtamaTerkumpul;
-  double? akPenunjangTerkumpul;
   List<Jenjang>? listJenjang;
+
+  // nanti dua variabel ini apus aja
+  // double? akUtamaTerkumpul;
+  // double? akPenunjangTerkumpul;
 
   Profile({
     this.id,
@@ -14,8 +16,8 @@ class Profile {
     this.fotoProfil,
     this.jenjang,
     this.akSaatIni,
-    this.akUtamaTerkumpul,
-    this.akPenunjangTerkumpul,
+    // this.akUtamaTerkumpul,
+    // this.akPenunjangTerkumpul,
     this.listJenjang,
   });
 
@@ -26,8 +28,8 @@ class Profile {
       'fotoProfil': fotoProfil,
       "idJenjang": jenjang!.id,
       "akSaatIni": akSaatIni,
-      "akUtamaTerkumpul": akUtamaTerkumpul,
-      "akPenunjangTerkumpul": akPenunjangTerkumpul,
+      // "akUtamaTerkumpul": akUtamaTerkumpul,
+      // "akPenunjangTerkumpul": akPenunjangTerkumpul,
     };
   }
 }

@@ -8,7 +8,7 @@ class DbHelper {
   final String _dbName = 'bukusaku.db';
   final String _dbSyntax =
       '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, kodeButir TEXT,
-  jumlahKegiatan INTEGER, angkaKredit INTEGER, status INTEGER, idProfil INTEGER)''';
+  jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), status INTEGER, idProfil INTEGER)''';
   final String _dbSyntax2 =
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, path TEXT,
   namaFile TEXT, extension TEXT)''';
@@ -68,7 +68,9 @@ class DbHelper {
       return Note(
         id: maps[i]['id'],
         judul: maps[i]['judul'],
+        kodeButir: maps[i]['kodeButir'],
         uraian: maps[i]['uraian'],
+        angkaKredit: maps[i]['angkaKredit'],
         status: maps[i]['status'],
         listTanggal: listTanggal,
       );
@@ -96,18 +98,16 @@ class DbHelper {
       ),
     );
 
-    List<DateTime>? listTanggal = [];
-    if (dates.isNotEmpty) {
-      for (var item in dates) {
-        listTanggal.add(DateTime.parse(item['tanggal']));
-      }
-    }
+    List<DateTime>? listTanggal = List.generate(dates.length, (index) {
+      return DateTime.parse(dates[index]['tanggal']);
+    });
+
     return Note(
       //cek kelengkapan variabelnya
       id: maps[0]['id'],
       judul: maps[0]['judul'],
       uraian: maps[0]['uraian'],
-      // kodeButir: maps[0]['kodeButir'],
+      kodeButir: maps[0]['kodeButir'],
       jumlahKegiatan: maps[0]['jumlahKegiatan'],
       angkaKredit: maps[0]['angkaKredit'],
       status: maps[0]['status'],
@@ -140,6 +140,7 @@ class DbHelper {
 
     final insertedId = await db.insert('catatan', note.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
+
     if (note.buktiFisik != null) {
       for (var bukti in note.buktiFisik!) {
         await db.insert('bukti_fisik', bukti.toMap(insertedId),
@@ -168,6 +169,7 @@ class DbHelper {
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
+
     await db.delete('tanggal_kegiatan',
         where: 'idCatatan = ?', whereArgs: [note.id]);
     if (note.listTanggal != null) {

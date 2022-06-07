@@ -247,7 +247,8 @@ class ButirDetailScreen extends StatelessWidget {
               }
             }
 
-            if ((kodeJenjang! - jenjang.kodeJenjang).abs() < 2) {
+            if (butir.pelaksana == "Semua Jenjang" ||
+                (kodeJenjang! - jenjang.kodeJenjang).abs() < 2) {
               exist
                   ? print('ada alert yang kasih tau udh ada catatannya')
                   : Navigator.push(

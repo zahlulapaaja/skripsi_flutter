@@ -5,22 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:number_inc_dec/number_inc_dec.dart';
 
 class JumlahKegiatanField extends StatelessWidget {
-  const JumlahKegiatanField({
+  JumlahKegiatanField({
     Key? key,
-    required this.max,
     required this.initialAngkaKredit,
     required this.initialJmlKegiatan,
-    this.onIncrement,
-    this.onDecrement,
     this.onChanged,
   }) : super(key: key);
 
   final double initialAngkaKredit;
   final int initialJmlKegiatan;
-  final int max;
-  final Function(num)? onIncrement;
-  final Function(num)? onDecrement;
-  final Function(num)? onChanged;
+  final Function(int)? onChanged;
+
+  int maxJmlKegiatan = 100;
+  bool maxKegiatan = false;
+  bool minKegiatan = false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +38,17 @@ class JumlahKegiatanField extends StatelessWidget {
                   Expanded(
                     child: NumberInputWithIncrementDecrement(
                       min: 1,
-                      max: max,
+                      max: maxJmlKegiatan,
                       isInt: true,
-                      onChanged: onChanged,
-                      onIncrement: onIncrement,
-                      onDecrement: onDecrement,
+                      onChanged: (val) {
+                        onChanged!(val.toInt());
+                      },
+                      onIncrement: (val) {
+                        onChanged!(val.toInt());
+                      },
+                      onDecrement: (val) {
+                        onChanged!(val.toInt());
+                      },
                       controller: TextEditingController(),
                       decIconSize: 20,
                       incIconSize: 20,
@@ -79,7 +83,9 @@ class JumlahKegiatanField extends StatelessWidget {
                       ),
                       child: Align(
                         alignment: Alignment.center,
-                        child: Text(initialAngkaKredit.toStringAsFixed(3),
+                        child: Text(
+                            (initialAngkaKredit * initialJmlKegiatan)
+                                .toStringAsFixed(3),
                             style: AppConstants.kLargeTitleTextStyle),
                       ),
                     ),
