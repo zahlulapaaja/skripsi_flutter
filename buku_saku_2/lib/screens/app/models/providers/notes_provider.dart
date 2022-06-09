@@ -7,6 +7,7 @@ class NotesProvider with ChangeNotifier {
   String _searchKey = '';
   double _akUtamaTerkumpul = 0.0;
   double _akPenunjangTerkumpul = 0.0;
+  bool _orderByKodeButir = false;
   var dbHelper = DbHelper();
 
   double get akUtamaTerkumpul => _akUtamaTerkumpul;
@@ -14,7 +15,9 @@ class NotesProvider with ChangeNotifier {
 
   Future<List<Note>> get notes async {
     if (_searchKey == '') {
-      _notes = await dbHelper.getNotes();
+      _orderByKodeButir
+          ? _notes = await dbHelper.getNotes(orderbyKodeButir: true)
+          : _notes = await dbHelper.getNotes();
       _akPenunjangTerkumpul = 0.0;
       _akUtamaTerkumpul = 0.0;
       for (Note note in _notes) {
@@ -35,6 +38,10 @@ class NotesProvider with ChangeNotifier {
   set setQuery(String key) {
     _searchKey = key;
     notifyListeners();
+  }
+
+  set orderByKodeButir(bool val) {
+    _orderByKodeButir = val;
   }
 
   void addNewNote(Note note) async {

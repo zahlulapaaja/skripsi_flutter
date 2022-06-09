@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,6 +6,7 @@ import 'package:buku_saku_2/screens/app/notes/components/card_list_view.dart';
 import 'package:buku_saku_2/screens/app/notes/components/card_grid_view.dart';
 import 'package:buku_saku_2/screens/app/notes/components/note_searchbox.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
+import 'package:provider/provider.dart';
 
 class NotesScreen extends StatefulWidget {
   static const id = 'notes_screen';
@@ -54,6 +56,8 @@ class _NotesScreenState extends State<NotesScreen> {
   }
 
   Widget getMainListViewUI() {
+    context.read<NotesProvider>().orderByKodeButir = true;
+
     return ListView(
       padding: EdgeInsets.only(
         top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top,

@@ -1,6 +1,7 @@
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -131,6 +132,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       ),
     );
 
+    context.read<NotesProvider>().orderByKodeButir = false;
     listViews.add(
       const CardGridView(),
     );

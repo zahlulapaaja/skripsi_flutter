@@ -51,9 +51,12 @@ class DbHelper {
     );
   }
 
-  Future<List<Note>> getNotes() async {
+  Future<List<Note>> getNotes({bool orderbyKodeButir = false}) async {
     final db = await dbInstance;
-    final List<Map<String, dynamic>> maps = await db.query('catatan');
+
+    final List<Map<String, dynamic>> maps = orderbyKodeButir
+        ? await db.query('catatan', orderBy: "kodeButir ASC")
+        : await db.query('catatan', orderBy: "dateCreated DESC");
     final List<Map<String, dynamic>> maps2 = await db.query('tanggal_kegiatan');
 
     return List.generate(maps.length, (i) {
