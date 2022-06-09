@@ -27,10 +27,7 @@ class CardListView extends StatelessWidget {
               physics: const ScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                return CardBuilder(
-                  notes: snapshot.data![index],
-                  date: '22 Nov 2021',
-                );
+                return CardBuilder(notes: snapshot.data![index]);
               },
             );
           } else {

@@ -8,7 +8,8 @@ class DbHelper {
   final String _dbName = 'bukusaku.db';
   final String _dbSyntax =
       '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, kodeButir TEXT,
-  jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), status INTEGER, idProfil INTEGER)''';
+  jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), isTim BIT, jmlAnggota INTEGER, peranDalamTim TEXT, 
+  dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
   final String _dbSyntax2 =
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, path TEXT,
   namaFile TEXT, extension TEXT)''';
@@ -68,10 +69,11 @@ class DbHelper {
       return Note(
         id: maps[i]['id'],
         judul: maps[i]['judul'],
-        kodeButir: maps[i]['kodeButir'],
         uraian: maps[i]['uraian'],
+        kodeButir: maps[i]['kodeButir'],
         angkaKredit: maps[i]['angkaKredit'],
         status: maps[i]['status'],
+        dateCreated: DateTime.parse(maps[i]['dateCreated']),
         listTanggal: listTanggal,
       );
     });
@@ -111,9 +113,13 @@ class DbHelper {
       jumlahKegiatan: maps[0]['jumlahKegiatan'],
       angkaKredit: maps[0]['angkaKredit'],
       akSatuan: maps[0]['angkaKredit'] / maps[0]['jumlahKegiatan'],
+      isTim: maps[0]['isTim'] == 0 ? false : true,
+      jmlAnggota: maps[0]['jmlAnggota'],
+      peranDalamTim: maps[0]['peranDalamTim'],
       status: maps[0]['status'],
+      dateCreated: DateTime.parse(maps[0]['dateCreated']),
 
-      // this.dateCreated,
+      // this.idProfil,
       listTanggal: listTanggal,
       buktiFisik: buktiFisik,
     );
@@ -132,6 +138,7 @@ class DbHelper {
         judul: maps[i]['judul'],
         uraian: maps[i]['uraian'],
         status: maps[i]['status'],
+        dateCreated: DateTime.parse(maps[i]['dateCreated']),
       );
     });
   }

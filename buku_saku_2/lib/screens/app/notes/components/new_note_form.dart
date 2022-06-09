@@ -30,8 +30,6 @@ class NewNoteForm extends StatefulWidget {
 class _NewNoteFormState extends State<NewNoteForm> {
   final _formKey = GlobalKey<FormState>();
 
-  // beberapa pindahin langsung ke tempat mereka, karena inis sifatnya konstan
-
   var dbHelper = DbHelper();
 
   late Note selectedNote;
@@ -41,8 +39,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
   TextEditingController jmlAnggotaTextController =
       TextEditingController(text: "2");
   TextEditingController uraianTextController = TextEditingController();
-
-  // belom ngabil dari db
 
   submitNote(NotesProvider noteProvider) async {
     if (_formKey.currentState!.validate()) {
@@ -71,6 +67,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
         angkaKredit: widget.selectedButir != null
             ? widget.selectedButir!.angkaKredit
             : 0,
+        dateCreated: DateTime.now(),
         listTanggal: [],
       );
 

@@ -6,10 +6,10 @@ import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 
 class CardBuilder extends StatelessWidget {
   final Note notes;
-  final String? date;
   final Function? onLongPressed;
 
   //sementara
@@ -23,7 +23,6 @@ class CardBuilder extends StatelessWidget {
     Key? key,
     required this.notes,
     this.index,
-    this.date,
     // required this.tag,
     this.pinned = false,
     this.onLongPressed,
@@ -113,7 +112,9 @@ class CardBuilder extends StatelessWidget {
                     ),
                     const SizedBox(height: 7),
                     Text(
-                      date!,
+                      (DateFormat("d MMM yyyy", "id_ID")
+                              .format(notes.dateCreated!))
+                          .toString(),
                       textAlign: TextAlign.left,
                       style: AppConstants.kCardDateTextStyle,
                     ),

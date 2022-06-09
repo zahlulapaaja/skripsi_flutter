@@ -3,6 +3,7 @@ import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
+import 'package:intl/intl.dart';
 
 class DatePicker extends StatelessWidget {
   const DatePicker({
@@ -106,11 +107,7 @@ class DatePill extends StatelessWidget {
                 ? const EdgeInsets.only(right: 8)
                 : const EdgeInsets.symmetric(horizontal: 8),
             child: Text(
-              date.day.toString() +
-                  "/" +
-                  date.month.toString() +
-                  "/" +
-                  date.year.toString(),
+              (DateFormat("dd/MM/yyyy", "id_ID").format(date)).toString(),
               style: const TextStyle(
                 fontFamily: AppConstants.fontName,
                 color: AppColors.black,

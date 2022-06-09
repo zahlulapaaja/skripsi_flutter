@@ -8,12 +8,17 @@ import 'package:buku_saku_2/screens/introduction_animation/introduction_animatio
 import 'package:buku_saku_2/screens/app/app_screen.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/app/models/providers/profile_provider.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('id_ID', null)
+      .then((_) => runApp(const MyApp()));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

@@ -6,12 +6,16 @@ class Note {
   String? judul;
   String uraian;
   String? kodeButir;
-  List<DateTime>? listTanggal;
   int jumlahKegiatan;
   double angkaKredit;
+  double? akSatuan;
+  bool isTim;
+  int jmlAnggota;
+  String? peranDalamTim;
   int? status;
   int? idProfil;
   DateTime? dateCreated;
+  List<DateTime>? listTanggal;
   List<BuktiFisik>? buktiFisik;
 
   // int status :
@@ -19,13 +23,6 @@ class Note {
   // 1 = urgent
   // 2 = pinned
   // 3 = checked
-
-// ini sementara, biar klo update, bisa panggil ak satuan
-  double? akSatuan;
-  // nanti ini di tabel profile
-  bool isTim;
-  int jmlAnggota;
-  String? peranDalamTim;
 
 // ini judul sama kode butir harusnya required jga
   Note({
@@ -54,12 +51,12 @@ class Note {
       'kodeButir': kodeButir,
       'jumlahKegiatan': jumlahKegiatan,
       'angkaKredit': angkaKredit,
-      'isTim': isTim,
+      'isTim': isTim ? 1 : 0,
       'jmlAnggota': jmlAnggota,
       'peranDalamTim': peranDalamTim,
       'status': status,
       'idProfil': idProfil,
-      'dateCreated': dateCreated,
+      'dateCreated': dateCreated.toString(),
     };
   }
 }
