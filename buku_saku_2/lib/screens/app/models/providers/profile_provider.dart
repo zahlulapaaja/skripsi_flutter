@@ -26,7 +26,7 @@ class ProfileProvider with ChangeNotifier {
       }
     }
     if (_profile.jenjang!.kodeJenjang.abs() - kodeJenjang! == -1) {
-      _alert = "anda cuma dapat 80% ak penuh";
+      _alert = "Butir ini hanya memperoleh 80% angka kredit penuh!!";
       print(_alert);
     }
     return _alert;

@@ -4,7 +4,7 @@ class Note {
   // Ga perlu juga sih semua data itu, yg penting koe butirnya, nanti kan bisa panggil ke data json detailnya
   int? id;
   String? judul;
-  String? uraian;
+  String uraian;
   String? kodeButir;
   List<DateTime>? listTanggal;
   int jumlahKegiatan;
@@ -23,35 +23,43 @@ class Note {
 // ini sementara, biar klo update, bisa panggil ak satuan
   double? akSatuan;
   // nanti ini di tabel profile
-  final String? jenjang;
+  bool isTim;
+  int jmlAnggota;
+  String? peranDalamTim;
 
+// ini judul sama kode butir harusnya required jga
   Note({
     this.id,
     this.judul,
-    this.uraian,
+    required this.uraian,
     this.kodeButir,
-    this.listTanggal,
     this.jumlahKegiatan = 1,
     this.angkaKredit = 0,
-    this.akSatuan,
+    this.isTim = false,
+    this.jmlAnggota = 2,
+    this.peranDalamTim,
     this.status,
     this.idProfil,
     this.dateCreated,
+    this.akSatuan,
+    this.listTanggal,
     this.buktiFisik,
-    this.jenjang,
   });
 
-  //cari yg pake to map ini, biar diganti, ga error
   Map<String, dynamic> toMap() {
     return {
       'id': id,
       'judul': judul,
-      'kodeButir': kodeButir,
       'uraian': uraian,
+      'kodeButir': kodeButir,
       'jumlahKegiatan': jumlahKegiatan,
       'angkaKredit': angkaKredit,
+      'isTim': isTim,
+      'jmlAnggota': jmlAnggota,
+      'peranDalamTim': peranDalamTim,
       'status': status,
       'idProfil': idProfil,
+      'dateCreated': dateCreated,
     };
   }
 }

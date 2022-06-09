@@ -106,7 +106,7 @@ class CardBuilder extends StatelessWidget {
                     ),
                     const SizedBox(height: 7),
                     Text(
-                      notes.uraian!,
+                      notes.uraian,
                       maxLines: index == 1 ? 10 : 5,
                       overflow: TextOverflow.ellipsis,
                       style: AppConstants.kCardBodyTextStyle,

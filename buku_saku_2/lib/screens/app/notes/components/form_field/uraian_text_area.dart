@@ -4,11 +4,9 @@ import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:flutter/material.dart';
 
 class UraianTextArea extends StatelessWidget {
-  const UraianTextArea({Key? key, required this.onChanged, this.initialData})
-      : super(key: key);
+  const UraianTextArea({Key? key, required this.controller}) : super(key: key);
 
-  final Function(String?) onChanged;
-  final String? initialData;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class UraianTextArea extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextFormField(
-                initialValue: initialData,
+                controller: controller,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter some text';
@@ -47,7 +45,6 @@ class UraianTextArea extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                   ),
                 ),
-                onChanged: onChanged,
               ),
             ),
           ),

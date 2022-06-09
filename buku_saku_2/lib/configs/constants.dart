@@ -140,11 +140,13 @@ class AppConstants {
   );
 
   static kTextFieldDecoration(
-      {String? hintText, required BorderSide borderSide}) {
+      {String? hintText,
+      required BorderSide borderSide,
+      EdgeInsets? contentPadding = const EdgeInsets.only(left: 10)}) {
     return InputDecoration(
       isDense: true,
       hintText: hintText,
-      contentPadding: const EdgeInsets.only(left: 10),
+      contentPadding: contentPadding,
       border: OutlineInputBorder(
         borderSide: borderSide,
       ),

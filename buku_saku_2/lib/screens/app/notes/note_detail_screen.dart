@@ -100,7 +100,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Uraian Kegiatan",
-                                body: note.uraian!,
+                                body: note.uraian,
                               ),
                               WhiteBoxBody(
                                 title: "Jumlah Kegiatan",

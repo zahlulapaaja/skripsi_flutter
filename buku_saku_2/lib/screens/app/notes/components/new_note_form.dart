@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
-import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
+import 'package:buku_saku_2/screens/app/notes/components/form_field/kegiatan_tim.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/bukti_fisik_field.dart';
@@ -38,12 +38,19 @@ class _NewNoteFormState extends State<NewNoteForm> {
   ButirKegiatan? selectedButir;
   String? alert;
 
+  TextEditingController jmlAnggotaTextController =
+      TextEditingController(text: "2");
+  TextEditingController uraianTextController = TextEditingController();
+
   // belom ngabil dari db
 
   submitNote(NotesProvider noteProvider) async {
     if (_formKey.currentState!.validate()) {
-      final newNote = selectedNote;
+      selectedNote.uraian = uraianTextController.text;
+      selectedNote.jmlAnggota = int.parse(jmlAnggotaTextController.text);
+      final Note newNote = selectedNote;
 
+      print(newNote.toMap());
       (widget.note?.id != null)
           ? noteProvider.updateNote(newNote)
           : noteProvider.addNewNote(newNote);
@@ -55,10 +62,12 @@ class _NewNoteFormState extends State<NewNoteForm> {
   void initState() {
     if (widget.note != null) {
       selectedNote = widget.note!;
+      uraianTextController.text = selectedNote.uraian;
     } else {
       selectedNote = Note(
         judul:
             widget.selectedButir != null ? widget.selectedButir!.judul : null,
+        uraian: "",
         angkaKredit: widget.selectedButir != null
             ? widget.selectedButir!.angkaKredit
             : 0,
@@ -89,16 +98,17 @@ class _NewNoteFormState extends State<NewNoteForm> {
       key: _formKey,
       child: Column(
         children: <Widget>[
+          const JenjangDropdown(),
           ButirDropdown(
             editMode: (widget.note?.id != null),
-            initialData:
+            selectedData:
                 (widget.note == null) ? selectedNote.judul : widget.note!.judul,
             alert: alert,
             onChanged: (butir) {
-              print("test");
               setState(() {
                 selectedButir = butir;
                 selectedNote.judul = butir?.judul;
+                alert = null;
 
                 if (butir?.judul != null) {
                   context.read<ProfileProvider>().setSelectedButir =
@@ -115,35 +125,21 @@ class _NewNoteFormState extends State<NewNoteForm> {
               });
             },
           ),
-          const JenjangDropdown(),
           DatePicker(
             selectedDate: selectedNote.listTanggal!,
-            // onchanged maksudnya kalo nambah tanggal
             onAdd: (value) {
               setState(() {
-                if (value != null) {
-                  selectedNote.listTanggal!.add(value);
-                }
+                if (value != null) selectedNote.listTanggal!.add(value);
               });
             },
             onReduced: (date) {
-              // masalahnya kalo ada dua tanggal sama bakal ilang dua2
               setState(() {
                 selectedNote.listTanggal!
                     .removeWhere((element) => element == date);
               });
             },
           ),
-          UraianTextArea(
-            initialData: selectedNote.uraian,
-            onChanged: (value) {
-              setState(() {
-                if (value != null) {
-                  selectedNote.uraian = value.trim();
-                }
-              });
-            },
-          ),
+          UraianTextArea(controller: uraianTextController),
           JumlahKegiatanField(
             initialJmlKegiatan: selectedNote.jumlahKegiatan,
             akSatuan: selectedNote.akSatuan ?? 0,
@@ -156,7 +152,21 @@ class _NewNoteFormState extends State<NewNoteForm> {
               });
             },
           ),
-          const Text("note : ak yg dicatat adalah ak penuh"),
+          KegiatanTimField(
+            isChecked: selectedNote.isTim,
+            jmlAnggotaController: jmlAnggotaTextController,
+            initialDataPeran: selectedNote.peranDalamTim,
+            onCheckboxChanged: (bool? value) {
+              setState(() {
+                selectedNote.isTim = value!;
+              });
+            },
+            onRadioButtonChanged: (String? value) {
+              setState(() {
+                selectedNote.peranDalamTim = value;
+              });
+            },
+          ),
           BuktiFisikField(
             selectedData: selectedNote.buktiFisik,
             onPressed: () async {

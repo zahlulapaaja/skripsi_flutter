@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
-import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 
 class DatePicker extends StatelessWidget {
   const DatePicker({
@@ -101,39 +101,38 @@ class DatePill extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Text(
-            date.day.toString() +
-                "/" +
-                date.month.toString() +
-                "/" +
-                date.year.toString(),
-            style: const TextStyle(
-              fontFamily: AppConstants.fontName,
-              color: AppColors.black,
-              fontSize: AppConstants.kTinyFontSize,
-              decoration: TextDecoration.none,
-              fontWeight: FontWeight.w600,
+          Padding(
+            padding: reducedButton
+                ? const EdgeInsets.only(right: 8)
+                : const EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              date.day.toString() +
+                  "/" +
+                  date.month.toString() +
+                  "/" +
+                  date.year.toString(),
+              style: const TextStyle(
+                fontFamily: AppConstants.fontName,
+                color: AppColors.black,
+                fontSize: AppConstants.kTinyFontSize,
+                decoration: TextDecoration.none,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-          reducedButton ? const SizedBox(width: 5) : const SizedBox(),
-          reducedButton
-              ? RawMaterialButton(
-                  onPressed: () {
-                    onReduced!(date);
-                  },
-                  // constraints: BoxConstraints(maxWidth: 15),
-                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-                  constraints: const BoxConstraints(minWidth: 0),
-                  fillColor: Colors.white,
-                  child: const Icon(
-                    FontAwesomeIcons.times,
-                    size: 10,
-                  ),
-                  shape: const CircleBorder(),
-                )
-              : const SizedBox(),
+          if (reducedButton)
+            RawMaterialButton(
+              onPressed: () {
+                onReduced!(date);
+              },
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              constraints: const BoxConstraints(minWidth: 0),
+              child: const Icon(
+                FontAwesomeIcons.timesCircle,
+                size: 18,
+              ),
+              shape: const CircleBorder(),
+            ),
         ],
       ),
     );

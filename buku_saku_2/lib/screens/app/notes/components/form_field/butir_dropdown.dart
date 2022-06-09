@@ -12,23 +12,24 @@ class ButirDropdown extends StatelessWidget {
   ButirDropdown({
     Key? key,
     required this.onChanged,
-    this.initialData,
-    this.editMode = false,
+    this.selectedData,
     this.alert,
+    this.editMode = false,
   }) : super(key: key);
 
   final Function(ButirKegiatan?) onChanged;
-  final String? initialData;
   final bool editMode;
   final String? alert;
 
+  String? selectedData;
   List<String> dataButir = [];
   List<double> dataAK = [];
   List<String> disableButir = [];
   late List<ButirKegiatan> allButir;
 
-  getData(List<ButirKegiatan> allButir) {
-    dataButir = List<String>.generate(
+  List<String> getData(List<ButirKegiatan> allButir) {
+    dataAK = [];
+    return List<String>.generate(
       allButir.length,
       (index) {
         dataAK.add(allButir[index].angkaKredit);
@@ -42,7 +43,7 @@ class ButirDropdown extends StatelessWidget {
   Widget build(BuildContext context) {
     allButir = context.read<DictionaryProvider>().allButir;
     disableButir = context.read<DictionaryProvider>().disableButir;
-    getData(allButir);
+    dataButir = getData(allButir);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -65,6 +66,8 @@ class ButirDropdown extends StatelessWidget {
             },
             onChanged: (String? judul) {
               ButirKegiatan? selectedButir;
+              selectedData = judul;
+
               if (judul != null) {
                 String kodeButir = judul.split(' ')[0];
                 selectedButir = allButir
@@ -73,9 +76,12 @@ class ButirDropdown extends StatelessWidget {
 
               onChanged(selectedButir);
             },
-            selectedItem: initialData,
+            selectedItem: selectedData,
             dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
             dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
+              contentPadding: (selectedData == null)
+                  ? const EdgeInsets.only(left: 10)
+                  : const EdgeInsets.only(top: 10, bottom: 10, left: 10),
               hintText: 'Pilih Butir Kegiatan...',
               borderSide: const BorderSide(
                 color: AppColors.black,
@@ -90,7 +96,16 @@ class ButirDropdown extends StatelessWidget {
               return null;
             },
           ),
-          Text("alert : $alert"),
+          if (alert != null)
+            Text(
+              alert!,
+              style: const TextStyle(
+                fontFamily: AppConstants.fontName,
+                color: AppColors.beigeDark,
+                fontSize: AppConstants.kTinyFontSize,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
         ],
       ),
     );
