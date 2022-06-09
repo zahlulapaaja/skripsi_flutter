@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:buku_saku_2/screens/app/controllers/export_note.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
@@ -149,7 +150,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                 break;
 
               case 3:
-                Navigator.pushNamed(context, SettingScreen.id);
+                Navigator.pushNamed(context, ExportNotesScreen.id);
                 break;
             }
           },

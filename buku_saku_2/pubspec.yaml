@@ -37,6 +37,7 @@ dependencies:
   #back end
   sqflite: ^2.0.2
   provider: ^6.0.2
+  syncfusion_flutter_xlsio: ^20.1.59-beta
 
 dev_dependencies:
   flutter_test:

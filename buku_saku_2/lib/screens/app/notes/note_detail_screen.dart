@@ -54,6 +54,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                 title: "Jenjang",
                                 body: "note.jenjang!",
                               ),
+                              // nambah date created di screen ini
                               WhiteBoxBody(
                                 title: "Butir Kegiatan",
                                 widgetBody: Row(

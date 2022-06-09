@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/controllers/export_note.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
           AddNoteScreen.id: (context) => const AddNoteScreen(),
           SettingScreen.id: (context) => const SettingScreen(),
           EditProfileScreen.id: (context) => const EditProfileScreen(),
+          ExportNotesScreen.id: (context) => const ExportNotesScreen(),
         },
       ),
     );
