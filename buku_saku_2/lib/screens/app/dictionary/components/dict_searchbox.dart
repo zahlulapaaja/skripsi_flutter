@@ -1,4 +1,3 @@
-import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -9,8 +8,9 @@ import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dar
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class DictSearchBox extends StatelessWidget {
-  const DictSearchBox(
+  DictSearchBox(
       {Key? key, this.codes, this.titles, this.subtitles, this.detailButir})
       : super(key: key);
 
@@ -18,6 +18,7 @@ class DictSearchBox extends StatelessWidget {
   final List<String>? titles;
   final List<String>? subtitles;
   final List<dynamic>? detailButir;
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +43,11 @@ class DictSearchBox extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: TextField(
+              controller: controller,
               onChanged: (value) {
                 if (value == '') {
                   context.read<DictionaryProvider>().setDictionaryList =
-                      const JenjangScreen();
+                      const UnsurScreen();
                 } else {
                   context.read<DictionaryProvider>().setQuery = value;
                   List<ButirKegiatan> results =
@@ -60,14 +62,17 @@ class DictSearchBox extends StatelessWidget {
               style: AppConstants.kTextFieldTextStyle,
             ),
           ),
-          // IconButton(
-          //   icon: const Icon(Icons.close),
-          //   onPressed: () {
-          //     // TODO : disini nanti logika untuk hapus isi searchbox
-          //     // kalo diklik nanti tulisannya ilang, harusnya, masalahnya ini stateless
-          //   },
-          // ),
-          // const SizedBox(width: 10),
+          if (context.watch<DictionaryProvider>().isQueryExist)
+            IconButton(
+              onPressed: () {
+                controller.text = '';
+                context.read<DictionaryProvider>().setQuery = '';
+              },
+              icon: const Icon(
+                Icons.close,
+                size: 20,
+              ),
+            ),
           SvgPicture.asset("assets/icons/search.svg"),
         ],
       ),

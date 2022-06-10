@@ -8,7 +8,6 @@ import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
-import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/controllers/drawer_user_controller.dart';
@@ -149,6 +148,8 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                       animationController: animationController);
                   context.read<DictionaryProvider>().setDictionaryList =
                       const JenjangScreen();
+                  context.read<DictionaryProvider>().setSearchboxExist = false;
+                  context.read<DictionaryProvider>().setQuery = '';
                 });
                 break;
 

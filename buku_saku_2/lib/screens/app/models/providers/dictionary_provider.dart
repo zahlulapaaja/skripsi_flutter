@@ -13,6 +13,8 @@ class DictionaryProvider with ChangeNotifier {
   final jsonTambahan = 'assets/jsonfile/data_juknis_tambahan.json';
 
   String _query = '';
+  String? _selectedJenjang;
+  bool _searchboxExist = false;
   List<Unsur> _jsonData = [];
   List<ButirKegiatan> _allButir = [];
   List<ButirKegiatan> _matchedButir = [];
@@ -23,6 +25,9 @@ class DictionaryProvider with ChangeNotifier {
   List<ButirKegiatan> get allButir => _allButir;
   List<ButirKegiatan> get matchedButir => _matchedButir;
   List<Jenjang>? get listJenjang => _listJenjang;
+  String get selectedJenjang => _selectedJenjang!;
+  bool get searchboxExist => _searchboxExist;
+  bool get isQueryExist => (_query == '') ? false : true;
 
   Jenjang? _jenjang;
   List<Jenjang>? _listJenjang;
@@ -100,8 +105,10 @@ class DictionaryProvider with ChangeNotifier {
     _matchedButir = [];
 
     _query = query.toLowerCase();
+    print(_query);
+    print(_allButir.length);
     for (var butir in _allButir) {
-      String judul = butir.judul.trim().toLowerCase();
+      String judul = butir.judul.toLowerCase();
       if (judul.contains(_query)) {
         _matchedButir.add(butir);
       }
@@ -114,7 +121,13 @@ class DictionaryProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  set setAllButir(List<ButirKegiatan> data) {
-    _allButir = data;
+  set setSelectedJenjang(String jenjang) {
+    _selectedJenjang = jenjang;
+    notifyListeners();
+  }
+
+  set setSearchboxExist(bool value) {
+    _searchboxExist = value;
+    notifyListeners();
   }
 }

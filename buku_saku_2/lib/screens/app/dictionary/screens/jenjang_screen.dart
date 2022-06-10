@@ -11,71 +11,71 @@ class JenjangScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.5,
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: Column(
         children: <Widget>[
           Expanded(
-            child: SizedBox(
-              height: 150,
-              child: TextButton(
-                onPressed: () {
-                  context.read<DictionaryProvider>().setDictionaryList =
-                      const UnsurScreen(jenjang: 'terampil');
-                },
-                style: AppConstants.kDictBtnStyle,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    SvgPicture.asset(
-                      'assets/icons/office-briefcase.svg',
-                      width: 50,
-                    ),
-                    const SizedBox(height: 15),
-                    const Text(
-                      'Prakom Terampil',
-                      textAlign: TextAlign.center,
-                      style: AppConstants.kCardTitleTextStyle,
-                    ),
-                  ],
-                ),
+            child: TextButton(
+              onPressed: () {
+                context.read<DictionaryProvider>().setSelectedJenjang =
+                    "terampil";
+                context.read<DictionaryProvider>().setDictionaryList =
+                    const UnsurScreen();
+                context.read<DictionaryProvider>().setSearchboxExist = true;
+              },
+              style: AppConstants.kDictBtnStyle,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  SvgPicture.asset(
+                    'assets/icons/office-briefcase.svg',
+                    width: 50,
+                  ),
+                  const SizedBox(height: 15),
+                  const Text(
+                    'Prakom Terampil',
+                    textAlign: TextAlign.center,
+                    style: AppConstants.kCardTitleTextStyle,
+                  ),
+                ],
               ),
             ),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(height: 20),
           Expanded(
-            child: SizedBox(
-              height: 150,
-              child: TextButton(
-                onPressed: () {
-                  context.read<DictionaryProvider>().setDictionaryList =
-                      const UnsurScreen(jenjang: 'ahli');
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: AppColors.info,
-                  padding: const EdgeInsets.all(20.0),
-                  alignment: Alignment.center,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+            child: TextButton(
+              onPressed: () {
+                context.read<DictionaryProvider>().setSelectedJenjang = "ahli";
+                context.read<DictionaryProvider>().setDictionaryList =
+                    const UnsurScreen();
+                context.read<DictionaryProvider>().setSearchboxExist = true;
+              },
+              style: TextButton.styleFrom(
+                backgroundColor: AppColors.info,
+                padding: const EdgeInsets.all(20.0),
+                alignment: Alignment.center,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  SvgPicture.asset(
+                    'assets/icons/office-briefcase.svg',
+                    width: 50,
                   ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    SvgPicture.asset(
-                      'assets/icons/office-briefcase.svg',
-                      width: 50,
-                    ),
-                    const SizedBox(height: 15),
-                    const Text(
-                      'Prakom Ahli',
-                      textAlign: TextAlign.center,
-                      style: AppConstants.kCardTitleTextStyle,
-                    ),
-                  ],
-                ),
+                  const SizedBox(height: 15),
+                  const Text(
+                    'Prakom Ahli',
+                    textAlign: TextAlign.center,
+                    style: AppConstants.kCardTitleTextStyle,
+                  ),
+                ],
               ),
             ),
           ),

@@ -32,7 +32,8 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                 ),
                 scrollDirection: Axis.vertical,
                 children: [
-                  const DictSearchBox(),
+                  if (context.watch<DictionaryProvider>().searchboxExist)
+                    DictSearchBox(),
                   context.watch<DictionaryProvider>().dictionaryList,
                   // getDictionaryListViewUI(),
                 ]),

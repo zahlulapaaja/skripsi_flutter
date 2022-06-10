@@ -10,10 +10,9 @@ import 'package:provider/provider.dart';
 
 class UnsurScreen extends StatelessWidget {
   // Nanti ini perbaiki lagi, apakah cocok pake string ??
-  final String jenjang;
-  const UnsurScreen({Key? key, required this.jenjang}) : super(key: key);
+  const UnsurScreen({Key? key}) : super(key: key);
 
-  Future<List<Unsur>> readJsonData() async {
+  Future<List<Unsur>> readJsonData(String jenjang) async {
     const jsonPrakomAhli = 'assets/jsonfile/data_juknis_ahli.json';
     const jsonPrakomTerampil = 'assets/jsonfile/data_juknis_terampil.json';
     const jsonTambahan = 'assets/jsonfile/data_juknis_tambahan.json';
@@ -36,8 +35,9 @@ class UnsurScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // context.read<DictionaryProvider>().setJenjang = jenjang;
+    String jenjang = context.read<DictionaryProvider>().selectedJenjang;
     return FutureBuilder(
-        future: readJsonData(),
+        future: readJsonData(jenjang),
         builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
           if (snapshot.hasError) {
             return Center(child: Text('ERROR!! ${snapshot.error}'));
@@ -45,6 +45,7 @@ class UnsurScreen extends StatelessWidget {
             // TODO : Nanti disini klo datanya kosong, kondisikan lagi tampilannya
 
             List<Unsur> unsur = snapshot.data!;
+            context.read<DictionaryProvider>().storeData = snapshot.data!;
             return ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 14.0),
               itemCount: unsur.length,
