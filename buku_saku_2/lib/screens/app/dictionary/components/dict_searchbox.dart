@@ -8,16 +8,14 @@ import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dar
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
-class DictSearchBox extends StatelessWidget {
-  DictSearchBox(
-      {Key? key, this.codes, this.titles, this.subtitles, this.detailButir})
-      : super(key: key);
+class DictSearchBox extends StatefulWidget {
+  const DictSearchBox({Key? key}) : super(key: key);
 
-  final List<String>? codes;
-  final List<String>? titles;
-  final List<String>? subtitles;
-  final List<dynamic>? detailButir;
+  @override
+  State<DictSearchBox> createState() => _DictSearchBoxState();
+}
+
+class _DictSearchBoxState extends State<DictSearchBox> {
   TextEditingController controller = TextEditingController();
 
   @override
@@ -66,6 +64,8 @@ class DictSearchBox extends StatelessWidget {
             IconButton(
               onPressed: () {
                 controller.text = '';
+                context.read<DictionaryProvider>().setDictionaryList =
+                    const UnsurScreen();
                 context.read<DictionaryProvider>().setQuery = '';
               },
               icon: const Icon(

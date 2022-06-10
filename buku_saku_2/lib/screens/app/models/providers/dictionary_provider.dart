@@ -70,7 +70,6 @@ class DictionaryProvider with ChangeNotifier {
   }
 
   set storeData(List<Unsur> listUnsur) {
-    // store data ini cma dipanggil saat masuk form baru
     List<ButirKegiatan> butirList = [];
     int? kodeJenjang;
     disableButir1 = [];
@@ -105,8 +104,6 @@ class DictionaryProvider with ChangeNotifier {
     _matchedButir = [];
 
     _query = query.toLowerCase();
-    print(_query);
-    print(_allButir.length);
     for (var butir in _allButir) {
       String judul = butir.judul.toLowerCase();
       if (judul.contains(_query)) {
