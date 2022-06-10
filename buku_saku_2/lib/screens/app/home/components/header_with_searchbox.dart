@@ -1,14 +1,17 @@
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class HeaderWithSearchbox extends StatelessWidget {
   final AnimationController? animationController;
   final Animation<double>? animation;
+  TextEditingController controller = TextEditingController();
 
-  const HeaderWithSearchbox(
-      {Key? key, this.animationController, this.animation})
+  HeaderWithSearchbox({Key? key, this.animationController, this.animation})
       : super(key: key);
 
   @override
@@ -89,13 +92,27 @@ class HeaderWithSearchbox extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                     child: TextField(
-                      onChanged: (value) {},
+                      controller: controller,
+                      onChanged: (value) {
+                        context.read<NotesProvider>().setQuery = value;
+                      },
                       autocorrect: false,
                       enableSuggestions: false,
                       decoration: AppConstants.kSearchboxDecoration,
                       style: AppConstants.kTextFieldTextStyle,
                     ),
                   ),
+                  if (context.watch<NotesProvider>().isQueryExist)
+                    IconButton(
+                      onPressed: () {
+                        controller.text = '';
+                        context.read<NotesProvider>().setQuery = '';
+                      },
+                      icon: const Icon(
+                        Icons.close,
+                        size: 20,
+                      ),
+                    ),
                   SvgPicture.asset("assets/icons/search.svg"),
                 ],
               ),

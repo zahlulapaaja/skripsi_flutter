@@ -8,11 +8,7 @@ import 'package:provider/provider.dart';
 // ignore: must_be_immutable
 class NoteSearchBox extends StatelessWidget {
   NoteSearchBox({Key? key}) : super(key: key);
-
-  List<String>? codes;
-  List<String>? titles;
-  List<String>? subtitles;
-  List<dynamic>? detailButir;
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +33,7 @@ class NoteSearchBox extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: TextField(
+              controller: controller,
               onChanged: (value) {
                 context.read<NotesProvider>().setQuery = value;
               },
@@ -46,6 +43,17 @@ class NoteSearchBox extends StatelessWidget {
               style: AppConstants.kTextFieldTextStyle,
             ),
           ),
+          if (context.watch<NotesProvider>().isQueryExist)
+            IconButton(
+              onPressed: () {
+                controller.text = '';
+                context.read<NotesProvider>().setQuery = '';
+              },
+              icon: const Icon(
+                Icons.close,
+                size: 20,
+              ),
+            ),
           SvgPicture.asset("assets/icons/search.svg"),
         ],
       ),

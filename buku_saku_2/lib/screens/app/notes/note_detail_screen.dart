@@ -5,7 +5,7 @@ import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/date_picker.dart';
-import 'package:buku_saku_2/screens/app/notes/components/white_box_shadow.dart';
+import 'package:buku_saku_2/screens/app/notes/components/detail_box.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:open_file/open_file.dart';
@@ -48,7 +48,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           const SizedBox(height: 10),
-                          WhiteBoxShadow(
+                          DetailBox(
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Jenjang",
@@ -78,7 +78,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               )
                             ],
                           ),
-                          WhiteBoxShadow(
+                          DetailBox(
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Tanggal Kegiatan",
@@ -97,7 +97,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               ),
                             ],
                           ),
-                          WhiteBoxShadow(
+                          DetailBox(
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Uraian Kegiatan",
@@ -113,7 +113,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               ),
                             ],
                           ),
-                          const WhiteBoxShadow(
+                          const DetailBox(
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Kegiatan Tim",
@@ -122,7 +122,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               ),
                             ],
                           ),
-                          WhiteBoxShadow(
+                          DetailBox(
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Bukti Fisik",

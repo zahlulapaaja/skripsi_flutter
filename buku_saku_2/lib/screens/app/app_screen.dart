@@ -5,6 +5,7 @@ import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
@@ -126,6 +127,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               case 0:
                 animationController?.reverse().then<dynamic>((data) {
                   if (!mounted) return;
+                  context.read<NotesProvider>().setQuery = '';
                   context.read<ScreenProvider>().setTabBody =
                       HomeScreen(animationController: animationController);
                 });
@@ -134,6 +136,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               case 1:
                 animationController?.reverse().then<dynamic>((data) {
                   if (!mounted) return;
+                  context.read<NotesProvider>().setQuery = '';
                   context.read<ScreenProvider>().setTabBody =
                       NotesScreen(animationController: animationController);
                 });
@@ -141,7 +144,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
 
               case 2:
                 animationController?.reverse().then<dynamic>((data) {
-                  if (!mounted) return;
+                  // if (!mounted) return;
                   context.read<ScreenProvider>().setTabBody = DictionaryScreen(
                       animationController: animationController);
                   context.read<DictionaryProvider>().setDictionaryList =

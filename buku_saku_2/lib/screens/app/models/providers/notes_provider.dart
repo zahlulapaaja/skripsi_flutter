@@ -12,6 +12,7 @@ class NotesProvider with ChangeNotifier {
 
   double get akUtamaTerkumpul => _akUtamaTerkumpul;
   double get akPenunjangTerkumpul => _akPenunjangTerkumpul;
+  bool get isQueryExist => (_searchKey == '') ? false : true;
 
   Future<List<Note>> get notes async {
     if (_searchKey == '') {

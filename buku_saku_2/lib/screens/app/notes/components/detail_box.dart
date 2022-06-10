@@ -2,8 +2,8 @@ import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
 
-class WhiteBoxShadow extends StatelessWidget {
-  const WhiteBoxShadow({
+class DetailBox extends StatelessWidget {
+  const DetailBox({
     Key? key,
     required this.children,
   }) : super(key: key);

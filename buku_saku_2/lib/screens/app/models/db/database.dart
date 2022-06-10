@@ -132,8 +132,8 @@ class DbHelper {
     final db = await dbInstance;
 
     // TODO : nanti jangan cuma judul, tapi uraian juga bisa masuk pencarian
-    final List<Map<String, dynamic>> maps =
-        await db.query('catatan', where: 'judul LIKE ?', whereArgs: ['%$key%']);
+    final List<Map<String, dynamic>> maps = await db.query('catatan',
+        where: 'judul LIKE ?', whereArgs: ['%$key%'], orderBy: "kodeButir ASC");
 
     return List.generate(maps.length, (i) {
       return Note(
