@@ -177,9 +177,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
       // ignore: missing_enum_constant_in_switch
       switch (drawerIndex) {
         case DrawerIndex.home:
-          setState(() {
-            drawerIndex = DrawerIndex.home;
-          });
+          drawerIndex = DrawerIndex.home;
           break;
         case DrawerIndex.export:
           Navigator.pushNamed(context, ExportNotesScreen.id);

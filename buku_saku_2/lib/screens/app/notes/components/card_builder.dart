@@ -111,9 +111,8 @@ class CardBuilder extends StatelessWidget {
                     ),
                     const SizedBox(height: 7),
                     Text(
-                      (DateFormat("d MMM yyyy", "id_ID")
-                              .format(notes.dateCreated!))
-                          .toString(),
+                      DateFormat("d MMM yyyy", "id_ID")
+                          .format(notes.dateCreated!),
                       textAlign: TextAlign.left,
                       style: AppConstants.kCardDateTextStyle,
                     ),

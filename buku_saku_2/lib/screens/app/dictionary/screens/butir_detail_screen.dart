@@ -312,7 +312,7 @@ class ButirDetailScreen extends StatelessWidget {
       msg: msg,
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.BOTTOM,
-      backgroundColor: AppColors.alert,
+      backgroundColor: AppColors.alert.withOpacity(0.9),
       textColor: Colors.white,
       fontSize: AppConstants.kTinyFontSize,
     );

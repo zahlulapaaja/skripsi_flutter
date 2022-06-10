@@ -59,6 +59,24 @@ class Note {
       'dateCreated': dateCreated.toString(),
     };
   }
+
+  List<dynamic> toList() {
+    return [
+      // pikir format yang paling baik utk semua itu, terutama tanggal tu
+      id,
+      judul,
+      uraian,
+      kodeButir,
+      jumlahKegiatan,
+      angkaKredit,
+      isTim ? "ya" : "tidak",
+      jmlAnggota,
+      peranDalamTim,
+      listTanggal,
+      status,
+      dateCreated,
+    ];
+  }
 }
 
 class BuktiFisik {
