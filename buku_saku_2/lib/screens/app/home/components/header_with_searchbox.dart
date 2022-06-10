@@ -2,7 +2,6 @@ import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
@@ -113,7 +112,7 @@ class HeaderWithSearchbox extends StatelessWidget {
                         size: 20,
                       ),
                     ),
-                  SvgPicture.asset("assets/icons/search.svg"),
+                  Image.asset("assets/icons/search.png"),
                 ],
               ),
             ),

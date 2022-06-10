@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/notes/components/new_note_form.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class AddNoteScreen extends StatefulWidget {
@@ -61,9 +60,9 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               title: (widget.note == null) ? 'Tambah Catatan' : 'Edit Catatan',
               leftIconButton: IconButton(
                 icon: const Icon(
-                  FontAwesomeIcons.chevronLeft,
+                  Icons.chevron_left,
                   color: AppColors.offWhite,
-                  size: AppConstants.kLargeFontSize,
+                  size: AppConstants.kHugeFontSize,
                 ),
                 onPressed: () {
                   Navigator.pop(context);

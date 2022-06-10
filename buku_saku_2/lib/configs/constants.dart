@@ -133,10 +133,8 @@ class AppConstants {
       fontSize: AppConstants.kSmallFontSize,
       fontWeight: FontWeight.normal,
     ),
-    // suffixIcon: Icon(Icons.close),
     enabledBorder: InputBorder.none,
     focusedBorder: InputBorder.none,
-    // suffixIcon: SvgPicture.asset("assets/icons/search.svg"),
   );
 
   static kTextFieldDecoration(

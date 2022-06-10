@@ -3,7 +3,6 @@ import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 class JenjangScreen extends StatelessWidget {
@@ -30,8 +29,8 @@ class JenjangScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  SvgPicture.asset(
-                    'assets/icons/office-briefcase.svg',
+                  Image.asset(
+                    'assets/icons/office-briefcase.png',
                     width: 50,
                   ),
                   const SizedBox(height: 15),
@@ -65,8 +64,8 @@ class JenjangScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  SvgPicture.asset(
-                    'assets/icons/office-briefcase.svg',
+                  Image.asset(
+                    'assets/icons/office-briefcase.png',
                     width: 50,
                   ),
                   const SizedBox(height: 15),

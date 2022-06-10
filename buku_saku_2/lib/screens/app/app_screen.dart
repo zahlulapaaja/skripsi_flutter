@@ -8,6 +8,7 @@ import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
+import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/controllers/drawer_user_controller.dart';
@@ -154,7 +155,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                 break;
 
               case 3:
-                Navigator.pushNamed(context, ExportNotesScreen.id);
+                Navigator.pushNamed(context, SettingScreen.id);
                 break;
             }
           },
@@ -174,14 +175,10 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
         case DrawerIndex.home:
           setState(() {
             drawerIndex = DrawerIndex.home;
-            print('DrawerIndex.Home');
           });
           break;
         case DrawerIndex.export:
-          setState(() {
-            drawerIndex = DrawerIndex.export;
-            print('DrawerIndex.export');
-          });
+          Navigator.pushNamed(context, ExportNotesScreen.id);
           break;
         case DrawerIndex.rules:
           print('DrawerIndex.rules');

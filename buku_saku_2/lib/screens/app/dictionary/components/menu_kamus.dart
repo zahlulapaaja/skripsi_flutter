@@ -1,7 +1,6 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class MenuKamus extends StatelessWidget {
   const MenuKamus({Key? key}) : super(key: key);
@@ -23,8 +22,8 @@ class MenuKamus extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    SvgPicture.asset(
-                      'assets/icons/office-briefcase.svg',
+                    Image.asset(
+                      'assets/icons/office-briefcase.png',
                       width: 50,
                     ),
                     const SizedBox(height: 15),
@@ -56,8 +55,8 @@ class MenuKamus extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    SvgPicture.asset(
-                      'assets/icons/office-briefcase.svg',
+                    Image.asset(
+                      'assets/icons/office-briefcase.png',
                       width: 50,
                     ),
                     const SizedBox(height: 15),

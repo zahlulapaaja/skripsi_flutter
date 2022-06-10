@@ -4,7 +4,6 @@ import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:open_file/open_file.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
@@ -91,27 +90,12 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                     title: 'Detail Catatan',
                     leftIconButton: IconButton(
                       icon: const Icon(
-                        FontAwesomeIcons.chevronLeft,
+                        Icons.chevron_left,
                         color: AppColors.offWhite,
-                        size: AppConstants.kLargeFontSize,
+                        size: AppConstants.kHugeFontSize,
                       ),
                       onPressed: () {
                         Navigator.pop(context);
-                      },
-                    ),
-                    rightIconButton: IconButton(
-                      icon: const Icon(
-                        FontAwesomeIcons.edit,
-                        color: AppColors.offWhite,
-                        size: AppConstants.kLargeFontSize,
-                      ),
-                      onPressed: () async {
-                        // final value = await Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => AddNoteScreen(note: note),
-                        //   ),
-                        // );
                       },
                     ),
                   ),

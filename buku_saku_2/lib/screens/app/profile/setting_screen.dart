@@ -4,7 +4,6 @@ import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SettingScreen extends StatelessWidget {
   static const id = 'setting_screen';
@@ -23,9 +22,9 @@ class SettingScreen extends StatelessWidget {
               title: 'Setelan',
               leftIconButton: IconButton(
                 icon: const Icon(
-                  FontAwesomeIcons.chevronLeft,
+                  Icons.chevron_left,
                   color: AppColors.offWhite,
-                  size: AppConstants.kLargeFontSize,
+                  size: AppConstants.kHugeFontSize,
                 ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -68,9 +67,9 @@ class SettingScreen extends StatelessWidget {
                   width: 75,
                   padding: const EdgeInsets.all(4.0),
                   child: const Icon(
-                    FontAwesomeIcons.userCircle,
+                    Icons.account_circle_outlined,
                     color: AppColors.black,
-                    size: 40,
+                    size: 60,
                   ),
                 ),
                 Expanded(

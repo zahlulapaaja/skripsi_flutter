@@ -5,7 +5,6 @@ import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math' as math;
 
 import 'package:provider/provider.dart';
@@ -119,15 +118,10 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.end,
                                         children: <Widget>[
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 28,
                                             height: 28,
-                                            child: SvgPicture.asset(
-                                              "assets/icons/star.svg",
-                                              color: AppColors.success,
-                                              semanticsLabel: "data",
-                                              // 'PAK Saat Ini',
-                                            ),
+                                            child: Icon(Icons.numbers_rounded),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(
@@ -196,14 +190,10 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.end,
                                         children: <Widget>[
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 28,
                                             height: 28,
-                                            child: SvgPicture.asset(
-                                              "assets/icons/star.svg",
-                                              color: AppColors.primary,
-                                              semanticsLabel: 'AK Terkumpul',
-                                            ),
+                                            child: Icon(Icons.numbers_rounded),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(

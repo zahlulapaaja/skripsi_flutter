@@ -1,7 +1,6 @@
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:buku_saku_2/screens/app/notes/components/card_list_view.dart';
 import 'package:buku_saku_2/screens/app/notes/components/card_grid_view.dart';
 import 'package:buku_saku_2/screens/app/notes/components/note_searchbox.dart';
@@ -32,12 +31,10 @@ class _NotesScreenState extends State<NotesScreen> {
             AppBarUI(
               title: 'Catatan',
               rightIconButton: IconButton(
-                icon: SvgPicture.asset(
+                icon: Image.asset(
                   isListView
-                      ? "assets/icons/grid-view.svg"
-                      : "assets/icons/list-view.svg",
-                  color: Colors.white,
-                  semanticsLabel: 'List view icons',
+                      ? "assets/icons/grid-view.png"
+                      : "assets/icons/list-view.png",
                 ),
                 onPressed: () {
                   setState(() {

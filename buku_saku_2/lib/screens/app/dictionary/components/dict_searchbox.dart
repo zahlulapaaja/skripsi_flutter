@@ -5,7 +5,6 @@ import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/butir_screen.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/unsur_screen.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 class DictSearchBox extends StatefulWidget {
@@ -73,7 +72,7 @@ class _DictSearchBoxState extends State<DictSearchBox> {
                 size: 20,
               ),
             ),
-          SvgPicture.asset("assets/icons/search.svg"),
+          Image.asset("assets/icons/search.png"),
         ],
       ),
     );

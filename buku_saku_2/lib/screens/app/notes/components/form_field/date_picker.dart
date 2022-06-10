@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:intl/intl.dart';
 
@@ -65,8 +64,9 @@ class DatePicker extends StatelessWidget {
                     ).then(onAdd);
                   },
                   child: const Icon(
-                    FontAwesomeIcons.plusCircle,
+                    Icons.edit_calendar_rounded,
                     color: AppColors.black,
+                    size: AppConstants.kHugeFontSize - 6,
                   ),
                 ),
               ],
@@ -125,8 +125,8 @@ class DatePill extends StatelessWidget {
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
               constraints: const BoxConstraints(minWidth: 0),
               child: const Icon(
-                FontAwesomeIcons.timesCircle,
-                size: 18,
+                Icons.highlight_remove_rounded,
+                size: AppConstants.kLargeFontSize,
               ),
               shape: const CircleBorder(),
             ),

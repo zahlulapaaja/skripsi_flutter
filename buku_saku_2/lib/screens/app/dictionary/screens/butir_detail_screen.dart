@@ -8,7 +8,6 @@ import 'package:buku_saku_2/screens/app/dictionary/components/blue_container.dar
 import 'package:buku_saku_2/screens/app/dictionary/components/ringkasan_butir.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class ButirDetailScreen extends StatelessWidget {
@@ -263,7 +262,7 @@ class ButirDetailScreen extends StatelessWidget {
             }
           },
           backgroundColor: AppColors.primary,
-          child: const Icon(FontAwesomeIcons.plus),
+          child: const Icon(Icons.add),
         ),
         body: Stack(
           children: <Widget>[
@@ -272,9 +271,9 @@ class ButirDetailScreen extends StatelessWidget {
               title: 'Detail Butir',
               leftIconButton: IconButton(
                 icon: const Icon(
-                  FontAwesomeIcons.chevronLeft,
+                  Icons.chevron_left,
                   color: AppColors.offWhite,
-                  size: AppConstants.kLargeFontSize,
+                  size: AppConstants.kHugeFontSize,
                 ),
                 onPressed: () {
                   Navigator.pop(context);

@@ -7,7 +7,6 @@ import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/date_picker.dart';
 import 'package:buku_saku_2/screens/app/notes/components/detail_box.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:open_file/open_file.dart';
 
 class NoteDetailScreen extends StatefulWidget {
@@ -179,9 +178,9 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                     title: 'Detail Catatan',
                     leftIconButton: IconButton(
                       icon: const Icon(
-                        FontAwesomeIcons.chevronLeft,
+                        Icons.chevron_left,
                         color: AppColors.offWhite,
-                        size: AppConstants.kLargeFontSize,
+                        size: AppConstants.kHugeFontSize,
                       ),
                       onPressed: () {
                         Navigator.pop(context);
@@ -189,9 +188,9 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                     ),
                     rightIconButton: IconButton(
                       icon: const Icon(
-                        FontAwesomeIcons.edit,
+                        Icons.edit_note_rounded,
                         color: AppColors.offWhite,
-                        size: AppConstants.kLargeFontSize,
+                        size: AppConstants.kHugeFontSize,
                       ),
                       onPressed: () async {
                         final value = await Navigator.push(

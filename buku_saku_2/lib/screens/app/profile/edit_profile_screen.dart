@@ -9,7 +9,6 @@ import 'package:buku_saku_2/screens/app/profile/components/profile_form_field.da
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -73,9 +72,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               title: 'Edit Profil',
               leftIconButton: IconButton(
                 icon: const Icon(
-                  FontAwesomeIcons.chevronLeft,
+                  Icons.chevron_left,
                   color: AppColors.offWhite,
-                  size: AppConstants.kLargeFontSize,
+                  size: AppConstants.kHugeFontSize,
                 ),
                 onPressed: () {
                   Navigator.pop(context);

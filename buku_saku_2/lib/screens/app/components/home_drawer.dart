@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer(
@@ -38,13 +37,13 @@ class _HomeDrawerState extends State<HomeDrawer> {
         index: DrawerIndex.export,
         labelName: 'Ekspor Catatan',
         isAssetsImage: true,
-        imageName: 'assets/icons/export.svg',
+        imageName: 'assets/icons/export.png',
       ),
       DrawerList(
         index: DrawerIndex.rules,
         labelName: 'Dasar Peraturan',
         isAssetsImage: true,
-        imageName: 'assets/icons/map.svg',
+        imageName: 'assets/icons/map.png',
       ),
       DrawerList(
         index: DrawerIndex.feedBack,
@@ -227,10 +226,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                       ? SizedBox(
                           width: 24,
                           height: 24,
-                          child: SvgPicture.asset(listData.imageName,
-                              color: widget.screenIndex == listData.index
-                                  ? AppColors.primaryLight
-                                  : AppColors.primaryDark),
+                          child: Image.asset(listData.imageName),
                         )
                       : Icon(listData.icon?.icon,
                           color: widget.screenIndex == listData.index

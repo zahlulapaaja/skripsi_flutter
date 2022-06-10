@@ -4,7 +4,6 @@ import 'package:buku_saku_2/screens/app/notes/note_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
@@ -30,11 +29,11 @@ class CardBuilder extends StatelessWidget {
 
   getNoteIcon() {
     if (pinned == true) {
-      return SvgPicture.asset("assets/icons/pinned.svg");
+      return Image.asset("assets/icons/pinned.png");
     } else if (index == 2) {
-      return SvgPicture.asset("assets/icons/important.svg");
+      return Image.asset("assets/icons/important.png");
     } else if (index == 0) {
-      return SvgPicture.asset("assets/icons/checked.svg");
+      return Image.asset("assets/icons/checked.png");
     } else {
       return const SizedBox();
     }
