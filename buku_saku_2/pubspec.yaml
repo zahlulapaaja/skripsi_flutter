@@ -12,7 +12,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
   animations: ^2.0.2
   fluttertoast: ^8.0.8
 
@@ -28,11 +27,11 @@ dependencies:
   file_picker: ^4.5.1
   open_file: ^3.2.1
   path_provider: ^2.0.9
+  syncfusion_flutter_xlsio: ^20.1.59-beta
 
   #back end
   sqflite: ^2.0.2
   provider: ^6.0.2
-  syncfusion_flutter_xlsio: ^20.1.59-beta
 
 dev_dependencies:
   flutter_test:

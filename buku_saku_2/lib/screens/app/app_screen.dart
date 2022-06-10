@@ -96,11 +96,15 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                     changeIndex(drawerIndexData);
                     //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
                   },
-                  screenView: Stack(
-                    children: <Widget>[
-                      context.watch<ScreenProvider>().tabBody,
-                      bottomBar(),
-                    ],
+                  screenView: GestureDetector(
+                    onTap: () =>
+                        FocusScope.of(context).requestFocus(FocusNode()),
+                    child: Stack(
+                      children: <Widget>[
+                        context.watch<ScreenProvider>().tabBody,
+                        bottomBar(),
+                      ],
+                    ),
                   ),
                 ),
               );

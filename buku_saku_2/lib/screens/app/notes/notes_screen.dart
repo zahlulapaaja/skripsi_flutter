@@ -33,8 +33,8 @@ class _NotesScreenState extends State<NotesScreen> {
               rightIconButton: IconButton(
                 icon: Image.asset(
                   isListView
-                      ? "assets/icons/grid-view.png"
-                      : "assets/icons/list-view.png",
+                      ? "assets/icons/card_view.png"
+                      : "assets/icons/list_view.png",
                 ),
                 onPressed: () {
                   setState(() {

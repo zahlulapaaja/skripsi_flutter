@@ -41,7 +41,7 @@ class HeaderWithSearchbox extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+                  padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
@@ -58,7 +58,10 @@ class HeaderWithSearchbox extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 16),
                         child: Center(
-                          child: Image.asset("assets/icons/logo.png"),
+                          child: Image.asset(
+                            "assets/icons/logo.png",
+                            width: 80,
+                          ),
                         ),
                       )
                     ],

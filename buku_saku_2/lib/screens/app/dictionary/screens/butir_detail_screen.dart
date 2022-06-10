@@ -8,6 +8,7 @@ import 'package:buku_saku_2/screens/app/dictionary/components/blue_container.dar
 import 'package:buku_saku_2/screens/app/dictionary/components/ringkasan_butir.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 class ButirDetailScreen extends StatelessWidget {
@@ -249,7 +250,9 @@ class ButirDetailScreen extends StatelessWidget {
             if (butir.pelaksana == "Semua Jenjang" ||
                 (kodeJenjang! - jenjang.kodeJenjang).abs() < 2) {
               exist
-                  ? print('ada alert yang kasih tau udh ada catatannya')
+                  ? toastAlert(
+                      msg:
+                          "Tidak dapat membuat dua catatan dengan butir yang sama")
                   : Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -257,8 +260,7 @@ class ButirDetailScreen extends StatelessWidget {
                       ),
                     );
             } else {
-              print(
-                  'ada alert yang kasih tau ga bisa ambil catatan ini berdasarkan jenjang anda');
+              toastAlert(msg: "Butir ini tidak sesuai dengan jenjang Anda");
             }
           },
           backgroundColor: AppColors.primary,
@@ -302,6 +304,17 @@ class ButirDetailScreen extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return listViews[index];
       },
+    );
+  }
+
+  void toastAlert({required String msg}) {
+    Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: AppColors.alert,
+      textColor: Colors.white,
+      fontSize: AppConstants.kTinyFontSize,
     );
   }
 }

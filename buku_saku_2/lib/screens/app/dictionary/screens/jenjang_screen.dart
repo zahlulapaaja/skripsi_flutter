@@ -29,9 +29,11 @@ class JenjangScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Image.asset(
-                    'assets/icons/office-briefcase.png',
-                    width: 50,
+                  Expanded(
+                    child: Image.asset(
+                      'assets/icons/office-briefcase.png',
+                      width: 50,
+                    ),
                   ),
                   const SizedBox(height: 15),
                   const Text(
@@ -64,9 +66,11 @@ class JenjangScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Image.asset(
-                    'assets/icons/office-briefcase.png',
-                    width: 50,
+                  Expanded(
+                    child: Image.asset(
+                      'assets/icons/office-briefcase.png',
+                      width: 50,
+                    ),
                   ),
                   const SizedBox(height: 15),
                   const Text(

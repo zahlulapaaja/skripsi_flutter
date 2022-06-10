@@ -91,76 +91,71 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   }
 
   Widget getMainListViewUI(BuildContext context) {
-    return GestureDetector(
-      // todo : INI CONTOH ILANGIN FOKUS DARI KEYBOARD
-      onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
-      child: Form(
-        key: _formKey,
-        child: ListView(
-          padding: EdgeInsets.only(
-            top: AppBar().preferredSize.height +
-                MediaQuery.of(context).padding.top,
-            bottom: 62 + MediaQuery.of(context).padding.bottom,
+    return Form(
+      key: _formKey,
+      child: ListView(
+        padding: EdgeInsets.only(
+          top: AppBar().preferredSize.height +
+              MediaQuery.of(context).padding.top,
+          bottom: 62 + MediaQuery.of(context).padding.bottom,
+        ),
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          const SizedBox(height: 20),
+          ProfileFormField(
+            title: "Nama Lengkap",
+            hintText: "Masukkan nama lengkap Anda...",
+            controller: _nameTextController,
+            keyboardType: TextInputType.text,
           ),
-          scrollDirection: Axis.vertical,
-          children: <Widget>[
-            const SizedBox(height: 20),
-            ProfileFormField(
-              title: "Nama Lengkap",
-              hintText: "Masukkan nama lengkap Anda...",
-              controller: _nameTextController,
-              keyboardType: TextInputType.text,
-            ),
-            DropdownField(
-              title: "Jenjang",
-              data: jenjang,
-              initialData: selectedJenjang,
-              hintText: "Pilih jenjang...",
-              onChanged: (value) {
-                setState(() {
-                  selectedJenjang = value;
-                  selectedGolongan = null;
-                  golongan = [];
-                  for (var item in data.listJenjang!) {
-                    if (item.jenjang == value) {
-                      golongan.add(item.golongan);
-                    }
-                  }
-                });
-              },
-            ),
-            DropdownField(
-              title: "Golongan",
-              data: golongan,
-              initialData: selectedGolongan,
-              hintText: "Pilih golongan...",
-              onChanged: (value) {
-                for (var row in data.listJenjang!) {
-                  if (row.jenjang == selectedJenjang && row.golongan == value) {
-                    data.jenjang = row;
+          DropdownField(
+            title: "Jenjang",
+            data: jenjang,
+            initialData: selectedJenjang,
+            hintText: "Pilih jenjang...",
+            onChanged: (value) {
+              setState(() {
+                selectedJenjang = value;
+                selectedGolongan = null;
+                golongan = [];
+                for (var item in data.listJenjang!) {
+                  if (item.jenjang == value) {
+                    golongan.add(item.golongan);
                   }
                 }
+              });
+            },
+          ),
+          DropdownField(
+            title: "Golongan",
+            data: golongan,
+            initialData: selectedGolongan,
+            hintText: "Pilih golongan...",
+            onChanged: (value) {
+              for (var row in data.listJenjang!) {
+                if (row.jenjang == selectedJenjang && row.golongan == value) {
+                  data.jenjang = row;
+                }
+              }
+            },
+          ),
+          ProfileFormField(
+            title: "Angka Kredit Saat Ini",
+            hintText: "Masukkan angka kredit Anda saat ini...",
+            controller: _akSaatIniTextController,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.only(top: 40, right: 20, bottom: 0, left: 20),
+            child: BlueRoundedButton(
+              buttonTitle: 'Simpan',
+              onPressed: () {
+                saveData(data);
               },
             ),
-            ProfileFormField(
-              title: "Angka Kredit Saat Ini",
-              hintText: "Masukkan angka kredit Anda saat ini...",
-              controller: _akSaatIniTextController,
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 40, right: 20, bottom: 0, left: 20),
-              child: BlueRoundedButton(
-                buttonTitle: 'Simpan',
-                onPressed: () {
-                  saveData(data);
-                },
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
