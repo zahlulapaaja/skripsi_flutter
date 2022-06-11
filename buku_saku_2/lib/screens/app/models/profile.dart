@@ -6,18 +6,12 @@ class Profile {
   double? akSaatIni;
   List<Jenjang>? listJenjang;
 
-  // nanti dua variabel ini apus aja
-  // double? akUtamaTerkumpul;
-  // double? akPenunjangTerkumpul;
-
   Profile({
     this.id,
     this.nama,
     this.fotoProfil,
     this.jenjang,
     this.akSaatIni,
-    // this.akUtamaTerkumpul,
-    // this.akPenunjangTerkumpul,
     this.listJenjang,
   });
 
@@ -28,8 +22,6 @@ class Profile {
       'fotoProfil': fotoProfil,
       "idJenjang": jenjang!.id,
       "akSaatIni": akSaatIni,
-      // "akUtamaTerkumpul": akUtamaTerkumpul,
-      // "akPenunjangTerkumpul": akPenunjangTerkumpul,
     };
   }
 }

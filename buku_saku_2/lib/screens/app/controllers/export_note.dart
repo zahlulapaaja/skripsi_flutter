@@ -56,7 +56,7 @@ class ExportNotesScreen extends StatelessWidget {
     final File file = File('$path/$fileName');
     final newFile = await file.writeAsBytes(bytes, flush: true);
 
-    final newBukti = BuktiFisik(
+    final newBukti = DocFile(
       path: newFile.path,
       namaFile: fileName.split('.')[0],
       extension: ".xlsx",

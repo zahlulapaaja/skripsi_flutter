@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
@@ -17,10 +18,13 @@ class DbHelper {
       '''CREATE TABLE tanggal_kegiatan( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, tanggal TEXT)''';
   final String _dbSyntax4 =
       '''CREATE TABLE profil( id INTEGER PRIMARY KEY AUTOINCREMENT, nama TEXT, fotoProfil TEXT, idJenjang INTEGER,
-  akSaatIni DOUBLE(200,3), akUtamaTerkumpul DOUBLE(200,3), akPenunjangTerkumpul DOUBLE(200,3))''';
+  akSaatIni DOUBLE(200,3))''';
   final String _dbSyntax5 =
       '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, kodeJenjang INTEGER, jenjang TEXT, golongan TEXT )''';
   final String _dbSyntax6 =
+      '''CREATE TABLE excelCatatan( id INTEGER PRIMARY KEY AUTOINCREMENT, path TEXT, namaFile TEXT, extension TEXT, 
+      dateCreated TEXT)''';
+  final String _dbSyntax7 =
       '''INSERT INTO jenjang VALUES (0, 11, "Pranata Komputer Terampil", "IIc"), (1, 11, "Pranata Komputer Terampil", "IId"),
       (2, 12, "Pranata Komputer Mahir", "IIIa"), (3, 12, "Pranata Komputer Mahir", "IIIb"), (4, 13, "Pranata Komputer Penyelia", "IIIc"),
       (5, 13, "Pranata Komputer Penyelia", "IIId"), (6, 21, "Pranata Komputer Ahli Pertama", "IIIa"),
@@ -47,6 +51,7 @@ class DbHelper {
         db.execute(_dbSyntax4);
         db.execute(_dbSyntax5);
         db.execute(_dbSyntax6);
+        db.execute(_dbSyntax7);
       },
     );
   }
@@ -57,18 +62,8 @@ class DbHelper {
     final List<Map<String, dynamic>> maps = orderbyKodeButir
         ? await db.query('catatan', orderBy: "kodeButir ASC")
         : await db.query('catatan', orderBy: "dateCreated DESC");
-    final List<Map<String, dynamic>> maps2 = await db.query('tanggal_kegiatan');
 
     return List.generate(maps.length, (i) {
-      // perlukah tanggal disini ? keknya ga kepake, cma kepake di notebyid
-      List<DateTime>? listTanggal = [];
-      if (maps2.isNotEmpty) {
-        for (var item in maps2) {
-          if (item['idCatatan'] == maps[i]['id']) {
-            listTanggal.add(DateTime.parse(item['tanggal']));
-          }
-        }
-      }
       return Note(
         id: maps[i]['id'],
         judul: maps[i]['judul'],
@@ -77,7 +72,6 @@ class DbHelper {
         angkaKredit: maps[i]['angkaKredit'],
         status: maps[i]['status'],
         dateCreated: DateTime.parse(maps[i]['dateCreated']),
-        listTanggal: listTanggal,
       );
     });
   }
@@ -92,9 +86,9 @@ class DbHelper {
     final List<Map<String, dynamic>> dates = await db
         .query('tanggal_kegiatan', where: 'idCatatan = ?', whereArgs: [id]);
 
-    List<BuktiFisik> buktiFisik = List.generate(
+    List<DocFile> buktiFisik = List.generate(
       files.length,
-      (index) => BuktiFisik(
+      (index) => DocFile(
         id: files[index]['id'],
         idCatatan: files[index]['idCatatan'],
         path: files[index]['path'],
@@ -121,10 +115,10 @@ class DbHelper {
       peranDalamTim: maps[0]['peranDalamTim'],
       status: maps[0]['status'],
       dateCreated: DateTime.parse(maps[0]['dateCreated']),
-
-      // this.idProfil,
       listTanggal: listTanggal,
+
       buktiFisik: buktiFisik,
+      // this.idProfil,
     );
   }
 
@@ -140,6 +134,8 @@ class DbHelper {
         id: maps[i]['id'],
         judul: maps[i]['judul'],
         uraian: maps[i]['uraian'],
+        // kodeButir: maps[i]['kodeButir'],
+        // angkaKredit: maps[i]['angkaKredit'],
         status: maps[i]['status'],
         dateCreated: DateTime.parse(maps[i]['dateCreated']),
       );
@@ -201,5 +197,26 @@ class DbHelper {
     await db.delete('bukti_fisik', where: 'idCatatan = ?', whereArgs: [noteId]);
     await db.delete('tanggal_kegiatan',
         where: 'idCatatan = ?', whereArgs: [noteId]);
+  }
+
+  Future<void> saveExportNote(File file) async {
+    final db = await dbInstance;
+
+    // final insertedId = await db.insert('catatan', note.toMap(),
+    //     conflictAlgorithm: ConflictAlgorithm.replace);
+
+    // if (note.buktiFisik != null) {
+    //   for (var bukti in note.buktiFisik!) {
+    //     await db.insert('bukti_fisik', bukti.toMap(insertedId),
+    //         conflictAlgorithm: ConflictAlgorithm.replace);
+    //   }
+    // }
+    // if (note.listTanggal != null) {
+    //   for (var tanggal in note.listTanggal!) {
+    //     await db.insert('tanggal_kegiatan',
+    //         {"idCatatan": insertedId, "tanggal": tanggal.toString()},
+    //         conflictAlgorithm: ConflictAlgorithm.replace);
+    //   }
+    // }
   }
 }

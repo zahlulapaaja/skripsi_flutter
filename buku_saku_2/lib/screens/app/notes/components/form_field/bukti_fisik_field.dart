@@ -8,7 +8,7 @@ class BuktiFisikField extends StatelessWidget {
   const BuktiFisikField(
       {Key? key, required this.onPressed, this.fileAbc, this.selectedData})
       : super(key: key);
-  final List<BuktiFisik>? selectedData;
+  final List<DocFile>? selectedData;
   final Function() onPressed;
   final List<PlatformFile>? fileAbc;
 

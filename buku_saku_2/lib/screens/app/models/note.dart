@@ -16,7 +16,7 @@ class Note {
   int? idProfil;
   DateTime? dateCreated;
   List<DateTime>? listTanggal;
-  List<BuktiFisik>? buktiFisik;
+  List<DocFile>? buktiFisik;
 
   // int status :
   // 0 = nothing
@@ -79,14 +79,14 @@ class Note {
   }
 }
 
-class BuktiFisik {
+class DocFile {
   final int? id;
   final String path;
   final int? idCatatan;
   final String namaFile;
   final String extension;
 
-  BuktiFisik({
+  DocFile({
     this.id,
     this.idCatatan,
     required this.path,

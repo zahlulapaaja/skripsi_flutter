@@ -37,8 +37,6 @@ class DbProfile extends DbHelper {
         fotoProfil: maps[0]['fotoProfil'],
         jenjang: jenjang,
         akSaatIni: maps[0]['akSaatIni'],
-        // akUtamaTerkumpul: maps[0]['akUtamaTerkumpul'],
-        // akPenunjangTerkumpul: maps[0]['akPenunjangTerkumpul'],
         listJenjang: listJenjang,
       );
     }

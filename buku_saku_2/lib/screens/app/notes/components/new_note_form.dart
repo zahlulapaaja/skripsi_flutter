@@ -175,7 +175,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
 
               // harusnya nanti klo udh tekan save baru save permanent
               final newFile = await saveFilePermanently(file);
-              final newBukti = BuktiFisik(
+              final newBukti = DocFile(
                 path: newFile.path,
                 namaFile: file.name,
                 extension: file.extension!,
