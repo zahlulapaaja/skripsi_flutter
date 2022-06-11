@@ -10,7 +10,8 @@ import 'dart:math' as math;
 import 'package:provider/provider.dart';
 
 class DetailAngkaKredit extends StatefulWidget {
-  const DetailAngkaKredit({Key? key}) : super(key: key);
+  const DetailAngkaKredit({Key? key, this.animation}) : super(key: key);
+  final Animation<double>? animation;
 
   @override
   State<DetailAngkaKredit> createState() => _DetailAngkaKreditState();
@@ -27,6 +28,10 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
     data = context.watch<ProfileProvider>().profil;
     akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
     akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
+    double totalAk = data!.akSaatIni! + akUtama + akPenunjang;
+    double targetAK = context.watch<ProfileProvider>().akNaikPangkat;
+
+    double angleAK = (totalAk / targetAK) * 360;
 
     if (context.watch<NotesProvider>().isQueryExist == false) {
       return Padding(
@@ -279,11 +284,15 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                             Padding(
                               padding: const EdgeInsets.all(4.0),
                               child: CustomPaint(
-                                painter: CurvePainter(colors: [
-                                  AppColors.primaryDark,
-                                  AppColors.primary,
-                                  AppColors.primaryLight,
-                                ], angle: 140 + (360 - 140)),
+                                painter: CurvePainter(
+                                    colors: [
+                                      AppColors.primaryDark,
+                                      AppColors.primary,
+                                      AppColors.primaryLight,
+                                    ],
+                                    angle: angleAK +
+                                        (360 - angleAK) *
+                                            (1.0 - widget.animation!.value)),
                                 child: const SizedBox(
                                   width: 108,
                                   height: 108,

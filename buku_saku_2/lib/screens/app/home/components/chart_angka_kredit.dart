@@ -36,7 +36,7 @@ class ChartAngkaKredit extends StatelessWidget {
       animation: animationController!,
       builder: (BuildContext context, Widget? child) {
         return Container(
-          margin: const EdgeInsets.only(left: 14.0, right: 14.0, top: 40.0),
+          margin: const EdgeInsets.only(left: 14.0, right: 14.0, top: 20.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: const BorderRadius.all(Radius.circular(8.0)),

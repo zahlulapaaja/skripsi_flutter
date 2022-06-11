@@ -1,6 +1,5 @@
 import 'package:animations/animations.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:buku_saku_2/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 
@@ -155,7 +154,7 @@ class CenterNextButton extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, SignInScreen.id);
+                      // Navigator.pushNamed(context, SignInScreen.id);
                     },
                     child: const Text(
                       'Login',

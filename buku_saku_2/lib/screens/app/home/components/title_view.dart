@@ -7,16 +7,12 @@ import 'package:provider/provider.dart';
 class TitleView extends StatelessWidget {
   final String titleTxt;
   final bool detailBtn;
-  final AnimationController? animationController;
-  final Animation<double>? animation;
   final Function()? onTap;
 
   const TitleView({
     Key? key,
     this.titleTxt = "",
     this.detailBtn = false,
-    this.animationController,
-    this.animation,
     this.onTap,
   }) : super(key: key);
 

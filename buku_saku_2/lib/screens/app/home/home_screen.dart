@@ -102,16 +102,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           context.read<ScreenProvider>().setTabBody = DetailAngkaKreditScreen(
               animationController: widget.animationController);
         },
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 2, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
       ),
     );
 
     listViews.add(
-      const DetailAngkaKredit(),
+      DetailAngkaKredit(
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController!,
+            curve: const Interval((1 / count) * 1, 1.0,
+                curve: Curves.fastOutSlowIn))),
+      ),
     );
 
     listViews.add(
@@ -124,11 +124,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               MaterialPageRoute(
                   builder: (context) => const AppScreen(defaultIndex: 1)));
         },
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 4, 1.0,
-                curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
       ),
     );
 
@@ -179,59 +174,51 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         AnimatedBuilder(
           animation: widget.animationController!,
           builder: (BuildContext context, Widget? child) {
-            return FadeTransition(
-              opacity: topBarAnimation!,
-              child: Transform(
-                transform: Matrix4.translationValues(
-                    0.0, 30 * (1.0 - topBarAnimation!.value), 0.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: AppColors.primary,
-                    borderRadius: const BorderRadius.only(
-                        // bottomLeft: Radius.circular(32.0),
-                        ),
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color:
-                              AppColors.grey.withOpacity(0.4 * topBarOpacity),
-                          offset: const Offset(1.1, 1.1),
-                          blurRadius: 10.0),
-                    ],
+            return Container(
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: const BorderRadius.only(
+                    // bottomLeft: Radius.circular(32.0),
+                    ),
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      color: AppColors.grey.withOpacity(0.4 * topBarOpacity),
+                      offset: const Offset(1.1, 1.1),
+                      blurRadius: 10.0),
+                ],
+              ),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: MediaQuery.of(context).padding.top,
                   ),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: MediaQuery.of(context).padding.top,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 16,
-                          right: 16,
-                          top: 12 - 4.0 * topBarOpacity,
-                          bottom: 8 - 4.0 * topBarOpacity,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Opacity(
-                                  opacity: topBarOpacity,
-                                  child: const Text(
-                                    'Buku Saku Prakom',
-                                    textAlign: TextAlign.center,
-                                    style: AppConstants.kNavHeaderTextStyle,
-                                  ),
-                                ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 16,
+                      right: 16,
+                      top: 12 - 4.0 * topBarOpacity,
+                      bottom: 8 - 4.0 * topBarOpacity,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Opacity(
+                              opacity: topBarOpacity,
+                              child: const Text(
+                                'Buku Saku Prakom',
+                                textAlign: TextAlign.center,
+                                style: AppConstants.kNavHeaderTextStyle,
                               ),
                             ),
-                          ],
+                          ),
                         ),
-                      )
-                    ],
-                  ),
-                ),
+                      ],
+                    ),
+                  )
+                ],
               ),
             );
           },

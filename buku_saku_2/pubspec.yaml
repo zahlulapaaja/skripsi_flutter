@@ -13,14 +13,13 @@ dependencies:
   flutter:
     sdk: flutter
   animations: ^2.0.2
-  fluttertoast: ^8.0.8
 
   #punya aplikasi
   flutter_staggered_grid_view: ^0.6.1
   pie_chart: ^5.3.1
+  fluttertoast: ^8.0.8
   dropdown_search: ^2.0.1
   number_inc_dec: ^0.8.0
-  auto_size_text: ^3.0.0
   intl: ^0.17.0
 
   #  manajemen file
