@@ -22,7 +22,7 @@ class DbHelper {
   final String _dbSyntax5 =
       '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, kodeJenjang INTEGER, jenjang TEXT, golongan TEXT )''';
   final String _dbSyntax6 =
-      '''CREATE TABLE excelCatatan( id INTEGER PRIMARY KEY AUTOINCREMENT, path TEXT, namaFile TEXT, extension TEXT, 
+      '''CREATE TABLE excel_catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, path TEXT, namaFile TEXT, extension TEXT, 
       dateCreated TEXT)''';
   final String _dbSyntax7 =
       '''INSERT INTO jenjang VALUES (0, 11, "Pranata Komputer Terampil", "IIc"), (1, 11, "Pranata Komputer Terampil", "IId"),
@@ -150,7 +150,7 @@ class DbHelper {
 
     if (note.buktiFisik != null) {
       for (var bukti in note.buktiFisik!) {
-        await db.insert('bukti_fisik', bukti.toMap(insertedId),
+        await db.insert('bukti_fisik', bukti.toMap(idCatatan: insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
@@ -172,7 +172,7 @@ class DbHelper {
         .delete('bukti_fisik', where: 'idCatatan = ?', whereArgs: [note.id]);
     if (note.buktiFisik != null) {
       for (var bukti in note.buktiFisik!) {
-        await db.insert('bukti_fisik', bukti.toMap(note.id!),
+        await db.insert('bukti_fisik', bukti.toMap(idCatatan: note.id!),
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
@@ -199,24 +199,29 @@ class DbHelper {
         where: 'idCatatan = ?', whereArgs: [noteId]);
   }
 
-  Future<void> saveExportNote(File file) async {
+  Future<List<DocFile>> getExportNote() async {
     final db = await dbInstance;
 
-    // final insertedId = await db.insert('catatan', note.toMap(),
-    //     conflictAlgorithm: ConflictAlgorithm.replace);
+    final List<Map<String, dynamic>> maps =
+        await db.query('excel_catatan', orderBy: "dateCreated");
 
-    // if (note.buktiFisik != null) {
-    //   for (var bukti in note.buktiFisik!) {
-    //     await db.insert('bukti_fisik', bukti.toMap(insertedId),
-    //         conflictAlgorithm: ConflictAlgorithm.replace);
-    //   }
-    // }
-    // if (note.listTanggal != null) {
-    //   for (var tanggal in note.listTanggal!) {
-    //     await db.insert('tanggal_kegiatan',
-    //         {"idCatatan": insertedId, "tanggal": tanggal.toString()},
-    //         conflictAlgorithm: ConflictAlgorithm.replace);
-    //   }
-    // }
+    return List.generate(maps.length, (i) {
+      return DocFile(
+        id: maps[i]['id'],
+        path: maps[i]['path'],
+        namaFile: maps[i]['namaFile'],
+        extension: maps[i]['extension'],
+        // dateCreated: DateTime.parse(maps[i]['dateCreated']),
+      );
+    });
+  }
+
+  Future<int> saveExportNote(DocFile file) async {
+    final db = await dbInstance;
+
+    final insertedId = await db.insert('excel_catatan', file.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace);
+
+    return insertedId;
   }
 }

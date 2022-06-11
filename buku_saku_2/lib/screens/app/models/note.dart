@@ -85,6 +85,7 @@ class DocFile {
   final int? idCatatan;
   final String namaFile;
   final String extension;
+  final DateTime? dateCreated;
 
   DocFile({
     this.id,
@@ -92,15 +93,17 @@ class DocFile {
     required this.path,
     required this.namaFile,
     required this.extension,
+    this.dateCreated,
   });
 
-  Map<String, dynamic> toMap(int idCatatan) {
+  Map<String, dynamic> toMap({int? idCatatan}) {
     return {
       'id': id,
       'path': path,
-      'idCatatan': idCatatan,
+      if (idCatatan != null) 'idCatatan': idCatatan,
       'namaFile': namaFile,
       'extension': extension,
+      if (idCatatan == null) 'dateCreated': dateCreated.toString(),
     };
   }
 }

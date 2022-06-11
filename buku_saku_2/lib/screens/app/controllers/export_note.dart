@@ -3,6 +3,7 @@ import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:open_file/open_file.dart';
@@ -17,7 +18,7 @@ class ExportNotesScreen extends StatelessWidget {
   var dbHelper = DbHelper();
   final List<Widget> listViews = <Widget>[];
 
-  Future<void> createExcel() async {
+  Future<DocFile> createExcel() async {
     const bool isVertical = false;
 
     final Workbook workbook = Workbook();
@@ -56,16 +57,15 @@ class ExportNotesScreen extends StatelessWidget {
     final File file = File('$path/$fileName');
     final newFile = await file.writeAsBytes(bytes, flush: true);
 
-    final newBukti = DocFile(
+    return DocFile(
       path: newFile.path,
       namaFile: fileName.split('.')[0],
       extension: ".xlsx",
+      dateCreated: DateTime.now(),
     );
-
-    OpenFile.open(newBukti.path);
   }
 
-  void addAllListData() {
+  void addAllListData(context) {
     listViews.add(
       const SizedBox(height: 20),
     );
@@ -73,9 +73,10 @@ class ExportNotesScreen extends StatelessWidget {
     listViews.add(
       Center(
         child: ElevatedButton(
-          onPressed: () {
-            print("Halooo");
-            createExcel();
+          onPressed: () async {
+            DocFile docFile = await createExcel();
+            await dbHelper.saveExportNote(docFile);
+            OpenFile.open(docFile.path);
           },
           child: const Text("Ekspor"),
         ),
@@ -90,12 +91,13 @@ class ExportNotesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: dbHelper.getNotes(),
-      builder: (context, AsyncSnapshot<List<Note>> snapshot) {
+      future: dbHelper.getExportNote(),
+      builder: (context, AsyncSnapshot<List<DocFile>> snapshot) {
         if (snapshot.hasError) {
           return Center(child: Text('error fetching data, ${snapshot.error}'));
         } else if (snapshot.hasData) {
-          List<Note> notes = snapshot.data!;
+          List<DocFile> files = snapshot.data!;
+          print(files);
           return Container(
             color: AppColors.offWhite,
             child: Scaffold(
@@ -131,7 +133,7 @@ class ExportNotesScreen extends StatelessWidget {
   }
 
   Widget getMainListViewUI(BuildContext context) {
-    addAllListData();
+    addAllListData(context);
 
     return ListView.builder(
       padding: EdgeInsets.only(

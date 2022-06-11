@@ -46,7 +46,7 @@ class ProfileProvider with ChangeNotifier {
   Future<Profile> get getProfileData async {
     _profile = await dbHelper.getProfile();
     _jenjang = _profile.listJenjang;
-    await getTargetAK();
+    if (_profile.id != null) await getTargetAK();
 
     return _profile;
   }
