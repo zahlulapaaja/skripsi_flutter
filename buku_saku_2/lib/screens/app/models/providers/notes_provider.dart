@@ -4,6 +4,7 @@ import 'package:buku_saku_2/screens/app/models/db/database.dart';
 
 class NotesProvider with ChangeNotifier {
   List<Note> _notes = [];
+  List<DocFile> _excelFiles = [];
   String _searchKey = '';
   double _akUtamaTerkumpul = 0.0;
   double _akPenunjangTerkumpul = 0.0;
@@ -13,6 +14,11 @@ class NotesProvider with ChangeNotifier {
   double get akUtamaTerkumpul => _akUtamaTerkumpul;
   double get akPenunjangTerkumpul => _akPenunjangTerkumpul;
   bool get isQueryExist => (_searchKey == '') ? false : true;
+
+  Future<List<DocFile>> get excelFiles async {
+    _excelFiles = await dbHelper.getExportNote();
+    return _excelFiles;
+  }
 
   Future<List<Note>> get notes async {
     if (_searchKey == '') {
@@ -57,6 +63,16 @@ class NotesProvider with ChangeNotifier {
 
   void deleteNote(int noteId) async {
     await dbHelper.deleteNote(noteId);
+    notifyListeners();
+  }
+
+  void exportNotes(DocFile file) async {
+    await dbHelper.saveExportNote(file);
+    notifyListeners();
+  }
+
+  void deleteExcelFiles(int idFile) async {
+    await dbHelper.deleteExportNote(idFile);
     notifyListeners();
   }
 }

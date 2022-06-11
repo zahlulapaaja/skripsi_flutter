@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
@@ -102,7 +101,6 @@ class DbHelper {
     });
 
     return Note(
-      //cek kelengkapan variabelnya
       id: maps[0]['id'],
       judul: maps[0]['judul'],
       uraian: maps[0]['uraian'],
@@ -134,8 +132,6 @@ class DbHelper {
         id: maps[i]['id'],
         judul: maps[i]['judul'],
         uraian: maps[i]['uraian'],
-        // kodeButir: maps[i]['kodeButir'],
-        // angkaKredit: maps[i]['angkaKredit'],
         status: maps[i]['status'],
         dateCreated: DateTime.parse(maps[i]['dateCreated']),
       );
@@ -201,7 +197,6 @@ class DbHelper {
 
   Future<List<DocFile>> getExportNote() async {
     final db = await dbInstance;
-
     final List<Map<String, dynamic>> maps =
         await db.query('excel_catatan', orderBy: "dateCreated");
 
@@ -211,17 +206,21 @@ class DbHelper {
         path: maps[i]['path'],
         namaFile: maps[i]['namaFile'],
         extension: maps[i]['extension'],
-        // dateCreated: DateTime.parse(maps[i]['dateCreated']),
+        dateCreated: DateTime.parse(maps[i]['dateCreated']),
       );
     });
   }
 
   Future<int> saveExportNote(DocFile file) async {
     final db = await dbInstance;
-
     final insertedId = await db.insert('excel_catatan', file.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
 
     return insertedId;
+  }
+
+  Future<void> deleteExportNote(int fileId) async {
+    final db = await dbInstance;
+    await db.delete('excel_catatan', where: 'id = ?', whereArgs: [fileId]);
   }
 }
