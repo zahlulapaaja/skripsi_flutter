@@ -1,10 +1,12 @@
-import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/home/components/chart_angka_kredit.dart';
 import 'package:buku_saku_2/screens/app/home/components/chart_angka_kredit_terkumpul.dart';
 import 'package:buku_saku_2/screens/app/home/components/informasi_jenjang.dart';
+import 'package:buku_saku_2/screens/app/models/note.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:provider/provider.dart';
 
 class DetailAngkaKreditScreen extends StatefulWidget {
   static const id = 'detail_angka_kredit_screen';
@@ -60,56 +62,22 @@ class _DetailAngkaKreditScreenState extends State<DetailAngkaKreditScreen>
   }
 
   void addAllListData() {
-    const int count = 9;
-
     listViews.add(
       ChartAngkaKredit(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 1, 1.0,
-                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
     listViews.add(
       ChartAngkaKreditTerkumpul(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 1, 1.0,
-                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
 
     listViews.add(
       InformasiJenjang(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve: const Interval((1 / count) * 1, 1.0,
-                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
-
-    listViews.add(
-      Row(
-        children: [
-          const Expanded(child: SizedBox()),
-          Expanded(
-            child: BlueRoundedButton(
-              buttonTitle: 'update',
-              onPressed: () {},
-            ),
-          ),
-          const SizedBox(width: 14),
-        ],
-      ),
-    );
-  }
-
-  Future<bool> getData() async {
-    await Future<dynamic>.delayed(const Duration(milliseconds: 50));
-    return true;
   }
 
   @override
@@ -132,9 +100,9 @@ class _DetailAngkaKreditScreenState extends State<DetailAngkaKreditScreen>
   }
 
   Widget getMainListViewUI() {
-    return FutureBuilder<bool>(
-      future: getData(),
-      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+    return FutureBuilder(
+      future: context.read<NotesProvider>().notes,
+      builder: (BuildContext context, AsyncSnapshot<List<Note>> snapshot) {
         if (!snapshot.hasData) {
           return const SizedBox();
         } else {

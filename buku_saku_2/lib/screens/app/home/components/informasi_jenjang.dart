@@ -1,93 +1,93 @@
+import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:provider/provider.dart';
 
 class InformasiJenjang extends StatelessWidget {
-  final AnimationController? animationController;
-  final Animation<double>? animation;
+  const InformasiJenjang({
+    Key? key,
+    this.animationController,
+  }) : super(key: key);
 
-  const InformasiJenjang({Key? key, this.animationController, this.animation})
-      : super(key: key);
+  final AnimationController? animationController;
 
   @override
   Widget build(BuildContext context) {
+    Profile profil = context.watch<ProfileProvider>().profil;
+    double targetAK = context.watch<ProfileProvider>().akMenujuNaikPangkat;
+
     return AnimatedBuilder(
       animation: animationController!,
       builder: (BuildContext context, Widget? child) {
-        return FadeTransition(
-          opacity: animation!,
-          child: Transform(
-            transform: Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation!.value), 0.0),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 14.0, right: 14.0, top: 14.0, bottom: 24.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      color: AppColors.grey.withOpacity(0.2),
-                      offset: const Offset(1.1, 1.1),
-                      blurRadius: 10.0,
+        return Container(
+          margin: const EdgeInsets.only(
+              left: 14.0, right: 14.0, top: 14.0, bottom: 30.0),
+          padding: const EdgeInsets.symmetric(vertical: 14.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: AppColors.grey.withOpacity(0.2),
+                offset: const Offset(1.1, 1.1),
+                blurRadius: 10.0,
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Jenjang',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: AppConstants.fontName,
+                        color: AppColors.grey.withOpacity(0.8),
+                        fontSize: AppConstants.kNormalFontSize,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Text(
+                        profil.jenjang!.jenjang,
+                        textAlign: TextAlign.center,
+                        style: AppConstants.kNormalTitleTextStyle,
+                      ),
                     ),
                   ],
                 ),
-                child: IntrinsicHeight(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          children: const <Widget>[
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 10.0, horizontal: 14.0),
-                              child: Text(
-                                'Jenjang',
-                                textAlign: TextAlign.center,
-                                style: AppConstants.kNormalTitleTextStyle,
-                              ),
-                            ),
-                            Center(
-                              child: Text(
-                                'Pranata Komputer Mahir',
-                                textAlign: TextAlign.center,
-                                style: AppConstants.kNormalTitleTextStyle,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const VerticalDivider(
-                        width: 10,
-                        thickness: 1,
-                        indent: 20,
-                        endIndent: 20,
-                        color: AppColors.grey,
-                      ),
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const <Widget>[
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 10.0, horizontal: 14.0),
-                              child: Text(
-                                'Butuh 45.123 AK menuju Pranata Komputer Penyelia',
-                                textAlign: TextAlign.center,
-                                style: AppConstants.kNormalTitleTextStyle,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+              ),
+              SizedBox(
+                width: 10,
+                child: Center(
+                  child: Container(
+                    margin: const EdgeInsetsDirectional.only(start: 1, end: 1),
+                    width: 3,
+                    height: 60,
+                    color: AppColors.lightGrey,
                   ),
                 ),
               ),
-            ),
+              Expanded(
+                child: Center(
+                  child: Text(
+                    'Butuh ${targetAK.toStringAsFixed(3)} AK untuk Naik Pangkat',
+                    textAlign: TextAlign.center,
+                    style: AppConstants.kNormalTitleTextStyle,
+                  ),
+                ),
+              ),
+            ],
           ),
         );
       },

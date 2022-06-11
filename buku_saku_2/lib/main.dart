@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           AddNoteScreen.id: (context) => const AddNoteScreen(),
           SettingScreen.id: (context) => const SettingScreen(),
           EditProfileScreen.id: (context) => const EditProfileScreen(),
-          ExportNotesScreen.id: (context) => const ExportNotesScreen(),
+          ExportNotesScreen.id: (context) => ExportNotesScreen(),
         },
       ),
     );

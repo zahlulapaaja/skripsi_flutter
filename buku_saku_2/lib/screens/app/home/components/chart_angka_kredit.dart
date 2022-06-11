@@ -1,99 +1,160 @@
+import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:provider/provider.dart';
 
 class ChartAngkaKredit extends StatelessWidget {
+  ChartAngkaKredit({
+    Key? key,
+    this.animationController,
+  }) : super(key: key);
+
   final AnimationController? animationController;
-  final Animation<double>? animation;
-
-  ChartAngkaKredit({Key? key, this.animationController, this.animation})
-      : super(key: key);
-
-  final Map<String, double> dataMap = {
-    "Flutter": 5,
-    "React": 3,
-    "Xamarin": 2,
-    "Ionic": 2,
-  };
-
   final List<Color> colorList = [
     AppColors.success,
     AppColors.primary,
-    AppColors.alert,
-    AppColors.info,
+    AppColors.lightGrey,
   ];
 
   @override
   Widget build(BuildContext context) {
+    Profile profil = context.watch<ProfileProvider>().profil;
+    double akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
+    double akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
+    double akNaikPangkat = context.watch<ProfileProvider>().akNaikPangkat;
+    double totalAK = profil.akSaatIni! + akUtama + akPenunjang;
+
+    Future.delayed(Duration.zero, () {
+      context.read<ProfileProvider>().setAKMenujuNaikPangkat =
+          akNaikPangkat - totalAK;
+    });
     return AnimatedBuilder(
       animation: animationController!,
       builder: (BuildContext context, Widget? child) {
-        return FadeTransition(
-          opacity: animation!,
-          child: Transform(
-            transform: Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation!.value), 0.0),
-            child: Padding(
-              padding:
-                  const EdgeInsets.only(left: 14.0, right: 14.0, top: 40.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      color: AppColors.grey.withOpacity(0.2),
-                      offset: const Offset(1.1, 1.1),
-                      blurRadius: 10.0,
-                    ),
-                  ],
+        return Container(
+          margin: const EdgeInsets.only(left: 14.0, right: 14.0, top: 40.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: AppColors.grey.withOpacity(0.2),
+                offset: const Offset(1.1, 1.1),
+                blurRadius: 10.0,
+              ),
+            ],
+          ),
+          child: Column(
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.0),
+                child: Text(
+                  'Angka Kredit',
+                  style: AppConstants.kLargeTitleTextStyle,
                 ),
-                child: Column(
-                  children: <Widget>[
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        'Angka Kredit',
-                        style: AppConstants.kLargeTitleTextStyle,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30.0),
+                child: PieChart(
+                  dataMap: {
+                    "Angka Kredit Saat Ini": profil.akSaatIni!,
+                    "Angka Kredit Terkumpul": akUtama + akPenunjang,
+                    "": akNaikPangkat - totalAK,
+                  },
+                  animationDuration: const Duration(milliseconds: 1000),
+                  chartRadius: MediaQuery.of(context).size.width / 2,
+                  colorList: colorList,
+                  initialAngleInDegree: 270,
+                  chartType: ChartType.ring,
+                  ringStrokeWidth: 25,
+                  centerText: totalAK.toStringAsFixed(3),
+                  centerTextStyle: const TextStyle(
+                    fontFamily: AppConstants.fontName,
+                    color: AppColors.black,
+                    fontSize: AppConstants.kHugeFontSize,
+                    fontWeight: FontWeight.w900,
+                  ),
+                  legendOptions: const LegendOptions(showLegends: false),
+                  chartValuesOptions: const ChartValuesOptions(
+                    showChartValuesInPercentage: true,
+                    showChartValueBackground: false,
+                    showChartValuesOutside: true,
+                    chartValueStyle: AppConstants.kDetailCardTextStyle,
+                  ),
+                  totalValue: akNaikPangkat,
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: colorList[0],
+                            size: 12,
+                          ),
+                          const SizedBox(width: 5),
+                          Expanded(
+                              child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Angka kredit saat ini",
+                                style: AppConstants.kCardBodyTextStyle,
+                              ),
+                              Text(
+                                profil.akSaatIni!.toStringAsFixed(3),
+                                style: AppConstants.kNormalTitleTextStyle,
+                              ),
+                            ],
+                          )),
+                        ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 30.0),
-                      child: PieChart(
-                        dataMap: dataMap,
-                        animationDuration: const Duration(milliseconds: 800),
-                        chartLegendSpacing: 32,
-                        chartRadius: MediaQuery.of(context).size.width / 3.2,
-                        colorList: colorList,
-                        initialAngleInDegree: 0,
-                        chartType: ChartType.ring,
-                        ringStrokeWidth: 32,
-                        centerText: "HYBRID",
-                        legendOptions: const LegendOptions(
-                          showLegendsInRow: true,
-                          legendPosition: LegendPosition.bottom,
-                          showLegends: true,
-                          legendShape: BoxShape.circle,
-                          legendTextStyle: TextStyle(
-                            fontWeight: FontWeight.bold,
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: colorList[1],
+                            size: 12,
                           ),
-                        ),
-                        chartValuesOptions: const ChartValuesOptions(
-                          showChartValueBackground: true,
-                          showChartValues: true,
-                          showChartValuesInPercentage: false,
-                          showChartValuesOutside: true,
-                          decimalPlaces: 1,
-                        ),
-                        // gradientList: ---To add gradient colors---
-                        // emptyColorGradient: ---Empty Color gradient---
+                          const SizedBox(width: 5),
+                          Expanded(
+                              child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Angka kredit terkumpul",
+                                style: AppConstants.kCardBodyTextStyle,
+                              ),
+                              Text(
+                                (akUtama + akPenunjang).toStringAsFixed(3),
+                                style: AppConstants.kNormalTitleTextStyle,
+                              ),
+                            ],
+                          )),
+                        ],
                       ),
                     )
                   ],
                 ),
               ),
-            ),
+            ],
           ),
         );
       },

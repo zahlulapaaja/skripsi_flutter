@@ -1,103 +1,144 @@
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-
 import 'package:pie_chart/pie_chart.dart';
+import 'package:provider/provider.dart';
 
 class ChartAngkaKreditTerkumpul extends StatelessWidget {
+  ChartAngkaKreditTerkumpul({
+    Key? key,
+    this.animationController,
+  }) : super(key: key);
+
   final AnimationController? animationController;
-  final Animation<double>? animation;
-
-  ChartAngkaKreditTerkumpul(
-      {Key? key, this.animationController, this.animation})
-      : super(key: key);
-
-  final Map<String, double> dataMap = {
-    "Flutter": 5,
-    "React": 3,
-    "Xamarin": 2,
-    "Ionic": 2,
-  };
-
   final List<Color> colorList = [
-    AppColors.success,
     AppColors.primary,
-    AppColors.alert,
-    AppColors.info,
+    AppColors.primaryLight,
   ];
 
   @override
   Widget build(BuildContext context) {
+    double akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
+    double akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
+    double persenAKUtama = akUtama / (akUtama + akPenunjang) * 100;
+    double persenAKPenunjang = akPenunjang / (akUtama + akPenunjang) * 100;
+
     return AnimatedBuilder(
       animation: animationController!,
       builder: (BuildContext context, Widget? child) {
-        return FadeTransition(
-          opacity: animation!,
-          child: Transform(
-            transform: Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation!.value), 0.0),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 14.0, right: 14.0, top: 14.0, bottom: 24.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      color: AppColors.grey.withOpacity(0.2),
-                      offset: const Offset(1.1, 1.1),
-                      blurRadius: 10.0,
-                    ),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    const Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 14.0),
-                      child: Text(
-                        'Angka Kredit Terkumpul',
-                        textAlign: TextAlign.start,
-                        style: AppConstants.kNormalTitleTextStyle,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 30.0),
-                      child: PieChart(
-                        dataMap: dataMap,
-                        animationDuration: const Duration(milliseconds: 800),
-                        chartLegendSpacing: 32,
-                        chartRadius: MediaQuery.of(context).size.width / 3.2,
-                        colorList: colorList,
-                        initialAngleInDegree: 0,
-                        chartType: ChartType.disc,
-                        ringStrokeWidth: 32,
-                        legendOptions: const LegendOptions(
-                          showLegendsInRow: false,
-                          legendPosition: LegendPosition.right,
-                          showLegends: true,
-                          legendShape: BoxShape.circle,
-                          legendTextStyle: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        chartValuesOptions: const ChartValuesOptions(
-                          showChartValueBackground: true,
-                          showChartValues: true,
-                          showChartValuesInPercentage: false,
-                          showChartValuesOutside: true,
-                          decimalPlaces: 1,
-                        ),
-                        // gradientList: ---To add gradient colors---
-                        // emptyColorGradient: ---Empty Color gradient---
-                      ),
-                    )
-                  ],
+        return Container(
+          margin: const EdgeInsets.only(left: 14.0, right: 14.0, top: 14.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: AppColors.grey.withOpacity(0.2),
+                offset: const Offset(1.1, 1.1),
+                blurRadius: 10.0,
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 14.0),
+                child: Text(
+                  'Angka Kredit Terkumpul',
+                  textAlign: TextAlign.start,
+                  style: AppConstants.kNormalTitleTextStyle,
                 ),
               ),
-            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 30),
+                    child: PieChart(
+                      dataMap: {
+                        "Unsur Utama": akUtama,
+                        "Unsur Penunjang": akPenunjang,
+                      },
+                      animationDuration: const Duration(milliseconds: 1000),
+                      chartRadius: MediaQuery.of(context).size.width / 3.2,
+                      colorList: colorList,
+                      initialAngleInDegree: 270,
+                      chartType: ChartType.disc,
+                      ringStrokeWidth: 32,
+                      legendOptions: const LegendOptions(showLegends: false),
+                      chartValuesOptions: const ChartValuesOptions(
+                        showChartValueBackground: false,
+                        decimalPlaces: 3,
+                        chartValueStyle: AppConstants.kDetailBtnTextStyle,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.circle,
+                              color: colorList[0],
+                              size: 12,
+                            ),
+                            const SizedBox(width: 5),
+                            Expanded(
+                                child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Unsur Utama",
+                                  style: AppConstants.kCardBodyTextStyle,
+                                ),
+                                Text(
+                                  "${akUtama.toStringAsFixed(3)} (${persenAKUtama.toInt()}%)",
+                                  style: AppConstants.kNormalTitleTextStyle,
+                                ),
+                              ],
+                            )),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.circle,
+                              color: colorList[1],
+                              size: 12,
+                            ),
+                            const SizedBox(width: 5),
+                            Expanded(
+                                child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Unsur Penunjang",
+                                  style: AppConstants.kCardBodyTextStyle,
+                                ),
+                                Text(
+                                  "${akPenunjang.toStringAsFixed(3)} (${persenAKPenunjang.toInt()}%)",
+                                  style: AppConstants.kNormalTitleTextStyle,
+                                ),
+                              ],
+                            )),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
           ),
         );
       },

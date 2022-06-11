@@ -17,7 +17,7 @@ dependencies:
 
   #punya aplikasi
   flutter_staggered_grid_view: ^0.6.1
-  pie_chart: ^5.1.0
+  pie_chart: ^5.3.1
   dropdown_search: ^2.0.1
   number_inc_dec: ^0.8.0
   auto_size_text: ^3.0.0
@@ -32,7 +32,6 @@ dependencies:
   #back end
   sqflite: ^2.0.2
   provider: ^6.0.2
-  syncfusion_flutter_datagrid_export: ^20.1.59-beta
 
 dev_dependencies:
   flutter_test:

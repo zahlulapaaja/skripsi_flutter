@@ -1,197 +1,167 @@
 [
   {
-    "kategori": "Keahlian",
-    "sub": [
-      {
-        "jenjang": "Pertama",
-        "sub": [
-          {
-            "golongan": "IIIa",
-            "ak_minimal": 0,
-            "ak_naik_pangkat": 50,
-            "pangkat_puncak": false,
-            "syarat_pendidikan": "DIV/S1",
-            "ak_pemeliharaan": 0,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 50; 2/3 dari unsur utama"
-          },
-          {
-            "golongan": "IIIb",
-            "ak_minimal": 50,
-            "ak_naik_pangkat": 100,
-            "pangkat_puncak": true,
-            "syarat_pendidikan": "DIV/S1",
-            "ak_pemeliharaan": 10,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 100; 2/3 dari unsur utama"
-          }
-        ]
-      },
-      {
-        "jenjang": "Muda",
-        "sub": [
-          {
-            "golongan": "IIIc",
-            "ak_minimal": 0,
-            "ak_naik_pangkat": 100,
-            "pangkat_puncak": false,
-            "syarat_pendidikan": "DIV/S1",
-            "ak_pemeliharaan": 0,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 100; 2/3 dari unsur utama"
-          },
-          {
-            "golongan": "IIId",
-            "ak_minimal": 100,
-            "ak_naik_pangkat": 200,
-            "pangkat_puncak": true,
-            "syarat_pendidikan": "DIV/S1",
-            "ak_pemeliharaan": 20,
-            "pengembangan_profesi": 6,
-            "syarat_naik_pangkat/jenjang": "AK >= 200; 2/3 dari unsur utama; ada >= 6 dari pengembangan profesi"
-          }
-        ]
-      },
-      {
-        "jenjang": "Madya",
-        "sub": [
-          {
-            "golongan": "IVa",
-            "ak_minimal": 0,
-            "ak_naik_pangkat": 150,
-            "pangkat_puncak": false,
-            "syarat_pendidikan": "S2",
-            "ak_pemeliharaan": 0,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 150; 2/3 dari unsur utama"
-          },
-          {
-            "golongan": "IVb",
-            "ak_minimal": 150,
-            "ak_naik_pangkat": 300,
-            "pangkat_puncak": false,
-            "syarat_pendidikan": "S2",
-            "ak_pemeliharaan": 0,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 300; 2/3 dari unsur utama"
-          },
-          {
-            "golongan": "IVc",
-            "ak_minimal": 300,
-            "ak_naik_pangkat": 450,
-            "pangkat_puncak": true,
-            "syarat_pendidikan": "S2",
-            "ak_pemeliharaan": 30,
-            "pengembangan_profesi": 12,
-            "syarat_naik_pangkat/jenjang": "AK >= 450; 2/3 dari unsur utama; ada >= 12 dari pengembangan profesi"
-          }
-        ]
-      },
-      {
-        "jenjang": "Utama",
-        "sub": [
-          {
-            "golongan": "IVd",
-            "ak_minimal": 0,
-            "ak_naik_pangkat": 200,
-            "pangkat_puncak": false,
-            "syarat_pendidikan": "S2",
-            "ak_pemeliharaan": 0,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 200; 2/3 dari unsur utama"
-          },
-          {
-            "golongan": "IVe",
-            "ak_minimal": 200,
-            "ak_naik_pangkat": 1000,
-            "pangkat_puncak": true,
-            "syarat_pendidikan": "S2",
-            "ak_pemeliharaan": 25,
-            "pengembangan_profesi": 12,
-            "syarat_naik_pangkat/jenjang": "AK >= 450; 2/3 dari unsur utama; ada >= 12 dari pengembangan profesi"
-          }
-        ]
-      }
-    ]
+    "jenjang": "Pranata Komputer Ahli Pertama",
+    "golongan": "IIIa",
+    "ak_minimal": 0,
+    "ak_naik_pangkat": 50,
+    "pangkat_puncak": false,
+    "syarat_pendidikan": "DIV/S1",
+    "ak_pemeliharaan": 0,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 50; 2/3 dari unsur utama"
   },
   {
-    "kategori": "Keterampilan",
-    "sub": [
-      {
-        "jenjang": "Terampil",
-        "sub": [
-          {
-            "golongan": "IIc",
-            "ak_minimal": 0,
-            "ak_naik_pangkat": 20,
-            "pangkat_puncak": false,
-            "syarat_pendidikan": "DIII",
-            "ak_pemeliharaan": 0,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": ""
-          },
-          {
-            "golongan": "IId",
-            "ak_minimal": 20,
-            "ak_naik_pangkat": 40,
-            "pangkat_puncak": true,
-            "syarat_pendidikan": "DIII",
-            "ak_pemeliharaan": 4,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": ""
-          }
-        ]
-      },
-      {
-        "jenjang": "Mahir",
-        "sub": [
-          {
-            "golongan": "IIIa",
-            "ak_minimal": 0,
-            "ak_naik_pangkat": 50,
-            "pangkat_puncak": false,
-            "syarat_pendidikan": "DIII",
-            "ak_pemeliharaan": 0,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 50; 2/3 dari unsur utama"
-          },
-          {
-            "golongan": "IIIb",
-            "ak_minimal": 50,
-            "ak_naik_pangkat": 100,
-            "pangkat_puncak": true,
-            "syarat_pendidikan": "DIII",
-            "ak_pemeliharaan": 10,
-            "pengembangan_profesi": 4,
-            "syarat_naik_pangkat/jenjang": "AK >= 100; 2/3 dari unsur utama; ada >= 4 dari pengembangan profesi"
-          }
-        ]
-      },
-      {
-        "jenjang": "Penyelia",
-        "sub": [
-          {
-            "golongan": "IIIc",
-            "ak_minimal": 0,
-            "ak_naik_pangkat": 100,
-            "pangkat_puncak": false,
-            "syarat_pendidikan": "DIII",
-            "ak_pemeliharaan": 0,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 100; 2/3 dari unsur utama"
-          },
-          {
-            "golongan": "IIId",
-            "ak_minimal": 100,
-            "ak_naik_pangkat": 200,
-            "pangkat_puncak": true,
-            "syarat_pendidikan": "DIII",
-            "ak_pemeliharaan": 10,
-            "pengembangan_profesi": 0,
-            "syarat_naik_pangkat/jenjang": "AK >= 200; 2/3 dari unsur utama"
-          }
-        ]
-      }
-    ]
+    "jenjang": "Pranata Komputer Ahli Pertama",
+    "golongan": "IIIb",
+    "ak_minimal": 50,
+    "ak_naik_pangkat": 100,
+    "pangkat_puncak": true,
+    "syarat_pendidikan": "DIV/S1",
+    "ak_pemeliharaan": 10,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 100; 2/3 dari unsur utama"
+  },
+  {
+    "jenjang": "Pranata Komputer Ahli Muda",
+    "golongan": "IIIc",
+    "ak_minimal": 0,
+    "ak_naik_pangkat": 100,
+    "pangkat_puncak": false,
+    "syarat_pendidikan": "DIV/S1",
+    "ak_pemeliharaan": 0,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 100; 2/3 dari unsur utama"
+  },
+  {
+    "jenjang": "Pranata Komputer Ahli Muda",
+    "golongan": "IIId",
+    "ak_minimal": 100,
+    "ak_naik_pangkat": 200,
+    "pangkat_puncak": true,
+    "syarat_pendidikan": "DIV/S1",
+    "ak_pemeliharaan": 20,
+    "pengembangan_profesi": 6,
+    "syarat_naik_pangkat/jenjang": "AK >= 200; 2/3 dari unsur utama; ada >= 6 dari pengembangan profesi"
+  },
+  {
+    "jenjang": "Pranata Komputer Ahli Madya",
+    "golongan": "IVa",
+    "ak_minimal": 0,
+    "ak_naik_pangkat": 150,
+    "pangkat_puncak": false,
+    "syarat_pendidikan": "S2",
+    "ak_pemeliharaan": 0,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 150; 2/3 dari unsur utama"
+  },
+  {
+    "jenjang": "Pranata Komputer Ahli Madya",
+    "golongan": "IVb",
+    "ak_minimal": 150,
+    "ak_naik_pangkat": 300,
+    "pangkat_puncak": false,
+    "syarat_pendidikan": "S2",
+    "ak_pemeliharaan": 0,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 300; 2/3 dari unsur utama"
+  },
+  {
+    "jenjang": "Pranata Komputer Ahli Madya",
+    "golongan": "IVc",
+    "ak_minimal": 300,
+    "ak_naik_pangkat": 450,
+    "pangkat_puncak": true,
+    "syarat_pendidikan": "S2",
+    "ak_pemeliharaan": 30,
+    "pengembangan_profesi": 12,
+    "syarat_naik_pangkat/jenjang": "AK >= 450; 2/3 dari unsur utama; ada >= 12 dari pengembangan profesi"
+  },
+  {
+    "jenjang": "Pranata Komputer Ahli Utama",
+    "golongan": "IVd",
+    "ak_minimal": 0,
+    "ak_naik_pangkat": 200,
+    "pangkat_puncak": false,
+    "syarat_pendidikan": "S2",
+    "ak_pemeliharaan": 0,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 200; 2/3 dari unsur utama"
+  },
+  {
+    "jenjang": "Pranata Komputer Ahli Utama",
+    "golongan": "IVe",
+    "ak_minimal": 200,
+    "ak_naik_pangkat": 1000,
+    "pangkat_puncak": true,
+    "syarat_pendidikan": "S2",
+    "ak_pemeliharaan": 25,
+    "pengembangan_profesi": 12,
+    "syarat_naik_pangkat/jenjang": "AK >= 450; 2/3 dari unsur utama; ada >= 12 dari pengembangan profesi"
+  },
+  {
+    "jenjang": "Pranata Komputer Terampil",
+    "golongan": "IIc",
+    "ak_minimal": 0,
+    "ak_naik_pangkat": 20,
+    "pangkat_puncak": false,
+    "syarat_pendidikan": "DIII",
+    "ak_pemeliharaan": 0,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": ""
+  },
+  {
+    "jenjang": "Pranata Komputer Terampil",
+    "golongan": "IId",
+    "ak_minimal": 20,
+    "ak_naik_pangkat": 40,
+    "pangkat_puncak": true,
+    "syarat_pendidikan": "DIII",
+    "ak_pemeliharaan": 4,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": ""
+  },
+  {
+    "jenjang": "Pranata Komputer Mahir",
+    "golongan": "IIIa",
+    "ak_minimal": 0,
+    "ak_naik_pangkat": 50,
+    "pangkat_puncak": false,
+    "syarat_pendidikan": "DIII",
+    "ak_pemeliharaan": 0,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 50; 2/3 dari unsur utama"
+  },
+  {
+    "jenjang": "Pranata Komputer Mahir",
+    "golongan": "IIIb",
+    "ak_minimal": 50,
+    "ak_naik_pangkat": 100,
+    "pangkat_puncak": true,
+    "syarat_pendidikan": "DIII",
+    "ak_pemeliharaan": 10,
+    "pengembangan_profesi": 4,
+    "syarat_naik_pangkat/jenjang": "AK >= 100; 2/3 dari unsur utama; ada >= 4 dari pengembangan profesi"
+  },
+  {
+    "jenjang": "Pranata Komputer Penyelia",
+    "golongan": "IIIc",
+    "ak_minimal": 0,
+    "ak_naik_pangkat": 100,
+    "pangkat_puncak": false,
+    "syarat_pendidikan": "DIII",
+    "ak_pemeliharaan": 0,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 100; 2/3 dari unsur utama"
+  },
+  {
+    "jenjang": "Pranata Komputer Penyelia",
+    "golongan": "IIId",
+    "ak_minimal": 100,
+    "ak_naik_pangkat": 200,
+    "pangkat_puncak": true,
+    "syarat_pendidikan": "DIII",
+    "ak_pemeliharaan": 10,
+    "pengembangan_profesi": 0,
+    "syarat_naik_pangkat/jenjang": "AK >= 200; 2/3 dari unsur utama"
   }
 ]

@@ -1,17 +1,29 @@
+import 'dart:convert';
+
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 
 class ProfileProvider with ChangeNotifier {
   Profile _profile = Profile();
   List<Jenjang>? _jenjang;
   String? _alert;
   String? _pelaksana;
+  double _akNaikPangkat = 0;
+  double _akMenujuNaikPangkat = 0;
   var dbHelper = DbProfile();
 
   Profile get profil => _profile;
   List<Jenjang> get listJenjang => _jenjang!;
+  double get akNaikPangkat => _akNaikPangkat;
+  double get akMenujuNaikPangkat => _akMenujuNaikPangkat;
+
+  set setAKMenujuNaikPangkat(double ak) {
+    _akMenujuNaikPangkat = ak;
+    notifyListeners();
+  }
 
   set setSelectedButir(ButirKegiatan butir) {
     _pelaksana = butir.pelaksana;
@@ -34,6 +46,7 @@ class ProfileProvider with ChangeNotifier {
   Future<Profile> get getProfileData async {
     _profile = await dbHelper.getProfile();
     _jenjang = _profile.listJenjang;
+    await getTargetAK();
 
     return _profile;
   }
@@ -45,5 +58,19 @@ class ProfileProvider with ChangeNotifier {
     }
     notifyListeners();
     return res;
+  }
+
+  Future<void> getTargetAK() async {
+    final jsonData =
+        await rootBundle.loadString("assets/jsonfile/ak_naik_pangkat.json");
+
+    List<dynamic> list = json.decode(jsonData) as List<dynamic>;
+    for (var item in list) {
+      if (_profile.jenjang!.jenjang == item['jenjang']) {
+        if (_profile.jenjang!.golongan == item['golongan']) {
+          _akNaikPangkat = item['ak_naik_pangkat'].toDouble();
+        }
+      }
+    }
   }
 }
