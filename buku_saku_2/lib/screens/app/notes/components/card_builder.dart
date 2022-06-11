@@ -9,34 +9,28 @@ import 'package:intl/intl.dart';
 
 class CardBuilder extends StatelessWidget {
   final Note notes;
+  final int? status;
   final Function? onLongPressed;
 
-  //sementara
-  final int? index;
-  final bool? pinned;
-
-  // TODO : Tambah atribut yang lengkap disini
-  // Dan bikin kondisi, kalo lagi dalam kondisi edit, ada tambahan input kayak status, dsb
+  // TODO : bikin logic ketika mau ganti status, harusnya sih di newNoteForm, bukan disini
 
   const CardBuilder({
     Key? key,
     required this.notes,
-    this.index,
-    // required this.tag,
-    this.pinned = false,
+    this.status,
     this.onLongPressed,
   }) : super(key: key);
 
   getNoteIcon() {
-    if (pinned == true) {
-      return Image.asset("assets/icons/pinned.png");
-    } else if (index == 2) {
-      return Image.asset("assets/icons/important.png");
-    } else if (index == 0) {
-      return Image.asset("assets/icons/checked.png");
-    } else {
-      return const SizedBox();
-    }
+    // if (pinned == true) {
+    //   return Image.asset("assets/icons/pinned.png");
+    // } else if (status == 2) {
+    //   return Image.asset("assets/icons/important.png");
+    // } else if (status == 0) {
+    //   return Image.asset("assets/icons/checked.png");
+    // } else {
+    //   return const SizedBox();
+    // }
   }
 
   @override
@@ -105,7 +99,7 @@ class CardBuilder extends StatelessWidget {
                     const SizedBox(height: 7),
                     Text(
                       notes.uraian,
-                      maxLines: index == 1 ? 10 : 5,
+                      maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                       style: AppConstants.kCardBodyTextStyle,
                     ),

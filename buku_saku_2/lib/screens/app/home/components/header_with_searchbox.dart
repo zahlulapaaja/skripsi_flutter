@@ -6,11 +6,9 @@ import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class HeaderWithSearchbox extends StatelessWidget {
-  final AnimationController? animationController;
-  final Animation<double>? animation;
   TextEditingController controller = TextEditingController();
 
-  HeaderWithSearchbox({Key? key, this.animationController, this.animation})
+  HeaderWithSearchbox({Key? key})
       : super(key: key);
 
   @override

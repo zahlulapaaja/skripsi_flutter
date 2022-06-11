@@ -14,12 +14,6 @@
 // soalnya klo udh masuk halaman detail angka kredit, abis itu ga bisa balik lagi pake tabIcon
 
 
-// TODO : animationController pake provider aja, biar ga perlu dipassing terussssss
-
-// TODO : OTW bikin screen detail catatan (kalo bisa sih beda sama screen edit/tambah nya)
-
-// TODO : Gimana cara konversi batasan penilaian jadi maks nya angka kredit
-
 
 // TODO : Nanti untuk thumbnail file pdf atau semacamnya, bisa coba pake ini https://pub.dev/packages/thumbnailer/example
 

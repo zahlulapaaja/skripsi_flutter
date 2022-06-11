@@ -30,7 +30,6 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
     akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
     double totalAk = data!.akSaatIni! + akUtama + akPenunjang;
     double targetAK = context.watch<ProfileProvider>().akNaikPangkat;
-
     double angleAK = (totalAk / targetAK) * 360;
 
     if (context.watch<NotesProvider>().isQueryExist == false) {
@@ -351,11 +350,11 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                       BorderRadius.all(Radius.circular(5.0)),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(4.0),
                                   child: Text(
                                     data!.jenjang!.jenjang,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontFamily: AppConstants.fontName,
                                       fontWeight: FontWeight.w600,
                                       fontSize: AppConstants.kSmallFontSize - 1,
@@ -395,12 +394,12 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                     BorderRadius.all(Radius.circular(5.0)),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(4.0),
+                                padding: const EdgeInsets.all(4.0),
                                 child: Text(
                                   'Sudah Terkumpul ${(akUtama + akPenunjang).toStringAsFixed(3)} Angka Kredit',
                                   textAlign: TextAlign.center,
                                   maxLines: 2,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontFamily: AppConstants.fontName,
                                     fontWeight: FontWeight.w600,
                                     fontSize: AppConstants.kSmallFontSize - 1,

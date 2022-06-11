@@ -46,7 +46,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
       selectedNote.jmlAnggota = int.parse(jmlAnggotaTextController.text);
       final Note newNote = selectedNote;
 
-      print(newNote.toMap());
       (widget.note?.id != null)
           ? noteProvider.updateNote(newNote)
           : noteProvider.addNewNote(newNote);
@@ -71,7 +70,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
         listTanggal: [],
       );
 
-      // keknya penggunaan selectedbutir bisa disederhanain lagi
+      // todo : jangan lupa logika untuk custom satuan ak jika kegiatan tim (selain dari 80% ini)
       selectedButir = widget.selectedButir;
       if (selectedButir != null) {
         context.read<ProfileProvider>().setSelectedButir = selectedButir!;
