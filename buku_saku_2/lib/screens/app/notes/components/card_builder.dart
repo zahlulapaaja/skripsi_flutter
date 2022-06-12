@@ -112,12 +112,12 @@ class CardBuilder extends StatelessWidget {
                     ),
                   ],
                 ),
-                Positioned(
+                const Positioned(
                   height: 20,
                   width: 20,
                   right: 0,
                   bottom: 0,
-                  child: getNoteIcon(),
+                  child: SizedBox(),
                 ),
               ],
             ),

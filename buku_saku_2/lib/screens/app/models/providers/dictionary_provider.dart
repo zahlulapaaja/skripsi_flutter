@@ -19,6 +19,7 @@ class DictionaryProvider with ChangeNotifier {
   List<ButirKegiatan> _allButir = [];
   List<ButirKegiatan> _matchedButir = [];
   Widget _dictionaryList = const JenjangScreen();
+  int? _akNaikPangkat;
 
   Widget get dictionaryList => _dictionaryList;
   List<Unsur> get jsonData => _jsonData;
@@ -34,6 +35,10 @@ class DictionaryProvider with ChangeNotifier {
   List<String> disableButir1 = [];
   List<String> disableButir2 = [];
   // ketika pengaturan jenjang diganti, disable nya harus dikosongin nanti
+
+  set setNaikPangkat(int ak) {
+    _akNaikPangkat = ak;
+  }
 
   List<String> get disableButir =>
       List.from(disableButir1)..addAll(disableButir2);
@@ -80,6 +85,8 @@ class DictionaryProvider with ChangeNotifier {
           butir.unsurTitle = unsur.title;
           butir.subUnsurCode = subunsur.code;
           butir.subUnsurTitle = subunsur.title;
+
+          butir.akNaikPangkat = _akNaikPangkat!;
           butirList.add(butir);
 
           for (var item in _listJenjang!) {

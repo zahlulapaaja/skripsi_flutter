@@ -1,6 +1,8 @@
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:provider/provider.dart';
 
 class RingkasanButir extends StatelessWidget {
   const RingkasanButir({
@@ -13,10 +15,12 @@ class RingkasanButir extends StatelessWidget {
   final String code;
   final String jenjang;
   final double angkaKredit;
-  final bool? persenAK;
+  final double? persenAK;
 
   @override
   Widget build(BuildContext context) {
+    int targetAK = context.watch<ProfileProvider>().akNaikPangkat;
+
     return Padding(
       padding: const EdgeInsets.only(left: 14.0, right: 14.0, bottom: 8.0),
       child: Container(
@@ -57,15 +61,15 @@ class RingkasanButir extends StatelessWidget {
               ],
             ),
             Text(
-              persenAK != true
+              // todo : ini keknya ga perlu bikin ternary
+              persenAK != null
                   ? angkaKredit.toStringAsFixed(3)
-                  : (angkaKredit * 100).toInt().toString() +
-                      '% AK\nNaik Pangkat',
+                  : (angkaKredit * targetAK).toStringAsFixed(3),
               textAlign: TextAlign.end,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: AppConstants.fontName,
                 color: AppColors.black,
-                fontSize: persenAK != true ? 24 : 18,
+                fontSize: 24,
                 fontWeight: FontWeight.w500,
               ),
             ),

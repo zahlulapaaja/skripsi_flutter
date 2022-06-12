@@ -79,7 +79,6 @@ class ButirDetailScreen extends StatelessWidget {
                     style: AppConstants.kDictionaryTextStyle(),
                   ),
                 ),
-                // SizedBox(width: 50, child: Text('data')),
                 Expanded(
                   child: Text(
                     subUnsurTitle ?? butir.subUnsurTitle!,
@@ -157,10 +156,12 @@ class ButirDetailScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  butir.persenAK != true
+                  (butir.persenAK == null)
                       ? butir.angkaKredit.toStringAsFixed(3)
-                      : (butir.angkaKredit * 100).toInt().toString() +
-                          '% AK Kenaikan Pangkat',
+                      : butir.angkaKredit.toStringAsFixed(3) +
+                          ' (' +
+                          (butir.persenAK! * 100).toInt().toString() +
+                          '% Angka Kredit Kenaikan Pangkat)',
                   style: AppConstants.kDictionaryTextStyle(),
                 ),
                 const SizedBox(height: 12),

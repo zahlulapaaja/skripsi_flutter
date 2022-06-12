@@ -86,7 +86,8 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             } else if (snapshot.hasData) {
               // kalo data kosong arahin dulu ke laman edit profil
               // kasih alert dulu biar ga tiba2 sampe ke laman edit profil, intinya lebih rapi lah
-
+              int akNaikPangkat = context.read<ProfileProvider>().akNaikPangkat;
+              context.read<DictionaryProvider>().setNaikPangkat = akNaikPangkat;
               return Scaffold(
                 backgroundColor: Colors.transparent,
                 body: DrawerUserController(

@@ -25,7 +25,8 @@ class ChartAngkaKredit extends StatelessWidget {
     Profile profil = context.watch<ProfileProvider>().profil;
     double akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
     double akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
-    double akNaikPangkat = context.watch<ProfileProvider>().akNaikPangkat;
+    double akNaikPangkat =
+        context.watch<ProfileProvider>().akNaikPangkat.toDouble();
     double totalAK = profil.akSaatIni! + akUtama + akPenunjang;
 
     Future.delayed(Duration.zero, () {
@@ -85,7 +86,7 @@ class ChartAngkaKredit extends StatelessWidget {
                     showChartValuesOutside: true,
                     chartValueStyle: AppConstants.kDetailCardTextStyle,
                   ),
-                  totalValue: akNaikPangkat,
+                  // totalValue: akNaikPangkat.toDouble(),
                 ),
               ),
               Padding(

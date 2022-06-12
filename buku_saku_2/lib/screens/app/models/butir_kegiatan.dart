@@ -51,8 +51,8 @@ class ButirKegiatan {
   final String judul;
   final String uraian;
   final String satuanHasil;
-  final double angkaKredit;
-  final bool? persenAK;
+  double angkaKredit;
+  final double? persenAK;
   final String batasanPenilaian;
   final String pelaksana;
   final String buktiFisik;
@@ -84,5 +84,9 @@ class ButirKegiatan {
   Future<bool> get isExist async {
     var result = await dbHelper.getNoteByKey(judul);
     return result.isNotEmpty;
+  }
+
+  set akNaikPangkat(int ak) {
+    if (persenAK != null) angkaKredit = persenAK! * ak;
   }
 }

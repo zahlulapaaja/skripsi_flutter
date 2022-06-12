@@ -1,4 +1,3 @@
-import 'package:buku_saku_2/screens/sign_in/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/onboarding1.dart';
@@ -106,6 +105,6 @@ class _IntroductionAnimationScreenState
   }
 
   void _signUpClick() {
-    Navigator.pushNamed(context, SignUpScreen.id);
+    // Navigator.pushNamed(context, SignUpScreen.id);
   }
 }

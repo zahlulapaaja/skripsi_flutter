@@ -11,13 +11,13 @@ class ProfileProvider with ChangeNotifier {
   List<Jenjang>? _jenjang;
   String? _alert;
   String? _pelaksana;
-  double _akNaikPangkat = 0;
+  int _akNaikPangkat = 0;
   double _akMenujuNaikPangkat = 0;
   var dbHelper = DbProfile();
 
   Profile get profil => _profile;
   List<Jenjang> get listJenjang => _jenjang!;
-  double get akNaikPangkat => _akNaikPangkat;
+  int get akNaikPangkat => _akNaikPangkat;
   double get akMenujuNaikPangkat => _akMenujuNaikPangkat;
 
   set setAKMenujuNaikPangkat(double ak) {
@@ -68,7 +68,7 @@ class ProfileProvider with ChangeNotifier {
     for (var item in list) {
       if (_profile.jenjang!.jenjang == item['jenjang']) {
         if (_profile.jenjang!.golongan == item['golongan']) {
-          _akNaikPangkat = item['ak_naik_pangkat'].toDouble();
+          _akNaikPangkat = item['ak_naik_pangkat'];
         }
       }
     }
