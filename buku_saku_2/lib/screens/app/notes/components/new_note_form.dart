@@ -45,11 +45,12 @@ class _NewNoteFormState extends State<NewNoteForm> {
     if (_formKey.currentState!.validate()) {
       selectedNote.uraian = uraianTextController.text;
       selectedNote.jmlAnggota = int.parse(jmlAnggotaTextController.text);
+      selectedNote.buktiFisik?.clear();
       for (var file in selectedBuktiFisik) {
         final newFile = await saveFilePermanently(file);
         selectedNote.buktiFisik!.add(DocFile(
           path: newFile.path,
-          namaFile: file.name,
+          name: file.name,
           extension: file.extension!,
         ));
       }
@@ -57,9 +58,9 @@ class _NewNoteFormState extends State<NewNoteForm> {
       final Note newNote = selectedNote;
 
       (widget.note?.id != null)
-          ? noteProvider.updateNote(newNote)
-          : noteProvider.addNewNote(newNote);
-      Navigator.pop(context);
+          ? await dbHelper.updateNote(newNote)
+          : await dbHelper.saveNote(newNote);
+      Navigator.pop(context, 'refresh');
     }
   }
 
@@ -68,6 +69,9 @@ class _NewNoteFormState extends State<NewNoteForm> {
     if (widget.note != null) {
       selectedNote = widget.note!;
       uraianTextController.text = selectedNote.uraian;
+      selectedNote.buktiFisik?.forEach((docFile) {
+        selectedBuktiFisik.add(PlatformFile.fromMap(docFile.toMap()));
+      });
     } else {
       selectedNote = Note(
         judul:
@@ -182,11 +186,20 @@ class _NewNoteFormState extends State<NewNoteForm> {
               if (result == null) return;
               setState(() {
                 selectedBuktiFisik.addAll(result.files);
+                print(result.files);
               });
             },
             onDelete: (fileName) {
-              setState(() {
-                selectedBuktiFisik.removeWhere((file) => file.name == fileName);
+              setState(() async {
+                for (var file in selectedBuktiFisik) {
+                  if (file.name == fileName) {
+                    if (await File(file.path!).exists()) {
+                      File(file.path!).delete();
+                      print('berhasil');
+                    }
+                    selectedBuktiFisik.remove(file);
+                  }
+                }
               });
             },
           ),

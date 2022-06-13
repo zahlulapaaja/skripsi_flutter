@@ -66,7 +66,7 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
 
     return DocFile(
       path: newFile.path,
-      namaFile: fileName.split('.')[0],
+      name: fileName.split('.')[0],
       extension: ".xlsx",
       dateCreated: DateTime.now(),
     );
@@ -149,7 +149,7 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                       scrollDirection: Axis.vertical,
                       itemBuilder: (BuildContext context, int index) {
                         return ListTile(
-                          title: Text(files[index].namaFile),
+                          title: Text(files[index].name),
                           subtitle: Text(DateFormat("dd MMM yyyy", "id_ID")
                               .format(files[index].dateCreated!)),
                           leading: Image.asset("assets/icons/excel_file.png"),

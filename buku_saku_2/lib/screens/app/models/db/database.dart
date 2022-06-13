@@ -12,7 +12,7 @@ class DbHelper {
   dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
   final String _dbSyntax2 =
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, path TEXT,
-  namaFile TEXT, extension TEXT)''';
+  name TEXT, extension TEXT, size INTEGER)''';
   final String _dbSyntax3 =
       '''CREATE TABLE tanggal_kegiatan( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, tanggal TEXT)''';
   final String _dbSyntax4 =
@@ -21,8 +21,8 @@ class DbHelper {
   final String _dbSyntax5 =
       '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, kodeJenjang INTEGER, jenjang TEXT, golongan TEXT )''';
   final String _dbSyntax6 =
-      '''CREATE TABLE excel_catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, path TEXT, namaFile TEXT, extension TEXT, 
-      dateCreated TEXT)''';
+      '''CREATE TABLE excel_catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, path TEXT, name TEXT, extension TEXT, 
+      size INTEGER, dateCreated TEXT)''';
   final String _dbSyntax7 =
       '''INSERT INTO jenjang VALUES (0, 11, "Pranata Komputer Terampil", "IIc"), (1, 11, "Pranata Komputer Terampil", "IId"),
       (2, 12, "Pranata Komputer Mahir", "IIIa"), (3, 12, "Pranata Komputer Mahir", "IIIb"), (4, 13, "Pranata Komputer Penyelia", "IIIc"),
@@ -91,12 +91,12 @@ class DbHelper {
         id: files[index]['id'],
         idCatatan: files[index]['idCatatan'],
         path: files[index]['path'],
-        namaFile: files[index]['namaFile'],
+        name: files[index]['name'],
         extension: files[index]['extension'],
+        size: files[index]['size'],
       ),
     );
 
-    print(buktiFisik);
     List<DateTime> listTanggal = List.generate(dates.length, (index) {
       return DateTime.parse(dates[index]['tanggal']);
     });
@@ -147,10 +147,8 @@ class DbHelper {
 
     if (note.buktiFisik != null) {
       for (var bukti in note.buktiFisik!) {
-        final insertedId2 = await db.insert(
-            'bukti_fisik', bukti.toMap(idCatatan: insertedId),
+        await db.insert('bukti_fisik', bukti.toMap(idCatatan: insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
-        print(insertedId2);
       }
     }
     if (note.listTanggal != null) {
@@ -207,7 +205,7 @@ class DbHelper {
       return DocFile(
         id: maps[i]['id'],
         path: maps[i]['path'],
-        namaFile: maps[i]['namaFile'],
+        name: maps[i]['name'],
         extension: maps[i]['extension'],
         dateCreated: DateTime.parse(maps[i]['dateCreated']),
       );

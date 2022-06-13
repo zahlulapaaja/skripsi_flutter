@@ -16,13 +16,19 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
     AppColors.primary,
     AppColors.primaryLight,
   ];
+  double akTerkumpul = 0;
+  double persenAKUtama = 0;
+  double persenAKPenunjang = 0;
 
   @override
   Widget build(BuildContext context) {
     double akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
     double akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
-    double persenAKUtama = akUtama / (akUtama + akPenunjang) * 100;
-    double persenAKPenunjang = akPenunjang / (akUtama + akPenunjang) * 100;
+    akTerkumpul = akUtama + akPenunjang;
+    if (akTerkumpul != 0) {
+      persenAKUtama = akUtama / (akTerkumpul) * 100;
+      persenAKPenunjang = akPenunjang / (akTerkumpul) * 100;
+    }
 
     return AnimatedBuilder(
       animation: animationController!,

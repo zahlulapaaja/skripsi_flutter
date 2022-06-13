@@ -58,21 +58,22 @@ class CardBuilder extends StatelessWidget {
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
                   title: const Text('Hapus Catatan'),
-                  content: const Text('Hapus ga ni ??'),
+                  content:
+                      const Text('Anda yakin ingin menghapus catatan ini ?'),
                   actions: <Widget>[
                     TextButton(
-                      onPressed: () => Navigator.pop(context, 'Cancel'),
-                      child: const Text('Cancel'),
+                      onPressed: () => Navigator.pop(context, 'Tidak'),
+                      child: const Text('Tidak'),
                     ),
                     TextButton(
-                      onPressed: () => Navigator.pop(context, 'OK'),
-                      child: const Text('OK'),
+                      onPressed: () => Navigator.pop(context, 'Ya'),
+                      child: const Text('Ya'),
                     ),
                   ],
                 ),
               );
 
-              if (result == 'OK') {
+              if (result == 'Ya') {
                 context.read<NotesProvider>().deleteNote(notes.id!);
               }
             },

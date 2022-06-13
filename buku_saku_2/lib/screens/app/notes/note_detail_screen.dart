@@ -82,7 +82,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               WhiteBoxBody(
                                 title: "Tanggal Kegiatan",
                                 widgetBody: Row(
-                                  children: note.listTanggal == null
+                                  children: (note.listTanggal!.isEmpty)
                                       ? [const Text("-")]
                                       : List.generate(
                                           note.listTanggal!.length,
@@ -145,23 +145,25 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                             children: <Widget>[
                                               Expanded(
                                                 child: Card(
+                                                  color: getCardColor(note
+                                                      .buktiFisik![index]
+                                                      .extension),
                                                   child: InkWell(
                                                     onTap: () {
-                                                      openFile(note
+                                                      OpenFile.open(note
                                                           .buktiFisik![index]
                                                           .path);
                                                     },
                                                     child: Center(
                                                         child: Text(
-                                                            '${note.buktiFisik![index].namaFile}.${note.buktiFisik![index].extension}')),
+                                                            '.${note.buktiFisik![index].extension}')),
                                                   ),
                                                 ),
                                               ),
                                               Text(
-                                                note.buktiFisik![index]
-                                                    .namaFile,
+                                                note.buktiFisik![index].name,
                                                 overflow: TextOverflow.ellipsis,
-                                                maxLines: 1,
+                                                maxLines: 2,
                                               ),
                                             ],
                                           );
@@ -200,6 +202,15 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                             builder: (context) => AddNoteScreen(note: note),
                           ),
                         );
+
+                        if (value == 'refresh') {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    super.widget),
+                          );
+                        }
                       },
                     ),
                   ),
@@ -217,7 +228,22 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
     );
   }
 
-  void openFile(String path) {
-    OpenFile.open(path);
+  Color? getCardColor(String extension) {
+    switch (extension) {
+      case 'pdf':
+        return AppColors.beigeDark;
+      case 'docx':
+        return AppColors.beigeDark;
+      case 'png':
+        return AppColors.info;
+      case 'jpg':
+        return AppColors.info;
+      case 'xlsx':
+        return AppColors.success;
+      case 'csv':
+        return AppColors.success;
+      default:
+        return AppColors.lightGrey;
+    }
   }
 }

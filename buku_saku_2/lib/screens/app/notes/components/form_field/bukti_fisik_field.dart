@@ -67,14 +67,36 @@ class BuktiFisikField extends StatelessWidget {
                     children: <Widget>[
                       Expanded(
                         child: Card(
+                          color: getCardColor(selectedData![index].extension!),
                           child: InkWell(
                             onTap: () {
-                              openFile(selectedData![index].path!);
+                              OpenFile.open(selectedData![index].path!);
                             },
-                            onLongPress: () {
-                              // pasang alert konfirmasi
-                              print('hapus');
-                              onDelete(selectedData![index].name);
+                            onLongPress: () async {
+                              var result = await showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                  title: const Text('Hapus File'),
+                                  content: const Text(
+                                      'Anda yakin ingin menghapus file ini ?'),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'Tidak'),
+                                      child: const Text('Tidak'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'Ya'),
+                                      child: const Text('Ya'),
+                                    ),
+                                  ],
+                                ),
+                              );
+
+                              if (result == 'Ya') {
+                                onDelete(selectedData![index].name);
+                              }
                             },
                             child: Center(
                                 child:
@@ -98,11 +120,22 @@ class BuktiFisikField extends StatelessWidget {
     );
   }
 
-  void openFiles(List<PlatformFile> files) {
-    // bikin listview atau gridview disini
-  }
-
-  void openFile(String path) {
-    OpenFile.open(path);
+  Color? getCardColor(String extension) {
+    switch (extension) {
+      case 'pdf':
+        return AppColors.beigeDark;
+      case 'docx':
+        return AppColors.beigeDark;
+      case 'png':
+        return AppColors.info;
+      case 'jpg':
+        return AppColors.info;
+      case 'xlsx':
+        return AppColors.success;
+      case 'csv':
+        return AppColors.success;
+      default:
+        return AppColors.lightGrey;
+    }
   }
 }
