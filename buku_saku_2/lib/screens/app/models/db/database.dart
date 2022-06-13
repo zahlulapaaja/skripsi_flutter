@@ -96,7 +96,8 @@ class DbHelper {
       ),
     );
 
-    List<DateTime>? listTanggal = List.generate(dates.length, (index) {
+    print(buktiFisik);
+    List<DateTime> listTanggal = List.generate(dates.length, (index) {
       return DateTime.parse(dates[index]['tanggal']);
     });
 
@@ -146,8 +147,10 @@ class DbHelper {
 
     if (note.buktiFisik != null) {
       for (var bukti in note.buktiFisik!) {
-        await db.insert('bukti_fisik', bukti.toMap(idCatatan: insertedId),
+        final insertedId2 = await db.insert(
+            'bukti_fisik', bukti.toMap(idCatatan: insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
+        print(insertedId2);
       }
     }
     if (note.listTanggal != null) {

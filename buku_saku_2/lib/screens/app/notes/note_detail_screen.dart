@@ -125,6 +125,8 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Bukti Fisik",
+                                subtitle:
+                                    '(Anda mempunyai ${note.buktiFisik?.length ?? 0} bukti fisik)',
                                 widgetBody: (note.buktiFisik!.isNotEmpty)
                                     ? GridView.builder(
                                         padding: const EdgeInsets.only(top: 10),
@@ -165,8 +167,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                           );
                                         },
                                       )
-                                    : const Text(
-                                        'bukti belum ada (urus dulu sana)'),
+                                    : const SizedBox(),
                               ),
                             ],
                           ),

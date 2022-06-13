@@ -40,9 +40,11 @@ class WhiteBoxBody extends StatelessWidget {
     required this.title,
     this.body,
     this.widgetBody,
+    this.subtitle,
   }) : super(key: key);
 
   final String title;
+  final String? subtitle;
   final Widget? widgetBody;
   final String? body;
 
@@ -61,6 +63,16 @@ class WhiteBoxBody extends StatelessWidget {
             letterSpacing: 0.5,
           ),
         ),
+        if (subtitle != null)
+          Text(
+            subtitle!,
+            style: const TextStyle(
+              fontFamily: AppConstants.fontName,
+              color: AppColors.grey,
+              fontSize: AppConstants.kTinyFontSize,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         const SizedBox(height: 3),
         (body == null)
             ? widgetBody!

@@ -34,6 +34,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
 
   late Note selectedNote;
   ButirKegiatan? selectedButir;
+  List<PlatformFile> selectedBuktiFisik = [];
   String? alert;
 
   TextEditingController jmlAnggotaTextController =
@@ -44,6 +45,15 @@ class _NewNoteFormState extends State<NewNoteForm> {
     if (_formKey.currentState!.validate()) {
       selectedNote.uraian = uraianTextController.text;
       selectedNote.jmlAnggota = int.parse(jmlAnggotaTextController.text);
+      for (var file in selectedBuktiFisik) {
+        final newFile = await saveFilePermanently(file);
+        selectedNote.buktiFisik!.add(DocFile(
+          path: newFile.path,
+          namaFile: file.name,
+          extension: file.extension!,
+        ));
+      }
+
       final Note newNote = selectedNote;
 
       (widget.note?.id != null)
@@ -68,6 +78,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
             : 0,
         dateCreated: DateTime.now(),
         listTanggal: [],
+        buktiFisik: [],
       );
 
       // todo : jangan lupa logika untuk custom satuan ak jika kegiatan tim (selain dari 80% ini)
@@ -164,30 +175,27 @@ class _NewNoteFormState extends State<NewNoteForm> {
             },
           ),
           BuktiFisikField(
-            selectedData: selectedNote.buktiFisik,
+            selectedData: selectedBuktiFisik,
             onPressed: () async {
               final result =
                   await FilePicker.platform.pickFiles(allowMultiple: true);
               if (result == null) return;
-
-              final file = result.files.first;
-
-              // harusnya nanti klo udh tekan save baru save permanent
-              final newFile = await saveFilePermanently(file);
-              final newBukti = DocFile(
-                path: newFile.path,
-                namaFile: file.name,
-                extension: file.extension!,
-              );
-
               setState(() {
-                selectedNote.buktiFisik?.add(newBukti);
+                selectedBuktiFisik.addAll(result.files);
+              });
+            },
+            onDelete: (fileName) {
+              setState(() {
+                selectedBuktiFisik.removeWhere((file) => file.name == fileName);
               });
             },
           ),
-          ElevatedButton(
-            onPressed: () => submitNote(noteProvider),
-            child: const Text('Gass'),
+          Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: ElevatedButton(
+              onPressed: () => submitNote(noteProvider),
+              child: const Text('Gass'),
+            ),
           )
         ],
       ),
