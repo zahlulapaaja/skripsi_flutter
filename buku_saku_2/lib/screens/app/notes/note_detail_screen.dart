@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
@@ -131,10 +133,11 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                     ? GridView.builder(
                                         padding: const EdgeInsets.only(top: 10),
                                         gridDelegate:
-                                            const SliverGridDelegateWithMaxCrossAxisExtent(
-                                          maxCrossAxisExtent: 200,
+                                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                          mainAxisExtent: 100,
+                                          crossAxisCount: 3,
                                           childAspectRatio: 3 / 2,
-                                          crossAxisSpacing: 20,
+                                          crossAxisSpacing: 15,
                                           mainAxisSpacing: 20,
                                         ),
                                         itemCount: note.buktiFisik!.length,
@@ -150,13 +153,23 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                                       .extension),
                                                   child: InkWell(
                                                     onTap: () {
+                                                      print(note
+                                                          .buktiFisik![index]
+                                                          .path);
+
                                                       OpenFile.open(note
                                                           .buktiFisik![index]
                                                           .path);
                                                     },
                                                     child: Center(
-                                                        child: Text(
-                                                            '.${note.buktiFisik![index].extension}')),
+                                                      child: Image.file(File(
+                                                          note
+                                                              .buktiFisik![
+                                                                  index]
+                                                              .path)),
+                                                      //  Text(
+                                                      //     '.${note.buktiFisik![index].extension}')
+                                                    ),
                                                   ),
                                                 ),
                                               ),

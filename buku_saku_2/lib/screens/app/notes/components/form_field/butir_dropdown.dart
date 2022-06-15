@@ -56,6 +56,7 @@ class ButirDropdown extends StatelessWidget {
             mode: Mode.BOTTOM_SHEET,
             showClearButton: editMode ? false : true,
             items: dataButir,
+            // popupTitle: Text(),
             popupItemDisabled: (String s) {
               int i = 0;
               while (i < disableButir.length) {

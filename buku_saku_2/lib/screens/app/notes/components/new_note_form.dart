@@ -14,6 +14,8 @@ import 'package:buku_saku_2/screens/app/notes/components/form_field/jumlah_kegia
 import 'package:buku_saku_2/screens/app/notes/components/form_field/uraian_text_area.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
+import 'package:open_file/open_file.dart';
+import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -186,7 +188,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
               if (result == null) return;
               setState(() {
                 selectedBuktiFisik.addAll(result.files);
-                print(result.files);
               });
             },
             onDelete: (fileName) {
@@ -195,7 +196,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
                   if (file.name == fileName) {
                     if (await File(file.path!).exists()) {
                       File(file.path!).delete();
-                      print('berhasil');
                     }
                     selectedBuktiFisik.remove(file);
                   }
@@ -203,6 +203,8 @@ class _NewNoteFormState extends State<NewNoteForm> {
               });
             },
           ),
+
+          // todo : ini tombolnya mau dibawa kemana
           Padding(
             padding: const EdgeInsets.all(40.0),
             child: ElevatedButton(
@@ -219,6 +221,17 @@ class _NewNoteFormState extends State<NewNoteForm> {
     final appStorage = await getApplicationDocumentsDirectory();
     final newFile = File('${appStorage.path}/${file.name}');
 
+    // ParseFileBase parseFile;
+
+    // parseFile = ParseFile(File(file.path!));
+
+    // ParseResponse res = await parseFile.save();
+
+    // res();
+
+    // OpenFile(res.result);
+
     return File(file.path!).copy(newFile.path);
+    // return File(file.path!);
   }
 }

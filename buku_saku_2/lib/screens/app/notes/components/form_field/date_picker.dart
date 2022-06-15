@@ -60,7 +60,7 @@ class DatePicker extends StatelessWidget {
                       context: context,
                       initialDate: DateTime.now(),
                       firstDate: DateTime(1990),
-                      lastDate: DateTime(2040),
+                      lastDate: DateTime(DateTime.now().year),
                     ).then(onAdd);
                   },
                   child: const Icon(

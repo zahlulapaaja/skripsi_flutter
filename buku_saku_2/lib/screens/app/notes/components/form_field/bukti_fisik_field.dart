@@ -1,4 +1,5 @@
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,14 @@ class BuktiFisikField extends StatelessWidget {
                     children: [
                       const FieldLabel(title: 'Bukti Fisik'),
                       Text(
-                          '(Anda punya ${selectedData?.length ?? 0} bukti fisik)'),
+                        '(Anda punya ${selectedData?.length ?? 0} bukti fisik)',
+                        style: const TextStyle(
+                          fontFamily: AppConstants.fontName,
+                          color: AppColors.grey,
+                          fontSize: AppConstants.kSmallFontSize,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ],
                   ),
                   ElevatedButton(
@@ -53,10 +61,11 @@ class BuktiFisikField extends StatelessWidget {
               ),
               GridView.builder(
                 padding: const EdgeInsets.only(top: 10),
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  mainAxisExtent: 100,
+                  crossAxisCount: 3,
                   childAspectRatio: 3 / 2,
-                  crossAxisSpacing: 20,
+                  crossAxisSpacing: 15,
                   mainAxisSpacing: 20,
                 ),
                 itemCount: selectedData?.length ?? 0,

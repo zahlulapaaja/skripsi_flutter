@@ -150,6 +150,7 @@ class RadioButton extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(height: 15),
       ],
     );
   }
