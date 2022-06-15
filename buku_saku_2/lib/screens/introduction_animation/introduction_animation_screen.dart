@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/onboarding1.dart';
-import 'package:buku_saku_2/screens/introduction_animation/components/splash_view.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/onboarding2.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/top_back_skip_view.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/center_next_button.dart';
@@ -41,9 +40,9 @@ class _IntroductionAnimationScreenState
       body: ClipRect(
         child: Stack(
           children: [
-            SplashView(
-              animationController: _animationController!,
-            ),
+            // SplashView(
+            //   animationController: _animationController!,
+            // ),
             OnBoarding1(
               animationController: _animationController!,
             ),
