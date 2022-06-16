@@ -153,40 +153,34 @@ class _HomeDrawerState extends State<HomeDrawer> {
             height: 1,
             color: AppColors.grey.withOpacity(0.6),
           ),
-          Column(
-            children: <Widget>[
-              ListTile(
-                title: const Text(
-                  'Sign Out',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontFamily: AppConstants.fontName,
-                    color: AppColors.black,
-                    fontSize: AppConstants.kNormalFontSize,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                trailing: const Icon(
-                  Icons.power_settings_new,
-                  color: Colors.red,
-                ),
-                onTap: () {
-                  onTapped();
-                },
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).padding.bottom,
-              )
-            ],
-          ),
+          //   Column(
+          //     children: <Widget>[
+          //       ListTile(
+          //         title: const Text(
+          //           'Sign Out',
+          //           textAlign: TextAlign.left,
+          //           style: TextStyle(
+          //             fontFamily: AppConstants.fontName,
+          //             color: AppColors.black,
+          //             fontSize: AppConstants.kNormalFontSize,
+          //             fontWeight: FontWeight.w600,
+          //           ),
+          //         ),
+          //         trailing: const Icon(
+          //           Icons.power_settings_new,
+          //           color: Colors.red,
+          //         ),
+          //         onTap: () {
+          //         },
+          //       ),
+          //       SizedBox(
+          //         height: MediaQuery.of(context).padding.bottom,
+          //       )
+          //     ],
+          //   ),
         ],
       ),
     );
-  }
-
-  void onTapped() {
-    // ignore: avoid_print
-    print('Disini fungsi sign out...'); // Print to console.
   }
 
   Widget menuList(DrawerList listData) {

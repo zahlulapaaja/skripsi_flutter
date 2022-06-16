@@ -1,6 +1,4 @@
-// ignore_for_file: avoid_print
-
-import 'package:buku_saku_2/screens/app/controllers/export_note.dart';
+import 'package:buku_saku_2/screens/app/sidebar/export_note.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
@@ -49,8 +47,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             HomeScreen(animationController: animationController);
       } else if (widget.defaultIndex == 1) {
         tabIconsList[1].isSelected = true;
-        context.read<ScreenProvider>().setTabBody =
-            NotesScreen(animationController: animationController);
+        context.read<ScreenProvider>().setTabBody = const NotesScreen();
       }
     });
   }
@@ -143,15 +140,15 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                   if (!mounted) return;
                   context.read<NotesProvider>().setQuery = '';
                   context.read<ScreenProvider>().setTabBody =
-                      NotesScreen(animationController: animationController);
+                      const NotesScreen();
                 });
                 break;
 
               case 2:
                 animationController?.reverse().then<dynamic>((data) {
-                  // if (!mounted) return;
-                  context.read<ScreenProvider>().setTabBody = DictionaryScreen(
-                      animationController: animationController);
+                  if (!mounted) return;
+                  context.read<ScreenProvider>().setTabBody =
+                      const DictionaryScreen();
                   context.read<DictionaryProvider>().setDictionaryList =
                       const JenjangScreen();
                   context.read<DictionaryProvider>().setSearchboxExist = false;

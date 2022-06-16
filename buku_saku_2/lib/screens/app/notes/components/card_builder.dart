@@ -12,7 +12,7 @@ class CardBuilder extends StatelessWidget {
   final int? status;
   final Function? onLongPressed;
 
-  // TODO : bikin logic ketika mau ganti status, harusnya sih di newNoteForm, bukan disini
+  // TODO : status belom dibuat
 
   const CardBuilder({
     Key? key,

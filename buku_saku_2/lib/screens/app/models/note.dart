@@ -1,7 +1,4 @@
 class Note {
-  // TODO : Nanti hapus semua null checknya
-  // Ga juga sih, soalnya kan di halaman awal ga perlu semua atribut, cukup judul, uraian, gambar klo ada, dan status
-  // Ga perlu juga sih semua data itu, yg penting koe butirnya, nanti kan bisa panggil ke data json detailnya
   int? id;
   String? judul;
   String uraian;
@@ -70,7 +67,7 @@ class Note {
       jumlahKegiatan,
       angkaKredit,
       isTim ? "ya" : "tidak",
-      jmlAnggota,
+      isTim ? jmlAnggota : 0,
       peranDalamTim,
       listTanggal,
       status,

@@ -3,7 +3,6 @@ import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
 
 class AppBarUI extends StatelessWidget {
-  // Kalo mau bikin animasi kayak kemaren, bisa ganti jadi stateful
   const AppBarUI({
     Key? key,
     required this.title,

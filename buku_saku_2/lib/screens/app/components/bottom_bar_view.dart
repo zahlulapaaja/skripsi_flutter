@@ -3,8 +3,6 @@ import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
 import 'dart:math' as math;
 
-// TODO : Disini perlu dibersihin dikit UI nya
-
 class BottomBarView extends StatefulWidget {
   const BottomBarView(
       {Key? key, this.tabIconsList, this.changeIndex, this.addClick})

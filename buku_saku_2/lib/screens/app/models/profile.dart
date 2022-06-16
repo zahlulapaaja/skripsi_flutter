@@ -3,7 +3,7 @@ class Profile {
   String? nama;
   String? fotoProfil;
   Jenjang? jenjang;
-  double? akSaatIni;
+  double akSaatIni;
   List<Jenjang>? listJenjang;
 
   Profile({
@@ -11,7 +11,7 @@ class Profile {
     this.nama,
     this.fotoProfil,
     this.jenjang,
-    this.akSaatIni,
+    this.akSaatIni = 0,
     this.listJenjang,
   });
 

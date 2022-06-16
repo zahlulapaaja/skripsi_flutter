@@ -61,10 +61,7 @@ class RingkasanButir extends StatelessWidget {
               ],
             ),
             Text(
-              // todo : ini keknya ga perlu bikin ternary
-              persenAK != null
-                  ? angkaKredit.toStringAsFixed(3)
-                  : (angkaKredit * targetAK).toStringAsFixed(3),
+              angkaKredit.toStringAsFixed(3),
               textAlign: TextAlign.end,
               style: const TextStyle(
                 fontFamily: AppConstants.fontName,

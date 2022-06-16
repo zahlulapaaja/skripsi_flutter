@@ -14,8 +14,6 @@ import 'package:buku_saku_2/screens/app/notes/components/form_field/jumlah_kegia
 import 'package:buku_saku_2/screens/app/notes/components/form_field/uraian_text_area.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
-import 'package:open_file/open_file.dart';
-import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 

@@ -9,9 +9,7 @@ import 'package:provider/provider.dart';
 
 class NotesScreen extends StatefulWidget {
   static const id = 'notes_screen';
-  final AnimationController? animationController;
-  const NotesScreen({Key? key, this.animationController}) : super(key: key);
-
+  const NotesScreen({Key? key}) : super(key: key);
   @override
   _NotesScreenState createState() => _NotesScreenState();
 }

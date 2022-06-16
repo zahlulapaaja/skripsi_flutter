@@ -239,7 +239,6 @@ class ButirDetailScreen extends StatelessWidget {
           heroTag: 'button2tag',
           onPressed: () async {
             bool exist = await butir.isExist;
-            // todo : masukin alert disini
 
             int? kodeJenjang;
             for (var item in listJenjang) {
@@ -251,9 +250,7 @@ class ButirDetailScreen extends StatelessWidget {
             if (butir.pelaksana == "Semua Jenjang" ||
                 (kodeJenjang! - jenjang.kodeJenjang).abs() < 2) {
               exist
-                  ? toastAlert(
-                      msg:
-                          "Tidak dapat membuat dua catatan dengan butir yang sama")
+                  ? toastAlert(msg: "Catatan sudah ada")
                   : Navigator.push(
                       context,
                       MaterialPageRoute(

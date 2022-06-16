@@ -1,4 +1,4 @@
-import 'package:buku_saku_2/screens/app/controllers/export_note.dart';
+import 'package:buku_saku_2/screens/app/sidebar/export_note.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
@@ -53,9 +53,7 @@ class _MyAppState extends State<MyApp> {
         title: 'Buku Saku Prakom',
         navigatorKey: navigatorKey,
         theme: Theme.of(context).copyWith(
-          // Define the default colors
           primaryColor: AppColors.primary,
-
           scaffoldBackgroundColor: Colors.transparent,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),

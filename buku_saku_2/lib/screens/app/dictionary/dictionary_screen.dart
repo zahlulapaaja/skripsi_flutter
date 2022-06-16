@@ -6,10 +6,7 @@ import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dar
 import 'package:provider/provider.dart';
 
 class DictionaryScreen extends StatefulWidget {
-  static const id = 'dictionary_screen';
-  final AnimationController? animationController;
-  const DictionaryScreen({Key? key, this.animationController})
-      : super(key: key);
+  const DictionaryScreen({Key? key}) : super(key: key);
 
   @override
   _DictionaryScreenState createState() => _DictionaryScreenState();
@@ -33,9 +30,8 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                 scrollDirection: Axis.vertical,
                 children: [
                   if (context.watch<DictionaryProvider>().searchboxExist)
-                    DictSearchBox(),
+                    const DictSearchBox(),
                   context.watch<DictionaryProvider>().dictionaryList,
-                  // getDictionaryListViewUI(),
                 ]),
             const AppBarUI(title: 'Kamus'),
             SizedBox(

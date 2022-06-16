@@ -19,7 +19,7 @@ class DetailAngkaKredit extends StatefulWidget {
 
 class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
   var dbHelper = DbHelper();
-  Profile? data;
+  Profile data = Profile();
   double akUtama = 0.0;
   double akPenunjang = 0.0;
 
@@ -28,7 +28,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
     data = context.watch<ProfileProvider>().profil;
     akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
     akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
-    double totalAk = data!.akSaatIni! + akUtama + akPenunjang;
+    double totalAk = data.akSaatIni + akUtama + akPenunjang;
     int targetAK = context.watch<ProfileProvider>().akNaikPangkat;
     double angleAK = (totalAk / targetAK) * 360;
 
@@ -68,7 +68,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'Halo ' + data!.nama!.split(" ")[0] + "...",
+                                'Halo ' + data.nama!.split(" ")[0] + "...",
                                 style: const TextStyle(
                                   fontFamily: AppConstants.fontName,
                                   fontWeight: FontWeight.w500,
@@ -101,9 +101,6 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                             left: 4, bottom: 2),
                                         child: Text(
                                           "Ak Saat Ini",
-                                          // TODO : kondisikan ternary dengan snapshotnya, ah itulah pokoknya, bikin lebih rapi kondisinya
-                                          // karena sekarang kondisinya masih keluar error, karna waktu datanya belom ada, tetep dipaksa dipanggil
-                                          // 'PAK Saat Ini',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             fontFamily: AppConstants.fontName,
@@ -131,7 +128,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                             padding: const EdgeInsets.only(
                                                 left: 4, bottom: 3),
                                             child: Text(
-                                              (data!.akSaatIni)!
+                                              (data.akSaatIni)
                                                   .toStringAsFixed(3),
                                               textAlign: TextAlign.center,
                                               style: const TextStyle(
@@ -253,7 +250,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
                                     Text(
-                                      (data!.akSaatIni! + akUtama + akPenunjang)
+                                      (data.akSaatIni + akUtama + akPenunjang)
                                           .toStringAsFixed(3),
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
@@ -352,7 +349,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Text(
-                                    data!.jenjang!.jenjang,
+                                    data.jenjang!.jenjang,
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontFamily: AppConstants.fontName,

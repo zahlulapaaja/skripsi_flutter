@@ -34,7 +34,6 @@ class UnsurScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // context.read<DictionaryProvider>().setJenjang = jenjang;
     String jenjang = context.read<DictionaryProvider>().selectedJenjang;
     return FutureBuilder(
         future: readJsonData(jenjang),
@@ -42,8 +41,6 @@ class UnsurScreen extends StatelessWidget {
           if (snapshot.hasError) {
             return Center(child: Text('ERROR!! ${snapshot.error}'));
           } else if (snapshot.hasData) {
-            // TODO : Nanti disini klo datanya kosong, kondisikan lagi tampilannya
-
             List<Unsur> unsur = snapshot.data!;
             context.read<DictionaryProvider>().storeData = snapshot.data!;
             return ListView.builder(

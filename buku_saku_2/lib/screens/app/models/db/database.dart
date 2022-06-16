@@ -124,7 +124,7 @@ class DbHelper {
   Future<List<Note>> getNoteByKey(String key) async {
     final db = await dbInstance;
 
-    // TODO : nanti jangan cuma judul, tapi uraian juga bisa masuk pencarian
+    // Pencarian hanya berdasarkan judul
     final List<Map<String, dynamic>> maps = await db.query('catatan',
         where: 'judul LIKE ?', whereArgs: ['%$key%'], orderBy: "kodeButir ASC");
 

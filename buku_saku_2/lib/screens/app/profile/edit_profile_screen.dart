@@ -45,7 +45,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
     if (data.id != null) {
       _nameTextController.text = data.nama!;
-      _akSaatIniTextController.text = data.akSaatIni!.toStringAsFixed(3);
+      _akSaatIniTextController.text = data.akSaatIni.toStringAsFixed(3);
       for (var item in data.listJenjang!) {
         if (item.id == data.jenjang!.id) {
           selectedJenjang = item.jenjang;

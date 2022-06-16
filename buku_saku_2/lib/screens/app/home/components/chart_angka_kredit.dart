@@ -27,7 +27,7 @@ class ChartAngkaKredit extends StatelessWidget {
     double akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
     double akNaikPangkat =
         context.watch<ProfileProvider>().akNaikPangkat.toDouble();
-    double totalAK = profil.akSaatIni! + akUtama + akPenunjang;
+    double totalAK = profil.akSaatIni + akUtama + akPenunjang;
 
     Future.delayed(Duration.zero, () {
       context.read<ProfileProvider>().setAKMenujuNaikPangkat =
@@ -62,7 +62,7 @@ class ChartAngkaKredit extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 30.0),
                 child: PieChart(
                   dataMap: {
-                    "Angka Kredit Saat Ini": profil.akSaatIni!,
+                    "Angka Kredit Saat Ini": profil.akSaatIni,
                     "Angka Kredit Terkumpul": akUtama + akPenunjang,
                     "": akNaikPangkat - totalAK,
                   },
@@ -115,7 +115,7 @@ class ChartAngkaKredit extends StatelessWidget {
                                 style: AppConstants.kCardBodyTextStyle,
                               ),
                               Text(
-                                profil.akSaatIni!.toStringAsFixed(3),
+                                profil.akSaatIni.toStringAsFixed(3),
                                 style: AppConstants.kNormalTitleTextStyle,
                               ),
                             ],
