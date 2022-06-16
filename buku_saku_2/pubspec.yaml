@@ -31,19 +31,16 @@ dependencies:
   #back end
   sqflite: ^2.0.2
   provider: ^6.0.2
+  get:
+  get_storage:
 
   # masih coba2
   parse_server_sdk_flutter: ^3.1.2
-  flutter_native_splash: ^2.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
-
-flutter_native_splash:
-  image: assets/introduction/splash.png
-  background_image: assets/introduction/splash_background.png
 
 flutter:
   uses-material-design: true

@@ -1,10 +1,12 @@
+import 'package:buku_saku_2/screens/app/app_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/onboarding1.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/onboarding2.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/top_back_skip_view.dart';
 import 'package:buku_saku_2/screens/introduction_animation/components/center_next_button.dart';
-import 'package:buku_saku_2/screens/introduction_animation/components/welcome_view.dart';
+import 'package:buku_saku_2/screens/introduction_animation/components/onboarding3.dart';
+import 'package:get_storage/get_storage.dart';
 
 class IntroductionAnimationScreen extends StatefulWidget {
   static const String id = 'introduction_animation_screen';
@@ -18,6 +20,7 @@ class IntroductionAnimationScreen extends StatefulWidget {
 class _IntroductionAnimationScreenState
     extends State<IntroductionAnimationScreen> with TickerProviderStateMixin {
   AnimationController? _animationController;
+  final introData = GetStorage();
 
   @override
   void initState() {
@@ -40,16 +43,13 @@ class _IntroductionAnimationScreenState
       body: ClipRect(
         child: Stack(
           children: [
-            // SplashView(
-            //   animationController: _animationController!,
-            // ),
             OnBoarding1(
               animationController: _animationController!,
             ),
             OnBoarding2(
               animationController: _animationController!,
             ),
-            WelcomeView(
+            OnBoarding3(
               animationController: _animationController!,
             ),
             TopBackSkipView(
@@ -60,6 +60,7 @@ class _IntroductionAnimationScreenState
             CenterNextButton(
               animationController: _animationController!,
               onNextClick: _onNextClick,
+              onConnectClick: () {},
             ),
           ],
         ),
@@ -67,43 +68,36 @@ class _IntroductionAnimationScreenState
     );
   }
 
-  // 1 detik bagi 4, karna semuanya ada 4 halaman (termasuk halaman selamat datang)
+  // 1 detik bagi 3, karna semuanya ada 3 halaman
 
   void _onSkipClick() {
-    _animationController?.animateTo(0.75,
-        duration: const Duration(milliseconds: 1200));
+    _EndIntroScreen(context, AppScreen.id);
   }
 
   void _onBackClick() {
     if (_animationController!.value >= 0 &&
-        _animationController!.value <= 0.25) {
+        _animationController!.value <= 0.34) {
       _animationController?.animateTo(0.0);
-    } else if (_animationController!.value > 0.25 &&
-        _animationController!.value <= 0.5) {
-      _animationController?.animateTo(0.25);
-    } else if (_animationController!.value > 0.45 &&
-        _animationController!.value <= 0.75) {
-      _animationController?.animateTo(0.5);
-    } else if (_animationController!.value > 0.75 &&
-        _animationController!.value <= 1.0) {
-      _animationController?.animateTo(0.75);
+    } else if (_animationController!.value > 0.34 &&
+        _animationController!.value <= 0.67) {
+      _animationController?.animateTo(0.34);
     }
   }
 
   void _onNextClick() {
-    if (_animationController!.value >= 0 &&
-        _animationController!.value <= 0.25) {
-      _animationController?.animateTo(0.5);
-    } else if (_animationController!.value > 0.25 &&
-        _animationController!.value <= 0.5) {
-      _animationController?.animateTo(0.75);
-    } else if (_animationController!.value > 0.5 &&
-        _animationController!.value <= 0.75) {
-      _signUpClick();
+    if (_animationController!.value < 0.34) {
+      _animationController?.animateTo(0.34);
+    } else if (_animationController!.value >= 0.34 &&
+        _animationController!.value < 0.67) {
+      _animationController?.animateTo(0.67);
+    } else if (_animationController!.value >= 0.67) {
+      _EndIntroScreen(context, AppScreen.id);
     }
   }
 
-  void _signUpClick() {
-    // Navigator.pushNamed(context, SignUpScreen.id);
+  void _EndIntroScreen(context, String routeName) {
+    Navigator.pop(context);
+    Navigator.pushNamed(context, routeName);
+    introData.write("displayed", true);
   }
 }

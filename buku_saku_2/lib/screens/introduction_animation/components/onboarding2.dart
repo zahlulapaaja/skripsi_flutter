@@ -13,8 +13,8 @@ class OnBoarding2 extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.25,
-        0.5,
+        0.0,
+        0.34,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -23,28 +23,28 @@ class OnBoarding2 extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.5,
-        0.75,
+        0.34,
+        0.67,
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _relaxFirstHalfAnimation =
+    final _titleFirstHalfAnimation =
         Tween<Offset>(begin: const Offset(2, 0), end: const Offset(0, 0))
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.25,
-        0.5,
+        0.0,
+        0.34,
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _relaxSecondHalfAnimation =
+    final _titleSecondHalfAnimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-2, 0))
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.5,
-        0.75,
+        0.34,
+        0.67,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -54,8 +54,8 @@ class OnBoarding2 extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.25,
-        0.5,
+        0.0,
+        0.34,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -64,8 +64,8 @@ class OnBoarding2 extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.5,
-        0.75,
+        0.34,
+        0.67,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -95,9 +95,9 @@ class OnBoarding2 extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               SlideTransition(
-                position: _relaxFirstHalfAnimation,
+                position: _titleFirstHalfAnimation,
                 child: SlideTransition(
-                  position: _relaxSecondHalfAnimation,
+                  position: _titleSecondHalfAnimation,
                   child: const Text(
                     "Efektifkan Waktu!",
                     style:
