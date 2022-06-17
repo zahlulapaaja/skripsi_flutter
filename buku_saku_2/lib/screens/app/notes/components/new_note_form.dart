@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
+import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/kegiatan_tim.dart';
 import 'package:flutter/material.dart';
@@ -36,15 +37,60 @@ class _NewNoteFormState extends State<NewNoteForm> {
   ButirKegiatan? selectedButir;
   List<PlatformFile> selectedBuktiFisik = [];
   String? alert;
-
-  TextEditingController jmlAnggotaTextController =
-      TextEditingController(text: "2");
   TextEditingController uraianTextController = TextEditingController();
+
+  void notifyAKSatuan() {
+    (alert == null)
+        ? selectedNote.akSatuan = selectedButir!.angkaKredit
+        : selectedNote.akSatuan = selectedButir!.angkaKredit * 0.8;
+    if (selectedNote.isTim && selectedNote.jmlAnggota >= 2) {
+      switch (selectedNote.jmlAnggota) {
+        case 2:
+          if (selectedNote.peranDalamTim == "penyusun utama") {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.6;
+          } else if (selectedNote.peranDalamTim == "penyusun pembantu") {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.4;
+          } else {
+            selectedNote.akSatuan = selectedNote.akSatuan! / 2;
+          }
+          break;
+        case 3:
+          if (selectedNote.peranDalamTim == "penyusun utama") {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.5;
+          } else if (selectedNote.peranDalamTim == "penyusun pembantu") {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.25;
+          } else {
+            selectedNote.akSatuan = selectedNote.akSatuan! / 3;
+          }
+          break;
+        case 4:
+          if (selectedNote.peranDalamTim == "penyusun utama") {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.4;
+          } else if (selectedNote.peranDalamTim == "penyusun pembantu") {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.2;
+          } else {
+            selectedNote.akSatuan = selectedNote.akSatuan! / 4;
+          }
+          break;
+        default:
+          if (selectedNote.peranDalamTim == "penyusun utama") {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.3;
+          } else if (selectedNote.peranDalamTim == "penyusun pembantu") {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.15;
+          } else {
+            selectedNote.akSatuan = selectedNote.akSatuan! * 0.15;
+          }
+          break;
+      }
+    }
+  }
 
   submitNote(NotesProvider noteProvider) async {
     if (_formKey.currentState!.validate()) {
       selectedNote.uraian = uraianTextController.text;
-      selectedNote.jmlAnggota = int.parse(jmlAnggotaTextController.text);
+      selectedNote.angkaKredit =
+          selectedNote.jumlahKegiatan * selectedNote.akSatuan!;
+
       selectedNote.buktiFisik?.clear();
       for (var file in selectedBuktiFisik) {
         final newFile = await saveFilePermanently(file);
@@ -71,6 +117,13 @@ class _NewNoteFormState extends State<NewNoteForm> {
       uraianTextController.text = selectedNote.uraian;
       selectedNote.buktiFisik?.forEach((docFile) {
         selectedBuktiFisik.add(PlatformFile.fromMap(docFile.toMap()));
+      });
+      Future.delayed(Duration.zero, () {
+        selectedButir = context
+            .read<DictionaryProvider>()
+            .getButirByKode(selectedNote.kodeButir!);
+        context.read<ProfileProvider>().setSelectedButir = selectedButir!;
+        alert = context.read<ProfileProvider>().getAlert;
       });
     } else {
       selectedNote = Note(
@@ -159,22 +212,29 @@ class _NewNoteFormState extends State<NewNoteForm> {
                 selectedNote.jumlahKegiatan = value;
                 // harusnya nanti field setelah butir kegiatan muncul kalo butir kegiatan udh dipilih
                 // dan angka kredit adanya setelah butir terpilih
-                selectedNote.angkaKredit = value * selectedNote.akSatuan!;
               });
             },
           ),
           KegiatanTimField(
             isChecked: selectedNote.isTim,
-            jmlAnggotaController: jmlAnggotaTextController,
             initialDataPeran: selectedNote.peranDalamTim,
+            initialJmlAnggota: selectedNote.jmlAnggota,
+            onTextFieldChanged: (int? value) {
+              setState(() {
+                selectedNote.jmlAnggota = value!;
+                notifyAKSatuan();
+              });
+            },
             onCheckboxChanged: (bool? value) {
               setState(() {
                 selectedNote.isTim = value!;
+                notifyAKSatuan();
               });
             },
             onRadioButtonChanged: (String? value) {
               setState(() {
                 selectedNote.peranDalamTim = value;
+                notifyAKSatuan();
               });
             },
           ),

@@ -114,12 +114,13 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               ),
                             ],
                           ),
-                          const DetailBox(
+                          DetailBox(
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Kegiatan Tim",
-                                body:
-                                    "Jumlah anggota tim : 3\nPeran : penyusun utama",
+                                body: (note.isTim)
+                                    ? "Jumlah anggota tim : ${note.jmlAnggota}\nPeran : ${note.peranDalamTim}"
+                                    : "-",
                               ),
                             ],
                           ),

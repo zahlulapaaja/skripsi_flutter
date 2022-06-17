@@ -1,22 +1,27 @@
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class KegiatanTimField extends StatefulWidget {
   const KegiatanTimField({
     Key? key,
     required this.isChecked,
-    required this.jmlAnggotaController,
     this.initialDataPeran,
     required this.onCheckboxChanged,
     required this.onRadioButtonChanged,
+    required this.onTextFieldChanged,
+    required this.initialJmlAnggota,
   }) : super(key: key);
 
   final bool isChecked;
   final Function(bool?) onCheckboxChanged;
   final Function(String?) onRadioButtonChanged;
-  final TextEditingController jmlAnggotaController;
+  final Function(int?) onTextFieldChanged;
+  // final TextEditingController jmlAnggotaController;
+  // jadiin stateless karna ini dihapus
   final String? initialDataPeran;
+  final int initialJmlAnggota;
 
   @override
   State<KegiatanTimField> createState() => _KegiatanTimFieldState();
@@ -62,11 +67,24 @@ class _KegiatanTimFieldState extends State<KegiatanTimField> {
                       width: 70,
                       height: 30,
                       child: TextFormField(
-                        controller: widget.jmlAnggotaController,
+                        // todo : ini rapiin tampilannya
+                        validator: (value) {
+                          return int.parse(value!) < 2
+                              ? 'Jumlah anggota minimal 2'
+                              : null;
+                        },
                         textInputAction: TextInputAction.done,
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.center,
                         keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        initialValue: widget.initialJmlAnggota.toString(),
+                        onChanged: (value) {
+                          if (value == "") value = "0";
+                          widget.onTextFieldChanged(int.parse(value));
+                        },
                         decoration: const InputDecoration(
                           contentPadding: EdgeInsets.symmetric(horizontal: 12),
                           border: OutlineInputBorder(
@@ -144,8 +162,8 @@ class RadioButton extends StatelessWidget {
               splashFactory: NoSplash.splashFactory,
               padding: MaterialStateProperty.all(EdgeInsets.zero),
             ),
-            child: const Text(
-              "Penyusun Utama",
+            child: Text(
+              value,
               style: AppConstants.kDetailCardTextStyle,
             ),
           ),

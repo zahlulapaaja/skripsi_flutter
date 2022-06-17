@@ -134,4 +134,8 @@ class DictionaryProvider with ChangeNotifier {
     _searchboxExist = value;
     notifyListeners();
   }
+
+  ButirKegiatan getButirByKode(String kode) {
+    return allButir.singleWhere((element) => element.kode == kode);
+  }
 }

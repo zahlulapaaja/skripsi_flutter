@@ -68,7 +68,7 @@ class Note {
       angkaKredit,
       isTim ? "ya" : "tidak",
       isTim ? jmlAnggota : 0,
-      peranDalamTim,
+      isTim ? peranDalamTim : "",
       listTanggal,
       status,
       dateCreated,
