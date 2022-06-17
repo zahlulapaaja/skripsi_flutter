@@ -21,7 +21,6 @@ class ExportNotesScreen extends StatefulWidget {
 }
 
 class _ExportNotesScreenState extends State<ExportNotesScreen> {
-  // nanti ganti jadi stateless bisa ga ini, soalnya screennya sederhana
   var dbHelper = DbHelper();
   final List<Object> title = [
     "id",

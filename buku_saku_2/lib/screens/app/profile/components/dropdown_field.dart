@@ -4,7 +4,6 @@ import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class DropdownField extends StatelessWidget {
   const DropdownField({
     Key? key,

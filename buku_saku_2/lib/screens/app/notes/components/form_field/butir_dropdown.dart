@@ -7,7 +7,6 @@ import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
 class ButirDropdown extends StatelessWidget {
   ButirDropdown({
     Key? key,
@@ -25,7 +24,6 @@ class ButirDropdown extends StatelessWidget {
   List<String> dataButir = [];
   List<double> dataAK = [];
   List<String> disableButir = [];
-  late List<ButirKegiatan> allButir;
 
   List<String> getData(List<ButirKegiatan> allButir) {
     dataAK = [];
@@ -41,7 +39,7 @@ class ButirDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    allButir = context.read<DictionaryProvider>().allButir;
+    List<ButirKegiatan> allButir = context.read<DictionaryProvider>().allButir;
     disableButir = context.read<DictionaryProvider>().disableButir;
     dataButir = getData(allButir);
 
@@ -74,7 +72,6 @@ class ButirDropdown extends StatelessWidget {
                 selectedButir = allButir
                     .singleWhere((element) => element.kode == kodeButir);
               }
-
               onChanged(selectedButir);
             },
             selectedItem: selectedData,

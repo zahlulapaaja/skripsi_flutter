@@ -47,7 +47,6 @@ class BuktiFisikField extends StatelessWidget {
                   ElevatedButton(
                       onPressed: onPressed,
                       style: TextButton.styleFrom(
-                        // custom warnanya, sesuai jenis file
                         backgroundColor: AppColors.primaryLight,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10),

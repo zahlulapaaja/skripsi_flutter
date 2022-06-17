@@ -9,6 +9,7 @@ import 'package:buku_saku_2/screens/app/profile/components/profile_form_field.da
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -169,10 +170,16 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
       if (status == 1) {
         context.read<DictionaryProvider>().setJenjang = data;
+        Fluttertoast.showToast(
+          msg: "Data berhasil disimpan",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM,
+          backgroundColor: AppColors.success.withOpacity(0.9),
+          textColor: Colors.white,
+          fontSize: AppConstants.kTinyFontSize,
+        );
+        Navigator.pop(context);
       }
-
-      // nanti status ini dipake utk kasih alert berhasil
-      Navigator.pop(context);
     }
   }
 }
