@@ -1,15 +1,20 @@
+import 'dart:io';
+
 import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
+import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:buku_saku_2/screens/app/profile/components/dropdown_field.dart';
 import 'package:buku_saku_2/screens/app/profile/components/profile_form_field.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -99,10 +104,91 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           top: AppBar().preferredSize.height +
               MediaQuery.of(context).padding.top,
           bottom: 62 + MediaQuery.of(context).padding.bottom,
+          left: 20,
+          right: 20,
         ),
         scrollDirection: Axis.vertical,
         children: <Widget>[
-          const SizedBox(height: 20),
+          const FieldLabel(title: "Foto Profil"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: AppColors.grey.withOpacity(0.6),
+                        offset: const Offset(2.0, 4.0),
+                        blurRadius: 8),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(60.0)),
+                  child: (data.fotoProfil == null)
+                      ? Image.asset(
+                          "assets/icons/profile.png",
+                          fit: BoxFit.cover,
+                        )
+                      : Image.file(
+                          File(data.fotoProfil!),
+                          fit: BoxFit.cover,
+                        ),
+                ),
+              ),
+              Column(
+                children: [
+                  ElevatedButton(
+                    onPressed: () async {
+                      final result = await FilePicker.platform.pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ['jpg', 'png'],
+                      );
+                      if (result != null) {
+                        final file =
+                            await saveFilePermanently(result.files.first);
+                        setState(() {
+                          data.fotoProfil = file.path;
+                        });
+                      }
+                    },
+                    child: const Text("Upload"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () async {
+                      var result = await showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Hapus Foto'),
+                          content: const Text(
+                              'Anda yakin ingin menghapus foto profil ?'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Tidak'),
+                              child: const Text('Tidak'),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Ya'),
+                              child: const Text('Ya'),
+                            ),
+                          ],
+                        ),
+                      );
+                      setState(() {
+                        if (result == "Ya") data.fotoProfil = null;
+                      });
+                    },
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(AppColors.alert)),
+                    child: const Text("Hapus"),
+                  ),
+                ],
+              ),
+            ],
+          ),
           ProfileFormField(
             title: "Nama Lengkap",
             hintText: "Masukkan nama lengkap Anda...",
@@ -146,15 +232,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             controller: _akSaatIniTextController,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
           ),
-          Padding(
-            padding:
-                const EdgeInsets.only(top: 40, right: 20, bottom: 0, left: 20),
-            child: BlueRoundedButton(
-              buttonTitle: 'Simpan',
-              onPressed: () {
-                saveData(data);
-              },
-            ),
+          const SizedBox(height: 40),
+          BlueRoundedButton(
+            buttonTitle: 'Simpan',
+            onPressed: () {
+              saveData(data);
+            },
           ),
         ],
       ),
@@ -181,5 +264,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         Navigator.pop(context);
       }
     }
+  }
+
+  Future<File> saveFilePermanently(PlatformFile file) async {
+    final appStorage = await getApplicationDocumentsDirectory();
+    final newFile = File('${appStorage.path}/${file.name}');
+
+    return File(file.path!).copy(newFile.path);
   }
 }

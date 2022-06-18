@@ -22,36 +22,33 @@ class DropdownField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          FieldLabel(title: title),
-          DropdownSearch(
-            mode: Mode.MENU,
-            showClearButton: false,
-            items: data,
-            onChanged: onChanged,
-            selectedItem: initialData,
-            dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
-            dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
-              hintText: hintText,
-              borderSide: const BorderSide(
-                color: AppColors.black,
-                width: 4,
-                style: BorderStyle.solid,
-              ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        FieldLabel(title: title),
+        DropdownSearch(
+          mode: Mode.MENU,
+          showClearButton: false,
+          items: data,
+          onChanged: onChanged,
+          selectedItem: initialData,
+          dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
+          dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
+            hintText: hintText,
+            borderSide: const BorderSide(
+              color: AppColors.black,
+              width: 4,
+              style: BorderStyle.solid,
             ),
-            validator: (value) {
-              if (value == null) {
-                return 'Jawaban masih kosong';
-              }
-              return null;
-            },
           ),
-        ],
-      ),
+          validator: (value) {
+            if (value == null) {
+              return 'Jawaban masih kosong';
+            }
+            return null;
+          },
+        ),
+      ],
     );
   }
 }

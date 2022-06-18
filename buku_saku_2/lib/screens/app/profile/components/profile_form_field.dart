@@ -23,34 +23,31 @@ class ProfileFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FieldLabel(title: title),
-          TextField(
-            controller: controller,
-            textInputAction: TextInputAction.done,
-            textAlignVertical: TextAlignVertical.center,
-            keyboardType: keyboardType,
-            obscureText: obsecureText,
-            decoration: InputDecoration(
-              hintText: hintText,
-              suffixIcon: suffixIcon,
-              contentPadding: const EdgeInsets.symmetric(horizontal: 12),
-              hintStyle: AppConstants.kTextFieldHintStyle,
-              border: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: AppColors.black,
-                  width: 4,
-                  style: BorderStyle.solid,
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        FieldLabel(title: title),
+        TextField(
+          controller: controller,
+          textInputAction: TextInputAction.done,
+          textAlignVertical: TextAlignVertical.center,
+          keyboardType: keyboardType,
+          obscureText: obsecureText,
+          decoration: InputDecoration(
+            hintText: hintText,
+            suffixIcon: suffixIcon,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+            hintStyle: AppConstants.kTextFieldHintStyle,
+            border: const OutlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.black,
+                width: 4,
+                style: BorderStyle.solid,
               ),
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 }

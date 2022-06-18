@@ -68,7 +68,9 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'Halo ' + data.nama!.split(" ")[0] + "...",
+                                'Halo ' +
+                                    (data.nama ?? "").split(" ")[0] +
+                                    "...",
                                 style: const TextStyle(
                                   fontFamily: AppConstants.fontName,
                                   fontWeight: FontWeight.w500,
@@ -349,7 +351,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Text(
-                                    data.jenjang!.jenjang,
+                                    data.jenjang?.jenjang ?? "Pranata Komputer",
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontFamily: AppConstants.fontName,

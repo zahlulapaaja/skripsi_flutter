@@ -1,6 +1,11 @@
+import 'dart:io';
+
+import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:provider/provider.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer(
@@ -65,6 +70,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   @override
   Widget build(BuildContext context) {
+    Profile? profil = context.watch<ProfileProvider>().profil;
     return Scaffold(
       backgroundColor: AppColors.midWhite.withOpacity(0.5),
       body: Column(
@@ -109,18 +115,26 @@ class _HomeDrawerState extends State<HomeDrawer> {
                             child: ClipRRect(
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(60.0)),
-                              child: Image.asset("assets/images/chris.png"),
+                              child: (profil.fotoProfil == null)
+                                  ? Image.asset(
+                                      "assets/icons/profile.png",
+                                      fit: BoxFit.cover,
+                                    )
+                                  : Image.file(
+                                      File(profil.fotoProfil!),
+                                      fit: BoxFit.cover,
+                                    ),
                             ),
                           ),
                         ),
                       );
                     },
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8, left: 4),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8, left: 4),
                     child: Text(
-                      'Chris Hemsworth',
-                      style: TextStyle(
+                      profil.nama ?? "",
+                      style: const TextStyle(
                         fontFamily: AppConstants.fontName,
                         color: AppColors.black,
                         fontSize: AppConstants.kNormalFontSize + 2,
@@ -132,9 +146,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 4,
-          ),
+          const SizedBox(height: 4),
           Divider(
             height: 1,
             color: AppColors.grey.withOpacity(0.6),
@@ -149,10 +161,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
               },
             ),
           ),
-          Divider(
-            height: 1,
-            color: AppColors.grey.withOpacity(0.6),
-          ),
+          // Divider(
+          //   height: 1,
+          //   color: AppColors.grey.withOpacity(0.6),
+          // ),
           //   Column(
           //     children: <Widget>[
           //       ListTile(
