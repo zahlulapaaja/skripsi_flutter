@@ -19,8 +19,6 @@ class RingkasanButir extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int targetAK = context.watch<ProfileProvider>().akNaikPangkat;
-
     return Padding(
       padding: const EdgeInsets.only(left: 14.0, right: 14.0, bottom: 8.0),
       child: Container(

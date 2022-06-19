@@ -17,7 +17,9 @@ class ChartAngkaKredit extends StatelessWidget {
   final List<Color> colorList = [
     AppColors.success,
     AppColors.primary,
-    AppColors.lightGrey,
+    AppColors.secondary,
+    AppColors.warning,
+    AppColors.primaryLight,
   ];
 
   @override
@@ -25,14 +27,13 @@ class ChartAngkaKredit extends StatelessWidget {
     Profile profil = context.watch<ProfileProvider>().profil;
     double akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
     double akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
-    double akNaikPangkat =
-        context.watch<ProfileProvider>().akNaikPangkat.toDouble();
+    double akNaikPangkat = context
+        .watch<ProfileProvider>()
+        .pangkatSaatIni
+        .akNaikPangkat!
+        .toDouble();
     double totalAK = profil.akSaatIni + akUtama + akPenunjang;
 
-    Future.delayed(Duration.zero, () {
-      context.read<ProfileProvider>().setAKMenujuNaikPangkat =
-          akNaikPangkat - totalAK;
-    });
     return AnimatedBuilder(
       animation: animationController!,
       builder: (BuildContext context, Widget? child) {
@@ -64,7 +65,6 @@ class ChartAngkaKredit extends StatelessWidget {
                   dataMap: {
                     "Angka Kredit Saat Ini": profil.akSaatIni,
                     "Angka Kredit Terkumpul": akUtama + akPenunjang,
-                    "": akNaikPangkat - totalAK,
                   },
                   animationDuration: const Duration(milliseconds: 1000),
                   chartRadius: MediaQuery.of(context).size.width / 2,
@@ -86,7 +86,8 @@ class ChartAngkaKredit extends StatelessWidget {
                     showChartValuesOutside: true,
                     chartValueStyle: AppConstants.kDetailCardTextStyle,
                   ),
-                  // totalValue: akNaikPangkat.toDouble(),
+                  baseChartColor: AppColors.lightGrey,
+                  totalValue: akNaikPangkat.toDouble(),
                 ),
               ),
               Padding(

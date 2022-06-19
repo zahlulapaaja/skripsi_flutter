@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/target_angka_kredit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
@@ -11,19 +12,13 @@ class ProfileProvider with ChangeNotifier {
   List<Jenjang>? _jenjang;
   String? _alert;
   String? _pelaksana;
-  int _akNaikPangkat = 0;
-  double _akMenujuNaikPangkat = 0;
+  List<TargetAngkaKredit> _jsonData = [];
+  TargetAngkaKredit? _pangkatSaatIni;
   var dbHelper = DbProfile();
 
   Profile get profil => _profile;
   List<Jenjang> get listJenjang => _jenjang!;
-  int get akNaikPangkat => _akNaikPangkat;
-  double get akMenujuNaikPangkat => _akMenujuNaikPangkat;
-
-  set setAKMenujuNaikPangkat(double ak) {
-    _akMenujuNaikPangkat = ak;
-    notifyListeners();
-  }
+  TargetAngkaKredit get pangkatSaatIni => _pangkatSaatIni!;
 
   set setSelectedButir(ButirKegiatan butir) {
     _pelaksana = butir.pelaksana;
@@ -65,10 +60,24 @@ class ProfileProvider with ChangeNotifier {
         await rootBundle.loadString("assets/jsonfile/ak_naik_pangkat.json");
 
     List<dynamic> list = json.decode(jsonData) as List<dynamic>;
-    for (var item in list) {
-      if (_profile.jenjang!.jenjang == item['jenjang']) {
-        if (_profile.jenjang!.golongan == item['golongan']) {
-          _akNaikPangkat = item['ak_naik_pangkat'];
+    _jsonData = list.map((e) => TargetAngkaKredit.fromJson(e)).toList();
+
+    for (var i = 0; i < _jsonData.length; i++) {
+      if (_profile.jenjang!.jenjang == _jsonData[i].jenjang) {
+        if (_profile.jenjang!.golongan == _jsonData[i].golongan) {
+          if (_jsonData[i].pangkatPuncak!) {
+            _jsonData[i].jenjangSelanjutnya = _jsonData[i + 1].jenjang;
+          } else {
+            _jsonData[i].golonganSelanjutnya = _jsonData[i + 1].golongan;
+            if (_jsonData[i + 1].pangkatPuncak!) {
+              _jsonData[i].akNaikJenjang = _jsonData[i + 1].akNaikPangkat!;
+              _jsonData[i].jenjangSelanjutnya = _jsonData[i + 2].jenjang;
+            } else {
+              _jsonData[i].akNaikJenjang = _jsonData[i + 2].akNaikPangkat!;
+              _jsonData[i].jenjangSelanjutnya = _jsonData[i + 3].jenjang;
+            }
+          }
+          _pangkatSaatIni = _jsonData[i];
         }
       }
     }
