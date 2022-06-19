@@ -138,7 +138,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
         buktiFisik: [],
       );
 
-      // todo : jangan lupa logika untuk custom satuan ak jika kegiatan tim (selain dari 80% ini)
       selectedButir = widget.selectedButir;
       if (selectedButir != null) {
         context.read<ProfileProvider>().setSelectedButir = selectedButir!;
@@ -189,79 +188,83 @@ class _NewNoteFormState extends State<NewNoteForm> {
               });
             },
           ),
-          DatePicker(
-            selectedDate: selectedNote.listTanggal!,
-            onAdd: (value) {
-              setState(() {
-                if (value != null) selectedNote.listTanggal!.add(value);
-              });
-            },
-            onReduced: (date) {
-              setState(() {
-                selectedNote.listTanggal!
-                    .removeWhere((element) => element == date);
-              });
-            },
-          ),
-          UraianTextArea(controller: uraianTextController),
-          JumlahKegiatanField(
-            initialJmlKegiatan: selectedNote.jumlahKegiatan,
-            akSatuan: selectedNote.akSatuan ?? 0,
-            onChanged: (value) {
-              setState(() {
-                selectedNote.jumlahKegiatan = value;
-                // harusnya nanti field setelah butir kegiatan muncul kalo butir kegiatan udh dipilih
-                // dan angka kredit adanya setelah butir terpilih
-              });
-            },
-          ),
-          KegiatanTimField(
-            isChecked: selectedNote.isTim,
-            initialDataPeran: selectedNote.peranDalamTim,
-            initialJmlAnggota: selectedNote.jmlAnggota,
-            onTextFieldChanged: (int? value) {
-              setState(() {
-                selectedNote.jmlAnggota = value!;
-                notifyAKSatuan();
-              });
-            },
-            onCheckboxChanged: (bool? value) {
-              setState(() {
-                selectedNote.isTim = value!;
-                notifyAKSatuan();
-              });
-            },
-            onRadioButtonChanged: (String? value) {
-              setState(() {
-                selectedNote.peranDalamTim = value;
-                notifyAKSatuan();
-              });
-            },
-          ),
-          BuktiFisikField(
-            selectedData: selectedBuktiFisik,
-            onPressed: () async {
-              final result =
-                  await FilePicker.platform.pickFiles(allowMultiple: true);
-              if (result == null) return;
-              setState(() {
-                selectedBuktiFisik.addAll(result.files);
-              });
-            },
-            onDelete: (fileName) {
-              setState(() async {
-                for (var file in selectedBuktiFisik) {
-                  if (file.name == fileName) {
-                    if (await File(file.path!).exists()) {
-                      File(file.path!).delete();
-                    }
-                    selectedBuktiFisik.remove(file);
-                  }
-                }
-              });
-            },
-          ),
-
+          if (selectedNote.judul != null)
+            Column(
+              children: <Widget>[
+                DatePicker(
+                  selectedDate: selectedNote.listTanggal!,
+                  onAdd: (value) {
+                    setState(() {
+                      if (value != null) selectedNote.listTanggal!.add(value);
+                    });
+                  },
+                  onReduced: (date) {
+                    setState(() {
+                      selectedNote.listTanggal!
+                          .removeWhere((element) => element == date);
+                    });
+                  },
+                ),
+                UraianTextArea(controller: uraianTextController),
+                JumlahKegiatanField(
+                  initialJmlKegiatan: selectedNote.jumlahKegiatan,
+                  akSatuan: selectedNote.akSatuan ?? 0,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedNote.jumlahKegiatan = value;
+                      // harusnya nanti field setelah butir kegiatan muncul kalo butir kegiatan udh dipilih
+                      // dan angka kredit adanya setelah butir terpilih
+                    });
+                  },
+                ),
+                KegiatanTimField(
+                  isChecked: selectedNote.isTim,
+                  initialDataPeran: selectedNote.peranDalamTim,
+                  initialJmlAnggota: selectedNote.jmlAnggota,
+                  onTextFieldChanged: (int? value) {
+                    setState(() {
+                      selectedNote.jmlAnggota = value!;
+                      notifyAKSatuan();
+                    });
+                  },
+                  onCheckboxChanged: (bool? value) {
+                    setState(() {
+                      selectedNote.isTim = value!;
+                      notifyAKSatuan();
+                    });
+                  },
+                  onRadioButtonChanged: (String? value) {
+                    setState(() {
+                      selectedNote.peranDalamTim = value;
+                      notifyAKSatuan();
+                    });
+                  },
+                ),
+                BuktiFisikField(
+                  selectedData: selectedBuktiFisik,
+                  onPressed: () async {
+                    final result = await FilePicker.platform
+                        .pickFiles(allowMultiple: true);
+                    if (result == null) return;
+                    setState(() {
+                      selectedBuktiFisik.addAll(result.files);
+                    });
+                  },
+                  onDelete: (fileName) {
+                    setState(() async {
+                      for (var file in selectedBuktiFisik) {
+                        if (file.name == fileName) {
+                          if (await File(file.path!).exists()) {
+                            File(file.path!).delete();
+                          }
+                          selectedBuktiFisik.remove(file);
+                        }
+                      }
+                    });
+                  },
+                ),
+              ],
+            ),
           // todo : ini tombolnya mau dibawa kemana
           Padding(
             padding: const EdgeInsets.all(40.0),

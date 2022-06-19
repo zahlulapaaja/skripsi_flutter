@@ -4,10 +4,11 @@ import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
 import 'package:dropdown_search/dropdown_search.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ButirDropdown extends StatelessWidget {
+class ButirDropdown extends StatefulWidget {
   ButirDropdown({
     Key? key,
     required this.onChanged,
@@ -19,30 +20,36 @@ class ButirDropdown extends StatelessWidget {
   final Function(ButirKegiatan?) onChanged;
   final bool editMode;
   final String? alert;
-
   String? selectedData;
-  List<String> dataButir = [];
-  List<double> dataAK = [];
-  List<String> disableButir = [];
 
-  List<String> getData(List<ButirKegiatan> allButir) {
-    dataAK = [];
+  @override
+  State<ButirDropdown> createState() => _ButirDropdownState();
+}
+
+class _ButirDropdownState extends State<ButirDropdown> {
+  List<String> dataButir = [];
+  List<String> disableButir = [];
+  List<ButirKegiatan> allButir = [];
+
+  List<String> getData(List<ButirKegiatan> butirList) {
     return List<String>.generate(
-      allButir.length,
+      butirList.length,
       (index) {
-        dataAK.add(allButir[index].angkaKredit);
-        return allButir[index].kode + " " + allButir[index].judul;
+        return butirList[index].kode + " " + butirList[index].judul;
       },
-      growable: true,
     );
   }
 
   @override
-  Widget build(BuildContext context) {
-    List<ButirKegiatan> allButir = context.read<DictionaryProvider>().allButir;
+  void initState() {
+    allButir = context.read<DictionaryProvider>().allButir;
     disableButir = context.read<DictionaryProvider>().disableButir;
     dataButir = getData(allButir);
+    super.initState();
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -50,11 +57,15 @@ class ButirDropdown extends StatelessWidget {
         children: <Widget>[
           const FieldLabel(title: 'Butir Kegiatan'),
           DropdownSearch(
-            enabled: editMode ? false : true,
+            enabled: widget.editMode ? false : true,
             mode: Mode.BOTTOM_SHEET,
-            showClearButton: editMode ? false : true,
-            items: dataButir,
-            // popupTitle: Text(),
+            showClearButton: widget.editMode ? false : true,
+            // KENAPA DATANYA DOBEL, jadi syntax dibawah diapus biar ga dobel
+            // items: dataButir,
+            showSearchBox: true,
+            onFind: (String? filter) => Future.delayed(Duration.zero, () {
+              return findData(filter);
+            }),
             popupItemDisabled: (String s) {
               int i = 0;
               while (i < disableButir.length) {
@@ -65,19 +76,21 @@ class ButirDropdown extends StatelessWidget {
             },
             onChanged: (String? judul) {
               ButirKegiatan? selectedButir;
-              selectedData = judul;
+              setState(() {
+                widget.selectedData = judul;
+              });
 
               if (judul != null) {
                 String kodeButir = judul.split(' ')[0];
                 selectedButir = allButir
                     .singleWhere((element) => element.kode == kodeButir);
               }
-              onChanged(selectedButir);
+              widget.onChanged(selectedButir);
             },
-            selectedItem: selectedData,
+            selectedItem: widget.selectedData,
             dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
             dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
-              contentPadding: (selectedData == null)
+              contentPadding: (widget.selectedData == null)
                   ? const EdgeInsets.only(left: 10)
                   : const EdgeInsets.only(top: 10, bottom: 10, left: 10),
               hintText: 'Pilih Butir Kegiatan...',
@@ -94,9 +107,9 @@ class ButirDropdown extends StatelessWidget {
               return null;
             },
           ),
-          if (alert != null)
+          if (widget.alert != null)
             Text(
-              alert!,
+              widget.alert!,
               style: const TextStyle(
                 fontFamily: AppConstants.fontName,
                 color: AppColors.beigeDark,
@@ -107,5 +120,14 @@ class ButirDropdown extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  List<String> findData(String? searchKey) {
+    var matchedList = <String>[];
+    searchKey ??= '';
+    for (String butir in dataButir) {
+      if (butir.contains(searchKey)) matchedList.add(butir);
+    }
+    return matchedList;
   }
 }
