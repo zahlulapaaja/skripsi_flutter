@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -5,6 +6,7 @@ import 'package:buku_saku_2/screens/app/notes/components/card_list_view.dart';
 import 'package:buku_saku_2/screens/app/notes/components/card_grid_view.dart';
 import 'package:buku_saku_2/screens/app/notes/components/note_searchbox.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 class NotesScreen extends StatefulWidget {
@@ -16,6 +18,19 @@ class NotesScreen extends StatefulWidget {
 
 class _NotesScreenState extends State<NotesScreen> {
   bool isListView = false;
+
+  @override
+  void initState() {
+    Fluttertoast.showToast(
+      msg: "Tahan catatan untuk hapus",
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: AppColors.primaryLight.withOpacity(0.6),
+      textColor: Colors.white,
+      fontSize: AppConstants.kTinyFontSize,
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
