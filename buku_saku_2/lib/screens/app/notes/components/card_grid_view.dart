@@ -15,10 +15,14 @@ class CardGridView extends StatelessWidget {
       future: context.watch<NotesProvider>().notes,
       builder: (BuildContext context, AsyncSnapshot<List<Note>> snapshot) {
         if (snapshot.hasError) {
-          return Center(child: Text('error fetching data, ${snapshot.error}'));
+          return Center(child: Text('Error fetching data: ${snapshot.error}'));
         } else if (snapshot.hasData) {
           if (snapshot.data!.isEmpty) {
-            return const Center(child: Text('Notes Still Empty'));
+            if (context.read<NotesProvider>().isQueryExist) {
+              return const Center(child: Text('Tidak ada catatan yang cocok'));
+            } else {
+              return const Center(child: Text('Belum ada catatan'));
+            }
           }
           context.read<DictionaryProvider>().setDisableButir2 = snapshot.data!;
           return MasonryGridView.count(

@@ -138,11 +138,12 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                 builder: (context, AsyncSnapshot<List<DocFile>> snapshot) {
                   if (snapshot.hasError) {
                     return Center(
-                        child: Text('error fetching data, ${snapshot.error}'));
+                        child: Text('Error fetching data: ${snapshot.error}'));
                   } else if (snapshot.hasData) {
                     List<DocFile> files = snapshot.data!;
-                    if (files.isEmpty)
-                      return const Text("Belum ada data ekspor");
+                    if (files.isEmpty) {
+                      return const Text("Belum ada data ekspor catatan");
+                    }
                     return ListView.builder(
                       itemCount: files.length,
                       scrollDirection: Axis.vertical,

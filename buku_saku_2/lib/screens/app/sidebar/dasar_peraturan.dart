@@ -93,87 +93,8 @@ class DasarPeraturanScreen extends StatelessWidget {
               // OpenFile.open();
             },
           );
-          // Row(
-          //   crossAxisAlignment: CrossAxisAlignment.start,
-          //   children: <Widget>[
-          //     SizedBox(
-          //       width: 80,
-          //       child: Card(
-          //         color: AppColors.beigeDark,
-          //         child: InkWell(
-          //           onTap: () {
-          //             print(listFile[index]);
-
-          //             // OpenFile.open(listFile[index]);
-          //           },
-          //           child: Center(
-          //             child: Text(listFile[index]['extension']),
-          //             // Image.file(File(note.buktiFisik![index].path)),
-          //             //  Text(
-          //             //     '.${note.buktiFisik![index].extension}')
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //     Expanded(
-          //       child: Padding(
-          //         padding: const EdgeInsets.symmetric(horizontal: 4),
-          //         child: Text(
-          //           listFile[index]['name'],
-          //           // overflow: TextOverflow.ellipsis,
-          //           // maxLines: 2,
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // );
         },
       ),
-      // GridView.builder(
-      //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-      //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      //     mainAxisExtent: 200,
-      //     crossAxisCount: 1,
-      //     childAspectRatio: 3 / 2,
-      //     crossAxisSpacing: 15,
-      //     mainAxisSpacing: 20,
-      //   ),
-      //   itemCount: listFile.length,
-      //   physics: const ScrollPhysics(),
-      //   shrinkWrap: true,
-      //   itemBuilder: (context, index) {
-      //     return Column(
-      //       children: <Widget>[
-      //         Expanded(
-      //           child: Card(
-      //             color: AppColors.beigeDark,
-      //             child: InkWell(
-      //               onTap: () {
-      //                 print(listFile[index]);
-
-      //                 // OpenFile.open(listFile[index]);
-      //               },
-      //               child: Center(
-      //                 child: Text(listFile[index]['extension']),
-      //                 // Image.file(File(note.buktiFisik![index].path)),
-      //                 //  Text(
-      //                 //     '.${note.buktiFisik![index].extension}')
-      //               ),
-      //             ),
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.symmetric(horizontal: 4),
-      //           child: Text(
-      //             listFile[index]['name'],
-      //             // overflow: TextOverflow.ellipsis,
-      //             // maxLines: 2,
-      //           ),
-      //         ),
-      //       ],
-      //     );
-      //   },
-      // ),
     );
   }
 }

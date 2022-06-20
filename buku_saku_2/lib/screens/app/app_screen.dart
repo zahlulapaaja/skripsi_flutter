@@ -79,7 +79,8 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
           future: context.read<ProfileProvider>().getProfileData,
           builder: (context, AsyncSnapshot<Profile> snapshot) {
             if (snapshot.hasError) {
-              return Center(child: Text('ERROR!! ${snapshot.error}'));
+              return Center(
+                  child: Text('Error fetching data: ${snapshot.error}'));
             } else if (snapshot.hasData) {
               // kalo data kosong arahin dulu ke laman edit profil
               // kasih alert dulu biar ga tiba2 sampe ke laman edit profil, intinya lebih rapi lah

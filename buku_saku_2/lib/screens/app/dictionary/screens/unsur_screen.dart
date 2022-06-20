@@ -39,7 +39,8 @@ class UnsurScreen extends StatelessWidget {
         future: readJsonData(jenjang),
         builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
           if (snapshot.hasError) {
-            return Center(child: Text('ERROR!! ${snapshot.error}'));
+            return Center(
+                child: Text('Error fetching data: ${snapshot.error}'));
           } else if (snapshot.hasData) {
             List<Unsur> unsur = snapshot.data!;
             context.read<DictionaryProvider>().storeData = snapshot.data!;

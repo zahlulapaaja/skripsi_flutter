@@ -41,7 +41,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                       if (snapshot.hasError) {
                         return Center(
                             child:
-                                Text('error fetching data, ${snapshot.error}'));
+                                Text('Error fetching data: ${snapshot.error}'));
                       } else if (snapshot.hasData) {
                         context.read<DictionaryProvider>().storeData =
                             snapshot.data!;

@@ -69,9 +69,9 @@ class _DetailAngkaKreditScreenState extends State<DetailAngkaKreditScreen>
     return FutureBuilder(
       future: context.read<NotesProvider>().notes,
       builder: (BuildContext context, AsyncSnapshot<List<Note>> snapshot) {
-        if (!snapshot.hasData) {
-          return const SizedBox();
-        } else {
+        if (snapshot.hasError) {
+          return Center(child: Text('Error fetching data: ${snapshot.error}'));
+        } else if (snapshot.hasData) {
           return ListView.builder(
             padding: EdgeInsets.only(
               top: AppBar().preferredSize.height +
@@ -84,6 +84,10 @@ class _DetailAngkaKreditScreenState extends State<DetailAngkaKreditScreen>
               widget.animationController?.forward();
               return listViews[index];
             },
+          );
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(),
           );
         }
       },

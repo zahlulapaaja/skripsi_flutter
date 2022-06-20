@@ -21,7 +21,7 @@ class ButirScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (butirList.isEmpty) {
-      return const Center(child: Text('Data tidak ditemukan'));
+      return const Center(child: Text('Tidak ada butir yang cocok'));
     } else {
       return ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 14.0),

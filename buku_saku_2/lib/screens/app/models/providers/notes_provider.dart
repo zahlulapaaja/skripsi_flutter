@@ -15,6 +15,7 @@ class NotesProvider with ChangeNotifier {
   double get akUtamaTerkumpul => _akUtamaTerkumpul;
   double get akPenunjangTerkumpul => _akPenunjangTerkumpul;
   bool get isQueryExist => (_searchKey == '') ? false : true;
+  String get query => _searchKey;
 
   Future<List<DocFile>> get excelFiles async {
     _excelFiles = await dbHelper.getExportNote();

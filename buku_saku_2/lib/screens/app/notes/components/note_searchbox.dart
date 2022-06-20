@@ -4,13 +4,18 @@ import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
 class NoteSearchBox extends StatelessWidget {
   NoteSearchBox({Key? key}) : super(key: key);
-  TextEditingController controller = TextEditingController();
+  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    if (context.read<NotesProvider>().isQueryExist) {
+      controller.text = context.read<NotesProvider>().query;
+      controller.selection = TextSelection.fromPosition(
+          TextPosition(offset: controller.text.length));
+    }
+
     return Container(
       alignment: Alignment.center,
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
