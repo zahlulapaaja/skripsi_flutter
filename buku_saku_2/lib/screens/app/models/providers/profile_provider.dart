@@ -13,12 +13,12 @@ class ProfileProvider with ChangeNotifier {
   String? _alert;
   String? _pelaksana;
   List<TargetAngkaKredit> _jsonData = [];
-  TargetAngkaKredit? _pangkatSaatIni;
+  TargetAngkaKredit _pangkatSaatIni = TargetAngkaKredit();
   var dbHelper = DbProfile();
 
   Profile get profil => _profile;
   List<Jenjang> get listJenjang => _jenjang!;
-  TargetAngkaKredit get pangkatSaatIni => _pangkatSaatIni!;
+  TargetAngkaKredit get pangkatSaatIni => _pangkatSaatIni;
 
   set setSelectedButir(ButirKegiatan butir) {
     _pelaksana = butir.pelaksana;
@@ -71,10 +71,10 @@ class ProfileProvider with ChangeNotifier {
           } else {
             _jsonData[i].golonganSelanjutnya = _jsonData[i + 1].golongan;
             if (_jsonData[i + 1].pangkatPuncak!) {
-              _jsonData[i].akNaikJenjang = _jsonData[i + 1].akNaikPangkat!;
+              _jsonData[i].akNaikJenjang = _jsonData[i + 1].akNaikPangkat;
               _jsonData[i].jenjangSelanjutnya = _jsonData[i + 2].jenjang;
             } else {
-              _jsonData[i].akNaikJenjang = _jsonData[i + 2].akNaikPangkat!;
+              _jsonData[i].akNaikJenjang = _jsonData[i + 2].akNaikPangkat;
               _jsonData[i].jenjangSelanjutnya = _jsonData[i + 3].jenjang;
             }
           }

@@ -30,7 +30,7 @@ class ChartAngkaKredit extends StatelessWidget {
     double akNaikPangkat = context
         .watch<ProfileProvider>()
         .pangkatSaatIni
-        .akNaikPangkat!
+        .akNaikPangkat
         .toDouble();
     double totalAK = profil.akSaatIni + akUtama + akPenunjang;
 

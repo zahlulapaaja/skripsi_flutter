@@ -87,7 +87,7 @@ class OnBoarding2 extends StatelessWidget {
                     constraints:
                         const BoxConstraints(maxWidth: 350, maxHeight: 250),
                     child: Image.asset(
-                      'assets/introduction/gambar5.png',
+                      'assets/introduction/intro2.png',
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -109,7 +109,7 @@ class OnBoarding2 extends StatelessWidget {
                 padding:
                     EdgeInsets.only(left: 64, right: 64, bottom: 16, top: 16),
                 child: Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies vulputate justo, ac posuere odio molestie sed.",
+                  "Hemat waktu Anda dengan mencatat kegiatan di aplikasi ini",
                   textAlign: TextAlign.center,
                 ),
               ),

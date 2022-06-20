@@ -1,10 +1,12 @@
-import 'package:buku_saku_2/screens/app/sidebar/app_detail.dart';
-import 'package:buku_saku_2/screens/app/sidebar/dasar_peraturan.dart';
-import 'package:buku_saku_2/screens/app/sidebar/export_note.dart';
+import 'package:buku_saku_2/screens/app/sidebar/about_us_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/dasar_peraturan_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/export_note_screen.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/feedback_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/rate_app_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/introduction_animation/introduction_animation_screen.dart';
@@ -69,7 +71,9 @@ class _MyAppState extends State<MyApp> {
           EditProfileScreen.id: (context) => const EditProfileScreen(),
           ExportNotesScreen.id: (context) => const ExportNotesScreen(),
           DasarPeraturanScreen.id: (context) => const DasarPeraturanScreen(),
-          AppDetailScreen.id: (context) => const AppDetailScreen(),
+          FeedbackScreen.id: (context) => const FeedbackScreen(),
+          AboutUsScreen.id: (context) => const AboutUsScreen(),
+          RateAppScreen.id: (context) => const RateAppScreen(),
         },
       ),
     );

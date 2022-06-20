@@ -26,29 +26,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  Animation<double>? topBarAnimation;
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
   double topBarOpacity = 0.0;
-
   var dbHelper = DbProfile();
-  String? name;
+  dynamic result;
 
   @override
   initState() {
-    topBarAnimation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-      parent: widget.animationController!,
-      curve: const Interval(0, 0.5, curve: Curves.fastOutSlowIn),
-    ));
-
     Profile data = context.read<ProfileProvider>().profil;
     context.read<DictionaryProvider>().setJenjang = data;
     if (data.id == null) {
-      Future.delayed(Duration.zero, () {
-        Navigator.pushNamed(context, EditProfileScreen.id);
+      Future.delayed(Duration.zero, () async {
+        while (result == null) {
+          result = await alertDialog();
+          // kalo abis ke profile screen trus balik bakal error nanti
+          Navigator.pushNamed(context, EditProfileScreen.id);
+        }
       });
     }
+    int akNaikPangkat =
+        context.read<ProfileProvider>().pangkatSaatIni.akNaikPangkat;
+    context.read<DictionaryProvider>().setNaikPangkat = akNaikPangkat;
 
     addAllListData();
     scrollControllerAnimation();
@@ -218,6 +217,22 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           },
         )
       ],
+    );
+  }
+
+  Future<String?> alertDialog() async {
+    return showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: const Text('Data Profil'),
+        content: const Text('Masukkan data profil untuk memulai aplikasi ini'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(context, 'Lanjutkan'),
+            child: const Text('Lanjutkan'),
+          ),
+        ],
+      ),
     );
   }
 }

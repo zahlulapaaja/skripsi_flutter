@@ -54,7 +54,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       _nameTextController.text = selectedData!.nama!;
       _akSaatIniTextController.text =
           selectedData!.akSaatIni.toStringAsFixed(3);
-      selectedPhoto = PlatformFile.fromMap(selectedData!.toProfileMap());
+      if (selectedData!.fotoProfil != null) {
+        selectedPhoto = PlatformFile.fromMap(selectedData!.toProfileMap());
+      }
       for (var item in selectedData!.listJenjang!) {
         if (item.id == selectedData!.jenjang!.id) {
           selectedJenjang = item.jenjang;
@@ -244,12 +246,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       allowedExtensions: ['jpg', 'png'],
     );
     if (result != null) {
-      // final file = await saveFilePermanently(result.files.first);
       setState(() {
-        // data.fotoProfil = file.path;
         selectedPhoto = result.files.first;
-        // File(result.files.first.path!);
-        // isProfilePictExist = true;
       });
     }
   }

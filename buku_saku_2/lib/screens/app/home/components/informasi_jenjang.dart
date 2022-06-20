@@ -45,7 +45,7 @@ class InformasiJenjang extends StatelessWidget {
                           style: AppConstants.kTextFieldTextStyle,
                           children: <TextSpan>[
                             TextSpan(
-                                text: pangkatSaatIni.akNaikPangkat!
+                                text: pangkatSaatIni.akNaikPangkat
                                     .toStringAsFixed(3),
                                 style: AppConstants.kNormalTitleTextStyle),
                             const TextSpan(
@@ -84,7 +84,7 @@ class InformasiJenjang extends StatelessWidget {
                         children: <TextSpan>[
                           TextSpan(
                               text: (pangkatSaatIni.pangkatPuncak!)
-                                  ? pangkatSaatIni.akNaikPangkat!
+                                  ? pangkatSaatIni.akNaikPangkat
                                       .toStringAsFixed(3)
                                   : pangkatSaatIni.akNaikJenjang!
                                       .toStringAsFixed(3),

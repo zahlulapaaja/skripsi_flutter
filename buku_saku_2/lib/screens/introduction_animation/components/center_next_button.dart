@@ -25,16 +25,16 @@ class CenterNextButton extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _loginTextMoveAnimation =
-        Tween<Offset>(begin: const Offset(0, 5), end: const Offset(0, 0))
-            .animate(CurvedAnimation(
-      parent: animationController,
-      curve: const Interval(
-        0.34,
-        0.67,
-        curve: Curves.fastOutSlowIn,
-      ),
-    ));
+    // final _loginTextMoveAnimation =
+    //     Tween<Offset>(begin: const Offset(0, 5), end: const Offset(0, 0))
+    //         .animate(CurvedAnimation(
+    //   parent: animationController,
+    //   curve: const Interval(
+    //     0.34,
+    //     0.67,
+    //     curve: Curves.fastOutSlowIn,
+    //   ),
+    // ));
 
     return Padding(
       padding:
@@ -86,7 +86,7 @@ class CenterNextButton extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: const [
                                     Text(
-                                      'Sign Up',
+                                      'Mulai Sekarang',
                                       style: TextStyle(
                                         color: AppColors.offWhite,
                                         fontSize: AppConstants.kNormalFontSize,
@@ -119,36 +119,36 @@ class CenterNextButton extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: SlideTransition(
-              position: _loginTextMoveAnimation,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Already have an account? ',
-                    style: TextStyle(
-                      color: AppColors.black,
-                      fontSize: AppConstants.kSmallFontSize,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: onConnectClick,
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: AppColors.primaryDark,
-                        fontSize: AppConstants.kNormalFontSize,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.only(top: 8),
+          //   child: SlideTransition(
+          //     position: _loginTextMoveAnimation,
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: [
+          //         const Text(
+          //           'Already have an account? ',
+          //           style: TextStyle(
+          //             color: AppColors.black,
+          //             fontSize: AppConstants.kSmallFontSize,
+          //             fontWeight: FontWeight.normal,
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: onConnectClick,
+          //           child: const Text(
+          //             'Login',
+          //             style: TextStyle(
+          //               color: AppColors.primaryDark,
+          //               fontSize: AppConstants.kNormalFontSize,
+          //               fontWeight: FontWeight.bold,
+          //             ),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

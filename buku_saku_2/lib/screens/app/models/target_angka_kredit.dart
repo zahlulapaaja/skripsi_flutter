@@ -1,8 +1,8 @@
 class TargetAngkaKredit {
   String? jenjang;
   String? golongan;
-  int? akMinimal;
-  int? akNaikPangkat;
+  int akMinimal = 0;
+  int akNaikPangkat = 0;
   bool? pangkatPuncak;
   String? syaratPendidikan;
   int? akPemeliharaan;
@@ -11,6 +11,8 @@ class TargetAngkaKredit {
   String? jenjangSelanjutnya;
   String? golonganSelanjutnya;
   int? akNaikJenjang;
+
+  TargetAngkaKredit({this.akMinimal = 0, this.akNaikPangkat = 0});
 
   TargetAngkaKredit.fromJson(Map<String, dynamic> json) {
     jenjang = json['jenjang'];

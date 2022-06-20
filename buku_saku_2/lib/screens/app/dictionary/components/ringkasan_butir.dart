@@ -1,8 +1,6 @@
-import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
-import 'package:provider/provider.dart';
 
 class RingkasanButir extends StatelessWidget {
   const RingkasanButir({

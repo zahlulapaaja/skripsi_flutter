@@ -1,5 +1,6 @@
-import 'package:buku_saku_2/screens/app/sidebar/dasar_peraturan.dart';
-import 'package:buku_saku_2/screens/app/sidebar/export_note.dart';
+import 'package:buku_saku_2/screens/app/sidebar/about_us_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/dasar_peraturan_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/export_note_screen.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
@@ -8,6 +9,8 @@ import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/feedback_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/rate_app_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/controllers/drawer_user_controller.dart';
@@ -55,14 +58,13 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    super.initState();
-
     animationController = AnimationController(
       duration: const Duration(milliseconds: 1000),
       vsync: this,
     );
-
     initialTabBody();
+
+    super.initState();
   }
 
   @override
@@ -84,9 +86,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
             } else if (snapshot.hasData) {
               // kalo data kosong arahin dulu ke laman edit profil
               // kasih alert dulu biar ga tiba2 sampe ke laman edit profil, intinya lebih rapi lah
-              int akNaikPangkat =
-                  context.read<ProfileProvider>().pangkatSaatIni.akNaikPangkat!;
-              context.read<DictionaryProvider>().setNaikPangkat = akNaikPangkat;
+
               return Scaffold(
                 backgroundColor: Colors.transparent,
                 body: DrawerUserController(
@@ -172,12 +172,11 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
     if (drawerIndex != drawerIndexData) {
       drawerIndex = drawerIndexData;
 
-      // TODO : Jangan lupa nanti diganti semua print yang ini
       // Keknya ga perlu ya untuk ganti drawerIndex ini, tapi sementara aku tinggalin satu dulu disini, sebagai contoh
       // ignore: missing_enum_constant_in_switch
       switch (drawerIndex) {
         case DrawerIndex.home:
-          drawerIndex = DrawerIndex.home;
+          // drawerIndex = DrawerIndex.home;
           break;
         case DrawerIndex.export:
           Navigator.pushNamed(context, ExportNotesScreen.id);
@@ -185,14 +184,14 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
         case DrawerIndex.rules:
           Navigator.pushNamed(context, DasarPeraturanScreen.id);
           break;
-        case DrawerIndex.feedBack:
-          print('DrawerIndex.feedBack');
+        case DrawerIndex.feedback:
+          Navigator.pushNamed(context, FeedbackScreen.id);
           break;
-        case DrawerIndex.share:
-          print('DrawerIndex.share');
+        case DrawerIndex.rate:
+          Navigator.pushNamed(context, RateAppScreen.id);
           break;
         case DrawerIndex.about:
-          Navigator.pushNamed(context, ExportNotesScreen.id);
+          Navigator.pushNamed(context, AboutUsScreen.id);
           break;
       }
     }

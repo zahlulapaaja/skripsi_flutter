@@ -30,7 +30,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
     akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
     double totalAk = data.akSaatIni + akUtama + akPenunjang;
     int targetAK =
-        context.watch<ProfileProvider>().pangkatSaatIni.akNaikPangkat!;
+        context.watch<ProfileProvider>().pangkatSaatIni.akNaikPangkat;
     double angleAK = (totalAk / targetAK) * 360;
 
     if (context.watch<NotesProvider>().isQueryExist == false) {

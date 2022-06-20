@@ -5,7 +5,7 @@ import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/components/setting_menu_button.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
-import 'package:buku_saku_2/screens/app/sidebar/export_note.dart';
+import 'package:buku_saku_2/screens/app/sidebar/export_note_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';

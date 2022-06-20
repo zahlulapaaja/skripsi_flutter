@@ -33,7 +33,8 @@ class ProfileFormField extends StatelessWidget {
           obscureText: obsecureText,
           decoration: AppConstants.kTextFieldDecoration(
             hintText: hintText,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
             borderSide: const BorderSide(
               color: AppColors.black,
               width: 4,
