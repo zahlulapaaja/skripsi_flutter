@@ -66,17 +66,17 @@ class ProfileProvider with ChangeNotifier {
     for (var i = 0; i < _jsonData.length; i++) {
       if (_profile.jenjang!.jenjang == _jsonData[i].jenjang) {
         if (_profile.jenjang!.golongan == _jsonData[i].golongan) {
-          if (_jsonData[i].pangkatPuncak!) {
+          if (_jsonData[i].pangkatPuncak! && i < (_jsonData.length - 1)) {
             _jsonData[i].jenjangSelanjutnya = _jsonData[i + 1].jenjang;
           } else {
-            _jsonData[i].golonganSelanjutnya = _jsonData[i + 1].golongan;
-            if (_jsonData[i + 1].pangkatPuncak!) {
-              _jsonData[i].akNaikJenjang = _jsonData[i + 1].akNaikPangkat;
-              _jsonData[i].jenjangSelanjutnya = _jsonData[i + 2].jenjang;
-            } else {
-              _jsonData[i].akNaikJenjang = _jsonData[i + 2].akNaikPangkat;
-              _jsonData[i].jenjangSelanjutnya = _jsonData[i + 3].jenjang;
-            }
+            //   _jsonData[i].golonganSelanjutnya = _jsonData[i + 1].golongan;
+            //   if (_jsonData[i + 1].pangkatPuncak!) {
+            //     _jsonData[i].akNaikJenjang = _jsonData[i + 1].akNaikPangkat;
+            //     _jsonData[i].jenjangSelanjutnya = _jsonData[i + 2].jenjang;
+            //   } else {
+            //     _jsonData[i].akNaikJenjang = _jsonData[i + 2].akNaikPangkat;
+            //     _jsonData[i].jenjangSelanjutnya = _jsonData[i + 3].jenjang;
+            //   }
           }
           _pangkatSaatIni = _jsonData[i];
         }

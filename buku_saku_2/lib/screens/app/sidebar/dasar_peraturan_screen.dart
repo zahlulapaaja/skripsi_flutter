@@ -3,7 +3,6 @@ import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:pdfx/pdfx.dart';
-import 'package:open_file/open_file.dart';
 
 class DasarPeraturanScreen extends StatelessWidget {
   static const id = 'dasar_peraturan_screen';
@@ -26,8 +25,6 @@ class DasarPeraturanScreen extends StatelessWidget {
       "fileName": "Tunjangan_JFT_Prakom.pdf",
       "extension": "pdf",
     },
-    // "file juknis 2",
-    // "file juknis 3",
   ];
 
   @override
@@ -40,7 +37,7 @@ class DasarPeraturanScreen extends StatelessWidget {
           children: <Widget>[
             getMainListViewUI(context),
             AppBarUI(
-              title: 'Dasar peraturan',
+              title: 'Dasar Peraturan',
               leftIconButton: IconButton(
                 icon: const Icon(
                   Icons.chevron_left,
@@ -72,7 +69,11 @@ class DasarPeraturanScreen extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(listFile[index]["name"]),
+            title: Text(
+              listFile[index]["name"],
+              textAlign: TextAlign.start,
+              style: AppConstants.kCardDateTextStyle,
+            ),
             leading: SizedBox(
               width: 60,
               child: Card(
@@ -81,8 +82,9 @@ class DasarPeraturanScreen extends StatelessWidget {
                     child: Text(listFile[index]['extension']),
                   )),
             ),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
             onTap: () {
-              // OpenFile.open("/assets/files/${listFile[index]["fileName"]}");
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -90,7 +92,6 @@ class DasarPeraturanScreen extends StatelessWidget {
                       assetPath: "assets/files/${listFile[index]['fileName']}"),
                 ),
               );
-              // OpenFile.open();
             },
           );
         },
@@ -101,16 +102,15 @@ class DasarPeraturanScreen extends StatelessWidget {
 
 class PDFViewer extends StatelessWidget {
   const PDFViewer({Key? key, required this.assetPath}) : super(key: key);
-// final pdfController;
   final String assetPath;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
           child: PdfViewPinch(
         controller: PdfControllerPinch(
-          document: PdfDocument.openAsset(
-              'assets/files/PermenPAN_No_32_Tahun_2020_Tentang_JFT_Prakom.pdf'),
+          document: PdfDocument.openAsset(assetPath),
         ),
       )),
     );

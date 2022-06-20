@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
@@ -72,7 +73,7 @@ class ChartAngkaKredit extends StatelessWidget {
                   initialAngleInDegree: 270,
                   chartType: ChartType.ring,
                   ringStrokeWidth: 25,
-                  centerText: totalAK.toStringAsFixed(3),
+                  centerText: NumberFormatter.convertToId(totalAK),
                   centerTextStyle: const TextStyle(
                     fontFamily: AppConstants.fontName,
                     color: AppColors.black,
@@ -116,7 +117,7 @@ class ChartAngkaKredit extends StatelessWidget {
                                 style: AppConstants.kCardBodyTextStyle,
                               ),
                               Text(
-                                profil.akSaatIni.toStringAsFixed(3),
+                                NumberFormatter.convertToId(profil.akSaatIni),
                                 style: AppConstants.kNormalTitleTextStyle,
                               ),
                             ],
@@ -145,7 +146,8 @@ class ChartAngkaKredit extends StatelessWidget {
                                 style: AppConstants.kCardBodyTextStyle,
                               ),
                               Text(
-                                (akUtama + akPenunjang).toStringAsFixed(3),
+                                NumberFormatter.convertToId(
+                                    akUtama + akPenunjang),
                                 style: AppConstants.kNormalTitleTextStyle,
                               ),
                             ],

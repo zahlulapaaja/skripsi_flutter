@@ -53,7 +53,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     if (selectedData!.id != null) {
       _nameTextController.text = selectedData!.nama!;
       _akSaatIniTextController.text =
-          selectedData!.akSaatIni.toStringAsFixed(3);
+          NumberFormatter.convertToId(selectedData!.akSaatIni);
       if (selectedData!.fotoProfil != null) {
         selectedPhoto = PlatformFile.fromMap(selectedData!.toProfileMap());
       }
@@ -255,7 +255,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   saveData(Profile data) async {
     if (_formKey.currentState!.validate()) {
       data.nama = _nameTextController.text;
-      data.akSaatIni = double.parse(_akSaatIniTextController.text);
+      data.akSaatIni = double.parse(
+          _akSaatIniTextController.text.replaceAll(RegExp(r','), '.'));
       if (data.fotoProfil != null) File(data.fotoProfil!).delete();
       if (selectedPhoto != null) {
         final file = await saveFilePermanently(selectedPhoto!);

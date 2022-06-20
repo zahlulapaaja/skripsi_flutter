@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/target_angka_kredit.dart';
 import 'package:flutter/material.dart';
@@ -45,8 +46,8 @@ class InformasiJenjang extends StatelessWidget {
                           style: AppConstants.kTextFieldTextStyle,
                           children: <TextSpan>[
                             TextSpan(
-                                text: pangkatSaatIni.akNaikPangkat
-                                    .toStringAsFixed(3),
+                                text: NumberFormatter.convertToId(
+                                    pangkatSaatIni.akNaikPangkat),
                                 style: AppConstants.kNormalTitleTextStyle),
                             const TextSpan(
                                 text: ' Angka Kredit menuju Golongan '),
@@ -84,10 +85,10 @@ class InformasiJenjang extends StatelessWidget {
                         children: <TextSpan>[
                           TextSpan(
                               text: (pangkatSaatIni.pangkatPuncak!)
-                                  ? pangkatSaatIni.akNaikPangkat
-                                      .toStringAsFixed(3)
-                                  : pangkatSaatIni.akNaikJenjang!
-                                      .toStringAsFixed(3),
+                                  ? NumberFormatter.convertToId(
+                                      pangkatSaatIni.akNaikPangkat)
+                                  : NumberFormatter.convertToId(
+                                      pangkatSaatIni.akNaikJenjang!),
                               style: AppConstants.kNormalTitleTextStyle),
                           const TextSpan(text: ' Angka Kredit menuju '),
                           TextSpan(

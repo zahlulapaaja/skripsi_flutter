@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -94,8 +95,8 @@ class _JumlahKegiatanFieldState extends State<JumlahKegiatanField> {
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              (widget.akSatuan * widget.initialJmlKegiatan)
-                                  .toStringAsFixed(3),
+                              NumberFormatter.convertToId(
+                                  widget.akSatuan * widget.initialJmlKegiatan),
                               style: AppConstants.kLargeTitleTextStyle,
                             ),
                           ),

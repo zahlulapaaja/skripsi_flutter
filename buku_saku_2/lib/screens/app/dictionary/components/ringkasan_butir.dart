@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -57,7 +58,7 @@ class RingkasanButir extends StatelessWidget {
               ],
             ),
             Text(
-              angkaKredit.toStringAsFixed(3),
+              NumberFormatter.convertToId(angkaKredit),
               textAlign: TextAlign.end,
               style: const TextStyle(
                 fontFamily: AppConstants.fontName,

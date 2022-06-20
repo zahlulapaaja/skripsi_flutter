@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:intl/intl.dart';
 
 class BlueRoundedButton extends StatelessWidget {
   final String buttonTitle;
@@ -53,6 +54,13 @@ class BlueRoundedButton extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class NumberFormatter {
+  static String convertToId(dynamic number) {
+    NumberFormat numberFormatter = NumberFormat("#0.000", 'id_ID');
+    return numberFormatter.format(number);
   }
 }
 

@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
@@ -157,8 +158,8 @@ class ButirDetailScreen extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   (butir.persenAK == null)
-                      ? butir.angkaKredit.toStringAsFixed(3)
-                      : butir.angkaKredit.toStringAsFixed(3) +
+                      ? NumberFormatter.convertToId(butir.angkaKredit)
+                      : NumberFormatter.convertToId(butir.angkaKredit) +
                           ' (' +
                           (butir.persenAK! * 100).toInt().toString() +
                           '% Angka Kredit Kenaikan Pangkat)',

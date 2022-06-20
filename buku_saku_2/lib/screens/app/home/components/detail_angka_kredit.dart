@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
@@ -131,8 +132,8 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                             padding: const EdgeInsets.only(
                                                 left: 4, bottom: 3),
                                             child: Text(
-                                              (data.akSaatIni)
-                                                  .toStringAsFixed(3),
+                                              NumberFormatter.convertToId(
+                                                  data.akSaatIni),
                                               textAlign: TextAlign.center,
                                               style: const TextStyle(
                                                 fontFamily:
@@ -203,8 +204,8 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                             padding: const EdgeInsets.only(
                                                 left: 4, bottom: 3),
                                             child: Text(
-                                              (akUtama + akPenunjang)
-                                                  .toStringAsFixed(3),
+                                              NumberFormatter.convertToId(
+                                                  akUtama + akPenunjang),
                                               textAlign: TextAlign.center,
                                               style: const TextStyle(
                                                 fontFamily:
@@ -253,8 +254,10 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
                                     Text(
-                                      (data.akSaatIni + akUtama + akPenunjang)
-                                          .toStringAsFixed(3),
+                                      NumberFormatter.convertToId(
+                                          data.akSaatIni +
+                                              akUtama +
+                                              akPenunjang),
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
                                         fontFamily: AppConstants.fontName,
@@ -396,7 +399,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                               child: Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: Text(
-                                  'Sudah Terkumpul ${(akUtama + akPenunjang).toStringAsFixed(3)} Angka Kredit',
+                                  'Sudah Terkumpul ${NumberFormatter.convertToId(akUtama + akPenunjang)} Angka Kredit',
                                   textAlign: TextAlign.center,
                                   maxLines: 2,
                                   style: const TextStyle(

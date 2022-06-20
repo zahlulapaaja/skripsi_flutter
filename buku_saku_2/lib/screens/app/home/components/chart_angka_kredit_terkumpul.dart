@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -105,7 +106,7 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
                                   style: AppConstants.kCardBodyTextStyle,
                                 ),
                                 Text(
-                                  "${akUtama.toStringAsFixed(3)} (${persenAKUtama.toInt()}%)",
+                                  "${NumberFormatter.convertToId(akUtama)} (${persenAKUtama.toInt()}%)",
                                   style: AppConstants.kNormalTitleTextStyle,
                                 ),
                               ],
@@ -132,7 +133,7 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
                                   style: AppConstants.kCardBodyTextStyle,
                                 ),
                                 Text(
-                                  "${akPenunjang.toStringAsFixed(3)} (${persenAKPenunjang.toInt()}%)",
+                                  "${NumberFormatter.convertToId(akPenunjang)} (${persenAKPenunjang.toInt()}%)",
                                   style: AppConstants.kNormalTitleTextStyle,
                                 ),
                               ],

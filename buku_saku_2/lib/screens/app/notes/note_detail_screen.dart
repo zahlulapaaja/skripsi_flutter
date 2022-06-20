@@ -1,15 +1,19 @@
 import 'dart:io';
 
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/date_picker.dart';
 import 'package:buku_saku_2/screens/app/notes/components/detail_box.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:open_file/open_file.dart';
+import 'package:provider/provider.dart';
 
 class NoteDetailScreen extends StatefulWidget {
   const NoteDetailScreen({Key? key, required this.id}) : super(key: key);
@@ -24,6 +28,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    String jenjang = context.read<ProfileProvider>().profil.jenjang!.jenjang;
     return FutureBuilder(
       future: dbHelper.getNoteById(widget.id),
       builder: (context, AsyncSnapshot<Note> snapshot) {
@@ -51,11 +56,15 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                           const SizedBox(height: 10),
                           DetailBox(
                             children: <Widget>[
+                              Text(
+                                "Catatan dibuat pada : ${DateFormat("d MMM yyyy", "id_ID").format(note.dateCreated!)}",
+                                style: AppConstants.kTextFieldHintStyle,
+                              ),
+                              const SizedBox(height: 16),
                               WhiteBoxBody(
                                 title: "Jenjang",
-                                body: "note.jenjang!",
+                                body: jenjang,
                               ),
-                              // nambah date created di screen ini
                               WhiteBoxBody(
                                 title: "Butir Kegiatan",
                                 widgetBody: Row(
@@ -110,7 +119,8 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               ),
                               WhiteBoxBody(
                                 title: "Angka Kredit",
-                                body: note.angkaKredit.toStringAsFixed(3),
+                                body: NumberFormatter.convertToId(
+                                    note.angkaKredit),
                               ),
                             ],
                           ),
@@ -154,23 +164,13 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                                       .extension),
                                                   child: InkWell(
                                                     onTap: () {
-                                                      print(note
-                                                          .buktiFisik![index]
-                                                          .path);
-
                                                       OpenFile.open(note
                                                           .buktiFisik![index]
                                                           .path);
                                                     },
                                                     child: Center(
-                                                      child: Image.file(File(
-                                                          note
-                                                              .buktiFisik![
-                                                                  index]
-                                                              .path)),
-                                                      //  Text(
-                                                      //     '.${note.buktiFisik![index].extension}')
-                                                    ),
+                                                        child: Text(
+                                                            '.${note.buktiFisik![index].extension}')),
                                                   ),
                                                 ),
                                               ),
