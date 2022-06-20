@@ -25,54 +25,58 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       color: AppColors.offWhite,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Stack(
-          children: <Widget>[
-            ListView(
-              padding: EdgeInsets.only(
-                top: AppBar().preferredSize.height +
-                    MediaQuery.of(context).padding.top,
-                bottom: 62 + MediaQuery.of(context).padding.bottom,
-              ),
-              scrollDirection: Axis.vertical,
-              children: <Widget>[
-                FutureBuilder(
-                    future: context.read<DictionaryProvider>().readJsonData,
-                    builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
-                      if (snapshot.hasError) {
-                        return Center(
-                            child:
-                                Text('Error fetching data: ${snapshot.error}'));
-                      } else if (snapshot.hasData) {
-                        context.read<DictionaryProvider>().storeData =
-                            snapshot.data!;
-
-                        return NewNoteForm(
-                            selectedButir: widget.butir, note: widget.note);
-                      } else {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-                    }),
-              ],
-            ),
-            AppBarUI(
-              title: (widget.note == null) ? 'Tambah Catatan' : 'Edit Catatan',
-              leftIconButton: IconButton(
-                icon: const Icon(
-                  Icons.chevron_left,
-                  color: AppColors.offWhite,
-                  size: AppConstants.kHugeFontSize,
+        body: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
+          child: Stack(
+            children: <Widget>[
+              ListView(
+                padding: EdgeInsets.only(
+                  top: AppBar().preferredSize.height +
+                      MediaQuery.of(context).padding.top,
+                  bottom: 62 + MediaQuery.of(context).padding.bottom,
                 ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                scrollDirection: Axis.vertical,
+                children: <Widget>[
+                  FutureBuilder(
+                      future: context.read<DictionaryProvider>().readJsonData,
+                      builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
+                        if (snapshot.hasError) {
+                          return Center(
+                              child: Text(
+                                  'Error fetching data: ${snapshot.error}'));
+                        } else if (snapshot.hasData) {
+                          context.read<DictionaryProvider>().storeData =
+                              snapshot.data!;
+
+                          return NewNoteForm(
+                              selectedButir: widget.butir, note: widget.note);
+                        } else {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                      }),
+                ],
               ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).padding.bottom,
-            )
-          ],
+              AppBarUI(
+                title:
+                    (widget.note == null) ? 'Tambah Catatan' : 'Edit Catatan',
+                leftIconButton: IconButton(
+                  icon: const Icon(
+                    Icons.chevron_left,
+                    color: AppColors.offWhite,
+                    size: AppConstants.kHugeFontSize,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).padding.bottom,
+              )
+            ],
+          ),
         ),
       ),
     );

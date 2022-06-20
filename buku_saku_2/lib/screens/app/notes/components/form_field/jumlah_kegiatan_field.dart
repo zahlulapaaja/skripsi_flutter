@@ -1,9 +1,12 @@
 import 'package:buku_saku_2/configs/components.dart';
+import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:number_inc_dec/number_inc_dec.dart';
 import 'package:buku_saku_2/screens/app/notes/components/field_label.dart';
+import 'package:provider/provider.dart';
 
 class JumlahKegiatanField extends StatefulWidget {
   const JumlahKegiatanField({
@@ -25,9 +28,11 @@ class _JumlahKegiatanFieldState extends State<JumlahKegiatanField> {
   int maxJmlKegiatan = 100;
   bool maxKegiatan = false;
   bool minKegiatan = false;
+  int jmlKegiatan = 1;
 
   @override
   Widget build(BuildContext context) {
+    ButirKegiatan? butir = context.read<ProfileProvider>().selectedButir;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -36,6 +41,7 @@ class _JumlahKegiatanFieldState extends State<JumlahKegiatanField> {
             height: 90,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 Expanded(
                   flex: 2,
@@ -49,12 +55,21 @@ class _JumlahKegiatanFieldState extends State<JumlahKegiatanField> {
                           max: maxJmlKegiatan,
                           isInt: true,
                           onChanged: (val) {
+                            setState(() {
+                              jmlKegiatan = val.toInt();
+                            });
                             widget.onChanged!(val.toInt());
                           },
                           onIncrement: (val) {
+                            setState(() {
+                              jmlKegiatan = val.toInt();
+                            });
                             widget.onChanged!(val.toInt());
                           },
                           onDecrement: (val) {
+                            setState(() {
+                              jmlKegiatan = val.toInt();
+                            });
                             widget.onChanged!(val.toInt());
                           },
                           controller: TextEditingController(),
@@ -105,6 +120,30 @@ class _JumlahKegiatanFieldState extends State<JumlahKegiatanField> {
                     ],
                   ),
                 ),
+                const SizedBox(width: 10),
+                if (jmlKegiatan > 1)
+                  Expanded(
+                    flex: 1,
+                    child: IconButton(
+                      alignment: Alignment.bottomCenter,
+                      iconSize: 36,
+                      splashRadius: 36,
+                      onPressed: () async {
+                        await showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('Batasan Penilaian'),
+                            content: Text(butir!.batasanPenilaian),
+                          ),
+                        );
+                      },
+                      padding: EdgeInsets.zero,
+                      icon: const Icon(
+                        Icons.error_rounded,
+                        color: AppColors.warning,
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),

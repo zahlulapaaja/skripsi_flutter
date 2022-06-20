@@ -11,16 +11,19 @@ class ProfileProvider with ChangeNotifier {
   Profile _profile = Profile();
   List<Jenjang>? _jenjang;
   String? _alert;
+  ButirKegiatan? _selectedButir;
   String? _pelaksana;
   List<TargetAngkaKredit> _jsonData = [];
   TargetAngkaKredit _pangkatSaatIni = TargetAngkaKredit();
   var dbHelper = DbProfile();
 
   Profile get profil => _profile;
+  ButirKegiatan? get selectedButir => _selectedButir;
   List<Jenjang> get listJenjang => _jenjang!;
   TargetAngkaKredit get pangkatSaatIni => _pangkatSaatIni;
 
   set setSelectedButir(ButirKegiatan butir) {
+    _selectedButir = butir;
     _pelaksana = butir.pelaksana;
     notifyListeners();
   }

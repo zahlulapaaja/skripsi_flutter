@@ -12,6 +12,7 @@ class FieldLabel extends StatelessWidget {
       padding: const EdgeInsets.only(top: 20, bottom: 4),
       child: Text(
         title,
+        overflow: TextOverflow.ellipsis,
         style: AppConstants.kFieldLabel,
       ),
     );

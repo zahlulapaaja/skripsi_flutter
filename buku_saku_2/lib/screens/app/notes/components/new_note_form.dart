@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
@@ -19,10 +20,11 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class NewNoteForm extends StatefulWidget {
-  const NewNoteForm({Key? key, this.note, this.selectedButir})
+  const NewNoteForm({Key? key, this.note, this.selectedButir, this.saveButton})
       : super(key: key);
   final Note? note;
   final ButirKegiatan? selectedButir;
+  final Function()? saveButton;
 
   @override
   State<NewNoteForm> createState() => _NewNoteFormState();
@@ -85,7 +87,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
     }
   }
 
-  submitNote(NotesProvider noteProvider) async {
+  submitNote() async {
     if (_formKey.currentState!.validate()) {
       selectedNote.uraian = uraianTextController.text;
       selectedNote.angkaKredit =
@@ -160,6 +162,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
     return Form(
       key: _formKey,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           const JenjangDropdown(),
           ButirDropdown(
@@ -212,8 +215,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
                   onChanged: (value) {
                     setState(() {
                       selectedNote.jumlahKegiatan = value;
-                      // harusnya nanti field setelah butir kegiatan muncul kalo butir kegiatan udh dipilih
-                      // dan angka kredit adanya setelah butir terpilih
                     });
                   },
                 ),
@@ -269,8 +270,17 @@ class _NewNoteFormState extends State<NewNoteForm> {
           Padding(
             padding: const EdgeInsets.all(40.0),
             child: ElevatedButton(
-              onPressed: () => submitNote(noteProvider),
-              child: const Text('Gass'),
+              style: TextButton.styleFrom(
+                backgroundColor: AppColors.primaryLight,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                alignment: Alignment.center,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+              ),
+              onPressed: () => submitNote(),
+              child: const Text('SIMPAN'),
             ),
           )
         ],
