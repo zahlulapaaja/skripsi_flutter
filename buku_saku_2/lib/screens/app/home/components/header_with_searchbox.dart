@@ -8,8 +8,7 @@ import 'package:provider/provider.dart';
 class HeaderWithSearchbox extends StatelessWidget {
   TextEditingController controller = TextEditingController();
 
-  HeaderWithSearchbox({Key? key})
-      : super(key: key);
+  HeaderWithSearchbox({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +48,13 @@ class HeaderWithSearchbox extends StatelessWidget {
                           child: Text(
                             'Buku Saku Prakom',
                             textAlign: TextAlign.left,
-                            style: AppConstants.kHeaderTextStyle,
+                            style: TextStyle(
+                              fontFamily: AppConstants.fontName,
+                              color: AppColors.offWhite,
+                              fontSize: AppConstants.kLargeFontSize + 4,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 0.0,
+                            ),
                           ),
                         ),
                       ),

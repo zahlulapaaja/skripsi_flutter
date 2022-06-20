@@ -7,7 +7,6 @@ class ProfileFormField extends StatelessWidget {
   final String title;
   final String hintText;
   final bool obsecureText;
-  final Widget? suffixIcon;
   final TextInputType keyboardType;
   final TextEditingController controller;
 
@@ -17,7 +16,6 @@ class ProfileFormField extends StatelessWidget {
     required this.hintText,
     required this.keyboardType,
     required this.controller,
-    this.suffixIcon,
     this.obsecureText = false,
   }) : super(key: key);
 
@@ -33,20 +31,16 @@ class ProfileFormField extends StatelessWidget {
           textAlignVertical: TextAlignVertical.center,
           keyboardType: keyboardType,
           obscureText: obsecureText,
-          decoration: InputDecoration(
+          decoration: AppConstants.kTextFieldDecoration(
             hintText: hintText,
-            suffixIcon: suffixIcon,
             contentPadding: const EdgeInsets.symmetric(horizontal: 12),
-            hintStyle: AppConstants.kTextFieldHintStyle,
-            border: const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: AppColors.black,
-                width: 4,
-                style: BorderStyle.solid,
-              ),
+            borderSide: const BorderSide(
+              color: AppColors.black,
+              width: 4,
+              style: BorderStyle.solid,
             ),
           ),
-        )
+        ),
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/sidebar/dasar_peraturan.dart';
 import 'package:buku_saku_2/screens/app/sidebar/export_note.dart';
 import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
@@ -181,7 +182,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
           Navigator.pushNamed(context, ExportNotesScreen.id);
           break;
         case DrawerIndex.rules:
-          print('DrawerIndex.rules');
+          Navigator.pushNamed(context, DasarPeraturanScreen.id);
           break;
         case DrawerIndex.feedBack:
           print('DrawerIndex.feedBack');

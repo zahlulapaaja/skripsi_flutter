@@ -79,7 +79,7 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
                       chartValuesOptions: const ChartValuesOptions(
                         showChartValueBackground: false,
                         decimalPlaces: 3,
-                        chartValueStyle: AppConstants.kDetailBtnTextStyle,
+                        chartValueStyle: AppConstants.kSmallWhiteTextStyle,
                       ),
                     ),
                   ),

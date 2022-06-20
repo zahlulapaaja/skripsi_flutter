@@ -27,7 +27,13 @@ class TitleView extends StatelessWidget {
               child: Text(
                 titleTxt,
                 textAlign: TextAlign.left,
-                style: AppConstants.kTitleViewTextStyle,
+                style: const TextStyle(
+                  fontFamily: AppConstants.fontName,
+                  color: AppColors.grey,
+                  fontSize: AppConstants.kNormalFontSize,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.5,
+                ),
               ),
             ),
             Opacity(
@@ -46,7 +52,7 @@ class TitleView extends StatelessWidget {
                   child: const Text(
                     'Details',
                     textAlign: TextAlign.center,
-                    style: AppConstants.kDetailBtnTextStyle,
+                    style: AppConstants.kSmallWhiteTextStyle,
                   ),
                 ),
               ),
