@@ -42,6 +42,7 @@ class ProfileProvider with ChangeNotifier {
     _profile = await dbHelper.getProfile();
     _jenjang = _profile.listJenjang;
     if (_profile.id != null) await getTargetAK();
+    notifyListeners();
 
     return _profile;
   }

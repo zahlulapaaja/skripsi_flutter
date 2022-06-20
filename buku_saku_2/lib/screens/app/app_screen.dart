@@ -190,7 +190,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
           print('DrawerIndex.share');
           break;
         case DrawerIndex.about:
-          print('DrawerIndex.about');
+          Navigator.pushNamed(context, ExportNotesScreen.id);
           break;
       }
     }

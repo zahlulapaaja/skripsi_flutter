@@ -1,9 +1,15 @@
+import 'dart:io';
+
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
+import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/components/setting_menu_button.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
+import 'package:buku_saku_2/screens/app/sidebar/export_note.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:provider/provider.dart';
 
 class SettingScreen extends StatelessWidget {
   static const id = 'setting_screen';
@@ -41,6 +47,7 @@ class SettingScreen extends StatelessWidget {
   }
 
   Widget getMainListViewUI(BuildContext context) {
+    Profile profil = context.watch<ProfileProvider>().profil;
     return ListView(
       padding: EdgeInsets.only(
         top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top,
@@ -51,41 +58,44 @@ class SettingScreen extends StatelessWidget {
         const SizedBox(height: 20),
         TextButton(
           onPressed: () {
-            // edit lebih rapi lagi
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const EditProfileScreen(),
-              ),
-            );
+            Navigator.pushNamed(context, EditProfileScreen.id);
           },
           child: SizedBox(
             height: 80,
             child: Row(
               children: <Widget>[
                 Container(
+                  height: 75,
                   width: 75,
-                  padding: const EdgeInsets.all(4.0),
-                  child: const Icon(
-                    Icons.account_circle_outlined,
-                    color: AppColors.black,
-                    size: 60,
+                  margin: const EdgeInsets.only(right: 14),
+                  decoration: const BoxDecoration(shape: BoxShape.circle),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(60.0)),
+                    child: (profil.fotoProfil == null)
+                        ? Image.asset(
+                            "assets/icons/profile.png",
+                            fit: BoxFit.cover,
+                          )
+                        : Image.file(
+                            File(profil.fotoProfil!),
+                            fit: BoxFit.cover,
+                          ),
                   ),
                 ),
                 Expanded(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const <Widget>[
+                    children: <Widget>[
                       Text(
-                        'title',
+                        profil.nama!,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: AppConstants.kCardTitleTextStyle,
+                        style: AppConstants.kNormalTitleTextStyle,
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Text(
-                        'subtitle',
+                        profil.jenjang!.jenjang.replaceRange(0, 16, "Prakom"),
                         textAlign: TextAlign.left,
                         style: AppConstants.kCardBodyTextStyle,
                       ),
@@ -102,24 +112,28 @@ class SettingScreen extends StatelessWidget {
             ),
           ),
         ),
-        Divider(color: Colors.black),
+        const Divider(color: AppColors.lightGrey),
+        // SettingMenuButton(
+        //   icon: Icons.settings,
+        //   title: 'Setelan',
+        //   subtitle: 'Tema, Riwayat, Dll...',
+        //   onPressed: () {},
+        // ),
         SettingMenuButton(
-          icon: Icons.settings,
-          title: 'Setelan',
-          subtitle: 'Tema, Riwayat, Dll...',
-          onPressed: () {},
-        ),
-        SettingMenuButton(
-          icon: Icons.history,
-          title: 'Histori',
-          subtitle: 'Catatan yang telah selesai',
-          onPressed: () {},
+          icon: Icons.file_download,
+          title: 'Ekspor Catatan',
+          subtitle: 'Simpan catatan dalam format excel',
+          onPressed: () {
+            Navigator.pushNamed(context, ExportNotesScreen.id);
+          },
         ),
         SettingMenuButton(
           icon: Icons.info,
           title: 'Tentang',
-          subtitle: 'Aplikasi, Pengembang, Dll...',
-          onPressed: () {},
+          subtitle: 'Informasi mengenai aplikasi',
+          onPressed: () {
+            Navigator.pushNamed(context, ExportNotesScreen.id);
+          },
         ),
       ],
     );

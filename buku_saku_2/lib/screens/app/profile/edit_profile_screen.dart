@@ -35,13 +35,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   String? selectedGolongan;
   List<String> jenjang = [];
   List<String> golongan = [];
+  PlatformFile? selectedPhoto;
 
-  late Profile data;
+  Profile? selectedData;
 
   @override
   void initState() {
-    data = context.read<ProfileProvider>().profil;
-    for (var item in data.listJenjang!) {
+    selectedData = context.read<ProfileProvider>().profil;
+    for (var item in selectedData!.listJenjang!) {
       if (jenjang.isEmpty) {
         jenjang.add(item.jenjang);
       } else if (item.jenjang != jenjang.last) {
@@ -49,15 +50,17 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       }
     }
 
-    if (data.id != null) {
-      _nameTextController.text = data.nama!;
-      _akSaatIniTextController.text = data.akSaatIni.toStringAsFixed(3);
-      for (var item in data.listJenjang!) {
-        if (item.id == data.jenjang!.id) {
+    if (selectedData!.id != null) {
+      _nameTextController.text = selectedData!.nama!;
+      _akSaatIniTextController.text =
+          selectedData!.akSaatIni.toStringAsFixed(3);
+      selectedPhoto = PlatformFile.fromMap(selectedData!.toProfileMap());
+      for (var item in selectedData!.listJenjang!) {
+        if (item.id == selectedData!.jenjang!.id) {
           selectedJenjang = item.jenjang;
           selectedGolongan = item.golongan;
         }
-        if (item.kodeJenjang == data.jenjang!.kodeJenjang) {
+        if (item.kodeJenjang == selectedData!.jenjang!.kodeJenjang) {
           golongan.add(item.golongan);
         }
       }
@@ -120,40 +123,31 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   shape: BoxShape.circle,
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: AppColors.grey.withOpacity(0.6),
+                        color: AppColors.grey.withOpacity(0.4),
                         offset: const Offset(2.0, 4.0),
-                        blurRadius: 8),
+                        blurRadius: 2),
                   ],
                 ),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(60.0)),
-                  child: (data.fotoProfil == null)
-                      ? Image.asset(
-                          "assets/icons/profile.png",
-                          fit: BoxFit.cover,
-                        )
-                      : Image.file(
-                          File(data.fotoProfil!),
-                          fit: BoxFit.cover,
-                        ),
+                child: InkWell(
+                  onTap: uploadImage,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(60.0)),
+                    child: (selectedPhoto != null)
+                        ? Image.file(
+                            File(selectedPhoto!.path!),
+                            fit: BoxFit.cover,
+                          )
+                        : Image.asset(
+                            "assets/icons/profile.png",
+                            fit: BoxFit.cover,
+                          ),
+                  ),
                 ),
               ),
               Column(
                 children: [
                   ElevatedButton(
-                    onPressed: () async {
-                      final result = await FilePicker.platform.pickFiles(
-                        type: FileType.custom,
-                        allowedExtensions: ['jpg', 'png'],
-                      );
-                      if (result != null) {
-                        final file =
-                            await saveFilePermanently(result.files.first);
-                        setState(() {
-                          data.fotoProfil = file.path;
-                        });
-                      }
-                    },
+                    onPressed: uploadImage,
                     child: const Text("Upload"),
                   ),
                   ElevatedButton(
@@ -177,7 +171,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         ),
                       );
                       setState(() {
-                        if (result == "Ya") data.fotoProfil = null;
+                        if (result == "Ya") selectedPhoto = null;
                       });
                     },
                     style: ButtonStyle(
@@ -205,7 +199,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 selectedJenjang = value;
                 selectedGolongan = null;
                 golongan = [];
-                for (var item in data.listJenjang!) {
+                for (var item in selectedData!.listJenjang!) {
                   if (item.jenjang == value) {
                     golongan.add(item.golongan);
                   }
@@ -219,9 +213,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             initialData: selectedGolongan,
             hintText: "Pilih golongan...",
             onChanged: (value) {
-              for (var row in data.listJenjang!) {
+              for (var row in selectedData!.listJenjang!) {
                 if (row.jenjang == selectedJenjang && row.golongan == value) {
-                  data.jenjang = row;
+                  selectedData!.jenjang = row;
                 }
               }
             },
@@ -236,7 +230,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           BlueRoundedButton(
             buttonTitle: 'Simpan',
             onPressed: () {
-              saveData(data);
+              saveData(selectedData!);
             },
           ),
         ],
@@ -244,10 +238,33 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     );
   }
 
+  void uploadImage() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['jpg', 'png'],
+    );
+    if (result != null) {
+      // final file = await saveFilePermanently(result.files.first);
+      setState(() {
+        // data.fotoProfil = file.path;
+        selectedPhoto = result.files.first;
+        // File(result.files.first.path!);
+        // isProfilePictExist = true;
+      });
+    }
+  }
+
   saveData(Profile data) async {
     if (_formKey.currentState!.validate()) {
       data.nama = _nameTextController.text;
       data.akSaatIni = double.parse(_akSaatIniTextController.text);
+      if (data.fotoProfil != null) File(data.fotoProfil!).delete();
+      if (selectedPhoto != null) {
+        final file = await saveFilePermanently(selectedPhoto!);
+        data.fotoProfil = file.path;
+      } else {
+        data.fotoProfil = null;
+      }
 
       int status = await context.read<ProfileProvider>().saveProfile(data);
 

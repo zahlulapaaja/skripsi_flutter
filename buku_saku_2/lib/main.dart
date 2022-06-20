@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/screens/app/sidebar/app_detail.dart';
 import 'package:buku_saku_2/screens/app/sidebar/export_note.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
@@ -66,6 +67,7 @@ class _MyAppState extends State<MyApp> {
           SettingScreen.id: (context) => const SettingScreen(),
           EditProfileScreen.id: (context) => const EditProfileScreen(),
           ExportNotesScreen.id: (context) => const ExportNotesScreen(),
+          AppDetailScreen.id: (context) => const AppDetailScreen(),
         },
       ),
     );

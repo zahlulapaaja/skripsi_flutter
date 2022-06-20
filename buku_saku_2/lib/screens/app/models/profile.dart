@@ -24,6 +24,16 @@ class Profile {
       "akSaatIni": akSaatIni,
     };
   }
+
+  Map<String, dynamic> toProfileMap() {
+    return {
+      'path': fotoProfil,
+      'name': fotoProfil!.split("/").last,
+      'extension': fotoProfil!.split(".").last,
+      // ini perlu perbaiki
+      'size': 0,
+    };
+  }
 }
 
 class Jenjang {
