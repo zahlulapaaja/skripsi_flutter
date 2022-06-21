@@ -72,6 +72,7 @@ class _DatePickerState extends State<DatePicker> {
                   Expanded(
                     child: DateField(
                       date: widget.selectedDate[i]?.tanggalBerakhir,
+                      fisrtDate: widget.selectedDate[i]?.tanggalMulai,
                       onChange: (date) {
                         if (widget.selectedDate[i]?.tanggalMulai == null) {
                           Fluttertoast.showToast(
@@ -102,9 +103,11 @@ class DateField extends StatelessWidget {
     Key? key,
     required this.date,
     required this.onChange,
+    this.fisrtDate,
   }) : super(key: key);
 
   final DateTime? date;
+  final DateTime? fisrtDate;
   final Function(DateTime?) onChange;
 
   @override
@@ -148,8 +151,8 @@ class DateField extends StatelessWidget {
                   onPressed: () {
                     showDatePicker(
                       context: context,
-                      initialDate: DateTime.now(),
-                      firstDate: DateTime(1990),
+                      initialDate: fisrtDate ?? DateTime.now(),
+                      firstDate: fisrtDate ?? DateTime(1990),
                       lastDate: DateTime(DateTime.now().year + 1),
                     ).then((date) {
                       if (date != null) onChange(date);

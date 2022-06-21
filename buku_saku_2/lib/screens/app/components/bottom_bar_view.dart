@@ -152,9 +152,9 @@ class _BottomBarViewState extends State<BottomBarView>
                         shape: BoxShape.circle,
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                            color: AppColors.primary.withOpacity(0.4),
-                            offset: const Offset(8.0, 16.0),
-                            blurRadius: 16.0,
+                            color: AppColors.primaryLight.withOpacity(0.4),
+                            offset: const Offset(8.0, 10.0),
+                            blurRadius: 18.0,
                           ),
                         ],
                       ),

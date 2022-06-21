@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class Note {
   int? id;
   String? judul;
@@ -89,6 +91,22 @@ class Note {
       // status,
       dateCreated,
     ];
+  }
+
+  List<String> tanggalToString(List<TanggalKegiatan> dates) {
+    return List.generate(dates.length, (index) {
+      return (dates[index].tanggalBerakhir == null)
+          ? (DateFormat("dd/MM/yyyy", "id_ID")
+                  .format(dates[index].tanggalMulai!))
+              .toString()
+          : (DateFormat("dd/MM/yyyy", "id_ID")
+                      .format(dates[index].tanggalMulai!))
+                  .toString() +
+              " - " +
+              (DateFormat("dd/MM/yyyy", "id_ID")
+                      .format(dates[index].tanggalBerakhir!))
+                  .toString();
+    });
   }
 }
 

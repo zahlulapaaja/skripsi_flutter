@@ -32,7 +32,8 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
     sheet.importList(Note.listTitle, 1, 1, false);
 
     // input data dari database
-    List<Note> notes = await dbHelper.getNotes();
+    List<Note> notes = await dbHelper.exportNotes();
+    print(notes);
     for (int i = 0; i < notes.length; i++) {
       // +2 karna ga ada baris 0, dan baris satu udh diisi title
       sheet.importList(notes[i].toList(i), i + 2, 1, false);
@@ -43,9 +44,9 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
 
     // memanggil path dan menyimpan file
     final String path = (await getApplicationSupportDirectory()).path;
-    final String fileName =
-        DateFormat("yyyy-MM-dd HH:mm:ss", "id_ID").format(DateTime.now()) +
-            ' - Ekspor Catatan.xlsx';
+    final String fileName = 'Ekspor_Catatan_' +
+        DateFormat("yyyyMMdd_HHmmss", "id_ID").format(DateTime.now()) +
+        '.xlsx';
     final File file = File('$path/$fileName');
     final newFile = await file.writeAsBytes(bytes, flush: true);
 

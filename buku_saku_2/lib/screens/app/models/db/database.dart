@@ -221,6 +221,47 @@ class DbHelper {
         where: 'idCatatan = ?', whereArgs: [noteId]);
   }
 
+  Future<List<Note>> exportNotes() async {
+    final db = await dbInstance;
+
+    final List<Map<String, dynamic>> maps =
+        await db.query('catatan', orderBy: "kodeButir ASC");
+    final List<Map<String, dynamic>> dates = await db.query('tanggal_kegiatan');
+
+    return List.generate(maps.length, (i) {
+      List<TanggalKegiatan> listTanggal = [];
+
+      for (var index = 0; index < dates.length; index++) {
+        if (maps[i]['id'] == dates[index]['idCatatan']) {
+          listTanggal.add(TanggalKegiatan(
+            id: dates[index]['id'],
+            idCatatan: dates[index]['idCatatan'],
+            tanggalMulai: DateTime.parse(dates[index]['tanggalMulai']),
+            tanggalBerakhir: (dates[index]['tanggalBerakhir'] != null)
+                ? DateTime.parse(dates[index]['tanggalBerakhir'])
+                : null,
+          ));
+        }
+      }
+
+      return Note(
+        id: maps[i]['id'],
+        judul: maps[i]['judul'],
+        uraian: maps[i]['uraian'],
+        kodeButir: maps[i]['kodeButir'],
+        satuanHasil: maps[i]['satuanHasil'],
+        jumlahKegiatan: maps[i]['jumlahKegiatan'],
+        angkaKredit: maps[i]['angkaKredit'],
+        isTim: maps[i]['isTim'] == 0 ? false : true,
+        jmlAnggota: maps[i]['jmlAnggota'],
+        peranDalamTim: maps[i]['peranDalamTim'],
+        status: maps[i]['status'],
+        dateCreated: DateTime.parse(maps[i]['dateCreated']),
+        listTanggal: listTanggal,
+      );
+    });
+  }
+
   Future<List<DocFile>> getExportNote() async {
     final db = await dbInstance;
     final List<Map<String, dynamic>> maps =
