@@ -54,9 +54,9 @@ class OnBoarding1 extends StatelessWidget {
           children: [
             SlideTransition(
               position: _imageAnimation,
-              child: Container(
-                constraints:
-                    const BoxConstraints(maxWidth: 350, maxHeight: 250),
+              child: SizedBox(
+                width: 350,
+                height: 250,
                 child: Image.asset(
                   'assets/introduction/intro1.png',
                   fit: BoxFit.contain,

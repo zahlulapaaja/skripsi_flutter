@@ -15,7 +15,6 @@ import 'package:buku_saku_2/screens/app/notes/components/form_field/jenjang_drop
 import 'package:buku_saku_2/screens/app/notes/components/form_field/jumlah_kegiatan_field.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/uraian_text_area.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
-import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -92,6 +91,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
       selectedNote.uraian = uraianTextController.text;
       selectedNote.angkaKredit =
           selectedNote.jumlahKegiatan * selectedNote.akSatuan!;
+      selectedNote.listTanggal.take(selectedNote.jumlahKegiatan);
 
       selectedNote.buktiFisik?.clear();
       for (var file in selectedBuktiFisik) {
@@ -116,6 +116,9 @@ class _NewNoteFormState extends State<NewNoteForm> {
   void initState() {
     if (widget.note != null) {
       selectedNote = widget.note!;
+      if (selectedNote.listTanggal.isEmpty) {
+        selectedNote.listTanggal = [TanggalKegiatan()];
+      }
       uraianTextController.text = selectedNote.uraian;
       selectedNote.buktiFisik?.forEach((docFile) {
         selectedBuktiFisik.add(PlatformFile.fromMap(docFile.toMap()));
@@ -136,7 +139,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
             ? widget.selectedButir!.angkaKredit
             : 0,
         dateCreated: DateTime.now(),
-        listTanggal: [],
+        listTanggal: [TanggalKegiatan()],
         buktiFisik: [],
       );
 
@@ -147,6 +150,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
         selectedNote.judul = selectedButir!.kode + " " + selectedButir!.judul;
         selectedNote.kodeButir = selectedButir!.kode;
         selectedNote.angkaKredit = selectedButir!.angkaKredit;
+        selectedNote.satuanHasil = selectedButir!.satuanHasil;
         (alert == null)
             ? selectedNote.akSatuan = selectedButir!.angkaKredit
             : selectedNote.akSatuan = selectedButir!.angkaKredit * 0.8;
@@ -157,8 +161,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
 
   @override
   Widget build(BuildContext context) {
-    final noteProvider = Provider.of<NotesProvider>(context);
-
     return Form(
       key: _formKey,
       child: Column(
@@ -184,6 +186,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
                   selectedNote.judul = butir!.kode + " " + butir.judul;
                   selectedNote.kodeButir = butir.kode;
                   selectedNote.angkaKredit = butir.angkaKredit;
+                  selectedNote.satuanHasil = butir.satuanHasil;
                   (alert == null)
                       ? selectedNote.akSatuan = butir.angkaKredit
                       : selectedNote.akSatuan = butir.angkaKredit * 0.8;
@@ -195,16 +198,19 @@ class _NewNoteFormState extends State<NewNoteForm> {
             Column(
               children: <Widget>[
                 DatePicker(
-                  selectedDate: selectedNote.listTanggal!,
-                  onAdd: (value) {
+                  selectedDate: selectedNote.listTanggal,
+                  jmlKegiatan: selectedNote.jumlahKegiatan,
+                  onChangeTanggalMulai: (date, index) {
                     setState(() {
-                      if (value != null) selectedNote.listTanggal!.add(value);
+                      selectedNote.listTanggal[index].tanggalMulai = date;
+                      if (date == null) {
+                        selectedNote.listTanggal[index].tanggalBerakhir = date;
+                      }
                     });
                   },
-                  onReduced: (date) {
+                  onChangeTanggalBerakhir: (date, index) {
                     setState(() {
-                      selectedNote.listTanggal!
-                          .removeWhere((element) => element == date);
+                      selectedNote.listTanggal[index].tanggalBerakhir = date;
                     });
                   },
                 ),
@@ -214,6 +220,11 @@ class _NewNoteFormState extends State<NewNoteForm> {
                   akSatuan: selectedNote.akSatuan ?? 0,
                   onChanged: (value) {
                     setState(() {
+                      for (var i = 0; i < value; i++) {
+                        if (value >= selectedNote.listTanggal.length) {
+                          selectedNote.listTanggal.add(TanggalKegiatan());
+                        }
+                      }
                       selectedNote.jumlahKegiatan = value;
                     });
                   },
@@ -251,16 +262,10 @@ class _NewNoteFormState extends State<NewNoteForm> {
                       selectedBuktiFisik.addAll(result.files);
                     });
                   },
-                  onDelete: (fileName) {
-                    setState(() async {
-                      for (var file in selectedBuktiFisik) {
-                        if (file.name == fileName) {
-                          if (await File(file.path!).exists()) {
-                            File(file.path!).delete();
-                          }
-                          selectedBuktiFisik.remove(file);
-                        }
-                      }
+                  onDelete: (value) {
+                    setState(() {
+                      File(value.path!).delete();
+                      selectedBuktiFisik.remove(value);
                     });
                   },
                 ),
@@ -291,18 +296,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
   Future<File> saveFilePermanently(PlatformFile file) async {
     final appStorage = await getApplicationDocumentsDirectory();
     final newFile = File('${appStorage.path}/${file.name}');
-
-    // ParseFileBase parseFile;
-
-    // parseFile = ParseFile(File(file.path!));
-
-    // ParseResponse res = await parseFile.save();
-
-    // res();
-
-    // OpenFile(res.result);
-
     return File(file.path!).copy(newFile.path);
-    // return File(file.path!);
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:buku_saku_2/configs/components.dart';
+import 'package:buku_saku_2/screens/app/app_screen.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
@@ -277,7 +278,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           textColor: Colors.white,
           fontSize: AppConstants.kTinyFontSize,
         );
-        Navigator.pop(context);
+        (data.id == null)
+            ? Navigator.pushNamed(context, AppScreen.id)
+            : Navigator.pop(context);
       }
     }
   }

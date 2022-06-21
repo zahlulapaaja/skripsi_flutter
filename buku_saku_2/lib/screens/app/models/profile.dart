@@ -2,6 +2,7 @@ class Profile {
   int? id;
   String? nama;
   String? fotoProfil;
+  int ukuranFoto;
   Jenjang? jenjang;
   double akSaatIni;
   List<Jenjang>? listJenjang;
@@ -10,6 +11,7 @@ class Profile {
     this.id,
     this.nama,
     this.fotoProfil,
+    this.ukuranFoto = 0,
     this.jenjang,
     this.akSaatIni = 0,
     this.listJenjang,
@@ -20,6 +22,7 @@ class Profile {
       'id': id,
       'nama': nama,
       'fotoProfil': fotoProfil,
+      'ukuranFoto': ukuranFoto,
       "idJenjang": jenjang!.id,
       "akSaatIni": akSaatIni,
     };
@@ -30,8 +33,7 @@ class Profile {
       'path': fotoProfil,
       'name': fotoProfil?.split("/").last,
       'extension': fotoProfil?.split(".").last,
-      // ini perlu perbaiki
-      'size': 0,
+      'size': ukuranFoto,
     };
   }
 }

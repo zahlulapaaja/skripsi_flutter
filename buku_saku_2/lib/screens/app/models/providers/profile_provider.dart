@@ -72,14 +72,19 @@ class ProfileProvider with ChangeNotifier {
           if (_jsonData[i].pangkatPuncak! && i < (_jsonData.length - 1)) {
             _jsonData[i].jenjangSelanjutnya = _jsonData[i + 1].jenjang;
           } else {
-            //   _jsonData[i].golonganSelanjutnya = _jsonData[i + 1].golongan;
-            //   if (_jsonData[i + 1].pangkatPuncak!) {
-            //     _jsonData[i].akNaikJenjang = _jsonData[i + 1].akNaikPangkat;
-            //     _jsonData[i].jenjangSelanjutnya = _jsonData[i + 2].jenjang;
-            //   } else {
-            //     _jsonData[i].akNaikJenjang = _jsonData[i + 2].akNaikPangkat;
-            //     _jsonData[i].jenjangSelanjutnya = _jsonData[i + 3].jenjang;
-            //   }
+            _jsonData[i].golonganSelanjutnya =
+                (i <= 13) ? _jsonData[i + 1].golongan : null;
+            if (_jsonData[i + 1].pangkatPuncak!) {
+              _jsonData[i].akNaikJenjang =
+                  (i <= 13) ? _jsonData[i + 1].akNaikPangkat : 0;
+              _jsonData[i].jenjangSelanjutnya =
+                  (i <= 12) ? _jsonData[i + 2].jenjang : null;
+            } else {
+              _jsonData[i].akNaikJenjang =
+                  (i <= 12) ? _jsonData[i + 2].akNaikPangkat : 0;
+              _jsonData[i].jenjangSelanjutnya =
+                  (i <= 11) ? _jsonData[i + 3].jenjang : null;
+            }
           }
           _pangkatSaatIni = _jsonData[i];
         }

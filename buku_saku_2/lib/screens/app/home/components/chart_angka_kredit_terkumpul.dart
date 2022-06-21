@@ -17,12 +17,12 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
     AppColors.primary,
     AppColors.primaryLight,
   ];
-  double akTerkumpul = 0;
-  double persenAKUtama = 0;
-  double persenAKPenunjang = 0;
 
   @override
   Widget build(BuildContext context) {
+    double akTerkumpul = 0;
+    double persenAKUtama = 0;
+    double persenAKPenunjang = 0;
     double akUtama = context.watch<NotesProvider>().akUtamaTerkumpul;
     double akPenunjang = context.watch<NotesProvider>().akPenunjangTerkumpul;
     akTerkumpul = akUtama + akPenunjang;

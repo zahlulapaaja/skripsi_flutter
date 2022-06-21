@@ -14,7 +14,7 @@ class BuktiFisikField extends StatelessWidget {
       : super(key: key);
   final List<PlatformFile>? selectedData;
   final Function() onPressed;
-  final Function(String) onDelete;
+  final Function(PlatformFile) onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +103,7 @@ class BuktiFisikField extends StatelessWidget {
                               );
 
                               if (result == 'Ya') {
-                                onDelete(selectedData![index].name);
+                                onDelete(selectedData![index]);
                               }
                             },
                             child: Center(

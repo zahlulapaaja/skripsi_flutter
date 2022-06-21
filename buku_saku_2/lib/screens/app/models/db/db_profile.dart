@@ -35,6 +35,7 @@ class DbProfile extends DbHelper {
         id: maps[0]['id'],
         nama: maps[0]['nama'],
         fotoProfil: maps[0]['fotoProfil'],
+        ukuranFoto: maps[0]['ukuranFoto'],
         jenjang: jenjang,
         akSaatIni: maps[0]['akSaatIni'],
         listJenjang: listJenjang,

@@ -22,20 +22,6 @@ class ExportNotesScreen extends StatefulWidget {
 
 class _ExportNotesScreenState extends State<ExportNotesScreen> {
   var dbHelper = DbHelper();
-  final List<Object> title = [
-    "id",
-    "judul",
-    "uraian",
-    "kode_butir",
-    "jumlah_kegiatan",
-    "angka_kredit",
-    "kegiatan_tim",
-    "jumlah_anggota",
-    "peran_dalam_tim",
-    "list_tanggal",
-    "status",
-    "date_created",
-  ];
 
   Future<DocFile> createExcel() async {
     // membuat file excel
@@ -43,13 +29,13 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
     final Worksheet sheet = workbook.worksheets[0];
 
     // input title ke row pertama
-    sheet.importList(title, 1, 1, false);
+    sheet.importList(Note.listTitle, 1, 1, false);
 
     // input data dari database
     List<Note> notes = await dbHelper.getNotes();
     for (int i = 0; i < notes.length; i++) {
       // +2 karna ga ada baris 0, dan baris satu udh diisi title
-      sheet.importList(notes[i].toList(), i + 2, 1, false);
+      sheet.importList(notes[i].toList(i), i + 2, 1, false);
     }
 
     final List<int> bytes = workbook.saveAsStream();

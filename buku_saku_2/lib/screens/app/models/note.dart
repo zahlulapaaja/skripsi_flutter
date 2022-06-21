@@ -2,6 +2,7 @@ class Note {
   int? id;
   String? judul;
   String uraian;
+  String? satuanHasil;
   String? kodeButir;
   int jumlahKegiatan;
   double angkaKredit;
@@ -12,7 +13,7 @@ class Note {
   int? status;
   int? idProfil;
   DateTime? dateCreated;
-  List<DateTime>? listTanggal;
+  List<TanggalKegiatan> listTanggal;
   List<DocFile>? buktiFisik;
 
   // int status :
@@ -21,11 +22,11 @@ class Note {
   // 2 = pinned
   // 3 = checked
 
-// ini judul sama kode butir harusnya required jga
   Note({
     this.id,
     this.judul,
     required this.uraian,
+    this.satuanHasil,
     this.kodeButir,
     this.jumlahKegiatan = 1,
     this.angkaKredit = 0,
@@ -36,7 +37,7 @@ class Note {
     this.idProfil,
     this.dateCreated,
     this.akSatuan,
-    this.listTanggal,
+    required this.listTanggal,
     this.buktiFisik,
   });
 
@@ -45,6 +46,7 @@ class Note {
       'id': id,
       'judul': judul,
       'uraian': uraian,
+      'satuanHasil': satuanHasil,
       'kodeButir': kodeButir,
       'jumlahKegiatan': jumlahKegiatan,
       'angkaKredit': angkaKredit,
@@ -57,20 +59,34 @@ class Note {
     };
   }
 
-  List<dynamic> toList() {
+  static List<String> listTitle = [
+    "No",
+    "Uraian",
+    "Kode Butir",
+    "Tanggal",
+    "Satuan Hasil",
+    "Jumlah Volume Kegiatan",
+    "Jumlah Angka Kredit",
+    "Kegiatan Tim",
+    "Jumlah Anggota",
+    "Peran Dalam Tim",
+    // "status",
+    "date_created",
+  ];
+
+  List<dynamic> toList(int number) {
     return [
-      // pikir format yang paling baik utk semua itu, terutama tanggal tu
-      id,
-      judul,
+      number.toString(),
       uraian,
       kodeButir,
+      listTanggal,
+      satuanHasil,
       jumlahKegiatan,
       angkaKredit,
-      isTim ? "ya" : "tidak",
+      isTim ? "Ya" : "Tidak",
       isTim ? jmlAnggota : 0,
       isTim ? peranDalamTim : "",
-      listTanggal,
-      status,
+      // status,
       dateCreated,
     ];
   }
@@ -104,6 +120,30 @@ class DocFile {
       'size': size,
       if (idCatatan != null) 'idCatatan': idCatatan,
       if (idCatatan == null) 'dateCreated': dateCreated.toString(),
+    };
+  }
+}
+
+class TanggalKegiatan {
+  final int? id;
+  DateTime? tanggalMulai;
+  DateTime? tanggalBerakhir;
+  final int? idCatatan;
+
+  TanggalKegiatan({
+    this.id,
+    this.tanggalMulai,
+    this.tanggalBerakhir,
+    this.idCatatan,
+  });
+
+  Map<String, dynamic> toMap({int? idCatatan}) {
+    return {
+      'id': id,
+      'tanggalMulai': tanggalMulai.toString(),
+      'tanggalBerakhir':
+          (tanggalBerakhir != null) ? tanggalBerakhir.toString() : null,
+      'idCatatan': idCatatan,
     };
   }
 }

@@ -41,7 +41,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         while (result == null) {
           result = await alertDialog();
           // kalo abis ke profile screen trus balik bakal error nanti
-          Navigator.pushNamed(context, EditProfileScreen.id);
+          if (result == "Lanjutkan")
+            Navigator.popAndPushNamed(context, EditProfileScreen.id);
+          // Navigator.pushNamed(context, EditProfileScreen.id);
         }
       });
     }

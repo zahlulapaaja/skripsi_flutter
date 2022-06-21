@@ -7,17 +7,18 @@ class DbHelper {
   Database? _database;
   final String _dbName = 'bukusaku.db';
   final String _dbSyntax =
-      '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, kodeButir TEXT,
-  jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), isTim BIT, jmlAnggota INTEGER, peranDalamTim TEXT, 
-  dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
+      '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, satuanHasil TEXT, 
+      kodeButir TEXT, jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), isTim BIT, jmlAnggota INTEGER, peranDalamTim TEXT, 
+      dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
   final String _dbSyntax2 =
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, path TEXT,
-  name TEXT, extension TEXT, size INTEGER)''';
+      name TEXT, extension TEXT, size INTEGER)''';
   final String _dbSyntax3 =
-      '''CREATE TABLE tanggal_kegiatan( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, tanggal TEXT)''';
+      '''CREATE TABLE tanggal_kegiatan( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, tanggalMulai TEXT,
+      tanggalBerakhir TEXT)''';
   final String _dbSyntax4 =
-      '''CREATE TABLE profil( id INTEGER PRIMARY KEY AUTOINCREMENT, nama TEXT, fotoProfil TEXT, idJenjang INTEGER,
-  akSaatIni DOUBLE(200,3))''';
+      '''CREATE TABLE profil( id INTEGER PRIMARY KEY AUTOINCREMENT, nama TEXT, fotoProfil TEXT, ukuranFoto INTEGER,
+      idJenjang INTEGER, akSaatIni DOUBLE(200,3))''';
   final String _dbSyntax5 =
       '''CREATE TABLE jenjang( id INTEGER PRIMARY KEY, kodeJenjang INTEGER, jenjang TEXT, golongan TEXT )''';
   final String _dbSyntax6 =
@@ -71,6 +72,7 @@ class DbHelper {
         angkaKredit: maps[i]['angkaKredit'],
         status: maps[i]['status'],
         dateCreated: DateTime.parse(maps[i]['dateCreated']),
+        listTanggal: [],
       );
     });
   }
@@ -97,8 +99,21 @@ class DbHelper {
       ),
     );
 
-    List<DateTime> listTanggal = List.generate(dates.length, (index) {
-      return DateTime.parse(dates[index]['tanggal']);
+    List<TanggalKegiatan> listTanggal =
+        List.generate(maps[0]['jumlahKegiatan'], (index) {
+      // print(dates[index]['tanggalMulai']);
+      if (index < dates.length) {
+        return TanggalKegiatan(
+          id: dates[index]['id'],
+          idCatatan: dates[index]['idCatatan'],
+          tanggalMulai: DateTime.parse(dates[index]['tanggalMulai']),
+          tanggalBerakhir: (dates[index]['tanggalBerakhir'] != null)
+              ? DateTime.parse(dates[index]['tanggalBerakhir'])
+              : null,
+        );
+      } else {
+        return TanggalKegiatan();
+      }
     });
 
     return Note(
@@ -106,6 +121,7 @@ class DbHelper {
       judul: maps[0]['judul'],
       uraian: maps[0]['uraian'],
       kodeButir: maps[0]['kodeButir'],
+      satuanHasil: maps[0]['satuanHasil'],
       jumlahKegiatan: maps[0]['jumlahKegiatan'],
       angkaKredit: maps[0]['angkaKredit'],
       akSatuan: maps[0]['angkaKredit'] / maps[0]['jumlahKegiatan'],
@@ -115,7 +131,6 @@ class DbHelper {
       status: maps[0]['status'],
       dateCreated: DateTime.parse(maps[0]['dateCreated']),
       listTanggal: listTanggal,
-
       buktiFisik: buktiFisik,
       // this.idProfil,
     );
@@ -135,6 +150,7 @@ class DbHelper {
         uraian: maps[i]['uraian'],
         status: maps[i]['status'],
         dateCreated: DateTime.parse(maps[i]['dateCreated']),
+        listTanggal: [],
       );
     });
   }
@@ -151,10 +167,10 @@ class DbHelper {
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
-    if (note.listTanggal != null) {
-      for (var tanggal in note.listTanggal!) {
-        await db.insert('tanggal_kegiatan',
-            {"idCatatan": insertedId, "tanggal": tanggal.toString()},
+    for (var tanggal in note.listTanggal) {
+      if (tanggal.tanggalMulai != null) {
+        await db.insert(
+            'tanggal_kegiatan', tanggal.toMap(idCatatan: insertedId),
             conflictAlgorithm: ConflictAlgorithm.replace);
       }
     }
@@ -174,13 +190,22 @@ class DbHelper {
       }
     }
 
-    await db.delete('tanggal_kegiatan',
-        where: 'idCatatan = ?', whereArgs: [note.id]);
-    if (note.listTanggal != null) {
-      for (var tanggal in note.listTanggal!) {
-        await db.insert('tanggal_kegiatan',
-            {"idCatatan": note.id, "tanggal": tanggal.toString()},
-            conflictAlgorithm: ConflictAlgorithm.replace);
+    for (var tanggal in note.listTanggal) {
+      if (tanggal.id != null) {
+        if (tanggal.tanggalMulai == null) {
+          await db.delete('tanggal_kegiatan',
+              where: 'id = ?', whereArgs: [tanggal.id]);
+        } else {
+          await db.update(
+              'tanggal_kegiatan', tanggal.toMap(idCatatan: note.id!),
+              where: 'id = ?', whereArgs: [tanggal.id]);
+        }
+      } else {
+        if (tanggal.tanggalMulai != null) {
+          await db.insert(
+              'tanggal_kegiatan', tanggal.toMap(idCatatan: note.id!),
+              conflictAlgorithm: ConflictAlgorithm.replace);
+        }
       }
     }
 

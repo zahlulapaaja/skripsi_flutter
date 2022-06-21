@@ -41,11 +41,12 @@ class CenterNextButton extends StatelessWidget {
           EdgeInsets.only(bottom: 16 + MediaQuery.of(context).padding.bottom),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           AnimatedBuilder(
             animation: animationController,
             builder: (context, child) => Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 _pageView(),
                 Padding(

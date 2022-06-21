@@ -71,7 +71,7 @@ class _IntroductionAnimationScreenState
   // 1 detik bagi 3, karna semuanya ada 3 halaman
 
   void _onSkipClick() {
-    _EndIntroScreen(context, AppScreen.id);
+    endIntroScreen(context, AppScreen.id);
   }
 
   void _onBackClick() {
@@ -91,11 +91,11 @@ class _IntroductionAnimationScreenState
         _animationController!.value < 0.67) {
       _animationController?.animateTo(0.67);
     } else if (_animationController!.value >= 0.67) {
-      _EndIntroScreen(context, AppScreen.id);
+      endIntroScreen(context, AppScreen.id);
     }
   }
 
-  void _EndIntroScreen(context, String routeName) {
+  void endIntroScreen(context, String routeName) {
     Navigator.pop(context);
     Navigator.pushNamed(context, routeName);
     introData.write("displayed", true);

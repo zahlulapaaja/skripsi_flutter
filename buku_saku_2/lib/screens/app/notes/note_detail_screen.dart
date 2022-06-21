@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/configs/constants.dart';
@@ -57,7 +55,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                           DetailBox(
                             children: <Widget>[
                               Text(
-                                "Catatan dibuat pada : ${DateFormat("d MMM yyyy", "id_ID").format(note.dateCreated!)}",
+                                "Catatan dibuat pada : ${DateFormat("d MMMM yyyy", "id_ID").format(note.dateCreated!)}",
                                 style: AppConstants.kTextFieldHintStyle,
                               ),
                               const SizedBox(height: 16),
@@ -92,15 +90,22 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                             children: <Widget>[
                               WhiteBoxBody(
                                 title: "Tanggal Kegiatan",
-                                widgetBody: Row(
-                                  children: (note.listTanggal!.isEmpty)
+                                widgetBody: Wrap(
+                                  children: (note.listTanggal[0].tanggalMulai ==
+                                          null)
                                       ? [const Text("-")]
                                       : List.generate(
-                                          note.listTanggal!.length,
+                                          note.listTanggal.length,
                                           (index) {
-                                            return DatePill(
-                                              date: note.listTanggal![index],
-                                            );
+                                            if (note.listTanggal[index]
+                                                    .tanggalMulai !=
+                                                null) {
+                                              return DatePill(
+                                                date: note.listTanggal[index],
+                                              );
+                                            } else {
+                                              return const SizedBox();
+                                            }
                                           },
                                         ),
                                 ),
@@ -112,6 +117,10 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               WhiteBoxBody(
                                 title: "Uraian Kegiatan",
                                 body: note.uraian,
+                              ),
+                              WhiteBoxBody(
+                                title: "Satuan Hasil",
+                                body: note.satuanHasil,
                               ),
                               WhiteBoxBody(
                                 title: "Jumlah Kegiatan",

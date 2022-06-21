@@ -79,23 +79,26 @@ class InformasiJenjang extends StatelessWidget {
                   child: Center(
                     child: RichText(
                       textAlign: TextAlign.center,
-                      text: TextSpan(
-                        text: 'Butuh ',
-                        style: AppConstants.kTextFieldTextStyle,
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: (pangkatSaatIni.pangkatPuncak!)
-                                  ? NumberFormatter.convertToId(
-                                      pangkatSaatIni.akNaikPangkat)
-                                  : NumberFormatter.convertToId(
-                                      pangkatSaatIni.akNaikJenjang!),
-                              style: AppConstants.kNormalTitleTextStyle),
-                          const TextSpan(text: ' Angka Kredit menuju '),
-                          TextSpan(
-                              text: pangkatSaatIni.jenjangSelanjutnya,
-                              style: AppConstants.kNormalTitleTextStyle),
-                        ],
-                      ),
+                      text: (pangkatSaatIni.id! > 12)
+                          ? const TextSpan(
+                              text: 'Anda berada di puncak jenjang')
+                          : TextSpan(
+                              text: 'Butuh ',
+                              style: AppConstants.kTextFieldTextStyle,
+                              children: <TextSpan>[
+                                TextSpan(
+                                    text: (pangkatSaatIni.pangkatPuncak!)
+                                        ? NumberFormatter.convertToId(
+                                            pangkatSaatIni.akNaikPangkat)
+                                        : NumberFormatter.convertToId(
+                                            pangkatSaatIni.akNaikJenjang!),
+                                    style: AppConstants.kNormalTitleTextStyle),
+                                const TextSpan(text: ' Angka Kredit menuju '),
+                                TextSpan(
+                                    text: pangkatSaatIni.jenjangSelanjutnya,
+                                    style: AppConstants.kNormalTitleTextStyle),
+                              ],
+                            ),
                     ),
                   ),
                 ),
