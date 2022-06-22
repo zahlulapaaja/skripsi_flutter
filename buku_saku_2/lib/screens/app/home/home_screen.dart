@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       });
     }
     int akNaikPangkat =
-        context.read<ProfileProvider>().pangkatSaatIni.akNaikPangkat;
+        context.read<ProfileProvider>().pangkatSaatIni.akNaikPangkat!;
     context.read<DictionaryProvider>().setNaikPangkat = akNaikPangkat;
 
     addAllListData();

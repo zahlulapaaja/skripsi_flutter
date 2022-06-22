@@ -2,7 +2,7 @@ class Profile {
   int? id;
   String? nama;
   String? fotoProfil;
-  int ukuranFoto;
+  int? ukuranFoto;
   Jenjang? jenjang;
   double akSaatIni;
   List<Jenjang>? listJenjang;

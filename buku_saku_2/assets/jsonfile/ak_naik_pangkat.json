@@ -172,7 +172,7 @@
     "jenjang": "Pranata Komputer Ahli Utama",
     "golongan": "IVe",
     "ak_minimal": 200,
-    "ak_naik_pangkat": 1000,
+    "ak_naik_pangkat": 0,
     "pangkat_puncak": true,
     "syarat_pendidikan": "S2",
     "ak_pemeliharaan": 25,
