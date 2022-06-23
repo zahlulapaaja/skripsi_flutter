@@ -5,7 +5,7 @@ import 'package:buku_saku_2/screens/app/models/note.dart';
 
 class DbHelper {
   Database? _database;
-  final String _dbName = 'bukusaku.db';
+  final String _dbName = 'buku_saku_prakom.db';
   final String _dbSyntax =
       '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, satuanHasil TEXT, 
       kodeButir TEXT, jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), isTim BIT, jmlAnggota INTEGER, peranDalamTim TEXT, 
