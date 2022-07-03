@@ -13,8 +13,8 @@ class OnBoarding3 extends StatelessWidget {
       CurvedAnimation(
         parent: animationController,
         curve: const Interval(
-          0.34,
-          0.67,
+          0.2,
+          0.4,
           curve: Curves.fastOutSlowIn,
         ),
       ),
@@ -25,8 +25,8 @@ class OnBoarding3 extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.34,
-        0.67,
+        0.2,
+        0.4,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -36,8 +36,8 @@ class OnBoarding3 extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.34,
-        0.67,
+        0.2,
+        0.4,
         curve: Curves.fastOutSlowIn,
       ),
     ));

@@ -5,8 +5,8 @@ import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:provider/provider.dart';
 
-class JenjangScreen extends StatelessWidget {
-  const JenjangScreen({Key? key}) : super(key: key);
+class KategoriScreen extends StatelessWidget {
+  const KategoriScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class JenjangScreen extends StatelessWidget {
           Expanded(
             child: TextButton(
               onPressed: () {
-                context.read<DictionaryProvider>().setSelectedJenjang =
+                context.read<DictionaryProvider>().setSelectedKategori =
                     "terampil";
                 context.read<DictionaryProvider>().setDictionaryList =
                     const UnsurScreen();
@@ -49,7 +49,7 @@ class JenjangScreen extends StatelessWidget {
           Expanded(
             child: TextButton(
               onPressed: () {
-                context.read<DictionaryProvider>().setSelectedJenjang = "ahli";
+                context.read<DictionaryProvider>().setSelectedKategori = "ahli";
                 context.read<DictionaryProvider>().setDictionaryList =
                     const UnsurScreen();
                 context.read<DictionaryProvider>().setSearchboxExist = true;

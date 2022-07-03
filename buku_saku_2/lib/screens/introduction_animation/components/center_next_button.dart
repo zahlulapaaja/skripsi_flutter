@@ -17,11 +17,11 @@ class CenterNextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _signUpMoveAnimation =
-        Tween<double>(begin: 0, end: 1.0).animate(CurvedAnimation(
+        Tween<double>(begin: 0, end: 0.6).animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.34,
-        0.67,
+        0.2,
+        0.4,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -30,8 +30,8 @@ class CenterNextButton extends StatelessWidget {
     //         .animate(CurvedAnimation(
     //   parent: animationController,
     //   curve: const Interval(
-    //     0.34,
-    //     0.67,
+    //     0.2,
+    //     0.4,
     //     curve: Curves.fastOutSlowIn,
     //   ),
     // ));
@@ -61,7 +61,7 @@ class CenterNextButton extends StatelessWidget {
                     ),
                     child: PageTransitionSwitcher(
                       duration: const Duration(milliseconds: 480),
-                      reverse: _signUpMoveAnimation.value < 0.6,
+                      reverse: _signUpMoveAnimation.value < 0.4,
                       transitionBuilder: (
                         Widget child,
                         Animation<double> animation,
@@ -75,7 +75,7 @@ class CenterNextButton extends StatelessWidget {
                           transitionType: SharedAxisTransitionType.vertical,
                         );
                       },
-                      child: _signUpMoveAnimation.value > 0.6
+                      child: _signUpMoveAnimation.value > 0.4
                           ? InkWell(
                               key: const ValueKey('Sign Up button'),
                               onTap: onNextClick,
@@ -158,9 +158,9 @@ class CenterNextButton extends StatelessWidget {
   Widget _pageView() {
     int _selectedIndex = 0;
 
-    if (animationController.value > 0.66) {
+    if (animationController.value > 0.3) {
       _selectedIndex = 2;
-    } else if (animationController.value > 0.33) {
+    } else if (animationController.value > 0.1) {
       _selectedIndex = 1;
     } else if (animationController.value >= 0.0) {
       _selectedIndex = 0;

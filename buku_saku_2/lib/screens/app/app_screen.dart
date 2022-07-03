@@ -1,7 +1,7 @@
 import 'package:buku_saku_2/screens/app/sidebar/about_us_screen.dart';
 import 'package:buku_saku_2/screens/app/sidebar/dasar_peraturan_screen.dart';
 import 'package:buku_saku_2/screens/app/sidebar/export_note_screen.dart';
-import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
+import 'package:buku_saku_2/screens/app/dictionary/screens/kategori_screen.dart';
 import 'package:buku_saku_2/screens/app/models/db/db_profile.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
@@ -90,7 +90,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               return Scaffold(
                 backgroundColor: Colors.transparent,
                 body: DrawerUserController(
-                  screenIndex: drawerIndex,
+                  // screenIndex: drawerIndex,
                   drawerWidth: MediaQuery.of(context).size.width * 0.75,
                   onDrawerCall: (DrawerIndex drawerIndexData) {
                     changeIndex(drawerIndexData);
@@ -152,7 +152,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
                   context.read<ScreenProvider>().setTabBody =
                       const DictionaryScreen();
                   context.read<DictionaryProvider>().setDictionaryList =
-                      const JenjangScreen();
+                      const KategoriScreen();
                   context.read<DictionaryProvider>().setSearchboxExist = false;
                   context.read<DictionaryProvider>().setQuery = '';
                 });
@@ -176,7 +176,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
       // ignore: missing_enum_constant_in_switch
       switch (drawerIndex) {
         case DrawerIndex.home:
-          // drawerIndex = DrawerIndex.home;
+          Navigator.pushReplacementNamed(context, AppScreen.id);
           break;
         case DrawerIndex.export:
           Navigator.pushNamed(context, ExportNotesScreen.id);

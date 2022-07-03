@@ -76,21 +76,21 @@ class _IntroductionAnimationScreenState
 
   void _onBackClick() {
     if (_animationController!.value >= 0 &&
-        _animationController!.value <= 0.34) {
+        _animationController!.value <= 0.2) {
       _animationController?.animateTo(0.0);
-    } else if (_animationController!.value > 0.34 &&
-        _animationController!.value <= 0.67) {
-      _animationController?.animateTo(0.34);
+    } else if (_animationController!.value > 0.2 &&
+        _animationController!.value <= 0.4) {
+      _animationController?.animateTo(0.2);
     }
   }
 
   void _onNextClick() {
-    if (_animationController!.value < 0.34) {
-      _animationController?.animateTo(0.34);
-    } else if (_animationController!.value >= 0.34 &&
-        _animationController!.value < 0.67) {
-      _animationController?.animateTo(0.67);
-    } else if (_animationController!.value >= 0.67) {
+    if (_animationController!.value < 0.2) {
+      _animationController?.animateTo(0.2);
+    } else if (_animationController!.value >= 0.2 &&
+        _animationController!.value < 0.4) {
+      _animationController?.animateTo(0.4);
+    } else if (_animationController!.value >= 0.4) {
       endIntroScreen(context, AppScreen.id);
     }
   }

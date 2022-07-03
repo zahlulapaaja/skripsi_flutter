@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 class TabIconData {
   TabIconData({
-    this.imagePath = '',
+    required this.iconData,
     this.index = 0,
-    this.selectedImagePath = '',
+    required this.selectedIconData,
     this.isSelected = false,
     this.animationController,
   });
 
-  String imagePath;
-  String selectedImagePath;
+  IconData iconData;
+  IconData selectedIconData;
   bool isSelected;
   int index;
 
@@ -19,29 +19,30 @@ class TabIconData {
 
   static List<TabIconData> tabIconsList = <TabIconData>[
     TabIconData(
-      imagePath: 'assets/icons/tab_1.png',
-      selectedImagePath: 'assets/icons/tab_1s.png',
+      // imagePath: 'assets/icons/tab_1.png',
+      iconData: Icons.home_outlined,
+      selectedIconData: Icons.home_rounded,
       index: 0,
       isSelected: true,
       animationController: null,
     ),
     TabIconData(
-      imagePath: 'assets/icons/tab_2.png',
-      selectedImagePath: 'assets/icons/tab_2s.png',
+      iconData: Icons.library_books_outlined,
+      selectedIconData: Icons.library_books_rounded,
       index: 1,
       isSelected: false,
       animationController: null,
     ),
     TabIconData(
-      imagePath: 'assets/icons/tab_3.png',
-      selectedImagePath: 'assets/icons/tab_3s.png',
+      iconData: Icons.book_outlined,
+      selectedIconData: Icons.book_rounded,
       index: 2,
       isSelected: false,
       animationController: null,
     ),
     TabIconData(
-      imagePath: 'assets/icons/tab_4.png',
-      selectedImagePath: 'assets/icons/tab_4s.png',
+      iconData: Icons.account_circle_outlined,
+      selectedIconData: Icons.account_circle_rounded,
       index: 3,
       isSelected: false,
       animationController: null,

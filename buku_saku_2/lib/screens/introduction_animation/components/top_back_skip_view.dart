@@ -1,3 +1,4 @@
+import 'package:buku_saku_2/configs/colors.dart';
 import 'package:flutter/material.dart';
 
 class TopBackSkipView extends StatelessWidget {
@@ -20,7 +21,7 @@ class TopBackSkipView extends StatelessWidget {
       parent: animationController,
       curve: const Interval(
         0.0,
-        0.34,
+        0.2,
         curve: Curves.fastOutSlowIn,
       ),
     ));
@@ -29,7 +30,7 @@ class TopBackSkipView extends StatelessWidget {
             .animate(CurvedAnimation(
       parent: animationController,
       curve: const Interval(
-        0.34,
+        0.2,
         .67,
         curve: Curves.fastOutSlowIn,
       ),
@@ -60,6 +61,7 @@ class TopBackSkipView extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
+                      color: AppColors.black,
                     ),
                   ),
                 ),

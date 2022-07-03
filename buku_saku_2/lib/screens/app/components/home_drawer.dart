@@ -202,6 +202,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         splashColor: Colors.grey.withOpacity(0.1),
         highlightColor: Colors.transparent,
         onTap: () {
+          print('hai');
           navigationToScreen(listData.index!);
         },
         child: Stack(

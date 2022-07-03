@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:buku_saku_2/screens/app/dictionary/screens/jenjang_screen.dart';
+import 'package:buku_saku_2/screens/app/dictionary/screens/kategori_screen.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
@@ -13,12 +13,12 @@ class DictionaryProvider with ChangeNotifier {
   final jsonTambahan = 'assets/jsonfile/data_juknis_tambahan.json';
 
   String _query = '';
-  String? _selectedJenjang;
+  String? _selectedKategori;
   bool _searchboxExist = false;
   List<Unsur> _jsonData = [];
   List<ButirKegiatan> _allButir = [];
   List<ButirKegiatan> _matchedButir = [];
-  Widget _dictionaryList = const JenjangScreen();
+  Widget _dictionaryList = const KategoriScreen();
   int? _akNaikPangkat;
 
   Widget get dictionaryList => _dictionaryList;
@@ -26,7 +26,7 @@ class DictionaryProvider with ChangeNotifier {
   List<ButirKegiatan> get allButir => _allButir;
   List<ButirKegiatan> get matchedButir => _matchedButir;
   List<Jenjang>? get listJenjang => _listJenjang;
-  String get selectedJenjang => _selectedJenjang!;
+  String get selectedKategori => _selectedKategori!;
   bool get searchboxExist => _searchboxExist;
   bool get isQueryExist => (_query == '') ? false : true;
 
@@ -125,8 +125,8 @@ class DictionaryProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  set setSelectedJenjang(String jenjang) {
-    _selectedJenjang = jenjang;
+  set setSelectedKategori(String kategori) {
+    _selectedKategori = kategori;
     notifyListeners();
   }
 

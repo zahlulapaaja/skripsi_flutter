@@ -148,6 +148,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 ),
               ),
               Column(
+                mainAxisSize: MainAxisSize.max,
                 children: [
                   ElevatedButton(
                     onPressed: uploadImage,

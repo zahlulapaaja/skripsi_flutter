@@ -12,13 +12,13 @@ class UnsurScreen extends StatelessWidget {
   // Nanti ini perbaiki lagi, apakah cocok pake string ??
   const UnsurScreen({Key? key}) : super(key: key);
 
-  Future<List<Unsur>> readJsonData(String jenjang) async {
+  Future<List<Unsur>> readJsonData(String kategori) async {
     const jsonPrakomAhli = 'assets/jsonfile/data_juknis_ahli.json';
     const jsonPrakomTerampil = 'assets/jsonfile/data_juknis_terampil.json';
     const jsonTambahan = 'assets/jsonfile/data_juknis_tambahan.json';
     dynamic jsonData;
 
-    if (jenjang.contains('ahli')) {
+    if (kategori.contains('ahli')) {
       jsonData = await rootBundle.loadString(jsonPrakomAhli);
     } else {
       jsonData = await rootBundle.loadString(jsonPrakomTerampil);
@@ -34,9 +34,9 @@ class UnsurScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String jenjang = context.read<DictionaryProvider>().selectedJenjang;
+    String kategori = context.read<DictionaryProvider>().selectedKategori;
     return FutureBuilder(
-        future: readJsonData(jenjang),
+        future: readJsonData(kategori),
         builder: (context, AsyncSnapshot<List<Unsur>> snapshot) {
           if (snapshot.hasError) {
             return Center(
