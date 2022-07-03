@@ -1,4 +1,9 @@
+import 'dart:io';
+
+import 'package:buku_saku_2/screens/app/models/doc_file.dart';
 import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:syncfusion_flutter_xlsio/xlsio.dart' hide Column, Stack;
 
 class Note {
   int? id;
@@ -43,6 +48,9 @@ class Note {
     this.buktiFisik,
   });
 
+  String get getDateCreated =>
+      DateFormat("d MMMM yyyy", "id_ID").format(dateCreated!);
+
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -53,7 +61,7 @@ class Note {
       'jumlahKegiatan': jumlahKegiatan,
       'angkaKredit': angkaKredit,
       'isTim': isTim ? 1 : 0,
-      'jmlAnggota': jmlAnggota,
+      'jumlahAnggota': jmlAnggota,
       'peranDalamTim': peranDalamTim,
       'status': status,
       'idProfil': idProfil,
@@ -93,52 +101,37 @@ class Note {
     ];
   }
 
-  List<String> tanggalToString(List<TanggalKegiatan> dates) {
-    return List.generate(dates.length, (index) {
-      return (dates[index].tanggalBerakhir == null)
-          ? (DateFormat("dd/MM/yyyy", "id_ID")
-                  .format(dates[index].tanggalMulai!))
-              .toString()
-          : (DateFormat("dd/MM/yyyy", "id_ID")
-                      .format(dates[index].tanggalMulai!))
-                  .toString() +
-              " - " +
-              (DateFormat("dd/MM/yyyy", "id_ID")
-                      .format(dates[index].tanggalBerakhir!))
-                  .toString();
-    });
-  }
-}
+  static Future<DocFile> createExcel(List<Note> notes) async {
+    // membuat file excel
+    final Workbook workbook = Workbook();
+    final Worksheet sheet = workbook.worksheets[0];
 
-class DocFile {
-  final int? id;
-  final String path;
-  final int? idCatatan;
-  final String name;
-  final String extension;
-  final DateTime? dateCreated;
-  final int size;
+    // input title ke row pertama
+    sheet.importList(Note.listTitle, 1, 1, false);
 
-  DocFile({
-    this.id,
-    this.idCatatan,
-    required this.path,
-    required this.name,
-    required this.extension,
-    this.dateCreated,
-    this.size = 0,
-  });
+    // input data dari database
+    for (int i = 0; i < notes.length; i++) {
+      // +2 karna ga ada baris 0, dan baris satu udh diisi title
+      sheet.importList(notes[i].toList(i), i + 2, 1, false);
+    }
 
-  Map<String, dynamic> toMap({int? idCatatan}) {
-    return {
-      'id': id,
-      'path': path,
-      'name': name,
-      'extension': extension,
-      'size': size,
-      if (idCatatan != null) 'idCatatan': idCatatan,
-      if (idCatatan == null) 'dateCreated': dateCreated.toString(),
-    };
+    final List<int> bytes = workbook.saveAsStream();
+    workbook.dispose();
+
+    // memanggil path dan menyimpan file
+    final String path = (await getApplicationSupportDirectory()).path;
+    final String fileName = 'Ekspor_Catatan_' +
+        DateFormat("yyyyMMdd_HHmmss", "id_ID").format(DateTime.now()) +
+        '.xlsx';
+    final File file = File('$path/$fileName');
+    final newFile = await file.writeAsBytes(bytes, flush: true);
+
+    return DocFile(
+      path: newFile.path,
+      name: fileName.split('.')[0],
+      extension: ".xlsx",
+      dateCreated: DateTime.now(),
+    );
   }
 }
 

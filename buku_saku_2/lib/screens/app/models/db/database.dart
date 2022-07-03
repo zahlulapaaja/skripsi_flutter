@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:buku_saku_2/screens/app/models/doc_file.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
@@ -8,8 +9,9 @@ class DbHelper {
   final String _dbName = 'buku_saku_prakom.db';
   final String _dbSyntax =
       '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, satuanHasil TEXT, 
-      kodeButir TEXT, jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), isTim BIT, jmlAnggota INTEGER, peranDalamTim TEXT, 
+      kodeButir TEXT, jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), isTim BIT, jumlahAnggota INTEGER, peranDalamTim TEXT, 
       dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
+  // dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
   final String _dbSyntax2 =
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, path TEXT,
       name TEXT, extension TEXT, size INTEGER)''';
@@ -126,7 +128,7 @@ class DbHelper {
       angkaKredit: maps[0]['angkaKredit'],
       akSatuan: maps[0]['angkaKredit'] / maps[0]['jumlahKegiatan'],
       isTim: maps[0]['isTim'] == 0 ? false : true,
-      jmlAnggota: maps[0]['jmlAnggota'],
+      jmlAnggota: maps[0]['jumlahAnggota'],
       peranDalamTim: maps[0]['peranDalamTim'],
       status: maps[0]['status'],
       dateCreated: DateTime.parse(maps[0]['dateCreated']),
@@ -253,7 +255,7 @@ class DbHelper {
         jumlahKegiatan: maps[i]['jumlahKegiatan'],
         angkaKredit: maps[i]['angkaKredit'],
         isTim: maps[i]['isTim'] == 0 ? false : true,
-        jmlAnggota: maps[i]['jmlAnggota'],
+        jmlAnggota: maps[i]['jumlahAnggota'],
         peranDalamTim: maps[i]['peranDalamTim'],
         status: maps[i]['status'],
         dateCreated: DateTime.parse(maps[i]['dateCreated']),

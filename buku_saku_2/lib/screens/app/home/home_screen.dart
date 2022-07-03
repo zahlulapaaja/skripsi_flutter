@@ -40,15 +40,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       Future.delayed(Duration.zero, () async {
         while (result == null) {
           result = await alertDialog();
-          // kalo abis ke profile screen trus balik bakal error nanti
-          if (result == "Lanjutkan")
+          if (result == "Lanjutkan") {
             Navigator.popAndPushNamed(context, EditProfileScreen.id);
-          // Navigator.pushNamed(context, EditProfileScreen.id);
+          }
         }
       });
     }
     int akNaikPangkat =
-        context.read<ProfileProvider>().pangkatSaatIni.akNaikPangkat!;
+        context.read<ProfileProvider>().pangkatSaatIni.akNaikPangkat;
     context.read<DictionaryProvider>().setNaikPangkat = akNaikPangkat;
 
     addAllListData();

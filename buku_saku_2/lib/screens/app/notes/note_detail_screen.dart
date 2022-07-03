@@ -9,8 +9,6 @@ import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/date_picker.dart';
 import 'package:buku_saku_2/screens/app/notes/components/detail_box.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:open_file/open_file.dart';
 import 'package:provider/provider.dart';
 
 class NoteDetailScreen extends StatefulWidget {
@@ -55,7 +53,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                           DetailBox(
                             children: <Widget>[
                               Text(
-                                "Catatan dibuat pada : ${DateFormat("d MMMM yyyy", "id_ID").format(note.dateCreated!)}",
+                                "Catatan dibuat pada : ${note.getDateCreated}",
                                 style: AppConstants.kTextFieldHintStyle,
                               ),
                               const SizedBox(height: 16),
@@ -170,21 +168,20 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                                 child: Card(
                                                   color: getCardColor(note
                                                       .buktiFisik![index]
-                                                      .extension),
+                                                      .getExtension),
                                                   child: InkWell(
                                                     onTap: () {
-                                                      OpenFile.open(note
-                                                          .buktiFisik![index]
-                                                          .path);
+                                                      note.buktiFisik![index]
+                                                          .openFile();
                                                     },
                                                     child: Center(
                                                         child: Text(
-                                                            '.${note.buktiFisik![index].extension}')),
+                                                            '.${note.buktiFisik![index].getExtension}')),
                                                   ),
                                                 ),
                                               ),
                                               Text(
-                                                note.buktiFisik![index].name,
+                                                note.buktiFisik![index].getName,
                                                 overflow: TextOverflow.ellipsis,
                                                 maxLines: 2,
                                               ),

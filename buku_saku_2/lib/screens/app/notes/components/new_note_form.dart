@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/models/butir_kegiatan.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
+import 'package:buku_saku_2/screens/app/models/doc_file.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/kegiatan_tim.dart';
@@ -15,7 +16,6 @@ import 'package:buku_saku_2/screens/app/notes/components/form_field/jenjang_drop
 import 'package:buku_saku_2/screens/app/notes/components/form_field/jumlah_kegiatan_field.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/uraian_text_area.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class NewNoteForm extends StatefulWidget {
@@ -95,7 +95,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
 
       selectedNote.buktiFisik?.clear();
       for (var file in selectedBuktiFisik) {
-        final newFile = await saveFilePermanently(file);
+        final newFile = await DocFile.saveFiles(file);
         selectedNote.buktiFisik!.add(DocFile(
           path: newFile.path,
           name: file.name,
@@ -255,8 +255,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
                 BuktiFisikField(
                   selectedData: selectedBuktiFisik,
                   onPressed: () async {
-                    final result = await FilePicker.platform
-                        .pickFiles(allowMultiple: true);
+                    final result = await DocFile.uploadFiles();
                     if (result == null) return;
                     setState(() {
                       selectedBuktiFisik.addAll(result.files);
@@ -291,11 +290,5 @@ class _NewNoteFormState extends State<NewNoteForm> {
         ],
       ),
     );
-  }
-
-  Future<File> saveFilePermanently(PlatformFile file) async {
-    final appStorage = await getApplicationDocumentsDirectory();
-    final newFile = File('${appStorage.path}/${file.name}');
-    return File(file.path!).copy(newFile.path);
   }
 }

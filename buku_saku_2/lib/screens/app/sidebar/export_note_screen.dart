@@ -2,15 +2,11 @@ import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
+import 'package:buku_saku_2/screens/app/models/doc_file.dart';
 import 'package:buku_saku_2/screens/app/models/note.dart';
 import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:open_file/open_file.dart';
-import 'dart:io';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:syncfusion_flutter_xlsio/xlsio.dart' hide Column, Stack;
 
 class ExportNotesScreen extends StatefulWidget {
   static const id = 'export_notes_screen';
@@ -22,41 +18,6 @@ class ExportNotesScreen extends StatefulWidget {
 
 class _ExportNotesScreenState extends State<ExportNotesScreen> {
   var dbHelper = DbHelper();
-
-  Future<DocFile> createExcel() async {
-    // membuat file excel
-    final Workbook workbook = Workbook();
-    final Worksheet sheet = workbook.worksheets[0];
-
-    // input title ke row pertama
-    sheet.importList(Note.listTitle, 1, 1, false);
-
-    // input data dari database
-    List<Note> notes = await dbHelper.exportNotes();
-    print(notes);
-    for (int i = 0; i < notes.length; i++) {
-      // +2 karna ga ada baris 0, dan baris satu udh diisi title
-      sheet.importList(notes[i].toList(i), i + 2, 1, false);
-    }
-
-    final List<int> bytes = workbook.saveAsStream();
-    workbook.dispose();
-
-    // memanggil path dan menyimpan file
-    final String path = (await getApplicationSupportDirectory()).path;
-    final String fileName = 'Ekspor_Catatan_' +
-        DateFormat("yyyyMMdd_HHmmss", "id_ID").format(DateTime.now()) +
-        '.xlsx';
-    final File file = File('$path/$fileName');
-    final newFile = await file.writeAsBytes(bytes, flush: true);
-
-    return DocFile(
-      path: newFile.path,
-      name: fileName.split('.')[0],
-      extension: ".xlsx",
-      dateCreated: DateTime.now(),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,9 +63,11 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
             child: Center(
               child: ElevatedButton(
                 onPressed: () async {
-                  DocFile docFile = await createExcel();
+                  List<Note> notes = await dbHelper.exportNotes();
+                  DocFile docFile = await Note.createExcel(notes);
+                  // await dbHelper.saveExportNote(docFile);
                   context.read<NotesProvider>().exportNotes(docFile);
-                  OpenFile.open(docFile.path);
+                  docFile.openFile();
                 },
                 style: ButtonStyle(
                   backgroundColor:
@@ -136,17 +99,16 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                       scrollDirection: Axis.vertical,
                       itemBuilder: (BuildContext context, int index) {
                         return ListTile(
-                          title: Text(files[index].name),
-                          subtitle: Text(DateFormat("dd MMM yyyy", "id_ID")
-                              .format(files[index].dateCreated!)),
+                          title: Text(files[index].getName),
+                          subtitle: Text(files[index].getDateCreated),
                           leading: Image.asset("assets/icons/excel_file.png"),
                           trailing: IconButton(
                             onPressed: () async {
                               // kasih alert dulu
-                              File(files[index].path).delete();
+                              files[index].deleteFile;
                               context
                                   .read<NotesProvider>()
-                                  .deleteExcelFiles(files[index].id!);
+                                  .deleteExcelFiles(files[index].getId);
                             },
                             icon: const Icon(
                               Icons.delete,
@@ -154,7 +116,7 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                             ),
                           ),
                           onTap: () {
-                            OpenFile.open(files[index].path);
+                            files[index].openFile();
                           },
                         );
                       },

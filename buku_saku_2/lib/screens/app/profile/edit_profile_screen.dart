@@ -218,7 +218,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             onChanged: (value) {
               for (var row in selectedData!.listJenjang!) {
                 if (row.jenjang == selectedJenjang && row.golongan == value) {
-                  selectedData!.jenjang = row;
+                  setState(() {
+                    selectedData!.jenjang = row;
+                  });
                 }
               }
             },
