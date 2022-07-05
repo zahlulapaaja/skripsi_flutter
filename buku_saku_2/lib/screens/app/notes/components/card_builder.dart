@@ -54,7 +54,7 @@ class CardBuilder extends StatelessWidget {
           alignment: Alignment.topLeft,
           child: GestureDetector(
             onLongPress: () async {
-              var result = await showDialog<String>(
+              String? result = await showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
                   title: const Text('Hapus Catatan'),

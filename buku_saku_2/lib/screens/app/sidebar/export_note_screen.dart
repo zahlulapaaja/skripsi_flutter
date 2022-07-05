@@ -1,4 +1,5 @@
 import 'package:buku_saku_2/configs/colors.dart';
+import 'package:buku_saku_2/configs/components.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/db/database.dart';
@@ -63,11 +64,38 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
             child: Center(
               child: ElevatedButton(
                 onPressed: () async {
-                  List<Note> notes = await dbHelper.exportNotes();
-                  DocFile docFile = await Note.createExcel(notes);
-                  // await dbHelper.saveExportNote(docFile);
-                  context.read<NotesProvider>().exportNotes(docFile);
-                  docFile.openFile();
+                  String? result = await showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text('Ekspor Catatan'),
+                      content:
+                          const Text('Lanjutkan mengekspor catatan Anda ?'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'Tidak'),
+                          child: const Text('Tidak'),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'Ya'),
+                          child: const Text('Ya'),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (result == "Ya") {
+                    List<Note> notes = await dbHelper.exportNotes();
+                    if (notes.isNotEmpty) {
+                      AppComponents.toastAlert(
+                        msg: "Catatan masih kosong !!",
+                        color: AppColors.alert,
+                      );
+                    } else {
+                      DocFile docFile = await Note.createExcel(notes);
+                      context.read<NotesProvider>().exportNotes(docFile);
+                      // await dbHelper.saveExportNote(docFile);
+                      docFile.openFile();
+                    }
+                  }
                 },
                 style: ButtonStyle(
                   backgroundColor:
@@ -102,18 +130,55 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                           title: Text(files[index].getName),
                           subtitle: Text(files[index].getDateCreated),
                           leading: Image.asset("assets/icons/excel_file.png"),
-                          trailing: IconButton(
-                            onPressed: () async {
-                              // kasih alert dulu
-                              files[index].deleteFile;
-                              context
-                                  .read<NotesProvider>()
-                                  .deleteExcelFiles(files[index].getId);
-                            },
-                            icon: const Icon(
-                              Icons.delete,
-                              color: AppColors.alert,
-                            ),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // IconButton(
+                              //   onPressed: () {
+                              //     files[index].shareFile();
+                              //   },
+                              //   icon: const Icon(
+                              //     Icons.share_rounded,
+                              //     color: AppColors.black,
+                              //   ),
+                              // ),
+                              IconButton(
+                                onPressed: () async {
+                                  String? result = await showDialog<String>(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        AlertDialog(
+                                      title: const Text('Hapus File Ekspor'),
+                                      content: const Text(
+                                          'Anda yakin ingin menghapus file ekspor ini ?'),
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(context, 'Tidak'),
+                                          child: const Text('Tidak'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(context, 'Ya'),
+                                          child: const Text('Ya'),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+
+                                  if (result == 'Ya') {
+                                    files[index].deleteFile();
+                                    context
+                                        .read<NotesProvider>()
+                                        .deleteExcelFiles(files[index].getId);
+                                  }
+                                },
+                                icon: const Icon(
+                                  Icons.delete,
+                                  color: AppColors.alert,
+                                ),
+                              ),
+                            ],
                           ),
                           onTap: () {
                             files[index].openFile();

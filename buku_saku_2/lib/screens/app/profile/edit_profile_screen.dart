@@ -14,7 +14,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/constants.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -54,7 +53,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     if (selectedData!.id != null) {
       _nameTextController.text = selectedData!.nama!;
       _akSaatIniTextController.text =
-          NumberFormatter.convertToId(selectedData!.akSaatIni);
+          AppComponents.convertNumberToId(selectedData!.akSaatIni);
       if (selectedData!.fotoProfil != null) {
         selectedPhoto = PlatformFile.fromMap(selectedData!.toProfileMap());
       }
@@ -273,13 +272,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
       if (status == 1) {
         context.read<DictionaryProvider>().setJenjang = data;
-        Fluttertoast.showToast(
+        AppComponents.toastAlert(
           msg: "Data berhasil disimpan",
-          toastLength: Toast.LENGTH_LONG,
-          gravity: ToastGravity.BOTTOM,
-          backgroundColor: AppColors.success.withOpacity(0.9),
-          textColor: Colors.white,
-          fontSize: AppConstants.kTinyFontSize,
+          color: AppColors.success,
         );
         (data.id == null)
             ? Navigator.pushNamed(context, AppScreen.id)

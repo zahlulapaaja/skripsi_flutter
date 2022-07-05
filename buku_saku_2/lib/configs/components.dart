@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/configs/constants.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 
 class BlueRoundedButton extends StatelessWidget {
@@ -57,11 +58,23 @@ class BlueRoundedButton extends StatelessWidget {
   }
 }
 
-class NumberFormatter {
-  static String convertToId(dynamic number) {
+class AppComponents {
+  static void toastAlert({required String msg, required Color color}) {
+    Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: color.withOpacity(0.9),
+      textColor: Colors.white,
+      fontSize: AppConstants.kTinyFontSize,
+    );
+  }
+
+  static String convertNumberToId(dynamic number) {
     NumberFormat numberFormatter = NumberFormat("#0.000", 'id_ID');
     return numberFormatter.format(number);
   }
 }
+
 
 // nambah lagi komponen disini

@@ -7,7 +7,8 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 
 class CardGridView extends StatelessWidget {
-  const CardGridView({Key? key}) : super(key: key);
+  final int? maxCount;
+  const CardGridView({Key? key, this.maxCount}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +26,14 @@ class CardGridView extends StatelessWidget {
             }
           }
           context.read<DictionaryProvider>().setDisableButir2 = snapshot.data!;
+          int itemCount = snapshot.data!.length;
+          if (maxCount != null) {
+            if (maxCount! <= itemCount) itemCount = maxCount!;
+          }
           return MasonryGridView.count(
             padding: const EdgeInsets.only(top: 10),
             crossAxisCount: 2,
-            itemCount: snapshot.data!.length,
+            itemCount: itemCount,
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             physics: const ScrollPhysics(),

@@ -126,7 +126,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               ),
                               WhiteBoxBody(
                                 title: "Angka Kredit",
-                                body: NumberFormatter.convertToId(
+                                body: AppComponents.convertNumberToId(
                                     note.angkaKredit),
                               ),
                             ],

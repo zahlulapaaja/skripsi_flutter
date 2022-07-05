@@ -142,6 +142,18 @@ class _HomeDrawerState extends State<HomeDrawer> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 4),
+                    child: Text(
+                      "(${profil.jenjang?.jenjang ?? ''})",
+                      style: const TextStyle(
+                        fontFamily: AppConstants.fontName,
+                        color: AppColors.black,
+                        fontSize: AppConstants.kSmallFontSize,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -202,7 +214,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
         splashColor: Colors.grey.withOpacity(0.1),
         highlightColor: Colors.transparent,
         onTap: () {
-          print('hai');
           navigationToScreen(listData.index!);
         },
         child: Stack(

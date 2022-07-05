@@ -58,7 +58,7 @@ class RingkasanButir extends StatelessWidget {
               ],
             ),
             Text(
-              NumberFormatter.convertToId(angkaKredit),
+              AppComponents.convertNumberToId(angkaKredit),
               textAlign: TextAlign.end,
               style: const TextStyle(
                 fontFamily: AppConstants.fontName,

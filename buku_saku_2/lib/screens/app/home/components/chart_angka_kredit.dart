@@ -73,7 +73,7 @@ class ChartAngkaKredit extends StatelessWidget {
                   initialAngleInDegree: 270,
                   chartType: ChartType.ring,
                   ringStrokeWidth: 25,
-                  centerText: NumberFormatter.convertToId(totalAK),
+                  centerText: AppComponents.convertNumberToId(totalAK),
                   centerTextStyle: const TextStyle(
                     fontFamily: AppConstants.fontName,
                     color: AppColors.black,
@@ -117,7 +117,8 @@ class ChartAngkaKredit extends StatelessWidget {
                                 style: AppConstants.kCardBodyTextStyle,
                               ),
                               Text(
-                                NumberFormatter.convertToId(profil.akSaatIni),
+                                AppComponents.convertNumberToId(
+                                    profil.akSaatIni),
                                 style: AppConstants.kNormalTitleTextStyle,
                               ),
                             ],
@@ -146,7 +147,7 @@ class ChartAngkaKredit extends StatelessWidget {
                                 style: AppConstants.kCardBodyTextStyle,
                               ),
                               Text(
-                                NumberFormatter.convertToId(
+                                AppComponents.convertNumberToId(
                                     akUtama + akPenunjang),
                                 style: AppConstants.kNormalTitleTextStyle,
                               ),

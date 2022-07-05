@@ -38,7 +38,7 @@ dependencies:
   get_storage:
 
   # masih coba2
-  parse_server_sdk_flutter: ^3.1.2
+  share_plus: ^4.0.10
 
 dev_dependencies:
   flutter_test:

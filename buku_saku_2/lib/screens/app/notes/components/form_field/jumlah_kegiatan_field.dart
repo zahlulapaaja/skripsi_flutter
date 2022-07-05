@@ -110,7 +110,7 @@ class _JumlahKegiatanFieldState extends State<JumlahKegiatanField> {
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              NumberFormatter.convertToId(
+                              AppComponents.convertNumberToId(
                                   widget.akSatuan * widget.initialJmlKegiatan),
                               style: AppConstants.kLargeTitleTextStyle,
                             ),

@@ -106,7 +106,7 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
                                   style: AppConstants.kCardBodyTextStyle,
                                 ),
                                 Text(
-                                  "${NumberFormatter.convertToId(akUtama)} (${persenAKUtama.toInt()}%)",
+                                  "${AppComponents.convertNumberToId(akUtama)} (${persenAKUtama.toInt()}%)",
                                   style: AppConstants.kNormalTitleTextStyle,
                                 ),
                               ],
@@ -133,7 +133,7 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
                                   style: AppConstants.kCardBodyTextStyle,
                                 ),
                                 Text(
-                                  "${NumberFormatter.convertToId(akPenunjang)} (${persenAKPenunjang.toInt()}%)",
+                                  "${AppComponents.convertNumberToId(akPenunjang)} (${persenAKPenunjang.toInt()}%)",
                                   style: AppConstants.kNormalTitleTextStyle,
                                 ),
                               ],

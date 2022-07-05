@@ -88,7 +88,8 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                   height: 48,
                                   width: 2,
                                   decoration: BoxDecoration(
-                                    color: AppColors.success.withOpacity(0.5),
+                                    color:
+                                        AppColors.primaryDark.withOpacity(0.5),
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(4.0)),
                                   ),
@@ -132,7 +133,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                             padding: const EdgeInsets.only(
                                                 left: 4, bottom: 3),
                                             child: Text(
-                                              NumberFormatter.convertToId(
+                                              AppComponents.convertNumberToId(
                                                   data.akSaatIni),
                                               textAlign: TextAlign.center,
                                               style: const TextStyle(
@@ -204,7 +205,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                             padding: const EdgeInsets.only(
                                                 left: 4, bottom: 3),
                                             child: Text(
-                                              NumberFormatter.convertToId(
+                                              AppComponents.convertNumberToId(
                                                   akUtama + akPenunjang),
                                               textAlign: TextAlign.center,
                                               style: const TextStyle(
@@ -254,7 +255,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
                                     Text(
-                                      NumberFormatter.convertToId(
+                                      AppComponents.convertNumberToId(
                                           data.akSaatIni +
                                               akUtama +
                                               akPenunjang),
@@ -399,7 +400,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                               child: Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: Text(
-                                  'Sudah Terkumpul ${NumberFormatter.convertToId(akUtama + akPenunjang)} Angka Kredit',
+                                  'Sudah Terkumpul ${AppComponents.convertNumberToId(akUtama + akPenunjang)} Angka Kredit',
                                   textAlign: TextAlign.center,
                                   maxLines: 2,
                                   style: const TextStyle(

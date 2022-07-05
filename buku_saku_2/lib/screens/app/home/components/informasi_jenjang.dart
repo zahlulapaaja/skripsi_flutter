@@ -46,7 +46,7 @@ class InformasiJenjang extends StatelessWidget {
                           style: AppConstants.kTextFieldTextStyle,
                           children: <TextSpan>[
                             TextSpan(
-                                text: NumberFormatter.convertToId(
+                                text: AppComponents.convertNumberToId(
                                     pangkatSaatIni.akNaikPangkat),
                                 style: AppConstants.kNormalTitleTextStyle),
                             const TextSpan(
@@ -88,9 +88,9 @@ class InformasiJenjang extends StatelessWidget {
                               children: <TextSpan>[
                                 TextSpan(
                                     text: (pangkatSaatIni.pangkatPuncak!)
-                                        ? NumberFormatter.convertToId(
+                                        ? AppComponents.convertNumberToId(
                                             pangkatSaatIni.akNaikPangkat)
-                                        : NumberFormatter.convertToId(
+                                        : AppComponents.convertNumberToId(
                                             pangkatSaatIni.akNaikJenjang!),
                                     style: AppConstants.kNormalTitleTextStyle),
                                 const TextSpan(text: ' Angka Kredit menuju '),

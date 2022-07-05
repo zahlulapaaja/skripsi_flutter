@@ -123,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     context.read<NotesProvider>().orderByKodeButir = false;
     listViews.add(
-      const CardGridView(),
+      const CardGridView(maxCount: 10),
     );
   }
 

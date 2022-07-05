@@ -33,7 +33,7 @@ class ButirScreen extends StatelessWidget {
           String? subtitle;
           (butirList[index].persenAK == null)
               ? subtitle =
-                  NumberFormatter.convertToId(butirList[index].angkaKredit)
+                  AppComponents.convertNumberToId(butirList[index].angkaKredit)
               : subtitle =
                   (butirList[index].persenAK! * 100).toInt().toString() +
                       '% AK Naik Pangkat';
