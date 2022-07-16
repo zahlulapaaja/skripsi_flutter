@@ -41,14 +41,12 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.export,
         labelName: 'Ekspor Catatan',
-        isAssetsImage: true,
-        imageName: 'assets/icons/export.png',
+        icon: const Icon(Icons.file_download_outlined),
       ),
       DrawerList(
         index: DrawerIndex.rules,
         labelName: 'Dasar Peraturan',
-        isAssetsImage: true,
-        imageName: 'assets/icons/map.png',
+        icon: const Icon(Icons.map),
       ),
       DrawerList(
         index: DrawerIndex.feedback,

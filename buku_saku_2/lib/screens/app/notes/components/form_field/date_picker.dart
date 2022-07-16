@@ -192,15 +192,7 @@ class DatePill extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Text(
-          (date.tanggalBerakhir == null)
-              ? (DateFormat("dd/MM/yyyy", "id_ID").format(date.tanggalMulai!))
-                  .toString()
-              : (DateFormat("dd/MM/yyyy", "id_ID").format(date.tanggalMulai!))
-                      .toString() +
-                  " - " +
-                  (DateFormat("dd/MM/yyyy", "id_ID")
-                          .format(date.tanggalBerakhir!))
-                      .toString(),
+          date.tanggalToString(),
           style: const TextStyle(
             fontFamily: AppConstants.fontName,
             color: AppColors.black,

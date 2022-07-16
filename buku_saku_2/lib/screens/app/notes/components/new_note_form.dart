@@ -145,7 +145,9 @@ class _NewNoteFormState extends State<NewNoteForm> {
 
       selectedButir = widget.selectedButir;
       if (selectedButir != null) {
-        context.read<ProfileProvider>().setSelectedButir = selectedButir!;
+        Future.delayed(Duration.zero, () {
+          context.read<ProfileProvider>().setSelectedButir = selectedButir!;
+        });
         alert = context.read<ProfileProvider>().getAlert;
         selectedNote.judul = selectedButir!.kode + " " + selectedButir!.judul;
         selectedNote.kodeButir = selectedButir!.kode;

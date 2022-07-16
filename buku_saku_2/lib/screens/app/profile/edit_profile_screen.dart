@@ -216,13 +216,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             initialData: selectedGolongan,
             hintText: "Pilih golongan...",
             onChanged: (value) {
-              for (var row in selectedData!.listJenjang!) {
-                if (row.jenjang == selectedJenjang && row.golongan == value) {
-                  setState(() {
+              setState(() {
+                for (var row in selectedData!.listJenjang!) {
+                  if (row.jenjang == selectedJenjang && row.golongan == value) {
                     selectedData!.jenjang = row;
-                  });
+                  }
                 }
-              }
+              });
             },
           ),
           ProfileFormField(

@@ -85,11 +85,16 @@ class Note {
   ];
 
   List<dynamic> toList(int number) {
+    String tanggal = "";
+    for (var element in listTanggal) {
+      if (element != listTanggal.first) tanggal += ", ";
+      tanggal += element.tanggalToString();
+    }
     return [
       number.toString(),
       uraian,
       kodeButir,
-      listTanggal,
+      tanggal,
       satuanHasil,
       jumlahKegiatan,
       angkaKredit,
@@ -147,6 +152,15 @@ class TanggalKegiatan {
     this.tanggalBerakhir,
     this.idCatatan,
   });
+
+  String tanggalToString() {
+    return (tanggalBerakhir == null)
+        ? (DateFormat("dd/MM/yyyy", "id_ID").format(tanggalMulai!)).toString()
+        : (DateFormat("dd/MM/yyyy", "id_ID").format(tanggalMulai!)).toString() +
+            " - " +
+            (DateFormat("dd/MM/yyyy", "id_ID").format(tanggalBerakhir!))
+                .toString();
+  }
 
   Map<String, dynamic> toMap({int? idCatatan}) {
     return {

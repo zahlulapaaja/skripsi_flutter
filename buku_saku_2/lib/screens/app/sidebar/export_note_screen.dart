@@ -84,7 +84,7 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                   );
                   if (result == "Ya") {
                     List<Note> notes = await dbHelper.exportNotes();
-                    if (notes.isNotEmpty) {
+                    if (notes.length <= 0) {
                       AppComponents.toastAlert(
                         msg: "Catatan masih kosong !!",
                         color: AppColors.alert,
