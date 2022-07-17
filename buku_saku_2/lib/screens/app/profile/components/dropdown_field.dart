@@ -26,20 +26,21 @@ class DropdownField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         FieldLabel(title: title),
-        DropdownSearch(
-          mode: Mode.MENU,
-          showClearButton: false,
+        DropdownSearch<String>(
           items: data,
           onChanged: onChanged,
           selectedItem: initialData,
-          dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
-          dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
-            hintText: hintText,
-            borderSide: const BorderSide(
-              color: AppColors.black,
-              width: 4,
-              style: BorderStyle.solid,
+          clearButtonProps: const ClearButtonProps(isVisible: true),
+          dropdownDecoratorProps: DropDownDecoratorProps(
+            dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
+              hintText: hintText,
+              borderSide: const BorderSide(
+                color: AppColors.black,
+                width: 4,
+                style: BorderStyle.solid,
+              ),
             ),
+            baseStyle: AppConstants.kTextFieldTextStyle,
           ),
           validator: (value) {
             if (value == null) {

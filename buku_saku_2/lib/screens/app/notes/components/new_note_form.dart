@@ -7,6 +7,7 @@ import 'package:buku_saku_2/screens/app/models/doc_file.dart';
 import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/kegiatan_tim.dart';
+import 'package:buku_saku_2/screens/app/notes/components/form_field/spmk_field.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:buku_saku_2/screens/app/notes/components/form_field/bukti_fisik_field.dart';
@@ -37,6 +38,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
   late Note selectedNote;
   ButirKegiatan? selectedButir;
   List<PlatformFile> selectedBuktiFisik = [];
+  PlatformFile? selectedSPMK;
   String? alert;
   TextEditingController uraianTextController = TextEditingController();
 
@@ -101,6 +103,16 @@ class _NewNoteFormState extends State<NewNoteForm> {
           name: file.name,
           extension: file.extension!,
         ));
+      }
+
+      if (selectedSPMK != null) {
+        final spmk = await DocFile.saveFiles(selectedSPMK!);
+        selectedNote.spmk = DocFile(
+          path: spmk.path,
+          name: selectedSPMK!.name,
+          extension: selectedSPMK!.extension!,
+          size: selectedSPMK!.size,
+        );
       }
 
       final Note newNote = selectedNote;
@@ -261,6 +273,23 @@ class _NewNoteFormState extends State<NewNoteForm> {
                     if (result == null) return;
                     setState(() {
                       selectedBuktiFisik.addAll(result.files);
+                    });
+                  },
+                  onDelete: (value) {
+                    setState(() {
+                      File(value.path!).delete();
+                      selectedBuktiFisik.remove(value);
+                    });
+                  },
+                ),
+                SPMKField(
+                  selectedData: selectedSPMK,
+                  onPressed: () async {
+                    final result =
+                        await DocFile.uploadFiles(allowMultiple: false);
+                    if (result == null) return;
+                    setState(() {
+                      selectedSPMK = result.files.first;
                     });
                   },
                   onDelete: (value) {

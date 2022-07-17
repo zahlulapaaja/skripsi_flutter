@@ -22,6 +22,7 @@ class Note {
   DateTime? dateCreated;
   List<TanggalKegiatan> listTanggal;
   List<DocFile>? buktiFisik;
+  DocFile? spmk;
 
   // int status :
   // 0 = nothing
@@ -46,6 +47,7 @@ class Note {
     this.akSatuan,
     required this.listTanggal,
     this.buktiFisik,
+    this.spmk,
   });
 
   String get getDateCreated =>
@@ -63,6 +65,10 @@ class Note {
       'isTim': isTim ? 1 : 0,
       'jumlahAnggota': jmlAnggota,
       'peranDalamTim': peranDalamTim,
+      'spmkFilePath': spmk?.getPath,
+      'spmkFileName': spmk?.getName,
+      'spmkFileExtension': spmk?.getExtension,
+      'spmkFileSize': spmk?.getSize,
       'status': status,
       'idProfil': idProfil,
       'dateCreated': dateCreated.toString(),

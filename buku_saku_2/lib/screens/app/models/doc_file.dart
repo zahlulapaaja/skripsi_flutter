@@ -46,8 +46,10 @@ class DocFile {
   }
 
   int get getId => _id!;
+  String get getPath => _path!;
   String get getName => _name!;
   String get getExtension => _extension!;
+  int get getSize => _size!;
   String get getDateCreated =>
       DateFormat("dd MMM yyyy", "id_ID").format(_dateCreated!);
 
@@ -63,8 +65,8 @@ class DocFile {
     File(_path!).delete();
   }
 
-  static dynamic uploadFiles() async {
-    return await FilePicker.platform.pickFiles(allowMultiple: true);
+  static dynamic uploadFiles({bool allowMultiple = true}) async {
+    return await FilePicker.platform.pickFiles(allowMultiple: allowMultiple);
   }
 
   static Future<File> saveFiles(PlatformFile file) async {

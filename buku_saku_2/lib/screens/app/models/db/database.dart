@@ -10,8 +10,7 @@ class DbHelper {
   final String _dbSyntax =
       '''CREATE TABLE catatan( id INTEGER PRIMARY KEY AUTOINCREMENT, judul TEXT, uraian TEXT, satuanHasil TEXT, 
       kodeButir TEXT, jumlahKegiatan INTEGER, angkaKredit DOUBLE(200,3), isTim BIT, jumlahAnggota INTEGER, peranDalamTim TEXT, 
-      dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
-  // dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
+      spmkFilePath TEXT, spmkFileName TEXT, spmkFileExtension TEXT, spmkFileSize INTEGER, dateCreated TEXT, status INTEGER, idProfil INTEGER)''';
   final String _dbSyntax2 =
       '''CREATE TABLE bukti_fisik( id INTEGER PRIMARY KEY AUTOINCREMENT, idCatatan INTEGER, path TEXT,
       name TEXT, extension TEXT, size INTEGER)''';
@@ -89,6 +88,15 @@ class DbHelper {
     final List<Map<String, dynamic>> dates = await db
         .query('tanggal_kegiatan', where: 'idCatatan = ?', whereArgs: [id]);
 
+    DocFile? spmk = (maps[0]['spmkFilePath'] != null)
+        ? DocFile(
+            path: maps[0]['spmkFilePath'],
+            name: maps[0]['spmkFileName'],
+            extension: maps[0]['spmkFileExtension'],
+            size: maps[0]['spmkFileSize'],
+          )
+        : null;
+
     List<DocFile> buktiFisik = List.generate(
       files.length,
       (index) => DocFile(
@@ -134,6 +142,7 @@ class DbHelper {
       dateCreated: DateTime.parse(maps[0]['dateCreated']),
       listTanggal: listTanggal,
       buktiFisik: buktiFisik,
+      spmk: spmk,
       // this.idProfil,
     );
   }

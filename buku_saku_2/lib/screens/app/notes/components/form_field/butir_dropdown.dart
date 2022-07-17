@@ -56,24 +56,51 @@ class _ButirDropdownState extends State<ButirDropdown> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           const FieldLabel(title: 'Butir Kegiatan'),
-          DropdownSearch(
+          DropdownSearch<String>(
             enabled: widget.editMode ? false : true,
-            mode: Mode.BOTTOM_SHEET,
-            showClearButton: widget.editMode ? false : true,
+            items: dataButir,
+            // mode: Mode.BOTTOM_SHEET,
+            popupProps: PopupProps.bottomSheet(
+              showSearchBox: true,
+              disabledItemFn: (String s) {
+                int i = 0;
+                while (i < disableButir.length) {
+                  if (s.contains(disableButir[i])) return true;
+                  i++;
+                }
+                return false;
+              },
+            ),
+            clearButtonProps:
+                ClearButtonProps(isVisible: widget.editMode ? false : true),
+            dropdownDecoratorProps: DropDownDecoratorProps(
+              dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
+                contentPadding: (widget.selectedData == null)
+                    ? const EdgeInsets.only(left: 10)
+                    : const EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                hintText: 'Pilih Butir Kegiatan...',
+                borderSide: const BorderSide(
+                  color: AppColors.black,
+                  width: 4,
+                  style: BorderStyle.solid,
+                ),
+              ),
+              baseStyle: AppConstants.kTextFieldTextStyle,
+            ),
+            // showClearButton: widget.editMode ? false : true,
             // KENAPA DATANYA DOBEL, jadi syntax dibawah diapus biar ga dobel
-            // items: dataButir,
-            showSearchBox: true,
-            onFind: (String? filter) => Future.delayed(Duration.zero, () {
-              return findData(filter);
-            }),
-            popupItemDisabled: (String s) {
-              int i = 0;
-              while (i < disableButir.length) {
-                if (s.contains(disableButir[i])) return true;
-                i++;
-              }
-              return false;
-            },
+            // showSearchBox: true,
+            // onFind: (String? filter) => Future.delayed(Duration.zero, () {
+            //   return findData(filter);
+            // }),
+            // popupItemDisabled: (String s) {
+            //   int i = 0;
+            //   while (i < disableButir.length) {
+            //     if (s.contains(disableButir[i])) return true;
+            //     i++;
+            //   }
+            //   return false;
+            // },
             onChanged: (String? judul) {
               ButirKegiatan? selectedButir;
               setState(() {
@@ -88,18 +115,7 @@ class _ButirDropdownState extends State<ButirDropdown> {
               widget.onChanged(selectedButir);
             },
             selectedItem: widget.selectedData,
-            dropdownSearchBaseStyle: AppConstants.kTextFieldTextStyle,
-            dropdownSearchDecoration: AppConstants.kTextFieldDecoration(
-              contentPadding: (widget.selectedData == null)
-                  ? const EdgeInsets.only(left: 10)
-                  : const EdgeInsets.only(top: 10, bottom: 10, left: 10),
-              hintText: 'Pilih Butir Kegiatan...',
-              borderSide: const BorderSide(
-                color: AppColors.black,
-                width: 4,
-                style: BorderStyle.solid,
-              ),
-            ),
+
             validator: (value) {
               if (value == null) {
                 return 'Please enter some text';

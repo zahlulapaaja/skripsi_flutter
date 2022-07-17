@@ -193,6 +193,46 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                               ),
                             ],
                           ),
+                          DetailBox(
+                            children: <Widget>[
+                              WhiteBoxBody(
+                                title: "SPMK",
+                                subtitle: (note.spmk == null)
+                                    ? '(SPMK belum diupload)'
+                                    : '(SPMK sudah diupload)',
+                                widgetBody: (note.spmk == null)
+                                    ? const SizedBox()
+                                    : Container(
+                                        height: 110,
+                                        width: 100,
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Column(
+                                          children: <Widget>[
+                                            Expanded(
+                                              child: Card(
+                                                color: Colors.blue,
+                                                child: InkWell(
+                                                  onTap: () {
+                                                    note.spmk!.openFile();
+                                                  },
+                                                  child: Center(
+                                                      child: Text(
+                                                          '.${note.spmk!.getExtension}')),
+                                                ),
+                                              ),
+                                            ),
+                                            Text(
+                                              note.spmk!.getName,
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 2,
+                                            ),
+                                          ],
+                                        ),
+                                        // },
+                                      ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ],
