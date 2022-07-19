@@ -27,7 +27,7 @@ class UraianTextArea extends StatelessWidget {
                 controller: controller,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
+                    return 'Data tidak boleh kosong';
                   }
                   return null;
                 },

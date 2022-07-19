@@ -118,7 +118,7 @@ class _ButirDropdownState extends State<ButirDropdown> {
 
             validator: (value) {
               if (value == null) {
-                return 'Please enter some text';
+                return 'Data tidak boleh kosong';
               }
               return null;
             },

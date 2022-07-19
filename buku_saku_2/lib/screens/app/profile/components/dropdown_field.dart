@@ -12,6 +12,7 @@ class DropdownField extends StatelessWidget {
     required this.onChanged,
     this.initialData,
     this.hintText,
+    this.validator,
   }) : super(key: key);
 
   final Function(String?) onChanged;
@@ -19,6 +20,7 @@ class DropdownField extends StatelessWidget {
   final String? hintText;
   final String? initialData;
   final List<String> data;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +44,7 @@ class DropdownField extends StatelessWidget {
             ),
             baseStyle: AppConstants.kTextFieldTextStyle,
           ),
-          validator: (value) {
-            if (value == null) {
-              return 'Jawaban masih kosong';
-            }
-            return null;
-          },
+          validator: validator,
         ),
       ],
     );

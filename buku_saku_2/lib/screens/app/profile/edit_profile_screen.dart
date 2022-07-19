@@ -191,6 +191,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             hintText: "Masukkan nama lengkap Anda...",
             controller: _nameTextController,
             keyboardType: TextInputType.text,
+            validator: (value) {
+              if (value == null) {
+                return 'Data tidak boleh kosong';
+              } else if (value.length > 40) {
+                return 'Karakter melebihi batas maksimum (40)';
+              }
+              return null;
+            },
           ),
           DropdownField(
             title: "Jenjang",
@@ -209,6 +217,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 }
               });
             },
+            validator: (value) {
+              if (value == null) {
+                return 'Data tidak boleh kosong';
+              }
+              return null;
+            },
           ),
           DropdownField(
             title: "Golongan",
@@ -224,12 +238,26 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 }
               });
             },
+            validator: (value) {
+              if (value == null) {
+                return 'Data tidak boleh kosong';
+              }
+              return null;
+            },
           ),
           ProfileFormField(
             title: "Angka Kredit Saat Ini",
             hintText: "Masukkan angka kredit Anda saat ini...",
             controller: _akSaatIniTextController,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            validator: (value) {
+              if (value == null) {
+                return 'Data tidak boleh kosong';
+              } else if (akParser(value) > 300) {
+                return 'Angka kredit melebihi batas maksimum (300)';
+              }
+              return null;
+            },
           ),
           const SizedBox(height: 40),
           BlueRoundedButton(
@@ -258,8 +286,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   saveData(Profile data) async {
     if (_formKey.currentState!.validate()) {
       data.nama = _nameTextController.text;
-      data.akSaatIni = double.parse(
-          _akSaatIniTextController.text.replaceAll(RegExp(r','), '.'));
+      data.akSaatIni = akParser(_akSaatIniTextController.text);
       if (data.fotoProfil != null) File(data.fotoProfil!).delete();
       if (selectedPhoto != null) {
         final file = await saveFilePermanently(selectedPhoto!);
@@ -288,5 +315,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     final newFile = File('${appStorage.path}/${file.name}');
 
     return File(file.path!).copy(newFile.path);
+  }
+
+  double akParser(String value) {
+    return double.parse(value.replaceAll(RegExp(r','), '.'));
   }
 }

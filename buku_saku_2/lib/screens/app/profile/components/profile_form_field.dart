@@ -9,6 +9,7 @@ class ProfileFormField extends StatelessWidget {
   final bool obsecureText;
   final TextInputType keyboardType;
   final TextEditingController controller;
+  final String? Function(String?)? validator;
 
   const ProfileFormField({
     Key? key,
@@ -17,6 +18,7 @@ class ProfileFormField extends StatelessWidget {
     required this.keyboardType,
     required this.controller,
     this.obsecureText = false,
+    this.validator,
   }) : super(key: key);
 
   @override
@@ -25,7 +27,7 @@ class ProfileFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         FieldLabel(title: title),
-        TextField(
+        TextFormField(
           controller: controller,
           textInputAction: TextInputAction.done,
           textAlignVertical: TextAlignVertical.center,
@@ -41,6 +43,7 @@ class ProfileFormField extends StatelessWidget {
               style: BorderStyle.solid,
             ),
           ),
+          validator: validator,
         ),
       ],
     );
