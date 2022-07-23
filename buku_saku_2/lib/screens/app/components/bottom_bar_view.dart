@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
-import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
+import 'package:buku_saku_2/screens/app/models/tab_icon_data.dart';
 import 'dart:math' as math;
 
 class BottomBarView extends StatefulWidget {
@@ -99,8 +99,7 @@ class _BottomBarViewState extends State<BottomBarView>
                               child: TabIcons(
                                   tabIconData: widget.tabIconsList?[3],
                                   removeAllSelect: () {
-                                    // setRemoveAllSelection(
-                                    //     widget.tabIconsList?[3]);
+                                    // disini ga ada animasi dan ga berpindah indexnya
                                     widget.changeIndex!(3);
                                   }),
                             ),

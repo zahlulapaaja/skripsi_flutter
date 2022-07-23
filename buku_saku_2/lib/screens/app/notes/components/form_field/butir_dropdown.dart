@@ -8,6 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class ButirDropdown extends StatefulWidget {
   ButirDropdown({
     Key? key,
@@ -59,7 +60,6 @@ class _ButirDropdownState extends State<ButirDropdown> {
           DropdownSearch<String>(
             enabled: widget.editMode ? false : true,
             items: dataButir,
-            // mode: Mode.BOTTOM_SHEET,
             popupProps: PopupProps.bottomSheet(
               showSearchBox: true,
               disabledItemFn: (String s) {
@@ -87,20 +87,6 @@ class _ButirDropdownState extends State<ButirDropdown> {
               ),
               baseStyle: AppConstants.kTextFieldTextStyle,
             ),
-            // showClearButton: widget.editMode ? false : true,
-            // KENAPA DATANYA DOBEL, jadi syntax dibawah diapus biar ga dobel
-            // showSearchBox: true,
-            // onFind: (String? filter) => Future.delayed(Duration.zero, () {
-            //   return findData(filter);
-            // }),
-            // popupItemDisabled: (String s) {
-            //   int i = 0;
-            //   while (i < disableButir.length) {
-            //     if (s.contains(disableButir[i])) return true;
-            //     i++;
-            //   }
-            //   return false;
-            // },
             onChanged: (String? judul) {
               ButirKegiatan? selectedButir;
               setState(() {
@@ -115,7 +101,6 @@ class _ButirDropdownState extends State<ButirDropdown> {
               widget.onChanged(selectedButir);
             },
             selectedItem: widget.selectedData,
-
             validator: (value) {
               if (value == null) {
                 return 'Data tidak boleh kosong';

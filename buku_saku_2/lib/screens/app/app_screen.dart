@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:buku_saku_2/screens/app/controllers/drawer_user_controller.dart';
 import 'package:buku_saku_2/screens/app/components/home_drawer.dart';
-import 'package:buku_saku_2/screens/app/models/tabIcon_data.dart';
+import 'package:buku_saku_2/screens/app/models/tab_icon_data.dart';
 import 'package:buku_saku_2/screens/app/home/home_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/notes_screen.dart';
 import 'package:buku_saku_2/screens/app/notes/add_note_screen.dart';
@@ -84,9 +84,6 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               return Center(
                   child: Text('Error fetching data: ${snapshot.error}'));
             } else if (snapshot.hasData) {
-              // kalo data kosong arahin dulu ke laman edit profil
-              // kasih alert dulu biar ga tiba2 sampe ke laman edit profil, intinya lebih rapi lah
-
               return Scaffold(
                 backgroundColor: Colors.transparent,
                 body: DrawerUserController(
@@ -172,8 +169,6 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
     if (drawerIndex != drawerIndexData) {
       drawerIndex = drawerIndexData;
 
-      // Keknya ga perlu ya untuk ganti drawerIndex ini, tapi sementara aku tinggalin satu dulu disini, sebagai contoh
-      // ignore: missing_enum_constant_in_switch
       switch (drawerIndex) {
         case DrawerIndex.home:
           Navigator.pushReplacementNamed(context, AppScreen.id);
@@ -192,6 +187,8 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
           break;
         case DrawerIndex.about:
           Navigator.pushNamed(context, AboutUsScreen.id);
+          break;
+        default:
           break;
       }
     }

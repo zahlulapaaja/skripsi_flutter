@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
 class HeaderWithSearchbox extends StatelessWidget {
-  TextEditingController controller = TextEditingController();
-
+  final TextEditingController controller = TextEditingController();
   HeaderWithSearchbox({Key? key}) : super(key: key);
 
   @override

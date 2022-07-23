@@ -301,7 +301,6 @@ class _NewNoteFormState extends State<NewNoteForm> {
                 ),
               ],
             ),
-          // todo : ini tombolnya mau dibawa kemana
           Padding(
             padding: const EdgeInsets.all(40.0),
             child: ElevatedButton(

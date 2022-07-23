@@ -21,8 +21,8 @@ class AppBarUI extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.primary,
             borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(12.0),
-              bottomRight: Radius.circular(12.0),
+              bottomLeft: Radius.circular(5.0),
+              bottomRight: Radius.circular(5.0),
             ),
             boxShadow: <BoxShadow>[
               BoxShadow(

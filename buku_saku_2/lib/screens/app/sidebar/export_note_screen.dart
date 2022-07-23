@@ -92,7 +92,6 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                     } else {
                       DocFile docFile = await Note.createExcel(notes);
                       context.read<NotesProvider>().exportNotes(docFile);
-                      // await dbHelper.saveExportNote(docFile);
                       docFile.openFile();
                     }
                   }
@@ -133,15 +132,15 @@ class _ExportNotesScreenState extends State<ExportNotesScreen> {
                           trailing: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              // IconButton(
-                              //   onPressed: () {
-                              //     files[index].shareFile();
-                              //   },
-                              //   icon: const Icon(
-                              //     Icons.share_rounded,
-                              //     color: AppColors.black,
-                              //   ),
-                              // ),
+                              IconButton(
+                                onPressed: () {
+                                  files[index].shareFile();
+                                },
+                                icon: const Icon(
+                                  Icons.share_rounded,
+                                  color: AppColors.black,
+                                ),
+                              ),
                               IconButton(
                                 onPressed: () async {
                                   String? result = await showDialog<String>(

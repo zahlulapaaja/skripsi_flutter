@@ -34,7 +34,6 @@ class DictionaryProvider with ChangeNotifier {
   List<Jenjang>? _listJenjang;
   List<String> disableButir1 = [];
   List<String> disableButir2 = [];
-  // ketika pengaturan jenjang diganti, disable nya harus dikosongin nanti
 
   set setNaikPangkat(int ak) {
     _akNaikPangkat = ak;

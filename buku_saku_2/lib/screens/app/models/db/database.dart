@@ -111,7 +111,6 @@ class DbHelper {
 
     List<TanggalKegiatan> listTanggal =
         List.generate(maps[0]['jumlahKegiatan'], (index) {
-      // print(dates[index]['tanggalMulai']);
       if (index < dates.length) {
         return TanggalKegiatan(
           id: dates[index]['id'],

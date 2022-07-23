@@ -112,6 +112,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                       transform: Matrix4.translationValues(
                           scrollController!.offset, 0.0, 0.0),
                       child: HomeDrawer(
+                        // INI DIA MASALAH DRAWER, JADI SCREENINDEXNYA GA KEGANTI, AKHIRNYA PINDAH KE HOME TERUS
                         screenIndex: DrawerIndex.home,
                         iconAnimationController: iconAnimationController,
                         callBackIndex: (DrawerIndex indexType) {

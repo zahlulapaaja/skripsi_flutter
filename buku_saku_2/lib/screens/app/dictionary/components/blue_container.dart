@@ -26,7 +26,6 @@ class BlueContainer extends StatelessWidget {
               : const SizedBox(),
           Container(
             padding: const EdgeInsets.all(10.0),
-            // alignment: Alignment.center,
             decoration: BoxDecoration(
               color: AppColors.info,
               borderRadius: BorderRadius.circular(10.0),

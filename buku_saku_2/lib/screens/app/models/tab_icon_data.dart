@@ -1,25 +1,22 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class TabIconData {
   TabIconData({
     required this.iconData,
-    this.index = 0,
     required this.selectedIconData,
+    this.index = 0,
     this.isSelected = false,
     this.animationController,
   });
 
-  IconData iconData;
-  IconData selectedIconData;
+  final IconData iconData;
+  final IconData selectedIconData;
+  final int index;
   bool isSelected;
-  int index;
-
   AnimationController? animationController;
 
   static List<TabIconData> tabIconsList = <TabIconData>[
     TabIconData(
-      // imagePath: 'assets/icons/tab_1.png',
       iconData: Icons.home_outlined,
       selectedIconData: Icons.home_rounded,
       index: 0,

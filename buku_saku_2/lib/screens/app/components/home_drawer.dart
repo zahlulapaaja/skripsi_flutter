@@ -305,6 +305,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
     );
   }
 
+// INI DIA MASALAH DRAWER, JADI SCREENINDEXNYA GA KEGANTI, AKHIRNYA PINDAH KE HOME TERUS
   Future<void> navigationToScreen(DrawerIndex indexScreen) async {
     widget.callBackIndex!(indexScreen);
   }

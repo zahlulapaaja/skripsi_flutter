@@ -9,7 +9,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class UnsurScreen extends StatelessWidget {
-  // Nanti ini perbaiki lagi, apakah cocok pake string ??
   const UnsurScreen({Key? key}) : super(key: key);
 
   Future<List<Unsur>> readJsonData(String kategori) async {

@@ -12,8 +12,6 @@ class CardBuilder extends StatelessWidget {
   final int? status;
   final Function? onLongPressed;
 
-  // TODO : status belom dibuat
-
   const CardBuilder({
     Key? key,
     required this.notes,

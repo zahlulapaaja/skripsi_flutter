@@ -18,8 +18,6 @@ class KegiatanTimField extends StatefulWidget {
   final Function(bool?) onCheckboxChanged;
   final Function(String?) onRadioButtonChanged;
   final Function(int?) onTextFieldChanged;
-  // final TextEditingController jmlAnggotaController;
-  // jadiin stateless karna ini dihapus
   final String? initialDataPeran;
   final int initialJmlAnggota;
 
@@ -67,7 +65,6 @@ class _KegiatanTimFieldState extends State<KegiatanTimField> {
                       width: 70,
                       height: 30,
                       child: TextFormField(
-                        // todo : ini rapiin tampilannya
                         validator: (value) {
                           return int.parse(value!) < 2
                               ? 'Jumlah anggota minimal 2'
