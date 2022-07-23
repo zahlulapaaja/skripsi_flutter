@@ -117,11 +117,13 @@ class ButirDetailScreen extends StatelessWidget {
     listViews.add(
       BlueContainer(
         title: 'Deskripsi Kegiatan',
-        body: Text(
-          butir.uraian == "" ? "-" : butir.uraian,
-          textAlign: TextAlign.justify,
-          style: AppConstants.kDictionaryTextStyle(),
-        ),
+        body: (butir.uraian == "")
+            ? Text(
+                "-",
+                textAlign: TextAlign.justify,
+                style: AppConstants.kDictionaryTextStyle(),
+              )
+            : getTidyText(butir.uraian),
       ),
     );
 
@@ -176,10 +178,15 @@ class ButirDetailScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 2),
-                Text(
-                  butir.batasanPenilaian == "" ? "-" : butir.batasanPenilaian,
-                  style: AppConstants.kDictionaryTextStyle(),
-                ),
+                (!butir.batasanPenilaian.contains('1.'))
+                    ? Text(
+                        butir.batasanPenilaian == ""
+                            ? "-"
+                            : butir.batasanPenilaian,
+                        textAlign: TextAlign.justify,
+                        style: AppConstants.kDictionaryTextStyle(),
+                      )
+                    : getTidyText(butir.batasanPenilaian),
                 const SizedBox(height: 12),
               ],
             ),
@@ -207,18 +214,20 @@ class ButirDetailScreen extends StatelessWidget {
     listViews.add(
       BlueContainer(
         title: 'Bukti Fisik',
-        body: Text(
-          butir.buktiFisik,
-          textAlign: TextAlign.justify,
-          style: AppConstants.kDictionaryTextStyle(),
-        ),
+        body: (!butir.buktiFisik.contains('1.'))
+            ? Text(
+                butir.buktiFisik,
+                textAlign: TextAlign.justify,
+                style: AppConstants.kDictionaryTextStyle(),
+              )
+            : getTidyText(butir.buktiFisik),
       ),
     );
     listViews.add(
       BlueContainer(
         title: 'Contoh',
         body: Text(
-          butir.contoh,
+          butir.contoh.split('\n').join('\n\n'),
           textAlign: TextAlign.justify,
           style: AppConstants.kDictionaryTextStyle(),
         ),
@@ -308,6 +317,58 @@ class ButirDetailScreen extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return listViews[index];
       },
+    );
+  }
+
+  Widget getTidyText(String input) {
+    List<String> textList = input.split('\n');
+    List<Widget> widgetList = [];
+
+    for (String text in textList) {
+      if (text.substring(1, 3).contains('.')) {
+        final int dot = text.indexOf('.');
+        final String numbering = text.substring(0, dot);
+        final String value = text.substring(dot + 1);
+        widgetList.add(
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                (RegExp(r'^[0-9]+$').hasMatch(numbering))
+                    ? '$numbering.  '
+                    : '     $numbering.  ',
+                textAlign: TextAlign.justify,
+                style: AppConstants.kDictionaryTextStyle(),
+              ),
+              Expanded(
+                child: Text(
+                  value.trimLeft(),
+                  textAlign: TextAlign.justify,
+                  style: AppConstants.kDictionaryTextStyle(),
+                ),
+              ),
+            ],
+          ),
+        );
+      } else {
+        widgetList.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Text(
+              '     ' + text,
+              textAlign: TextAlign.justify,
+              style: AppConstants.kDictionaryTextStyle(),
+            ),
+          ),
+        );
+      }
+    }
+    widgetList.add(const SizedBox(height: 8));
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: widgetList,
     );
   }
 }
