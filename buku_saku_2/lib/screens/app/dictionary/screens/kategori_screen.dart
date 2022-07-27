@@ -28,15 +28,16 @@ class KategoriScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
+                children: const <Widget>[
                   Expanded(
-                    child: Image.asset(
-                      'assets/icons/office-briefcase.png',
-                      width: 50,
+                    child: Icon(
+                      Icons.cases_rounded,
+                      color: AppColors.primary,
+                      size: 60,
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  const Text(
+                  SizedBox(height: 15),
+                  Text(
                     'Prakom Terampil',
                     textAlign: TextAlign.center,
                     style: AppConstants.kCardTitleTextStyle,
@@ -65,15 +66,16 @@ class KategoriScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
+                children: const <Widget>[
                   Expanded(
-                    child: Image.asset(
-                      'assets/icons/office-briefcase.png',
-                      width: 50,
+                    child: Icon(
+                      Icons.cases_rounded,
+                      color: AppColors.primary,
+                      size: 60,
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  const Text(
+                  SizedBox(height: 15),
+                  Text(
                     'Prakom Ahli',
                     textAlign: TextAlign.center,
                     style: AppConstants.kCardTitleTextStyle,

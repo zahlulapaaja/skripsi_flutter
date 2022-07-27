@@ -9,7 +9,6 @@ import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
-import 'package:buku_saku_2/screens/app/sidebar/feedback_screen.dart';
 import 'package:buku_saku_2/screens/app/sidebar/rate_app_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -178,9 +177,6 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
           break;
         case DrawerIndex.rules:
           Navigator.pushNamed(context, DasarPeraturanScreen.id);
-          break;
-        case DrawerIndex.feedback:
-          Navigator.pushNamed(context, FeedbackScreen.id);
           break;
         case DrawerIndex.rate:
           Navigator.pushNamed(context, RateAppScreen.id);

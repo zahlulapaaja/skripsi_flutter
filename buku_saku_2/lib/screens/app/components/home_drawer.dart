@@ -49,11 +49,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
         icon: const Icon(Icons.map),
       ),
       DrawerList(
-        index: DrawerIndex.feedback,
-        labelName: 'FeedBack',
-        icon: const Icon(Icons.help),
-      ),
-      DrawerList(
         index: DrawerIndex.rate,
         labelName: 'Rate the app',
         icon: const Icon(Icons.share),
@@ -315,7 +310,6 @@ enum DrawerIndex {
   home,
   export,
   rules,
-  feedback,
   rate,
   about,
 }

@@ -44,12 +44,29 @@ class RateAppScreen extends StatelessWidget {
         bottom: 62 + MediaQuery.of(context).padding.bottom,
       ),
       child: Column(
-        children: const <Widget>[
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            child: Center(
-              child: Text("Halaman ini akan menyusul"),
+        children: <Widget>[
+          Expanded(
+            child: Image.asset('assets/icons/rate_app.png'),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            child: Text(
+              "Bantu aplikasi ini menjadi lebih baik. Beri masukan dan dukungan demi aplikasi yang lebih baik.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: AppConstants.fontName,
+                color: AppColors.black,
+                fontSize: AppConstants.kNormalFontSize,
+                fontWeight: FontWeight.w500,
+              ),
             ),
+          ),
+          ElevatedButton.icon(
+            onPressed: () {
+              // Masih jadi pertanyaan ini diarahin kemana
+            },
+            label: const Text('Berikan Peringkat'),
+            icon: const Icon(Icons.star_rounded),
           ),
         ],
       ),

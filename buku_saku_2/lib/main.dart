@@ -5,7 +5,6 @@ import 'package:buku_saku_2/screens/app/models/providers/dictionary_provider.dar
 import 'package:buku_saku_2/screens/app/models/providers/screen_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
 import 'package:buku_saku_2/screens/app/profile/setting_screen.dart';
-import 'package:buku_saku_2/screens/app/sidebar/feedback_screen.dart';
 import 'package:buku_saku_2/screens/app/sidebar/rate_app_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:buku_saku_2/configs/colors.dart';
@@ -71,7 +70,6 @@ class _MyAppState extends State<MyApp> {
           EditProfileScreen.id: (context) => const EditProfileScreen(),
           ExportNotesScreen.id: (context) => const ExportNotesScreen(),
           DasarPeraturanScreen.id: (context) => const DasarPeraturanScreen(),
-          FeedbackScreen.id: (context) => const FeedbackScreen(),
           AboutUsScreen.id: (context) => const AboutUsScreen(),
           RateAppScreen.id: (context) => const RateAppScreen(),
         },

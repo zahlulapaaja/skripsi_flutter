@@ -10,3 +10,6 @@
 // TODO : Bug drawer benerin, karna beberapa kasus, ketika diklik cma balik ke laman beranda
 
 // TODO : fitur status di catatan belom dibuat
+
+// TODO : Kasih alert di screen detail angka kredit terkumpul
+// Kasih tau kalo angka kredit yang terkumpul ak penuh
