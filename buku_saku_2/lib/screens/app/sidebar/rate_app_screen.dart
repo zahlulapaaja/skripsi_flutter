@@ -48,15 +48,20 @@ class RateAppScreen extends StatelessWidget {
           Expanded(
             child: Image.asset('assets/icons/rate_app.png'),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-            child: Text(
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: AppColors.primaryLight.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: const Text(
               "Bantu aplikasi ini menjadi lebih baik. Beri masukan dan dukungan demi aplikasi yang lebih baik.",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: AppConstants.fontName,
-                color: AppColors.black,
-                fontSize: AppConstants.kNormalFontSize,
+                color: AppColors.primaryDark,
+                fontSize: AppConstants.kNormalFontSize - 1,
                 fontWeight: FontWeight.w500,
               ),
             ),

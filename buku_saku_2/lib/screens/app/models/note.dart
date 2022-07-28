@@ -97,7 +97,7 @@ class Note {
       tanggal += element.tanggalToString();
     }
     return [
-      number.toString(),
+      (number + 1).toString(),
       uraian,
       kodeButir,
       tanggal,

@@ -102,6 +102,7 @@ class _NewNoteFormState extends State<NewNoteForm> {
           path: newFile.path,
           name: file.name,
           extension: file.extension!,
+          size: file.size,
         ));
       }
 

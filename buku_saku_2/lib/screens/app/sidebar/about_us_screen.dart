@@ -49,15 +49,20 @@ class AboutUsScreen extends StatelessWidget {
           Expanded(
             child: Image.asset('assets/icons/about_us.png'),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-            child: Text(
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: AppColors.primaryLight.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: const Text(
               "Buku Saku Prakom adalah aplikasi untuk memudahkan para pranata komputer di Indonesia dalam mencatat dan memantau angka kredit. Aplikasi ini dibangun oleh Zahlul Fuadi, lulusan Politeknik Statistika Tahun 2022. (bla bla bla)",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: AppConstants.fontName,
-                color: AppColors.black,
-                fontSize: AppConstants.kNormalFontSize,
+                color: AppColors.primaryDark,
+                fontSize: AppConstants.kNormalFontSize - 1,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -65,7 +70,7 @@ class AboutUsScreen extends StatelessWidget {
           RichText(
             text: TextSpan(
               text: 'Lihat ',
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: AppConstants.fontName,
                 color: AppColors.black,
                 fontSize: AppConstants.kSmallFontSize,
@@ -73,7 +78,7 @@ class AboutUsScreen extends StatelessWidget {
               children: [
                 TextSpan(
                   text: 'Privacy Policy',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
                   ),
