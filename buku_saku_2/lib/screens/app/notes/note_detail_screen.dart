@@ -210,7 +210,7 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
                                           children: <Widget>[
                                             Expanded(
                                               child: Card(
-                                                color: Colors.blue,
+                                                color: AppColors.info,
                                                 child: InkWell(
                                                   onTap: () {
                                                     note.spmk!.openFile();

@@ -65,7 +65,7 @@ class AppComponents {
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.BOTTOM,
       backgroundColor: color.withOpacity(0.9),
-      textColor: Colors.white,
+      textColor: AppColors.offWhite,
       fontSize: AppConstants.kTinyFontSize,
     );
   }
@@ -75,6 +75,3 @@ class AppComponents {
     return numberFormatter.format(number);
   }
 }
-
-
-// nambah lagi komponen disini

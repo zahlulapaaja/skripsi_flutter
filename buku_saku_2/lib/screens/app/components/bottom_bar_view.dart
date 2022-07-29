@@ -42,7 +42,7 @@ class _BottomBarViewState extends State<BottomBarView>
             return Transform(
               transform: Matrix4.translationValues(0.0, 0.0, 0.0),
               child: PhysicalShape(
-                color: Colors.white,
+                color: AppColors.offWhite,
                 elevation: 16.0,
                 clipper: TabClipper(
                     radius: Tween<double>(begin: 0.0, end: 1.0)
@@ -160,13 +160,13 @@ class _BottomBarViewState extends State<BottomBarView>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Colors.white.withOpacity(0.1),
+                          splashColor: AppColors.offWhite.withOpacity(0.1),
                           highlightColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           onTap: widget.addClick,
                           child: const Icon(
                             Icons.add,
-                            color: Colors.white,
+                            color: AppColors.offWhite,
                             size: 32,
                           ),
                         ),

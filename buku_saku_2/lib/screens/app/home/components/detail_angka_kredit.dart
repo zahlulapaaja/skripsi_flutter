@@ -40,7 +40,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
             left: 14.0, right: 14.0, top: 14.0, bottom: 24.0),
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.offWhite,
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(8.0),
               bottomLeft: Radius.circular(8.0),
@@ -241,7 +241,7 @@ class _DetailAngkaKreditState extends State<DetailAngkaKredit> {
                                 width: 100,
                                 height: 100,
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: AppColors.offWhite,
                                   borderRadius: const BorderRadius.all(
                                     Radius.circular(100.0),
                                   ),
@@ -441,11 +441,11 @@ class CurvePainter extends CustomPainter {
     if (colors != null) {
       colorsList = colors ?? [];
     } else {
-      colorsList.addAll([Colors.white, Colors.white]);
+      colorsList.addAll([AppColors.offWhite, AppColors.offWhite]);
     }
 
     final shadowPaint = Paint()
-      ..color = Colors.black.withOpacity(0.4)
+      ..color = AppColors.black.withOpacity(0.4)
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..strokeWidth = 14;
@@ -459,7 +459,7 @@ class CurvePainter extends CustomPainter {
         false,
         shadowPaint);
 
-    shadowPaint.color = Colors.grey.withOpacity(0.3);
+    shadowPaint.color = AppColors.grey.withOpacity(0.3);
     shadowPaint.strokeWidth = 16;
     canvas.drawArc(
         Rect.fromCircle(center: shadowPaintCenter, radius: shadowPaintRadius),
@@ -468,7 +468,7 @@ class CurvePainter extends CustomPainter {
         false,
         shadowPaint);
 
-    shadowPaint.color = Colors.grey.withOpacity(0.2);
+    shadowPaint.color = AppColors.grey.withOpacity(0.2);
     shadowPaint.strokeWidth = 20;
     canvas.drawArc(
         Rect.fromCircle(center: shadowPaintCenter, radius: shadowPaintRadius),
@@ -477,7 +477,7 @@ class CurvePainter extends CustomPainter {
         false,
         shadowPaint);
 
-    shadowPaint.color = Colors.grey.withOpacity(0.1);
+    shadowPaint.color = AppColors.grey.withOpacity(0.1);
     shadowPaint.strokeWidth = 22;
     canvas.drawArc(
         Rect.fromCircle(center: shadowPaintCenter, radius: shadowPaintRadius),
@@ -510,12 +510,12 @@ class CurvePainter extends CustomPainter {
 
     const gradient1 = SweepGradient(
       tileMode: TileMode.repeated,
-      colors: [Colors.white, Colors.white],
+      colors: [AppColors.offWhite, AppColors.offWhite],
     );
 
     var cPaint = Paint();
     cPaint.shader = gradient1.createShader(rect);
-    cPaint.color = Colors.white;
+    cPaint.color = AppColors.offWhite;
     cPaint.strokeWidth = 14 / 2;
     canvas.save();
 

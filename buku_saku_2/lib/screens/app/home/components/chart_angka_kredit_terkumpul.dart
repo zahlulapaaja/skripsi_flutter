@@ -37,7 +37,7 @@ class ChartAngkaKreditTerkumpul extends StatelessWidget {
         return Container(
           margin: const EdgeInsets.only(left: 14.0, right: 14.0, top: 14.0),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.offWhite,
             borderRadius: const BorderRadius.all(Radius.circular(8.0)),
             boxShadow: <BoxShadow>[
               BoxShadow(

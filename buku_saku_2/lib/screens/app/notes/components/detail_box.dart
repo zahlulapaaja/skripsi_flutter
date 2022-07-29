@@ -18,10 +18,10 @@ class DetailBox extends StatelessWidget {
         padding: const EdgeInsets.only(top: 14, right: 10, bottom: 0, left: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: Colors.white,
+          color: AppColors.offWhite,
           boxShadow: const <BoxShadow>[
             BoxShadow(
-              color: Colors.grey,
+              color: AppColors.grey,
               offset: Offset(0.0, 1.0),
               blurRadius: 2.0,
             ),

@@ -25,7 +25,7 @@ class _DictSearchBoxState extends State<DictSearchBox> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 54,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.offWhite,
         border: Border.all(width: 1.5, color: AppColors.lightBlack),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [

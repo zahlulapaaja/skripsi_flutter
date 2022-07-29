@@ -81,7 +81,7 @@ class HeaderWithSearchbox extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               height: 54,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.offWhite,
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(

@@ -20,7 +20,7 @@ class InformasiJenjang extends StatelessWidget {
           margin: const EdgeInsets.only(left: 14.0, right: 14.0, top: 14.0),
           padding: const EdgeInsets.symmetric(vertical: 14.0),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.offWhite,
             borderRadius: const BorderRadius.all(Radius.circular(8.0)),
             boxShadow: <BoxShadow>[
               BoxShadow(
@@ -110,7 +110,7 @@ class InformasiJenjang extends StatelessWidget {
           margin: const EdgeInsets.only(
               left: 14.0, right: 14.0, top: 14.0, bottom: 30.0),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.offWhite,
             borderRadius: const BorderRadius.all(Radius.circular(8.0)),
             boxShadow: <BoxShadow>[
               BoxShadow(

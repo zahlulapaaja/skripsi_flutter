@@ -204,7 +204,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        splashColor: Colors.grey.withOpacity(0.1),
+        splashColor: AppColors.grey.withOpacity(0.1),
         highlightColor: Colors.transparent,
         onTap: () {
           navigationToScreen(listData.index!);

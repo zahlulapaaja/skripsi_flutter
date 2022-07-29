@@ -66,7 +66,7 @@ class SPMKField extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                     child: Card(
-                      color: Colors.blue,
+                      color: AppColors.info,
                       child: InkWell(
                         onTap: () {
                           OpenFile.open(selectedData!.path!);

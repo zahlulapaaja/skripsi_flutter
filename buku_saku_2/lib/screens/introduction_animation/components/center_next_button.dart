@@ -94,8 +94,10 @@ class CenterNextButton extends StatelessWidget {
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                    Icon(Icons.arrow_forward_rounded,
-                                        color: Colors.white),
+                                    Icon(
+                                      Icons.arrow_forward_rounded,
+                                      color: AppColors.offWhite,
+                                    ),
                                   ],
                                 ),
                               ),
