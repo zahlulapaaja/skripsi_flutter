@@ -231,6 +231,14 @@ class DbHelper {
         where: 'idCatatan = ?', whereArgs: [noteId]);
   }
 
+  Future<void> deleteAllNotes() async {
+    final db = await dbInstance;
+
+    await db.delete('catatan');
+    await db.delete('bukti_fisik');
+    await db.delete('tanggal_kegiatan');
+  }
+
   Future<List<Note>> exportNotes() async {
     final db = await dbInstance;
 

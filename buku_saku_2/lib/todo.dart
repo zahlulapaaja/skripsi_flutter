@@ -21,7 +21,6 @@
 // TODO : Edit profil => kalo ganti jenjang, golongan harusnya kosong
 // TODO : Bikin splash screen
 // TODO : Bikin privacy policy => pake dialog
-// TODO : Bikin tombol hapus semua catata di settings
 
 // TODO : Rapiin tampilan input kegiatan tim
-// TODO : Rapiin semua file juga
+// TODO : Rapiin semua tampilan juga

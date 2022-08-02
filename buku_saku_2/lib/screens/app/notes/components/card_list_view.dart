@@ -22,7 +22,7 @@ class CardListView extends StatelessWidget {
                 return const Center(
                     child: Text('Tidak ada catatan yang cocok'));
               } else {
-                return const Center(child: Text('Belum ada catatan'));
+                return const Center(child: Text('(Belum ada catatan)'));
               }
             }
 

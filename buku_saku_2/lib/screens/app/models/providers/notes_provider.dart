@@ -68,6 +68,11 @@ class NotesProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void deleteAllNotes() async {
+    await dbHelper.deleteAllNotes();
+    notifyListeners();
+  }
+
   void exportNotes(DocFile file) async {
     await dbHelper.saveExportNote(file);
     notifyListeners();

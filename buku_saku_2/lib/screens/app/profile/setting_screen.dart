@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:buku_saku_2/screens/app/components/app_bar_ui.dart';
 import 'package:buku_saku_2/screens/app/models/profile.dart';
+import 'package:buku_saku_2/screens/app/models/providers/notes_provider.dart';
 import 'package:buku_saku_2/screens/app/models/providers/profile_provider.dart';
 import 'package:buku_saku_2/screens/app/profile/components/setting_menu_button.dart';
 import 'package:buku_saku_2/screens/app/profile/edit_profile_screen.dart';
@@ -120,6 +121,36 @@ class SettingScreen extends StatelessWidget {
         //   subtitle: 'Tema, Riwayat, Dll...',
         //   onPressed: () {},
         // ),
+        SettingMenuButton(
+          icon: Icons.delete,
+          color: AppColors.alert,
+          title: 'Hapus Semua Catatan',
+          subtitle: 'Hapus semua catatan Anda',
+          onPressed: () async {
+            var result = await showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text('Hapus Semua Catatan'),
+                content:
+                    const Text('Anda yakin ingin menghapus semua catatan ?'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'Tidak'),
+                    child: const Text('Tidak'),
+                  ),
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'Ya'),
+                    child: const Text('Ya'),
+                  ),
+                ],
+              ),
+            );
+
+            if (result == 'Ya') {
+              context.read<NotesProvider>().deleteAllNotes();
+            }
+          },
+        ),
         SettingMenuButton(
           icon: Icons.file_download,
           title: 'Ekspor Catatan',

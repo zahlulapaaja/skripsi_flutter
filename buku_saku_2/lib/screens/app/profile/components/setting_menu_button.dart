@@ -6,6 +6,7 @@ class SettingMenuButton extends StatelessWidget {
   const SettingMenuButton({
     Key? key,
     required this.icon,
+    this.color,
     required this.title,
     this.subtitle,
     required this.onPressed,
@@ -13,6 +14,7 @@ class SettingMenuButton extends StatelessWidget {
 
   final Function() onPressed;
   final IconData icon;
+  final Color? color;
   final String title;
   final String? subtitle;
 
@@ -25,12 +27,12 @@ class SettingMenuButton extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: 75,
+              width: 60,
               padding: const EdgeInsets.all(4.0),
               child: Icon(
                 icon,
-                color: AppColors.black,
-                size: 40,
+                color: color ?? AppColors.black,
+                size: 30,
               ),
             ),
             Expanded(

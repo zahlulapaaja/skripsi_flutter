@@ -22,7 +22,10 @@ class CardGridView extends StatelessWidget {
             if (context.read<NotesProvider>().isQueryExist) {
               return const Center(child: Text('Tidak ada catatan yang cocok'));
             } else {
-              return const Center(child: Text('Belum ada catatan'));
+              return const Padding(
+                padding: EdgeInsets.fromLTRB(0, 20, 0, 60),
+                child: Center(child: Text('(Belum ada catatan)')),
+              );
             }
           }
           context.read<DictionaryProvider>().setDisableButir2 = snapshot.data!;
