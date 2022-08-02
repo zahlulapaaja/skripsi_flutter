@@ -86,7 +86,7 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
               return Scaffold(
                 backgroundColor: Colors.transparent,
                 body: DrawerUserController(
-                  // screenIndex: drawerIndex,
+                  screenIndex: drawerIndex,
                   drawerWidth: MediaQuery.of(context).size.width * 0.75,
                   onDrawerCall: (DrawerIndex drawerIndexData) {
                     changeIndex(drawerIndexData);
@@ -170,18 +170,32 @@ class _AppScreenState extends State<AppScreen> with TickerProviderStateMixin {
 
       switch (drawerIndex) {
         case DrawerIndex.home:
-          Navigator.pushReplacementNamed(context, AppScreen.id);
+          setState(() {
+            drawerIndex = DrawerIndex.home;
+          });
           break;
         case DrawerIndex.export:
+          setState(() {
+            drawerIndex = DrawerIndex.home;
+          });
           Navigator.pushNamed(context, ExportNotesScreen.id);
           break;
         case DrawerIndex.rules:
+          setState(() {
+            drawerIndex = DrawerIndex.home;
+          });
           Navigator.pushNamed(context, DasarPeraturanScreen.id);
           break;
         case DrawerIndex.rate:
+          setState(() {
+            drawerIndex = DrawerIndex.home;
+          });
           Navigator.pushNamed(context, RateAppScreen.id);
           break;
         case DrawerIndex.about:
+          setState(() {
+            drawerIndex = DrawerIndex.home;
+          });
           Navigator.pushNamed(context, AboutUsScreen.id);
           break;
         default:

@@ -27,7 +27,6 @@ class EditProfileScreen extends StatefulWidget {
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
   final _formKey = GlobalKey<FormState>();
-  var dbHelper = DbProfile();
   final _nameTextController = TextEditingController();
   final _akSaatIniTextController = TextEditingController();
 
@@ -36,11 +35,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   List<String> jenjang = [];
   List<String> golongan = [];
   PlatformFile? selectedPhoto;
-
   Profile? selectedData;
 
-  @override
-  void initState() {
+  void initData() {
     selectedData = context.read<ProfileProvider>().profil;
     for (var item in selectedData!.listJenjang!) {
       if (jenjang.isEmpty) {
@@ -55,7 +52,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       _akSaatIniTextController.text =
           AppComponents.convertNumberToId(selectedData!.akSaatIni);
       if (selectedData!.fotoProfil != null) {
-        selectedPhoto = PlatformFile.fromMap(selectedData!.toProfileMap());
+        selectedPhoto = PlatformFile.fromMap(selectedData!.toPhotoMap());
       }
       for (var item in selectedData!.listJenjang!) {
         if (item.id == selectedData!.jenjang!.id) {
@@ -67,6 +64,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         }
       }
     }
+  }
+
+  @override
+  void initState() {
+    initData();
     super.initState();
   }
 
@@ -206,6 +208,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             initialData: selectedJenjang,
             hintText: "Pilih jenjang...",
             onChanged: (value) {
+              print('test : $value');
               setState(() {
                 selectedJenjang = value;
                 selectedGolongan = null;
@@ -230,6 +233,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             initialData: selectedGolongan,
             hintText: "Pilih golongan...",
             onChanged: (value) {
+              print(value);
               setState(() {
                 for (var row in selectedData!.listJenjang!) {
                   if (row.jenjang == selectedJenjang && row.golongan == value) {

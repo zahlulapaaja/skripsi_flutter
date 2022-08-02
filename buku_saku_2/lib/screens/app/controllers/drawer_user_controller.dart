@@ -11,6 +11,7 @@ class DrawerUserController extends StatefulWidget {
     this.animatedIconData = AnimatedIcons.arrow_menu,
     this.menuView,
     this.drawerIsOpen,
+    this.screenIndex,
   }) : super(key: key);
 
   final double drawerWidth;
@@ -19,6 +20,7 @@ class DrawerUserController extends StatefulWidget {
   final Function(bool)? drawerIsOpen;
   final AnimatedIconData? animatedIconData;
   final Widget? menuView;
+  final DrawerIndex? screenIndex;
 
   @override
   _DrawerUserControllerState createState() => _DrawerUserControllerState();
@@ -113,7 +115,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                           scrollController!.offset, 0.0, 0.0),
                       child: HomeDrawer(
                         // INI DIA MASALAH DRAWER, JADI SCREENINDEXNYA GA KEGANTI, AKHIRNYA PINDAH KE HOME TERUS
-                        screenIndex: DrawerIndex.home,
+                        screenIndex: widget.screenIndex ?? DrawerIndex.home,
                         iconAnimationController: iconAnimationController,
                         callBackIndex: (DrawerIndex indexType) {
                           onDrawerClick();

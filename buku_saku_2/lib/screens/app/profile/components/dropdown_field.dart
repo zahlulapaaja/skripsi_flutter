@@ -15,7 +15,7 @@ class DropdownField extends StatelessWidget {
     this.validator,
   }) : super(key: key);
 
-  final Function(String?) onChanged;
+  final void Function(String?) onChanged;
   final String title;
   final String? hintText;
   final String? initialData;

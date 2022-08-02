@@ -28,7 +28,7 @@ class Profile {
     };
   }
 
-  Map<String, dynamic> toProfileMap() {
+  Map<String, dynamic> toPhotoMap() {
     return {
       'path': fotoProfil,
       'name': fotoProfil?.split("/").last,
